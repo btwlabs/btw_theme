@@ -15,7 +15,7 @@
     "issues": "https://toobad.bythewaylabs.com",
     "source": "https://github.com/btwlabs/btw_theme.git"
   },
-  "license": "FU Ma Man",
+  "license": "proprietary",
   "minimum-stability": "dev",
   "require": {}
 }
