@@ -1,0 +1,156 @@
+{#
+/**
+ * @file
+ * Header 4. Logo left, Menu toggle (show/hide all links).
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set parent = paragraph.getParentEntity() %}
+{% set parent_id = parent.id() %}
+{% set nav = drupal_field('field_main_navigation','node',parent_id, 'full') %}
+{% set link = 'https://www.google.com/maps/place/' ~ parent.field_ff_address.0.value['address_line1']|replace({' ': '+'}) ~ '+' ~ parent.field_ff_address.0.value['postal_code'] %}
+{% set phone = drupal_field('field_ff_phone_number', 'node', parent_id, 'full') %}
+
+  <header id="site-header" {{ attributes.addClass(paragraph.field_header_scroll_behavior.0.value) }}>
+
+    {% if (paragraph.field_include_business_info.0.value is not empty) and (paragraph.field_include_business_info.0.value == 1) %}
+        <!-- Start: Info Bar -->
+        <div class="info-bar">
+            {% if not phone|render is empty %}
+              <div class="phone">
+                <div class="contact-icon"><a href="tel:{{ parent.field_ff_phone_number.0.value }}"><i class="fas fa-mobile-alt"></i></a></div>
+                <div class="value">{{ phone }}</div>
+              </div>
+            {% endif %}
+
+            {% if not parent.field_ff_email_address.0.value is empty %}
+            <div class="email">
+              <a href="mailto:{{ parent.field_ff_email_address.0.value }}">
+                <div class="contact-icon"><i class="far fa-envelope"></i></div>
+                <div class="value">{{ parent.field_ff_email_address.0.value }}</div>
+              </a>
+            </div>
+            {% endif %}
+
+          {% if (not parent.field_ff_address.0.value['address_line1'] is empty) and (not parent.field_ff_address.0.value['postal_code'] is empty) %}
+          <div class="address">
+            <a href={{ link }} target="_blank">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="value">{{ parent.field_ff_address.0.value['address_line1'] }} {{ parent.field_ff_address.0.value['postal_code'] }}</div>
+            </a>
+          </div>
+          {% endif %}
+        </div>
+        <!-- End: Info Bar -->
+    {% endif %}
+
+    <!-- Start: Navigation -->
+    <nav class="navbar">
+      {{ title_prefix }}
+      {{ title_suffix }}
+      <div class="container-fluid">
+        <div class="navbar-brand-wrapper">
+          <a class="navbar-brand" href="/node/{{ parent_id }}#top" target="_parent">
+            {% if not parent.field_ff_logo.0 is empty %}
+              <img src="{{ base_url ~ file_url(parent.field_ff_logo.0.entity.fileuri) }}" alt="{{ parent.field_ff_logo.0.alt }}">
+            {% else %}
+              <span class="site-name">{{ parent.title.value }}</span>
+            {% endif %}
+          </a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navcol-1" aria-controls="navcol-1" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="far fa-bars"></i></span>
+        </button>
+
+        {% if use_snipcart %}
+        <div class = "cart-button-wrapper">
+          <!-- Begin: Cart button -->
+          <button class="snipcart-checkout">
+            <span class="cart-icon-item-number">
+              <i class="far fa-shopping-cart" aria-hidden="true"></i>
+              <span class="snipcart-items-count"></span>
+            </span>
+          </button>
+          <!-- End: Cart button -->
+        </div>
+        {% endif %}
+
+
+        <div class="collapse navbar-collapse" id="navcol-1">
+          {{ nav|render }}
+
+        </div><!-- End: .navbar-collapse -->
+
+      </div><!-- End: .container-fluid -->
+
+    </nav>
+    <!-- End: Navigation -->
+
+  </header>
+
+<!-- Duplicate info bar to display in mobile only -->
+{% if (paragraph.field_include_business_info.0.value is not empty) and (paragraph.field_include_business_info.0.value == 1) %}
+  <!-- Start: Mobile Info Bar -->
+  <div class="mobile-info-bar">
+      {% if not phone|render is empty %}
+        <div class="phone">
+          <div class="contact-icon"><a href="tel:{{ parent.field_ff_phone_number.0.value }}"><i class="fas fa-mobile-alt"></i></a></div>
+          <div class="value">{{ phone }}</div>
+        </div>
+      {% endif %}
+
+      {% if not parent.field_ff_email_address.0.value is empty %}
+      <div class="email">
+        <a href="mailto:{{ parent.field_ff_email_address.0.value }}">
+          <div class="contact-icon"><i class="far fa-envelope"></i></div>
+          <div class="value">{{ parent.field_ff_email_address.0.value }}</div>
+        </a>
+      </div>
+      {% endif %}
+
+    {% if (not parent.field_ff_address.0.value['address_line1'] is empty) and (not parent.field_ff_address.0.value['postal_code'] is empty) %}
+    <div class="address">
+      <a href={{ link }} target="_blank">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="value">{{ parent.field_ff_address.0.value['address_line1'] }} {{ parent.field_ff_address.0.value['postal_code'] }}</div>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+  <!-- End: Mobile Info Bar -->
+{% endif %}

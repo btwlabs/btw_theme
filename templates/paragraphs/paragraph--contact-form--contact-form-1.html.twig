@@ -1,0 +1,143 @@
+{#
+/**
+ * @file
+ * FormSubmit contact form One Column.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set parent = paragraph.getParentEntity() %}
+{% set parent_id = parent.id %}
+{% set site_name = drupal_field('field_ff_site_name', 'node', parent_id, 'full') %}
+{% set address = drupal_field('field_ff_address', 'node', parent_id, 'full') %}
+{% set phone = drupal_field('field_ff_phone_number', 'node', parent_id, 'full') %}
+{% set fax = drupal_field('field_ff_fax_number', 'node', parent_id, 'full') %}
+{% if paragraph.field_contact_form_hash is not empty %}
+  {% set email = paragraph.field_contact_form_hash.0.value %}
+{% else %}
+  {% set email = parent.field_ff_email_address.0.value %}
+{% endif %}
+{# make the cc array #}
+{% set cc = [] %}
+{% for item in paragraph.field_contact_form_recipients %}
+   {% set cc = cc|merge([item.value]) %}
+{% endfor %}
+{% set classes = [
+  'section',
+  'section-contact-form',
+  'section-contact-1col',
+  paragraph.field_contact_form_classes.0.value,
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+
+
+  <!-- Start: Contact Form -->
+  <section {{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+    <!-- Start: Intro -->
+    <div class="intro">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col col-lg-8">
+            <div class="text-wrapper">
+              {% if (paragraph.field_title is not empty) and (paragraph.field_title.0.value != ' ') %}
+                {{ content.field_title }}
+              {% endif %}
+              {% if not paragraph.field_contact_form_body is empty %}
+                <div class="intro-body mb-5">{{ paragraph.field_contact_form_body.0.value|raw }}</div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End: Intro -->
+
+    <!-- Start: Contact info and form -->
+    <div class="container">
+      <div class="row">
+
+        <!-- Form or warning message -->
+        {% if parent.field_ff_email_address is not empty %}
+        <!-- contact form -->
+        <div class="col col-12">
+          <div class="contact-form-wrapper">
+
+            <form action="https://formsubmit.co/{{ email }}" method="POST">
+              <input placeholder="My Name" type="text" name="name" required>
+              <input placeholder="my@email.com" type="email" name="email" required>
+              <textarea placeholder="Your Message" class="message-body" name="message" rows="2" required></textarea>
+              <button type="submit">Send</button>
+              <input type="hidden" name="_honey" style="display:none">
+              {% if cc is not empty %}<input type="hidden" name="_cc" value="{{ cc|join(',') }}">{% endif %}
+            </form>
+
+          </div><!-- end contact-form-wrapper-->
+        </div> <!-- end col -->
+        {% else %}
+          <div class="warning-message">
+            <h3 class="warning-message-header">Notice</h3>
+            <span>This contact form will not function unless you have an email address entered into the site form.</span>
+          </div>
+        {% endif %}
+
+      </div><!-- end row -->
+    </div><!-- end container -->
+    <!-- End: Contact info and form -->
+    <script>
+      let {{ attributes.id|replace({'-':''}) }}El = document.getElementById('{{ attributes.id }}');
+      let event{{ attributes.id|replace({'-':''}) }} = new CustomEvent('section-loaded', {bubbles: true});
+      // set up the mutation observer
+      let {{ attributes.id|replace({'-':''}) }}observer = new MutationObserver(function (mutations, me) {
+        {{ attributes.id|replace({'-':''}) }}El.dispatchEvent(event{{ attributes.id|replace({'-':''}) }});
+      });
+
+      // start observing
+      {{ attributes.id|replace({'-':''}) }}observer.observe({{ attributes.id|replace({'-':''}) }}El, {
+        childList: true,
+        subtree: true,
+        attributes: true
+      });
+    </script>
+  </section>
+  <!-- End: Contact Form -->
+
+

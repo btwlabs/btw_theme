@@ -1,0 +1,12 @@
+{#
+ Renders the ajax version of catalog item standalone page
+#}
+{% set parent = paragraph.getParentEntity() %}
+{% set parent_id = parent.id() %}
+<div id="editor-preview" style="height:100vh; width:100vw;">
+  <iframe src="{{ path('flat_file_generator.catalog_section_preview_ajax', {
+    root_parent_type: 'node',
+    root_parent: parent_id
+    paragraph: paragraph.id
+  }) }}" height="100%" width="100%"></iframe>
+</div>

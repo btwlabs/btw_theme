@@ -1,0 +1,172 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a snipcart product.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}{% set classes = [
+  'product-wrapper',
+  'page-product',
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+{% set parent = paragraph.getParentEntity() %}
+{% set parent_id = parent.id() %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Start: Head -->
+<head>
+  {{ head_1|raw }}
+  {{ head_2|raw }}
+</head>
+<!-- End: Head -->
+
+<body>
+
+{{ header|raw }}
+
+  <div {{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <div class="container">
+    {% if not paragraph.field_product_sku.0.value is empty %}
+
+      <div class="title-wrapper">
+        {% if not paragraph.field_product_name.0.value is empty %}
+          <h1 class="page-title mb-5" itemprop="name">{{ paragraph.field_product_name.0.value }}</h1>
+        {% endif %}
+      </div>
+      <div
+        id="{{ paragraph.field_product_sku.0.value }}"
+        class="row"
+        itemscope
+        itemtype="http://schema.org/Product"
+      >
+
+        <div class="product-item-1 col-12 col-md-5">
+          <div class="sticky">
+            {% if not paragraph.field_product_images.0 is empty %}
+              <img
+                itemprop="image"
+                {% if not paragraph.field_product_name.0.value is empty %}
+                  alt="{{ paragraph.field_product_name.0.value }}"
+                {% endif %}
+                width="100%"
+                class="product-image mb-3"
+                {% if not paragraph.field_product_images.0 is empty %}src="{{ base_url ~ file_url(paragraph.field_product_images.0.entity.fileuri | image_style('card_image')) }}"{% endif %}
+              />
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="product-item-2 col-12 col-md-7">
+          <div
+            class="product-id mb-3"
+            itemprop="productID"
+            content="sku:[sku]"
+          ></div>
+
+          <div class="product-price-link-wrapper mb-5">
+            <div
+              class="price mb-4"
+              itemprop="offers"
+              itemscope
+              itemtype="http://schema.org/Offer"
+            >
+              <meta itemprop="priceCurrency" content="USD" />
+              <span itemprop="price" content="{{ paragraph.field_product_price.0.value }}">
+                ${{ paragraph.field_product_price.0.value|number_format(2, '.', ',') }}
+              </span>
+            </div>
+            <button
+              class="snipcart-add-item btn btn-primary"
+              data-item-id="{{ paragraph.field_product_sku.0.value }}"
+              data-item-price="{{ paragraph.field_product_price.0.value }}"
+              data-item-url="/node/{{ parent.id() }}"
+              data-item-description="{{ paragraph.field_product_description.0.value }}"
+              {% if not paragraph.field_product_images.0 is empty %}data-item-image="{{ base_url ~ file_url(paragraph.field_product_images.0.entity.fileuri | image_style('card_image')) }}"{% endif %}
+              data-item-name="{{ paragraph.field_product_name.0.value }}"
+              {% if paragraph.field_product_weight.0.value is not empty %}data-item-weight="{{ paragraph.field_product_weight.0.value }}"{% endif %}
+              {% if paragraph.field_product_height.0.value is not empty %}data-item-height="{{ paragraph.field_product_height.0.value }}"{% endif %}
+              {% if paragraph.field_product_width.0.value is not empty %}data-item-width="{{ paragraph.field_product_width.0.value }}"{% endif %}
+              {% if paragraph.field_product_length.0.value is not empty %}data-item-length="{{ paragraph.field_product_length.0.value }}"{% endif %}
+            >
+              Add to cart
+            </button>
+          </div>
+
+          {% if not paragraph.field_product_description.0.value is empty %}
+            <div class="product-description" itemprop="description">{{ content.field_product_description }}</div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  <script>
+    let {{ attributes.id|replace({'-':''}) }}El = document.getElementById('{{ attributes.id }}');
+    let event{{ attributes.id|replace({'-':''}) }} = new CustomEvent('section-loaded', {bubbles: true});
+    // set up the mutation observer
+    let {{ attributes.id|replace({'-':''}) }}observer = new MutationObserver(function (mutations, me) {
+      {{ attributes.id|replace({'-':''}) }}El.dispatchEvent(event{{ attributes.id|replace({'-':''}) }});
+    });
+    // start observing
+    {{ attributes.id|replace({'-':''}) }}observer.observe({{ attributes.id|replace({'-':''}) }}El, {
+      childList: true,
+      subtree: true,
+      attributes: true
+    });
+  </script>
+</div>
+
+{{ footer|raw }}
+
+{{ scripts|raw }}
+
+{{ snipcart|raw }}
+
+<!-- Start: Remove -->{{ asset_url('contextual/drupal.contextual-links') }}<!-- End: Remove -->
+<!-- Start: Remove -->{{ asset_url('flat_file_generator/preview') }}<!-- End: Remove -->
+<!-- Start: Remove --><script src="/flat-file-generator/{{ nid }}/serve.js"></script><!-- End: Remove -->
+<!-- Start: Remove --><link rel="stylesheet" href="/flat-file-generator/{{ nid }}/serve.css"><!-- End: Remove -->
+
+</body>
+
+</html>
