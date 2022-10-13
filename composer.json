@@ -1,52 +1,21 @@
 {
-  "name": "drupal/basic",
-  "description": "HTML5, SASS, Responsive grid starter theme.",
+  "name": "btw/btw_theme",
+  "description": "BTW Base theme, copied to make site themes.",
   "type": "drupal-theme",
-  "homepage": "http://drupal.org/project/basic",
+  "homepage": "https://github.com/btwlabs/btw_theme",
   "authors": [
     {
-      "name": "Steve Krueger",
-      "email": "steve@thejibe.com",
-      "homepage": "http://thejibe.com",
-      "role": "Maintainer"
-    },
-    {
-      "name": "Joël Pittet",
-      "email": "joel@pittet.ca",
-      "homepage": "https://www.drupal.org/u/joelpittet",
-      "role": "Maintainer"
-    },
-    {
-      "name": "Leah Wagner",
-      "email": "leah@thejibe.com",
-      "homepage": "http://thejibe.com",
-      "role": "Maintainer"
-    },
-    {
-      "name": "Catherine Winters",
-      "email": "catherine@catherinewinters.com",
-      "homepage": "http://www.catherinewinters.com",
-      "role": "Maintainer"
-    },
-    {
-      "name": "Johannes Schmidt",
-      "email": "mail@2tabs.com",
-      "homepage": "http://2tabs.com",
-      "role": "Maintainer"
-    },
-    {
-      "name": "Chuck Kosman",
-      "email": "chuck@thejibe.com",
-      "homepage": "http://thejibe.com",
+      "name": "BTW",
+      "email": "info@bythewaylabs.com",
+      "homepage": "https://bythewaylabs.com",
       "role": "Maintainer"
     }
   ],
   "support": {
-    "issues": "https://www.drupal.org/project/issues/basic",
-    "irc": "irc://irc.freenode.org/drupal-contribute",
-    "source": "http://cgit.drupalcode.org/basic"
+    "issues": "https://toobad.bythewaylabs.com",
+    "source": "https://github.com/btwlabs/btw_theme.git"
   },
-  "license": "GPL-2.0+",
+  "license": "FU Ma Man",
   "minimum-stability": "dev",
   "require": {}
 }
