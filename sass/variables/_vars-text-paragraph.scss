@@ -1,0 +1,32 @@
+//-----------------------------------------------
+//-----------------------------------------------
+//
+//	VARIABLES - Text Paragraph
+//	Section type which is used to display only text. Useful for article type layouts where you might alternate images and text rows on a page.
+//
+//-----------------------------------------------
+//-----------------------------------------------
+
+// Title Alignment
+// Sets text alignment on the section title, if one is added
+$sb-text_title-alignment: center;
+
+// Subtitle Alignment
+// Sets H3 subtitle text alignment. Values: left, right, or center. (Note: H3 must be added in text editor.)
+$sb-text_subtitle-alignment: center;
+
+// Text Alignment
+// Sets the default text alignment for the section. Values are left, right, and center.
+$sb-text_text-alignment: left;
+
+// Link Alignment
+// Sets alignment of the link or button. Values: left, right, or center.
+$sb-text_link-alignment: center;
+
+// Section Max Width
+// Text column max width; 38em default amounts to ~70-82 characters wide which is optimum for reading long text blocks.
+$sb-text-max-width: 38em;
+
+// Text Padding
+// Sets default spacing around the outer boundaries of Text sections
+$sb-text-padding: 3vw 15px;

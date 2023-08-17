@@ -1,0 +1,130 @@
+//------------------------------------------------
+//------------------------------------------------
+//
+//	VARIABLES: Main Navigation
+//
+//------------------------------------------------
+//------------------------------------------------
+
+// Navigation Right border
+// Vertical Border (Pipe) for separating the nav from an adjacent element in the header
+
+
+// Header Piping Color
+// Set the color of the vertical divider on the right that separates nav from social icons if used
+$header-piping-color: rgba(50,50,50,0.3);
+
+
+// Navbar Height
+// Set Height of Navbar
+
+
+// Large Navbar Height
+// Set Height of Navbar for desktop devices
+$navbar-height-lg: 80px;
+
+
+// Small Navbar Height
+// Set Height of Navbar for Mobile devices
+$navbar-height-sm: 67px;
+
+
+// Content scroll offset
+// Offsets Position of the Content when selecting Nav items that scroll to a point on the same page. Ensures the navbar doesn't cover content at the top of a page on page load. Equal to Height of Navbar
+
+// Large Top Scroll Offset
+$scroll-top-offset-lg: $navbar-height-lg;
+
+
+// Small Top Scroll Offset
+$scroll-top-offset-sm: $navbar-height-sm;
+
+
+// <Body> offset for fixed navigation
+// Offsets <Body> from the top of the page when using a fixed position Navigation, ensuring the nav doesn't cover content on page load. Equal to Height of Navbar
+
+// Large Fixed Navbar Offset
+$fixed-navbar-body-offset-lg: $navbar-height-lg;
+
+
+// Small Fixed Navbar Offset
+$fixed-navbar-body-offset-sm: $navbar-height-sm;
+
+//----------------------------------
+// Navigation Typography
+//----------------------------------
+
+// Nav Font Family
+$nav-font-family: "scandia-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Nav Font Weight
+$nav-font-weight: 400;
+
+// Nav Line Height
+$nav-line-height: 1;
+
+// Nav Text Transform
+$nav-text-transform: capitalize;
+
+
+// Nav Letter Spacing
+$nav-letter-spacing: 0;
+
+
+//----------------------------------
+// Nav font sizes (desktop)
+//----------------------------------
+
+// Medium Nav Font Size
+// Font size for tablet devices (portrait). Breakpoint is max width = 768px
+$nav-font-size-md: 18px;
+
+
+// Large Nav Font Size
+// Font size for breakpoint. Min width = 992px +
+$nav-font-size-lg: 20px;
+
+
+// Extra Large Nav Font Size
+// Font size for desktop devices. Breakpoint is min-width=1200px +
+$nav-font-size-xl: 20px;
+
+// Link Spacing
+
+// Nav Link Padding (Y)
+$nav-link-padding-y: .75rem;
+
+// Nav Link Padding (X)
+$nav-link-padding-x: 15px;
+
+
+//-------------------------
+// Nav Colors
+//--------------------------
+
+// Navbar Background Color
+$navbar-bg-color: transparent;
+
+
+// Navbar Link Color
+$navbar-link-color: $gray-600;
+
+// Navbar Link Color (Hover)
+$navbar-link-hover-color: $primary;
+
+// Navbar Link Background Color
+$navbar-link-bg-color: transparent;
+
+// Navbar Link Background Color (Hover)
+$navbar-link-bg-hover-color: transparent;
+
+// Active Link Color
+$navbar-link-active-color: $primary;
+
+// Active Link Background Color
+$navbar-link-active-bg: $gray-000;
+
+// Navbar Shadow
+$navbar-box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+
+

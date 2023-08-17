@@ -1,0 +1,34 @@
+//------------------------------------
+//------------------------------------
+//
+//	SECTION: HEADER 2: Logo & nav left
+//					   Socials right
+//
+//------------------------------------
+//------------------------------------
+
+// navbar wrapper
+.navbar {
+
+	@include media-breakpoint-up(lg) {
+		// makes sure icons are on the right
+		// when no nav items are present
+		.navbar-collapse {
+			justify-content: space-between;
+			
+			.navbar-nav.ml-auto {
+				margin-left: 0 !important;
+			}
+		}
+		.navbar-brand-wrapper {
+			flex: 0 0 auto;
+		}
+	}
+}
+.site_v2__header-section {
+	.social_links__social-links-list {
+		@include media-breakpoint-up(lg) {
+			border: 0;
+		}
+	}
+}

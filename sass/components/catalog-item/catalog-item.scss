@@ -1,0 +1,195 @@
+//----------------------------------
+//
+//	CATALOG ITEM - paragraph:
+//
+//----------------------------------
+
+// List catalog item code.
+.paragraph--type--catalog-item {
+    padding: 4rem 0;
+    position: relative;
+    border-bottom: none; // need to add variable for this
+    
+    h2.section-title {
+        @include responsive-section-title;
+        @include title-style;
+        margin-bottom: 1rem;
+        color: $catalog-item-title-color;
+    }
+    a.standalone-page-link {
+        text-decoration: none;
+        
+        h2.section-title {
+            color: $link-color;
+            text-decoration: none;
+            transition: 0.2s ease-in all;
+        }
+        &:hover {
+            h2.section-title {
+                color: $link-color-hover;
+                text-decoration: none;
+            }
+        }
+    } 
+    
+    .subtitle {
+        @include responsive-section-subtitle;
+        color: $subtitle-color;
+        font-style: $subtitle-font-style;
+        text-align: $subtitle-text-align;
+    }
+    
+    // col 1
+    .catalog-item-1 {
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 30px;
+        }
+    }
+        
+    // Columns - override bootstrap padding defaults
+    .catalog-item-1 {
+        @include media-breakpoint-up(lg) {
+            padding-right: 30px;
+        }
+    }
+    .catalog-item-2 {
+        @include media-breakpoint-up(lg) {
+            padding-left: 30px;
+        }
+    }
+    
+    // image
+    .catalog_item__catalog-item-image {        
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    // Item link field
+    .catalog_item__catalog-item-link {
+        margin-top: 1.5rem;
+        margin-bottom: 15px;
+        
+        a {
+            display: block;
+        }
+    }
+    
+    // View More button
+    .btn.standalone-page-link {
+        margin-top: 1.5rem;
+    }
+    
+    // description
+    .catalog-item-description {
+        color: $catalog-item-description-color;
+        
+        @include media-breakpoint-up(lg) {
+            font-size: $catalog-description-text-size;
+        }
+        
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+//---------------------------------------------
+//
+//	LIGHT THEME STYLES -
+//
+//---------------------------------------------
+
+.paragraph--type--catalog-item {
+    
+    //-----------------------
+    // light bg dark text
+    //-----------------------
+    &.light-bg-dark-text {
+        background: $bg-light-color !important;
+        
+        h2.section-title,
+        a.standalone-page-link h2.section-title {
+            color: $title-on-light-color;
+        }
+        .catalog-item-description {
+            color: $text-on-light-color;
+        }
+        .catalog_item__catalog-item-link a {
+            @include button-on-light;
+        }
+    }
+    
+    //-----------------------
+    // light bg class
+    //-----------------------
+    &.light-bg {
+        background: $bg-light-color !important;
+    }
+}
+
+//---------------------------------------------
+//
+//	DARK THEME STYLES -
+//
+//---------------------------------------------
+
+.paragraph--type--catalog-item {
+    
+    &.dark-bg-light-text {
+        background: $bg-dark-color !important;
+        
+        h2.section-title,
+        a.standalone-page-link h2.section-title {
+            color: $title-on-dark-color;
+        }
+        .catalog-item-description {
+            color: $text-on-dark-color;
+        }
+        .catalog_item__catalog-item-link a {
+            @include button-on-dark;
+        }
+    }
+    
+    //-----------------------
+    // dark bg class only
+    //-----------------------
+    &.dark-bg {
+        background: $bg-dark-color !important;
+    }
+}
+
+//-----------------------
+//  Light Text class
+//-----------------------
+.paragraph--type--catalog-item {    
+    &.light-text {
+        h2.section-title,
+        a.standalone-page-link h2.section-title {
+            color: $title-on-dark-color;
+        }
+        .catalog-item-description {
+            color: $text-on-dark-color;
+        }
+    }
+}
+
+//------------------------------------
+//  Dark Text class
+//------------------------------------
+.paragraph--type--catalog-item { 
+    &.dark-text {
+        h2.section-title,
+        a.standalone-page-link h2.section-title {
+            color: $title-on-light-color;
+        }
+        .catalog-item-description {
+            color: $text-on-light-color;
+        }
+        .catalog_item__catalog-item-link a {
+            @include button-on-light;
+        }
+    }
+}

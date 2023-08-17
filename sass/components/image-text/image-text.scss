@@ -1,0 +1,434 @@
+//----------------------------------------------
+//----------------------------------------------
+//
+//	SECTION: IMAGE & TEXT (STORY BLOCKS)
+//
+//----------------------------------------------
+//----------------------------------------------
+
+.section-story-block {
+
+    // light color for "zebra" alternating background
+    .alternating-bg {
+        background-color: $section-alternating-bg;
+    }
+
+    .story-block {
+        position: relative;
+        overflow: hidden;
+    }
+
+    //-------------------------------
+    //
+    //  IMAGE OVERLAY
+    //
+    //-------------------------------
+
+    // Overlay div for shading bg images
+    // global ".no-overlay" style is in style.scss
+	.image-overlay {
+
+        // hide image overlay in mobile
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
+
+	//------------------------------
+	//	2 Column Wrapper
+	//	-flex parent
+	//------------------------------
+
+	.story-block-inner {
+		position: relative;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-content: stretch;
+		align-items: stretch;
+        z-index: 1;
+
+		@include media-breakpoint-down(sm) {
+            // padding top is 0 because mobile image shows up above text
+            // and would create unwanted space
+			padding: 0 $section-padding-x-sm $section-padding-y-sm;
+		}
+	}
+
+	//------------------------------
+	//	Columns
+	//	-flex children
+	//------------------------------
+
+	.group-left,
+	.group-right {
+		flex: 0 1 auto;
+		align-content: stretch;
+		justify-content: flex-start;
+		align-items: stretch;
+		background-position: center center;
+		background-size: cover;
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+	}
+
+    // text wrapper for adding bg color/padding over bg photos, etc.
+    .text-wrapper {
+        background: $sb-text-wrapper-bg;
+        padding: $sb-text-wrapper-padding;
+		margin: 0 (-$sb-text-wrapper-padding);
+    }
+
+	// story block title
+	.section-title {
+		@include title-style;
+		@include responsive-section-title;
+		position: relative;
+	}
+
+	h3,
+	.subtitle {
+		@include responsive-section-subtitle;
+		font-style: $subtitle-font-style;
+	}
+
+	// story block body text
+	.story-block-text {
+		@include responsive-body-text;
+
+		// regular unordered list in content
+		// align with title
+		ul {
+		    padding-left: 20px;
+		}
+	}
+
+	// content field link
+	.s2_story_block__story-block-link,
+	.story-block-video {
+		margin: 2em 0 0;
+		text-align: $sb-link-alignment;
+	}
+
+    .s2_story_block__story-block-link {
+        a.btn,
+		.modal-trigger--video {
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+    }
+
+	// Extra image in left/right text and bg image view modes
+    // positioned above text in left/right/center view modes
+    // positioned opposite text in full bg view modes
+	.story-block-extra-image {
+		display: flex;
+		justify-content: $sb-extra-image-align;
+		
+		@include media-breakpoint-down(sm) {
+			margin-bottom: 1em;
+		}
+		
+		figure {
+			margin: 0;
+		}
+	}
+	
+	.left-text-right-bg-image,
+	.right-text-left-bg-image,
+	.left-text-right-image,
+	.right-text-left-image,
+	.center-text-full-bg-image {
+		.story-block-extra-image {
+			margin-bottom: 1em;
+			
+			.s2_story_block__story-block-extra-image {
+				max-width: $sb-extra-image-max-width;
+				width: $sb-extra-image-width;
+			}
+		}
+	}
+
+
+	//-------------------------------------
+    //
+	//	Mobile image
+    //
+	//-------------------------------------
+
+	.story-block-mobile-image {
+
+		@include media-breakpoint-down(sm) {
+			margin: 0 -5vw 2em;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		// hide mobile image in medium-up layouts
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+	}
+
+	// hide bg image on column in mobile
+	.group-left,
+	.group-right {
+		@include media-breakpoint-down(sm) {
+			background-image: none !important;
+		}
+	}
+}
+
+
+//---------------------------------------------
+//
+//	VAR COLOR BG - STORY BLOCK STYLES -
+//  use main color vars as bg colors
+//
+//  Class appears on same container as .section-story-block
+//
+//---------------------------------------------
+
+.section-story-block {
+	&.bg-color-primary {
+		background: $primary;
+	}
+	&.bg-color-secondary {
+		background: $secondary;
+	}
+	&.bg-color-tertiary {
+		background: $tertiary;
+	}
+}
+
+//---------------------------------------------
+//
+//	LIGHT BG - STORY BLOCK STYLES -
+//  for use on light background colors or images
+//
+//  Class appears on same container as .section-story-block
+//
+//---------------------------------------------
+
+.section-story-block {
+	&.light-bg-color {
+		background: $bg-light-color;
+	}
+
+	&.light-bg-dark-text {
+		background: $bg-light-color;
+		
+		
+		// Set image overlay colors
+		// image overlay not used in phone layout
+		@include media-breakpoint-up(md) {
+			.image-overlay {
+				background-color: $overlay-bg-color-light;
+			}
+	
+			// on SB with full img bg and L or R text (not centered or h1),
+			// make overlay only cover half
+			.right-text-full-bg-image {
+				.image-overlay {
+					background: rgba($overlay-gradient-base-color-light, 0.7);
+					background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0) 35%, rgba($overlay-gradient-base-color-light, .25) 42%,rgba($overlay-gradient-base-color-light, 0.35) 46%, rgba($overlay-gradient-base-color-light, 0.55) 55.5%, rgba($overlay-gradient-base-color-light, 0.65) 60%, rgba($overlay-gradient-base-color-light, 0.7) 65%);
+				}
+			}
+			.left-text-full-bg-image {
+				.image-overlay {
+					background: rgba(255,255,255,0.7);
+					background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0.7) 36%, rgba($overlay-gradient-base-color-light, 0.65) 41%, rgba($overlay-gradient-base-color-light, 0.55) 46%, rgba($overlay-gradient-base-color-light, 0.35) 55.5%, rgba($overlay-gradient-base-color-light, .25) 59%,rgba($overlay-gradient-base-color-light, 0) 65%);
+				}
+			}
+		}
+		.section-title {
+			color: $title-on-light-color;
+		}
+
+		.story-block-text {
+			color: $text-on-light-color;
+
+        	a {
+            	color: $link-on-light-color;
+				
+				&:hover {
+					color: $link-on-light-color-hover;
+				}
+        	}
+		}
+
+		// button link and video popup link
+		.story-block-link,
+		.story-block-video {
+			a.btn {
+				@include button-on-light;
+			}
+		}
+	}
+}
+
+
+
+//---------------------------------------------
+//
+//	DARK BG - STORY BLOCK STYLES -
+//  for use on light background colors or images.
+//
+//  Class appears on same container as .story-block,
+//  which is the 1st container inside <section>
+//
+//---------------------------------------------
+
+.section-story-block {
+	&.dark-bg {
+		background: $bg-dark-color;
+	}
+	&.dark-bg-light-text {
+		background: $bg-dark-color;
+		
+		// Set image overlay colors
+		// image overlay not used in phone layout
+		@include media-breakpoint-up(md) {
+			.image-overlay {
+				background-color: $overlay-bg-color-dark;
+			}
+	
+			// on SB with full img bg and L or R text (not centered or h1),
+			// make overlay only cover half
+			.right-text-full-bg-image {
+				.image-overlay {
+					background: rgba($overlay-gradient-base-color-dark,0.7);
+					background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0) 35%, rgba($overlay-gradient-base-color-dark, .25) 42%,rgba($overlay-gradient-base-color-dark, 0.35) 46%, rgba($overlay-gradient-base-color-dark, 0.55) 55.5%, rgba($overlay-gradient-base-color-dark, 0.65) 60%, rgba($overlay-gradient-base-color-dark, 0.7) 65%);
+				}
+			}
+			.left-text-full-bg-image {
+				.image-overlay {
+					background: rgba($overlay-gradient-base-color-dark,0.7);
+					background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0.7) 36%, rgba($overlay-gradient-base-color-dark, 0.65) 41%, rgba($overlay-gradient-base-color-dark, 0.55) 46%, rgba($overlay-gradient-base-color-dark, 0.35) 55.5%, rgba($overlay-gradient-base-color-dark, .25) 59%,rgba($overlay-gradient-base-color-dark, 0) 65%);
+				}
+			}
+		}
+		
+		// story block title h2
+		.section-title {
+			color: $title-on-dark-color;
+		}
+
+		// story block body text
+		.story-block-text,
+		.intro-body {
+			color: $text-on-dark-color;
+
+        	a {
+            	color: $link-on-dark-color;
+				
+				&:hover {
+					color: $link-on-dark-color-hover;
+				}
+        	}
+		}
+
+		// button link
+		.story-block-link,
+		.story-block-video {
+			a.btn {
+				@include button-on-dark;
+			}
+		}
+
+    	// negate on SBs that don't need the overlay
+    	.right-text-left-image,
+    	.left-text-right-image {
+        	.overlay {
+            	background: transparent;
+        	}
+    	}
+
+    	figcaption {
+        	color: $text-on-dark-color;
+    	}
+	}
+}
+
+
+//---------------------------------------------
+//
+//    BG Image Effects
+//
+//----------------------------------------------
+
+.section-story-block {
+	
+    @include media-breakpoint-up(md) {
+        // set image containers for full bg image story blocks
+        // to pos absolute
+        .right-text-full-bg-image,
+        .left-text-full-bg-image,
+        .center-text-full-bg-image {
+        	> .parallax-item,
+            > .fixed,
+            > .no-effect {
+        		position: absolute !important;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+        	}
+        }
+
+        .parallax-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .side-parallax {
+            position: absolute;
+        }
+    }
+}
+
+.sb-title-only {
+	.story-block.center-text-full-bg-image {
+		.section-title {
+			margin: 0;
+		}
+		.story-block-inner {
+			padding: $sb-title-only-padding;
+		}
+	}
+}
+
+//-------------------------------------------
+//
+//  Overrides to text alignment per section
+//
+//-------------------------------------------
+.section-story-block {
+	&.text-center {
+		h2.section-title,
+		.story-block-text,
+		.s2_story_block__story-block-link {
+			text-align: center !important;
+		}
+	}
+	&.text-left {
+		h2.section-title,
+		.story-block-text,
+		.s2_story_block__story-block-link {
+			text-align: left !important;
+		}
+	}
+	&.text-right {
+		h2.section-title,
+		.story-block-text,
+		.s2_story_block__story-block-link {
+			text-align: right !important;
+		}
+	}
+}

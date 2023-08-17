@@ -1,0 +1,120 @@
+//------------------------------------------
+//
+//   Collection :   Card Style 6
+//                  Masonry styling
+//
+//------------------------------------------
+
+// this uses CSS columns to place cards in 
+// an imitation "Masonry" layout
+
+.cards-masonry {
+	
+	.subcard-wrapper {
+		.row {
+			display: block !important;
+			-webkit-perspective: 1;
+			margin: 0;
+			
+			
+			// Use CSS columns for now
+			@include media-breakpoint-up(md) {
+				columns: 2;
+			}
+			@include media-breakpoint-up(lg) {
+				columns: 3;
+			}
+			@include media-breakpoint-up(xl) {
+				columns: 4;
+			}
+			
+			// keeps items from breaking/separating across columns
+			> * {
+				break-inside: avoid;
+			}
+			
+			.card-item {
+				margin-bottom: $grid-gap-unit;
+				display: block !important;
+			}
+			.card {
+				height: auto !important;
+				
+				&.has-card-body {
+					.card-image,
+					.card-fa-icon {
+						padding-bottom: 0;
+					}
+				}
+			}
+			
+			// new tech, not fully supported yet
+			@supports (grid-template-rows: masonry) {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: masonry;
+				grid-auto-flow: dense;
+				//gap: $grid-gap-unit;
+				// align-tracks: stretch;
+				margin-bottom: 0; // if supported, no margin to avoid double spacing
+			}
+		}
+	}
+	
+	&.max-col-4 {
+		.row {
+			// Use CSS columns for now
+			@include media-breakpoint-up(md) {
+				columns: 2;
+			}
+			@include media-breakpoint-up(lg) {
+				columns: 3;
+			}
+			@include media-breakpoint-up(xl) {
+				columns: 4;
+			}
+		}
+	}
+	&.max-col-3 {
+		.row {
+			// Use CSS columns for now
+			@include media-breakpoint-up(md) {
+				columns: 2;
+			}
+			@include media-breakpoint-up(lg) {
+				columns: 3;
+			}
+			@include media-breakpoint-up(xl) {
+				columns: 3;
+			}
+		}
+	}
+	&.max-col-2 {
+		.row {
+			// Use CSS columns for now
+			@include media-breakpoint-up(md) {
+				columns: 2;
+			}
+			@include media-breakpoint-up(lg) {
+				columns: 2;
+			}
+			@include media-breakpoint-up(xl) {
+				columns: 2;
+			}
+		}
+	}
+	&.max-col-1 {
+		.row {
+			// Use CSS columns for now
+			@include media-breakpoint-up(md) {
+				columns: 1;
+			}
+			@include media-breakpoint-up(lg) {
+				columns: 1;
+			}
+			@include media-breakpoint-up(xl) {
+				columns: 1;
+			}
+		}
+	}
+}

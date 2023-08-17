@@ -1,0 +1,49 @@
+//----------------------------------
+//----------------------------------
+//
+//	VARIABLES: Header Info Bar
+//	This sets styles for the optional Business Info bar located above Navigation on desktop, anchored to the screen bottom in mobile
+//
+//----------------------------------
+//----------------------------------
+
+
+// Background color
+// Sets the background color of the info bar
+$info-bar-bg-color: darken($body-bg, 5%);
+
+// Justify Content
+// This sets the alignment of all info items relative to the bar itself. Values: "flex-start" aligns all to the left; "flex-end" aligns all to the right; "space-evenly" spaces all evenly (default) 
+$info-bar-justify-content: space-evenly;
+
+// Text Color
+// Sets the color of the text in the info bar items
+$info-bar-text-color: $base-text-color;
+
+// Text Hover Color
+// Sets the color of text on mouse over
+$info-bar-text-hover-color: #fff;
+
+// Item Background Hover Color
+// Sets the background color of each item in the bar on mouseover
+$info-bar-item-bg-hover-color: $gray-100;
+
+// Text Size
+// Sets the size of the text in an item
+$info-bar-text-size: 12px;
+
+// Icon Size
+// Sets the size of the icon for non-mobile devices
+$info-bar-icon-size: 16px;
+
+// Icon Color
+// Sets the color of item icons
+$info-bar-icon-color: $base-text-color;
+
+// Icon Size - mobile
+// Sets the item icon size in mobile layouts
+$info-bar-icon-size-mobile: 22px;
+
+// Bar Bg Color - Mobile
+// Sets the bar background color for mobile devices, where the bar is fixed to the bottom of the screen.
+$info-bar-bg-color-mobile: $info-bar-bg-color;

@@ -1,0 +1,136 @@
+//-------------------------------------------
+//-------------------------------------------
+//
+//	VARIABLES: Image & Text paragraph
+//
+//-------------------------------------------
+//-------------------------------------------
+
+
+//----------------------------------
+//
+// Text L/R, Image L/R layouts
+// Governs all "Left Text Right Image" and 
+// "Right Text Left Image" display modes 
+// (set in the editor form)
+//
+//----------------------------------
+
+
+// Left Text - Title Alignment
+// Sets default text alignment for the title in sections set to the Left Text, Right Image layout
+$sb-left-text-title-alignment: left;
+
+// Right Text - Title Alignment
+// Sets default text alignment for the title in sections set to the Left Image, Right Text layout
+$sb-right-text-title-alignment: left;
+
+// Link Alignment
+// Sets alignment for the link (button) in the section. Values are left, center, or right
+$sb-link-alignment: left;
+
+// Extra Image Width
+// Sets a default width for an extra image in the section.
+$sb-extra-image-width: 40vw;
+
+// Extra Image Max Width
+// Sets a maximum width for an extra image. 
+$sb-extra-image-max-width: 200px;
+
+// Extra Image Alignment
+// Sets alignment of the extra image within its container. Must be a flexbox value for justify-content.  
+$sb-extra-image-align: center;
+
+
+
+
+//----------------------------------
+//
+// Center Text Full BG Image layout
+// 
+//----------------------------------
+
+// Title Alignment
+// Sets text alignment of the section title
+$sb-center-full-img-title-alignment: center;
+
+// Subtitle Alignment
+// Sets H3 subtitle text alignment. Values: left, right, or center. (Note: H3 must be added in text editor.)
+$sb-center-full-img-subtitle-alignment: center;
+
+// Text Alignment
+// Sets text alignment for the body text. Values are left, right, center
+$sb-center-full-img-text-alignment: left;
+
+// Link Alignment
+// Sets alignment for the link (button) in the section. Values are left, right, center
+$sb-center-full-link-alignment: center;
+
+// Text Max Width
+// Sets the max width on the text of the section. 38em default amounts to ~70-82 characters wide, which is optimum for reading long text blocks.
+$sb-center-full-text-max-width: 38em;
+
+// Title Only Display - set padding
+// Sets the padding when using the .sb-title-only class to modify the Center Text Image & Text block for use as a title only heading or separator.
+$sb-title-only-padding: 4vw;
+
+
+
+
+//----------------------------------
+//
+// Image Top, Text bottom layout
+//
+//----------------------------------
+
+// Image Padding
+// Sets spacing around the outside of the image for all sections of the layout "Image Top, Text bottom"
+$sb-img-top_image-padding: 0px;
+
+// Image Bottom Margin
+// Sets a margin-bottom value on the image wrapper to create spacing between it and text below it. Note: this value will add to any bottom padding if set in the "Image Padding" variable.
+$sb-img-top_image-margin: 4vw;
+
+// Image Container Height
+// Sets the height of the top image. Value units in "vw" or "vh" recommended.
+$sb-img-top_bg-height: 50vw;
+
+// Title Alignment
+// Sets text alignment for the section title
+$sb-img-top_title-alignment: center;
+
+// Subtitle Alignment
+// Sets H3 subtitle text alignment. Values: left, right, or center. (Note: H3 must be added in text editor.)
+$sb-img-top_subtitle-alignment: center;
+
+// Body Text Alignment
+// Sets text alignment for body text in the section. Values: left, right or center
+$sb-img-top_text-alignment: left;
+
+// Link Alignment
+// Sets the alignment of the link or button. Values: left, right or center
+$sb-img-top_link-alignment: center;
+
+// Alternate spacing options
+
+// Outer Wrapper Padding
+$sb-outer-padding: 0;
+
+
+// Content Wrapper Padding
+// Set a padding amount to create an offset between the block edges and the content within.
+$sb-content-block-padding: 0;
+
+// Content Wrapper Background
+// Set a background for the entire section content area.
+$sb-content-block-bg: transparent;
+
+// Text Area Layout Options
+
+// Text Wrapper Background
+// Set a background color on the text area. Recommended to set Text Wrapper Padding value to achieve space between wrapper edge and the start of the text. Set padding on the text area. Useful to separate text from a background image by defining a "box" around text. (For more variation, instead use the custom classes "text-wrapper-dark" and "text-wrapper-light", and the variables are under "Dark/Light Theme Context" group.)
+$sb-text-wrapper-bg: transparent;
+
+// Text Wrapper Padding
+// Set padding on the text area. Useful to separate text from a background image by defining a "box" around text. (For more variation, instead use the custom classes "text-wrapper-dark" and "text-wrapper-light", and the variables are under "Dark/Light Theme Context" group.)
+$sb-text-wrapper-padding: 0;

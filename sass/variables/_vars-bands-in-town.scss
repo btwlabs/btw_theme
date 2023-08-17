@@ -1,0 +1,78 @@
+//-------------------------------------------
+//-------------------------------------------
+//
+//	VARIABLES: Bands in Town Embed paragraph
+//
+//-------------------------------------------
+//-------------------------------------------
+
+// Section background color
+// Sets the background for the section. 
+$section-bit-bg-color: $section-default-bg-color;
+
+// Max Width
+// Sets the max width of the B.I.T. content list of dates within the section. 
+$bit-feed-max-width: 800px;
+
+
+//----------------------------------
+//
+// Section intro - title and body
+// Text styles for the intro of the section
+//
+//----------------------------------
+
+// Section Title Color
+// Sets color for the section title
+$section-bit-title-color: $title-color;
+
+// Title Alignment
+// Text alignment for the section title in the section's intro
+$section-bit-title-alignment: center;
+
+// Body Alignment
+// Sets text alignment for the description text in the section's intro
+$section-bit-body-alignment: center;
+
+// Intro Body text color
+// Sets color of the intro body text for the section
+$section-bit-body-color: $base-text-color;
+
+
+// Buttons and Links
+// 
+
+// Button Background Color
+// Default color for button background
+$bit-link-color: $primary;
+
+// Button Background Color (Hover)
+$bit-button-hover-bg-color: lighten($bit-link-color, 15%);
+
+// Button Text Color
+$bit-button-text-color: #fff;
+
+// Button Text Color (Hover)
+$bit-button-text-hover-color: #fff;
+
+// Button Border Radius
+$bit-button-border-radius: $btn-border-radius;
+
+// Button Border Color (Hover)
+$bit-button-hover-border-color: $bit-button-hover-bg-color;
+
+// Embed text color
+
+// bit-text-color
+$bit-text-color: $base-text-color;
+
+// Details Color
+$bit-details-color: $base-text-color;
+
+// Venue Text Color
+// Sets the color of the venue name in each item
+$bit-venue-color: $bit-link-color;
+
+// Bottom Border Color
+// Sets the color of the bottom border of each event item
+$bit-border-color: rgba(0,0,0,0.3);

@@ -1,0 +1,53 @@
+//-------------------------------------------------------
+//
+//    FOOTER 3: row 1: 
+//					col 1: Custom text
+//              row 2: 
+//					col 1: copyright
+//					col 2: made with twidamig
+//
+//--------------------------------------------------------
+
+.section-footer {
+    &.paragraph--view-mode--footer-3 {
+    
+        // Row 1, Col 1
+        .footer-col-1 {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        // Row 1, Col 2: Custom Text block
+        .footer-custom-text {
+            font-size: $footer-contact-info-font-size;
+            
+            .footer_section__footer-message {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                figure {
+                    margin: 0 0 1em;
+                }
+            }
+        }
+        
+        .footer-credits {
+            margin-top: 1em;
+            padding-top: 1em;
+            border-top: 1px solid $footer-border-color;
+            
+            // copyright
+            .copyright {
+                margin: 0 0 .5em;
+                
+                @include media-breakpoint-up(md) {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+

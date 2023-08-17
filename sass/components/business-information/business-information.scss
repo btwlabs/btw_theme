@@ -1,0 +1,124 @@
+//----------------------------------
+//
+//	SECTION: BUSINESS INFORMATION
+//
+//----------------------------------
+
+
+.section-business-information {
+    background: $section-biz-info-bg-color;
+    padding: $section-biz-info-padding;
+
+    @include media-breakpoint-down(sm) {
+        padding: 15px;
+    }
+
+    .intro {
+        .section-title {
+            text-align: $section-biz-info-title-alignment;
+            color: $section-biz-info-title-color;
+        }
+        .intro-body {
+            text-align: $section-biz-info-body-alignment;
+            color: $section-biz-info-body-color;
+        }
+    }
+
+    // Contact info
+    .info-contact-wrapper {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+        a {
+            color: $section-biz-info-link-color;
+
+            &:hover{
+                color: $section-biz-info-link-color-hover;
+            }
+        }
+
+        // column wrappers
+        .item-wrapper {
+            align-items: flex-start;
+            padding: $biz-info-item-padding;
+
+            background: $biz-info-item-bg;
+            font-size: $biz-info-item-font-size;
+
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        // items inside column
+        .contact-item {
+            display: flex;
+        }
+
+        .contact-icon {
+            margin-right: 15px;
+            min-width: 2em;
+            text-align: right;
+            border-right: 1px solid $border-color;
+            padding-right: 15px;
+
+            i {
+                font-size: 1em;
+                color: $section-biz-info-icon-color;
+            }
+        }
+
+        .contact-detail {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: baseline;
+            margin-bottom: 5px;
+            font-size: $section-biz-info-detail-font-size;
+            color: $section-biz-info-detail-color;
+            word-break: break-word;
+
+            p {
+                margin: 0;
+            }
+
+            span {
+                display: inline-block;
+                margin-right: 5px;
+            }
+
+            span.country {
+                display: none;
+            }
+        }
+    }
+
+    .social_links__social-links-list {
+        display: flex;
+
+        > div {
+            padding: 0 30px 0 0;
+            font-size: 40px;
+            margin-bottom: 20px;
+
+            > div {
+                line-height: 1;
+            }
+        }
+    }
+}
+
+
+// All displays of phone, fax, email information
+.phone,
+.fax,
+.email {
+    span,
+    div {
+        display: inline-block;
+    }
+}

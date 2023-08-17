@@ -1,0 +1,31 @@
+//----------------------------------
+//----------------------------------
+//
+//	VARIABLES: Contact Form
+//	Styles the basic contact form section.
+//
+//----------------------------------
+//----------------------------------
+
+// Section Background Color
+// Sets a background color behind the entire contact form section.
+$section-contact-form-bg-color: $section-default-bg-color;
+
+//----------------------------------
+// Contact Form Intro: Title & Body
+//----------------------------------
+
+// Title Color
+$section-contact-form-title-color: $title-color;
+
+// Title Alignment
+// Set the alignment of the title: left, right, center
+$section-contact-form-title-alignment: center;
+
+// Body Text Color
+// Sets the color of the intro description text
+$section-contact-form-intro-color: $base-text-color;
+
+// Body Text Alignment
+// Sets alignment of the body text: left, right, center
+$section-contact-form-intro-body-alignment: center;

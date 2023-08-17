@@ -1,0 +1,42 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: MODAL
+//
+//----------------------------------
+//----------------------------------
+
+.modal-button-wrapper {
+    padding: 3vw 5vw;
+    text-align: center;
+    background: $section-modal-bg-color;
+    position: relative;
+}
+
+.modal-content {
+    font-size: $modal-body-font-size;
+    
+    .modal-header {
+        padding-left: 2em;
+        border: 0;
+    }
+    .modal-image {
+        figure {
+            margin: 0;
+        }
+    }
+    .modal-body {
+        padding: 1.5em 2em 0;
+    }
+    .modal-footer {
+        justify-content: center;
+        border: 0;
+        padding: 1.5em 2em 1.5em;
+    
+        a.btn {
+            width: 100%;
+            display: block;
+            margin: 0;
+        }
+    }
+}

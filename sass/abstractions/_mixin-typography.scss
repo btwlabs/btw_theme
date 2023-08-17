@@ -1,0 +1,150 @@
+//------------------------------------------------------
+//
+//	MIXINS - TYPOGRAPHY 
+//
+//	location: 
+//      /sass/abstractions/mixins-typography.scss
+//
+//------------------------------------------------------
+
+
+
+// Use REMs with a pixel fallback for font sizing.
+@mixin font-size($font-size){
+	font-size: $font-size;
+	font-size: calc($font-size / $base-font-size)*1rem;
+}
+
+//-----------------------------------
+//
+//	BODY TEXT - Basic sitewide text
+//
+//-----------------------------------
+
+@mixin base-text-style {
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	color: $text-color;
+	letter-spacing: $base-letter-spacing;
+}
+
+@mixin responsive-body-text {
+	@include breakpoint($small-only) {
+		@include font-size($body-text-sm);
+	}
+	@include breakpoint($medium-only) {
+		@include font-size($body-text-md)
+	}
+	@include breakpoint($large-up) {
+		@include font-size($body-text-lg)
+	}
+}
+
+
+//-----------------------------------
+//
+//	RESPONSIVE TITLES
+//
+//-----------------------------------
+
+@mixin title-style {
+	font-family: $title-font-family;
+	font-weight: $title-font-weight;
+	margin: $title-margin;
+	color: $title-color;
+	line-height: $title-line-height;
+	letter-spacing: $title-letter-spacing;
+	text-transform: $title-text-transform;
+}
+
+	//-----------------------------------
+	//	Page TITLE - h1
+	//-----------------------------------
+	
+	@mixin responsive-page-title {
+		text-align: $page-title-text-align;
+		
+		@include breakpoint($small-up) {
+			@include font-size($page-title-sm);
+		}
+		@include breakpoint($medium-up) {
+			@include font-size($page-title-md);
+		}
+		@include breakpoint($large-up) {
+			@include font-size($page-title-lg);
+		}
+	}
+	
+	//-----------------------------------
+	//	Section TITLE - h2
+	//-----------------------------------
+	
+	@mixin responsive-section-title {
+		
+		@include breakpoint($small-up) {
+			@include font-size($section-title-sm);
+		}
+		@include breakpoint($medium-up) {
+			@include font-size($section-title-md);
+		}
+		@include breakpoint($large-up) {
+			@include font-size($section-title-lg);
+		}
+	}
+	
+	//-----------------------------------
+	//	Section SUBTITLE - h3
+	//-----------------------------------
+	
+	@mixin responsive-section-subtitle {
+		
+		@include breakpoint($small-up) {
+			@include font-size($section-subtitle-sm);
+		}
+		@include breakpoint($medium-up) {
+			@include font-size($section-subtitle-md);
+		}
+		@include breakpoint($large-up) {
+			@include font-size($section-subtitle-lg);
+		}
+	}
+	
+	//-----------------------------------
+	//	CARDS TITLE 
+	//-----------------------------------
+	
+	@mixin responsive-card-title {
+	
+		@include breakpoint($small-up) {
+			@include font-size($card-title-sm);
+		}
+		@include breakpoint($medium-up) {
+			@include font-size($card-title-md);
+		}
+		@include breakpoint($large-up) {
+			@include font-size($card-title-lg);
+		}
+	}
+
+//-----------------------------------
+//	CAPTIONS:
+//	these mixins are used in .dark-bg & 
+//	.light-bg styles in _story-blocks.scss
+//-----------------------------------
+
+@mixin caption-light {
+	color: $caption-light-color;
+	
+	&:before, &:after {
+		color: $caption-light-color;
+	}
+}
+@mixin caption-dark {
+	color: $caption-dark-color;
+	
+	&:before, &:after {
+		color: $caption-dark-color;
+	}
+}

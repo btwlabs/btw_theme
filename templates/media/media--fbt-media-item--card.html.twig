@@ -1,0 +1,133 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a fbt media item.
+ *
+ * Available variables:
+ * - media: The media item, with limited access to object properties and
+ *   methods. Only method names starting with "get", "has", or "is" and
+ *   a few common methods such as "id", "label", and "bundle" are available.
+ *   For example:
+ *   - entity.getEntityTypeId() will return the entity type ID.
+ *   - entity.hasField('field_example') returns TRUE if the entity includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   Calling other methods, such as entity.delete(), will result in
+ *   an exception.
+ *   See \Drupal\Core\Entity\EntityInterface for a full list of methods.
+ * - name: Name of the media item.
+ * - content: Media content.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = [
+  'd-flex',
+  'card-item',
+  'media-item',
+  'media-item--type--fbt-media',
+  not media.isPublished() ? 'media--unpublished'
+] %}
+
+{# Set the media type icon code #}
+{% if media.field_media.0.value == 'substack' %}{% set item_type_icon = '<i class="fa-regular fa-newspaper" title="FBT Article"></i>' %}
+{% elseif media.field_media.0.value == 'article' %}{% set item_type_icon = '<i class="fa-regular fa-newspaper" title="Article"></i>' %}
+{% elseif media.field_media.0.value == 'podcast_audio' %}{% set item_type_icon = '<i class="fa-regular fa-microphone" title="Podcast Audio"></i>' %}
+{% elseif media.field_media.0.value == 'podcast_video' %}{% set item_type_icon = '<i class="fa-regular fa-video" title="Podcast Video"></i>' %}
+{% elseif media.field_media.0.value == 'tweet_thread' %}{% set item_type_icon = '<i class="fa-brands fa-twitter" title="Tweet"></i>' %}
+{% elseif media.field_media.0.value == 'organization' %}{% set item_type_icon = '<i class="fa-solid fa-people-group"  title="Organization"></i>' %}
+{% else %}{% set item_type_icon = '<div class="error">The icon for this media type has not been set.</div>' %}
+{% endif %}
+
+<div {{ attributes.addClass(classes) }} >
+
+    {{ title_prefix }}
+    {{ title_suffix }}
+
+  <div class="card-wrapper">
+
+    <div class="classifications">
+        <div class="category-wrapper">
+
+          {{ content.field_category.0 }}
+
+        </div>
+        <div class="media-icon-wrapper">
+
+          <div class="media-type-fa-icon">
+
+            {{ item_type_icon|raw }}
+
+          </div>
+
+        </div>
+    </div>
+
+
+    <a class="card-outer-link" href="{{ media.field_media_fbt_media.0.value }}" target="_none">
+
+      <div class="card has-card-body{% if photo %} photo{% endif %}">
+
+
+
+        <div class="card-image">
+
+          {{ content.field_image }}
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="card-text-group">
+
+            <h3 class="card-title">{{ content.name }}</h3>
+
+            <div class="card-text">{{ content.field_description }}</div>
+
+            <div class="card-attributions">
+
+              <div class="date">
+
+                {{ content.created }}
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    {% if media.field_producer is not empty %}
+    <div class="producers-wrapper">
+
+      <div class="producer">
+
+        {{ content.field_producer }}
+
+      </div>
+
+    </div>
+    {% endif %}
+
+
+  </div>
+
+
+</div>
+

@@ -1,0 +1,211 @@
+//----------------------------------
+//
+//	SOCIAL LINKS - Header/Nav
+//
+//----------------------------------
+
+.site_v2__header-section {
+    .social_links__social-links-list {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 4px;
+        padding-left: 15px;
+        gap: $header-social-icon-margin;
+
+        @include media-breakpoint-up(lg) {
+            border-left: 1px solid $header-piping-color;
+            margin-left: 5px;
+            height: 40px;
+            gap: $header-social-icon-margin;
+        }
+
+        // hide in tablet and mobile phones
+        @include media-breakpoint-down(md) {
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.75rem 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2); // same as nav
+        }
+
+        a {
+            display: block;
+            padding: 0 5px;
+
+            i {
+                transition: all 0.2s ease-in;
+            }
+
+            &:hover {
+                i {
+                    color: $header-social-icon-hover-color;
+                    border-color: $header-social-icon-border-hover-color;
+                    background-color: $header-social-icon-bg-hover-color;
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                &:hover {
+                    i {
+                        color: $header-social-icon-hover-color;
+                    }
+                }
+            }
+        }
+
+        i {
+            font-size: $header-social-icon-size;
+            display: inline-block;
+            color: $header-social-icon-color;
+            margin: 0;
+            border: 1px solid $header-social-icon-border-color;
+            text-align: center;
+            border-radius: $header-social-icon-border-radius;
+            transition: all, 0.2s, ease-in;
+            background-color: $header-social-icon-bg-color;
+
+            &:before {
+                position: relative;
+                top: 1px;
+            }
+
+            @include media-breakpoint-down(md) {
+                font-size: calc(#{$header-social-icon-size} * 1.5);
+                color: $header-social-icon-color-mobile;
+            }
+        }
+    }
+}
+
+
+//----------------------------------
+//
+//	SECTION: SOCIAL LINKS - ICONS
+//
+//----------------------------------
+
+.section-social-links {
+    background: $section-social-links-bg-color;
+
+    @media (max-width:767px) {
+        padding: 50px 0;
+    }
+
+    .intro {
+        .section-title {
+            text-align: $section-social-icons-title-alignment;
+        }
+        .intro-body {
+            text-align: $section-social-icons-body-alignment;
+        }
+    }
+
+    .social_links__social-links-list {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: $social-icon-margin;
+
+        a {
+            display: block;
+
+            &:hover {
+                i {
+                    color: $social-icon-hover-color;
+                    border-color: $social-icon-border-hover-color;
+                    background-color: $social-icon-bg-hover-color;
+                }
+            }
+        }
+
+        i {
+            font-size: $social-icon-size;
+            display: inline-block;
+            color: $social-icon-color;
+            margin: 0;
+            width: calc(#{$social-icon-size} * 2);
+            height: calc(#{$social-icon-size} * 2);
+            border: 1px solid $social-icon-border-color;
+            text-align: center;
+            border-radius: $social-icon-border-radius;
+            line-height: calc(#{$social-icon-size} * 2);
+            transition: all, 0.2s, ease-in;
+            background-color: $social-icon-bg-color;
+
+            &:before {
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+}
+
+//----------------------------------
+//
+//	SOCIAL LINKS - FOOTER
+//
+//----------------------------------
+
+.section-footer {
+    .footer-social {
+        margin: 1em 0;
+    }
+    .social_links__social-links-list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-bottom: 4px;
+        gap: $footer-social-icon-margin;
+
+        @include media-breakpoint-down(sm) {
+            justify-content: center;
+            padding: 0.75rem 15px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+
+            &:hover {
+                i {
+                    color: $footer-social-icon-hover-color;
+                    border-color: $footer-social-icon-border-hover-color;
+                    background-color: $footer-social-icon-bg-hover-color;
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                &:hover {
+                    i {
+                        color: $footer-social-icon-hover-color;
+                    }
+                }
+            }
+        }
+
+        i {
+            font-size: $footer-social-icon-size;
+            display: inline-block;
+            color: $footer-social-icon-color;
+            margin: 0;
+            width: calc(#{$footer-social-icon-size} * 2);
+            height: calc(#{$footer-social-icon-size} * 2);
+            border: 1px solid $footer-social-icon-border-color;
+            text-align: center;
+            border-radius: $footer-social-icon-border-radius;
+            line-height: calc(#{$footer-social-icon-size} * 2);
+            transition: all, 0.2s, ease-in;
+            background-color: $footer-social-icon-bg-color;
+
+            &:before {
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+}
+
+

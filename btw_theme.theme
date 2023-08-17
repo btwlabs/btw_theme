@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * @file
+ * Preprocess functions for btw_theme.
+ */
+
+use Drupal\Core\Cache\CacheableMetadata;
+
+/**
+ * Prepares variables for the html.html.twig template.
+ */
+function btw_theme_preprocess_html(&$variables) {
+    try {
+        $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+    }
+    catch (Exception $e) {
+        // If the database is not yet available, set default values for these
+        // variables.
+        $variables['is_front'] = FALSE;
+    }
+
+    // If we're on the front page.
+    if (!$variables['is_front']) {
+        // Add unique classes for each page and website section.
+        $path = \Drupal::service('path.current')->getPath();
+        $alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+        $alias = trim($alias, '/');
+        if (!empty($alias)) {
+            $name = str_replace('/', '-', $alias);
+            $variables['attributes']['class'][] = 'page-' . $name;
+            list($section,) = explode('/', $alias, 2);
+            if (!empty($section)) {
+                $variables['attributes']['class'][] = 'section-' . $section;
+            }
+        }
+    }
+
+    // Add cachability metadata.
+    $theme_name = \Drupal::theme()->getActiveTheme()->getName();
+    $theme_settings = \Drupal::config($theme_name . '.settings');
+    CacheableMetadata::createFromRenderArray($variables)
+        ->addCacheableDependency($theme_settings)
+        ->applyTo($variables);
+    // Union all theme setting variables to the html.html.twig template.
+    $variables += $theme_settings->getOriginal();
+}
+
+function btw_theme_preprocess_page(&$variables) {
+    $site_config = \Drupal::config('system.site');
+    $variables['site_name'] = $site_config->get('name');
+}
+
+/**
+ * Prepares variables for the field.html.twig template.
+ */
+function btw_theme_preprocess_field(&$variables, $hook) {
+    // Make additional variables available to the template.
+    $variables['bundle'] = $variables['element']['#bundle'];
+}
+
+function btw_theme_preprocess_media(&$variables) {
+    $variables['attributes']['id'] = "media-item-{$variables['media']->id()}";
+    // store whether the item has an image.
+    $variables['photo'] = $variables['media']->hasField('field_image') &&
+        (!empty($variables['media']->get('field_image')->referencedEntities()));
+}
+
+function btw_theme_theme_suggestions_user_alter(&$suggestions, $variables) {
+    $suggestions[] = 'user__' . $variables['elements']['#view_mode'];
+}
+function btw_theme_theme_suggestions_taxonomy_term_alter(&$suggestions, $variables) {
+    $suggestions[] = 'taxonomy_term__' . $variables['elements']['#view_mode'];
+}

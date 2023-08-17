@@ -1,0 +1,54 @@
+//------------------------------------------------------
+//
+//	VARIABLES - LAYOUT - defines layout attributes
+//
+//	location: 
+//      /sass/variables/_variables-layout.scss
+//
+//------------------------------------------------------
+
+
+
+// Set consistent vertical and horizontal spacing units.
+$vert-spacing-unit: 1em;
+$horz-spacing-unit: 1em;
+
+
+
+// height of header element
+// used for content section clearing fixed top pos items
+
+$header-height-sm: 50px;
+$header-height-md: 120px;
+$header-height-lg: 128px;
+$header-height-xl: 128px;
+
+// Use the header height to offset scroll snap
+// when using fixed headers
+// offset position of the content on scroll snap from nav link, equal to height of navbar
+
+$scroll-top-offset-sm: $header-height-sm;
+$scroll-top-offset-md: $header-height-md;
+$scroll-top-offset-lg: $header-height-lg;
+$scroll-top-offset-xl: $header-height-xl;
+
+
+// offset the top of <body> if fixed nav equal to height of navbar
+$fixed-navbar-body-offset-lg: $header-height-sm;
+$fixed-navbar-body-offset-sm: $header-height-md;
+$fixed-navbar-body-offset-sm: $header-height-lg;
+$fixed-navbar-body-offset-sm: $header-height-xl;
+
+
+
+// Space from edge of screen to content on mobile devices
+$mobile-side-margin: 24px;
+
+
+// Content margins
+$small-side-margin: 24px;
+$medium-side-margin: 48px;
+$large-side-margin: 64px;
+
+
+	

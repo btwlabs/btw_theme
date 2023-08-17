@@ -1,0 +1,38 @@
+//----------------------------------
+//
+//	SECTION: TEXT paragraph
+//
+//----------------------------------
+
+.paragraph--type--s2-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $sb-text-padding;
+
+    .text-wrapper {
+        max-width: $sb-text-max-width;
+        width: 100%;
+        
+        // section title
+        h2.section-title {
+            text-align: $sb-text_title-alignment;
+        }
+        
+        // section subtitle (manually added in editor with <h3 class="subtitle>)
+        h3.subtitle {
+            text-align: $sb-text_subtitle-alignment;
+        }
+        
+        // body text
+        .story-block-text {
+            text-align: $sb-text_text-alignment;
+        }
+    }
+    
+    .story-block-text {
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

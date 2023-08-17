@@ -1,0 +1,333 @@
+//--------------------------------------------------
+//
+//	FOOTER - general styles for and layout
+//
+//	location: 
+//      /sass/base/_lists.scss
+//
+//--------------------------------------------------
+
+
+//-------------------------------------------------
+//-------------------------------------------------
+//	
+//	Pre-footer
+//	
+//-------------------------------------------------
+//-------------------------------------------------
+
+.l-pre-footer-wrapper {
+	background-color: $pre-footer-bg-color;
+	position: relative;	
+		
+	.l-constrained {
+		text-align: center;
+		@include unconstrained;
+	}
+}
+
+
+//-------------------------------------------------
+//-------------------------------------------------
+//
+//	Footer
+// 
+//-------------------------------------------------
+//-------------------------------------------------
+
+
+
+// footer outer wrapper
+.l-footer-wrapper {
+	background-color: $section-footer-bg-color;	
+}
+
+// footer inner wrapper
+.l-footer-inner {
+	@extend %clearfix;
+	@include unconstrained;
+	color: $footer-text-color;
+	@include font-size(18px);
+	display: flex;
+	
+	// columns for small layouts
+	@include breakpoint($small-and-medium) {
+		flex-direction: column;
+		align-items: center;
+		flex-wrap: wrap;
+		text-align: center;
+		padding: 3em 0;
+	}
+	
+	// rows for larger layouts
+	@include breakpoint($large-up) {
+		padding: 4vw 3vw;
+		text-align: left;
+	}
+	
+	@include breakpoint($large-up) {
+		flex-wrap: nowrap;
+		flex-direction: row;
+	}
+}
+
+
+//-----------------------------------
+//
+// Footer Logo
+// 
+//-----------------------------------
+
+footer {
+	
+	.footer1 {
+	    font-size: 15px;
+		flex: 0 0 300px;
+		
+		@include breakpoint($small-and-medium) {
+			flex: 0 0 auto;
+			margin: 0 0 30px;
+			padding-bottom: 30px;
+		}
+		
+		@include breakpoint($small-only) {
+			margin-bottom: 30px;
+			border-bottom: 1px solid #777;
+			width: 70%;
+		}
+		
+		.site-name {
+			a {
+				font-size: 20px;
+				text-transform: uppercase;
+				font-weight: bold;
+				color: $footer-link-color;
+			}
+		}
+		
+	}
+	.footer2 {
+		flex: 1 1 auto; // default 1 0 auto
+		display: flex;
+	    flex-direction: row; // default column
+	    justify-content: flex-start; // default space-between
+		flex-wrap: wrap;
+		text-align: left;
+		
+		@include breakpoint($small-and-medium) {
+			padding-bottom: 30px;
+		}
+	    @include breakpoint($large-up) {
+		    padding-left: 5vw;
+	    }
+		
+		.footer-menu {
+			@include breakpoint($small-and-medium) {
+				padding: 0 20px 30px;
+			}
+		}
+	}
+	.footer3 {
+		.footer-cta {
+			
+			@include breakpoint($small-and-medium) {
+				display: flex;
+			}
+			
+			a {
+				display: block;
+				width: 120px;
+				text-align: center;
+				background: yellow;
+				padding: 10px;
+				margin-bottom: 10px;
+				color: #000;
+				font-weight: 700;
+				
+				&:hover {
+					background: #fff;
+					color: #000;
+					text-decoration: none;
+				}
+				
+				&:nth-child(1) {
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+	
+	// overrides to header logo
+	.footer-logo {
+		width: auto;
+		max-width: 200px;
+		padding: 0;
+		margin: 0 0 20px;
+	
+		@include breakpoint($small-only) {
+		    padding: 0;
+		    margin: 30px auto 10px;
+			
+			&:nth-child(1) {
+				margin-right: 20px;
+			}
+		}
+		
+		h1 {
+			margin: 0;
+		}
+	}
+}
+
+
+//-----------------------------------
+//
+// Footer Nav
+// 
+//-----------------------------------
+
+.footer-menu {
+	
+	@include breakpoint($small-only) {
+		padding-bottom: 30px;
+		border-bottom: 1px solid #777;
+		margin-bottom: 30px;
+	}
+	@include breakpoint($medium-up) {
+		padding-top: 12px;
+		flex: 1 1 auto;
+	}
+	
+	> ul.menu {
+	    margin: 0;
+	    padding: 0;
+	    
+	    @include breakpoint($medium-up) {
+	    	//display: flex;
+	    }
+	    
+	     > li.menu-item {
+		    display: block;
+		    margin: 0 20px 0 0;
+		    vertical-align: top;
+		    //flex: 1 1 auto;
+		    padding: 0; // default 0 0 10px
+		    
+		    @include breakpoint($small-only) {
+			    margin: 0 0 10px 0;
+			    padding: 0;
+		    }
+	
+		    
+		    a {
+			    font-size: 15px;
+			    margin-bottom: 5px;
+			    display: block;
+			    color: $footer-link-color;
+			    font-weight: normal;
+			    text-transform: capitalize;
+			    letter-spacing: 0;
+			    
+			    &:hover {
+				    color: $footer-link-hover-color;
+			    }
+			}
+		}
+		
+		ul.menu {
+		    display: block;
+		    margin: 0;
+		    padding: 0;
+		    
+		    li {
+			    list-style-type: none;
+			    
+			    .sub-nav {
+				    font-size: 15px;
+				    color: $footer-link-color;
+				    
+				    &:hover {
+					    color: $footer-link-hover-color;
+				    }
+				}
+		    }
+		}
+	}
+}
+
+
+//-------------------------------------------------
+//-------------------------------------------------
+//
+//	Post Footer
+//	
+//-------------------------------------------------
+//-------------------------------------------------
+
+.l-post-footer-wrapper {
+	padding: 30px 0;
+	background-color: $post-footer-bg-color;
+	text-align: center;
+	@include font-size(16px);
+}
+	
+//-----------------------------------
+// Privacy
+//-----------------------------------
+
+.menu--privacy-footer {
+	ul {
+		margin: 0;
+		padding: 0;
+		
+		li {
+			display: inline-block;
+			margin-right: 20px;
+			padding: 0;
+			
+			a {
+				color: $footer-link-color;
+				
+				&:hover {
+					color: $footer-link-hover-color;
+				}
+			}
+		}
+	}
+}
+
+//-----------------------------------
+// Copyright
+//-----------------------------------
+
+.footer-copyright {
+	color: $footer-text-color;
+	display: inline-block;
+	
+	p {
+		margin-bottom: 5px;
+		
+		@include breakpoint($small-only) {
+			font-size: 15px;
+		}
+	}
+	
+	a {
+		color: $footer-link-color;
+		
+		&:hover {
+			color: $footer-link-hover-color;
+		}
+	}
+}
+
+// Site credits
+.credits {
+	color: #888;
+	font-size: 13px;
+	margin-top: 20px;
+	
+	a {
+		color: #999;
+	}
+}

@@ -1,0 +1,323 @@
+//----------------------------------
+//----------------------------------
+//
+// VARIABLES: Hero Section
+// 
+//----------------------------------
+//----------------------------------
+
+// Background
+
+// Background Color
+// Sets a background color on the section.
+$section_hero_bg_color: $section-default-bg-color;
+
+// Padding
+// Adds padding to the outermost container of the hero section.
+$section_hero_padding: 0;
+
+
+//--------------------------------
+// Background Image
+// -------------------------------
+
+// Size
+// Sets the background size of the hero image. Requires CSS values for background-size.
+$hero-bg-size: cover;
+
+// Position
+// CSS background-position value. Sets the position of the bg image on the X and Y axis.
+$hero-bg-position: center center;
+
+// Fixed Effect Height (Mobile)
+// Sets the height of the hero in mobile when using a fixed background image. Default is "iPhone X" height, portrait orientation
+$fixed-effect-max-height-mobile: 812px;
+
+
+// Hero Height
+	// Height (mobile)
+	// Sets the height of the Hero Section for mobile devices. Recommended to use "vh" units. 100vh = 100% of the device screen height.
+	$hero-min-height-sm: 100vh;
+	
+	
+	// Height (Tablet and Desktop)
+	// Sets the height of the hero section. A value of 100vh will be the full height of the viewport on any device.
+	$hero-min-height-lg: 100vh;
+
+
+//----------------------------------
+//
+// Hero Overlay
+// 
+//----------------------------------
+
+// Overlay Color
+// Sets a color, ideally not fully opaque, between the bg image and the text content. Useful for reducing contrast so text is legible. 
+$hero-overlay-color: rgba(0,0,0,0.6);
+
+// Overlay Color (Mobile)
+$hero-mobile-overlay-color: rgba(0,0,0,0.6);
+
+
+
+//----------------------------------
+//
+// Wrappers
+// 
+//----------------------------------
+
+
+// Inner Wrapper Padding
+// Sets padding on the container inside the hero section with the class .hero-wrapper
+$hero-wrapper-padding: 0;
+
+
+// Title Wrapper Margin
+// Sets margin, space between items, on the wrapper around the hero title
+$hero-title-wrapper-margin: 0px;
+
+// Title Wrapper Padding
+// Sets padding, or spacing around, the title. Helpful when adding a bg color to the title.
+$hero-title-wrapper-padding: 0px;
+
+
+//----------------------------------
+//
+// Content Wrapper
+// The hero content wrapper contains the hero logo and the hero title and subtitle.
+//
+//----------------------------------
+
+
+// Wrapper Background
+// Sets a background on the hero content wrapper
+$hero-content-wrapper-bg: transparent;
+
+// Wrapper Padding (Small)
+// Sets padding space inside the hero content wrapper between the wrapper and its contents. This is useful when added a bg color to this wrapper
+$hero-content-wrapper-padding-sm: 4vw;
+
+// Wrapper Padding (Medium)
+$hero-content-wrapper-padding-md: 4vw;
+
+// Wrapper Padding (Large)
+$hero-content-wrapper-padding-lg: 4vw;
+
+// Wrapper Margin (Small)
+$hero-content-wrapper-margin-sm: 0;
+
+// Wrapper Margin (Medium)
+$hero-content-wrapper-margin-md: 0;
+
+// Wrapper Margin (Large)
+$hero-content-wrapper-margin-lg: 0;
+
+// Wrapper Max Width (Small)
+$hero-content-wrapper-max-width-sm: 90vw;
+
+// Wrapper Max Width (Medium)
+$hero-content-wrapper-max-width-md: 70vw;
+
+// Wrapper Max Width (Large)
+$hero-content-wrapper-max-width-lg: 60vw;
+
+// Wrapper Alignment (Mobile)
+$hero-content-align-mobile: flex-end;
+
+// Content wrapper border radius
+// Sets a border radius - roundness - to the edges of the content wrapper
+$hero-content-wrapper-border-radius: 0px;
+
+
+//----------------------------------
+// Logo
+//----------------------------------
+
+// Logo Width (Small)
+// Sets the logo width in a mobile device layout. Default value is a percentage of the viewport's width
+$hero-logo-width-sm: 80vw;
+
+// Logo Max Width (Small)
+// Sets the maximum logo width in a mobile device layout.
+$hero-logo-max-width-sm: 250px;
+
+// Logo Width (Medium)
+// Sets the logo width in a tablet device layout. Default value is a percentage of the viewport's width
+$hero-logo-width-md: 40vw;
+
+// Logo Max Width (Medium)
+// Sets a maximum width the logo will appear on a tablet's device width
+$hero-logo-max-width-md: 400px;
+
+// Logo Width (Large)
+// Sets a width for the logo on a desktop device. Default value is a percentage of the viewport's width
+$hero-logo-width-lg: 30vw;
+
+// Logo Max Width (Large)
+// Sets a maximum width the logo will appear on a desktop device.
+$hero-logo-max-width-lg: 600px;
+
+
+// Logo Margin
+// Sets space between the logo and the titles within the hero content
+$hero-logo-margin: 0 0 30px 0;
+
+
+//----------------------------------
+//
+// H1 Heading
+// 
+//----------------------------------
+
+// Title Font Family
+// Sets the font family for the hero title
+$hero-title-font-family: $title-font-family;
+
+
+// Title Font Weight
+// Sets font weight for the hero title
+$hero-title-font-weight: $title-font-weight;
+
+// Title Margin
+// Sets the margin, space between items, around the hero title.
+$hero-title-margin: 0 0 0.5em 0;
+
+
+// Title Font Color
+// Sets the color of the hero title.
+$hero-title-color: $title-color;
+
+
+// Title Font Alignment
+// Sets text alignment on the hero title
+$hero-title-alignment: center;
+
+
+// Title Size (Small)
+// Sets the font size of the hero title in mobile
+$hero-title-sm: 30px;
+
+
+// Title Size (Medium)
+// Sets the size of the hero title on tablet devices
+$hero-title-md: 38px;
+
+// Title Size (Large)
+// Sets the font size of the hero title on desktop
+$hero-title-lg: 42px;
+
+// Title Text Transform
+// Transform the case of the title - none, uppercase, lowercase, capitalize
+$hero-title-text-transform: none;
+
+
+//-------------------------
+// H2 Subtitle
+//-------------------------
+
+// Subtitle Font Family
+$hero-subtitle-font-family: $base-font-family;
+
+// Subtitle Font Weight
+$hero-subtitle-font-weight: normal;
+
+// Subtitle Margin
+$hero-subtitle-margin: 0 0 1.5em 0;
+
+// Subitle Font Color
+
+$hero-subtitle-color: $title-color;
+
+// Subtitle Font Alignment
+$hero-subtitle-alignment: center;
+
+
+// Subtitle Size (Small)
+$hero-subtitle-sm: 18px;
+
+// Subtitle Size (Medium)
+$hero-subtitle-md: 20px;
+
+// Subtitle Size (Large)
+$hero-subtitle-lg: 24px;
+
+// Subtitle text transform
+// Transform the case of the subtitle - none, uppercase, lowercase, capitalize
+$hero-subtitle-text-transform: none;
+
+
+// Button Link
+
+// Link Alignment
+$hero-link-alignment: center;
+
+
+// Two Column Layout
+
+// Hero 2-column - content alignment
+$hero-2col-align-items: center;
+
+// Hero 2-column - left item - margin
+// Set the space between the image item and the text item
+$hero-2col-left-item-margin: 5vw;
+
+
+
+
+//----------------------------------
+//
+// Minimal Hero Style
+//  This style goes with the class .hero-minimal, which when added to a hero makes it small and focused on the label.
+//
+//----------------------------------
+
+// Minimal Hero BG Color
+// The background color of the hero in minimal style
+$hero-min-bg-color: transparent;
+
+
+// Minimal Hero Padding
+// Padding around the hero in minimal style
+$hero-min-padding: 5vw 40px;
+
+// Minimal Hero Content - max Width - in tablet and desktop device widths
+// Padding around the hero in minimal style
+$hero-min-content-wrapper-max-width: 40vw;
+
+
+// Hero Minimal - Title, Subtitle, and Link
+//  Styles for the title, subtitle, and link of the minimal hero
+
+
+// Hero Minimal - Title Wrapper Margin
+// Sets margin on the title wrapper. Format = [top] [right] [bottom] [left]
+$hero-min-title-wrapper-margin: 0px;
+
+// Hero Minimal - Title Wrapper Padding
+// Sets margin on the title wrapper. Format = [top] [right] [bottom] [left]
+$hero-min-title-wrapper-padding: 0px;
+
+// Font Family
+$hero-min-title-font-family: $title-font-family;
+
+// Title Margin
+$hero-min-title-margin: 0 0 0.5em 0;
+
+// Title Color
+$hero-min-title-color: $title-color;
+
+// Title Alignment
+$hero-min-title-alignment: center;
+
+// Subtitle Font Family
+$hero-min-subtitle-font-family: $base-font-family;
+
+// Subtitle Margin
+$hero-min-subtitle-margin: 0 0 1.5em 0;
+
+// Subtitle Text Color
+$hero-min-subtitle-color: $subtitle-color;
+
+// Subtitle Alignment
+$hero-min-subtitle-alignment: center;
+

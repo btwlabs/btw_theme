@@ -1,0 +1,21 @@
+global:
+  header: true
+  version: VERSION
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.progress
+    - core/jquery.once
+  js:
+    js/btw_theme.js: {}
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js': { type: external, minified: true }
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js': { type: external, minified: true }
+    'https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.0/smooth-scroll.min.js': { type: external, minified: true, attributes: { crossorigin: 'anonymous' } }
+    'https://unpkg.com/swiper/swiper-bundle.min.js': { type: external, minified: true }
+    'https://kit.fontawesome.com/27b427ce9b.js': { type: external, attributes: { crossorigin: 'anonymous' } }
+  css:
+    base:
+      css/main.css: {}
+    component:
+      'https://unpkg.com/swiper/swiper-bundle.min.css': { type: external, minified: true }

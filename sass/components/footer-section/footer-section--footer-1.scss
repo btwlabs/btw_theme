@@ -1,0 +1,54 @@
+//-------------------------------------------------------
+//
+//    FOOTER 1: row 1:  
+//					col 1: Logo/Company name, social links
+//					col 2: Business contact info
+//					col 3: Custom text
+//              row 2: 
+//					col 1: copyright
+//					col 2: made with twidamig
+//
+//--------------------------------------------------------
+
+.section-footer {
+	&.paragraph--view-mode--footer-1 {
+	
+		// Row 1, Col 1
+		.footer-col-1 {
+			font-size: $footer-branding-font-size;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+		
+			@include media-breakpoint-down(md) {
+				align-items: center;
+			}
+		}
+		
+		// footer col 3
+		// Custom Text block
+		.footer-custom-text {			
+			.footer_section__footer-message {
+				@include media-breakpoint-up(md) {
+					align-items: flex-end;
+				}
+			}
+		}
+		
+		// Row 2
+		.footer-credits {
+			margin-top: 1em;
+			padding-top: 1em;
+			border-top: 1px solid $footer-border-color;
+			
+			// Col 1: copyright
+			.copyright {
+				margin: 0 0 .5em;
+				
+				@include media-breakpoint-up(md) {
+					margin: 0;
+				}
+			}
+		}
+	}
+}

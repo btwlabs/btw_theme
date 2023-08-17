@@ -1,0 +1,78 @@
+//------------------------------------
+//------------------------------------
+//
+//	SECTION: HEADER 4: Logo and Nav Toggle
+//					   Nav is collapsed 
+//					   by default
+//
+//------------------------------------
+//------------------------------------
+
+// navbar wrapper
+.navbar {
+	padding: 0 15px;
+
+	@include media-breakpoint-up(md) {
+		padding: 0;
+	}
+	.container,
+	.container-fluid {
+		justify-content: space-between;
+		
+		@include media-breakpoint-up(lg) {
+			justify-content: space-between;
+		}
+	}
+}
+
+// logo
+.navbar-brand-wrapper {
+	flex: 1 1 auto;
+}
+
+// nav only
+.navbar-nav {
+	text-transform: $nav-text-transform;
+
+	.nav-item {
+		position: relative;
+
+		&:last-child {
+			.nav-link {
+				border: 0;
+			}
+		}
+	}
+	.nav-link {
+		color: $navbar-link-color;
+		font-family: $nav-font-family;
+		padding: $nav-link-padding-y $nav-link-padding-x !important;
+		letter-spacing: $nav-letter-spacing;
+
+		// for pseudoclass animation
+		position: relative;
+		z-index: 1;
+
+		color: $navbar-link-color-mobile;
+		padding: .75rem 15px;
+		border-bottom: 1px solid rgba(255,255,255, 0.2);
+		text-align: $navbar-link-text-align-mobile;
+
+		&:hover {
+			color: $navbar-link-hover-color-mobile;
+			background-color: $navbar-link-bg-hover-color-mobile;
+		}
+
+		&:active {
+			color: $navbar-link-active-color-mobile;
+			background-color: $navbar-link-active-bg-mobile;
+		}
+	}
+}
+
+.navbar-collapse  {
+	background: $navbar-bg-color-mobile;
+	width: 100%;
+	margin: 0 -30px;
+	order: 4;
+}

@@ -1,0 +1,117 @@
+//------------------------------
+//	STORY BLOCK:
+//  RIGHT text, LEFT BG image
+//------------------------------
+
+.story-block {
+    &.right-text-left-bg-image {
+
+        @include media-breakpoint-up(md) {
+
+            // IMG column
+            .group-left {
+                width: 50%;
+                background-position: center center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                // fixed images only span width of left container
+                &.fixed {
+                    background-size: 50% auto;
+                    background-repeat: no-repeat;
+                    background-position: left top;
+                }
+            }
+
+            // TEXT column
+            .group-right {
+                width: 50%;
+                padding: 8vw;
+            }
+        }
+
+        .section-title {
+            text-align: $sb-right-text-title-alignment;
+        }
+    }
+}
+
+//---------------------------------------------
+//   Text Wrapper Overlaps Image
+//----------------------------------------------
+
+.section-story-block {
+    &.text-wrapper-overlap {
+        .right-text-left-bg-image {
+            @include media-breakpoint-up(md) {
+                .group-left {
+                    width: 65%;
+                }
+                .group-right {
+                    width: 35%;
+                    position: relative;
+                    left: -11vw;
+                    z-index: 0;
+                    padding: 8vw 0;
+                }
+                .text-wrapper {
+                    margin: 0 -4vw;
+                    padding: 4vw;
+                    align-self: center;
+                }
+                .story-block-extra-image {
+                    margin: 0 -4vw 1em;
+                }
+            }
+        }
+    }
+}
+
+// Image width 55%, text width 45%
+.sb-image55-text45 {
+    .story-block {
+        &.right-text-left-bg-image {
+            @include media-breakpoint-up(md) {
+
+                // text col
+                .group-right {
+                    width: 45%;
+                }
+
+                // img col
+                .group-left {
+                    width: 55%;
+
+                    &.fixed {
+                        background-size: 55% auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Image width 45%, text width 55%
+.sb-image45-text55 {
+    .story-block {
+        &.right-text-left-bg-image {
+            @include media-breakpoint-up(md) {
+
+                // text col
+                .group-right {
+                    width: 55%;
+                }
+
+                // img col
+                .group-left {
+                    width: 45%;
+
+                    &.fixed {
+                        background-size: 45% auto;
+                    }
+                }
+            }
+        }
+    }
+}

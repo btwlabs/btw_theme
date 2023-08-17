@@ -1,0 +1,30 @@
+//------------------------------------------
+//
+//   Collection :   Card Style 1:
+//                  Column/Stacked content
+//                  Img padding 
+//
+//------------------------------------------
+
+.cards-stacked-1 {
+	
+	.subcard-wrapper {
+		.row {
+			display: grid;
+			margin: 0;
+		}
+	}
+	
+	.card {
+		&.has-card-body {
+			.card-image,
+			.card-fa-icon {
+				padding-bottom: 0;
+			}
+		}
+		
+		.card-fa-icon {
+			padding-top: calc(#{$card-padding} * 1.5);
+		}
+	}
+}

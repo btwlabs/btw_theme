@@ -1,0 +1,354 @@
+//------------------------------------
+//------------------------------------
+//
+//	SECTION: HEADER
+//
+//------------------------------------
+//------------------------------------
+
+#site-header {
+	&.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+	}
+}
+
+// navbar wrapper
+.navbar {
+	z-index: 100;
+	background-color: $navbar-bg-color;
+	box-shadow: $navbar-box-shadow;
+	padding: 0;
+	top: 0;
+	right: 0;
+	left: 0;
+
+	@include media-breakpoint-down(sm) {
+		min-height: $navbar-height-sm;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: 0 15px;
+
+		.container,
+		.container-fluid {
+			justify-content: flex-start;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		min-height: $navbar-height-lg;
+
+		.container,
+		.container-fluid {
+			padding: 0 30px;
+		}
+		
+		// makes sure icons are on the right
+		// when no nav items are present
+		.navbar-collapse {
+			justify-content: flex-end;
+		}
+	}
+
+	.navbar-toggler {
+		border: $navbar-toggler-border;
+		padding: 0;
+		width: 38px;
+		height: 36px;
+		font-size: 24px;
+
+		// when toggler shows, order as last item
+		// if there is a cart item
+		@include media-breakpoint-down(md) {
+			order: 3;
+		}
+	}
+
+	// font awesome icon added in html markup
+	.navbar-toggler-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		color: $navbar-toggler-color;
+	}
+
+	//----------------------------
+	//  SNIPCART CART BUTTON
+	//----------------------------
+	.cart-button-wrapper {
+		padding-left: 10px;
+		margin-left: 10px;
+		border-left: 1px solid $header-piping-color;
+		display: flex;
+
+		// make last item in navbar on the right
+		order: 4;
+
+		@include media-breakpoint-down(md) {
+			overflow: hidden;
+			border: 0;
+			margin: 0 20px 0 0;
+			padding: 0;
+			order: 2;
+		}
+		@include media-breakpoint-up(lg) {
+			height: 40px;
+		}
+	}
+
+	// Snipcart cart icon/total items
+	button.snipcart-checkout {
+		background: transparent;
+		border: 0;
+		padding: 0;
+		margin: 0;
+
+		// <span> wrapper inside button
+		.cart-icon-item-number {
+			padding: 4px 8px;
+			background: $cart-button-bg-color;
+			border-radius: 3px;
+			display: flex;
+			align-items: center;
+			transition: all 0.2s ease-in;
+
+			@include media-breakpoint-down(md) {
+				padding: 5px 0;
+			}
+
+			&:hover {
+				background: $cart-button-bg-hover-color;
+			}
+
+			// shopping cart icon
+			i {
+				color: $cart-icon-color;
+				font-size: 18px;
+				line-height: 1;
+				margin-right: 8px;
+
+				@include media-breakpoint-down(sm) {
+					font-size: 15px;
+					margin-right: 5px;
+				}
+			}
+
+			// cart item count
+			.snipcart-items-count {
+				font-family: sans-serif;
+				padding: 5px 6px 5px;
+				background: $cart-count-bg;
+				color: $cart-count-text-color;
+				border-radius: 3px;
+				line-height: 1;
+				font-size: 14px;
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+// logo
+.navbar-brand-wrapper {
+	flex: 1 1 auto;
+}
+.navbar-brand {
+	@include media-breakpoint-down(sm) {
+		width: $navbar-logo-width-sm;
+	}
+	@include media-breakpoint-up(md) {
+		width: $navbar-logo-width-md;
+	}
+	@include media-breakpoint-up(lg) {
+		width: $navbar-logo-width-lg;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto !important;
+		width: 100%;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: 10px 0;
+	}
+
+	// Site Name (when logo image not used)
+	.site-name {
+		font-family: $navbar-brand-font-family;
+		color: $navbar-brand-font-color;
+		font-weight: $navbar-brand-font-weight;
+		letter-spacing: $navbar-brand-letter-spacing;
+		line-height: 1;
+
+		@include media-breakpoint-down(sm) {
+			font-size: $navbar-brand-font-size-sm;
+			
+			// give site-name height in mobile so when nav toggles
+			// the header height doesn't collapse
+			min-height: 47px;
+			display: flex;
+			align-items: center;
+			line-height: 1;
+		}
+		@include media-breakpoint-only(md) {
+			font-size: $navbar-brand-font-size-md;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: $navbar-brand-font-size-lg;
+		}
+	}
+}
+
+// nav only
+.navbar {
+	.navbar-nav {
+		text-transform: $nav-text-transform;
+	
+		.nav-item {
+			position: relative;
+	
+			&:last-child {
+				.nav-link {
+					border: 0;
+				}
+			}
+		}
+		.nav-link {
+			color: $navbar-link-color;
+			font-family: $nav-font-family;
+			padding: $nav-link-padding-y $nav-link-padding-x;
+			letter-spacing: $nav-letter-spacing;
+			font-weight: $nav-font-weight;
+	
+			// for pseudoclass animation
+			position: relative;
+			z-index: 1;
+	
+			// mobile
+			@include media-breakpoint-down(md) { // 768px down
+				color: $navbar-link-color-mobile;
+				font-size: $nav-font-size-mobile;
+				padding: .75rem 15px;
+				border-bottom: 1px solid rgba(255,255,255, 0.2);
+				text-align: $navbar-link-text-align-mobile;
+			}
+			@include media-breakpoint-up(lg) { // 992px +
+				font-size: $nav-font-size-lg;
+			}
+			@include media-breakpoint-up(xl) { // 1200px +
+				font-size: $nav-font-size-xl;
+			}
+	
+			&:hover {
+				color: $navbar-link-hover-color;
+				background-color: $navbar-link-bg-hover-color;
+	
+				// mobile
+				@include media-breakpoint-down(md) {
+					color: $navbar-link-hover-color-mobile;
+					background-color: $navbar-link-bg-hover-color-mobile;
+				}
+			}
+	
+			&:active {
+				color: $navbar-link-active-color;
+				background-color: $navbar-link-active-bg;
+	
+				@include media-breakpoint-down(md) {
+					color: $navbar-link-active-color-mobile;
+					background-color: $navbar-link-active-bg-mobile;
+				}
+			}
+		}
+	}
+}
+
+// mobile
+.navbar-collapse  {
+	@include media-breakpoint-down(md) {
+		background: $navbar-bg-color-mobile;
+		width: 100%;
+		margin: 0 -15px;
+		order: 4;
+	}
+}
+.info-bar,
+.mobile-info-bar {
+	width: 100%;
+	background-color: $info-bar-bg-color;
+	color: $info-bar-text-color;
+	font-size: $info-bar-text-size;
+	display: flex;
+	justify-content: $info-bar-justify-content;
+	align-items: center;
+	z-index: 101;
+	position: relative;
+	
+	@include media-breakpoint-down(sm) {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+		height: 50px;
+		background-color: $info-bar-bg-color-mobile;
+		
+		.value {
+			display: none;
+		} 
+	}
+	
+	// link - wraps around icon and text
+	a {
+		color: $info-bar-text-color;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		padding: 10px 0;
+	}
+	
+	.phone,
+	.email,
+	.address {
+		padding: 0 15px;
+		
+		&:hover {
+			background-color: $info-bar-item-bg-hover-color;
+			color: $info-bar-text-hover-color;
+		}
+	}
+	.contact-icon {
+		margin-right: 8px;
+		font-size: $info-bar-icon-size;
+		color: $info-bar-icon-color;
+		
+		@include media-breakpoint-down(sm) {
+			margin: 0;
+			font-size: $info-bar-icon-size-mobile;
+		}
+	}
+}
+
+// Hide info bar located in header in mobile layout
+// instance in footer is shown in mobile
+#site-header {
+	.info-bar {
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
+}
+
+
+// Show info bar located below header in mobile only, hide in other layouts
+.mobile-info-bar {
+	@include media-breakpoint-up(sm) {
+		display: none;
+	}
+}

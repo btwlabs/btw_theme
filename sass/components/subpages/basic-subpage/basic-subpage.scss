@@ -1,0 +1,90 @@
+//------------------------------------
+//------------------------------------
+//
+//	BASIC subpage
+//
+//------------------------------------
+//------------------------------------
+
+.basic-subpage {
+    background: $subpage-bg-color;
+
+
+    figure {
+        margin: 2em 0;
+    }
+
+	// Hero Image
+	.basic-content-hero {
+		height: $subpage-hero-height;
+        min-height: auto;
+		flex: 0 0 100%;
+		overflow: hidden;
+        background-color: $subpage-hero-bg-color;
+
+		img {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			object-fit: cover;
+		}
+	}
+
+	// Page Title
+	.page-title {
+		padding: 0;
+		text-align: $page-title-text-align;
+
+		@include media-breakpoint-down(md) {
+			padding-top: 8vw;
+		}
+		@include media-breakpoint-up(lg) {
+			padding-top: 5vw;
+		}
+
+		h1.page-title,
+		h1.title {
+			@include title-style;
+			@include responsive-page-title;
+		}
+	}
+
+    // Section titles
+    h2 {
+        color: $subpage-title-color;
+    }
+
+	// Main Content
+	.section-content-main {
+		padding-bottom: 8vw;
+        color: $subpage-body-text-color;
+
+		@include media-breakpoint-down(md) {
+			padding-bottom: 16vw;
+		}
+
+        .section {
+            // reset defaults
+            padding: 0;
+
+            // override styles on sb containers
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+	}
+
+	// Section titles
+	.section-title {
+		@include responsive-section-title;
+		@include title-style;
+	}
+
+	.subtitle {
+		@include responsive-section-subtitle;
+		color: $subtitle-color;
+		font-style: $subtitle-font-style;
+		text-align: $subtitle-text-align;
+	}
+}

@@ -1,0 +1,68 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: WUFOO CONTACT FORM
+//
+//----------------------------------
+//----------------------------------
+
+.section-contact {
+  background: $section-contact-bg-color;
+
+    .intro {
+        .section-title {
+            text-align: $section-contact-intro-title-alignment;
+        }
+        .intro-body {
+            text-align: $section-contact-intro-body-alignment;
+        }
+    }
+
+    .contact-form-wrapper {
+        max-width: 720px;
+        margin: 0 auto;
+        background: $contact-form-bg-color;
+        padding: $contact-form-padding;
+        border-radius: $contact-form-border-radius;
+    }
+
+    .contact-detail {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        margin-bottom: 10px;
+
+        i {
+            flex: 0 0 20px;
+            margin-right: 20px;
+            text-align: right;
+            font-size: 18px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        span.country {
+            display: none;
+        }
+    }
+    .contact-name {
+        padding: 10px 0;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $border-color;
+        font-weight: bold;
+        font-size: 1.125em;
+    }
+
+    // hide h2 title in form
+    .wufoo-form-container {
+        form.wufoo {
+            .info {
+                h2 {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+//------------------------------------------------------
+//
+//	MIXINS - LAYOUT 
+//
+//	location: 
+//      /sass/abstractions/mixins-layout.scss
+//
+//------------------------------------------------------
+
+
+// Clearfix
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+   }
+  &:after {
+    clear: both;
+    font-size: 0;/* Clear Fix correction (add font-size to fix extra padding at bottom of site */
+  }
+}
+
+.clearfix,
+%clearfix {
+	@include clearfix;
+}
+
+// Constrained
+@mixin constrained {
+	@include breakpoint($small-only) {
+		margin: 0 $mobile-side-margin;
+	}
+	@include breakpoint($medium-up) {
+		width: 90vw;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1440px;
+	}
+	@include breakpoint($xxlarge-up) {
+		width: 80vw;	
+	}
+}
+
+// Negate constrained styling on a container to make 100% width
+@mixin unconstrained {
+	width: 100%;
+	
+	@include breakpoint($small-only) {
+		padding: 0 $mobile-side-margin;
+		margin: 0;
+		max-width: auto;
+	}
+}
+
+
+// padding on top element to clear the page header when header is fixed position
+@mixin fixed-navbar-body-offset {
+
+	@include breakpoint($small-only) {
+		padding-top: $scroll-top-offset-sm;
+	}
+	@include breakpoint($medium-up) {
+		padding-top: $scroll-top-offset-md;
+	}
+	@include breakpoint($large-up){
+		padding-top: $scroll-top-offset-lg;
+	}
+	@include breakpoint($xlarge-up) {
+		padding-top: $scroll-top-offset-xl;
+	}
+}
+
+//--------------------------
+// Page Sections - defaults
+//--------------------------
+@mixin scroll-top-offset {
+	position: relative;
+
+	// offset scroll snap from html {scroll-behavior:smooth;}
+
+	@include breakpoint($small-only) {
+		scroll-margin-top: $scroll-top-offset-sm;
+	}
+	@include breakpoint($medium-only) {
+		scroll-margin-top: $scroll-top-offset-md;
+	}
+	@include breakpoint($large-up) {
+		scroll-margin-top: $scroll-top-offset-lg;
+	}
+	@include breakpoint($xlarge-up) {
+		scroll-margin-top: $scroll-top-offset-xl;
+	}
+}

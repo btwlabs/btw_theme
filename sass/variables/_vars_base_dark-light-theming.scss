@@ -1,0 +1,182 @@
+//-----------------------------------------------
+//-----------------------------------------------
+//
+//	VARIABLES: Dark/light theme context
+//
+//-----------------------------------------------
+//-----------------------------------------------
+
+// Sets default colors that are applied when adding to the Custom class field of a section:  "dark-bg-light-text" or "light-bg-dark-text"
+
+//----------------------------------
+// Dark Background theme
+//----------------------------------
+
+// Background Color
+
+// Dark Background Color
+// Used to set a default dark background color when "dark-bg-light-text" class is used in a Custom class field on a section
+$bg-dark-color: #27262f; // $gray-800
+
+
+// Text Color
+
+// H2 Title
+$title-on-dark-color: #fff;
+
+
+// H3 Subtitle
+$subtitle-on-dark-color: #fff;
+
+
+// Body Text
+$text-on-dark-color: #fff;
+
+
+// text link color (not button)
+$link-on-dark-color: $link-color;
+
+
+// text link color (not button): hover
+$link-on-dark-color-hover: lighten($link-on-dark-color, 20%);
+
+
+// Overlay Color
+
+// Overlay Background Color
+// Sets the color of the overlay, which is between the bg image and the text. The overlay's function is to reduce contrast in a background image so the text is legible.
+$overlay-bg-color-dark: rgba(0,0,0,0.7);
+
+
+// Overlay Gradient Base Color
+// Overlays for Left/right image left/right image & text sections using gradients. Use HEX Values.
+$overlay-gradient-base-color-dark: #1F1F1F;
+
+//----------------------------------
+// Buttons
+//----------------------------------
+
+// Button Background Color on Dark
+$btn-bg-color-on-dark: $btn-bg-color;
+
+// Button Text Color on Dark
+$btn-text-color-on-dark: $btn-text-color;
+
+// Button Border Color on Dark
+$btn-border-color-on-dark: $btn-bg-color-on-dark;
+
+
+// Button Background Color on Dark (Hover)
+$btn-bg-hover-color-on-dark: $btn-hover-bg-color;
+
+// Button Text Color on Dark (Hover)
+$btn-text-hover-color-on-dark: $btn-hover-text-color;
+
+// Button Border Color on Dark (Hover)
+$btn-border-hover-color-on-dark: $btn-bg-hover-color-on-dark;
+
+
+
+
+//----------------------------------
+//----------------------------------
+//
+// Light Background theme
+//
+//----------------------------------
+//----------------------------------
+
+// Background Color
+
+// Light Background Color
+// Used to set a default light background color when "light-bg-dark-text" class is used in a Custom class field on a section
+$bg-light-color: #fff;
+
+// Text Color
+
+// H2 title - on light background
+$title-on-light-color: rgba(0,0,0,0.8);
+
+// H3 subtitle - on light background
+$subtitle-on-light-color: rgba(0,0,0,0.8);
+
+
+// Body text color - on light background
+$text-on-light-color: rgba(0,0,0,0.8);
+
+
+// text link color (not button) - on light background
+$link-on-light-color: $link-color;
+
+
+// text link color (not button) - on light background: Hover
+$link-on-light-color-hover: darken($link-on-light-color, 20%);
+
+
+// Overlay Color
+// Overlay Background Color
+// Sets the color of the overlay, which is between the bg image and the text. The overlay's function is to reduce contrast in a background image so the text is legible.
+$overlay-bg-color-light: rgba(255,255,255,0.7);
+
+
+// Overlay Gradient Base Color
+// Overlays for Left/right image left/right image & text sections using gradients. Use HEX Values.
+$overlay-gradient-base-color-light: #fff;
+
+
+
+// Buttons
+// Button Background Color on Light
+$btn-bg-color-on-light: $btn-bg-color;
+
+// Button Text Color on Light
+$btn-text-color-on-light: $btn-text-color;
+
+// Button Border Color on Light
+$btn-border-color-on-light: $btn-bg-color-on-light;
+
+
+// Button Background Color on Light (Hover)
+$btn-bg-hover-color-on-light: $btn-hover-bg-color;
+
+
+// Button Text Color on Light (Hover)
+$btn-text-hover-color-on-light: $btn-text-color-on-light;
+
+
+// Button Border Color on Light (Hover)
+$btn-border-hover-color-on-light: $btn-bg-hover-color-on-light;
+
+
+//--------------------------------------------
+//--------------------------------------------
+//
+//	Text Wrapper Customization
+//
+//--------------------------------------------
+//--------------------------------------------
+
+
+// This allows for customization of containers around section intro text and within story sections. It allows for a bg color, spacing around the text, and changing text colors. Requires placement of either "text-wrapper-dark" or "text-wrapper-light" in the Custom Class section a section. (Hero excluded)
+
+
+
+// Text Wrapper DARK bg color
+// This sets the background color behind the text when .text-wrapper-dark is used. By default uses variables set in dark background theme variables.
+$text-wrapper-dark-bg: #000;
+
+
+// Text Wrapper LIGHT Bg Color
+// This sets the background color behind the text when .text-wrapper-light is used. By default uses variables set in the "light background theme" variables.
+$text-wrapper-light-bg: #fff;
+
+
+// Text Wrapper Padding
+// This adds space between text and the edge of the text-wrapper container
+$text-wrapper-padding: 4vw;
+
+
+// Text Wrapper Border Radius
+// Sets the border radius, or roundness of the corners, on the text-wrapper
+$text-wrapper-border-radius: 0;
+

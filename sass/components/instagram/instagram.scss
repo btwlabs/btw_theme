@@ -1,0 +1,33 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: INSTAGRAM LIGHTWIDGET
+//
+//----------------------------------
+//----------------------------------
+
+.section-instagram {
+    background: $section-instagram-bg-color;
+    overflow: hidden;
+
+     .intro {
+          .section-title {
+               text-align: $section-instagram-title-alignment;
+               padding-left: 15px;
+               padding-right: 15px;
+          }
+          .intro-body {
+               text-align: $section-instagram-body-alignment;
+          }
+          .section-link {
+               text-align: $section-instagram-title-alignment;
+               font-size: 1.2rem;
+               margin-bottom: 0;
+          }
+     }
+     .widget-wrapper {
+          max-width: $instagram-feed-max-width;
+          margin: $instagram-margin;
+          text-align: center;
+     }
+}

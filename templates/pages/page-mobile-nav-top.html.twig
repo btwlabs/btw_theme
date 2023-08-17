@@ -44,9 +44,11 @@
 			  <span class="hamburger-label">Menu</span>
 		  </button>
 
-          <div class="site-name">
-            <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-          </div>
+          {% if site_name %}
+            <div class="site-name">
+              <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+            </div>
+          {% endif %}
 
         </div><!-- close l-constrained -->
 

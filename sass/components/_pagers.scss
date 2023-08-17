@@ -1,0 +1,389 @@
+//------------------------------------------------------
+//
+//	PAGERS - Basic styles for load more and entity pagers
+//
+//	location: 
+//      /sass/components/_pagers.scss
+//
+//------------------------------------------------------
+
+
+/*--------------------------------------------------
+----------------------------------------------------
+
+ PAGERS
+ 
+----------------------------------------------------
+--------------------------------------------------*/
+
+//-------------------------------------------
+//
+// Product list PAGER
+//
+//-------------------------------------------
+
+ul.pager__items {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	
+	li {
+		&.pager__item {
+		    list-style-type: none;
+		    margin: 0 10px 0 0;
+		    display: inline-block;
+		    
+		    a {
+			    display: block;
+			    text-align: center;
+			    border: 1px solid #555;
+			    padding: 5px 10px;
+			    border-radius: 4px;
+			    color: #555;
+			    
+			    &:hover {
+				    background: #222;
+				    border-color: #222;
+				    color: #fff;
+				    text-decoration: none;
+				}
+			}
+		}
+		&.pager__item--active {
+			a {
+				background: #222;
+			    border-color: #222;
+			    color: #fff;
+			    text-decoration: none;
+			}
+		}
+	}
+}
+
+/*------------------------------------
+
+ ENTITY PAGER - Previous / Next 
+ 
+-------------------------------------*/
+
+.entity-pager-wrapper {
+    margin-top: 5vw;
+}
+
+// outer container
+.entity-pager {
+	height: auto;
+	position: relative;
+	margin: 0 auto;
+	@include flexbox;
+	
+	ul {
+		padding: 0;
+	}
+}
+
+// list container <ul>
+.entity-pager-list {
+	width: 100%;
+	@include flexbox;
+	margin: 0;
+	background-color: $xlight-gray;
+	
+	.entity-pager-item {
+		margin: 0;
+		@include flex($fg: 0, $fs: 0, $fb: 50%);
+	}
+}
+
+// list item <li>
+.entity-pager-item {
+	height: 120px;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+    align-items: center;
+	
+	@include breakpoint($small-only) {
+		height: 80px;
+	}
+
+	
+	// link wrapper
+	a {
+		color: #fff;
+		display: flex;
+		align-items: center;
+		line-height: 1.3;
+		height: 100%;
+		position: relative;
+		text-decoration: none;
+		text-transform: capitalize;
+		@include transition(all, 0.2s, ease-in);
+		
+		&:hover {
+			text-decoration: none;
+			
+			// overlay
+			span:nth-of-type(1) {
+				//background-color: rgba(0,0,0,0.7);
+			}
+			
+			// arrow
+			span:nth-of-type(2) {
+				
+			}
+		}
+		
+		div {
+			display: flex;
+			width: 100%;
+			align-items: center;	
+	
+			// overlay
+			span:nth-of-type(1) {
+			    display: none;
+			    //background: rgba(0,0,0,0.5);
+			    width: 100%;
+			    height: 100%;
+			    position: absolute;
+			    left: 0;
+			    top: 0;
+			    z-index: 1;
+			    @include transition(all, 0.2s, ease-in);
+			    
+			    // hide in mobile
+			    @include breakpoint($small-only) {
+				    display: none;
+			    }
+			}
+			
+			// title
+			h4 {
+				z-index: 3;
+				margin: 0;
+				
+				@include breakpoint($small-only) {
+					font-size: 12px;
+					width: calc(100% - 52px);
+				}
+				@include breakpoint($medium-only) {
+					width: calc(100% - 110px);
+					font-size: 16px;
+				}
+				@include breakpoint($medium-up) {
+					font-size: 22px;
+				}
+				@include breakpoint($large-only) {
+					width: calc(100% - 120px);
+				}
+				@include breakpoint($xlarge-up) {
+					width: calc(100% - 140px);
+				}
+			}
+			
+			// icon
+			span:nth-of-type(2) {
+			    height: 40px;
+			    display: block;
+				z-index: 2;
+				flex: 0 0 24px;
+				position: relative;
+				
+				@include breakpoint($small-only) {
+					flex: 0 0 12px;
+				}
+			    
+			    &:before {
+				    display: block;
+				    width: 20px;
+					height: 34px;
+					
+					@include breakpoint($small-only) {
+						width: 12px;
+					}
+			    }
+			}
+		}
+	}
+}
+
+
+// hide the span that isn't a link
+.entity-pager-item {
+	.inactive {
+		display: none;
+	}
+}
+
+/*-----------------------
+ << PREVIOUS 
+------------------------*/
+
+.entity-pager-item-prev {
+
+    a {		
+		div {
+			
+			@include breakpoint($medium-up) {
+				padding-left: 20px;
+			}
+		}
+	}
+	
+	
+    // arrow icon
+    span:nth-of-type(2) {
+	    order: 1;
+	    margin-right: 20px;
+	    
+	    &:before {
+			content:"";
+			background: url(../images/icons/arrow-left.svg) no-repeat scroll right center;
+			background-size: 100% auto;
+			position: absolute;
+			left: 0;
+			@include centerY;
+			
+			@include breakpoint($small-only) {
+				left: 10px;
+			}
+		}
+    }
+    
+    // title
+	h4 {
+		text-align: left;
+		transition: all 0.2s ease;
+		order: 2;
+		margin: 0 0 0 20px;
+	}
+}
+
+
+
+
+/*-----------------------
+ NEXT >> 
+-------------------------*/
+
+.entity-pager-item-next {
+	
+	a {
+		div {
+			justify-content: flex-end;
+			
+			@include breakpoint($medium-up) {
+				padding-right: 20px;
+			}
+		}
+	}
+   
+    // arrow icon
+	span:nth-of-type(2) {
+		order: 2;
+		margin-left: 20px;
+	    
+	    &:before {
+			content:"";
+			background: url(../images/icons/arrow-right.svg) no-repeat scroll right center;
+			background-size: 100% auto;
+			position: absolute;
+			right: 0;
+			@include centerY;
+			
+			@include breakpoint($small-only) {
+				right: 10px;
+			}
+		}
+    }
+    
+    // title
+	h4 {
+		text-align: right;
+		transition: all 0.2s ease;
+		order: 1;
+		margin: 0 20px 0 0;
+	}
+}
+
+// specificity necessary to override default
+.entity-pager-list {
+	.entity-pager-item-next {
+		margin-left: auto; // aligns right if no 'prev' item
+	}
+}
+
+
+
+/*-------------------------
+ ALL - list link 
+--------------------------*/
+
+// override .grid default - not sure why grid class is on container
+.grid {
+	.entity-pager {
+		li.entity-pager-item-all {
+			position: absolute;
+		}
+	}
+}
+
+.entity-pager-item-all {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+	@include centerXY;
+	z-index: 3;
+	width: 4.5vw;
+	height: 4.5vw;
+	
+	@include breakpoint($small-only) {
+		width: 7.5vw;
+		height: 7.5vw;
+	}
+	
+	a {
+		overflow: hidden;
+		height: 0;
+		width: 4.5vw;
+		padding-top: 4.5vw;
+		background: transparent;
+		display: block;
+		border-radius: 4px;
+	    
+	    @include breakpoint($small-only) {
+			width: 7.5vw;
+			padding-top: 7.5vw;
+		}
+	    
+	    &:hover {
+		    background-color: $primary;
+	    }
+		
+		// icon
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			background: url(../images/icons/bars.svg) no-repeat scroll center center;
+			vertical-align: middle;
+			speak: none;
+			background-size: 80% auto;
+			width: 3vw;
+			height: 3vw;
+			left: 50%;
+			top: 50%;
+			@include centerXY;
+			
+			@include breakpoint($small-only) {
+				width: 5vw;
+				height: 5vw;
+			}
+		}
+		&:hover:before {
+		    background: url(../images/icons/bars-white.svg) no-repeat scroll center center;
+		    background-size: 80% auto;
+	    }
+	}
+}
+

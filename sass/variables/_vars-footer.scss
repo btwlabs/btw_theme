@@ -1,0 +1,98 @@
+//----------------------------------
+//----------------------------------
+//
+//	VARIABLES: Footer Section
+// 
+//----------------------------------
+//----------------------------------
+
+//--------------------
+// Section Defaults
+//---------------------
+
+// Background Color
+$section-footer-bg-color: #000;
+
+// Padding (Mobile)
+$section-footer-padding-mobile: 15vw 15px;
+
+// Padding (Large)
+$section-footer-padding-lg: 5vw;
+
+//------------------
+// Logo
+//------------------
+
+// Logo Width
+$footer-logo-width: 200px;
+
+//------------------
+// Company name
+//-------------------
+
+// Company Name Font Size
+$footer-company-font-size: 20px;
+
+//------------------
+// Text Colors
+//------------------
+
+// Title Color
+$footer-title-color: $white;
+
+// Text Color
+$footer-text-color: #ccc;
+
+// Link Color
+$footer-link-color: $secondary;
+
+// Link Color on mouse hover
+$footer-link-hover-color: lighten($footer-link-color, 15%);
+
+//------------------------
+// Back to top Button
+// ------------------------
+
+// Icon Color
+$back-to-top-icon-color: $white;
+
+// Icon Color on mouse hover
+$back-to-top-icon-hover-color: $primary;
+
+// Background Color
+// Sets the background color behind the icon
+$back-to-top-bg-color: $primary;
+
+// Background Color on Hover
+// Sets the background color behind the icon on mouse hover
+$back-to-top-bg-hover-color: $white;
+
+// Contact Info Font Size
+// 
+// Info Font Size
+// Sets the font size of the contact info section of the footer
+$footer-contact-info-font-size: 14px;
+
+// Branding Font Size
+$footer-branding-font-size: 16px;
+
+// Copyright Font Size
+// Sets font size of the copyright information in the footer
+$footer-copyright-font-size: 14px;
+
+// Border Color
+// Sets the color of borders that appear in the footer
+$footer-border-color: rgba(100,100,100,0.5);
+
+
+
+
+//--------------------------
+// Pre-Footer
+//--------------------------
+$pre-footer-bg-color: $primary;
+
+//--------------------------
+// Post-Footer
+//--------------------------
+$post-footer-bg-color: #0d0e15;

@@ -1,0 +1,55 @@
+//------------------------------------
+//------------------------------------
+//
+//	SECTION: HEADER 6: nav left
+//                     Logo center
+//					   Socials right
+//
+//------------------------------------
+//------------------------------------
+
+// navbar wrapper
+.navbar {
+
+    @include media-breakpoint-up(lg) {
+        // nav
+        .navbar-collapse {
+            justify-content: flex-start;
+            order: 1;
+            flex: 1 1 auto;
+            max-width: calc(50% - (calc(#{$navbar-logo-width-lg} / 2)));
+            
+            // negate bootstrap class in markup
+            .navbar-nav.ml-auto {
+                margin-left: 0 !important;
+            }
+        }
+        // logo
+        .navbar-brand-wrapper {
+            flex: 0 0 auto;
+            order: 2;
+        }
+        
+        .navbar-nav {
+            .nav-link {
+                padding: 0.25rem 0.5rem;
+                line-height: 1.2;
+            }
+        }
+        
+        // social links
+        .social_links__social-links-list {
+            max-width: calc(50% - (calc(#{$navbar-logo-width-lg} / 2)));
+            flex: 1 1 auto;
+            order: 3;
+            justify-self: flex-end;
+        }
+    }
+}
+.site_v2__header-section {
+    .social_links__social-links-list {
+        @include media-breakpoint-up(lg) {
+            border: 0;
+        }
+    }
+}

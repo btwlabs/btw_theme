@@ -1,0 +1,82 @@
+//-----------------------------------------
+//-----------------------------------------
+//
+//	VARIABLES: Image & Text Slides/Carousel
+// 
+//-----------------------------------------
+//-----------------------------------------
+
+// Wrapper Background Color
+// Sets a background color of the entire section.
+$section-text-slide-bg-color: $section-default-bg-color;
+
+
+// Pagination (Navigation at the bottom of the section)
+// Governs the bullets, or dots, that appear at the bottom of a carousel that function as navigation between slides
+
+// Bullet Color
+// Sets the color of the slide navigation bullets, or dots. 
+$swiper-pagination-bullet-color: $white;
+
+
+// Active Slide Bullet Color
+// Sets the color of the active slide's navigation bullet, or dot
+$swiper-pagination-bullet-active-color: $white;
+
+// Bullet Dot Size
+// Sets the size of the navigation bullet, or dot
+$swiper-pagination-dot-size: 20px;
+
+// Intro Title & Body
+
+// Section title color
+// Sets the color of the section title
+$section-text-slide-title-color: $base-text-color;
+
+// Section Title Alignment
+// Sets text alignment for the section title. Values are left, right, and center
+$section-text-slide-title-alignment: center;
+
+
+// Intro Body text color
+// Sets the color of the intro text, not the slides themselves. 
+$section-text-slide-body-text-color: $base-text-color;
+
+// Intro Body Text Alignment
+// Sets text alignment for the intro body text. Values are left, right, and center
+$section-text-slide-body-alignment: center;
+
+
+// Individual Slides
+
+
+// Overlay Background Color
+$swiper-overlay-bg-color: rgba(0,0,0,0.4);
+
+// Slide Height
+// Sets the default minimum slide height
+$swiper-text-slide-height: 60vh;
+
+// Slide Height (Mobile)
+// Sets the default minimum slide height on mobile devices
+$swiper-text-slide-height-mobile: 90vh;
+
+// Slide Title Color
+// Set the color of the title in the slide itself
+$slide-title-color: $base-text-color;
+
+
+// Slide Title Alignment
+// Sets text alignment on the slide title
+$slide-title-alignment: center;
+
+
+// Slide Body Text color
+// Sets the color of the body text in the slide itself
+$slide-text-color: $base-text-color;
+
+
+// Slide Body Text Alignment
+// Sets text alignment on the slide body
+$slide-body-alignment: center;
+

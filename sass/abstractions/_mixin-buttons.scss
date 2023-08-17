@@ -1,0 +1,150 @@
+//------------------------------------------------------
+//
+//	MIXINS - BUTTONS - define groups of attributes for buttons
+//
+//	location: 
+//      /sass/abstractions/mixins-buttons.scss
+//
+//------------------------------------------------------
+
+
+
+//--------------------------------------------------
+//
+//	Default buttons
+//
+//------------------------------------------------
+
+@mixin button {
+	background: $btn-bg-color; 
+	text-align: center;
+	color: $btn-text-color;
+	text-decoration: none;
+	text-transform: $btn-text-transform;
+	@include border-radius($btn-border-radius);
+	@include transition(all, 0.2s, ease-in);
+	@include button-padding($btn-padding);
+	line-height: 1;
+	border: $btn-border;
+	font-weight: $btn-font-weight;
+	position: relative;
+	letter-spacing: $btn-letter-spacing;
+	
+	@include breakpoint($small-only) {
+		display: block;
+		font-size: $button-font-size-sm;
+	}
+	@include breakpoint($medium-up) {
+		display: inline-block;
+		font-size: $button-font-size-lg;
+	}
+	
+	&:hover {
+		background: $btn-hover-bg-color; 
+		color: $btn-hover-text-color;
+		border-color: $btn-hover-border-color;
+		text-decoration: none;
+	}
+}
+
+@mixin button-hover {
+	background: $btn-hover-bg-color; 
+	color: $btn-hover-text-color;
+	border-color: $btn-hover-border-color;
+	text-decoration: none;
+}
+
+@mixin button-padding($button-padding) {
+	padding: $btn-padding;
+}
+
+
+
+//--------------------------------------------------
+//
+//	LIGHT BUTTON ON DARK BG mixin
+//
+//--------------------------------------------------
+
+@mixin button-on-dark {
+	background: $button-bg-color-on-dark; 
+	text-align: center;
+	color: $button-text-color-on-dark;
+	border: $button-border-width solid $button-border-color-on-dark;
+	text-decoration: none;
+	text-transform: $button-text-transform;
+	@include border-radius($button-border-radius);
+	@include transition(all, 0.2s, ease-in);
+	@include button-padding($button-padding);
+	font-weight: $button-font-weight;
+	position: relative;
+	letter-spacing: $button-letter-spacing;
+	line-height: $button-line-height;
+	
+	@include breakpoint($small-only) {
+		display: block;
+		font-size: $button-font-size-sm;
+	}
+	@include breakpoint($medium-up) {
+		display: inline-block;
+		font-size: $button-font-size-lg;
+	}
+	
+	&:hover {
+		background: $button-bg-hover-color-on-dark; 
+		color: $button-text-hover-color-on-dark;
+		border-color: $button-border-hover-color-on-dark;
+		text-decoration: none;
+	}
+}
+@mixin button-on-dark-hover {
+	background: $button-bg-hover-color-on-dark; 
+	color: $button-text-hover-color-on-dark;
+	border-color: $button-border-hover-color-on-dark;
+	text-decoration: none;
+}
+
+
+//--------------------------------------------------
+//
+//	DARK BUTTON ON LIGHT BG mixin
+//
+//--------------------------------------------------
+
+@mixin button-on-light {
+	background: $button-bg-color-on-light; 
+	text-align: center;
+	color: $button-text-color-on-light;
+	border: $button-border-width solid $button-border-color-on-light;
+	text-decoration: none;
+	text-transform: $button-text-transform;
+	@include border-radius($button-border-radius);
+	@include transition(all, 0.2s, ease-in);
+	@include button-padding($button-padding);
+	font-weight: $button-font-weight;
+	position: relative;
+	letter-spacing: $button-letter-spacing;
+	line-height: $button-line-height;
+	
+	@include breakpoint($small-only) {
+		display: block;
+		font-size: $button-font-size-sm;
+	}
+	@include breakpoint($medium-up) {
+		display: inline-block;
+		font-size: $button-font-size-lg;
+	}
+	
+	&:hover {
+		background: $button-bg-hover-color-on-light; 
+		color: $button-text-hover-color-on-light;
+		border-color: $button-border-hover-color-on-light;
+		text-decoration: none;
+	}
+}
+@mixin button-on-light-hover {
+	background: $button-bg-hover-color-on-light; 
+	color: $button-text-hover-color-on-light;
+	border-color: $button-border-hover-color-on-light;
+	text-decoration: none;
+}

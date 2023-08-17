@@ -1,0 +1,27 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: TWITTER (official) embed
+//
+//----------------------------------
+//----------------------------------
+
+.section-twitter {
+     background: $section-twitter-bg-color;
+     overflow: hidden;
+
+     .intro {
+          .section-title {
+               text-align: $section-twitter-title-alignment;
+          }
+          .intro-body {
+               text-align: $section-twitter-body-alignment;
+          }
+     }
+
+     .widget-wrapper {
+          max-width: $twitter-feed-max-width;
+          margin: 0 auto;
+          text-align: center;
+     }
+}

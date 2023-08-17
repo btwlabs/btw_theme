@@ -1,0 +1,1181 @@
+//------------------------------------
+//------------------------------------
+//
+//	STYLES
+//
+//------------------------------------
+//------------------------------------
+
+
+
+//----------------------------------
+//
+//	GENERAL ELEMENTS
+//
+//----------------------------------
+
+html {
+	scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Disable smooth scrolling when users have prefers-reduced-motion enabled
+ */
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	background-color: $body-bg;
+	@include base-text-style; // mixins.scss
+	@include responsive-body-text; // DEFAULT FONT SIZES AT BREAKPOINTS
+
+	@include media-breakpoint-down(md) {
+		// height of header/navbar
+		//padding-top: $fixed-navbar-body-offset-sm;
+	}
+
+	@include media-breakpoint-up(lg) {
+		// height of header/navbar
+		//padding-top: $fixed-navbar-body-offset-lg;
+	}
+}
+
+// remove navbar offset padding from inside <body> in CKE text editor
+body.cke_editable {
+    padding: 0;
+    
+    // prevents site body color settings/vars from invading editor
+    background: #fff;
+    color: #000;
+    
+    // override default body font size inherited from front end
+    font-size: 16px;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+a {
+	transition: all 0.2s ease-in;
+	color: $link-color;
+
+	&:hover {
+		color: $link-color-hover;
+	}
+}
+
+img, media {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle; /* kills space between img, a, and container */
+}
+
+.h1, .h2, .h3, .h4, .h5,
+.h6, h1, h2, h3, h4, h5, h6 {
+    font-family: $title-font-family;
+    font-weight: $title-font-weight;
+    margin: $title-margin;
+    line-height: $title-line-height;
+    letter-spacing: $title-letter-spacing;
+    text-transform: $title-text-transform;
+}
+
+b, strong {
+	// override default BS "bolder" because that doesn't always
+	// produce results depending on fonts/weights available
+	font-weight: bold;
+}
+
+// This is for image scroll effects
+.fixed {
+    @include media-breakpoint-up(md) {
+        background-attachment: fixed;
+    }
+
+    // target all touchscreens
+    @media (pointer: coarse) {
+        background-attachment: scroll;
+    }
+}
+
+// to make a section sticky on scroll
+.sticky {
+    position: sticky;
+
+    // adjust offset of top position of sticky container per breakpoint
+    // because bootstrap class doesn't account for offset
+    @include media-breakpoint-down(md) {
+        // height of header/navbar
+        top: $fixed-navbar-body-offset-sm;
+    }
+
+    @include media-breakpoint-up(lg) {
+        // height of header/navbar
+        top: $fixed-navbar-body-offset-lg;
+    }
+}
+
+// class used to wrap around paragraphs with widget embeds
+// to keep from side-scrolling
+.widget {
+    overflow: hidden;
+}
+
+figure {
+    margin-bottom: 2em;
+
+    figcaption {
+        font-size: 14px;
+        text-align: center;
+        padding: 8px;
+    }
+}
+
+//--------------------------
+// Borders
+//--------------------------
+
+// copied from _borders.scss in Bootstrap
+.border         { border: $border-width solid $border-color !important; }
+.border-top     { border-top: $border-width solid $border-color !important; }
+.border-right   { border-right: $border-width solid $border-color !important; }
+.border-bottom  { border-bottom: $border-width solid $border-color !important; }
+.border-left    { border-left: $border-width solid $border-color !important; }
+
+
+
+
+//--------------------------
+// Page Sections - defaults
+//--------------------------
+.section {
+	position: relative;
+
+    // use margin to create space between sections
+    @include media-breakpoint-down(sm) {
+        margin: $section-outer-margin-sm;
+    }
+    @include media-breakpoint-up(sm) {
+        margin: $section-outer-margin-lg;
+    }
+
+    //background-color: $section-default-bg-color; !!! can't do this because of parallax image effects on SBs
+
+	// offset scroll snap from html {scroll-behavior:smooth;}
+
+	@include media-breakpoint-down(md) {
+		scroll-margin-top: $scroll-top-offset-sm;
+	}
+	@include media-breakpoint-up(lg) {
+		scroll-margin-top: $scroll-top-offset-lg;
+	}
+
+	.section-title,
+    .text-section-title {
+		position: relative;
+		@include responsive-section-title;
+		@include title-style;
+	}
+
+	.subtitle {
+		@include responsive-section-subtitle;
+		color: $subtitle-color;
+		font-style: $subtitle-font-style;
+		text-align: $subtitle-text-align;
+	}
+
+	.container {
+		@include media-breakpoint-down(md) {
+			// override bootstrap defaults to match story blocks
+			padding-left: $section-padding-x-sm;
+			padding-right: $section-padding-x-sm;
+		}
+	}
+
+    // add default padding on outer section wrapper
+    &.section-twitter,
+    &.section-instagram,
+    &.section-bands-in-town,
+    &.section-social-links,
+    &.section-elfsight-widget,
+    &.section-contact,
+    &.section-general-embed,
+    &.section-contact-form {
+        @include media-breakpoint-down(md) {
+            padding: $section-padding-y-sm 0;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: $section-padding-y-lg 0;
+        }
+    }
+
+    &.alternating {
+        background-color: $section-alternating-bg;
+    }
+    
+    // hides section title
+    .hide-title {
+        h2,
+        h2.section-title {
+           display: none;
+        }
+    }
+}
+
+
+//---------------------------------
+// Dark or Light background ONLY
+//---------------------------------
+
+.dark-bg {
+    background: $bg-dark-color;
+    
+    // to override default
+    &.section-slides-text,
+    &.section-cards,
+    &.section-general-embed,
+    &.section-instagram,
+    &.section-social-links {
+        background: $bg-dark-color;
+    }
+}
+
+.light-bg {
+    background: $bg-light-color;
+    
+    // to override default
+    &.section-slides-text,
+    &.section-cards,
+    &.section-general-embed,
+    &.section-instagram,
+    &.section-social-links {
+        background: $bg-light-color;
+    }
+}
+
+//---------------------------------
+// Set background ONLY using main color vars
+//---------------------------------
+.bg-color-primary {
+    background: $primary;
+}
+.bg-color-secondary {
+    background: $secondary;
+}
+.bg-color-tertiary {
+    background: $tertiary;
+}
+
+//---------------------------------
+// Dark or Light background content
+//---------------------------------
+
+.dark-bg-light-text {
+    background: $bg-dark-color;
+    
+    @include media-breakpoint-up(md) {
+        a {
+            color: $link-on-dark-color;
+
+            &:hover {
+                color: $link-on-dark-color-hover;
+            }
+        }
+    }
+}
+
+.light-bg-dark-text {
+    background: $bg-light-color;
+    
+    @include media-breakpoint-up(md) {
+        a {
+            color: $link-on-light-color;
+
+            &:hover {
+                color: $link-on-light-color-hover;
+            }
+        }
+    }
+}
+
+
+//---------------------------------
+// Dark or Light Text
+//      add this class to a section to 
+//      change the text color only
+//---------------------------------
+
+.dark-text {
+    color: $title-on-light-color !important;
+    
+    // hero
+    &.section-hero .hero-title-wrapper {
+        .hero-heading,
+        .hero-sub-heading {
+            color: $title-on-light-color;
+        }
+    }
+    
+    
+    // img+txt, section intros
+    .section-title,
+    .story-block-text,
+    .intro-body {
+        color: $text-on-light-color !important;
+        
+        a {
+            color: $link-on-light-color !important;
+            
+            &:hover {
+                color: $link-on-light-color-hover !important;
+            }
+        }
+    }
+    
+    // individual slides
+    .swiper-slide {
+        .slide-title,
+        .slide-body {
+            color: $text-on-light-color !important;
+        }
+    }
+    
+    // cards 
+    &.card-item {
+        .card-title,
+        .card-text {
+            color: $text-on-light-color !important;
+        }
+    }
+}
+
+
+.light-text {
+    color: $title-on-dark-color !important;
+    
+    // hero
+    &.section-hero .hero-title-wrapper {
+        .hero-heading,
+        .hero-sub-heading {
+            color: $title-on-dark-color;
+        }
+    }
+    
+    .section-title,
+    .story-block-text,
+    .intro-body {
+        color: $text-on-dark-color !important;
+        
+        a {
+            color: $link-on-dark-color !important;
+            
+            &:hover {
+                color: $link-on-dark-color-hover !important;
+            }
+        }
+    }
+    
+    // slides
+    .swiper-slide {
+        .slide-title,
+        .slide-body {
+            color: $text-on-dark-color !important;
+        }
+    }
+
+    // cards 
+    .section-cards,
+    &.card-item {
+        .card-title,
+        .card-text {
+            color: $text-on-dark-color !important;
+        }
+    }
+}
+
+//--------------------
+//	BUTTONS
+//--------------------
+
+.button-wrapper {
+	margin: 40px 0;
+}
+
+.btn {
+	padding: $btn-padding;
+	border-radius: $btn-border-radius;
+	text-transform: $btn-text-transform;
+	font-weight: $btn-font-weight;
+	letter-spacing: $btn-letter-spacing;
+    font-family: $btn-font-family;
+    font-size: $btn-font-size;
+    text-align: center;
+    
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.btn-primary {
+	background: $btn-bg-color;
+	border: $btn-border;
+	color: $btn-text-color;
+    text-align: center;
+
+	&:hover {
+		background: $btn-hover-bg-color;
+		border-color: $btn-hover-border-color;
+		color: $btn-hover-text-color !important;
+        text-decoration: none;
+	}
+}
+
+.btn-secondary {
+	background: $btn-secondary-bg-color;
+	border-color: $btn-secondary-border-color;
+	color: $btn-secondary-text-color;
+    text-align: center;
+
+	&:hover {
+		background: $btn-secondary-hover-bg-color;
+		border-color: $btn-secondary-hover-border-color;
+		color: $btn-secondary-hover-text-color !important;
+        text-decoration: none;
+	}
+}
+
+
+//-------------------------------
+//  Image Overlays
+//
+//  Container with bg color transparency
+//  for the purpose of reducing image contrast
+//  to improve text legibility
+//-------------------------------
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+}
+
+//---------------------------------------------
+// When the .no-overlay class is added to a custom
+// class field, remove overlay color/gradient
+//---------------------------------------------
+
+// slides
+.section-slides-text {
+    // all slides
+    &.no-overlay,
+    // individual slide
+    .no-overlay {
+        .image-overlay {
+            background: transparent !important;
+        }
+    }
+}
+// Hero paragraph
+.section-hero {
+    &.no-overlay {
+        .hero-overlay {
+            background: transparent !important;
+        }
+    }
+}
+// Image & Text paragraph (story blocks)
+.section-story-block {
+    &.no-overlay {
+        &.light-bg-dark-text,
+        &.dark-bg-light-text {
+            .image-overlay {
+                background: transparent !important;
+            }
+        }
+    }
+}
+.section-cards {
+    &.no-overlay {
+        &.light-bg-dark-text,
+        &.dark-bg-light-text {
+            .image-overlay {
+                background: transparent !important;
+            }
+        }
+    }
+}
+
+
+//-------------------------------
+//
+//  Text Wrappers - Dark & Light
+//      to create "floating" effect
+//      adding bg color, padding
+//      to text wrappers in section
+//      intro's
+//
+//-------------------------------
+
+@include media-breakpoint-up(md) {
+    .text-wrapper-dark {
+        
+        // override story section default &
+        // offset existing padding inside story block text container
+        &.section-story-block {
+            .text-wrapper {
+                margin: 0 (-$text-wrapper-padding);
+                padding: $text-wrapper-padding;
+                background-color: $text-wrapper-dark-bg;
+                align-self: center;
+            }
+        }
+        .intro .text-wrapper,
+        .text-wrapper {
+            background-color: $text-wrapper-dark-bg;
+            padding: $text-wrapper-padding;
+            border-radius: $text-wrapper-border-radius;
+            margin-bottom: $text-wrapper-padding;
+            
+            .section-title {
+                color: $title-on-dark-color;
+            }
+            .intro-body,
+            .story-block-text {
+                color: $text-on-dark-color;
+            
+                a {
+                    color: $link-on-dark-color;
+                    
+                    &:hover {
+                        color: $link-on-dark-color-hover;
+                    }
+                }
+            }
+            // button link
+            .story-block-link,
+            .story-block-videos {
+                a.btn {
+                    @include button-on-dark;
+                }
+            }
+        }
+    }
+}
+
+
+// Text wrapper light
+@include media-breakpoint-up(md) {
+    .text-wrapper-light {
+        
+        // override story section default &
+        // offset existing padding inside story block text container
+        &.section-story-block {
+            .text-wrapper {
+                margin: 0 ((-$text-wrapper-padding));
+                padding: $text-wrapper-padding;
+                background-color: $text-wrapper-light-bg;
+                align-self: center;
+            }
+        }
+        &.intro .text-wrapper,
+        .text-wrapper {
+            background-color: $text-wrapper-light-bg;
+            padding: $text-wrapper-padding;
+            border-radius: $text-wrapper-border-radius;
+            margin-bottom: $text-wrapper-padding;
+            
+            .section-title {
+                color: $title-on-light-color;
+            }
+            .intro-body,
+            .story-block-text {
+                color: $text-on-light-color;
+            
+                a {
+                    color: $link-on-light-color;
+                    
+                    &:hover {
+                        color: $link-on-light-color-hover;
+                    }
+                }
+            }
+            // button link
+            .story-block-link,
+            .story-block-videos {
+                a.btn {
+                    @include button-on-light;
+                }
+            }
+        }
+    }
+}
+
+// Class to use to override some paragraphs with max width limits
+// on the text wrapper for ease of reading
+.section.text-full-width {
+    .text-wrapper {
+        max-width: 100% !important;
+    }
+}
+
+//-------------------------------
+//
+//  BACKGROUND COLORS
+//
+//-------------------------------
+
+.bg-primary {
+    background-color: $primary !important;
+}
+.bg-secondary {
+    background-color: $secondary !important;
+}
+.bg-tertiary {
+    background-color: $tertiary !important;
+}
+
+//-------------------------------
+//
+//  BACKGROUND IMAGES
+//
+//-------------------------------
+
+.section {
+    // used for all bg image view modes
+    .bg-image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    // classes for altering bg img position
+
+    // CENTER TOP
+    &.background-center-top {
+        background-position: center top;
+
+        .bg-image,
+        .group-left.bg-image,
+        .group-right.bg-image {
+            background-position: center top;
+        }
+    }
+    &.background-center-top-sm {
+        @include media-breakpoint-down(sm) {
+            background-position: center top;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: center top;
+            }
+        }
+    }
+    &.background-center-top-md {
+        @include media-breakpoint-only(md) {
+            background-position: center top;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: center top;
+            }
+        }
+    }
+    &.background-center-top-lg {
+        @include media-breakpoint-up(lg) {
+            background-position: center top;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: center top;
+            }
+        }
+    }
+    
+    // CENTER CENTER
+    &.background-center-center {
+        background-position: center center;
+    
+        .bg-image,
+        .group-left.bg-image,
+        .group-right.bg-image {
+            background-position: center center;
+        }
+    }
+    &.background-center-center-sm {
+        @include media-breakpoint-down(sm) {
+            background-position: center center;
+    
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: center center;
+            }
+        }
+    }
+    &.background-center-center-md {
+        @include media-breakpoint-only(md) {
+            background-position: center center;
+    
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: center center;
+            }
+        }
+    }
+    &.background-center-center-lg {
+        @include media-breakpoint-up(lg) {
+            background-position: center center;
+    
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: center center;
+            }
+        }
+    }
+
+    // CENTER BOTTOM
+    &.background-center-bottom {
+        background-position: center bottom;
+
+        .bg-image,
+        .group-left.bg-image,
+        .group-right.bg-image {
+            background-position: center bottom;
+        }
+    }
+    &.background-center-bottom-sm {
+        @include media-breakpoint-down(sm) {
+            background-position: center bottom;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: center bottom;
+            }
+        }
+    }
+    &.background-center-bottom-md {
+        @include media-breakpoint-only(md) {
+            background-position: center bottom;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: center bottom;
+            }
+        }
+    }
+    &.background-center-bottom-lg {
+        @include media-breakpoint-up(lg) {
+            background-position: center bottom;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: center bottom;
+            }
+        }
+    }
+
+    // LEFT TOP
+    &.background-left-top {
+        background-position: left top;
+
+        .bg-image,
+        .group-left.bg-image,
+        .group-right.bg-image {
+            background-position: left top;
+        }
+    }
+    &.background-left-top-sm {
+        @include media-breakpoint-down(sm) {
+            background-position: left top;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: left top;
+            }
+        }
+    }
+    &.background-left-top-md {
+        @include media-breakpoint-only(md) {
+            background-position: left top;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: left top;
+            }
+        }
+    }
+    &.background-left-top-lg {
+        @include media-breakpoint-up(lg) {
+            background-position: left top;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: left top;
+            }
+        }
+    }
+
+    // LEFT CENTER
+    &.background-left-center {
+        background-position: left center;
+
+        .bg-image,
+        .group-left.bg-image,
+        .group-right.bg-image {
+            background-position: left center;
+        }
+    }
+    &.background-left-center-sm {
+        @include media-breakpoint-down(sm) {
+            background-position: left center;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: left center;
+            }
+        }
+    }
+    &.background-left-center-md {
+        @include media-breakpoint-only(md) {
+            background-position: left center;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: left center;
+            }
+        }
+    }
+    &.background-left-center-lg {
+        @include media-breakpoint-up(lg) {
+            background-position: left center;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: left center;
+            }
+        }
+    }
+
+    // LEFT BOTTOM
+    &.background-left-bottom {
+        background-position: left bottom;
+
+        .bg-image,
+        .group-left.bg-image,
+        .group-right.bg-image {
+            background-position: left bottom;
+        }
+    }
+    &.background-left-bottom-sm {
+        @include media-breakpoint-down(sm) {
+            background-position: left bottom;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: left bottom;
+            }
+        }
+    }
+    &.background-left-bottom-md {
+        @include media-breakpoint-only(md) {
+            background-position: left bottom;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: left bottom;
+            }
+        }
+    }
+    &.background-left-bottom-lg {
+        @include media-breakpoint-up(lg) {
+            background-position: left bottom;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: left bottom;
+            }
+        }
+    }
+
+    // RIGHT TOP
+    &.background-right-top {
+        background-position: right top;
+
+        .bg-image,
+        .group-left.bg-image,
+        .group-right.bg-image {
+            background-position: right top;
+        }
+    }
+    &.background-right-top-sm {
+        @include media-breakpoint-down(sm) {
+            background-position: right top;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: right top;
+            }
+        }
+    }
+    &.background-right-top-md {
+        @include media-breakpoint-only(md) {
+            background-position: right top;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: right top;
+            }
+        }
+    }
+    &.background-right-top-lg {
+        @include media-breakpoint-up(lg) {
+            background-position: right top;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: right top;
+            }
+        }
+    }
+
+    // RIGHT CENTER
+    &.background-right-center {
+        background-position: right center;
+
+        .bg-image,
+        .group-left.bg-image,
+        .group-right.bg-image {
+            background-position: right center;
+        }
+    }
+    &.background-right-center-sm {
+        @include media-breakpoint-down(sm) {
+            background-position: right center;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: right center;
+            }
+        }
+    }
+    &.background-right-center-md {
+        @include media-breakpoint-only(md) {
+            background-position: right center;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: right center;
+            }
+        }
+    }
+    &.background-right-center-lg {
+        @include media-breakpoint-up(lg) {
+            background-position: right center;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: right center;
+            }
+        }
+    }
+
+    // RIGHT BOTTOM
+    &.background-right-bottom {
+        background-position: right bottom;
+
+        .bg-image,
+        .group-left.bg-image,
+        .group-right.bg-image {
+            background-position: right bottom;
+        }
+    }
+    &.background-right-bottom-sm {
+        @include media-breakpoint-down(sm) {
+            background-position: right bottom;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: right bottom;
+            }
+        }
+    }
+    &.background-right-bottom-md {
+        @include media-breakpoint-only(md) {
+            background-position: right bottom;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: right bottom;
+            }
+        }
+    }
+    &.background-right-bottom-lg {
+        @include media-breakpoint-up(lg) {
+            background-position: right bottom;
+
+            .bg-image,
+            .group-left.bg-image,
+            .group-right.bg-image {
+                background-position: right bottom;
+            }
+        }
+    }
+}
+
+//--------------------------------------
+//
+//  Quotation styling
+//
+//--------------------------------------
+
+.quoteblock {
+
+    blockquote {
+        line-height: 1.4;
+        position: relative;
+        margin-left: 80px;
+
+        @include media-breakpoint-only(md) {
+            margin-left: 0;
+        }
+        @include media-breakpoint-up(md) {
+            border-left: 1px solid $quote-pipe-color;
+            padding-left: 1.3em;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            height: 0;
+            line-height: 0;
+            left: -80px;
+            position: absolute;
+            top: 0px;
+            width: 60px;
+            height: 70px;
+            background: $quotation-icon-url no-repeat scroll left top;
+            background-size: 100% auto;
+
+            @include media-breakpoint-only(md) {
+                position: relative;
+                left: 0;
+            }
+        }
+
+        span.quote-highlight {
+            color: $quote-highlight-text-color;
+            font-size: $quote-highlight-text-color;
+            line-height: 1.2;
+            font-weight: $quote-highlight-font-weight;
+        }
+
+        p {
+          margin-bottom: 1em;
+        }
+
+        .author {
+            margin: 0;
+            text-align: right;
+            font-style: italic;
+            color: $quote-author-text-color;
+            font-family: $quote-author-font-family;
+        }
+    }
+}
+
+//-------------------------------------
+//
+//  Business Contact info (sitewide)
+//
+//-------------------------------------
+
+// All displays of phone, fax, email information
+.address,
+.phone,
+.fax,
+.email {
+    span,
+    div {
+        display: inline-block;
+    }
+}
+
+//---------------------------------------------
+//
+//	VIDEO MODAL
+//
+//---------------------------------------------
+
+.mfp-wrap {
+    .mfp-embedded-video-popup {
+        width: 100%;
+        max-width: 1440px;
+        
+        .embedded-video {
+            height: 0;
+            overflow: hidden;
+            padding: 0 0 56.25%;
+            position: relative;
+            margin: 0 auto;
+            
+            iframe {
+                height: 100%;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        // X close button
+        .mfp-close {
+            color: #fff;
+            background: #b91212;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+}
+
+.modal-trigger--video {
+    cursor: pointer;
+    display: inline-block;
+    @extend .btn;
+    @extend .btn-primary;
+}

@@ -1,0 +1,82 @@
+//------------------------------------------
+//
+//   Collection :   Card Style 5
+//                  Photo Image Grid
+//
+//------------------------------------------
+
+.cards-image-grid {
+	
+	.subcard-wrapper {
+		.row {
+			display: grid;
+			margin: 0;
+		}
+	}
+	.card {
+
+		
+		&.has-card-body {
+			.card-image {
+				padding-bottom: 0;
+			}
+		}
+	}
+	.card-image, 
+	.s2_sub_card__sub-card-image, 
+	figure {
+		height: 100% !important;
+	}
+	figure {
+		// strange safari workaround to keep img
+		// from being 100% height of entire browser window
+		display: flex;
+		
+		img {
+			height: 100% !important;
+			object-fit: cover;
+		}
+	}
+	
+	// Edge to Edge Photo only gallery
+	&.cards-expand-full {
+		padding-left: 0;
+		padding-right: 0;
+		
+		.subcard-wrapper {
+			padding: 0;
+			
+			.row {
+				margin: 0;
+				grid-gap: 0 !important;
+				display: flex;
+			}
+		}
+		.card {
+			//height: auto;
+		}
+		.card-item {
+			flex: 1 1 auto;
+			
+			a:hover .card {
+				transform: none;
+				box-shadow: none;
+			}
+			.card-image {
+				overflow: hidden;
+				
+				img {
+					width: 100%;
+					transition: 0.2s all ease-in-out;
+				}
+			}
+		}
+		.paragraph--type--s2-sub-card {
+			> a {        
+				&:hover img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}

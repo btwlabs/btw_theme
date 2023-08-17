@@ -1,0 +1,135 @@
+//--------------------------------
+//  STORY BLOCK:
+//	LEFT text, full width bg img
+//--------------------------------
+
+.story-block {
+    &.left-text-full-bg-image {
+
+        // hide background img - has separate mobile img field
+        @include media-breakpoint-down(sm) {
+            background-image: none;
+        }
+
+        @include media-breakpoint-up(md) {
+
+            // TEXT column
+            .group-left {
+                width: 50%;
+                padding: 8vw;
+            }
+
+            // IMAGE column
+            .group-right {
+                width: 50%;
+                padding: 8vw 8vw 8vw 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                figure {
+                    margin: 0;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                figcaption {
+                    text-align: center;
+                    font-size: .8em;
+                    margin: .05em 0 0;
+                }
+            }
+        }
+
+        .section-title {
+            text-align: $sb-left-text-title-alignment;
+        }
+        
+        // this is mostly to ensure svg images uploaded will display
+        .story-block-extra-image {
+            @include media-breakpoint-up(md) {
+                width: 100%;
+                height: 100%;
+                align-items: center;
+            }
+        }
+        .s2_story_block__story-block-extra-image {
+            width: 100%;
+        }
+    }
+}
+
+//---------------------------------------------
+//   Text Wrapper Overlaps Image
+//----------------------------------------------
+
+.section-story-block {
+    &.text-wrapper-overlap {
+        .left-text-full-bg-image {
+            @include media-breakpoint-up(md) {
+                .group-left {
+                    display: flex;
+                }
+                .bg-image,
+                .image-overlay {
+                    @include media-breakpoint-up(md) {
+                        max-width: 75vw;
+                        left: 25vw;
+                    }
+                }
+                .story-block-extra-image {
+                    margin: 0 -4vw 0;
+                }
+            }
+        }
+        // compensate for scale 1.5 on parallax, push to right a little
+        // to equal bg placement on non-parallax
+        &.has-parallax {
+            .bg-image {
+                left: 44.15%;
+            }
+        }
+    }
+}
+
+// Image width 55%, text width 45%
+.sb-image55-text45 {
+    .story-block {
+        &.left-text-full-bg-image {
+            @include media-breakpoint-up(md) {
+
+                // img col
+                .group-right {
+                    width: 55%;
+                }
+
+                // text col
+                .group-left {
+                    width: 45%;
+                }
+            }
+        }
+    }
+}
+
+// Image width 45%, text width 55%
+.sb-image45-text55 {
+    .story-block {
+        &.left-text-full-bg-image {
+            @include media-breakpoint-up(md) {
+
+                // image col
+                .group-right {
+                    width: 45%;
+                }
+
+                // text col
+                .group-left {
+                    width: 55%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,213 @@
+
+//-------------------------------------
+//	Main Nav - header
+//-------------------------------------
+/*
+.search-block-form {
+	.form-item {
+		margin: 0;
+	}
+	input.form-submit {
+		font-size: 14px;
+		padding: 7px 10px;
+		background: #000;
+		border: 0;
+		position: relative;
+		top: -2px;
+	}
+}*/
+
+//-------------------------
+// Nav Colors
+//--------------------------
+
+// Navbar Background Color
+$navbar-bg-color: transparent;
+
+
+// Navbar Link Color
+$navbar-link-color: #000;
+
+// Navbar Link Color (Hover)
+$navbar-link-hover-color: $primary;
+
+// Navbar Link Background Color
+$navbar-link-bg-color: transparent;
+
+// Navbar Link Background Color (Hover)
+$navbar-link-bg-hover-color: transparent;
+
+// Active Link Color
+$navbar-link-active-color: $primary;
+
+// Active Link Background Color
+$navbar-link-active-bg: $gray-000;
+
+// Navbar Shadow
+$navbar-box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+
+
+.l-header {
+
+	// List items
+	nav.menu--main {
+		height: 50%;    
+				
+		.menu {
+			margin: 0;
+			padding: 0;
+			overflow: visible;
+			position: relative;
+			background-color: $navbar-bg-color;
+			display: flex;
+			height: 100%;
+			align-items: center;
+			
+			li {			
+				
+				// Nav button links
+				> a.main-nav {
+					display: block;
+					color: #000; // $navbar-link-color
+					background-color: $navbar-link-bg-color;
+					letter-spacing: $nav-letter-spacing;
+					font-weight: 900; //$nav-font-weight
+					text-transform: $nav-text-transform;
+					font-family: $nav-font-family;
+					
+					@include breakpoint($small-only) {
+						@include font-size($nav-font-size-mobile);
+						padding: 10px;
+					}
+					@include breakpoint($nav-medium-only) {
+						@include font-size($nav-font-size-md);
+						padding: 22px 10px 20px;
+					}
+					@include breakpoint($nav-large-only) {
+						@include font-size($nav-font-size-lg);
+						padding: 22px 10px 20px;
+					}
+					@include breakpoint($nav-xlarge-up) {
+						@include font-size($nav-font-size-xl);
+						padding: 22px 15px 22px;
+					}
+				}
+				
+				a.icon-search {
+					font-size: 0 !important;
+					width: 30px;
+					height: 54px;
+					background: url(../images/icons/icon-search-black.svg) no-repeat scroll center 19px;
+					background-size: 80% auto;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+//-------------------------------------
+//	Secondary Nav (second line, header)
+//-------------------------------------
+
+.pre-content {
+	.secondary-nav {
+		padding: 0 0 0 3vw;
+		background: #000;
+		
+		@include breakpoint($small-and-medium) {
+ 			display: none;
+		}
+		
+		ul.menu {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			justify-content: flex-end;
+			
+			li {
+				margin: 0;
+				padding: 0;
+				font-size: 18px;
+				list-style: none;
+				display: flex;
+				align-items: center;
+				
+				// space between nav item and donate button
+				&:nth-child(4) {
+					margin-right: 20px;
+				}
+				
+				a {
+					padding: 10px 15px;
+					display: block;
+					line-height: 1;
+					color: $secondary;
+					
+					&:hover {
+						background: $secondary;
+						color: #000;
+						text-decoration: none;
+					}
+				}
+				
+				a.nav-feature {
+					background: #b82b8a;
+					font-size: 22px;
+					font-weight: bold;
+					color: #fff;
+					padding: 20px 40px;
+					
+					&:hover {
+						text-decoration: none;
+						background: lighten($primary, 10%);
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Mobile nav
+
+.mobile-search {
+	display: flex;
+	justify-content: center;
+}
+
+.l-mobile-header .site-name {
+	display: flex;
+	width: auto;
+	max-width: 300px;
+	text-align: center;
+	height: 50px;
+	line-height: 1.2;
+	align-items: center;
+	margin-left: auto;
+	margin-right: 20px;
+	justify-content: flex-end;
+	
+	a {
+		display: inline-block;
+		width: auto;
+		height: auto;
+		font-weight: $title-font-weight;
+	}
+}
+
+.mobile-nav {
+	a.nav-feature {
+		background: $secondary;
+		color: #000;
+	}
+}
+
+// Search form
+div#block-views-search-form-mobile {
+	display: none;
+}

@@ -1,0 +1,79 @@
+//-------------------------------------------
+//-------------------------------------------
+//
+//	VARIABLES: Business Information
+// 
+//-------------------------------------------
+//-------------------------------------------
+
+// Icon Color
+// Sets the color of the icons representing the types of information, such as location, phone number, etc
+$section-biz-info-icon-color: $base-text-color;
+
+
+// Section Settings
+// 
+// Background Color
+// Sets a background color on the business information section
+$section-biz-info-bg-color: $section-default-bg-color;
+
+// Padding
+// Sets the space between the outer edge of the section and the content inside
+$section-biz-info-padding: 4vw;
+
+//--------------------------------
+// Section Intro: Title and Body
+//---------------------------
+
+// Title Alignment
+// Sets text alignment on the intro section title, if used
+$section-biz-info-title-alignment: center;
+
+// Body Text Alignment
+// Sets text alignment on the intro body description for the section
+$section-biz-info-body-alignment: center;
+
+// Section title color
+// Sets color of the section title
+$section-biz-info-title-color: $title-color;
+
+// Intro Body Text color
+// Sets the color of the intro body description for the section
+$section-biz-info-body-color: $base-text-color;
+
+
+//----------------------
+// Item Wrapper - (Around Each Group of Data)
+//----------------------
+
+// Item Padding
+// Sets padding around each group of data. Helpful if implementing a background color on each group of data
+$biz-info-item-padding: 20px;
+
+// Background
+// Sets a background color on the individual data groups in the section
+$biz-info-item-bg: transparent;
+
+// Font Size
+// Sets the font size of the business data
+$biz-info-item-font-size: 18px;
+
+
+//------------------------
+// Data details
+//------------------------
+
+// Detail Color
+// Sets the text color of the data details
+$section-biz-info-detail-color: $base-text-color;
+
+// Detail Font Size
+// Sets the font size of the data details
+$section-biz-info-detail-font-size: 1em;
+
+// Links
+// Link Color
+$section-biz-info-link-color: $link-color;
+
+// Link Color (Hover)
+$section-biz-info-link-color-hover: $link-color-hover;

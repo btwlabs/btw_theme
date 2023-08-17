@@ -1,0 +1,134 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: CONTACT FORM (FORMSUBMIT.com)
+//
+//----------------------------------
+//----------------------------------
+
+.section-contact-form {
+	background: $section-contact-form-bg-color;
+
+	.intro {
+		.section-title {
+			text-align: $section-contact-form-title-alignment;
+			color: $section-contact-form-title-color;
+		}
+		.intro-body {
+			text-align: $section-contact-form-intro-body-alignment;
+			color: $section-contact-form-intro-color;
+		}
+	}
+
+	.contact-detail {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: baseline;
+		margin-bottom: 10px;
+
+		i {
+			flex: 0 0 20px;
+			margin-right: 20px;
+			text-align: right;
+			font-size: 18px;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		span.country {
+			display: none;
+		}
+	}
+	.contact-name {
+		padding: 10px 0;
+		margin-bottom: 10px;
+		border-bottom: 1px solid $border-color;
+		font-weight: bold;
+		font-size: 1.125em;
+	}
+	
+	form {
+		max-width: 450px;
+		font-size: 16px;
+		width: 85vw;
+		align-items: center;
+		flex-direction: column;
+		display: flex;
+	
+		input {
+			margin: 10px 0;
+			padding: 10px;
+			border: 0;
+			width: 100%;
+			background: #fff;
+		}
+	
+		textarea {
+			max-width: 450px;
+			font-size: 16px;
+			width: 85vw;
+			margin: 10px 0px;
+			padding: 10px;
+			border: 0;
+			background: #fff;
+		}
+		button {
+			@extend .btn;
+			@include button-on-light;
+			display: block;
+			width: 100%;
+			margin: 10px 0;
+			border: 0;
+		}
+	}
+	
+	&.light-bg-dark-text {
+		background: $bg-light-color;
+		
+		.intro {
+			.section-title {
+				color: $title-on-light-color;
+			}
+			.intro-body {
+				color: $text-on-light-color;
+			
+				a {
+					color: $link-on-light-color;
+					
+					&:hover {
+						color: $link-on-light-color-hover;
+					}
+				}
+			}
+		}
+	}
+	&.dark-bg-light-text {
+		background: $bg-dark-color;
+		
+		.intro {
+			.section-title {
+				color: $title-on-dark-color;
+			}
+			// Intro body text
+			.intro-body {
+				color: $text-on-dark-color;
+			
+				a {
+					color: $link-on-dark-color;
+					
+					&:hover {
+						color: $link-on-dark-color-hover;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+
+  
+

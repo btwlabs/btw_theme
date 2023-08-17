@@ -1,0 +1,147 @@
+//------------------------------------------------------
+//
+//	VARIABLES - COLORS - all colors sitewide defined here
+//
+//	location: 
+//      /sass/variables/_variables-colors.scss
+//
+//------------------------------------------------------
+
+
+// neutral colors
+$white: #fff;
+$xlight-gray: #efefef; // text bg area
+$light-gray: #ccc; // borders
+$middle-gray: #777; // light text & icons
+$dark-gray: #424242; // titles and text
+$xdark-gray: #222;
+$black: #000;
+
+
+
+//--------------------------
+// Selected text color
+//--------------------------
+$selection-text-color: #fff;
+$selection-background-color: $primary;
+
+
+
+//--------------------------
+// Captions
+//--------------------------
+$caption-light-color: #fff;
+$caption-dark-color: #000;
+
+
+
+//--------------------------
+// Tables 
+//--------------------------
+$table-header-bg-color: #eee;
+$table-odd-row-bg-color: #fff;
+$table-even-row-bg-color: #f0f0f0;
+
+
+
+//-------------------------------
+//
+//	Navigation
+//
+//-------------------------------
+
+$nav-text-color: #555;
+$nav-text-hover-color: $primary;
+
+$nav-button-bg-color: transparent;
+$nav-button-bg-hover-color: transparent;
+$nav-button-bg-active-color: transparent;
+
+$nav-bar-bg-color: transparent;
+
+	// Sub-Navigation
+	$subnav-text-color: #fff;
+	$subnav-text-hover-color: #fff;
+	
+	$subnav-button-bg-color: transparent;
+	$subnav-button-bg-hover-color: $primary;
+	
+	$subnav-bar-bg-color: #3e4246;
+
+	// mobile nav only
+	$mobile-nav-text-color: $secondary;
+	$mobile-nav-bg-color: #000;
+	$mobile-nav-text-hover-color: $secondary;
+	$mobile-nav-bg-hover-color: $primary;
+	$mobile-nav-border-color: rgba(255,255,255,0.2);
+	
+	// mobile header 
+	$mobile-header-bg-color: #000;
+	
+	
+	// mobile nav close button
+	$mobile-nav-icon-color-open: #fff;
+	$mobile-nav-icon-color-closed: #333;
+	
+	// mobile subnav
+	$mobile-subnav-text-color: #bbb;
+	$mobile-subnav-bg-color: darken($primary, 15%);
+	
+	// Home page non-mobile
+	$home-nav-text-color: #fff;
+	$home-nav-text-hover-color: #fff;
+
+		
+	// mobile site name
+	$mobile-site-name-text-color: #000;
+
+
+//--------------------------
+// Sidebar blocks
+//--------------------------
+$sidebar-block-bg-color: rgba(0,0,0,0.8);
+
+$sidebar-text-color: #aaa;
+
+$sidebar-link-color: #ccc;
+$sidebar-link-hover-color: red;
+	
+	// block title
+	$sidebar-block-title-color: #fff;
+	$sidebar-block-title-bg-color: #000;
+
+	// buttons
+	$sidebar-button-text-color: #000;
+	$sidebar-button-text-hover-color: #fff;
+	
+	$sidebar-button-bg-color: #fff;
+	$sidebar-button-bg-hover-color: #000;
+	
+	// more link
+	$sidebar-more-link-text-color: #000;
+	$sidebar-more-link-text-hover-color: #fff;
+	
+	$sidebar-more-link-bg-color: #fff;
+	$sidebar-more-link-bg-hover-color: red;
+
+
+
+
+//--------------------------
+// Messages
+//--------------------------
+$messages-background-color: #A3E3F8;
+
+
+
+//--------------------------
+// Admin Tabs 
+//--------------------------
+$tabs-text-color: #000;
+$tabs-text-hover-color: #fff;
+
+$tabs-bg-color: #eee;
+$tabs-bg-hover-color: #03a9f4;
+
+$tabs-active-text-color: #fff;
+$tabs-active-bg-color: #03a9f4;

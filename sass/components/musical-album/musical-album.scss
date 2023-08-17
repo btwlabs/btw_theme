@@ -1,0 +1,293 @@
+//----------------------------------
+//
+//	CATALOG ITEM TYPE:
+//      MUSICAL ALBUM
+//
+//----------------------------------
+
+
+.catalog {
+
+    // remove col padding so album bg odd/even colors extend to edge
+    .section-content-items .content-row > .col {
+        padding: 0;
+    }
+    
+    // alternating bg colors for rows
+    .catalog-item {
+        &.even {
+            .album-wrapper {
+                background: $album-row-bg-even;
+            }
+        
+        }
+        &.odd {
+            .album-wrapper {
+                background: $album-row-bg-odd;
+            }
+        }
+    }
+}
+
+
+// outer album wrapper - row
+.album-wrapper {
+    padding: 4rem 0;
+    position: relative;
+    border-bottom: $album-row-border;
+    
+    // col 1
+    .album-item-1 {
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 30px;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 0 30px;
+        }
+        
+        .musical_album__album-purchase-button {
+            span[itemprop="price"] {
+                display: block;
+                text-align: center;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+        }
+    }
+    
+    // album art
+    .musical_album__album-art {
+        margin-bottom: 1.5em;
+        
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    // purchase link
+    .musical_album__album-purchase-link {
+        margin-bottom: 1rem;
+    
+        a {
+            @extend .btn;
+            @extend .btn-primary;
+            display: block;
+            text-align: center;
+        
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    
+    .album-title {
+        color: $album-item-title-color;
+    }
+    .album-artist {
+        font-weight: normal;
+        font-size: 1em;
+    }
+    // Customized track listing
+    .album-description {
+        color: $album-item-description-color;
+        
+        @include media-breakpoint-up(lg) {
+            font-size: $album-details-font-size;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: .8em;
+        }
+        
+        p:first-child {
+            margin-top: 1.5em;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    // Album Details (column 2)
+    .album-item-2 {
+        @include media-breakpoint-up(lg) {
+            padding: 0 30px;
+        }
+    }
+    .album-tracks {
+        font-size: $album-tracks-font-size;
+        
+        // Album Track Listing
+        ol {
+            padding-left: 30px;
+        
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+//---------------------------------------------
+//
+//	LIGHT THEME STYLES -
+//
+//---------------------------------------------
+
+.album-wrapper {
+    
+    //-----------------------
+    // light bg dark text
+    //-----------------------
+    &.light-bg-dark-text {
+        background: $bg-light-color !important;
+        
+        h2.album-title {
+            color: $title-on-light-color;
+        }
+        h2.album-title a {
+            color: $link-on-light-color;
+            
+            &:hover {
+                color: $link-on-light-color-hover;
+            }
+        }
+        .album-artist,
+        .album-description,
+        .musical_album__album-track-list {
+            color: $text-on-light-color;
+        }
+        .musical_album__album-purchase-link a,
+        a.standalone-page-link {
+            @include button-on-light;
+        }
+    }
+    
+    //-----------------------
+    // light bg class
+    //-----------------------
+    &.light-bg {
+        background: $bg-light-color !important;
+    }
+}
+
+//---------------------------------------------
+//
+//	DARK THEME STYLES -
+//
+//---------------------------------------------
+
+.album-wrapper {
+    
+    &.dark-bg-light-text {
+        background: $bg-dark-color !important;
+        
+        h2.album-title {
+            color: $title-on-dark-color;
+        }
+        h2.album-title a {
+            color: $link-on-dark-color;
+            
+            &:hover {
+                color: $link-on-dark-color-hover;
+            }
+        }
+        .album-artist,
+        .album-description,
+        .musical_album__album-track-list {
+            color: $text-on-dark-color;
+        }
+        .musical_album__album-purchase-link a,
+        a.standalone-page-link {
+            @include button-on-dark;
+        }
+    }
+    
+    //-----------------------
+    // dark bg class only
+    //-----------------------
+    &.dark-bg {
+        background: $bg-dark-color !important;
+    }
+}
+
+//-----------------------
+//  Light Text class
+//-----------------------
+.album-wrapper {    
+    &.light-text {
+        h2.album-title {
+            color: $title-on-dark-color;
+        }
+        h2.album-title a {
+            color: $link-on-dark-color;
+            
+            &:hover {
+                color: $link-on-dark-color-hover;
+            }
+        }
+        .album-artist,
+        .album-description,
+        .musical_album__album-track-list {
+            color: $text-on-dark-color;
+        }
+        .musical_album__album-purchase-link a,
+        a.standalone-page-link {
+            @include button-on-dark;
+        }
+    }
+}
+
+//------------------------------------
+//  Dark Text class
+//------------------------------------
+.album-wrapper { 
+    &.dark-text {
+        h2.album-title {
+            color: $title-on-light-color;
+        }
+        h2.album-title a {
+            color: $link-on-light-color;
+            
+            &:hover {
+                color: $link-on-light-color-hover;
+            }
+        }
+        .album-artist,
+        .album-description,
+        .musical_album__album-track-list {
+            color: $text-on-light-color;
+        }
+        .musical_album__album-purchase-link a,
+        a.standalone-page-link {
+            @include button-on-light;
+        }
+    }
+}
+
+
+//----------------------------------
+//
+//	STANDALONE ALBUM PAGE:
+//
+//----------------------------------
+
+.page-album {
+    @include media-breakpoint-down(md) {
+        padding: 8vw 0;
+    }
+    @include media-breakpoint-up(lg) {
+        padding: 5vw 0 8vw 0;
+    }
+    
+    .title-wrapper {
+        text-align: center;
+        margin-bottom: 2em;
+    }
+    
+    h1.page-title,
+    h1.title {
+        @include title-style;
+        @include responsive-page-title;
+    }
+}

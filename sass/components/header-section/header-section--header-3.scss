@@ -1,0 +1,32 @@
+//------------------------------------
+//------------------------------------
+//
+//	SECTION: HEADER 3: Logo left
+//					   Nav center
+//					   Socials right
+//
+//------------------------------------
+//------------------------------------
+
+// navbar wrapper
+.navbar {
+
+	@include media-breakpoint-up(lg) {
+		// makes sure icons are on the right
+		// when no nav items are present
+		.navbar-collapse {
+			justify-content: space-between;
+			
+			.navbar-nav.ml-auto {
+				margin-left: 0 !important;
+			}
+		}
+	}
+}
+.site_v2__header-section {
+	.social_links__social-links-list {
+		@include media-breakpoint-up(lg) {
+			border: 0;
+		}
+	}
+}

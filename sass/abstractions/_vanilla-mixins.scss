@@ -1,0 +1,342 @@
+//---------------------------------------------------
+//---------------------------------------------------
+//
+//	MIXINS
+//
+//---------------------------------------------------
+//---------------------------------------------------
+
+
+
+
+
+
+//--------------------------------------------------
+//
+//	BUTTON ON A DARK BG mixin
+//
+//--------------------------------------------------
+
+@mixin button-on-dark {
+	background: $btn-bg-color-on-dark;
+	color: $btn-text-color-on-dark !important;
+	border-color: $btn-border-color-on-dark;
+
+	&:hover {
+		background: $btn-bg-hover-color-on-dark;
+		color: $btn-text-hover-color-on-dark !important;
+		border-color: $btn-border-hover-color-on-dark;
+	}
+}
+
+@mixin button-on-light {
+    background: $btn-bg-color-on-light;
+    color: $btn-text-color-on-light !important;
+    border-color: $btn-border-color-on-light;
+
+    &:hover {
+        background: $btn-bg-hover-color-on-light;
+        color: $btn-text-hover-color-on-light !important;
+        border-color: $btn-border-hover-color-on-light;
+    }
+}
+
+
+
+//------------------------------------------------------
+//
+//	MIXINS - TYPOGRAPHY
+//
+//------------------------------------------------------
+
+
+// Use REMs with a pixel fallback for font sizing.
+@mixin font-size($font-size){
+	font-size: $font-size;
+	font-size: calc($font-size / $base-font-size)*1rem;
+}
+
+//-----------------------------------
+//
+//	BODY TEXT - Basic sitewide text
+//
+//-----------------------------------
+
+@mixin base-text-style {
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+	line-height: $base-line-height;
+	color: $base-text-color;
+	letter-spacing: $base-letter-spacing;
+}
+
+@mixin responsive-body-text {
+	@include media-breakpoint-down(sm) {
+		font-size: $body-text-sm;
+	}
+	@include media-breakpoint-up(md) {
+		font-size: $body-text-md;
+	}
+	@include media-breakpoint-up(lg) {
+		font-size: $body-text-lg;
+	}
+}
+
+
+//-----------------------------------
+//
+//	RESPONSIVE TITLES
+//
+//-----------------------------------
+
+@mixin title-style {
+	font-family: $title-font-family;
+	font-weight: $title-font-weight;
+	margin: $title-margin;
+	padding: $title-padding;
+	color: $title-color;
+	line-height: $title-line-height;
+	text-transform: $title-text-transform;
+	border-bottom: $title-border-bottom;
+	letter-spacing: $title-letter-spacing;
+}
+
+    //-----------------------------------
+    //	HERO HEADING - h1
+    //-----------------------------------
+    @mixin responsive-hero-title {
+
+        @include media-breakpoint-down(sm) {
+            font-size: $hero-title-sm;
+        }
+        @include media-breakpoint-up(md) {
+            font-size: $hero-title-md;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: $hero-title-lg;
+        }
+    }
+
+
+    //-----------------------------------
+    //	HERO SUBHEADING - h2
+    //-----------------------------------
+
+    @mixin responsive-hero-subtitle {
+
+        @include media-breakpoint-down(sm) {
+            font-size: $hero-subtitle-sm;
+        }
+        @include media-breakpoint-up(md) {
+            font-size: $hero-subtitle-md;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: $hero-subtitle-lg;
+        }
+    }
+
+	//-----------------------------------
+	//	Page TITLE - h1
+	//-----------------------------------
+
+	@mixin responsive-page-title {
+
+		@include media-breakpoint-down(sm) {
+			font-size: $page-title-sm;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: $page-title-md;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: $page-title-lg;
+		}
+	}
+
+	//-----------------------------------
+	//	Section TITLE - h2
+	//-----------------------------------
+
+	@mixin responsive-section-title {
+
+		@include media-breakpoint-down(sm) {
+			font-size: $section-title-sm;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: $section-title-md;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: $section-title-lg;
+		}
+	}
+
+	//-----------------------------------
+	//	Section SUBTITLE - h3
+	//-----------------------------------
+
+	@mixin responsive-section-subtitle {
+
+		@include media-breakpoint-down(sm) {
+			font-size: $section-subtitle-sm;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: $section-subtitle-md;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: $section-subtitle-lg;
+		}
+	}
+
+	//-----------------------------------
+	//	CARDS TITLE
+	//-----------------------------------
+
+	@mixin responsive-card-title {
+
+		@include media-breakpoint-down(sm) {
+			font-size: $card-title-sm;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: $card-title-md;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: $card-title-lg;
+		}
+	}
+
+
+//-----------------------------------
+//	Position defaults for background
+//  image containers
+//-----------------------------------
+@mixin image-effect-position {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+
+$nav-underline-width: calc(#{$nav-link-padding-x * 2});
+
+
+//-------------------------------
+// Nav underline Animation
+//-------------------------------
+
+// Hover state
+@keyframes nav-link-underline-animation {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: calc(100% - #{$nav-link-padding-x * 2});
+	}
+}
+
+
+// Nav Border Animation Reverse (back to normal)
+@keyframes nav-link-underline-animation-reverse {
+	0% {
+		width: calc(100% - #{$nav-link-padding-x * 2});
+	}
+	100% {
+		width: 0;
+	}
+}
+
+
+// MIXIN
+@mixin nav-link-underline-animation {
+
+	&:before {
+		display: block;
+	    content: "";
+	    height: 3px;
+	    background: $primary;
+	    text-align: center;
+	    position: absolute;
+	    bottom: 10px;
+	    left: 50%;
+		transform: translateX(-50%);
+	    animation: nav-link-underline-animation-reverse 0.3s ease-in-out forwards;
+	    z-index: -1;
+	}
+
+	&:hover {
+		&:before {
+			display: block;
+		    content: "";
+		    height: 3px;
+		    background: $primary;
+		    text-align: center;
+		    position: absolute;
+		    bottom: 10px;
+		    left: 50%;
+			transform: translateX(-50%);
+		    animation: nav-link-underline-animation 0.3s ease-in-out forwards;
+		    z-index: -1;
+		}
+	}
+}
+
+
+
+
+//-----------------------------
+// Nav BG Animation
+//-----------------------------
+@keyframes nav-bg-animation {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+// Nav BG Animation Reverse
+@keyframes nav-bg-animation-reverse {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 0;
+	}
+}
+
+@mixin nav-link-bg-animation {
+
+	&:before {
+		display: block;
+	    content: "";
+	    height: 100%;
+	    background: rgba(85,89,93,0.08);
+	    text-align: center;
+	    position: absolute;
+	    bottom: 0;
+	    left: 50%;
+		transform: translateX(-50%);
+	    animation: nav-bg-animation-reverse 0.3s ease-in-out forwards;
+	    border-radius: 4px;
+	    z-index: -1;
+	}
+
+	&:hover {
+		&:before {
+			display: block;
+		    content: "";
+		    height: 100%;
+		    background: rgba(85,89,93,0.08);
+		    text-align: center;
+		    position: absolute;
+		    bottom: 0;
+		    left: 50%;
+			transform: translateX(-50%);
+		    animation: nav-bg-animation 0.3s ease-in-out forwards;
+		    border-radius: 4px;
+		    z-index: -1;
+		}
+	}
+}

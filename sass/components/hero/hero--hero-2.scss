@@ -1,0 +1,515 @@
+//----------------------------------
+//
+//	SECTION: HERO Template 2
+//           Logo/Img Left, Text Right
+//
+//----------------------------------
+
+.section-hero {
+    //----------------------------------
+    //
+    //	SECTION: HERO 2 Column
+    //  Content Layout: X = center, Y = center
+    //                  Image/logo left, text right
+    //
+    //----------------------------------
+    &.hero-2-col {
+    
+        // main wrapper
+        .hero-wrapper {
+            flex-direction: row;
+    
+            // position left, right, or center horizontally
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .hero-content-wrapper {
+            display: flex;
+
+            @include media-breakpoint-down(md) {
+                flex-direction: column;
+                align-items: center;
+            }
+            @include media-breakpoint-up(md) {
+                align-items: $hero-2col-align-items;
+                gap: $hero-2col-left-item-margin;
+            }
+        }
+    
+        // Default is image left, text right
+        .hero-logo-wrapper {
+            order: 1;
+            
+            @include media-breakpoint-down(sm) {
+                flex: 0 0 $hero-logo-width-sm;
+            }
+            
+            @include media-breakpoint-only(md) {
+                flex: 0 0 $hero-logo-width-md;
+                margin-right: $hero-2col-left-item-margin;
+            }
+            
+            @include media-breakpoint-up(lg) {
+                flex: 0 0 $hero-logo-width-lg;
+            }
+    
+            
+        }
+        .hero-title-wrapper {
+            order: 2;
+            flex: auto;
+        }
+    }
+
+    //-------------------------------------
+    // Content layout positions within
+    // outer wrapper
+    //-------------------------------------
+
+    //--------- X LEFT ----------
+    // X left, Y top
+    &.hero-left-top {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to left
+                justify-content: flex-start;
+                // align inside content to top
+                align-items: flex-start;
+            }
+        }
+    }
+
+    // X left, Y center
+    &.hero-left-center {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to left
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // X left, Y bottom
+    &.hero-left-bottom {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to left
+                justify-content: flex-start;
+                // align inside content to bottom
+                align-items: flex-end;
+            }
+        }
+    }
+
+    //------ X CENTER -----------
+    // X center, Y top
+    &.hero-center-top {
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to top
+                align-items: flex-start;
+            }
+        }
+    }
+
+    // X center, Y center
+    &.hero-center-center {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    // X center, Y bottom
+    &.hero-center-bottom {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                align-items: flex-end;
+            }
+        }
+    }
+
+    //--------- X RIGHT ---------
+    // X right, Y top
+    &.hero-right-top {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to right
+                justify-content: flex-end;
+                // align inside content to top
+                align-items: flex-start;
+            }
+        }
+    }
+
+    // X right, Y center
+    &.hero-right-center {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to right
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    // X right, Y bottom
+    &.hero-right-bottom {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to right
+                justify-content: flex-end;
+                // align inside content to bottom
+                align-items: flex-end;
+            }
+        }
+    }
+
+    //------------------------------------------
+    //    100% height hero content wrapper
+    //    (for background color fills/images)
+    //------------------------------------------
+
+    // X Left, Y top, 100% height container
+    &.hero-content-full-height-left-top {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to left
+                justify-content: flex-start;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis
+                align-items: center;
+                // Y axis
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // X left, Y center, 100% height
+    &.hero-content-full-height-left-center {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to left
+                justify-content: flex-start;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: center;
+            }
+        }
+    }
+
+    // X left, Y bottom, 100% height
+    &.hero-content-full-height-left-bottom {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to left
+                justify-content: flex-start;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    // X center, Y top, 100% height
+    &.hero-content-full-height-center-top {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to center
+                justify-content: center;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis
+                align-items: center;
+                // Y axis
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // X center, Y center, 100% height
+    &.hero-content-full-height-center-center {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to left
+                justify-content: center;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: center;
+            }
+        }
+    }
+
+    // X center, Y bottom, 100% height
+    &.hero-content-full-height-center-bottom {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to center
+                justify-content: center;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    // X right, Y top, 100% height
+    &.hero-content-full-height-right-top {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to right
+                justify-content: flex-end;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis
+                align-items: center;
+                // Y axis
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // X right, Y center, 100% height
+    &.hero-content-full-height-right-center {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to right
+                justify-content: flex-end;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: center;
+            }
+        }
+    }
+
+    // X right, Y bottom, 100% height
+    &.hero-content-full-height-right-bottom {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to right
+                justify-content: flex-end;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    //---------------------------------------
+    // Full width hero content
+    //---------------------------------------
+
+    // full width, X center, Y top
+    &.hero-content-full-width-top {
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            .hero-wrapper {
+                // align inside content to top
+                align-items: flex-start;
+            }
+        }
+        .hero-content-wrapper {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    // full width, X center, Y center
+    &.hero-content-full-width-center {
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            .hero-wrapper {
+                align-items: center;
+            }
+        }
+        .hero-content-wrapper {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    // full width, X center, Y bottom
+    &.hero-content-full-width-bottom {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            .hero-wrapper {
+                align-items: flex-end;
+            }
+        }
+        .hero-content-wrapper {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}

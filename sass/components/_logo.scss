@@ -1,0 +1,56 @@
+//------------------------------------------------------
+//
+//	LOGO - style the site logo image uploaded through 
+//         the back end
+//
+//	location: 
+//      /sass/components/_logo.scss
+//
+//------------------------------------------------------
+
+
+// Logo container/region
+.l-branding {
+	background-color: transparent;
+	height: 100%;
+	padding: 0;
+	display: flex;
+    align-items: center;
+	
+	@include breakpoint($small-only) {
+		padding-left: 15px;
+	}
+	@include breakpoint($medium-up) {
+		width: auto;
+	}
+	@include breakpoint($large-up) {
+		width: auto;
+	}
+	@include breakpoint($xlarge-up) {
+		width: auto;
+	}
+	
+	img {
+		width: 100%;
+	}
+}
+
+.site-logo {
+	display: block;
+	
+	@include breakpoint($large-up) {
+		display: flex;
+	    width: 100%;
+	    height: 100%;
+	    align-items: center;
+	    justify-content: center;
+	    padding: 0;
+	}
+	
+	.site-name {
+		visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}

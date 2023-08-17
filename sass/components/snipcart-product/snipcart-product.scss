@@ -1,0 +1,259 @@
+//----------------------------------
+//
+//	CATALOG ITEM TYPE:
+//      PRODUCTS
+//
+//----------------------------------
+
+// offset the checkout modal top position by the height of the navbar
+// !important needed for override of imported Snipcart styles
+.snipcart-modal__container {
+
+    // since cart button is in navbar container (for fixed positioning),
+    // increase z-index (default is 10) to cover cart button, which clicking causes freakout
+    z-index: 101 !important;
+
+    // change drop shadow color
+    &.snipcart-cart-summary--edit {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+    }
+}
+
+
+
+
+.catalog {
+
+    // negate default container width to allow for full-width
+    // album rows
+    .section-content-items > .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    // alternating bg colors for rows
+    .catalog-item {
+        &.even {
+            .product-wrapper {
+                background: $product-row-bg-even;
+            }
+        }
+        &.odd {
+            .product-wrapper {
+                background: $product-row-bg-odd;
+            }
+        }
+    }
+}
+
+.product-wrapper {
+    padding: 3rem 0;
+    position: relative;
+    border-bottom: $product-row-border;
+
+    .product-title {
+        color: $subpage-title-color;
+    }
+
+    .price {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    // col 1
+    .product-item-1 {
+        text-align: center;
+        
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 30px;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 0 30px;
+        }
+    }
+    .product-item-2 {
+        @include media-breakpoint-up(lg) {
+            padding: 0 30px;
+        }
+    }
+
+    //------------------------
+    // Product description
+    //------------------------
+
+    // hide the unnecessary word "description" preceding
+    .snipcart_product__product-description > div:first-of-type {
+        display: none;
+    }
+    .product-description {
+        @include media-breakpoint-up(lg) {
+            font-size: $product-details-font-size;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+//---------------------------------------------
+//
+//	LIGHT THEME STYLES -
+//
+//---------------------------------------------
+
+.product-wrapper {
+    
+    //-----------------------
+    // light bg dark text
+    //-----------------------
+    &.light-bg-dark-text {
+        background: $bg-light-color !important;
+        
+        h2.product-title {
+            color: $title-on-light-color;
+        }
+        h2.product-title a {
+            color: $link-on-light-color;
+            
+            &:hover {
+                color: $link-on-light-color-hover;
+            }
+        }
+        .product-price-link-wrapper,
+        .product-description {
+            color: $text-on-light-color;
+        }
+        .snipcart-add-item {
+            @include button-on-light;
+        }
+    }
+    
+    //-----------------------
+    // light bg class
+    //-----------------------
+    &.light-bg {
+        background: $bg-light-color !important;
+    }
+}
+
+//---------------------------------------------
+//
+//	DARK THEME STYLES -
+//
+//---------------------------------------------
+
+.product-wrapper {
+    
+    &.dark-bg-light-text {
+        background: $bg-dark-color !important;
+        
+        h2.product-title {
+            color: $title-on-dark-color;
+        }
+        h2.product-title a {
+            color: $link-on-dark-color;
+            
+            &:hover {
+                color: $link-on-dark-color-hover;
+            }
+        }
+        .product-price-link-wrapper,
+        .product-description {
+            color: $text-on-dark-color;
+        }
+        .snipcart-add-item {
+            @include button-on-dark;
+        }
+    }
+    
+    //-----------------------
+    // dark bg class only
+    //-----------------------
+    &.dark-bg {
+        background: $bg-dark-color !important;
+    }
+}
+
+//-----------------------
+//  Light Text class
+//-----------------------
+.product-wrapper {    
+    &.light-text {
+        h2.product-title {
+            color: $title-on-dark-color;
+        }
+        h2.product-title a {
+            color: $link-on-dark-color;
+            
+            &:hover {
+                color: $link-on-dark-color-hover;
+            }
+        }
+        .product-price-link-wrapper,
+        .product-description {
+            color: $text-on-dark-color;
+        }
+        .snipcart-add-item {
+            @include button-on-dark;
+        }
+    }
+}
+
+//------------------------------------
+//  Dark Text class
+//------------------------------------
+.product-wrapper { 
+    &.dark-text {
+        h2.product-title {
+            color: $title-on-light-color;
+        }
+        h2.product-title a {
+            color: $link-on-light-color;
+            
+            &:hover {
+                color: $link-on-light-color-hover;
+            }
+        }
+        .product-price-link-wrapper,
+        .product-description {
+            color: $text-on-light-color;
+        }
+        .snipcart-add-item {
+            @include button-on-light;
+        }
+    }
+}
+
+
+
+//----------------------------------
+//
+//	STANDALONE PRODUCT PAGE:
+//
+//----------------------------------
+
+.page-product {
+    &.paragraph--view-mode--standalone-1 {
+        @include media-breakpoint-down(md) {
+            padding: 8vw 0;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 5vw 0 8vw 0;
+        }
+    }
+
+    .title-wrapper {
+        text-align: center;
+        margin-bottom: 2em;
+    }
+
+    h1.page-title,
+    h1.title {
+        @include title-style;
+        @include responsive-page-title;
+    }
+}
+
+

@@ -1,0 +1,17 @@
+// css reset
+@import "normalize.scss";
+
+// import breakpoint-sass node module
+//@import "breakpoint";
+
+// add animation for hamburger menu item
+//@import "hamburgers-animation/hamburgers.scss";
+
+// all sass files globbed
+@import "variables/**/*.scss";
+@import "abstractions/**/*.scss";
+@import "base/**/*.scss";
+@import "animate-scss/animate.scss";
+@import "style.scss";
+@import "components/**/*.scss";
+@import "free-black-thought/**/*.scss";

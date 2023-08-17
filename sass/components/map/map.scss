@@ -1,0 +1,21 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: MAP / LOCATION
+//
+//----------------------------------
+//----------------------------------
+
+.section-map {
+    background-color: $section-map-bg-color;
+
+    iframe {
+        width: 100%;
+        height: $map-height;
+    }
+
+    // visibly remove extra space below iframe
+    .google_map__google-map-address {
+        margin-bottom: -9px;
+    }
+}

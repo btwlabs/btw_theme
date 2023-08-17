@@ -1,0 +1,115 @@
+//----------------------------------------------
+//
+//	LAYOUT - general layout styles for main containers
+//
+//	location: 
+//      /sass/base/_layout.scss
+//
+//----------------------------------------------
+
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+	font-size: 18px;
+	text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+/**
+ * Disable smooth scrolling when users have prefers-reduced-motion enabled
+ */
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+
+body {
+	background-color: $body-bg;
+	@include base-text-style; // see /abstractions/_typography.scss & /variables/_typography.scss
+	@include responsive-body-text; // DEFAULT FONT SIZES AT BREAKPOINTS
+
+	// ONLY enable for fixed position headers
+	// then go to _variables-layout and edit the header heights
+	
+	//@include fixed-navbar-body-offset;
+	
+}
+
+
+.clear-both {
+	clear: both;
+}
+
+
+//----------------------------------------
+// Define constrained containers sitewide
+//-----------------------------------------
+
+.l-constrained {
+	@include breakpoint($small-only) {
+		margin: 0 24px;
+	}
+	@include breakpoint($medium-up) {
+		width: 90vw;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1440px;
+	}
+	@include breakpoint($xxlarge-up) {
+		width: 80vw;	
+	}
+}
+
+
+
+/*----------------------------------------
+
+ Add Clearfix to all main containers
+
+----------------------------------------*/
+
+.l-constrained,
+.l-pre-header,
+.l-header,
+.l-inner,
+.l-content,
+#content,
+.pre-content,
+.l-content-wrapper,
+.l-pre-footer-wrapper,
+.l-footer-wrapper {
+	@extend %clearfix;
+}
+
+
+//---------------------------------------
+//
+//	Content section
+//
+//---------------------------------------
+
+.l-content-main-wrapper {
+    padding: 6vw 0;
+}
+
+// default top/bottom padding on non-story pages
+.section-user {
+	.l-content-main-wrapper {
+	    padding: 6vw 0;
+	}
+}
+
+// page titles within block
+.block-page-title-block {
+    text-align: center;
+}
+
+
+

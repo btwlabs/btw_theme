@@ -1,0 +1,40 @@
+//------------------------------------
+//------------------------------------
+//
+//	SECTION: HEADER 5: logo & nav center
+//					   social links right
+//
+//------------------------------------
+//------------------------------------
+
+// navbar wrapper
+.navbar {
+
+    @include media-breakpoint-down(md) {
+        .container,
+        .container-fluid {
+            justify-content: space-between;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .container,
+        .container-fluid {
+            padding: 15px 30px;
+            flex-direction: column;
+        }
+    }
+}
+
+.site_v2__header-section {
+    .social_links__social-links-list {
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+    }
+}

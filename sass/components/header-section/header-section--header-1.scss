@@ -1,0 +1,37 @@
+//------------------------------------
+//------------------------------------
+//
+//	SECTION: HEADER 1: Logo Left
+//                     Nav & Social right
+//
+//------------------------------------
+//------------------------------------
+
+// navbar wrapper
+.navbar {
+
+	@include media-breakpoint-up(lg) {
+		min-height: $navbar-height-lg;
+
+		.container,
+		.container-fluid {
+			padding: 0 30px;
+		}
+		
+		// makes sure icons are on the right
+		// when no nav items are present
+		.navbar-collapse {
+			justify-content: flex-end;
+		}
+	}
+
+	.navbar-toggler {
+
+		// when toggler shows, order as last item
+		// if there is a cart item
+		@include media-breakpoint-down(md) {
+			order: 3;
+		}
+	}
+}
+

@@ -1,0 +1,118 @@
+//------------------------------
+//	STORY BLOCK:
+//  BG Image TOP, Text BOTTOM
+//------------------------------
+
+.story-block {
+    &.bg-img-top-text-bottom {
+
+        .story-block-inner {
+            padding: 0 0 $section-padding-y-lg;
+        }
+
+        // background img is attached to this container
+        .bg-image {
+            flex: 0 0 100%;
+            margin: $sb-img-top_image-padding;
+            max-width: calc(100% - calc(#{$sb-img-top_image-padding} * 2));
+
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+
+            @include media-breakpoint-up(md) {
+                min-height: $sb-img-top_bg-height;
+            }
+        }
+
+        .story-block-mobile-image {
+            margin: 0 -5vw 2em;
+            flex: 1 1 100%;
+        }
+
+        .group-text {
+            display: flex;
+            flex-direction: column;
+            // Y axis
+            justify-content: flex-start;
+            // X axis
+            align-items: center;
+            width: 100%;
+            
+            @include media-breakpoint-up(md) {
+                margin-top: 4vw;
+            }
+
+
+            .text-wrapper {
+                max-width: 38em;
+
+                @include media-breakpoint-down(md) {
+                    padding: 0 $section-padding-x-sm;
+                }
+            }
+
+            // Text area
+            .section-title {
+                text-align: $sb-img-top_title-alignment;
+            }
+
+            .story-block-text {
+                text-align: $sb-img-top_text-alignment;
+            }
+
+            h3,
+            .subtitle {
+                text-align: $sb-img-top_subtitle-alignment;
+            }
+
+            // Link
+            .s2_story_block__story-block-link {
+                text-align: $sb-img-top_link-alignment;
+
+                a {
+                    @include media-breakpoint-down(sm) {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//---------------------------------------------
+//   Text Wrapper Overlaps Image
+//----------------------------------------------
+
+.section-story-block {
+    &.text-wrapper-overlap {
+        @include media-breakpoint-up(md) {
+            .bg-img-top-text-bottom {
+                .text-wrapper {
+                    padding: 4vw;
+                    margin-top: -12vw;
+                    max-width: 44em;
+                }
+                .bg-image {
+                    margin-bottom: 0;
+                }
+            }
+            
+            &.text-wrapper-light {
+                .bg-img-top-text-bottom {
+                    .text-wrapper {
+                        background-color: $bg-light-color;
+                    }
+                }
+            }
+            
+            &.text-wrapper-dark {
+                .bg-img-top-text-bottom {
+                    .text-wrapper {
+                        background-color: $bg-dark-color;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+//----------------------------------------------
+//
+//	HEADER - general layout styles for header and its elements
+//
+//	location: 
+//      /sass/components/_header.scss
+//
+//----------------------------------------------
+
+
+.l-header {
+	.l-constrained {
+		@include breakpoint($medium-up) {
+			@include unconstrained;
+			padding: 0 3vw;
+		}
+	}
+}
+
+
+//---------------------------
+//
+//	PRE-HEADER region
+//
+//---------------------------
+
+.l-pre-header {
+	.mobile-brand-title {
+		background-color: #1E1F21;
+		
+		h2 {
+		   color: #fff;
+		    line-height: 1;
+		    font-size: 21px;
+		    font-weight: bold;
+		    margin: 0;
+		    padding: 10px;
+		    text-align: center;
+		   
+		   @include breakpoint($medium-only) {
+			   @include font-size(19px);
+		   }
+	    }
+		@include breakpoint($small-only) {
+			display: block;
+		}
+		@include breakpoint($medium-up) {
+			display: none;
+		}
+	}
+}
+
+
+//---------------------------
+//
+//	HEADER region
+//
+//---------------------------
+
+.l-header {
+	position: relative;
+	z-index: 99;
+	background-color: #fff;
+	box-shadow: 1px 0 2px rgba(146, 146, 146, 0.8);
+
+	@include breakpoint($nav-small-and-med) {
+		display: none;
+	}
+	
+	@include breakpoint($nav-large-up) {
+		display: block;
+		position: relative; // for non-fixed nav
+		left: 0;
+		width: 100%;
+		z-index: 6;
+		@include clearfix; // for non-fixed nav
+		height: $header-height-md;
+	}
+	@include breakpoint($nav-xlarge-up) {
+		height: $header-height-lg;
+	}
+	
+	//! ! ! ! ! * * * * * * * * * * *
+	// for fixed position headers
+	// see /abstractions/_mixin-layout.scss
+	
+	// inner container
+	.l-constrained {
+		margin: 0 auto;
+		display: flex;
+		height: 100%;
+		align-items: center;
+	}
+
+	
+	// Main Navigation
+	nav.menu--main {
+		margin-left: auto; // makes it align right
+	}
+}

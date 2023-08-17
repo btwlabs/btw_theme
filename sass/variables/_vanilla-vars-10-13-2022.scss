@@ -1,0 +1,54 @@
+//-------------------------------------
+//-------------------------------------
+//
+//  Color system - Reference
+//
+//-------------------------------------
+//-------------------------------------
+
+$white:    #fff;
+$gray-000: #f1f4f7; // custom color
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+
+//--------------------------------------
+//   Variables governing general layout
+//--------------------------------------
+
+// Set the layout breakpoints for the Bootstrap grid. 
+
+
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px );
+
+
+//--------------------------------------
+//
+// 	COLORS
+//
+//--------------------------------------
+
+$primary: #b82b8a;
+$secondary: #fefc53;
+$tertiary: #6D6E71;
+
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+
+// Light Color
+$light: $gray-100;
+$dark: $gray-800;
+
+// Body Background Color
+$body-bg: $white;
+

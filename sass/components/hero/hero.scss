@@ -1,0 +1,829 @@
+//----------------------------------
+//
+//	SECTION: HERO
+//
+//----------------------------------
+
+.section-hero {
+    min-height: calc(#{$hero-min-height-lg} - #{$navbar-height-lg});
+    background: $section-hero-bg-color;
+    height: auto;
+    padding: $section-hero-padding;
+
+    @include media-breakpoint-down(sm) {
+        height: auto;
+        min-height: calc(#{$hero-min-height-sm} - #{$navbar-height-sm});
+    }
+
+
+    .hero-wrapper {
+        display: flex;
+        width: 100%;
+        position: relative;
+        padding: $hero-wrapper-padding;
+        min-height: calc(#{$hero-min-height-lg} - #{$navbar-height-lg});
+        overflow: hidden;
+
+        @include media-breakpoint-down(sm) {
+            height: auto;
+            min-height: calc(#{$hero-min-height-sm} - #{$navbar-height-sm});
+        }
+    }
+
+    .mobile-image-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        @include media-breakpoint-down(sm) {
+            display: block;
+        }
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    //-----------------------------
+    // bg image container default
+    //-----------------------------
+    .bg-image {
+        background-repeat: no-repeat;
+        background-size: $hero-bg-size;
+        background-position: $hero-bg-position;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+    }
+
+    //----------------------
+    //  Image scroll effects
+    //  on .bg-image
+    //----------------------
+
+    .no-effect {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    // Parallax scrolling effect
+    .parallax-item {
+        position: absolute !important;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+    }
+    // fixed bg image
+    .fixed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        @include media-breakpoint-down(sm) {
+            background-repeat: no-repeat;
+            background-attachment: scroll !important;
+            height: 100vh;
+            max-height: $fixed-effect-max-height-mobile;
+        }
+    }
+
+    // Overlay
+    .hero-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: $hero-overlay-color;
+
+        @include media-breakpoint-down(sm) {
+            background: $hero-mobile-overlay-color;
+        }
+    }
+
+    // content wrapper
+    .hero-content-wrapper {
+        z-index: 2;
+        position: relative;
+        background: $hero-content-wrapper-bg;
+        border-radius: $hero-content-wrapper-border-radius;
+
+        @include media-breakpoint-down(sm) {
+            padding: $hero-content-wrapper-padding-sm;
+            max-width: $hero-content-wrapper-max-width-sm;
+            margin: $hero-content-wrapper-margin-sm;
+        }
+        @include media-breakpoint-only(md) {
+            max-width: $hero-content-wrapper-max-width-md;
+            padding: $hero-content-wrapper-padding-md;
+            margin: $hero-content-wrapper-margin-md;
+        }
+        @include media-breakpoint-up(lg) {
+            max-width: $hero-content-wrapper-max-width-lg;
+            padding: $hero-content-wrapper-padding-lg;
+            margin: $hero-content-wrapper-margin-lg;
+        }
+    }
+
+    // Logo
+    .hero-logo-wrapper {
+        margin: $hero-logo-margin;
+
+        @include media-breakpoint-down(sm) {
+            max-width: $hero-logo-max-width-sm;
+            width: $hero-logo-width-sm;
+        }
+
+        @include media-breakpoint-only(md) {
+            max-width: $hero-logo-max-width-md;
+            width: $hero-logo-width-md;
+        }
+
+        @include media-breakpoint-up(lg) {
+            max-width: $hero-logo-max-width-lg;
+            width: $hero-logo-width-lg;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    // title, subtitle, link
+    .hero-title-wrapper {
+        margin: $hero-title-wrapper-margin;
+        padding: $hero-title-wrapper-padding;
+
+        .hero-heading {
+            margin: $hero-title-margin;
+            font-weight: $hero-title-font-weight;
+            font-family: $hero-title-font-family;
+            color: $hero-title-color;
+            text-align: $hero-title-alignment;
+            text-transform: $hero-title-text-transform;
+            @include responsive-hero-title;
+        }
+        .hero-sub-heading {
+            font-weight: $hero-subtitle-font-weight;
+            font-family: $hero-subtitle-font-family;
+            margin: $hero-subtitle-margin;
+            color: $hero-subtitle-color;
+            text-align: $hero-subtitle-alignment;
+            text-transform: $hero-subtitle-text-transform;
+            line-height: 1.4;
+            @include responsive-hero-subtitle;
+        }
+        .hero-link {
+            text-align: $hero-link-alignment;
+            a {
+               @include media-breakpoint-down(sm) {
+                   width: 100%;
+               }
+            }
+        }
+    }
+
+
+    //-------------------------------------
+    //  Minimum hero styling
+    //  assumes no bg image added
+    //-------------------------------------
+    &.hero-minimal {
+        min-height: auto;
+        background-color: $hero-min-bg-color;
+        height: auto;
+        padding: $hero-min-padding;
+
+        @include media-breakpoint-down(sm) {
+            height: auto;
+            min-height: auto;
+            padding: 40px 15px;
+        }
+
+        // Overlay
+        .hero-overlay {
+            display: none;
+        }
+
+        .bg-image {
+            display: none;
+        }
+        .mobile-image-wrapper {
+            display: none;
+        }
+        .hero-wrapper {
+            display: flex;
+            width: 100%;
+            position: relative;
+            padding: 0; //$hero-wrapper-padding;
+            min-height: auto;
+            overflow: hidden;
+
+            @include media-breakpoint-down(sm) {
+                height: auto;
+                min-height: auto;
+            }
+        }
+        // content wrapper
+        .hero-content-wrapper {
+            z-index: 2;
+            position: relative;
+            background: none;
+            padding: 0;
+            
+            @include media-breakpoint-up(md) {
+                max-width: $hero-min-content-wrapper-max-width;
+            }
+        }
+        // title, subtitle, link
+        .hero-title-wrapper {
+            margin: $hero-min-title-wrapper-margin;
+            padding: $hero-min-title-wrapper-padding;
+
+            .hero-heading {
+                margin: $hero-min-title-margin;
+                color: $hero-min-title-color;
+                text-align: $hero-min-title-alignment;
+                @include responsive-hero-title;
+            }
+            .hero-sub-heading {
+                margin: $hero-min-subtitle-margin;
+                color: $hero-min-subtitle-color;
+                text-align: $hero-min-subtitle-alignment;
+                line-height: 1.4;
+                @include responsive-hero-subtitle;
+            }
+            .hero-link {
+                a {
+                   @include media-breakpoint-down(sm) {
+                       width: 100%;
+                   }
+                }
+            }
+        }
+    }
+
+
+    //----------------------------------
+    //
+    //	SECTION: HERO Template 1
+    //  Content is stacked in a column
+    //
+    //----------------------------------
+
+    &.hero-1-col {
+
+        // DEFAULTS - X center, Y center
+        // main wrapper
+        .hero-wrapper {
+            flex-direction: row;
+
+            // position left, right, or center horizontally
+            justify-content: center;
+            align-items: center;
+        }
+
+        // wrapper contains img/logo, titles, link
+        .hero-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    //-------------------------------------
+    // Content layout positions within
+    // outer wrapper
+    //-------------------------------------
+
+    //--------- X LEFT ----------
+    // X left, Y top
+    &.hero-left-top {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to left
+                justify-content: flex-start;
+                // align inside content to top
+                align-items: flex-start;
+            }
+        }
+    }
+
+    // X left, Y center
+    &.hero-left-center {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to left
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // X left, Y bottom
+    &.hero-left-bottom {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to left
+                justify-content: flex-start;
+                // align inside content to bottom
+                align-items: flex-end;
+            }
+        }
+    }
+
+    //------ X CENTER -----------
+    // X center, Y top
+    &.hero-center-top {
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to top
+                align-items: flex-start;
+            }
+        }
+    }
+
+    // X center, Y center
+    &.hero-center-center {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    // X center, Y bottom
+    &.hero-center-bottom {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                align-items: flex-end;
+            }
+        }
+    }
+
+    //--------- X RIGHT ---------
+    // X right, Y top
+    &.hero-right-top {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to right
+                justify-content: flex-end;
+                // align inside content to top
+                align-items: flex-start;
+            }
+        }
+    }
+
+    // X right, Y center
+    &.hero-right-center {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to right
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    // X right, Y bottom
+    &.hero-right-bottom {
+
+        // main wrapper
+        .hero-wrapper {
+            @include media-breakpoint-down(md) {
+                align-items: $hero-content-align-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                // align inside content to right
+                justify-content: flex-end;
+                // align inside content to bottom
+                align-items: flex-end;
+            }
+        }
+    }
+
+    //------------------------------------------
+    //    100% height hero content wrapper
+    //    (for background color fills/images)
+    //------------------------------------------
+
+    // X Left, Y top, 100% height container
+    &.hero-content-full-height-left-top {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to left
+                justify-content: flex-start;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis
+                align-items: center;
+                // Y axis
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // X left, Y center, 100% height
+    &.hero-content-full-height-left-center {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to left
+                justify-content: flex-start;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: center;
+            }
+        }
+    }
+
+    // X left, Y bottom, 100% height
+    &.hero-content-full-height-left-bottom {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to left
+                justify-content: flex-start;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    // X center, Y top, 100% height
+    &.hero-content-full-height-center-top {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to center
+                justify-content: center;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis
+                align-items: center;
+                // Y axis
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // X center, Y center, 100% height
+    &.hero-content-full-height-center-center {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to left
+                justify-content: center;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: center;
+            }
+        }
+    }
+
+    // X center, Y bottom, 100% height
+    &.hero-content-full-height-center-bottom {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to center
+                justify-content: center;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    // X right, Y top, 100% height
+    &.hero-content-full-height-right-top {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to right
+                justify-content: flex-end;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis
+                align-items: center;
+                // Y axis
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    // X right, Y center, 100% height
+    &.hero-content-full-height-right-center {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to right
+                justify-content: flex-end;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: center;
+            }
+        }
+    }
+
+    // X right, Y bottom, 100% height
+    &.hero-content-full-height-right-bottom {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            // main wrapper
+            .hero-wrapper {
+                // align inside content to right
+                justify-content: flex-end;
+                // negate default "center" value, allows 100% height
+                align-items: normal;
+            }
+            .hero-content-wrapper {
+                // X axis (flex-direction: column)
+                align-items: center;
+                // Y axis (flex-direction: column)
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    //---------------------------------------
+    // Full width hero content
+    //---------------------------------------
+
+    // full width, X center, Y top
+    &.hero-content-full-width-top {
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            .hero-wrapper {
+                // align inside content to top
+                align-items: flex-start;
+            }
+        }
+        .hero-content-wrapper {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    // full width, X center, Y center
+    &.hero-content-full-width-center {
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            .hero-wrapper {
+                align-items: center;
+            }
+        }
+        .hero-content-wrapper {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    // full width, X center, Y bottom
+    &.hero-content-full-width-bottom {
+
+        @include media-breakpoint-down(md) {
+            // main wrapper
+            .hero-wrapper {
+                align-items: $hero-content-align-mobile;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            .hero-wrapper {
+                align-items: flex-end;
+            }
+        }
+        .hero-content-wrapper {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+
+//---------------------------------------------
+//
+//	DARK BG - STORY BLOCK STYLES -
+//  for use on light background colors or images.
+//
+//  Class appears on same container as .story-block,
+//  which is the 1st container inside <section>
+//
+//---------------------------------------------
+
+.dark-bg-light-text {
+    &.section-hero {
+        background: $bg-dark-color;
+        
+        .hero-overlay {
+            background-color: $overlay-bg-color-dark;
+            
+            @include media-breakpoint-down(sm) {
+                background: $overlay-bg-color-dark;
+            }
+        }
+        
+        .hero-heading {
+            color: $title-on-dark-color;
+        }
+        .hero-sub-heading {
+            color: $subtitle-on-dark-color;
+        }
+        .hero-link {
+            a.btn {
+                @include button-on-dark;
+            }
+        }
+    }
+}
+
+//---------------------------------------------
+//
+//	LIGHT BG - STORY BLOCK STYLES -
+//  for use on light background colors or images
+//
+//  Class appears on same container as .story-block,
+//  which is the 1st container inside <section>
+//
+//---------------------------------------------
+
+.light-bg-dark-text {
+    &.section-hero {
+        background: $bg-light-color;
+        
+        .hero-overlay {
+            background-color: $overlay-bg-color-light;
+            
+            @include media-breakpoint-down(sm) {
+                background: $overlay-bg-color-light;
+            }
+        }
+        
+        .hero-heading {
+            color: $title-on-light-color;
+        }
+        .hero-sub-heading {
+            color: $subtitle-on-light-color;
+        }
+        .hero-link {
+            a.btn {
+                @include button-on-light;
+            }
+        }
+    } 
+}

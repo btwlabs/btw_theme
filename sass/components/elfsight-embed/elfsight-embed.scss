@@ -1,0 +1,27 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: ELFSIGHT EMBED
+//
+//----------------------------------
+//----------------------------------
+
+.section-elfsight-widget {
+     background: $section-elfsight-bg-color;
+     overflow: hidden;
+
+     .intro {
+          .section-title {
+               text-align: $section-elfsight-title-alignment;
+          }
+          .intro-body {
+               text-align: $section-elfsight-body-alignment;
+          }
+     }
+
+     .widget-wrapper {
+          max-width: $elfsight-feed-max-width;
+          margin: 0 auto;
+          text-align: center;
+     }
+}

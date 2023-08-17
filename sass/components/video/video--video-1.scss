@@ -1,0 +1,25 @@
+//----------------------------------
+//
+//	SECTION: VIDEO EMBED - 1
+//			 Full width video
+//
+//----------------------------------
+
+
+.section-video-embed {
+	&.paragraph--view-mode--video-1 {
+		
+		.text-wrapper {
+			h2.section-title {
+				@include media-breakpoint-down(sm) {
+					padding-top: $section-padding-x-sm;
+				}
+				@include media-breakpoint-up(md) {
+					padding-top: $section-padding-x-lg;
+				}
+			}
+		}
+	}
+}
+
+

@@ -1,0 +1,85 @@
+//-------------------------------------------------------
+//
+//    FOOTER 4: row 1:  
+//					col 1: Social links
+//					col 1: Logo/Company name, social links
+//					col 2: Custom text
+//              row 2: 
+//					col 1: copyright
+//					col 2: made with twidamig
+//
+//--------------------------------------------------------
+
+.section-footer {
+	&.paragraph--view-mode--footer-4 {
+		padding: 30px 5vw;
+		
+		.back-to-top-wrapper {
+			position: absolute;
+			left: 50%;
+			top: -50px;
+			
+			a.back-to-top {
+				width: 50px;
+				height: 50px;
+				border-radius: 0;
+			}
+		}
+		
+		.footer-row-1 {
+			align-items: center;
+		}
+		// Row 1, Col 1
+		.footer-col-1 {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			justify-content: center;
+			
+			@include media-breakpoint-down(sm) {
+				order: 3;
+			}
+			
+			@include media-breakpoint-down(md) {
+				align-items: center;
+				justify-content: flex-start;
+			}
+		}
+		
+		// Row 1, Col 2
+		.footer-logo {
+			text-align: center;
+		}
+		.footer-company-name {
+			text-align: center;
+		}
+		
+		// Row 1, Col 3: Custom Text block
+		.footer-custom-text {
+			font-size: $footer-contact-info-font-size;
+			text-align: right;
+			
+			.footer_section__footer-message {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+				
+				figure {
+					margin: 0 0 1em;
+				}
+				p {
+					text-align: center;
+				}
+			}
+		}
+		
+		// Col 1: copyright
+		.copyright {
+			margin: 0 0 .5em;
+			
+			@include media-breakpoint-up(md) {
+				margin: 0;
+			}
+		}
+	}
+}

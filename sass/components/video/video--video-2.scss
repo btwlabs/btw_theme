@@ -1,0 +1,24 @@
+//----------------------------------
+//
+//	SECTION: VIDEO EMBED - 2
+//			 video constrained
+//
+//----------------------------------
+
+.section-video-embed {
+	&.paragraph--view-mode--video-2 {
+		@include media-breakpoint-down(sm) {
+			padding: $video-embed-wrapper-padding-sm;
+		}
+		@include media-breakpoint-up(md) {
+			padding: $video-embed-wrapper-padding-lg;
+		}
+		
+		.video__story-block-video {
+			width: 100%;
+			max-width: $video-embed-max-width;
+		}
+	}
+}
+
+

@@ -1,0 +1,49 @@
+//----------------------------------------------
+//----------------------------------------------
+//
+//  Center Text, FULL WIDTH bg image
+//
+//----------------------------------------------
+//----------------------------------------------
+
+.story-block {
+    // Center text with BG image
+    &.center-text-full-bg-image {
+
+        // Text area
+        .section-title {
+            text-align: $sb-center-full-img-title-alignment;
+        }
+
+        .story-block-text {
+            text-align: $sb-center-full-img-text-alignment;
+        }
+
+        h3,
+        .subtitle {
+            text-align: $sb-center-full-img-subtitle-alignment;
+        }
+
+        .story-block-inner {
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: $section-padding-y-lg $section-padding-x-lg;
+
+            @include media-breakpoint-down(sm) {
+                padding: $section-padding-y-sm $section-padding-x-sm;
+            }
+        }
+
+        .text-wrapper {
+            max-width: $sb-center-full-text-max-width;
+        }
+
+        .story-block-link {
+            .s2_story_block__story-block-link {
+                text-align: $sb-center-full-link-alignment;
+            }
+        }
+    }
+}

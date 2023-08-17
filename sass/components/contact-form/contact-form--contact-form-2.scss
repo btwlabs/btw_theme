@@ -1,0 +1,31 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: CONTACT FORM (FORMSUBMIT.com)
+//			 Two Column
+//
+//----------------------------------
+//----------------------------------
+
+
+.section-contact-form {
+	
+	&.paragraph--view-mode--contact-form-2 {
+
+		.contact-form-wrapper {
+			max-width: 720px;
+			margin: 0 auto;
+			background: $contact-form-bg-color;
+			padding: $contact-form-padding;
+			border-radius: $contact-form-border-radius;
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+}
+
+
+
+  
+

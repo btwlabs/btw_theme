@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * fbt theme implementation to present all user data (producer page).
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes }}>
+
+  {% if content.field_image %}
+
+    {{ content.field_image }}
+
+  {% endif %}
+
+  <div class="right">
+
+    {% if content.field_name %}
+
+      <h1> {{ content.field_name }} </h1>
+
+    {% endif %}
+
+    {% if content.field_bio %}
+
+      {{ content.field_bio }}
+
+    {% endif %}
+
+    {% if content.field_links %}
+
+      {{ content.field_links }}
+
+    {% endif %}
+
+  </div>
+
+</article>

@@ -1,0 +1,78 @@
+//----------------------------------------------
+//
+//	BREADCRUMBS - styling
+//
+//	location: 
+//      /sass/components/
+//
+//
+//----------------------------------------------
+
+
+.front {
+	nav.breadcrumb {
+		display: none;
+	}
+}
+
+/*--breadcrumbs--*/
+
+.block--blockify-blockify-breadcrumb  {
+    padding: 2%;
+    background-color: #efefef;
+    font-size: 18px;
+}
+
+.block-system-breadcrumb-block,
+.project__field-name-dynamic-block-fieldnode-breadcrumb {
+	background-color: #efefef;
+}
+
+.breadcrumb {
+	padding: 10px 0;
+	
+	@include breakpoint($small-only) {
+		margin: 0 24px;
+	}
+	
+	@include breakpoint($medium-up) {
+		@include constrained;
+	}
+	
+	ol {
+		padding:0;
+		margin: 0;
+	}
+	
+	li {
+	    list-style-type: none;
+	    display: inline-block;
+	    font-size: 85%;
+	    color: #222;
+	    margin-right: 5px;
+	    
+	    &:after {
+			content: "»";
+			margin-left:5px;
+			display: inline-block;
+		}
+		
+		&:last-child:after {
+			content: "";
+		}
+		
+		a:hover {
+			color: #d91a1a;
+		}
+	}
+}
+
+
+// for pages that don't have the regular block wrapper
+.breadcrumb-wrapper {
+	&.breadcrumb {
+		padding: 10px 8vw;
+		margin: 0;
+	}
+}
+

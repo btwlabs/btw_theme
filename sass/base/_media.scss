@@ -1,11 +1,119 @@
-// Media styles
-figure {
-  margin: 0;
+//----------------------------------------------
+//
+//	MEDIA - general styles for images and video
+//
+//	location: 
+//      /sass/base/_media.scss
+//
+//----------------------------------------------
+
+
+
+//-------------------------------------
+//
+//  Site Images
+//
+//-------------------------------------
+
+img, media {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle; /* kills space between img, a, and container */
 }
 
-img,
-picture {
-  max-width: 100%;
-  height: auto;
-  vertical-align: top;
+// all images inside links 
+ 
+a img {
+	@include transition(all, 0.2s, ease-in);
+}
+
+//-------------------------------------
+//
+//	video
+//
+//-------------------------------------
+
+// Sets video to be 100% width and responsive 
+
+.mfp-embedded-video-popup {
+	width: 100%;
+	max-width: 1200px;
+}
+
+// immediate wrapper around <iframe>
+.embedded-video {
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+	margin: 35px auto 0;
+	
+	& iframe {
+		height: 100%;
+		position: absolute;
+		top: 0;
+		width: 99%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+// modal
+button.mfp-close {
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    line-height: .5;
+    font-size: 30px;
+    padding: 6px;
+    color: #fff !important;
+    border-radius: 0;
+    opacity: 1;
+    top: 5px;
+    right: 3px;
+}
+
+// iphone 6,7,8 - landscape
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : landscape) {
+	.embedded-video {
+		margin: 0 auto;
+	}
+	.video-embed-field-responsive-video {
+	    height: 340px;
+	    width: 100%;
+	    margin: 0 auto;
+	}
+	button.mfp-close {
+       right: -27px;
+       top: 0px;
+	}
+	.mfp-embedded-video-popup {
+	    width: 75%;
+	}
+}
+
+// iphone X - landscape
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : landscape) { 
+	.embedded-video {
+		margin: 0 auto;
+	}
+	.video-embed-field-responsive-video {
+	    height: 340px;
+	    width: 100%;
+	    margin: 0 auto;
+	}
+	button.mfp-close {
+       right: -27px;
+       top: 0px;
+	}
+	.mfp-embedded-video-popup {
+	    width: 75%;
+	}
 }

@@ -1,0 +1,41 @@
+//----------------------------------
+//----------------------------------
+//
+//	VARIABLES: Video Paragraph
+//
+//----------------------------------
+//----------------------------------
+
+
+// Video Section Padding (sm)
+// Sets the amount of padding around the section in a small (mobile) layout width. Sections using "full width" layouts will always have left/right padding overridden to 0 regardless of these settings. 
+$video-embed-wrapper-padding-sm: $section-padding-y-sm $section-padding-x-sm;
+
+// Video Section Padding (lg)
+// Sets the amount of padding around the section in a larger (tablet plus) layout width. Sections using "full width" layouts will always have left/right padding overridden to 0 regardless of these settings.
+$video-embed-wrapper-padding-lg: $section-padding-y-lg $section-padding-x-lg;
+
+// Video Embed Max Width
+// Sets the max width for an embedded video within a story block set to the "constrained" layout.
+$video-embed-max-width: 1080px;
+
+// Video Section Background Color
+// Sets the background of video sections. 
+$video-embed-section-bg: $section-default-bg-color;
+
+// Video Section Intro: Title & Body
+
+// Title Color
+$section-video-title-color: $title-color;
+
+// Title Alignment
+// Set the alignment of the title: left, right, center
+$section-video-intro-title-alignment: center;
+
+// Body Text Color
+// Sets the color of the intro description text
+$section-video-intro-color: $base-text-color;
+
+
+// Body Text Alignment
+$section-video-intro-body-alignment: center;

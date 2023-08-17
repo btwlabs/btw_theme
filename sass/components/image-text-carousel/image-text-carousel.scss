@@ -1,0 +1,313 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: IMAGE & TEXT CAROUSEL
+//
+//----------------------------------
+//----------------------------------
+
+.section-slides-text {
+    background: $section-text-slide-bg-color;
+    
+    // background image of whole section
+    .bg-image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .intro {
+        @include media-breakpoint-down(md) {
+            padding-top: $section-padding-y-sm;
+        }
+        @include media-breakpoint-up(lg) {
+            padding-top: $section-padding-y-lg;
+        }
+
+        .section-title {
+            text-align: $section-text-slide-title-alignment;
+            color: $section-text-slide-title-color;
+        }
+        .intro-body {
+            text-align: $section-text-slide-body-alignment;
+            color: $section-text-slide-body-text-color;
+        }
+    }
+    .simple-slider {
+        position: relative;
+        
+        .swiper-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .swiper-wrapper {
+            // override module defaults
+            height: auto;
+        }
+        .swiper-slide {
+            min-height: $swiper-text-slide-height;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include media-breakpoint-down(sm) {
+                padding: 30px 20px;
+            }
+            @include media-breakpoint-down(md) {
+                min-height: $swiper-text-slide-height-mobile;
+            }
+            @include media-breakpoint-up(md) {
+                padding: 30px 70px;
+            }
+            @include media-breakpoint-up(lg) {
+                padding: 50px 90px;
+            }
+
+            // classes for altering bg img position
+            &.background-center-top {
+                background-position: center top;
+            }
+
+            &.background-center-bottom {
+                background-position: center bottom;
+            }
+
+            &.background-left-top {
+                background-position: left top;
+            }
+
+            &.background-left-center {
+                background-position: left center;
+            }
+
+            &.background-left-bottom {
+                background-position: left bottom;
+            }
+
+            &.background-right-top {
+                background-position: right top;
+            }
+
+            &.background-right-center {
+                background-position: right center;
+            }
+
+            &.background-right-bottom {
+                background-position: right bottom;
+            }
+        }
+
+        // prev / next arrows
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px;
+            margin-left: 20px;
+            margin-right: 20px;
+
+            @media (max-width:767px) {
+                display: none;
+            }
+
+            &:after {
+                color: $swiper-pagination-bullet-color;
+            }
+        }
+
+        // bullet normal
+        .swiper-pagination-bullet {
+            background: $swiper-pagination-bullet-color;
+            margin: 0 6px;
+
+            // make pagination dots bigger
+            width: $swiper-pagination-dot-size;
+            height: $swiper-pagination-dot-size;
+        }
+
+        // bullet active
+        .swiper-pagination-bullet-active {
+            background: $swiper-pagination-bullet-active-color;
+        }
+    }
+
+    .image-overlay {
+        position: absolute;
+        background: $swiper-overlay-bg-color;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+    .slide-content {
+        max-width: 1000px;
+        position: relative;
+        color: $slide-text-color;
+        z-index: 1;
+        padding: 4vw;
+        // default - can be overridden with vars
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            padding: 50px 90px;
+        }
+    }
+
+    .slide-title {
+        text-align: $slide-title-alignment;
+        color: $slide-title-color;
+    }
+    .slide-body {
+        text-align: $slide-body-alignment;
+        color: $slide-text-color;
+    }
+
+    .button-wrapper {
+        margin-bottom: 0;
+
+        a.btn-block {
+            display: inline-block;
+            width: auto;
+        }
+    }
+}
+
+
+//---------------------------------------------
+//
+//	DARK BG - STORY BLOCK STYLES -
+//  for use on light background colors or images.
+//
+//  Class appears on same container as .story-block,
+//  which is the 1st container inside <section>
+//
+//---------------------------------------------
+
+.dark-bg-light-text {
+    &.section-slides-text {
+        
+        .image-overlay {
+            background-color: $overlay-bg-color-dark;
+            
+            @include media-breakpoint-down(sm) {
+                background: $overlay-bg-color-dark;
+            }
+        }
+        
+        // Slides
+        .slide-title {
+            color: $title-on-dark-color;
+        }
+        .slide-body {
+            color: $text-on-dark-color;
+        }
+        .button-wrapper {
+            a.btn {
+                @include button-on-dark;
+            }
+        }
+    }
+}
+
+//---------------------------------------------
+//
+//	LIGHT BG - STORY BLOCK STYLES -
+//  for use on light background colors or images
+//
+//  Class appears on same container as .story-block,
+//  which is the 1st container inside <section>
+//
+//---------------------------------------------
+
+.light-bg-dark-text {
+    &.section-slides-text {
+        
+        .image-overlay {
+            background-color: $overlay-bg-color-light;
+            
+            @include media-breakpoint-down(sm) {
+                background: $overlay-bg-color-light;
+            }
+        }
+        
+        // Slides
+        .slide-title {
+            color: $title-on-light-color;
+        }
+        .slide-body {
+            color: $text-on-light-color;
+        }
+        .button-wrapper {
+            a.btn {
+                @include button-on-light;
+            }
+        }
+    } 
+}
+
+.section-slides-text {
+    // individual slides - dark bg
+    &.slide-text-wrapper-dark {
+        .slide-content {
+            background-color: $text-wrapper-dark-bg;
+            padding: $text-wrapper-padding;
+            border-radius: $text-wrapper-border-radius;
+            margin-bottom: $text-wrapper-padding;
+            
+            .slide-title {
+                color: $title-on-dark-color;
+            }
+            .slide-body {
+                color: $text-on-dark-color;
+            
+                a {
+                    color: $link-on-dark-color;
+                    
+                    &:hover {
+                        color: $link-on-dark-color-hover;
+                    }
+                }
+            }
+            .s2_sub_slide__sub-card-link {
+                a.btn {
+                    @include button-on-dark;
+                }
+            }
+        }
+    }
+    
+    // individual slides - light bg
+    &.slide-text-wrapper-light {
+        .slide-content {
+            background-color: $text-wrapper-light-bg;
+            padding: $text-wrapper-padding;
+            border-radius: $text-wrapper-border-radius;
+            margin-bottom: $text-wrapper-padding;
+            
+            .slide-title {
+                color: $title-on-light-color;
+            }
+            .slide-body {
+                color: $text-on-light-color;
+            
+                a {
+                    color: $link-on-light-color;
+                    
+                    &:hover {
+                        color: $link-on-light-color-hover;
+                    }
+                }
+            }
+            .s2_sub_slide__sub-card-link {
+                a.btn {
+                    @include button-on-light;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,154 @@
+
+//----------------------------------
+//----------------------------------
+//
+//	Basic Subpage
+//
+//----------------------------------
+//----------------------------------
+
+// Page Content
+
+// Page Background Color
+// Sets the background color of all basic subpages.
+$subpage-bg-color: $body-bg;
+
+// Basic Page Title Color
+// Sets the color of all basic subpage h1 titles
+$subpage-title-color: $title-color;
+
+// Basic subpage body text color
+$subpage-body-text-color: $base-text-color;
+
+// Hero
+
+// Hero Height
+// Sets the height of the hero section on a basic subpage.
+$subpage-hero-height: 40vw;
+
+// Hero Background Color
+// Sets a background color behind the text in a basic page hero section.
+$subpage-hero-bg-color: $subpage-bg-color;
+
+
+
+//----------------------------------
+//----------------------------------
+//
+// Catalog Subpage
+//
+//----------------------------------
+//----------------------------------
+
+// Catalog Page Bg Color
+$catalog-page-bg-color: $subpage-bg-color;
+
+// Catalog Page Title Color
+$catalog-page-title-color: $title-color;
+
+// Catalog Page Body Text Color
+$catalog-page-body-text-color: $base-text-color;
+
+
+// Catalog Item
+
+// Catalog Item Title color
+// Sets color of the Catalog item title
+$catalog-item-title-color: $title-color;
+
+
+// Catalog Item description color
+// Sets the text color of the catalog description
+$catalog-item-description-color: $base-text-color;
+
+// Catalog Description Text Size
+$catalog-description-text-size: 0.8em;
+
+// Item (Even) - Background color
+$catalog-item-bg-even: transparent;
+
+// Item (Odd) - Background color
+$catalog-item-bg-odd: $section-alternating-bg;
+
+
+//----------------------------------
+// Musical Album Items
+//----------------------------------
+
+// Row Background (Even)
+// Set a background color on even product row items
+$album-row-bg-even: $section-alternating-bg;
+
+
+// Row Background (Odd)
+// Set a background color on odd product row items
+ 
+$album-row-bg-odd: $section-alternating-bg;
+
+// Row Border
+// Sets a bottom border on the album item row. Value requires use of the full border property shorthand - size style color
+$album-row-border: 0px solid $border-color;
+
+// Details Font Size (Column 1)
+// Font size for album description
+$album-details-font-size: 16px;
+
+// Tracks Font Size (Column 2)
+// Font size for the track listing.
+$album-tracks-font-size: 16px;
+
+
+// Album Item Title color
+
+$album-item-title-color: $title-color;
+
+// Album Item Description Color
+$album-item-description-color: $base-text-color;
+
+// Shopping Cart - header links
+// Cart Button Background
+
+// Button Background Color
+$cart-button-bg-color: transparent;
+
+// Button Background Color (Hover)
+$cart-button-bg-hover-color: rgba(255,255,255,0.2);
+
+
+// Shopping Cart Icon
+
+// Shopping Cart Icon Color
+$cart-icon-color: #fff;
+
+// Cart Icon Count
+
+// Cart Icon Count Color
+$cart-count-text-color: #fff;
+
+// Cart Icon Background
+$cart-count-bg: $primary;
+
+// Cart Total Price
+
+// Cart Total Background Color
+$cart-total-bg-color: #f2f2f2;
+
+// Cart Total Text Color
+$cart-total-text-color: #000;
+
+// Snipcart Product
+
+// Row Background (Even)
+// Set a background color on even product row items
+$product-row-bg-even: transparent;
+
+// Row Background (Odd)
+// Set a background color on odd product row items
+$product-row-bg-odd: $section-alternating-bg;
+
+// Row Border
+// Set a bottom border on a product row (vertically stacked item). Value requires use of the full border property shorthand - size style color
+$product-row-border: 0px solid $border-color;
+
+// Details Font Size
+$product-details-font-size: 16px;

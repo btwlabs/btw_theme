@@ -1,0 +1,55 @@
+//-----------------------------------------
+//-----------------------------------------
+//
+//	VARIABLES: Alert Messages paragraph
+// 
+//-----------------------------------------
+//-----------------------------------------
+
+// Background Color
+// Sets a background color on the section. Can also link to an image.
+$section-alert-bg-color: #cce5ff;
+
+// Alignment
+$section-alert-alignment: center;
+
+// Border
+$alert-border: 0;
+
+// Border Radius
+$alert-border-radius: 0;
+
+// Text Link Color (not button)
+$alert-link-color: #b8daff;
+
+$alert-margin: 0;
+$alert-padding: 40px;
+
+// Close Link Color
+$alert-close-x-color: #000;
+
+// Text Color
+$alert-text-color: #004085;
+
+
+//-------------------
+// Alert Button Link
+// ------------------
+
+// Alert Button Background Color
+$alert-btn-bg-color: $btn-bg-color;
+
+// Alert Button Background hover color
+$alert-btn-hover-bg-color: $btn-hover-bg-color;
+
+// Alert Button Text Color
+$alert-btn-text-color: $btn-text-color;
+
+// Alert Button Text Color on hover
+$alert-btn-hover-text-color: $btn-hover-text-color;
+
+// Alert Button Border
+$alert-btn-border: $btn-border;
+
+// Alert Button Border Color on hover
+$alert-btn-hover-border-color: $btn-hover-border-color;

@@ -1,0 +1,263 @@
+//----------------------------------------------------
+//----------------------------------------------------
+//
+//	VARIABLES: Cards Section
+// 
+//----------------------------------------------------
+//----------------------------------------------------
+
+
+// Section Background Color
+// Sets a background color behind the entire cards section.
+$section-cards-bg-color: transparent;
+
+//----------------------------------
+//
+// Cards Section Intro: Title & Body
+//
+//----------------------------------
+
+// Title Color
+$section-cards-title-color: $title-color;
+
+// Title Alignment
+// Set the text case of the section title - none, uppercase, lowercase, capitalize
+$section-cards-intro-title-alignment: center;
+
+// Body Text Color
+// Sets the color of the intro description text
+$section-cards-intro-color: $base-text-color;
+
+// Body Text Alignment
+$section-cards-intro-body-alignment: center;
+
+
+//----------------------------------
+//
+// Individual Cards
+// 
+//----------------------------------
+// Card Padding Unit
+// Base Unit of spacing between card elements - around the image and body text
+$card-padding: 30px;
+
+// Card Image Padding
+// Outer space around image content only. Use $card-padding base value variable for consistency.
+$card-image-padding: $card-padding $card-padding $card-padding $card-padding;
+
+// Card Text Padding
+// Outer space around text content only. Use $card-padding base value variable for consistency.
+$card-text-padding: $card-padding;
+
+// Card Background Color
+$card-bg-color: #fff;
+
+
+// Card Border
+// Sets a border around entire card. Requires "0" for no border, or full value set: [border-width] [border-style] [border-color]
+$card-border: 1px solid rgba(30, 30, 30, 0.2);
+
+// Card Border Radius
+$card-border-radius: 0;
+
+// Card Shadow
+// A value added here puts a drop shadow around the card.  Requires shortcut format (offset-x | offset-y | blur-radius | color) or value of "none" 
+$card-shadow: none;
+
+// Card Shadow on hover
+// A value added here puts a drop shadow around the card on hover or mouseover.  Requires shortcut format (offset-x | offset-y | blur-radius | color) or value of "none" 
+$card-shadow-hover: 0 0 10px rgba(30,30,30,0.2);
+
+
+
+//----------------------------------
+//
+// Card Images: Icons and photos
+//
+//----------------------------------
+
+// Card Icon Width
+// Set the width of an uploaded image icon (svg)
+$card-image-icon-width: 80%;
+
+// Card Icon Font Size
+// Set size for FontAwesome icon
+$card-icon-font-size: 80px;
+
+// Card Icon Color
+// Set color for FontAwesome icon
+$card-icon-color: $primary;
+
+
+// Card Icon Background Color
+// Set a background color behind the FontAwesome icon
+$card-icon-bg-color: transparent;
+
+// Card Icon Border Radius
+// Set a border radius on the FontAwesome icon wrapper
+$card-icon-border-radius: 0;
+
+// Card Figcaption Display
+// Display caption on images or not. Value: none or block
+$card-image-figcaption-display: none;
+
+
+//-----------------------------------
+//
+// Card Text
+//
+//-----------------------------------
+
+//-------------------
+// Card Title
+//--------------------
+
+// Card Title Font Family
+$card-title-font-family: $title-font-family;
+
+// Card Title Font Weight
+$card-title-font-weight: $title-font-weight;
+
+// Card Title Font Alignment
+$card-title-alignment: center;
+
+// Card Title Border
+// Sets a bottom border on the card title. Value of "0" for no border, otherwise use CSS border shorthand for size style color
+$card-title-border: 0;
+
+// Card Title Font Color
+// Sets the color of the card title
+$card-title-color: $title-on-light-color;
+
+// Card Title text transform
+// Set the text case of the title - none, uppercase, lowercase, capitalize
+$card-title-text-transform: none;
+
+// Card Title Size (small)
+// font size for mobile
+$card-title-sm: 22px;
+
+// Card Title Size (medium)
+// Font size for tablet
+$card-title-md: 24px;
+
+// Card Title Size (large)
+// Font size for desktop
+$card-title-lg: 25px;
+
+
+//----------------------------------
+//
+// Card Body Text
+// 
+//----------------------------------
+
+// Card Body Font Size
+$card-body-font-size: 16px;
+
+// Card Body Text Alignment
+$card-body-text-alignment: left;
+
+// Card Body Text Color
+$card-body-text-color: $text-on-light-color;
+
+// Set background color behind card body text
+$card-body-bg-color: transparent;
+
+
+//----------------------------------
+//
+//	Cards Grid
+//	Variables to define the card width 
+//	and the gap between card in a grid layout
+//
+//----------------------------------
+
+//----------------------------------
+//	Grid Item Width
+//	Sets the width of cards in a card section. 
+//	Classes are added in the "Custom Class" 
+//	field for the whole section.
+//----------------------------------
+
+
+
+// Grid Width Unit
+// This is the base value the width classes use as a multiplier to calculate width.
+$grid-width-unit: 100px;
+
+// Grid Width Unit x 1
+// Calculates width by multiplying the $grid-width-unit by 1
+$grid-width-1: calc(#{$grid-width-unit} * 1);
+
+// Grid Width Unit x 2
+// Calculates width by multiplying the $grid-width-unit by 2
+$grid-width-2: calc(#{$grid-width-unit} * 2);
+
+// Grid Width Unit x 3
+// Calculates width by multiplying the $grid-width-unit by 3
+$grid-width-3: calc(#{$grid-width-unit} * 3);
+
+// Grid Width Unit x 4
+// Calculates width by multiplying the $grid-width-unit by 4
+$grid-width-4: calc(#{$grid-width-unit} * 4);
+
+// Grid Width Unit x 5
+// Calculates width by multiplying the $grid-width-unit by 5
+$grid-width-5: calc(#{$grid-width-unit} * 5);
+
+// Grid Width Unit x 6
+// Calculates width by multiplying the $grid-width-unit by 6
+$grid-width-6: calc(#{$grid-width-unit} * 6);
+
+// Grid Width Unit x 7
+// Calculates width by multiplying the $grid-width-unit by 7
+$grid-width-7: calc(#{$grid-width-unit} * 7);
+
+// Grid Width Unit x 8
+// Calculates width by multiplying the $grid-width-unit by 8
+$grid-width-8: calc(#{$grid-width-unit} * 8);
+
+// Grid Width Unit x 9
+// Calculates width by multiplying the $grid-width-unit by 9
+$grid-width-9: calc(#{$grid-width-unit} * 9);
+
+// Grid Width Unit x 10
+// Calculates width by multiplying the $grid-width-unit by 10
+$grid-width-10: calc(#{$grid-width-unit} * 10);
+
+
+//----------------------------------
+// Grid Item Gap
+//----------------------------------
+
+// Defines the gap between items in a grid layout
+
+// Grid Gap Unit
+// This is the base value the grid gap classes use as a multiplier to calculate gap width.
+$grid-gap-unit: 20px;
+
+// Gap Unit x 0 - NO GAP
+// Multiplies the $grid-gap-unit x 0
+$gap-0: calc(#{$grid-gap-unit} * 0);
+
+// Gap Unit x 1
+// Multiplies the $grid-gap-unit x 1
+$gap-1: calc(#{$grid-gap-unit} * 1);
+
+
+// Gap Unit x 1.5
+// Multiplies the $grid-gap-unit x 1.5
+$gap-2: calc(#{$grid-gap-unit} * 1.5);
+
+// Gap Unit x 2
+// Multiplies the $grid-gap-unit x 2
+$gap-3: calc(#{$grid-gap-unit} * 2);
+
+// Gap Unit x 2.5
+// Multiplies the $grid-gap-unit x 2.5
+$gap-4: calc(#{$grid-gap-unit} * 2.5);
+
+// Gap Unit x 3
+// Multiplies the $grid-gap-unit x 3
+$gap-5: calc(#{$grid-gap-unit} * 3);

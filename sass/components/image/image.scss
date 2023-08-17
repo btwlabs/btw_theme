@@ -1,0 +1,42 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: IMAGE - img only story block
+//
+//----------------------------------
+//----------------------------------
+
+.section-image {
+    padding: 0;
+    background: $section-image-bg-color;
+    height: $section-image-height-lg;
+    overflow: hidden;
+
+    .parallax-item {
+        > div {
+            top: 10%; // offset by small amount to reduce white space at bottom
+        }
+    }
+
+    .bg-image {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+// override fixed image issue in iOS mobile
+// need to make sure this ONLY takes place when it's .fixed
+@include media-breakpoint-down(sm) {
+    .section-image {
+        padding: 0;
+        max-height: 812px; // iphone Xs height
+        height: $section-image-height-mobile;
+        overflow: hidden;
+
+        // this is because iOS can't properly deal with background-size: cover;
+        .fixed {
+            background-attachment: scroll !important; // override "cover" default attribute
+        }
+    }
+}

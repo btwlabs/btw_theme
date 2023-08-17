@@ -9,6 +9,51 @@
   <div id="site-wrapper">
 
     <div id="l-inner-wrap" class="l-inner-wrap"><!-- wraps all content for mobile nav push - site canvas-->
+        
+        <!-- start mobile nav -->
+        {% if page.mobile_nav|render %}
+      
+          <div id="mobile-fade"></div>
+        
+          <!-- mobile nav that sits outside of main site content -->
+          <div class="l-menu-mobile">
+              {{ page.mobile_nav }}
+          </div>
+        {% endif %}
+        
+        <div class="l-mobile-header">
+        
+          <div class="l-constrained">
+        
+            <!-- nav toggle button -->
+            <button class="hamburger hamburger--squeeze" id="mobile-nav-open-btn" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+              <span class="hamburger-label">Menu</span>
+            </button>
+        
+            <div class="site-name">
+              <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+            </div>
+        
+          </div><!-- close l-constrained -->
+        
+        </div><!-- close l-mobile-header -->
+
+
+        <!-- open pre-header region -->
+        {% if page.pre_header|render %}
+          <div class="l-pre-header clearfix">
+        
+            <div class="pre-header-inner l-constrained">
+                {{ page.pre_header }}
+            </div>
+        
+          </div>
+        {% endif %}
+        <!-- close pre-header -->
+
 
       <header class="l-header" role="banner">
 

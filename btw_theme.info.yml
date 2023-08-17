@@ -1,0 +1,24 @@
+name: BTW Base Theme
+type: theme
+description: 'Default By The Way Labs Drupal starter theme.'
+base theme: false
+core_version_requirement: ^8.8 || ^9
+
+libraries:
+  - core/normalize
+  - btw_theme/global
+
+regions:
+  mobile_nav: Mobile Nav
+  pre_header: Pre-Header
+  branding: Branding
+  header: Header
+  pre_content: Pre-Content
+  content: Content
+  post_content: Post-Content
+  sidebar: Sidebar
+  pre_footer: Pre-Footer
+  footer1: Footer1
+  footer2: Footer2
+  footer3: Footer3
+  post_footer: Post Footer

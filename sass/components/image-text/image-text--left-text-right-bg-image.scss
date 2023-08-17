@@ -1,0 +1,124 @@
+//------------------------------
+//	STORY BLOCK:
+//	LEFT text, RIGHT BG image
+//------------------------------
+
+.story-block {
+    &.left-text-right-bg-image {
+
+        @include media-breakpoint-up(md) {
+
+            // TEXT column
+            .group-left {
+                width: 50%;
+                padding: 8vw;
+            }
+
+            // IMG column
+            .group-right {
+                width: 50%;
+                background-position: center center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                // fixed images only span width of right container
+                &.fixed {
+                    background-size: 50% auto;
+                    background-repeat: no-repeat;
+                    background-position: right top;
+                }
+
+                .story-block-extra-image {
+                    max-width: 70%;
+                    flex: 0 0 100%;
+                }
+            }
+        }
+
+        .section-title {
+            text-align: $sb-left-text-title-alignment;
+        }
+    }
+}
+
+//---------------------------------------------
+//   Text Wrapper Overlaps Image
+//----------------------------------------------
+
+.section-story-block {
+    &.text-wrapper-overlap {
+        .left-text-right-bg-image {
+            @include media-breakpoint-up(md) {
+                .group-right {
+                    width: 65%;
+                    position: relative;
+                    z-index: 0;
+                }
+                .group-left {
+                    width: 35%;
+                    position: relative;
+                    right: -11vw;
+                    z-index: 1;
+                    padding: 8vw 0;
+                }
+                .text-wrapper {
+                    margin: 0 -4vw;
+                    padding: 4vw;
+                    align-self: center;
+                }
+                .story-block-extra-image {
+                    margin: 0 -4vw 1em;
+                }
+            }
+        }
+    }
+}
+
+// Image width 55%, text width 45%
+.sb-image55-text45 {
+    .story-block {
+        &.left-text-right-bg-image {
+            @include media-breakpoint-up(md) {
+
+                // img col
+                .group-right {
+                    width: 55%;
+
+                    &.fixed {
+                      background-size: 55% auto;
+                    }
+                }
+
+                // text col
+                .group-left {
+                    width: 45%;
+                }
+            }
+        }
+    }
+}
+
+// Image width 45%, text width 55%
+.sb-image45-text55 {
+    .story-block {
+        &.left-text-right-bg-image {
+            @include media-breakpoint-up(md) {
+
+                // image col
+                .group-right {
+                    width: 45%;
+
+                    &.fixed {
+                      background-size: 45% auto;
+                    }
+                }
+
+                // text col
+                .group-left {
+                    width: 55%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+//----------------------------------
+//
+//	STANDALONE CATALOG ITEM PAGE:
+//
+//----------------------------------
+
+.page-catalog-item {
+	background: $catalog-page-bg-color;
+	
+	@include media-breakpoint-down(md) {
+		padding: 8vw 0;
+	}
+	@include media-breakpoint-up(lg) {
+		padding: 5vw 0 8vw 0;
+	}
+	
+	.title-wrapper {
+		text-align: center;
+		margin-bottom: 2em;
+	}
+	
+	h1.page-title,
+	h1.title {
+		@include title-style;
+		@include responsive-page-title;
+		color: $catalog-page-title-color;
+	}
+	
+	// description
+	.catalog-item-description {
+		@include media-breakpoint-up(lg) {
+			font-size: .8em;
+		}
+	}
+	
+	// List catalog item code.
+	&.paragraph--type--catalog-item {
+		padding: 8vw 0;
+		position: relative;
+		border-bottom: none; // need to add variable for this
+		
+		h2.section-title {
+			margin-bottom: 1rem;
+		}
+		
+		// col 1
+		.catalog-item-1 {		
+			@include media-breakpoint-down(sm) {
+				margin-bottom: 30px;
+			}
+		}
+		
+		// description
+		.catalog-item-description {
+		
+			p:first-child {
+				margin-top: 0;
+			}
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

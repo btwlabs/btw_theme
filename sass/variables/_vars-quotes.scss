@@ -1,0 +1,47 @@
+
+//---------------------------------------------
+//---------------------------------------------
+//
+//	VARIABLES: Quotations
+//	Styling of <blockquote> for quotations
+//
+//---------------------------------------------
+//---------------------------------------------
+
+//--------------------------
+// Quotes (OLD CSS)
+//--------------------------
+$quote-text-color: $base-text-color;
+$quote-bg-color-on-light: #eaeaea;
+$quote-bg-color-on-dark: #fff;
+
+
+// Quote Icon URL
+// Set the URL for the quote icon
+$quotation-icon-url: url(https://fileswift.com/sites/default/files/2021-05/quote-left-solid_0.svg);
+
+// Quote divider color
+// Set the color for the vertical border separating icon and text
+$quote-pipe-color: #777;
+
+// Quote Author font family
+// Set the URL for the quote icon
+$quote-author-font-family: $title-font-family;
+
+// Quote Highlight text color
+// Sets text color for highlight <span> within quote body
+$quote-highlight-text-color: $primary;
+
+// Quote Highlight Font Weight
+// Set the font weight of a quote highlight
+$quote-highlight-font-weight: bold;
+
+// Quote Highlight Text Size
+// Set the size of the quote highlight text
+$quote-highlight-text-size: 1em;
+
+// Quote Author Text Color
+// Set the color of the quote author
+$quote-author-text-color: $primary;
+
+

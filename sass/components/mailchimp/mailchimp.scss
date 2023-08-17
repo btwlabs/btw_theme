@@ -1,0 +1,80 @@
+//----------------------------------
+//
+//	SECTION: SUBSCRIBE (MAILCHIMP) - email signup form
+//
+//----------------------------------
+
+.section-subscribe {
+    background: $section-subscribe-bg-color;
+
+    .intro {
+        .section-title {
+            text-align: $section-subscribe-title-alignment;
+        }
+        .intro-body {
+            text-align: $section-subscribe-body-alignment;
+        }
+    }
+
+    .form-embed {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+.section-subscribe {
+
+	.intro p {
+		margin-bottom: 35px;
+	}
+
+	form {
+		justify-content: center;
+          display: flex;
+
+		.form-control,
+               input[type="email"] {
+			background: #fff;
+			border: none;
+			border-radius: 3px;
+			box-shadow: none;
+			outline: none;
+			color: inherit;
+			text-indent: 9px;
+			height: 45px;
+			margin-right: 10px;
+			min-width: 250px;
+		}
+
+		.btn {
+			padding: 16px 32px;
+			border: none;
+			background: none;
+			box-shadow: none;
+			text-shadow: none;
+			opacity: 0.9;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 13px;
+			letter-spacing: 0.4px;
+			line-height: 1;
+		}
+
+		.btn:hover {
+			opacity: 1;
+		}
+
+		.btn:active {
+			transform: translateY(1px);
+		}
+
+		.btn-primary {
+			background-color: #055ada !important;
+			color: #fff;
+			outline: none !important;
+		}
+	}
+}
+
+
+

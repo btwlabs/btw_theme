@@ -1,0 +1,38 @@
+//----------------------------------
+//
+//	STORY Subpage
+//
+//----------------------------------
+
+
+.subpage {
+	 background-color: $subpage-bg-color;
+} 
+	 
+.story-subpage {
+
+	//-------------------------------------
+	// 	BASIC PAGE TITLE
+	//  -- if no Hero paragraph is added, 
+	//     then the default page title is displayed
+	//-------------------------------------
+
+	// Page Title
+	.page-title {
+		padding: 0;
+		text-align: $page-title-text-align;
+
+		@include media-breakpoint-down(md) {
+			margin-top: 8vw;
+		}
+		@include media-breakpoint-up(lg) {
+			margin-top: 5vw;
+		}
+
+		h1.page-title,
+		h1.title {
+			@include title-style;
+			@include responsive-page-title;
+		}
+	}
+}

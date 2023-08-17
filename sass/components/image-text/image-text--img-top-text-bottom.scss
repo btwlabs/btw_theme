@@ -1,0 +1,125 @@
+//------------------------------
+//	STORY BLOCK:
+//  Image TOP, Text BOTTOM
+//------------------------------
+
+.story-block {
+    &.img-top-text-bottom {
+
+        .story-block-inner {
+            padding: 0 0 $section-padding-y-lg;
+        }
+
+        // outer images wrapper
+        .bg-image {
+            flex: 0 0 100%;
+            
+            @include media-breakpoint-up(md) {
+                margin-bottom: $sb-img-top_image-margin;
+            }
+        }
+
+        // image container
+        .story-block-images {
+            padding: $sb-img-top_image-padding;
+
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+
+            figure {
+                margin: 0;
+
+                img {
+                    width: 100%;
+                }
+
+                figcaption {
+                    font-size: 14px;
+                    padding: 5px $section-padding-x-sm;
+                    text-align: center;
+                }
+            }
+        }
+
+        .group-text {
+            display: flex;
+            flex-direction: column;
+            // Y axis
+            justify-content: flex-start;
+            // X axis
+            align-items: center;
+            width: 100%;
+
+            .text-wrapper {
+                max-width: 38em;
+
+                @include media-breakpoint-down(md) {
+                    padding: 0 $section-padding-x-sm;
+                }
+            }
+
+            // Text area
+            .section-title {
+                text-align: $sb-center-full-img-title-alignment;
+            }
+
+            .story-block-text {
+                text-align: $sb-center-full-img-text-alignment;
+            }
+
+            h3,
+            .subtitle {
+                text-align: $sb-center-full-img-subtitle-alignment;
+            }
+
+            // Link
+            .s2_story_block__story-block-link {
+                text-align: center;
+
+                a {
+                    @include media-breakpoint-down(sm) {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//---------------------------------------------
+//   Text Wrapper Overlaps Image
+//----------------------------------------------
+
+.section-story-block {
+    &.text-wrapper-overlap {
+        @include media-breakpoint-up(md) {
+            .img-top-text-bottom {
+                .text-wrapper {
+                    padding: 4vw;
+                    margin-top: -12vw;
+                    max-width: 44em;
+                }
+                .bg-image {
+                    margin-bottom: 0;
+                }
+            }
+            
+            &.text-wrapper-light {
+                .img-top-text-bottom {
+                    .text-wrapper {
+                        background-color: $bg-light-color;
+                    }
+                }
+            }
+            
+            &.text-wrapper-dark {
+                .img-top-text-bottom {
+                    .text-wrapper {
+                        background-color: $bg-dark-color;
+                    }
+                }
+            }
+        }
+    }
+}

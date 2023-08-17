@@ -1,0 +1,99 @@
+//------------------------------------
+//------------------------------------
+//
+//	CATALOG subpages
+//
+//------------------------------------
+//------------------------------------
+
+//----------------------------------
+//	Common Subpage Styles
+//----------------------------------
+
+.subpage {
+    background: $subpage-bg-color;
+}
+
+//------------------------------------
+//
+//  Catalog Page
+//
+//------------------------------------
+
+.catalog {
+    background: $catalog-page-bg-color;
+    
+    figure {
+        margin: 2em 0;
+    }
+    
+    // Hero Image
+    .basic-content-hero {
+        height: $subpage-hero-height;
+        min-height: auto;
+        flex: 0 0 100%;
+        overflow: hidden;
+        background-color: $subpage-hero-bg-color;
+    
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            object-fit: cover;
+        }
+    }
+    
+    // Page Title
+    .page-title {
+        padding: 0;
+        text-align: $page-title-text-align;
+    
+        @include media-breakpoint-down(md) {
+            padding-top: 8vw;
+        }
+        @include media-breakpoint-up(lg) {
+            padding-top: 5vw;
+        }
+    
+        h1.page-title,
+        h1.title {
+            @include title-style;
+            @include responsive-page-title;
+            color: $catalog-page-title-color;
+        }
+    }
+    
+    // Body text under the page title - intro
+    .catalog__body {
+        color: $catalog-page-body-text-color;
+    }
+    
+    //------------------------------
+    //  Catalog Items Wrapper
+    //------------------------------
+    
+    // catalog items outer wrapper (after page title)
+    .section-content-items {
+        padding-bottom: 5vw;
+        
+        // remove col padding so album bg odd/even colors extend to edge
+        .content-row > .col {
+            padding: 0;
+        }
+    }
+
+    // alternating bg colors for rows
+    .catalog-item {
+        &.even {
+            .paragraph--type--catalog-item {
+                background: $catalog-item-bg-even;
+            }
+        }
+        &.odd {
+            .paragraph--type--catalog-item {
+                background: $catalog-item-bg-odd;
+            }
+        }
+    }
+}
+

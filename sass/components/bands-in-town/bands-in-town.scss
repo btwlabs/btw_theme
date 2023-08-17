@@ -1,0 +1,124 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: TOUR (Bands In Town embed)
+//
+//----------------------------------
+//----------------------------------
+
+.section-bands-in-town {
+    background: $section-bit-bg-color;
+
+    .intro {
+        .section-title {
+            text-align: $section-bit-title-alignment;
+            color: $section-bit-title-color;
+        }
+        .intro-body {
+            text-align: $section-bit-body-alignment;
+            color: $section-bit-body-color;
+        }
+    }
+
+    .feed-wrapper {
+        max-width: $bit-feed-max-width;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    // Bands In Town Widget
+    .bit-widget {
+        font-size: 16px;
+        font-family: $base-font-family;
+        width: 100%;
+        color: $bit-text-color;
+        background-color: rgba(0,0,0,0);
+
+        .bit-top-track-button {
+            margin-bottom: 20px;
+        }
+
+        .bit-details {
+            transition: all 0.2s ease-in;
+            padding: 10px;
+
+            &:hover {
+                background: rgba(100,100,100,0.1);
+                text-decoration: none;
+                padding-left: 20px;
+            }
+        }
+
+        // Venue title
+        .bit-venue {
+            color: $bit-venue-color;
+        }
+
+        // Event Details text color
+        .bit-event {
+            border-top: 1px solid $bit-border-color;
+            a.bit-details {
+                color: $bit-details-color;
+            }
+        }
+
+        // Upcoming Dates title
+        .bit-event-list-title {
+            font-size: 20px;
+        }
+
+        // offers
+        .bit-offers {
+            background-color: $bit-link-color;
+            border: 1px solid $bit-link-color;
+            color: $bit-button-text-color;
+            border-radius: $bit-button-border-radius;
+            transition: all 0.2s ease-in;
+
+            &:hover {
+                background-color: $bit-button-hover-bg-color !important;
+                border-color: $bit-button-hover-border-color !important;
+                color: $bit-button-text-hover-color !important;
+            }
+        }
+
+        // BIT event buttons
+        a.bit-button,
+        a.bit-play-my-city-button {
+            &:hover {
+                background-color: $bit-button-hover-bg-color !important;
+                border-color: $bit-button-hover-border-color !important;
+                color: $bit-button-text-hover-color !important;
+            }
+        }
+
+        // RSVP button
+        .bit-rsvp {
+            color: $bit-link-color;
+            border: 1px solid $bit-link-color;
+            border-radius: $bit-button-border-radius;
+        }
+
+        // play my city button
+        .bit-play-my-city-button {
+            background-color: $bit-link-color;
+            border: 1px solid $bit-link-color;
+            color: $bit-button-text-color;
+            border-radius: $bit-button-border-radius;
+        }
+        .bit-upcoming-events-show-all-button,
+        .bit-past-events-show-all-button {
+            color: $bit-button-text-color;
+            background-color: $bit-link-color;
+            border: 1px solid $bit-link-color;
+            transition: all 0.2s ease-in;
+
+            &:hover {
+                background-color: $bit-button-hover-bg-color !important;
+                border-color: $bit-button-hover-border-color !important;
+                color: $bit-button-text-hover-color !important;
+            }
+        }
+    }
+}

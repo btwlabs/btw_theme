@@ -1,0 +1,804 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: CARDS
+//
+//----------------------------------
+//----------------------------------
+
+.section-cards {
+    background: $section-cards-bg-color;
+    
+    @include media-breakpoint-down(md) {
+        padding: $section-padding-y-sm 5vw;
+    }
+    @include media-breakpoint-up(lg) {
+        padding: $section-padding-y-lg 5vw;
+    }
+    
+    .container-fluid {
+        padding: 0;
+    }
+
+    .section-title {
+        text-align: $section-cards-intro-title-alignment;
+        color: $section-cards-title-color;
+    }
+    .intro-body {
+        text-align: $section-cards-intro-body-alignment;
+        color: $section-cards-intro-color;
+    }
+}
+
+$grid-minmax-value: $grid-width-3;
+
+//---------------------
+// Individual Cards
+//---------------------
+
+// Card item (row, wrapper)
+.card-item {
+    display: flex;
+    
+    // all text inside card is inside an <a>
+    > a {
+        display: block;
+        width: 100%;
+        transition: 0.3s ease-in-out all;
+        
+        
+        &:hover {
+            text-decoration: none;
+
+            .card {
+                transform: scale(1.05);
+                box-shadow: $card-shadow-hover;
+            }
+        }
+    }
+}
+
+.card {
+	background: $card-bg-color;
+	border: $card-border;
+	border-radius: $card-border-radius;
+    overflow: hidden;
+	align-items: center;
+	height: 100%;
+    width: 100%;
+    transition: all 0.2s ease-out;
+    box-shadow: $card-shadow;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+
+	// Font Awesome icon selection
+	&.has-fa-icon {
+    	.card-fa-icon {
+		    color: $card-icon-color;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+	    	font-size: $card-icon-font-size;
+	    	width: 100%;
+    	}
+	}
+
+	// "Upload Icon" selection (svg)
+	&.icon {
+		.card-image {
+			max-width: $card-image-icon-width;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+		}
+	}
+    
+    &.photo {
+        .card-image {
+            width: 100%; 
+            
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+// both icons and photos
+.card-image,
+.card-fa-icon {
+    padding: $card-image-padding;
+}
+
+.card-image {
+    figure {
+        margin: 0;
+
+        figcaption {
+            font-size: 14px;
+            text-align: center;
+            display: $card-image-figcaption-display;
+        }
+    }
+}
+
+// quick removal of all img padding
+.section-cards {
+    // deprecated
+    &.no-img-padding {
+        .card-image {
+            padding: 0 !important;
+        }
+    }
+
+    &.cards-no-image-padding {
+        .card-image {
+            padding: 0 !important;
+        }
+    }
+}
+
+
+
+// body: title, text, link
+.card-body {
+	padding: $card-text-padding; // bs override
+    background-color: $card-body-bg-color;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+    min-height: auto; // override bootstrap
+
+	// extend too 100% of height available
+	align-self: stretch;
+}
+
+.card-title {
+	@include responsive-card-title; // controls size
+	font-family: $card-title-font-family;
+	font-weight: $card-title-font-weight;
+	text-align: $card-title-alignment;
+	border-bottom: $card-title-border;
+	margin-bottom: 1.25rem;
+	color: $card-title-color;
+    text-transform: $card-title-text-transform;
+}
+.card-text-group {
+    width: 100%;
+}
+.card-text {
+	font-size: $card-body-font-size;
+	text-align: $card-body-text-alignment;
+    color: $card-body-text-color;
+
+	p:last-child {
+		margin-bottom: 0;
+    }
+    a {
+        display: inline !important;
+    }
+}
+.card-link {
+	margin-top: 2rem;
+	flex: 1 1 100%;
+
+	// make button align to the bottom
+	align-self: flex-end;
+}
+
+
+
+//---------------------------------------------
+//
+//	LIGHT BG - STORY BLOCK STYLES -
+//  for use on light background colors or images
+//
+//  Class appears on same container as .story-block,
+//  which is the 1st container inside <section>
+//
+//---------------------------------------------
+
+.light-bg-dark-text {
+    
+    // set light bg for bg image and intro section
+    &.section-cards {
+        background: $bg-light-color;
+        
+        .image-overlay {
+            background-color: $overlay-bg-color-light;
+        }
+
+        .section-title {
+            color: $title-on-light-color;
+        }
+
+        .intro-body {
+            color: $text-on-light-color;
+
+            a {
+                color: $link-on-light-color;
+                
+                &:hover {
+                    color: $link-on-light-color-hover;
+                }
+            }
+        }
+    }
+}
+
+// Set light bg per cart item
+.card-item {
+    &.light-bg-dark-text {
+        .card {
+            background: $bg-light-color;
+        }
+        .card-title {
+            color: $title-on-light-color;
+        }
+        .card-text {
+            color: $text-on-light-color;
+        }
+        .card-link {
+            @include button-on-light;
+        }
+    }
+}
+
+// Set for ALL cards within section
+.card-light-bg {
+    .card {
+        background: $bg-light-color;
+    }
+    .card-title {
+        color: $title-on-light-color;
+    }
+    .card-text {
+        color: $text-on-light-color;
+    }
+    .card-link {
+        @include button-on-light;
+    }
+}
+
+
+//---------------------------------------------
+//
+//	DARK BG - COLLECTION STYLES -
+//  for use on light background colors or images.
+//
+//  Class appears on same container as .section-cards
+//
+//---------------------------------------------
+
+.section-cards {
+    
+    // set dark bg for bg image and intro section 
+    &.dark-bg-light-text {
+        background: $bg-dark-color;
+        
+        .image-overlay {
+            background-color: $overlay-bg-color-dark;
+        }
+
+        // Intro title h2
+        .section-title {
+            color: $title-on-dark-color;
+        }
+
+        // Intro body text
+        .intro-body {
+            color: $text-on-dark-color;
+
+            a {
+                color: $link-on-dark-color;
+                
+                &:hover {
+                    color: $link-on-dark-color-hover;
+                }
+            }
+        }
+    }
+}
+
+// Set dark bg per cart item
+.card-item {
+    &.dark-bg-light-text {
+        .card {
+            background: $bg-dark-color;
+        }        
+        .card-title {
+            color: $title-on-dark-color;
+        }
+        .card-text {
+            color: $text-on-dark-color;
+        }
+        .card-link {
+            @include button-on-dark;
+        }
+    }
+}
+
+// Set for all card items or individual in a section
+.card-dark-bg {
+    .card {
+        background: $bg-dark-color;
+    }
+    .card-title {
+        color: $title-on-dark-color;
+    }
+    .card-text {
+        color: $text-on-dark-color;
+    }
+    .card-link {
+        @include button-on-dark;
+    }
+}
+
+
+    
+
+//---------------------------------------------
+//
+//    BG Image Effects on Section
+//
+//----------------------------------------------
+
+.section-cards {
+    
+    &.has-parallax {
+        overflow: hidden;
+    }
+    
+    // set image containers to pos absolute
+    .bg-image {
+        &.parallax-item,
+        &.fixed,
+        &.no-effect {
+            position: absolute !important;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    }
+}
+
+
+// Collection Grid Widths
+.full-width {
+    .subcard-wrapper {
+        .row {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin: 0;
+        }
+    }
+}
+.grid-width-1 {
+    .subcard-wrapper {
+        .row {
+            display: grid;
+            
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(auto-fit, minmax($grid-width-1, 1fr));
+            }
+        }
+    }
+}
+.grid-width-2 {
+    .subcard-wrapper {
+        .row {
+            display: grid;
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(auto-fit, minmax($grid-width-2, 1fr));
+            }
+        }
+    }
+}
+.grid-width-3 {
+    .subcard-wrapper {
+        .row {
+            display: grid;
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(auto-fit, minmax($grid-width-3, 1fr));
+            }
+        }
+    }
+}
+.grid-width-4 {
+    .subcard-wrapper {
+        .row {
+            display: grid;
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(auto-fit, minmax($grid-width-4, 1fr));
+            }
+        }
+    }
+}
+.grid-width-5 {
+    .subcard-wrapper {
+        .row {
+            display: grid;            
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(auto-fit, minmax($grid-width-5, 1fr));
+            }
+        }
+    }
+}
+.grid-width-6 {
+    .subcard-wrapper {
+        .row {
+            display: grid;            
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(auto-fit, minmax($grid-width-6, 1fr));
+            }
+        }
+    }
+}
+.grid-width-7 {
+    .subcard-wrapper {
+        .row {
+            display: grid;            
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(auto-fit, minmax($grid-width-7, 1fr));
+            }
+        }
+    }
+}
+.grid-width-8 {
+    .subcard-wrapper {
+        .row {
+            display: grid;            
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(auto-fit, minmax($grid-width-8, 1fr));
+            }
+        }
+    }
+}
+.grid-width-9 {
+    .subcard-wrapper {
+        .row {
+            display: grid;            
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(auto-fit, minmax($grid-width-9, 1fr));
+            }
+        }
+    }
+}
+.grid-width-10 {
+    .subcard-wrapper {
+        .row {
+            display: grid;            
+            @include media-breakpoint-up(md) {
+                grid-template-columns: repeat(auto-fit, minmax($grid-width-10, 1fr));
+            }
+        }
+    }
+}
+
+// Collection grid gaps
+.gap-0 {
+    .subcard-wrapper {
+        .row {
+            grid-gap: $gap-0;
+        }
+    }
+}
+.gap-1 {
+    .subcard-wrapper {
+        .row {
+            grid-gap: $gap-1;
+        }
+    }
+}
+.gap-2 {
+    .subcard-wrapper {
+        .row {
+            grid-gap: $gap-2;
+        }
+    }
+}
+.gap-3 {
+    .subcard-wrapper {
+        .row {
+            grid-gap: $gap-3;
+        }
+    }
+}
+.gap-4 {
+    .subcard-wrapper {
+        .row {
+            grid-gap: $gap-4;
+        }
+    }
+}
+.gap-5 {
+    .subcard-wrapper {
+        .row {
+            grid-gap: $gap-5;
+        }
+    }
+}
+
+
+//----------------------------------
+//
+// Expand cards to fill 100% of the 
+// available space 
+//
+//----------------------------------
+
+// This feature uses Flexbox instead of CSS Grid
+// and needs a grid width on each card item
+
+.cards-expand-full {
+    &.grid-width-1 {
+        .card-item {
+            width: $grid-width-1;
+        }
+    }
+    &.grid-width-2 {
+        .card-item {
+            width: $grid-width-2;
+        }
+    }
+    &.grid-width-3 {
+        .card-item {
+            width: $grid-width-3;
+        }
+    }
+    &.grid-width-4 {
+        .card-item {
+            width: $grid-width-4;
+        }
+    }
+    &.grid-width-5 {
+        .card-item {
+            width: $grid-width-5;
+        }
+    }
+    &.grid-width-6 {
+        .card-item {
+            width: $grid-width-6;
+        }
+    }
+    &.grid-width-7 {
+        .card-item {
+            width: $grid-width-7;
+        }
+    }
+    &.grid-width-8 {
+        .card-item {
+            width: $grid-width-8;
+        }
+    }
+    &.grid-width-9 {
+        .card-item {
+            width: $grid-width-9;
+        }
+    }
+    &.grid-width-10 {
+        .card-item {
+            width: $grid-width-10;
+        }
+    }
+}
+
+// Cards expand full width styling for all but photo only cards
+.cards-expand-full {
+    &.cards-stacked-1,
+    &.cards-stacked-2,
+    &.cards-left-img-right-text,
+    &.cards-left-text-right-img {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0;
+        
+        .row {
+            margin: 0;
+            grid-gap: 0;
+            display: flex !important;
+        }
+        .card-item {
+            flex: 1 1 auto;
+            
+            a:hover .card {
+                transform: none;
+                box-shadow: none;
+            }
+            .card-image {
+                overflow: hidden;
+                
+                img {
+                    width: 100%;
+                    transition: 0.2s all ease-in-out;
+                }
+            }
+        }
+
+        // use image scale as hover animation/indicator
+        .paragraph--type--s2-sub-card {
+            > a {    
+                &:hover img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    
+        @include media-breakpoint-up(md) {
+            .card {
+                &.photo {
+                    .card-image,
+                    .s2_sub_card__sub-card-image,
+                    figure {
+                        height: 100%;
+                    }
+                }
+                .card-image {
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+//-------------------------------------------
+//
+//  Cards - text over image
+//
+//-------------------------------------------
+
+.card-text-over-image {
+    .card {
+        position: relative;
+    }
+    @include media-breakpoint-up(lg) {
+        
+        // card image
+        .card-image,
+        .s2_sub_card__sub-card-image {
+            height: 100% !important;
+        }
+        figure {
+            img {
+                height: 100% !important;
+                object-fit: cover;
+            }
+        }
+        
+        // card text
+        .card-body {
+            position: absolute;
+            z-index: 0;
+            background: $overlay-bg-color-dark;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s ease-in-out opacity;
+        }
+        .card-text-group {
+            max-width: 700px;
+        }
+        .card-link {
+            flex: 0 0 auto;
+            align-self: auto;
+        }
+        
+        &.dark-bg-light-text {
+            background: $overlay-bg-color-dark;
+        }
+        &.light-bg-dark-text {
+            background: $overlay-bg-color-light;
+        }
+    
+        .card:hover {
+            .card-body {
+                opacity: 1;  
+            }
+        }
+    }
+}
+
+
+
+//-------------------------------------------
+//
+//  Cards - text over image
+//          text bottom
+//
+//-------------------------------------------
+
+.card-text-over-image-bottom {
+    @extend .card-text-over-image;
+    
+    @include media-breakpoint-up(lg) {
+        .card-body {
+            bottom: 0;
+            height: auto;
+        }
+    }
+}
+
+//-------------------------------------------
+//
+//  Cards - text over image HOVER
+//
+//-------------------------------------------
+
+.card-text-over-image-hover {
+    @extend .card-text-over-image;
+    
+    @include media-breakpoint-up(lg) {
+        .card-body {
+            opacity: 0;
+        }
+        .card:hover {
+            .card-body {
+                opacity: 1;  
+            }
+        }
+    }
+}
+
+//-------------------------------------------
+//
+//  Cards - text over image HOVER
+//          text bottom
+//
+//-------------------------------------------
+
+.card-text-over-image-bottom-hover {
+    @extend .card-text-over-image-hover;
+    
+    @include media-breakpoint-up(lg) {
+        .card-body {
+            bottom: 0;
+            height: auto;
+        }
+    }
+}
+
+//-------------------------------------------
+//
+//  Cards - Overrides to text alignment per section
+//
+//-------------------------------------------
+.section-cards {
+    &.text-center {
+        .card-title,
+        .card-text {
+            text-align: center !important;
+        }
+    }
+    &.text-left {
+        .card-title,
+        .card-text {
+            text-align: left !important;
+        }
+    }
+    &.text-right {
+        .card-title,
+        .card-text {
+            text-align: right !important;
+        }
+    }
+}

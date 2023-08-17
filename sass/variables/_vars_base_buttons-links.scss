@@ -1,0 +1,58 @@
+//----------------------------------
+// 
+//	VARIABLES: LINKS
+//
+//----------------------------------
+
+// General
+
+$link-color: $primary;
+$link-color-hover: darken($primary, 20%);
+
+
+//----------------------------------
+// 
+//	VARIABLES: Buttons
+//
+//----------------------------------
+
+// Button Padding
+$btn-padding: 15px 30px;
+$btn-letter-spacing: 0px;
+$btn-text-transform: none;
+$btn-border-radius: .25rem;
+$btn-font-family: $base-font-family;
+$btn-font-weight: normal;
+$btn-font-size: 1em;
+
+//----------------------------------
+// Primary Buttons
+//----------------------------------
+
+// Normal State
+$btn-bg-color: $primary;
+$btn-text-color: $white;
+$btn-border: 1px solid $btn-bg-color;
+
+
+// Hover State
+$btn-hover-bg-color: darken($btn-bg-color, 15%);
+$btn-hover-border-color: $btn-hover-bg-color;
+$btn-hover-text-color: $white;
+
+
+//----------------------------------
+// Secondary Button Color
+// Buttons which by default use the $secondary color value as background.
+//----------------------------------
+
+// Normal State
+$btn-secondary-bg-color: $secondary;
+$btn-secondary-border-color: $btn-secondary-bg-color;
+$btn-secondary-text-color: $white;
+
+
+// Hover State 
+$btn-secondary-hover-bg-color: darken($btn-secondary-bg-color, 15%);
+$btn-secondary-hover-border-color: $btn-secondary-hover-bg-color;
+$btn-secondary-hover-text-color: $btn-secondary-text-color;
