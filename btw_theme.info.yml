@@ -2,7 +2,7 @@ name: BTW Base Theme
 type: theme
 description: 'Default By The Way Labs Drupal starter theme.'
 base theme: false
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^9 || ^10
 
 libraries:
   - core/normalize
