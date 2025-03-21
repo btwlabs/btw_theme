@@ -8,144 +8,86 @@
 //------------------------------------------------------
 
 
+//---------------------------------------------
+//	BUTTONS - Direct Copy over from Vanilla V1
+//----------------------------------------------
 
-//--------------------------------------------------
-//
-//	Default buttons
-//
-//------------------------------------------------
-
-@mixin button {
-	background: $btn-bg-color; 
-	text-align: center;
-	color: $btn-text-color;
-	text-decoration: none;
+@mixin btn {
+	padding: $btn-padding;
+	border-radius: $btn-border-radius;
 	text-transform: $btn-text-transform;
-	@include border-radius($btn-border-radius);
-	@include transition(all, 0.2s, ease-in);
-	@include button-padding($btn-padding);
-	line-height: 1;
-	border: $btn-border;
 	font-weight: $btn-font-weight;
-	position: relative;
 	letter-spacing: $btn-letter-spacing;
-	
-	@include breakpoint($small-only) {
-		display: block;
-		font-size: $button-font-size-sm;
-	}
-	@include breakpoint($medium-up) {
-		display: inline-block;
-		font-size: $button-font-size-lg;
-	}
+	font-family: $btn-font-family;
+	font-size: $btn-font-size;
+	text-align: center;
+	text-decoration: none;
 	
 	&:hover {
-		background: $btn-hover-bg-color; 
-		color: $btn-hover-text-color;
-		border-color: $btn-hover-border-color;
 		text-decoration: none;
 	}
 }
 
-@mixin button-hover {
-	background: $btn-hover-bg-color; 
-	color: $btn-hover-text-color;
-	border-color: $btn-hover-border-color;
-	text-decoration: none;
+@mixin btn-primary {
+	background: $btn-bg-color;
+	border: $btn-border;
+	color: $btn-text-color;
+	text-align: center;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $btn-hover-bg-color;
+		border-color: $btn-hover-border-color;
+		color: $btn-hover-text-color !important;
+		text-decoration: none;
+	}
 }
 
-@mixin button-padding($button-padding) {
-	padding: $btn-padding;
+@mixin btn-secondary {
+	background: $btn-secondary-bg-color;
+	border-color: $btn-secondary-border-color;
+	color: $btn-secondary-text-color;
+	text-align: center;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $btn-secondary-hover-bg-color;
+		border-color: $btn-secondary-hover-border-color;
+		color: $btn-secondary-hover-text-color !important;
+		text-decoration: none;
+	}
 }
 
 
 
 //--------------------------------------------------
 //
-//	LIGHT BUTTON ON DARK BG mixin
+//	BUTTON ON A DARK BG mixin
 //
 //--------------------------------------------------
 
 @mixin button-on-dark {
-	background: $button-bg-color-on-dark; 
-	text-align: center;
-	color: $button-text-color-on-dark;
-	border: $button-border-width solid $button-border-color-on-dark;
-	text-decoration: none;
-	text-transform: $button-text-transform;
-	@include border-radius($button-border-radius);
-	@include transition(all, 0.2s, ease-in);
-	@include button-padding($button-padding);
-	font-weight: $button-font-weight;
-	position: relative;
-	letter-spacing: $button-letter-spacing;
-	line-height: $button-line-height;
-	
-	@include breakpoint($small-only) {
-		display: block;
-		font-size: $button-font-size-sm;
-	}
-	@include breakpoint($medium-up) {
-		display: inline-block;
-		font-size: $button-font-size-lg;
-	}
-	
+	background: $btn-bg-color-on-dark;
+	color: $btn-text-color-on-dark !important;
+	border-color: $btn-border-color-on-dark;
+
 	&:hover {
-		background: $button-bg-hover-color-on-dark; 
-		color: $button-text-hover-color-on-dark;
-		border-color: $button-border-hover-color-on-dark;
-		text-decoration: none;
+		background: $btn-bg-hover-color-on-dark;
+		color: $btn-text-hover-color-on-dark !important;
+		border-color: $btn-border-hover-color-on-dark;
 	}
 }
-@mixin button-on-dark-hover {
-	background: $button-bg-hover-color-on-dark; 
-	color: $button-text-hover-color-on-dark;
-	border-color: $button-border-hover-color-on-dark;
-	text-decoration: none;
-}
-
-
-//--------------------------------------------------
-//
-//	DARK BUTTON ON LIGHT BG mixin
-//
-//--------------------------------------------------
 
 @mixin button-on-light {
-	background: $button-bg-color-on-light; 
-	text-align: center;
-	color: $button-text-color-on-light;
-	border: $button-border-width solid $button-border-color-on-light;
-	text-decoration: none;
-	text-transform: $button-text-transform;
-	@include border-radius($button-border-radius);
-	@include transition(all, 0.2s, ease-in);
-	@include button-padding($button-padding);
-	font-weight: $button-font-weight;
-	position: relative;
-	letter-spacing: $button-letter-spacing;
-	line-height: $button-line-height;
-	
-	@include breakpoint($small-only) {
-		display: block;
-		font-size: $button-font-size-sm;
-	}
-	@include breakpoint($medium-up) {
-		display: inline-block;
-		font-size: $button-font-size-lg;
-	}
-	
-	&:hover {
-		background: $button-bg-hover-color-on-light; 
-		color: $button-text-hover-color-on-light;
-		border-color: $button-border-hover-color-on-light;
-		text-decoration: none;
-	}
-}
-@mixin button-on-light-hover {
-	background: $button-bg-hover-color-on-light; 
-	color: $button-text-hover-color-on-light;
-	border-color: $button-border-hover-color-on-light;
-	text-decoration: none;
-}
+	background: $btn-bg-color-on-light;
+	color: $btn-text-color-on-light !important;
+	border-color: $btn-border-color-on-light;
 
+	&:hover {
+		background: $btn-bg-hover-color-on-light;
+		color: $btn-text-hover-color-on-light !important;
+		border-color: $btn-border-hover-color-on-light;
+	}
+}

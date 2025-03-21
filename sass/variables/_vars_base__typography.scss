@@ -1,0 +1,107 @@
+//--------------------------------------
+//--------------------------------------
+//
+//	VARIABLES: Typography
+//
+//--------------------------------------
+//--------------------------------------
+
+//  Values align with browser or device widths. -sm=mobile, -md=tablet, -lg=desktop
+
+// Font Icons
+$icon-line-height: 1;
+
+
+//----------------------------------
+//
+//	Base Font
+//
+//----------------------------------
+
+$base-font-family: 'corbert-condensed', serif; // *changed* default: "Helvetica Neue", Helvetica, Arial, sans-serif
+$base-font-weight: 500;
+$base-line-height: 1.6;
+$base-letter-spacing: -0.02em; // *changed* default: 0
+$base-text-color: rgba(0,0,0,0.8);
+
+//-------------------------
+//	Body font sizes
+//-------------------------
+
+$body-text-sm: clamp(18px, 1.5vw, 22px); // *changed* default: 16px
+$body-text-md: clamp(18px, 1.5vw, 22px); // *changed* default: 18px
+$body-text-lg: clamp(18px, 1.5vw, 22px); // *changed* default: 20px
+
+
+
+//----------------------------------
+//
+// Headings & Titles
+//
+//----------------------------------
+
+$title-font-family: 'poppins', sans-serif; // *changed* default: "Helvetica Neue", Helvetica, Arial, sans-serif
+$title-font-weight: 700;
+$title-margin: 0 0 .5em 0; // *changed* default: 0 0 1em 0
+$title-line-height: 1;
+$title-letter-spacing: -0.02em; // *changed* default: 0em
+$title-text-transform: none;
+
+// Title Text Color
+// Set the default color of all headings by default
+$title-color: $base-text-color;
+
+
+//-----------------------
+// Title Borders
+//-----------------------
+
+$border-color: #ccc;
+$border-width: 0px;
+$border-style: solid;
+
+// Title Border (Bottom)
+// Sets a bottom border to h2 section titles. Uses the previous title border variables ordered in CSS shorthand for border, or can be replaced with custom values.
+$title-border-bottom: $border-width $border-style $border-color;
+
+
+// Title Padding
+// Sets the spatial padding around heading titles. Helpful if using a bottom border or background color behind the title. Value format = top right bottom left;
+$title-padding: 0 0 0 0;
+
+
+
+//-------------------------
+// Page TITLE - h1 (not Hero)
+//-------------------------
+
+$page-title-sm: clamp(40px, 5vw, 80px); // *changed* default: 30px
+$page-title-md: clamp(40px, 5vw, 80px); // *changed* default: 38px
+$page-title-lg: clamp(40px, 5vw, 80px); // *changed* default: 60px
+$page-title-text-align: left; // *changed* default: center
+
+
+//-------------------------
+//	SECTION title - h2
+//-------------------------
+
+$section-title-sm: 24px;
+$section-title-md: 30px;
+$section-title-lg: 36px;
+
+
+//-------------------------
+//	SECTION subtitle - h3
+//-------------------------
+
+$section-subtitle-sm: 20px;
+$section-subtitle-md: 22px;
+$section-subtitle-lg: 26px;
+
+
+
+// h3 subtitles (custom markup or section title)
+$subtitle-color: $title-color;
+$subtitle-font-style: normal;
+$subtitle-text-align: center;
+

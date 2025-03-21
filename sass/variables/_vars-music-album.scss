@@ -1,0 +1,26 @@
+//---------------------------
+// VARIABLES: Musical Album Items
+//---------------------------
+
+// Row Background (Even)
+$album-row-bg-even: transparent;
+
+// Row Background (Odd)
+$album-row-bg-odd: $section-alternating-bg;
+
+// Row Border
+$album-row-border: 0px solid $border-color;
+
+// Details Font Size (Column 1)
+// Font size for album description
+$album-details-font-size: 16px;
+
+// Tracks Font Size (Column 2)
+// Font size for the track listing.
+$album-tracks-font-size: 16px;
+
+// Album Item Title color
+$album-item-title-color: $title-color;
+
+// Album Item Description Color
+$album-item-description-color: $base-text-color;
