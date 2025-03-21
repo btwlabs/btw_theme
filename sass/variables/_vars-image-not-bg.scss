@@ -1,0 +1,21 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: IMAGE NOT BACKGROUND
+//	img block with <img> tag
+//
+//----------------------------------
+//----------------------------------
+
+
+// Section Padding (LG)
+//: Sets padding on section in tablet and desktop layouts. 
+$section-image-not-bg-padding-lg: $section-padding-x-lg $section-padding-y-lg;
+
+// Section Padding (SM)
+//	Sets padding on the section in mobile layout. 
+$section-image-not-bg-padding-sm: $section-padding-x-sm $section-padding-y-sm;
+
+//Section Bg Color
+//	Sets background color on the section. 
+$section-image-not-bg-bg-color: transparent;

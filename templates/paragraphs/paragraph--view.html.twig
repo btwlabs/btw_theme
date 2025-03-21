@@ -55,7 +55,7 @@
 
 
   <!-- Start: View Section -->
-{% if not drupal_view_result(paragraph.field_view_pg_view.target_id, paragraph.field_view_pg_view.display_id) is empty %}
+{% if not drupal_view_result(paragraph.field_view.target_id, paragraph.field_view.display_id) is empty %}
   <section {{ attributes.addClass(classes) }}>
     {{ title_prefix }}
     {{ title_suffix }}
@@ -64,9 +64,7 @@
         {% if not paragraph.field_title.0.value is empty %}
           <h2 class="section-title">{{ paragraph.field_title.0.value|raw }}</h2>
         {% endif %}
-        {% if not paragraph.field_view_pg_view.0.value is empty %}
-          <div class="view-content-wrapper">{{ content.field_view_pg_view }}</div>
-        {% endif %}
+        <div class="view-content-wrapper">{{ content.field_view }}</div>
       </div>
     </div>
     <!-- End: Intro -->

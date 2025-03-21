@@ -1,0 +1,362 @@
+//----------------------------------------------
+//----------------------------------------------
+//
+//	SECTION: IMAGE TWO ACROSS (STORY BLOCKS)
+//
+//----------------------------------------------
+//----------------------------------------------
+
+.section-image-two-across {
+	background: $section-image-two-across-bg-color;
+
+	.story-block {
+		position: relative;
+		overflow: hidden;
+	}
+
+
+	//------------------------------
+	//	2 Column Wrapper
+	//	-flex parent
+	//------------------------------
+
+	.story-block-inner {
+		position: relative;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-content: stretch;
+		align-items: stretch;
+		z-index: 1;
+		gap: $section-image-two-across-gap;
+		padding: $section-image-two-across-padding-lg; // in a grid, use gap amount as padding top/bottom
+
+		@include media-breakpoint-down(sm) {
+			flex-flow: column wrap;
+			padding: $section-image-two-across-padding-sm;
+		}
+	}
+	
+
+	
+	//--------------------
+	// Image grid gaps
+	//--------------------
+	
+	&.gap-0 {
+		.story-block-inner {
+			grid-gap: $gap-0;
+		}
+	}
+	
+	// gap value x1
+	&.gap-1 {
+		.story-block-inner {
+			grid-gap: $gap-1;
+		}
+	}
+	
+	// gap value x1.5
+	&.gap-2 {
+		.story-block-inner {
+			grid-gap: $gap-2;
+		}
+	}
+	
+	// gap value x2
+	&.gap-3 {
+		.story-block-inner {
+			grid-gap: $gap-3;
+		}
+	}
+	
+	// gap value x2.5
+	&.gap-4 {
+		.story-block-inner {
+			grid-gap: $gap-4;
+		}
+	}
+	
+	// gap value x3
+	&.gap-5 {
+		.story-block-inner {
+			grid-gap: $gap-5;
+		}
+	}
+	
+	// gap value x3.5
+	&.gap-6 {
+		.story-block-inner {
+			grid-gap: $gap-6;
+		}
+	}
+	
+	// gap value x4
+	&.gap-7 {
+		.story-block-inner {
+			grid-gap: $gap-7;
+		}
+	}
+	
+	// gap value x4.5
+	&.gap-8 {
+		.story-block-inner {
+			grid-gap: $gap-8;
+		}
+	}
+	
+	// gap value x5
+	&.gap-9 {
+		.story-block-inner {
+			grid-gap: $gap-9;
+		}
+	}
+	
+	// gap value x5.5
+	&.gap-10 {
+		.story-block-inner {
+			grid-gap: $gap-10;
+		}
+	}
+
+	//------------------------------
+	//	Columns
+	//	-flex children
+	//------------------------------
+
+	.group-left,
+	.group-right {
+		flex: 0 1 auto;
+		align-content: stretch;
+		justify-content: flex-start;
+		align-items: stretch;
+		
+		figure {
+			margin: 0;
+		
+			img {
+				width: 100%;
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+			flex-direction: column;
+		}
+	}
+	
+	// equal height
+	&.image-two-across-equal-height {
+		.story-block-image-1,
+		.story-block-image-2, 
+		.image_two_across__story-block-extra-image, 
+		figure {
+			height: 100%;
+		}
+		
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	
+	
+	
+	@include media-breakpoint-up(md) {
+	
+		// IMAGE column
+		.group-left,
+		.group-right {
+			padding: 0;
+			display: flex;
+			align-items: flex-start;
+	
+			figcaption {
+				text-align: center;
+				font-size: $section-image-two-across-caption-size;
+				font-family: $section-image-two-across-caption-font-family;
+				margin: .05em 0 0;
+			}
+		}
+		
+		.group-left {
+			width: $section-image-two-across-image-1-width;
+		}
+		.group-right {
+			width: $section-image-two-across-image-2-width;
+		}
+		
+		
+		&.image-two-across-60-40 {
+			.group-left {
+				width: 60%;
+			}
+			.group-right {
+				width: 40%;
+			}
+		}
+		&.image-two-across-40-60 {
+			.group-left {
+				width: 40%;
+			}
+			.group-right {
+				width: 60%;
+			}
+		}
+		&.image-two-across-70-30 {
+			.group-left {
+				width: 70%;
+			}
+			.group-right {
+				width: 30%;
+			}
+		}
+		&.image-two-across-30-70 {
+			.group-left {
+				width: 30%;
+			}
+			.group-right {
+				width: 70%;
+			}
+		}
+		&.image-two-across-75-25 {
+			.group-left {
+				width: 75%;
+			}
+			.group-right {
+				width: 25%;
+			}
+		}
+		&.image-two-across-25-75 {
+			.group-left {
+				width: 25%;
+			}
+			.group-right {
+				width: 75%;
+			}
+		}
+		&.image-two-across-65-35 {
+			.group-left {
+				width: 65%;
+			}
+			.group-right {
+				width: 35%;
+			}
+		}
+		&.image-two-across-35-65 {
+			.group-left {
+				width: 35%;
+			}
+			.group-right {
+				width: 65%;
+			}
+		}
+		&.image-two-across-55-45 {
+			.group-left {
+				width: 55%;
+			}
+			.group-right {
+				width: 45%;
+			}
+		}
+		&.image-two-across-45-55 {
+			.group-left {
+				width: 45%;
+			}
+			.group-right {
+				width: 55%;
+			}
+		}
+	}
+
+
+	//-------------------------------------
+	//
+	//	Mobile image
+	//
+	//-------------------------------------
+
+	.story-block-mobile-image {
+
+		@include media-breakpoint-down(sm) {
+			margin: 0 -5vw 2em;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		// hide mobile image in medium-up layouts
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+	}
+}
+
+
+//---------------------------------------------
+//
+//	VAR COLOR BG - STORY BLOCK STYLES -
+//  use main color vars as bg colors
+//
+//  Class appears on same container as .section-story-block
+//
+//---------------------------------------------
+
+.section-image-two-across {
+	&.bg-color-primary {
+		background: $primary;
+	}
+	&.bg-color-secondary {
+		background: $secondary;
+	}
+	&.bg-color-tertiary {
+		background: $tertiary;
+	}
+}
+
+//---------------------------------------------
+//
+//	LIGHT BG - STORY BLOCK STYLES -
+//  for use on light background colors or images
+//
+//  Class appears on same container as .section-story-block
+//
+//---------------------------------------------
+
+.section-image-two-across {
+	&.light-bg {
+		background: $bg-light-color;
+	}
+
+	&.dark-text {
+		background: $bg-light-color;
+		
+		figcaption {
+			color: $text-on-light-color;
+		}
+	}
+}
+
+
+
+//---------------------------------------------
+//
+//	DARK BG - STORY BLOCK STYLES -
+//  for use on light background colors or images.
+//
+//  Class appears on same container as .story-block,
+//  which is the 1st container inside <section>
+//
+//---------------------------------------------
+
+.section-image-two-across {
+	&.dark-bg {
+		background: $bg-dark-color;
+	}
+	&.light-text {
+		figcaption {
+			color: $text-on-dark-color;
+		}
+	}
+}

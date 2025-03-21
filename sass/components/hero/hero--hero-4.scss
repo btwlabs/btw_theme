@@ -1,0 +1,222 @@
+
+//----------------------------------
+//
+//	SECTION: HERO Template 4
+//  Hero Content (Text) Left, Image Right
+//
+//----------------------------------
+
+.section-hero {
+	&.hero-2-col-section {
+		min-height: auto;
+		background: $section-hero-bg-color;
+		height: auto;
+		padding: $section-hero-padding;
+		
+		.hero-wrapper {
+			min-height: auto;
+			
+			@include media-breakpoint-down(md) {
+				flex-direction: column;
+			}
+		}
+		
+		.hero-image {
+			z-index: auto;
+			display: flex;
+			position: relative !important;
+			min-height: auto;
+			
+			@include media-breakpoint-down(md) {
+				flex: 0 0 100%;
+			}
+			@include media-breakpoint-up(lg) {
+				flex: 0 0 50%;
+			}
+			
+			.hero_section__hero-image {
+				display: flex;
+				align-items: center;
+			}
+			
+			figure {
+				margin: 0;
+			}
+		}
+		.hero-content-wrapper {
+			flex-direction: column;
+			padding: 8vw 4vw;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			
+			@include media-breakpoint-down(md) {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+			@include media-breakpoint-up(lg) {
+				flex: 1 1 50%;
+			}
+		}
+		.hero-title-wrapper {
+			max-width: 100%;
+		}
+		.hero-overlay {
+			background: transparent;
+			
+			@include media-breakpoint-up(lg) {
+				width: 50%;
+				left: 50%;
+			}
+		}
+		
+		&.hero-image-with-video {
+			@include media-breakpoint-down(sm) {
+				padding: $hero-content-wrapper-padding-sm;
+			}
+			@include media-breakpoint-only(md) {
+				padding: $hero-content-wrapper-padding-md;
+			}
+			@include media-breakpoint-up(lg) {
+				padding: $hero-content-wrapper-padding-lg;
+			}
+			
+			.hero-wrapper {
+				min-height: calc(#{$hero-min-height-lg} - #{$navbar-height-lg});
+				overflow: hidden;
+				
+				@include media-breakpoint-down(sm) {
+					height: auto;
+					min-height: calc(#{$hero-min-height-sm} - #{$navbar-height-sm});
+				}
+			}
+		}
+	}
+	
+	&.hero-left-text-right-image {
+		.hero-image {
+			order: 2;
+		}
+		.hero-content-wrapper {
+			order: 1;
+		}
+	}
+}
+
+
+ 
+
+
+//---------------------------------------
+//
+//	HERO 50/50 layout
+//
+//---------------------------------------
+
+// full 50% background image
+.hero-50-50-left-text-full {
+	&.section-hero {
+		
+	}
+}
+.hero-50-50-right-text-full {
+	&.section-hero {
+		.hero-wrapper {
+			@include media-breakpoint-down(md) {
+				flex-direction: column;
+			}
+		}
+		.bg-image {
+			z-index: auto;
+			display: flex;
+			position: relative !important;
+			order: 1;
+			min-height: calc(#{$hero-min-height-lg} - #{$navbar-height-lg});
+			
+			@include media-breakpoint-down(md) {
+				flex: 0 0 100%;
+			}
+			@include media-breakpoint-up(md) {
+				flex: 0 0 50%;
+			}
+			
+			// fixed images only span width of right container
+			&.fixed {
+				background-size: 50% auto;
+				background-repeat: no-repeat;
+				background-position: left top;
+				
+				@include media-breakpoint-down(md) {
+					background-size: cover;
+				}
+			}
+		}
+		.hero-content-wrapper {
+			flex-direction: column;
+			order: 2;
+			
+			@include media-breakpoint-down(md) {
+				flex: 0 0 100%;
+				order: 1;
+			}
+			@include media-breakpoint-up(md) {
+				flex: 1 1 50%;
+			}
+		}
+		.hero-title-wrapper {
+			max-width: 100%;
+		}
+		.hero-overlay {
+			background: transparent;
+		}
+	}
+}
+
+
+
+
+// margin around image
+.hero-50-50-margin {
+	&.section-hero {
+		.hero-wrapper {
+			@include media-breakpoint-down(md) {
+				flex-direction: column;
+			}
+		}
+		.bg-image {
+			z-index: auto;
+			display: flex;
+			position: relative !important;
+			order: 2;
+			min-height: calc(#{$hero-min-height-lg} - #{$navbar-height-lg});
+			margin: 3vw 2vw 2vw 0;
+			
+			@include media-breakpoint-down(md) {
+				flex: 0 0 100%;
+			}
+			@include media-breakpoint-up(md) {
+				flex: 0 0 50%;
+			}
+		}
+		.hero-content-wrapper {
+			flex-direction: column;
+			
+			order: 2;
+			
+			@include media-breakpoint-down(md) {
+				flex: 0 0 100%;
+			}
+			@include media-breakpoint-up(md) {
+				flex: 1 1 50vw;
+			}
+		}
+		.hero-title-wrapper {
+			max-width: 100%;
+		}
+		.hero-overlay {
+			background: transparent;
+		}
+
+	}
+}

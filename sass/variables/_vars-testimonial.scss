@@ -1,0 +1,169 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: TESTIMONIAL paragraph
+//
+//----------------------------------
+//----------------------------------
+
+//	Testimonial Section Padding
+//	Sets outer padding on the section
+$testimonial-section-padding: $section-padding-x-lg $section-padding-y-lg;
+
+//	Testimonial section background color
+//	Sets background color default for all testimonial sections. 
+$testimonial-bg-color: $section-default-bg-color;
+
+//	Testimonial - Quote Area Only - Max Width
+//	Sets the max width on quote area only (icon + text). Useful if you wish to contain its width vs stretching to full width.
+$testimonial-quote-max-width: 100%;
+
+//	Testimonial - Quote area - margin
+//	Sets a margin on the quote area only (icon + text)
+$testimonial-quote-margin: 0 auto;
+
+//------------------------
+//	Testimonial Image
+//------------------------
+
+// Testimonial - Image width
+//	Sets the width of an uploaded image (not icon)
+$testimonial-image-width: 40%;
+
+//	Testimonial - Image Gap
+//	Sets the gap distance between an uploaded image and the quote icon and text
+$testimonial-image-gap: 40px;
+
+
+//------------------------
+//	Testimonial Icon
+//------------------------
+
+//	Testimonial - Light icon - path
+//	Sets a url link path to a LIGHT colored icon to be used. 
+$testimonial-light-icon-path: url(https://fileswift.com/sites/default/files/2025-01/icon-quote-white.svg);
+
+//	Testimonial - Dark icon - path
+//	Sets a url link path to a DARK colored icon to be used. 
+$testimonial-dark-icon-path: url(https://fileswift.com/sites/default/files/2025-01/icon-quote-black.svg);
+
+//	Testimonial - Default Icon
+//	Sets the default icon from between the two light/dark path variables above. Options are $testimonial-light-icon-path or $testimonial-dark-icon-path.
+$testimonial-icon-default: $testimonial-light-icon-path;
+
+//	Testimonial - Uploaded SVG icon color
+//	Sets the color of an SVG icon that's uploaded instead of using the defaults. 
+$testimonial-icon-svg-color: $primary;
+
+//	Testimonial - Icon gap
+//	Sets the horizontal spacing between the icon and the quote body text. 
+$testimonial-icon-gap: 40px;
+
+//	Testimonial - Icon Width (SM)
+//	Sets width of the quote icon in mobile layouts. 
+$testimonial-icon-width-sm: 50px;
+
+//	Testimonial - Icon Width (LG)
+//	Sets width of the quote icon in wider layouts like desktop. 
+$testimonial-icon-width-lg: 10vw;
+
+//	Testimonial - Icon Height (SM)
+//	Sets the height of the default icon wrapper in mobile layouts, as it is a background image, to avoid undue cropping.
+$testimonial-icon-height-sm: $testimonial-icon-width-sm;
+
+//	Testimonial - Icon Height (LG)
+//	Sets the height of the default icon wrapper in desktop layouts, as it is a background image, to avoid undue cropping.
+$testimonial-icon-height-lg: $testimonial-icon-width-lg;
+
+//	Testimonial - Icon Opacity
+//	Sets the opacity value for the icon. Default is "1", or totally opaque, but accepts a value between .01-.99 as well. 
+$testimonial-icon-opacity: 1;
+
+
+//------------------------
+//	Testimonial Body Text
+//------------------------
+
+//	Testimonial - Body - Font Family
+//	Sets the font family for the body of the quote. 
+$testimonial-body-font-family: $base-font-family;
+
+//	Testimonial - Body Text Color
+//	Sets the color of the quote body. 
+$testimonial-body-text-color: $base-text-color;
+
+//	Testimonial - Body Font Size
+$testimonial-body-font-size: 1.2em;
+
+//	Testimonial - Body Font Style
+//	Sets font style of the body. Values can be: normal, bold, italic
+$testimonial-body-font-style: normal;
+
+//	Testimonial - Body Font Weight
+$testimonial-body-font-weight: normal;
+
+
+//------------------------
+//	Testimonial - Author
+//------------------------
+
+//	Testimonial - Author - Font Family
+//	Sets font family of the author text.
+$testimonial-author-font-family: $base-font-family;
+
+//	Testimonial - Author - Font Size
+//	Sets the font size of the author text. 
+$testimonial-author-font-size: 1em;
+
+//	Testimonial - Author - Text color
+//	Sets the color of the author text. 
+$testimonial-author-text-color: $base-text-color;
+
+//	Testimonial - Author - Font Style
+//	Sets the font style of the author text: normal or italic.
+$testimonial-author-font-style: normal;
+
+//	Testimonial - Author Title - Font Family
+//	Sets font family for the author's title. 
+$testimonial-title-font-family: $base-font-family;
+
+//	Testimonial - Author Title - Font Size
+//	Sets font size for the author title. 
+$testimonial-title-font-size: 1em;
+
+//	Testimonial - Author Title - color
+//	Sets the color of the author title. 
+$testimonial-title-text-color: $base-text-color;
+
+//	Testimonial - Author Title - Font Style
+//	Sets the font style of the author title: normal or italic.
+$testimonial-title-font-style: normal;
+
+//	Testimonial - Author Title - Font Weight
+//	Sets font weight for author title. 
+$testimonial-title-font-weight: normal;
+
+//	Testimonial - Author - Font Weight
+//	Sets font weight on author text. 
+$testimonial-author-font-weight: normal;
+
+
+//------------------------
+//	Testimonial Link
+//------------------------
+
+//	Testimonial - Text Link Color
+//	Sets color of link text in a testimonial quote body. 
+$testimonial-link-color: $link-color;
+
+//	Testimonial - Text Link - Hover Color
+//	Sets the color of a text link in a testimonial quote body, hover/mouseover state. 
+$testimonial-link-color-hover: $link-color-hover;
+
+//	Testimonial - Text Link - Font Weight
+//	Sets font weight of a text link in a testimonial body. 
+$testimonial-link-font-weight: normal;
+
+//	Testimonial - Text Link - Font Style
+//	Sets font style (normal, italic) of a text link in a testimonial quote body.
+$testimonial-link-font-style: normal;

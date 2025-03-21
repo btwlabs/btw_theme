@@ -26,13 +26,6 @@
 		color: $catalog-page-title-color;
 	}
 	
-	// description
-	.catalog-item-description {
-		@include media-breakpoint-up(lg) {
-			font-size: .8em;
-		}
-	}
-	
 	// List catalog item code.
 	&.paragraph--type--catalog-item {
 		padding: 8vw 0;
@@ -59,6 +52,29 @@
 			p:last-child {
 				margin-bottom: 0;
 			}
+		}
+	}
+}
+
+.back-to-catalog-page {
+	display: flex;
+	justify-content: center;
+	
+	a.back-to-catalog-page-link {
+		text-align: center;
+		display: inline-block;
+		background: $section-alternating-bg;
+		padding: 6px 16px;
+		color: $base-text-color;
+		font-size: 0.7em;
+		line-height: 1;
+		margin-bottom: 30px;
+		border-radius: 3px;
+		
+		&:before {
+			content: "<";
+			display: inline-block;
+			margin-right: 5px;
 		}
 	}
 }

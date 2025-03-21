@@ -8,27 +8,33 @@
 
 .section-story-block {
 
-    // light color for "zebra" alternating background
-    .alternating-bg {
-        background-color: $section-alternating-bg;
-    }
+	// light color for "zebra" alternating background
+	.alternating-bg {
+		background-color: $section-alternating-bg;
+	}
 
-    .story-block {
-        position: relative;
-        overflow: hidden;
-    }
+	.story-block {
+		position: relative;
+		overflow: hidden;
+		
+		// default bg color to indicate areas of a story block that 
+		// accept bg image, esp during early setup; transparent by default in vars 
+		.bg-image {
+			background-color: $sb-image-wrapper-bg-color;
+		}
+	}
 
-    //-------------------------------
-    //
-    //  IMAGE OVERLAY
-    //
-    //-------------------------------
+	//-------------------------------
+	//
+	//  IMAGE OVERLAY
+	//
+	//-------------------------------
 
-    // Overlay div for shading bg images
-    // global ".no-overlay" style is in style.scss
+	// Overlay div for shading bg images
+	// global ".no-overlay" style is in style.scss
 	.image-overlay {
 
-        // hide image overlay in mobile
+		// hide image overlay in mobile
 		@include media-breakpoint-down(sm) {
 			display: none;
 		}
@@ -46,11 +52,11 @@
 		justify-content: flex-start;
 		align-content: stretch;
 		align-items: stretch;
-        z-index: 1;
+		z-index: 1;
 
 		@include media-breakpoint-down(sm) {
-            // padding top is 0 because mobile image shows up above text
-            // and would create unwanted space
+			// padding top is 0 because mobile image shows up above text
+			// and would create unwanted space
 			padding: 0 $section-padding-x-sm $section-padding-y-sm;
 		}
 	}
@@ -63,23 +69,25 @@
 	.group-left,
 	.group-right {
 		flex: 0 1 auto;
+		display: flex;
 		align-content: stretch;
-		justify-content: flex-start;
 		align-items: stretch;
 		background-position: center center;
 		background-size: cover;
-
-        @include media-breakpoint-down(sm) {
-            width: 100%;
-        }
+		flex-direction: column;
+		justify-content: center;
+		
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
 	}
 
-    // text wrapper for adding bg color/padding over bg photos, etc.
-    .text-wrapper {
-        background: $sb-text-wrapper-bg;
-        padding: $sb-text-wrapper-padding;
+	// text wrapper for adding bg color/padding over bg photos, etc.
+	.text-wrapper {
+		background: $sb-text-wrapper-bg;
+		padding: $sb-text-wrapper-padding;
 		margin: 0 (-$sb-text-wrapper-padding);
-    }
+	}
 
 	// story block title
 	.section-title {
@@ -101,29 +109,37 @@
 		// regular unordered list in content
 		// align with title
 		ul {
-		    padding-left: 20px;
+			padding-left: 20px;
 		}
 	}
 
 	// content field link
 	.s2_story_block__story-block-link,
-	.story-block-video {
+	.story-block-video,
+	.s2_story_block__story-block-video,
+	.s2_story_block__story-block-video-new {
 		margin: 2em 0 0;
 		text-align: $sb-link-alignment;
 	}
 
-    .s2_story_block__story-block-link {
-        a.btn,
+	.s2_story_block__story-block-link {
+		a.btn {
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+			}
+		}
+	}
+	.s2_story_block__story-block-video {
 		.modal-trigger--video {
-            @include media-breakpoint-down(sm) {
-                width: 100%;
-            }
-        }
-    }
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+			}
+		}
+	}
 
 	// Extra image in left/right text and bg image view modes
-    // positioned above text in left/right/center view modes
-    // positioned opposite text in full bg view modes
+	// positioned above text in left/right/center view modes
+	// positioned opposite text in full bg view modes
 	.story-block-extra-image {
 		display: flex;
 		justify-content: $sb-extra-image-align;
@@ -154,9 +170,9 @@
 
 
 	//-------------------------------------
-    //
+	//
 	//	Mobile image
-    //
+	//
 	//-------------------------------------
 
 	.story-block-mobile-image {
@@ -253,13 +269,13 @@
 		.story-block-text {
 			color: $text-on-light-color;
 
-        	a {
-            	color: $link-on-light-color;
+			a {
+				color: $link-on-light-color;
 				
 				&:hover {
 					color: $link-on-light-color-hover;
 				}
-        	}
+			}
 		}
 
 		// button link and video popup link
@@ -324,13 +340,13 @@
 		.intro-body {
 			color: $text-on-dark-color;
 
-        	a {
-            	color: $link-on-dark-color;
+			a {
+				color: $link-on-dark-color;
 				
 				&:hover {
 					color: $link-on-dark-color-hover;
 				}
-        	}
+			}
 		}
 
 		// button link
@@ -341,17 +357,17 @@
 			}
 		}
 
-    	// negate on SBs that don't need the overlay
-    	.right-text-left-image,
-    	.left-text-right-image {
-        	.overlay {
-            	background: transparent;
-        	}
-    	}
+		// negate on SBs that don't need the overlay
+		.right-text-left-image,
+		.left-text-right-image {
+			.overlay {
+				background: transparent;
+			}
+		}
 
-    	figcaption {
-        	color: $text-on-dark-color;
-    	}
+		figcaption {
+			color: $text-on-dark-color;
+		}
 	}
 }
 
@@ -364,33 +380,39 @@
 
 .section-story-block {
 	
-    @include media-breakpoint-up(md) {
-        // set image containers for full bg image story blocks
-        // to pos absolute
-        .right-text-full-bg-image,
-        .left-text-full-bg-image,
-        .center-text-full-bg-image {
-        	> .parallax-item,
-            > .fixed,
-            > .no-effect {
-        		position: absolute !important;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 0;
-        	}
-        }
+	@include media-breakpoint-down(sm) {
+		.side-parallax {
+			display: none;
+		}
+	}
+	
+	@include media-breakpoint-up(md) {
+		// set image containers for full bg image story blocks
+		// to pos absolute
+		.right-text-full-bg-image,
+		.left-text-full-bg-image,
+		.center-text-full-bg-image {
+			> .parallax-item,
+			> .fixed,
+			> .no-effect {
+				position: absolute !important;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 0;
+			}
+		}
 
-        .parallax-wrapper {
-            position: relative;
-            overflow: hidden;
-        }
+		.parallax-wrapper {
+			position: relative;
+			overflow: hidden;
+		}
 
-        .side-parallax {
-            position: absolute;
-        }
-    }
+		.side-parallax {
+			position: absolute;
+		}
+	}
 }
 
 .sb-title-only {

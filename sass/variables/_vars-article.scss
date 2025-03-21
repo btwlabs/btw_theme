@@ -1,0 +1,145 @@
+/* story canvas vars - commented out because catalog vars (starts with "C") loads later than these so it causes errors in processing. Probably won't be used in our Drupal sites as we use an articles CT, not the catalog hack
+
+//----------------------------------
+//----------------------------------
+//
+//	ARTICLE - page (Story Canvas)
+//
+//----------------------------------
+//----------------------------------
+
+// 	Article Item (Even) - Background Color
+//	Sets the background color behind the even numbered items in list of articles.
+$article-row-bg-even: $catalog-item-bg-even;
+
+//	Article Item (Odd) - Background Color
+//	Sets the background color behind the odd numbered items in list of articles.
+$article-row-bg-odd: $catalog-item-bg-odd;
+
+//	Article Item border
+//	Sets a bottom border on an article list item
+$article-item-border: $catalog-item-border;
+
+
+
+//------------------------
+//	Article Titles
+//------------------------
+
+//	Article Title Size (Sm)
+//	Sets the font size for each title within a list of articles in a small device width.
+$article-list-title-sm: $catalog-list-title-sm;
+
+//	Article Title Size (Md)
+//	Sets the font size for each title within a list of articles in a medium device width.
+$article-list-title-md: $catalog-list-title-md;
+
+//	Article Title Size (Lg)
+//	Sets the font size for each title within a list of articles in a large device width.
+$article-list-title-lg: $catalog-list-title-lg;
+
+//	Article List Title Border
+//	Sets bottom border on the title. Format: [#]px solid $border-color, where $border-color can be replaced with any hex, rgb, etc. color value
+$article-list-title-border: $catalog-item-list-title-border;
+
+//	Article Title Margin
+//	Sets margin of the article list item title
+$article-list-title-margin: $catalog-item-list-title-margin;
+
+//	Article List Item Title Padding
+//	Sets padding of the article list item title. Useful when paired with $article-list-title-border to create space between text and the border itself.
+$article-list-title-padding: $catalog-item-list-title-padding;
+
+//	Article List Title Font Weight
+$article-list-title-weight: $catalog-item-title-weight;
+
+//	 Article List Title - Text Decoration
+//	Sets text decoration for the title. Values: underline, underline solid, underline dotted, underline dashed, etc.
+$article-list-title-text-decoration: $catalog-item-title-text-decoration;
+
+//	Article List - Title Color
+$article-list-title-color: $catalog-item-title-color;
+
+//	Article List - Title Hover Color
+//	Set the color of the linked title on mouse hover
+$article-list-title-hover-color: $catalog-item-title-hover-color;
+
+//	Article List - Title Hover - Text Decoration
+//	Sets the text decoration of an article list title on mouse hover. 
+$article-list-title-hover-text-decoration: $catalog-item-title-hover-text-decoration;
+
+//	Article List - Title Alignment
+//	Sets text alignment for article list item titles.
+$article-list-title-alignment: $catalog-item-title-alignment;
+
+
+
+//------------------------
+//	Item Author & Date
+//	Sets styles for author & date on article list items
+//------------------------
+
+//	Article Item - Date Size
+//	Sets font size for the date on an article item.
+$article-item-date-size: .7em;
+
+//	Article Item - Date Color
+//	Sets font color for the date on an article item.
+$article-item-date-color: $base-text-color;
+
+//	Article Item - Author Size
+//	Sets font size for the author on an article item.
+$article-item-author-size: .7em;
+
+//	Article Item - Author Color
+//	Sets font color for the author on an article item.
+$article-item-author-color: $base-text-color;
+
+
+
+//------------------------
+//	Item Description
+//------------------------
+
+//	Article Item - Description Size
+//	Sets font size of an article item description in a list
+$article-item-description-size: $catalog-description-text-size;
+
+//	Article Item - Description Color
+//	Sets color of the description text in an article list item.
+$article-item-description-color: $catalog-item-description-color;
+
+
+
+//------------------------
+//	Item Pages
+//	Variables that govern only standalone article pages. 
+//------------------------
+
+//	Article Page - Title Alignment
+//	Sets the text alignment of an article page title (h1)
+$article-page-title-text-align: $catalog-page-title-alignment;
+
+
+//---------------------------------
+//	Article Page - Author & Date
+//---------------------------------
+
+//	Article Page - Date Size
+//	Sets font size for the date on an article page.
+
+$article-page-date-size: .7em;
+
+//	Article Page - Date Color
+//	Sets font color for the date on an article page.
+$article-page-date-color: $base-text-color;
+
+//	Article Page - Author Size
+//	Sets font size for the author on an article page.
+$article-page-author-size: .7em;
+
+//	Article Page - Author Color
+//	Sets font color for the author on an article page.
+$article-page-author-color: $base-text-color;
+
+*/

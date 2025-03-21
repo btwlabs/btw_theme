@@ -44,27 +44,28 @@ textarea  {
 }
 
 input[type="file"] {
-    margin: 15px 0px 0px;
+	margin: 15px 0px 0px;
 }
 
 
 // file upload container
 .form-managed-file {
-    border: 1px solid $border-color;
-    padding: 20px;
-    margin: 0 0 10px 0;
+	border: 1px solid $border-color;
+	padding: 20px;
+	margin: 0 0 10px 0;
 }
 
 
 // Submit Button
 .webform-client-form input.form-submit {
-	@include button;
-    margin: 15px 0;
+	@include btn;
+	@include btn-primary;
+	margin: 15px 0;
    
-    
-    @include breakpoint($medium-up) {
-	    width: auto;
-    }
+	
+	@include media-breakpoint-up(md) {
+		width: auto;
+	}
 }
 
 .contact-button-wrapper a {
@@ -76,7 +77,7 @@ input[type="file"] {
 	display: block;
 	margin-bottom: 15px;
 	
-	@include breakpoint($large-up) {
+	@include media-breakpoint-up(lg) {
 		width: 48%;
 		display: inline-block;
 		margin-bottom: 0;
@@ -109,9 +110,9 @@ select {
 
 // Commerce forms
 .form-item img {
-    width: auto;
-    display: inline-block;
-    vertical-align: top;
+	width: auto;
+	display: inline-block;
+	vertical-align: top;
 }
 
 // user login form
@@ -123,5 +124,9 @@ select {
 		font-weight: normal;
 		font-size: 18px;
 		display: block;
+	}
+	input[type=submit] {
+		@include btn;
+		@include btn-primary;
 	}
 }

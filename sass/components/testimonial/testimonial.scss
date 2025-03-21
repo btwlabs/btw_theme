@@ -1,0 +1,190 @@
+//------------------------------
+//	STORY BLOCK/PARAGRAPH:
+//	Testimonial
+//------------------------------
+
+.section-testimonial {
+	padding: $testimonial-section-padding;
+	background-color: $testimonial-bg-color;
+	margin: $testimonial-section-margin;
+	
+	.story-block-inner {
+		display: flex;
+		flex-direction: row;
+		gap: $testimonial-image-gap;
+		
+		@include media-breakpoint-down(sm) {
+			flex-direction: column;
+		}
+		@include media-breakpoint-down(md) {
+			gap: calc($testimonial-image-gap * .5);
+		}
+		
+		//------------------------
+		// IMAGE (extra)
+		//------------------------
+		.testimonial-image {
+			@include media-breakpoint-up(md) {
+				flex: 1 0 $testimonial-image-width;
+			}
+			
+			figure {
+				margin: 0;
+				
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+		
+		// quote only - wrapper group (text + icon)
+		.quote-wrapper {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			gap: $testimonial-icon-gap;
+			
+			@include media-breakpoint-down(lg) {
+				gap: calc($testimonial-icon-gap * .5);
+				max-width: $testimonial-quote-max-width;
+				margin: $testimonial-quote-margin;
+			}
+		}
+		
+		//------------------------
+		// ICON (quotation mark)
+		//------------------------
+		
+		// uploaded icon
+		.field-quote-icon {
+			flex: 0 0 $testimonial-icon-width-sm;
+			opacity: $testimonial-icon-opacity;
+			
+			@include media-breakpoint-up(xl) {
+				flex: 0 0 $testimonial-icon-width-lg;
+			}
+			svg {
+				width: 100%;
+				height: auto;
+				
+				path {
+					fill: $testimonial-icon-svg-color; 
+				}
+			}
+		}
+		// default icon with background-image
+		.default-quote-icon {
+			flex: 0 0 $testimonial-icon-width-sm;
+			opacity: $testimonial-icon-opacity;
+			height: $testimonial-icon-height-sm;
+			background: transparent $testimonial-icon-default no-repeat scroll right top;
+			background-size: 100% auto;
+			
+			@include media-breakpoint-up(xl) {
+				flex: 0 0 $testimonial-icon-width-lg;
+				height: $testimonial-icon-height-lg;
+			}
+		}
+		
+		//------------------------
+		// Body Text (quote, author, title)
+		//------------------------
+		.text-wrapper {
+			flex: 1 1 calc(100% - ($testimonial-icon-width-lg + $testimonial-icon-gap));
+			
+			blockquote {
+				margin: 0;
+			}
+			
+			p:first-of-type {
+				margin-top: 0;
+			}
+			
+			a {
+				color: $testimonial-link-color;
+				font-weight: $testimonial-link-font-weight;
+				font-style: $testimonial-link-font-style;
+				
+				&:hover {
+					color: $testimonial-link-color-hover;
+				}
+			}
+		}
+	}
+	
+	// quote body
+	.testimonial__body {
+		font-family: $testimonial-body-font-family;
+		font-size: $testimonial-body-font-size;
+		color: $testimonial-body-text-color;
+		font-style: $testimonial-body-font-style;
+		font-weight: $testimonial-body-font-weight;
+	}
+	// author
+	.testimonial__author {
+		font-family: $testimonial-author-font-family;
+		font-size: $testimonial-author-font-size;
+		color: $testimonial-author-text-color;
+		font-style: $testimonial-author-font-style;
+		font-weight: $testimonial-author-font-weight;
+	}
+	// author title
+	.testimonial__author-title {
+		font-family: $testimonial-title-font-family;
+		font-size: $testimonial-title-font-size;
+		color: $testimonial-title-text-color;
+		font-style: $testimonial-title-font-style;
+		font-weight: $testimonial-title-font-weight;
+	}
+	
+	// select default icon color
+	&.icon-color-light {
+		.default-quote-icon {
+			background: transparent $testimonial-light-icon-path no-repeat scroll right top;
+			background-size: 100% auto;
+		}
+	}
+	
+	// Dark & light class variations
+	&.icon-color-dark {
+		.default-quote-icon {
+			background: transparent $testimonial-dark-icon-path no-repeat scroll right top;
+			background-size: 100% auto;
+		}
+	}
+	&.dark-text {
+		.default-quote-icon {
+			background: transparent $testimonial-dark-icon-path no-repeat scroll right top;
+			background-size: 100% auto;
+		}
+		.text-wrapper {
+			color: $text-on-light-color;
+			
+			a {
+				color: $link-on-light-color;
+			}
+			
+			.btn {
+				@include button-on-light;
+			}
+		}
+	}
+	&.light-text {
+		.default-quote-icon {
+			background: transparent $testimonial-light-icon-path no-repeat scroll right top;
+			background-size: 100% auto;
+		}
+		.text-wrapper {
+			color: $text-on-dark-color;
+			
+			a {
+				color: $link-on-dark-color;
+			}
+			.btn {
+				@include button-on-dark;				
+			}
+		}
+	}
+}

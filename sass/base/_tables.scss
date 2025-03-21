@@ -21,18 +21,18 @@ table {
 }
 
 thead th {
-    background-color: $table-header-bg-color;
-    @include border-all($border-color);
-    @include font-size(13px);
-    padding: 1em;
-    text-align: left;
-    text-transform: uppercase;
+	background-color: $table-header-bg-color;
+	@include border-all($border-color);
+	font-size: 13px;
+	padding: 1em;
+	text-align: left;
+	text-transform: uppercase;
 }
 
 td {
-    @include border-all($border-color);
-    padding: 15px; 
-    @include font-size(12px);
+	@include border-all($border-color);
+	padding: 15px; 
+	font-size: 12px;
 }
 
 tr.odd {

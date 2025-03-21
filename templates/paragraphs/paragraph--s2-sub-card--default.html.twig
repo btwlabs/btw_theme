@@ -56,7 +56,7 @@
 
     {% if not paragraph.field_sub_card_link is empty %}
     <a href="{{ paragraph.field_sub_card_link.0.url }}" target="{% if paragraph.field_sub_card_link.0.options.attributes.target == '_self' or paragraph.field_sub_card_link.0.options.attributes.target == '_none'%}_parent{% else %} {{ paragraph.field_sub_card_link.0.options.attributes.target }}{% endif %}">
-      {% endif %}
+    {% endif %}
 
       <div class="card{% if use_fa == 'fa' %} has-fa-icon{% elseif is_svg %} icon{% else %} photo{% endif %}{% if has_card_body %} has-card-body{% endif %}">
         {% if use_fa %}

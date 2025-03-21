@@ -111,10 +111,10 @@
     &.light-bg-dark-text {
         background: $bg-light-color !important;
         
-        h2.product-title {
+        .product-title {
             color: $title-on-light-color;
         }
-        h2.product-title a {
+        .product-title a {
             color: $link-on-light-color;
             
             &:hover {
@@ -149,10 +149,10 @@
     &.dark-bg-light-text {
         background: $bg-dark-color !important;
         
-        h2.product-title {
+        .product-title {
             color: $title-on-dark-color;
         }
-        h2.product-title a {
+        .product-title a {
             color: $link-on-dark-color;
             
             &:hover {
@@ -181,10 +181,10 @@
 //-----------------------
 .product-wrapper {    
     &.light-text {
-        h2.product-title {
+        .product-title {
             color: $title-on-dark-color;
         }
-        h2.product-title a {
+        .product-title a {
             color: $link-on-dark-color;
             
             &:hover {
@@ -206,10 +206,10 @@
 //------------------------------------
 .product-wrapper { 
     &.dark-text {
-        h2.product-title {
+        .product-title {
             color: $title-on-light-color;
         }
-        h2.product-title a {
+        .product-title a {
             color: $link-on-light-color;
             
             &:hover {
@@ -235,12 +235,35 @@
 //----------------------------------
 
 .page-product {
-    &.paragraph--view-mode--standalone-1 {
+    &.paragraph--type--snipcart-product {
         @include media-breakpoint-down(md) {
             padding: 8vw 0;
         }
         @include media-breakpoint-up(lg) {
             padding: 5vw 0 8vw 0;
+        }
+    }
+    .back-to-catalog-page {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 2em;
+        
+        a.back-to-catalog-page-link {
+            text-align: center;
+            display: inline-block;
+            background: $section-alternating-bg;
+            padding: 6px 16px;
+            color: $base-text-color;
+            font-size: 0.7em;
+            line-height: 1;
+            margin-bottom: 30px;
+            border-radius: 3px;
+            
+            &:before {
+                content: "<";
+                display: inline-block;
+                margin-right: 5px;
+            }
         }
     }
 
@@ -253,6 +276,189 @@
     h1.title {
         @include title-style;
         @include responsive-page-title;
+    }
+}
+
+
+//----------------------------------
+//
+//	CATALOG ITEM - paragraph - v1 overrides
+//  Snipcart specific
+//
+//----------------------------------
+
+// List catalog item code.
+.paragraph--type--snipcart-product {
+    padding: 4rem 0;
+    position: relative;
+    border-bottom: $catalog-item-border;
+    
+    .product-title {
+        @include responsive-catalog-list-title;
+        @include title-style;
+        margin-bottom: 1rem;
+        color: $catalog-item-title-color;
+        text-decoration: $catalog-item-title-text-decoration;
+        transition: 0.2s ease-in all;
+        border: $catalog-item-list-title-border;
+        padding: $catalog-item-list-title-padding;
+        margin: $catalog-item-list-title-margin;
+        
+        a.standalone-page-title-link {
+            text-decoration: $article-list-title-text-decoration;
+            color: $catalog-item-title-color;
+            transition: 0.2s ease-in all;
+            
+            &:hover {
+                color: $catalog-item-title-hover-color;
+                text-decoration: $catalog-item-title-hover-text-decoration;
+            }
+        }
+    }
+    
+    // col 1
+    .product-item-1 {
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 30px;
+        }
+    }
+        
+    // Columns - override bootstrap padding defaults
+    .product-item-1 {
+        @include media-breakpoint-up(lg) {
+            padding-right: 30px;
+        }
+    }
+    .product-item-2 {
+        @include media-breakpoint-up(lg) {
+            padding-left: 30px;
+        }
+    }
+    
+    // image
+    .product-item-1 {        
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    // description
+    .product-description {
+        color: $catalog-item-description-color;
+        
+        @include media-breakpoint-up(lg) {
+            font-size: $catalog-description-text-size;
+        }
+        
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+//---------------------------------
+// Dark or Light Text
+//      add this class to a section to 
+//      change the text color only
+//---------------------------------
+
+.dark-text {
+    &.paragraph--type--snipcart-product	{
+        // title
+        .product-title {
+            color: $title-on-light-color !important;
+        }
+        .product-description {
+            color: $text-on-light-color !important;
+        }
+        a.standalone-page-title-link {
+            color: $link-on-light-color;
+            
+            &:hover {
+                color: $link-on-light-color-hover;
+            }
+        }
+        .snipcart-add-item {
+            &.btn-primary,
+            &.btn-secondary {
+                @include button-on-light;
+            }
+            &:not(.btn) {
+                color: $link-on-light-color !important;
+                
+                &:hover {
+                    color: $link-on-light-color-hover !important;
+                }
+            }
+        }
+    }
+}
+
+.light-text {
+    &.paragraph--type--snipcart-product	{
+        // title
+        .product-title {
+            color: $title-on-dark-color !important;
+        }
+        .product-description {
+            color: $text-on-dark-color !important;
+        }
+        a.standalone-page-title-link {
+            color: $link-on-dark-color;
+            
+            &:hover {
+                color: $link-on-dark-color-hover;
+            }
+        }
+        .snipcart-add-item {
+            &.btn-primary,
+            &.btn-secondary {
+                @include button-on-dark;
+            }
+            &:not(.btn) {
+                color: $link-on-dark-color !important;
+                
+                &:hover {
+                    color: $link-on-dark-color-hover !important;
+                }
+            }
+        }
+    }
+}
+
+// override .light-text in mobile only
+.light-text.paragraph--type--snipcart-product {
+    &.dark-text-mobile {
+        @include media-breakpoint-down(sm) {
+            // title
+            .product-title {
+                color: $title-on-light-color !important;
+            }
+            .product-description {
+                color: $text-on-light-color !important;
+            }
+            a.standalone-page-title-link {
+                color: $link-on-light-color;
+                
+                &:hover {
+                    color: $link-on-light-color-hover;
+                }
+            }
+            .snipcart-add-item {
+                &.btn-primary,
+                &.btn-secondary {
+                    @include button-on-light;
+                }
+                &:not(.btn) {
+                    color: $link-on-light-color !important;
+                    
+                    &:hover {
+                        color: $link-on-light-color-hover !important;
+                    }
+                }
+            }
+        }
     }
 }
 

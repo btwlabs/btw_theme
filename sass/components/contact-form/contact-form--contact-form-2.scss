@@ -15,17 +15,14 @@
 		.contact-form-wrapper {
 			max-width: 720px;
 			margin: 0 auto;
-			background: $contact-form-bg-color;
-			padding: $contact-form-padding;
-			border-radius: $contact-form-border-radius;
+			background: $section-contact-form_form-bg-color;
+			padding: $section-contact-form_form-padding;
+			border-radius: $section-contact-form_form-border-radius;
 			display: flex;
 			justify-content: center;
 		}
 	}
 
 }
-
-
-
   
 

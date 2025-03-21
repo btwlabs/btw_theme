@@ -50,6 +50,15 @@ ul {
 	}
 }
 
+// Lists in story blocks
+.story-block-text {
+	ul li {
+		margin-bottom: .75em;
+		line-height: 1.3;
+		padding-left: 10px;
+	}
+}
+
 //--------------------------
 //	Definition Lists
 //--------------------------
@@ -128,24 +137,24 @@ dd {
 	
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;	
-    
-    li,
+	//justify-content: space-between;	
+	
+	li,
 	.grid-item {
 		list-style-type: none;
 
-		@include breakpoint($small-only) {
+		/*@include media-breakpoint-down(sm) {
 			@include flexgrid-1;
 		}
-		@include breakpoint($medium-up) {
+		@include media-breakpoint-only(md) {
 			@include flexgrid-2;
 		}
-		@include breakpoint($large-up) {
+		@include media-breakpoint-only(lg) {
 			@include flexgrid-3;
 		}
-		@include breakpoint($xlarge-up) {
+		@include media-breakpoint-up(xl) {
 			@include flexgrid-4;
-		}
+		}*/
 	}
 }
 
@@ -162,42 +171,16 @@ dd {
 	// resets values for when class is placed on <ul>
 	margin: 0 0 3rem 0;
 	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+	grid-gap: 40px 3.8%;
 	
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	
-	// if the browser supports css grid, then...
-	@supports (display:grid) {
-		display: grid;
-		grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
-		grid-gap: 40px 3.8%;
-	}	
-    
-    li,
+	li,
 	.grid-item {
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
 		position: relative;
-	}
-	
-	// for flexbox fallback if css grid not supported
-	@supports not (display:grid) {
-		.grid-item {
-			@include breakpoint($small-only) {
-				@include flexgrid-1;
-			}
-			@include breakpoint($medium-up) {
-				@include flexgrid-2;
-			}
-			@include breakpoint($large-up) {
-				@include flexgrid-3;
-			}
-			@include breakpoint($xlarge-up) {
-				@include flexgrid-4;
-			}
-		}
 	}
 }
 

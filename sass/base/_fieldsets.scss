@@ -14,13 +14,13 @@ fieldset {
 	padding: $vert-spacing-unit;
 	margin-bottom: $vert-spacing-unit;
 	
-	@include breakpoint($small-only) {
+	@include media-breakpoint-only(sm) {
 		padding: calc($vert-spacing-unit / 2);
 	}
 }
 
 legend {
-	@include font-size(24px);
+	font-size: 24px;
 	font-weight: $title-font-weight;
 	color: $title-color;
 	padding: 0 calc($vert-spacing-unit / 2);

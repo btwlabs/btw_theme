@@ -252,9 +252,10 @@
 
 .section-slides-text {
     // individual slides - dark bg
-    &.slide-text-wrapper-dark {
+    &.slide-text-wrapper-dark,
+    .slide-text-wrapper-dark {
         .slide-content {
-            background-color: $text-wrapper-dark-bg;
+            background: $text-wrapper-dark-bg;
             padding: $text-wrapper-padding;
             border-radius: $text-wrapper-border-radius;
             margin-bottom: $text-wrapper-padding;
@@ -282,13 +283,62 @@
     }
     
     // individual slides - light bg
-    &.slide-text-wrapper-light {
+    &.slide-text-wrapper-light,
+    .slide-text-wrapper-light {
         .slide-content {
-            background-color: $text-wrapper-light-bg;
+            background: $text-wrapper-light-bg;
             padding: $text-wrapper-padding;
             border-radius: $text-wrapper-border-radius;
             margin-bottom: $text-wrapper-padding;
             
+            .slide-title {
+                color: $title-on-light-color;
+            }
+            .slide-body {
+                color: $text-on-light-color;
+            
+                a {
+                    color: $link-on-light-color;
+                    
+                    &:hover {
+                        color: $link-on-light-color-hover;
+                    }
+                }
+            }
+            .s2_sub_slide__sub-card-link {
+                a.btn {
+                    @include button-on-light;
+                }
+            }
+        }
+    }
+    &.slide-text-light,
+    .slide-text-light {        
+        .slide-content {            
+            .slide-title {
+                color: $title-on-dark-color;
+            }
+            .slide-body {
+                color: $text-on-dark-color;
+            
+                a {
+                    color: $link-on-dark-color;
+                    
+                    &:hover {
+                        color: $link-on-dark-color-hover;
+                    }
+                }
+            }
+            .s2_sub_slide__sub-card-link {
+                a.btn {
+                    @include button-on-dark;
+                }
+            }
+        }
+    }
+    &.slide-text-dark,
+    .slide-text-dark {
+        .slide-content {
             .slide-title {
                 color: $title-on-light-color;
             }

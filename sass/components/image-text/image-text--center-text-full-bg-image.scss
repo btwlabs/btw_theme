@@ -34,6 +34,12 @@
             @include media-breakpoint-down(sm) {
                 padding: $section-padding-y-sm $section-padding-x-sm;
             }
+            
+            .story-block-mobile-image {
+                @include media-breakpoint-down(sm) {
+                    margin-top: (-$section-padding-y-sm); // undo top padding when mobile image is present
+                }
+            }
         }
 
         .text-wrapper {
@@ -43,7 +49,23 @@
         .story-block-link {
             .s2_story_block__story-block-link {
                 text-align: $sb-center-full-link-alignment;
+                
+                a {
+                    @include media-breakpoint-down(sm) {
+                        display: block;
+                    }
+                }
             }
         }
+        .story-block-video {
+            .s2_story_block__story-block-video,
+            .s2_story_block__story-block-video-new {
+                text-align: $sb-center-full-link-alignment;
+            }
+        }
+        
+        
     }
 }
+
+

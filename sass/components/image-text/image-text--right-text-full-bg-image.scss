@@ -87,10 +87,26 @@
         // compensate for scale 1.5 on parallax, push to left a little
         // to equal bg placement on non-parallax
         &.has-parallax {
-            .bg-image {
-                left: 44.15%;
+            &:not(.text-wrapper-overlap) {
+                .right-text-full-bg-image {
+                    .bg-image {
+                        left: 44.15%;
+                    }
+                }
             }
         }
+        @include media-breakpoint-up(md) {
+            &.has-parallax {
+                .right-text-full-bg-image {
+                    .bg-image {
+                        max-width: 50.85vw;
+                        left: 12%;
+                        background-position: left 32% center;
+                    }
+                }
+            }
+        }
+        
     }
 }
 
@@ -100,14 +116,14 @@
         &.right-text-full-bg-image {
             @include media-breakpoint-up(md) {
 
-                // img col
+                // text col
                 .group-right {
-                    width: 55%;
+                    width: 45%;
                 }
 
-                // text col
+                // img col
                 .group-left {
-                    width: 45%;
+                    width: 55%;
                 }
             }
         }
@@ -120,14 +136,14 @@
         &.right-text-full-bg-image {
             @include media-breakpoint-up(md) {
 
-                // image col
+                // text col
                 .group-right {
-                    width: 45%;
+                    width: 55%;
                 }
 
-                // text col
+                // img col
                 .group-left {
-                    width: 55%;
+                    width: 45%; 
                 }
             }
         }

@@ -62,6 +62,15 @@
                 color: $bit-details-color;
             }
         }
+        
+         // Line Up text color (word "with")
+        .bit-lineUp-with {
+            color: $bit-details-color;
+        }
+        // Line Up text color (link)
+        .bit-lineUp {
+            color: $bit-link-color;
+        }
 
         // Upcoming Dates title
         .bit-event-list-title {
@@ -90,6 +99,7 @@
                 background-color: $bit-button-hover-bg-color !important;
                 border-color: $bit-button-hover-border-color !important;
                 color: $bit-button-text-hover-color !important;
+                text-decoration: none;
             }
         }
 
@@ -106,6 +116,7 @@
             border: 1px solid $bit-link-color;
             color: $bit-button-text-color;
             border-radius: $bit-button-border-radius;
+            text-decoration: none;
         }
         .bit-upcoming-events-show-all-button,
         .bit-past-events-show-all-button {

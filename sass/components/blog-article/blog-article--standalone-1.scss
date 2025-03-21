@@ -1,0 +1,175 @@
+//----------------------------------
+//
+//	STANDALONE CATALOG ITEM PAGE:
+//
+//----------------------------------
+
+// Article header (h1 title, author)
+.page-article-item {
+	
+	.article-header {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto 2em;
+		
+		@include media-breakpoint-up(md) {
+			margin: 0 auto 3em;
+		}			
+		
+		.back-to-catalog-page {
+			display: flex;
+			justify-content: center;
+			
+			a.back-to-catalog-page-link {
+				text-align: center;
+				display: inline-block;
+				background: $section-alternating-bg;
+				padding: 6px 16px;
+				color: $base-text-color;
+				font-size: 0.7em;
+				line-height: 1;
+				margin-bottom: 30px;
+				border-radius: 3px;
+				
+				&:before {
+					content: "<";
+					display: inline-block;
+					margin-right: 5px;
+				}
+			}
+		}
+		
+		figure {
+			margin: 0;
+		}
+	}
+	
+	.article-body {
+		max-width: 38em;
+		margin: 0 auto;
+	}
+}
+
+
+//-----------------------------------------
+//
+//	STANDALONE article pages
+//
+//----------------------------------------
+
+.page-article-item {
+	&.paragraph--type--blog-article {
+		background: $catalog-page-bg-color;
+		
+		@include media-breakpoint-down(md) {
+			padding: 8vw 20px 8vw;
+		}
+		@include media-breakpoint-up(lg) {
+			padding: 5vw 0 8vw 0;
+		}
+		
+		.title-wrapper {
+			text-align: $article-page-title-text-align;
+			padding: 0 20px;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		
+		h1.page-title,
+		h1.title {
+			@include title-style;
+			@include responsive-page-title;
+			color: $catalog-page-title-color;
+			margin-bottom: .5em;
+			text-align: $article-page-title-text-align;
+		}
+		
+		// IMAGE
+		.blog_article__catalog-item-image {        
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		
+		.article-author-date-wrapper {
+			display: flex;
+			margin: 0 auto 2em;
+		}
+		
+		// AUTHOR
+		.article-item-author {
+			display: flex;
+			margin-right: 1em;
+			font-size: $article-page-author-size;
+			color: $article-page-author-color;
+			
+			&:after {
+				content: "•";
+				display: inline-block;
+				margin-left: 1em;
+			}
+			
+			span {
+				display: inline-block;
+				vertical-align: middle;
+			}
+			
+			.article-author-label {
+				margin-right: 0.2em; // approx width of a space
+			}
+		}
+		
+		// DATE
+		.article-item-date {
+			display: flex;
+			font-size: $article-page-date-size;
+			color: $article-page-date-color; // $article-item-date-color, $article-page-date-color
+			
+			span {
+				display: inline-block;
+				vertical-align: middle;
+			}
+			
+			.article-date-label {
+				display: none;
+			}
+		}
+	}
+}
+
+//---------------------------------------------
+//
+//	CUSTOM CLASSES
+//
+//---------------------------------------------
+
+// Header image sizes
+.article-no-hero-img {
+	.article-header-image {
+		display: none;
+	}
+	.article-header {	
+		@include media-breakpoint-up(md) {
+			margin: 0 auto 2em;
+		}
+	}
+}
+.article-hero-img-sm {
+	.article-header-image {
+		max-width: 38em;
+		margin: 0 auto;
+	}
+}
+.article-hero-img-contained {
+	.article-header-image {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}
+.article-hero-img-full-width {
+	.article-header-image {
+		max-width: 100%;
+		width: 100%; 
+	}
+}

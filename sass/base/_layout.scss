@@ -9,15 +9,15 @@
 
 
 *, *:before, *:after {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
 	font-size: 18px;
 	text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	scroll-behavior: smooth;
 }
 
 /**
@@ -53,17 +53,15 @@ body {
 //-----------------------------------------
 
 .l-constrained {
-	@include breakpoint($small-only) {
-		margin: 0 24px;
+	@include media-breakpoint-down(sm) {
+		padding: 0 24px;
+		margin: 0 auto;
 	}
-	@include breakpoint($medium-up) {
+	@include media-breakpoint-up(md) {
 		width: 90vw;
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 1440px;
-	}
-	@include breakpoint($xxlarge-up) {
-		width: 80vw;	
+		max-width: 1400px;
 	}
 }
 
@@ -96,19 +94,19 @@ body {
 //---------------------------------------
 
 .l-content-main-wrapper {
-    padding: 6vw 0;
+	padding: 6vw 0;
 }
 
 // default top/bottom padding on non-story pages
 .section-user {
 	.l-content-main-wrapper {
-	    padding: 6vw 0;
+		padding: 6vw 0;
 	}
 }
 
 // page titles within block
 .block-page-title-block {
-    text-align: center;
+	text-align: center;
 }
 
 

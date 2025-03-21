@@ -29,6 +29,37 @@
             min-height: calc(#{$hero-min-height-sm} - #{$navbar-height-sm});
         }
     }
+}
+//--------------------------------------
+//	HERO HOME PAGE ONLY
+//      Use different vars to set height
+//      * placed here to avoid conflict 
+//      with .hero-minimal further down
+//--------------------------------------
+
+.front {
+    .section-hero {
+        min-height: calc(#{$hero-home-min-height-lg} - #{$navbar-height-lg});
+    
+        @include media-breakpoint-down(sm) {
+            min-height: calc(#{$hero-home-min-height-sm} - #{$navbar-height-sm});
+        }
+    
+    
+        .hero-wrapper {
+            min-height: calc(#{$hero-home-min-height-lg} - #{$navbar-height-lg});
+    
+            @include media-breakpoint-down(sm) {
+                min-height: calc(#{$hero-home-min-height-sm} - #{$navbar-height-sm});
+            }
+        }
+    }
+}
+
+//----------------------------------
+//	SECTION: HERO - resume
+//----------------------------------
+.section-hero {
 
     .mobile-image-wrapper {
         position: absolute;
@@ -827,3 +858,151 @@
         }
     } 
 }
+
+//--------------------------------
+//	OVERLAY classes for dark and light
+//--------------------------------
+
+// dark color overlay - to vars default
+.overlay-dark {
+    .hero-overlay {
+        background: $overlay-bg-color-dark;
+    }
+}
+
+// light color overlay - to vars default
+.overlay-light {
+    .hero-overlay {
+        background: $overlay-bg-color-light;
+    }
+}
+
+.light-text {
+    &.section-hero {
+        .hero-link {
+            a:not(.btn-primary):not(.btn-secondary) {
+                color: $link-on-dark-color;
+            }
+        }
+    }
+}
+.dark-text {
+    &.section-hero {
+        .hero-link {
+            a:not(.btn-primary):not(.btn-secondary) {
+                color: $link-on-light-color;
+            }
+        }
+    }
+}
+
+// puts bg color on .hero-title-wrapper, changes font colors to match dark/light theme vars
+.text-wrapper-dark {
+    &.section-hero {
+        .hero-title-wrapper {
+            background: $overlay-bg-color-dark;
+            
+            @include media-breakpoint-down(sm) {
+                background: $overlay-bg-color-dark;
+            }
+            padding: $text-wrapper-padding;
+            border-radius: $text-wrapper-border-radius;
+        }
+        
+        .hero-heading {
+            color: $title-on-dark-color;
+        }
+        .hero-sub-heading {
+            color: $subtitle-on-dark-color;
+        }
+        .hero-link {
+            a {
+                color: $link-on-dark-color;
+            }
+            a.btn {
+                @include button-on-dark;
+            }
+            
+        }
+    }
+}
+
+.text-wrapper-light {
+    &.section-hero {
+        .hero-title-wrapper {
+            background: $overlay-bg-color-light;
+            
+            @include media-breakpoint-down(sm) {
+                background: $overlay-bg-color-light;
+            }
+            padding: $text-wrapper-padding;
+            border-radius: $text-wrapper-border-radius;
+        }
+        
+        .hero-heading {
+            color: $title-on-light-color;
+        }
+        .hero-sub-heading {
+            color: $subtitle-on-light-color;
+        }
+        .hero-link {
+            a {
+                color: $link-on-light-color;
+            }
+            a.btn {
+                @include button-on-light;
+            }
+        }
+    }
+}
+.hero-content-wrapper-dark {
+    &.section-hero {
+        .hero-content-wrapper {
+            background: $overlay-bg-color-dark;
+        }
+    }
+}
+.hero-content-wrapper-light {
+    &.section-hero {
+        .hero-content-wrapper {
+            background: $overlay-bg-color-light;
+        }
+    }
+}
+
+
+//--------------------------------
+//	VIDEO
+//--------------------------------
+
+.hero-wrapper {
+    video {
+        min-width: 100%;
+        min-height: 100%;
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+    }
+}
+
+.section-hero {
+    // hide video in mobile by default
+    @include media-breakpoint-down(sm) {
+        video {
+            display: none;
+        }
+    }
+    &.show-mobile-video {
+        
+        @include media-breakpoint-down(sm) {
+            video {
+                display: block;
+            }
+            .mobile-image-wrapper {
+                display: none;
+            }
+        }
+    }
+}
+

@@ -9,6 +9,7 @@
 .section-footer {
 	color: $footer-text-color;
 	background: $section-footer-bg-color;
+	position: relative;
 
     @include media-breakpoint-down(md) {
         padding: $section-footer-padding-mobile;
@@ -68,12 +69,13 @@
 
 	.footer-company-name {
 		font-size: $footer-company-font-size;
+		font-weight: $title-font-weight;
 	}
 
 	h3 {
 		margin-top: 0;
 		margin-bottom: 1rem;
-		font-weight: bold;
+		font-weight: $title-font-weight;
 		font-size: 16px;
 		color: $footer-title-color;
 	}

@@ -38,13 +38,13 @@ $grid-minmax-value: $grid-width-3;
 
 // Card item (row, wrapper)
 .card-item {
-    display: flex;
     
     // all text inside card is inside an <a>
     > a {
         display: block;
         width: 100%;
         transition: 0.3s ease-in-out all;
+        text-decoration: none;
         
         
         &:hover {
@@ -58,45 +58,51 @@ $grid-minmax-value: $grid-width-3;
     }
 }
 
+// force no text-decoration defaults on card text 
+.section-cards {
+    .card-item {
+        > a:not(.btn),
+        > a:hover:not(btn) {
+            text-decoration: none;
+        }
+    }
+}
+
 .card {
-	background: $card-bg-color;
-	border: $card-border;
-	border-radius: $card-border-radius;
+    background: $card-bg-color;
+    border: $card-border;
+    border-radius: $card-border-radius;
     overflow: hidden;
-	align-items: center;
-	height: 100%;
+    align-items: center;
+    height: 100%;
     width: 100%;
     transition: all 0.2s ease-out;
     box-shadow: $card-shadow;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    word-wrap: break-word;
 
-	// Font Awesome icon selection
-	&.has-fa-icon {
-    	.card-fa-icon {
-		    color: $card-icon-color;
-		    display: flex;
-		    align-items: center;
-		    justify-content: center;
-	    	font-size: $card-icon-font-size;
-	    	width: 100%;
-    	}
-	}
+    // Font Awesome icon selection
+    &.has-fa-icon {
+        .card-fa-icon {
+            color: $card-icon-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: $card-icon-font-size;
+            width: 100%;
+        }
+    }
 
-	// "Upload Icon" selection (svg)
-	&.icon {
-		.card-image {
-			max-width: $card-image-icon-width;
+    // "Upload Icon" selection (svg)
+    &.icon {
+        .card-image {
+            max-width: $card-image-icon-width;
             margin: 0 auto;
 
             img {
                 width: 100%;
                 height: auto;
             }
-		}
-	}
+        }
+    }
     
     &.photo {
         .card-image {
@@ -131,66 +137,99 @@ $grid-minmax-value: $grid-width-3;
 // quick removal of all img padding
 .section-cards {
     // deprecated
-    &.no-img-padding {
-        .card-image {
-            padding: 0 !important;
-        }
-    }
-
     &.cards-no-image-padding {
         .card-image {
             padding: 0 !important;
         }
     }
+    
+    &.card-no-image-padding {
+        .card-image {
+            padding: 0 !important;
+        }
+    }
 }
 
+// quick removal of card borders padding
+.section-cards {
+    &.cards-no-border,
+    &.card-no-border {
+        .card {
+            border: 0 !important;
+        }
+    }
+}
+
+// quick removal of card shadow, static and hover states both, if set in vars
+.section-cards {
+    &.cards-no-shadow,
+    &.card-no-shadow {
+        .card {
+            box-shadow: none !important;
+        }
+        
+        // all text inside card is inside an <a>
+        .card-item > a {
+            &:hover {
+                .card {
+                    box-shadow: none !important;
+                }
+            }
+        }
+    }
+}
 
 
 // body: title, text, link
 .card-body {
-	padding: $card-text-padding; // bs override
+    padding: $card-text-padding; // bs override
     background-color: $card-body-bg-color;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
     min-height: auto; // override bootstrap
 
-	// extend too 100% of height available
-	align-self: stretch;
+    // extend too 100% of height available
+    align-self: stretch;
 }
 
 .card-title {
-	@include responsive-card-title; // controls size
-	font-family: $card-title-font-family;
-	font-weight: $card-title-font-weight;
-	text-align: $card-title-alignment;
-	border-bottom: $card-title-border;
-	margin-bottom: 1.25rem;
-	color: $card-title-color;
+    @include responsive-card-title; // controls size
+    font-family: $card-title-font-family;
+    font-weight: $card-title-font-weight;
+    text-align: $card-title-alignment;
+    border-bottom: $card-title-border;
+    margin-bottom: 1.25rem;
+    color: $card-title-color;
     text-transform: $card-title-text-transform;
 }
 .card-text-group {
     width: 100%;
 }
 .card-text {
-	font-size: $card-body-font-size;
-	text-align: $card-body-text-alignment;
+    font-size: $card-body-font-size;
+    text-align: $card-body-text-alignment;
     color: $card-body-text-color;
 
-	p:last-child {
-		margin-bottom: 0;
+    p:last-child {
+        margin-bottom: 0;
     }
     a {
         display: inline !important;
     }
+    
+    h4 {
+        font-size: 1.2em;
+        text-align: $card-title-alignment
+    }
 }
 .card-link {
-	margin-top: 2rem;
-	flex: 1 1 100%;
+    margin-top: 2rem;
+    flex: 1 1 100%;
 
-	// make button align to the bottom
-	align-self: flex-end;
+    // make button align to the bottom
+    align-self: flex-end;
 }
 
 
@@ -247,6 +286,10 @@ $grid-minmax-value: $grid-width-3;
         }
         .card-link {
             @include button-on-light;
+            
+            &.btn-secondary {
+                @include secondary-button-on-light;
+            }
         }
     }
 }
@@ -264,8 +307,30 @@ $grid-minmax-value: $grid-width-3;
     }
     .card-link {
         @include button-on-light;
+        
+        &.btn-secondary {
+            @include secondary-button-on-light;
+        }
     }
 }
+
+// sets for ALL cards within a section to change only the text
+.cards-dark-text,
+.card-dark-text {
+    .card-item {
+        .card-title,
+        .card-text {
+            color: $text-on-light-color !important;
+        }
+        .card-link {
+            @include button-on-light;
+            
+            &.btn-secondary {
+                @include secondary-button-on-light;
+            }
+        }
+    }
+} 
 
 
 //---------------------------------------------
@@ -321,6 +386,10 @@ $grid-minmax-value: $grid-width-3;
         }
         .card-link {
             @include button-on-dark;
+            
+            &.btn-secondary {
+                @include secondary-button-on-dark;
+            }
         }
     }
 }
@@ -338,11 +407,31 @@ $grid-minmax-value: $grid-width-3;
     }
     .card-link {
         @include button-on-dark;
+        
+        &.btn-secondary {
+            @include secondary-button-on-dark;
+        }
     }
 }
 
-
-    
+// sets for ALL cards within a section to change only the text
+.cards-light-text,
+.card-light-text {
+    .card-item {
+        .card-title,
+        .card-text {
+            color: $text-on-dark-color !important;
+        }
+        .card-link {
+            @include button-on-dark;
+            
+            &.btn-secondary {
+                @include secondary-button-on-dark;
+            }
+        }
+    }
+}
+   
 
 //---------------------------------------------
 //
@@ -539,7 +628,8 @@ $grid-minmax-value: $grid-width-3;
 // This feature uses Flexbox instead of CSS Grid
 // and needs a grid width on each card item
 
-.cards-expand-full {
+.cards-expand-full,
+.card-expand-full {
     &.grid-width-1 {
         .card-item {
             width: $grid-width-1;
@@ -593,7 +683,8 @@ $grid-minmax-value: $grid-width-3;
 }
 
 // Cards expand full width styling for all but photo only cards
-.cards-expand-full {
+.cards-expand-full,
+.card-expand-full {
     &.cards-stacked-1,
     &.cards-stacked-2,
     &.cards-left-img-right-text,
@@ -671,6 +762,166 @@ $grid-minmax-value: $grid-width-3;
         
         // card image
         .card-image,
+        .s2_sub_card__sub-card-image,
+        figure {
+            height: 100% !important;
+            
+            img {
+                height: 100% !important;
+                object-fit: cover;
+            }
+        }
+        
+        // card text
+        .card-body {
+            position: absolute;
+            z-index: 0;
+            background: $overlay-bg-color-dark;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s ease-in-out opacity;
+        }
+        .card-text-group {
+            max-width: 700px;
+        }
+        .card-link {
+            flex: 0 0 auto;
+            align-self: auto;
+        }
+        
+        &.dark-bg-light-text {
+            background: $overlay-bg-color-dark;
+        }
+        &.light-bg-dark-text {
+            background: $overlay-bg-color-light;
+        }
+    
+        &.card-overlay-light,
+        &.card-light-bg {
+            
+            .card-body {
+                background: $overlay-bg-color-light;
+            }
+            
+            .card-title {
+                color: $subtitle-on-light-color;
+            }
+            .card-text {
+                color: $text-on-light-color;
+            }
+            .card-link {
+                @include button-on-light;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-light;
+                }
+            }
+        }
+        &.card-overlay-dark,
+        &.card-dark-bg {
+            .card-body {
+                background: $overlay-bg-color-dark;
+            }
+            
+            .card-title {
+                color: $subtitle-on-dark-color;
+            }
+            .card-text {
+                color: $text-on-dark-color;
+            }
+            .card-link {
+                @include button-on-dark;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-dark;
+                }
+            }
+        }
+        
+        &.cards-light-text, // deprecated
+        &.card-light-text,
+        &.light-text {
+            .card-title {
+                color: $subtitle-on-dark-color;
+            }
+            .card-text {
+                color: $text-on-dark-color;
+            }
+            .card-link {
+                @include button-on-dark;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-dark;
+                }
+            }
+        }
+        
+        &.cards-dark-text, // deprecated
+        &.card-dark-text,
+        &.dark-text {
+            .card-title {
+                color: $subtitle-on-light-color;
+            }
+            .card-text {
+                color: $text-on-light-color;
+            }
+            .card-link {
+                @include button-on-light;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-light;
+                }
+            }
+        }
+        
+        .card:hover {
+            .card-body {
+                opacity: 1;  
+            }
+        }
+    }
+}
+
+
+
+//-------------------------------------------
+//
+//  Cards - text over image
+//          text bottom
+//
+//-------------------------------------------
+
+.card-text-over-image-bottom {
+    @extend .card-text-over-image;
+    
+    @include media-breakpoint-up(lg) {
+        .card-body {
+            bottom: 0;
+            height: auto;
+        }
+    }
+}
+
+//-------------------------------------------
+//
+//  Cards - text over image HOVER
+//
+//-------------------------------------------
+
+.card-text-over-image-hover {
+
+    .card {
+        position: relative;
+    }
+    @media (min-width: 1023.98px) {
+        
+        // card image
+        .card-image,
         .s2_sub_card__sub-card-image {
             height: 100% !important;
         }
@@ -709,45 +960,146 @@ $grid-minmax-value: $grid-width-3;
         &.light-bg-dark-text {
             background: $overlay-bg-color-light;
         }
-    
+        
+        &.card-overlay-light,
+        &.card-light-bg,
+        &.card-overlay-dark,
+        &.card-dark-bg {
+            
+            .card-body {
+                background: transparent;
+            }
+            
+            .card-title {
+                color: $subtitle-on-light-color;
+            }
+            .card-text {
+                color: $text-on-light-color;
+            }
+            .card-link {
+                @include button-on-light;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-light;
+                }
+            }
+        }
+        
+        &.cards-light-text, // deprecated
+        &.card-light-text,
+        &.light-text,
+        &.cards-dark-text, // deprecated
+        &.card-dark-text,
+        &.dark-text {
+            .card-title {
+                color: $subtitle-on-light-color;
+            }
+            .card-text {
+                color: $text-on-light-color;
+            }
+            .card-link {
+                @include button-on-light;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-light;
+                }
+            }
+        }
+        
         .card:hover {
             .card-body {
                 opacity: 1;  
             }
         }
     }
-}
-
-
-
-//-------------------------------------------
-//
-//  Cards - text over image
-//          text bottom
-//
-//-------------------------------------------
-
-.card-text-over-image-bottom {
-    @extend .card-text-over-image;
-    
-    @include media-breakpoint-up(lg) {
-        .card-body {
-            bottom: 0;
-            height: auto;
+       
+    // set above iPadPro 1024
+    @media (min-width: 1024.98px) {
+        
+        // card image
+        .card-image,
+        .s2_sub_card__sub-card-image,
+        figure {
+            height: 100% !important;
         }
-    }
-}
-
-//-------------------------------------------
-//
-//  Cards - text over image HOVER
-//
-//-------------------------------------------
-
-.card-text-over-image-hover {
-    @extend .card-text-over-image;
-    
-    @include media-breakpoint-up(lg) {
+        
+        &.card-overlay-light,
+        &.card-light-bg {
+            
+            .card-body {
+                background: $overlay-bg-color-light;
+            }
+            
+            .card-title {
+                color: $subtitle-on-light-color;
+            }
+            .card-text {
+                color: $text-on-light-color;
+            }
+            .card-link {
+                @include button-on-light;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-light;
+                }
+            }
+        }
+        &.card-overlay-dark,
+        &.card-dark-bg {
+            .card-body {
+                background: $overlay-bg-color-dark;
+            }
+            
+            .card-title {
+                color: $subtitle-on-dark-color;
+            }
+            .card-text {
+                color: $text-on-dark-color;
+            }
+            .card-link {
+                @include button-on-dark;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-dark;
+                }
+            }
+        }
+        
+        &.cards-light-text, // deprecated
+        &.card-light-text,
+        &.light-text {
+            .card-title {
+                color: $subtitle-on-dark-color;
+            }
+            .card-text {
+                color: $text-on-dark-color;
+            }
+            .card-link {
+                @include button-on-dark;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-dark;
+                }
+            }
+        }
+        
+        &.cards-dark-text, // deprecated
+        &.card-dark-text,
+        &.dark-text {
+            .card-title {
+                color: $subtitle-on-light-color;
+            }
+            .card-text {
+                color: $text-on-light-color;
+            }
+            .card-link {
+                @include button-on-light;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-light;
+                }
+            }
+        }
         .card-body {
             opacity: 0;
         }
@@ -757,6 +1109,7 @@ $grid-minmax-value: $grid-width-3;
             }
         }
     }
+
 }
 
 //-------------------------------------------
@@ -782,23 +1135,206 @@ $grid-minmax-value: $grid-width-3;
 //  Cards - Overrides to text alignment per section
 //
 //-------------------------------------------
+
+// sets alignment of ALL TEXT in the cards section
 .section-cards {
     &.text-center {
+        .intro .section-title,
+        .intro .section-body,
         .card-title,
+        .s2_sub_card__sub-card-title,
         .card-text {
             text-align: center !important;
         }
     }
     &.text-left {
+        .intro .section-title,
+        .intro .section-body,
         .card-title,
+        .s2_sub_card__sub-card-title,
         .card-text {
             text-align: left !important;
         }
     }
     &.text-right {
+        .intro .section-title,
+        .intro .section-body,
         .card-title,
+        .s2_sub_card__sub-card-title,
         .card-text {
             text-align: right !important;
+        }
+    }
+}
+
+// Cards only - override vars for alignment for all cards in a deck
+.section-cards {
+    &.card-text-center {
+        .card-title,
+        .s2_sub_card__sub-card-title,
+        .card-text {
+            text-align: center !important;
+        }
+    }
+    &.card-text-left {
+        .card-title,
+        .s2_sub_card__sub-card-title,
+        .card-text {
+            text-align: left !important;
+        }
+    }
+    &.card-text-right {
+        .card-title,
+        .s2_sub_card__sub-card-title,
+        .card-text {
+            text-align: right !important;
+        }
+    }
+    
+    // for individual card only
+    .card-item {
+        &.card-text-center {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            .card-text {
+                text-align: center !important;
+            }
+        }
+        &.card-text-left {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            .card-text {
+                text-align: left !important;
+            }
+        }
+        &.card-text-right {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            .card-text {
+                text-align: right !important;
+            }
+        }
+    }
+}
+
+
+// sets alignment of INTRO text only
+.section-cards {
+    &.intro-text-center {
+        .intro .section-title,
+        .intro .intro-body {
+            text-align: center !important;
+        }
+    }
+    &.intro-text-left {
+        .intro .section-title,
+        .intro .intro-body {
+            text-align: left !important;
+        }
+    }
+    &.intro-text-right {
+        .intro .section-title,
+        .intro .intro-body {
+            text-align: right !important;
+        }
+    }
+}
+
+// Card TITLES only - override vars for alignment for all cards in a deck
+.section-cards {
+    &.card-title-center {
+        .card-title,
+        .s2_sub_card__sub-card-title {
+            text-align: center !important;
+        }
+    }
+    &.card-title-left {
+        .card-title,
+        .s2_sub_card__sub-card-title {
+            text-align: left !important;
+        }
+    }
+    &.card-title-right {
+        .card-title,
+        .s2_sub_card__sub-card-title {
+            text-align: right !important;
+        }
+    }
+    
+    // for individual cards only
+    .card-item {
+        &.card-title-center {
+            .card-title,
+            .s2_sub_card__sub-card-title {
+                text-align: center !important;
+            }
+        }
+        &.card-title-left {
+            .card-title,
+            .s2_sub_card__sub-card-title {
+                text-align: left !important;
+            }
+        }
+        &.card-title-right {
+            .card-title,
+            .s2_sub_card__sub-card-title {
+                text-align: right !important;
+            }
+        }
+    }
+}
+
+// Card BODY only - override vars for alignment for all cards in a deck
+.section-cards {
+    &.card-body-center {
+        .card-text {
+            text-align: center !important;
+        }
+    }
+    &.card-body-left {
+        .card-text {
+            text-align: left !important;
+        }
+    }
+    &.card-body-right {
+        .card-text {
+            text-align: right !important;
+        }
+    }
+    
+    // for individual cards only
+    .card-item {
+        &.card-body-center {
+            .card-text {
+                text-align: center !important;
+            }
+        }
+        &.card-body-left {
+            .card-text {
+                text-align: left !important;
+            }
+        }
+        &.card-body-right {
+            .card-text {
+                text-align: right !important;
+            }
+        }
+    }
+}
+
+.section-cards {
+    &.card-transparent-bg {
+        .card {
+            background-color: transparent;
+        }
+    }
+    
+    // individual cards 
+    .card-item {
+        &.card-transparent-bg {
+            .card {
+                background-color: transparent;
+            }
         }
     }
 }

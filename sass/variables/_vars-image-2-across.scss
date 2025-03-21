@@ -1,0 +1,39 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: IMAGE two across
+//
+//----------------------------------
+//----------------------------------
+
+//	Background Color
+//	Sets background color on the section. 
+$section-image-two-across-bg-color: transparent;
+
+//	Image Gap
+//	Sets the horizontal space between the two images
+$section-image-two-across-gap: 40px;
+
+//	Section Padding (LG)
+//	Sets padding on the section around the images
+$section-image-two-across-padding-lg: $section-padding-x-lg $section-padding-y-lg;
+
+//	Section Padding (SM)
+//	Sets the section outer padding in mobile layout. 
+$section-image-two-across-padding-sm: $section-padding-x-sm $section-padding-y-sm;
+
+//	Image 1 Width
+//	Sets the width of the container for image 1
+$section-image-two-across-image-1-width: 50%;
+
+//	Image 2 Width
+//	Sets the width of the container for image 2
+$section-image-two-across-image-2-width: 50%;
+
+//	Caption Font Size
+//	Sets fonts size of caption (title) of the images. 
+$section-image-two-across-caption-size: .8em;
+
+//	Caption - Font Family
+//	Sets font family of caption text
+$section-image-two-across-caption-font-family: $base-font-family;

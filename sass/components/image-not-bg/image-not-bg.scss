@@ -1,0 +1,86 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: IMAGE - <img> only story block
+//                   NOT a background
+//
+//----------------------------------
+//----------------------------------
+
+// *changed* ADDED
+
+.section-image-not-bg {
+    padding: 0;
+    background: $section-image-not-bg-bg-color;
+    overflow: hidden;
+    
+    
+    @include media-breakpoint-up(lg) {        
+        &.img-width-25 {
+            figure {
+                width: 25%;
+                margin: 0 auto;
+            }
+        }
+        &.img-width-30 {
+            figure {
+                width: 30%;
+                margin: 0 auto;
+            }
+        }
+        &.img-width-40 {
+            figure {
+                width: 40%;
+                margin: 0 auto;
+            }
+        }
+        &.img-width-50 {
+            figure {
+                width: 50%;
+                margin: 0 auto;
+            }
+        }
+        &.img-width-60 {
+            figure {
+                width: 60%;
+                margin: 0 auto;
+            }
+        }
+        &.img-width-70 {
+            figure {
+                width: 70%;
+                margin: 0 auto;
+            }
+        }
+        &.img-width-75 {
+            figure {
+                width: 75%;
+                margin: 0 auto;
+            }
+        }
+        &.img-width-80 {
+            figure {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+        &.img-width-90 {
+            figure {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+    }
+    .story-block-inner {
+        @include media-breakpoint-down(sm) {
+            padding: $section-image-not-bg-padding-sm;
+        }
+        @include media-breakpoint-up(md) {
+            padding: $section-image-not-bg-padding-lg;
+        }
+    }
+    
+    figure {
+        margin: 0;
+    }
+}

@@ -1,0 +1,149 @@
+//----------------------------------
+//----------------------------------
+//
+//	SECTION: Call To Action modal (CTA)
+//
+//----------------------------------
+//----------------------------------
+
+//	Call To Action (CTA) Modal
+//	Styling for the Call To Action popup.
+
+//	CTA Close Link - Color
+//	Sets the color of the "X" that closes the CTA modal when clicked. 
+$cta-close-link-color: #ababab;
+
+//---------------------------
+//	CTA Content Wrapper
+//---------------------------
+
+//	CTA Background Color
+//	Sets the background color of the content in the CTA modal
+$cta-bg-color: #fff;
+
+//	CTA Border Radius
+//	Set the roundness of the edges of the CTA content wrapper
+$cta-border-radius: 10px;
+
+//	CTA Width - Large
+//	Sets the width of the CTA content in desktop device widths.
+$cta-width-lg: 50vw;
+
+//CTA Max Width - Large
+//	Sets the MAX width of the CTA content in desktop device widths.
+$cta-max-width-lg: 700px;
+
+//	CTA Width - Medium
+//	Sets the width of the CTA content in tablet device widths.
+$cta-width-md: 70vw;
+
+//	CTA Max Width - Medium
+//	Sets the MAX width of the CTA content in tablet device widths.
+$cta-max-width-md: 500px;
+
+//	CTA 2-Column Width
+//	Sets the width of the 2-column CTA content in tablet and desktop device widths.
+$cta-2col-width: 90vw;
+
+//	CTA 2-Column Max Width
+//	Sets the MAX width of the 2-column CTA content in tablet and desktop device widths.
+$cta-2col-max-width: 1000px;
+
+
+//---------------------------
+//	CTA Text Styles
+//---------------------------
+
+//	CTA Title - Font Size
+$cta-title-font-size: clamp(25px, 3vw, 35px);
+
+//	CTA Title - Text Color
+$cta-title-color: $title-color;
+
+//	CTA Title - Text Alignment
+$cta-title-align: center;
+
+//	CTA Title Span - Text Color
+//	Sets the color of <span> tags you can add to a title to style it differently for more prominence. 
+$cta-title-span-color: $title-color;
+
+//	CTA Title Span - Font Size
+$cta-title-span-size: 2.5em;
+
+//	CTA Body - Font Size
+$cta-body-size: .85em;
+
+//	CTA Body - Text Color
+$cta-body-color: $base-text-color;
+
+// CTA Body - Text Align
+//	Values: left, center, right
+$cta-body-align: center;
+
+
+
+//---------------------------
+//	CTA Buttons
+//---------------------------
+
+//	CTA Button - Background Color
+$cta-btn-bg-color: $btn-bg-color;
+
+//	CTA Button - Hover Background Color
+//	Sets the background color of the button on mouseover.
+$cta-btn-hover-bg-color: $btn-hover-bg-color;
+
+// CTA Button - Text Color
+$cta-btn-text-color: $btn-text-color;
+
+//	CTA Button - Hover Text Color
+$cta-btn-hover-text-color: $btn-hover-text-color;
+
+//	CTA Button - Border
+//	Uses CSS shorthand to define width, style and color of the button border. (Ex:  1px solid #ccc)
+$cta-btn-border: $btn-border;
+
+//	CTA Border - Color (Hover)
+$cta-btn-hover-border-color: $btn-hover-border-color;
+
+//	CTA Button - Padding
+//	Sets the space between the button boundary and the text inside.
+$cta-btn-padding: $btn-padding;
+
+
+//---------------------------
+// 	CTA Toggle/Wake Button
+//	Styles the toggle link that reopens the modal.
+//--------------------------- 
+
+
+//	CTA Toggle Button - Background Color
+//	Set the background color of the toggle "wake" button that pops up the CTA modal when it's closed. 
+$cta-toggle-bg-color: $btn-bg-color;
+
+//	CTA Toggle Button - Background Color (Hover)
+//	Sets button background color on mouseover.
+$cta-toggle-hover-bg-color: $btn-hover-bg-color;
+
+//	CTA Toggle Button - Text Color
+//	Set the text/icon color of the toggle "wake" button that pops up the CTA modal when it's closed. 
+$cta-toggle-text-color: $btn-text-color;
+
+//	CTA Toggle Button - Text Color (Hover)
+$cta-toggle-hover-text-color: $btn-hover-text-color;
+
+//	CTA Toggle Button - Icon Font Size
+//	 Sets the font size of the Font Awesome Icon in the button.
+$cta-toggle-font-size: 1.25em;
+
+//	CTA Toggle Button - Border
+//	Uses CSS shorthand to define width, style and color of the toggle button border. (Ex:  1px solid #ccc)
+$cta-toggle-border: 0px solid #fff;
+
+//	CTA Toggle Button - Border Color (Hover)
+//	Sets border color on hover
+$cta-toggle-hover-border-color: $cta-toggle-hover-bg-color;
+
+//	CTA Toggle Button - Border Radius
+//	Sets roundness of the corners of the toggle button. Can use one value for all sides, or css shorthand.
+$cta-toggle-border-radius: 0;

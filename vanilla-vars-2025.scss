@@ -1,0 +1,8046 @@
+/*
+@tab General
+_description: 
+_tab_type: general
+_tab_type_label: General
+_tab_sub_type: 
+*/
+
+/*
+@group Grid
+_description: Variables governing general layout
+*/
+
+/*
+@variable Grid Breakpoints
+_id: grid_breakpoints
+_description: Set the layout breakpoints for the Bootstrap grid.
+_link: 
+_deprecated: false
+*/
+
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px );
+
+/*
+@group Primary Colors
+_description:  
+*/
+
+/*
+@variable Primary Color
+_id: color_primary
+_description: The Primary Color is used to color buttons, links and other elements by default.
+_link: 
+_deprecated: false
+*/
+
+$primary: #bf4c87;
+
+/*
+@variable Secondary Color
+_id: color_secondary
+_description: Variable that can be used as a custom value for other variables, but isn't in use by default.
+_link: 
+_deprecated: false
+*/
+
+$secondary: #069bd1;
+
+/*
+@variable Tertiary Color
+_id: color_tertiary
+_description: Variable that can be used as a custom value for other variables, but isn't in use by default.
+_link: 
+_deprecated: false
+*/
+
+$tertiary: #6D6E71;
+
+/*
+@variable Success Color
+_id: color_success
+_description: Default value is a medium grass green.
+_link: 
+_deprecated: false
+*/
+
+$success: #28a745;
+
+/*
+@variable Info Color
+_id: color_info
+_description: Default value is a medium cyan.
+_link: 
+_deprecated: false
+*/
+
+$info: #17a2b8;
+
+/*
+@variable Warning Color
+_id: color_warning
+_description: Default value is a bright yellow orange.
+_link: 
+_deprecated: false
+*/
+
+$warning: #ffc107;
+
+/*
+@variable Danger Color
+_id: color_danger
+_description: Default value is a medium red.
+_link: 
+_deprecated: false
+*/
+
+$danger: #dc3545;
+
+/*
+@variable Light Color
+_id: color_light
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$light: $gray-100;
+
+/*
+@variable Dark Color
+_id: color_dark
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$dark: $gray-800;
+
+/*
+@group Body Settings
+_description:  
+*/
+
+/*
+@variable Body Background Color
+_id: body-bg
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$body-bg: #ede7dd;
+
+/*
+@tab Typography
+_description: 
+_tab_type: general
+_tab_type_label: General
+_tab_sub_type: 
+*/
+
+/*
+@group Define Responsive Text Sizes
+_description:   Values align with browser or device widths. -sm=mobile, -md=tablet, -lg=desktop
+*/
+
+/*
+@subgroup General Body Text
+_description:  
+*/
+
+/*
+@variable Small Body Text
+_id: new-variable--1EcF
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$body-text-sm: 16px;
+
+/*
+@variable Medium Body Text
+_id: new-variable--25nZ
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$body-text-md: 18px;
+
+/*
+@variable Large Body Text
+_id: new-variable--GDwN
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$body-text-lg: 20px;
+
+/*
+@subgroup Page TITLE - h1 (not Hero)
+_description:  
+*/
+
+/*
+@variable Small Page Title
+_id: new-variable--ernL
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$page-title-sm: clamp(40px, 4.5vw, 72px);
+
+/*
+@variable Medium Page Title
+_id: new-variable--pP30
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$page-title-md: clamp(40px, 4.5vw, 72px);
+
+/*
+@variable Large Page Title
+_id: new-variable--8yv5
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$page-title-lg: clamp(40px, 4.5vw, 72px);
+
+/*
+@variable Page Title Text Alignment
+_id: new-variable--GNQP
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$page-title-text-align: center;
+
+/*
+@subgroup SECTION title - h2
+_description:  
+*/
+
+/*
+@variable Small Section Title
+_id: new-variable--eVzH
+_description: H2 Section title - mobile layout size
+_link: 
+_deprecated: false
+*/
+
+$section-title-sm: clamp(32px, 3.75vw, 60px);
+
+/*
+@variable Medium Section Title
+_id: new-variable--NEWa
+_description: H2 Section title - tablet layout size
+_link: 
+_deprecated: false
+*/
+
+$section-title-md: clamp(32px, 3.75vw, 60px);
+
+/*
+@variable Large Section Title
+_id: new-variable--Fr8Y
+_description: H2 Section title - desktop layout and larger
+_link: 
+_deprecated: false
+*/
+
+$section-title-lg: clamp(32px, 3.75vw, 60px);
+
+/*
+@subgroup SECTION subtitle - h3
+_description:  
+*/
+
+/*
+@variable Small Section Subtitle
+_id: new-variable--PQBU
+_description: H3 subtitle - mobile
+_link: 
+_deprecated: false
+*/
+
+$section-subtitle-sm: 20px;
+
+/*
+@variable Medium Section Subtitle
+_id: new-variable--VAlI
+_description: H3 subtitle - tablet
+_link: 
+_deprecated: false
+*/
+
+$section-subtitle-md: 22px;
+
+/*
+@variable Large Section Subtitle
+_id: new-variable--l7P5
+_description: H3 subtitle - desktop up
+_link: 
+_deprecated: false
+*/
+
+$section-subtitle-lg: 26px;
+
+/*
+@group Base Font
+_description:  
+*/
+
+/*
+@variable Base Font Family
+_id: new-variable--Ouy3
+_description: Set the base font family for all body text on your site.
+_link: 
+_deprecated: false
+*/
+
+$base-font-family: "barlow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*
+@variable Base Font Weight
+_id: new-variable--u2Q9
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$base-font-weight: 400;
+
+/*
+@variable Base Line Height
+_id: new-variable--LsfF
+_description: Set the default space between lines of text
+_link: 
+_deprecated: false
+*/
+
+$base-line-height: 1.6;
+
+/*
+@variable Base Letter Spacing
+_id: new-variable--itsm
+_description: Set spacing between letters
+_link: 
+_deprecated: false
+*/
+
+$base-letter-spacing: 0;
+
+/*
+@variable Base Text Color
+_id: new-variable--euck
+_description: Sets the sitewide default color of text
+_link: 
+_deprecated: false
+*/
+
+$base-text-color: rgba(0,0,0,0.8);
+
+/*
+@variable Link Color
+_id: new-variable--yTaW
+_description: Sets the default color of text-only links
+_link: 
+_deprecated: false
+*/
+
+$link-color: $primary;
+
+/*
+@variable Link Color (Hover)
+_id: new-variable--aujl
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$link-color-hover: darken($primary, 20%);
+
+/*
+@variable Link - Text Decoration
+_id: new-variable--QtIv
+_description: Sets text decoration on a link. Values include "underline", "underline solid", "underline dotted", etc. 
+_link: 
+_deprecated: false
+*/
+
+$link-text-decoration: none;
+
+/*
+@variable Link Hover - Text Decoration
+_id: new-variable--SlnD
+_description: Sets the text decoration on mouse hover of a text link. Values include "underline", "underline solid", "underline dotted", etc. 
+_link: 
+_deprecated: false
+*/
+
+$link-hover-text-decoration: underline;
+
+/*
+@group Headings & Titles
+_description:  
+*/
+
+/*
+@variable Title Font Family
+_id: new-variable--zIKH
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$title-font-family: "lust-text", serif;
+
+/*
+@variable Title Font Weight
+_id: new-variable--ghDR
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$title-font-weight: 700;
+
+/*
+@variable Title Margin
+_id: new-variable--axO3
+_description: Set margin around headings. Value format = top right bottom left;
+_link: 
+_deprecated: false
+*/
+
+$title-margin: 0 0 .5em 0;
+
+/*
+@variable Title Line Height
+_id: new-variable--gly3
+_description: Sets space between lines/rows of text in a title
+_link: 
+_deprecated: false
+*/
+
+$title-line-height: 1;
+
+/*
+@variable Title Letter Spacing
+_id: new-variable--Rj0T
+_description: Sets spacing between individual letters in titles
+_link: 
+_deprecated: false
+*/
+
+$title-letter-spacing: -0.02em;
+
+/*
+@variable Title Text Transform
+_id: new-variable--ZAxN
+_description: Transforms text case. Common values: none, capitalize, lowercase, uppercase
+_link: 
+_deprecated: false
+*/
+
+$title-text-transform: none;
+
+/*
+@variable Title Text Color
+_id: new-variable--lPVx
+_description: Set the default color of all headings by default
+_link: 
+_deprecated: false
+*/
+
+$title-color: $base-text-color;
+
+/*
+@group Title Borders
+_description:  
+*/
+
+/*
+@variable Title Border Color
+_id: border_color
+_description: Set bottom border color value for section titles, when borders are "enabled" by adding a value to the Title Border Width variable
+_link: 
+_deprecated: false
+*/
+
+$border-color: #ccc;
+
+/*
+@variable Title Border Width
+_id: border_width
+_description: Set the width of the border. A value of "0" is necessary to not display a border.
+_link: 
+_deprecated: false
+*/
+
+$border-width: 0px;
+
+/*
+@variable Title Border Style
+_id: border_style
+_description: Common values include: solid, dotted, dashed, double
+_link: 
+_deprecated: false
+*/
+
+$border-style: solid;
+
+/*
+@variable Title Border (Bottom)
+_id: new-variable--2YcG
+_description: Sets a bottom border to h2 section titles. Uses the previous title border variables ordered in CSS shorthand for border, or can be replaced with custom values.
+_link: 
+_deprecated: false
+*/
+
+$title-border-bottom: $border-width $border-style $border-color;
+
+/*
+@variable Title Padding
+_id: new-variable--55o7
+_description: Sets the spatial padding around heading titles. Helpful if using a bottom border or background color behind the title. Value format = top right bottom left;
+_link: 
+_deprecated: false
+*/
+
+$title-padding: 0 0 0 0;
+
+/*
+@subgroup h3 subtitles (custom markup or section title)
+_description:  
+*/
+
+/*
+@variable Subtitle Color
+_id: new-variable--FV2v
+_description: Sets a color for an h3.subtitle, which could be added in custom markup
+_link: 
+_deprecated: false
+*/
+
+$subtitle-color: $title-color;
+
+/*
+@variable Subtitle Font Style
+_id: new-variable--XnNR
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$subtitle-font-style: normal;
+
+/*
+@variable Subtitle Text Alignment
+_id: new-variable--nqm5
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$subtitle-text-align: center;
+
+/*
+@tab Buttons
+_description: 
+_tab_type: general
+_tab_type_label: General
+_tab_sub_type: 
+*/
+
+/*
+@group General
+_description:  
+*/
+
+/*
+@variable Button Padding
+_id: new-variable--IpfE
+_description: Sets space between text and outer edges of a button
+_link: 
+_deprecated: false
+*/
+
+$btn-padding: 15px 30px;
+
+/*
+@variable Button Letter Spacing
+_id: new-variable--CYYr
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-letter-spacing: 0.1em;
+
+/*
+@variable Button Text Transform
+_id: new-variable--7oB2
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-text-transform: uppercase;
+
+/*
+@variable Button Border Radius
+_id: new-variable--w8Wl
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-border-radius: 50px;
+
+/*
+@variable Button Font Family
+_id: new-variable--f7wk
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-font-family: $base-font-family;
+
+/*
+@variable Button Font Weight
+_id: new-variable--4ewJ
+_description: Set the font weight for all button text
+_link: 
+_deprecated: false
+*/
+
+$btn-font-weight: normal;
+
+/*
+@variable Button Font Size
+_id: new-variable--paTR
+_description: Sets font size of all button text
+_link: 
+_deprecated: false
+*/
+
+$btn-font-size: 1em;
+
+/*
+@group Primary Buttons
+_description:  
+*/
+
+/*
+@subgroup Normal State
+_description:  
+*/
+
+/*
+@variable Button Background Color
+_id: new-variable--cXoC
+_description: Set the default background color for all buttons
+_link: 
+_deprecated: false
+*/
+
+$btn-bg-color: #000;
+
+/*
+@variable Button Text Color
+_id: new-variable--q7LZ
+_description: Set the default text color on all site buttons
+_link: 
+_deprecated: false
+*/
+
+$btn-text-color: #fff;
+
+/*
+@variable Button Border
+_id: new-variable--rg01
+_description: Set a border color for all site buttons.
+_link: 
+_deprecated: false
+*/
+
+$btn-border: 1px solid #000;
+
+/*
+@subgroup Hover State
+_description:  
+*/
+
+/*
+@variable Button Background Color (Hover)
+_id: new-variable--tXCC
+_description: Set the default background color on mouse hover for all site buttons
+_link: 
+_deprecated: false
+*/
+
+$btn-hover-bg-color: #bf4c87;
+
+/*
+@variable Button Border Color (Hover)
+_id: new-variable--biiS
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-hover-border-color: $btn-hover-bg-color;
+
+/*
+@variable Button Text Color (Hover)
+_id: new-variable--ZEfX
+_description: Set the default text color on mouse hover of all site buttons
+_link: 
+_deprecated: false
+*/
+
+$btn-hover-text-color: $white;
+
+/*
+@group Secondary Button Color
+_description:  Buttons which by default use the $secondary color value as background. 
+*/
+
+/*
+@subgroup Normal State
+_description:  
+*/
+
+/*
+@variable Secondary Button Background Color
+_id: new-variable--GWIf
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-secondary-bg-color: $secondary;
+
+/*
+@variable Secondary Button Border Color
+_id: new-variable--5QpE
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-secondary-border-color: $btn-secondary-bg-color;
+
+/*
+@variable Secondary Button text Color
+_id: new-variable--ahu9
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-secondary-text-color: $white;
+
+/*
+@subgroup Hover State
+_description:  
+*/
+
+/*
+@variable Secondary Button Background Color (Hover)
+_id: new-variable--qjiP
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-secondary-hover-bg-color: darken($btn-secondary-bg-color, 15%);
+
+/*
+@variable Secondary Button Border Color (Hover)
+_id: new-variable--b5Us
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-secondary-hover-border-color: $btn-secondary-hover-bg-color;
+
+/*
+@variable Secondary Button Text Color (Hover)
+_id: new-variable--iTtc
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-secondary-hover-text-color: $btn-secondary-text-color;
+
+/*
+@tab Dark/light theme context
+_description: Sets default colors that are applied when adding to the Custom class field of a section:  "dark-bg-light-text" or "light-bg-dark-text"
+_tab_type: general
+_tab_type_label: General
+_tab_sub_type: 
+*/
+
+/*
+@group Dark Background theme
+_description:  
+*/
+
+/*
+@subgroup Background Color
+_description:  
+*/
+
+/*
+@variable Dark Background Color
+_id: color_bg_dark
+_description: Used to set a default dark background color when "dark-bg-light-text" class is used in a Custom class field on a section
+_link: 
+_deprecated: false
+*/
+
+$bg-dark-color: #000;
+
+/*
+@subgroup Text Color
+_description:  
+*/
+
+/*
+@variable H2 Title
+_id: new-variable--YqBe
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$title-on-dark-color: #fff;
+
+/*
+@variable H3 Subtitle
+_id: new-variable--PcKI
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$subtitle-on-dark-color: #fff;
+
+/*
+@variable Body Text
+_id: new-variable--CFgK
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$text-on-dark-color: #fff;
+
+/*
+@variable text link color (not button)
+_id: new-variable--14ZK
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$link-on-dark-color: $link-color;
+
+/*
+@variable text link color (not button): hover
+_id: new-variable--SnUV
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$link-on-dark-color-hover: lighten($link-on-dark-color, 20%);
+
+/*
+@subgroup Overlay Color
+_description:  
+*/
+
+/*
+@variable Overlay Background Color
+_id: new-variable--EcxX
+_description: Sets the color of the overlay, which is between the bg image and the text. The overlay's function is to reduce contrast in a background image so the text is legible.
+_link: 
+_deprecated: false
+*/
+
+$overlay-bg-color-dark: rgba(0,0,0,0.7);
+
+/*
+@variable Overlay Gradient Base Color
+_id: new-variable--XBos
+_description: Overlays for Left/right image left/right image & text sections using gradients. Use HEX Values.
+_link: 
+_deprecated: false
+*/
+
+$overlay-gradient-base-color-dark: #1F1F1F;
+
+/*
+@subgroup Primary Buttons
+_description:  
+*/
+
+/*
+@variable Button Background Color on Dark
+_id: new-variable--OQ9q
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-bg-color-on-dark: #fff;
+
+/*
+@variable Button Text Color on Dark
+_id: new-variable--w9t8
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-text-color-on-dark: #000;
+
+/*
+@variable Button Border Color on Dark
+_id: new-variable--5GE3
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-border-color-on-dark: #fff;
+
+/*
+@variable Button Background Color on Dark (Hover)
+_id: new-variable--s1dJ
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-bg-hover-color-on-dark: #000;
+
+/*
+@variable Button Text Color on Dark (Hover)
+_id: new-variable--v5ti
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-text-hover-color-on-dark: #fff;
+
+/*
+@variable Button Border Color on Dark (Hover)
+_id: new-variable--7uw1
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-border-hover-color-on-dark: #000;
+
+/*
+@subgroup Secondary Buttons
+_description: Styles buttons set to "secondary" when on a dark background.
+*/
+
+/*
+@variable Secondary Button Background Color on Dark
+_id: new-variable--RE3i
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-bg-color-on-dark: $btn-secondary-bg-color;
+
+/*
+@variable Secondary Button Text Color on Dark
+_id: new-variable--rpL3
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-text-color-on-dark: $btn-secondary-text-color;
+
+/*
+@variable Secondary Button Border Color on Dark
+_id: new-variable--HCWs
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-border-color-on-dark: $btn-secondary-border-color;
+
+/*
+@variable Secondary Button Background Color on Dark (Hover)
+_id: new-variable--Ss03
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-bg-hover-color-on-dark: $btn-secondary-hover-bg-color;
+
+/*
+@variable Secondary Button Text Color on Dark (Hover)
+_id: new-variable--F3j7
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-text-hover-color-on-dark: $btn-secondary-hover-text-color;
+
+/*
+@variable Secondary Button Border Color on Dark (Hover)
+_id: new-variable--HA9y
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-border-hover-color-on-dark: $btn-secondary-hover-border-color;
+
+/*
+@subgroup Borders
+_description:  
+*/
+
+/*
+@variable Border Color on Dark bg
+_id: new-variable--iqBb
+_description: Border color on a dark background.
+_link: 
+_deprecated: false
+*/
+
+$border-on-dark-color: $border-color;
+
+/*
+@group Light Background theme
+_description:  
+*/
+
+/*
+@subgroup Background Color
+_description:  
+*/
+
+/*
+@variable Light Background Color
+_id: color_bg_light
+_description: Used to set a default light background color when "light-bg-dark-text" class is used in a Custom class field on a section
+_link: 
+_deprecated: false
+*/
+
+$bg-light-color: #fff;
+
+/*
+@subgroup Text Color
+_description:  
+*/
+
+/*
+@variable H2 title - on light background
+_id: new-variable--OiOf
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$title-on-light-color: rgba(0,0,0,0.8);
+
+/*
+@variable H3 subtitle - on light background
+_id: new-variable--vBOY
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$subtitle-on-light-color: rgba(0,0,0,0.8);
+
+/*
+@variable Body text color - on light background
+_id: new-variable--877l
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$text-on-light-color: rgba(0,0,0,0.8);
+
+/*
+@variable text link color (not button) - on light background
+_id: new-variable--l8tF
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$link-on-light-color: $link-color;
+
+/*
+@variable text link color (not button) - on light background: Hover
+_id: new-variable--yXUs
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$link-on-light-color-hover: darken($link-on-light-color, 20%);
+
+/*
+@subgroup Overlay Color
+_description:  
+*/
+
+/*
+@variable Overlay Background Color
+_id: new-variable--SKlU
+_description: Sets the color of the overlay, which is between the bg image and the text. The overlay's function is to reduce contrast in a background image so the text is legible.
+_link: 
+_deprecated: false
+*/
+
+$overlay-bg-color-light: rgba(255,255,255,0.7);
+
+/*
+@variable Overlay Gradient Base Color
+_id: new-variable--pKJH
+_description: Overlays for Left/right image left/right image & text sections using gradients. Use HEX Values.
+_link: 
+_deprecated: false
+*/
+
+$overlay-gradient-base-color-light: #fff;
+
+/*
+@subgroup Primary Buttons
+_description:  
+*/
+
+/*
+@variable Button Background Color on Light
+_id: new-variable--A5x3
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-bg-color-on-light: $btn-bg-color;
+
+/*
+@variable Button Text Color on Light
+_id: new-variable--21Kk
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-text-color-on-light: $btn-text-color;
+
+/*
+@variable Button Border Color on Light
+_id: new-variable--XQ6v
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-border-color-on-light: $btn-bg-color-on-light;
+
+/*
+@variable Button Background Color on Light (Hover)
+_id: new-variable--Vgqi
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-bg-hover-color-on-light: $btn-hover-bg-color;
+
+/*
+@variable Button Text Color on Light (Hover)
+_id: new-variable--PbBg
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-text-hover-color-on-light: $btn-text-color-on-light;
+
+/*
+@variable Button Border Color on Light (Hover)
+_id: new-variable--YsTy
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$btn-border-hover-color-on-light: $btn-bg-hover-color-on-light;
+
+/*
+@subgroup Secondary Buttons
+_description: 
+*/
+
+/*
+@variable Secondary Button Background Color on Light
+_id: new-variable--vTFL
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-bg-color-on-light: $btn-secondary-bg-color;
+
+/*
+@variable Secondary Button Text Color on Light
+_id: new-variable--6dBf
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-text-color-on-light: $btn-secondary-text-color;
+
+/*
+@variable Secondary Button Border Color on Light
+_id: new-variable--LEg3
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-border-color-on-light: $btn-secondary-border-color;
+
+/*
+@variable Secondary Button Background Color on Light (Hover)
+_id: new-variable--bTAM
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-bg-hover-color-on-light: $btn-secondary-hover-bg-color;
+
+/*
+@variable Secondary Button Text Color on Light (Hover)
+_id: new-variable--iWZd
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-text-hover-color-on-light: $btn-secondary-hover-text-color;
+
+/*
+@variable Secondary Button Border Color on Light (Hover)
+_id: new-variable--bGyl
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$secondary-btn-border-hover-color-on-light: $btn-secondary-hover-border-color;
+
+/*
+@subgroup Borders
+_description:  
+*/
+
+/*
+@variable Border Color on Light bg
+_id: new-variable--2MV6
+_description: Sets the border color on the light background
+_link: 
+_deprecated: false
+*/
+
+$border-on-light-color: $border-color;
+
+/*
+@group Text Wrapper Customization
+_description:  This allows for customization of containers around section intro text and within story sections. It allows for a bg color, spacing around the text, and changing text colors. Requires placement of either "text-wrapper-dark" or "text-wrapper-light" in the Custom Class section a section. (Hero excluded)
+*/
+
+/*
+@variable Text Wrapper DARK bg color
+_id: new-variable--WXnN
+_description: This sets the background color behind the text when .text-wrapper-dark is used. By default uses variables set in dark background theme variables.
+_link: 
+_deprecated: false
+*/
+
+$text-wrapper-dark-bg: $bg-dark-color;
+
+/*
+@variable Text Wrapper LIGHT Bg Color
+_id: new-variable--bYFC
+_description: This sets the background color behind the text when .text-wrapper-light is used. By default uses variables set in the "light background theme" variables.
+_link: 
+_deprecated: false
+*/
+
+$text-wrapper-light-bg: $bg-light-color;
+
+/*
+@variable Text Wrapper Padding
+_id: new-variable--zsuy
+_description: This adds space between text and the edge of the text-wrapper container
+_link: 
+_deprecated: false
+*/
+
+$text-wrapper-padding: 4vw;
+
+/*
+@variable Text Wrapper Border Radius
+_id: new-variable--QoRI
+_description: Sets the border radius, or roundness of the corners, on the text-wrapper
+_link: 
+_deprecated: false
+*/
+
+$text-wrapper-border-radius: 20px;
+
+/*
+@tab Branding
+_description: 
+_tab_type: general
+_tab_type_label: General
+_tab_sub_type: 
+*/
+
+/*
+@group Branding When Logo is Used
+_description:  
+*/
+
+/*
+@variable Small Navbar Logo Width
+_id: new-variable--ORRS
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-logo-width-sm: 200px;
+
+/*
+@variable Medium Navbar logo Width
+_id: new-variable--aQGF
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-logo-width-md: 200px;
+
+/*
+@variable Large Navbar Logo Width
+_id: new-variable--B1N4
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-logo-width-lg: 200px;
+
+/*
+@group Site Name - when logo image not used
+_description:  
+*/
+
+/*
+@variable Navbar Brand Font Family
+_id: new-variable--Dwf2
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-brand-font-family: "cinema-script", script;
+
+/*
+@variable Navbar Brand Letter Spacing
+_id: new-variable--K6OB
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-brand-letter-spacing: 0;
+
+/*
+@variable Navbar Brand Font Color
+_id: new-variable--Qwzw
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-brand-font-color: #fff;
+
+/*
+@variable Navbar Brand Small Font Size
+_id: new-variable--oxSQ
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-brand-font-size-sm: 25px;
+
+/*
+@variable Navbar Brand Medium Font Size
+_id: new-variable--F8l8
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-brand-font-size-md: 35px;
+
+/*
+@variable Navbar Brand Large Font Size
+_id: new-variable--Lly0
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-brand-font-size-lg: 55px;
+
+/*
+@variable Navbar Brand Font Weight
+_id: new-variable--Cq7y
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-brand-font-weight: normal;
+
+/*
+@tab Navigation
+_description: 
+_tab_type: general
+_tab_type_label: General
+_tab_sub_type: 
+*/
+
+/*
+@group Navigation Right border
+_description:  Vertical Border (Pipe) for separating the nav from an adjacent element in the header
+*/
+
+/*
+@variable Header Piping Color
+_id: new-variable--OE8o
+_description: Set the color of the vertical divider on the right that separates nav from social icons if used
+_link: 
+_deprecated: false
+*/
+
+$header-piping-color: rgba(50,50,50,0.3);
+
+/*
+@group Navbar Height
+_description:  Set Height of Navbar
+*/
+
+/*
+@variable Large Navbar Height
+_id: new-variable--GDxS
+_description: Set Height of Navbar for desktop devices
+_link: 
+_deprecated: false
+*/
+
+$navbar-height-lg: 100px;
+
+/*
+@variable Small Navbar Height
+_id: new-variable--qNbS
+_description: Set Height of Navbar for Mobile devices
+_link: 
+_deprecated: false
+*/
+
+$navbar-height-sm: 67px;
+
+/*
+@group Content scroll offset
+_description:  Offsets Position of the Content when selecting Nav items that scroll to a point on the same page. Ensures the navbar doesn't cover content at the top of a page on page load. Equal to Height of Navbar
+*/
+
+/*
+@variable Large Top Scroll Offset
+_id: new-variable--qyVv
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$scroll-top-offset-lg: $navbar-height-lg;
+
+/*
+@variable Small Top Scroll Offset
+_id: new-variable--XZDi
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$scroll-top-offset-sm: $navbar-height-sm;
+
+/*
+@group <Body> offset for fixed navigation
+_description:  Offsets <Body> from the top of the page when using a fixed position Navigation, ensuring the nav doesn't cover content on page load. Equal to Height of Navbar
+*/
+
+/*
+@variable Large Fixed Navbar Offset
+_id: new-variable--my5U
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$fixed-navbar-body-offset-lg: $navbar-height-lg;
+
+/*
+@variable Small Fixed Navbar Offset
+_id: new-variable--nIu4
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$fixed-navbar-body-offset-sm: $navbar-height-sm;
+
+/*
+@group Navigation Typography
+_description:  
+*/
+
+/*
+@variable Nav Font Family
+_id: new-variable--bl70
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$nav-font-family: "barlow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*
+@variable Nav Font Weight
+_id: new-variable--XX5b
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$nav-font-weight: 500;
+
+/*
+@variable Nav Line Height
+_id: new-variable--OXgp
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$nav-line-height: 1;
+
+/*
+@variable Nav Text Transform
+_id: new-variable--om5G
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$nav-text-transform: capitalize;
+
+/*
+@variable Nav Letter Spacing
+_id: new-variable--hQb9
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$nav-letter-spacing: 0;
+
+/*
+@group Nav font sizes (desktop)
+_description:  
+*/
+
+/*
+@variable Medium Nav Font Size
+_id: new-variable--rzan
+_description: Font size for tablet devices (portrait). Breakpoint is max width = 768px
+_link: 
+_deprecated: false
+*/
+
+$nav-font-size-md: 18px;
+
+/*
+@variable Large Nav Font Size
+_id: new-variable--Hq06
+_description: Font size for breakpoint. Min width = 992px +
+_link: 
+_deprecated: false
+*/
+
+$nav-font-size-lg: 20px;
+
+/*
+@variable Extra Large Nav Font Size
+_id: nav-font-size-xl
+_description: Font size for desktop devices. Breakpoint is min-width=1200px +
+_link: 
+_deprecated: false
+*/
+
+$nav-font-size-xl: 20px;
+
+/*
+@group Link Spacing
+_description:  
+*/
+
+/*
+@variable Nav Link Padding (Y)
+_id: new-variable--p2Iu
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$nav-link-padding-y: .75rem;
+
+/*
+@variable Nav Link Padding (X)
+_id: new-variable--CJ19
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$nav-link-padding-x: 15px;
+
+/*
+@group Nav Colors
+_description:  
+*/
+
+/*
+@variable Navbar Background Color
+_id: new-variable--dMKA
+_description: Entire Navbar Background Color
+_link: 
+_deprecated: false
+*/
+
+$navbar-bg-color: #000;
+
+/*
+@subgroup Link Color
+_description:  
+*/
+
+/*
+@variable Navbar Link Color
+_id: new-variable--PU7K
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-color: #fff;
+
+/*
+@variable Navbar Link Color (Hover)
+_id: new-variable--hFfQ
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-hover-color: $primary;
+
+/*
+@subgroup Link Background Color
+_description:  
+*/
+
+/*
+@variable Navbar Link Background Color
+_id: new-variable--PDyO
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-bg-color: transparent;
+
+/*
+@variable Navbar Link Background Color (Hover)
+_id: new-variable--1vfu
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-bg-hover-color: transparent;
+
+/*
+@subgroup Active Link Color
+_description:  
+*/
+
+/*
+@variable Active Link Color
+_id: new-variable--jSIZ
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-active-color: $primary;
+
+/*
+@variable Active Link Background Color
+_id: new-variable--ua3D
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-active-bg: $gray-000;
+
+/*
+@subgroup Navbar Shadow
+_description:  
+*/
+
+/*
+@variable Navbar Box Shadow
+_id: new-variable--B10D
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+
+/*
+@group Mobile Navigation
+_description:  
+*/
+
+/*
+@subgroup Mobile Menu Background Color
+_description:  
+*/
+
+/*
+@variable Mobile Navbar Background Color
+_id: new-variable--WgYI
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-bg-color-mobile: $primary;
+
+/*
+@subgroup Mobile Menu Toggle Icon
+_description:  
+*/
+
+/*
+@variable Mobile Navbar Toggler Color
+_id: new-variable--Sfpl
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-toggler-color: $gray-600;
+
+/*
+@variable Mobile Navbar Toggler Border
+_id: new-variable--Uis1
+_description: Sets a border around the mobile toggle icon. To make visible, change transparent value to a color.
+_link: 
+_deprecated: false
+*/
+
+$navbar-toggler-border: 1px solid transparent;
+
+/*
+@variable Mobile Navbar Toggler Border Radius
+_id: new-variable--XsJ4
+_description: Sets a border radius on the border around the mobile toggle icon, if the border is visible..
+_link: 
+_deprecated: false
+*/
+
+$navbar-toggler-border-radius: .25rem;
+
+/*
+@subgroup Mobile Links
+_description:  
+*/
+
+/*
+@variable Mobile Navbar Size
+_id: new-variable--kXUf
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$nav-font-size-mobile: 18px;
+
+/*
+@variable Mobile Navbar Text Alignment
+_id: new-variable--oMyF
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-text-align-mobile: center;
+
+/*
+@variable Mobile Navbar Link Color
+_id: new-variable--3VPG
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-color-mobile: $white;
+
+/*
+@subgroup Mobile Hover/Selected Link Colors
+_description:  
+*/
+
+/*
+@variable Mobile Navbar Link Color (Hover)
+_id: new-variable--1szB
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-hover-color-mobile: $white;
+
+/*
+@variable Mobile Navbar Link BG Color (Hover)
+_id: new-variable--oSkQ
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-bg-hover-color-mobile: lighten($navbar-bg-color-mobile, 20%);
+
+/*
+@subgroup Mobile Active Link Colors
+_description:  
+*/
+
+/*
+@variable Mobile Navbar Link Color (Active)
+_id: new-variable--tsi5
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-active-color-mobile: $navbar-link-color-mobile;
+
+/*
+@variable Mobile Navbar Link BG Color (Active)
+_id: new-variable--BKx3
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$navbar-link-active-bg-mobile: lighten($navbar-bg-color-mobile, 10%);
+
+/*
+@subgroup Mobile Dropdown/Sub-Nav Items
+_description: Sets styling for sub-links that are grouped with main nav items
+*/
+
+/*
+@variable Mobile Dropdown Bg Color
+_id: new-variable--Eahf
+_description: Sets the background color of the sub-nav menus
+_link: 
+_deprecated: false
+*/
+
+$mobile-dropdown-bg-color: darken($navbar-bg-color-mobile, 5%);
+
+/*
+@variable Mobile Dropdown Link Color
+_id: new-variable--b0ry
+_description: Sets the link color of a sub-nav item in mobile
+_link: 
+_deprecated: false
+*/
+
+$mobile-dropdown-link-color: $navbar-link-color-mobile;
+
+/*
+@variable Mobile Dropdown Link Background Color
+_id: new-variable--RST3
+_description: Sets the bg color of each sub-nav link
+_link: 
+_deprecated: false
+*/
+
+$mobile-dropdown-link-bg: transparent;
+
+/*
+@variable Mobile Dropdown Item Padding
+_id: new-variable--NNL8
+_description: Sets padding on each link in a dropdown menu in mobile. Format is CSS shorthand: [top] [right] [bottom] [left], or [y] [x]
+_link: 
+_deprecated: false
+*/
+
+$mobile-dropdown-item-padding: 0.45rem 15px;
+
+/*
+@variable Mobile Dropdown Item - Font Size
+_id: new-variable--aY3F
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$mobile-dropdown-item-font-size: clamp(15px, 0.85em, 20px);
+
+/*
+@group Dropdown Navigation
+_description: A second tier of nav items that appear beneath main nav items via a dropdown menu. 
+*/
+
+/*
+@variable Dropdown Min Width
+_id: new-variable--puvO
+_description: The minimum width of the dropdown menu container
+_link: 
+_deprecated: false
+*/
+
+$dropdown-min-width: auto;
+
+/*
+@variable Dropdown Wrapper Padding - Y axis
+_id: new-variable--JoyW
+_description: Sets the top/bottom padding on the dropdown menu itself. 
+_link: 
+_deprecated: false
+*/
+
+$dropdown-padding-y: 0.2em;
+
+/*
+@variable Dropdown Background Color
+_id: new-variable--5Crs
+_description: Sets the background color of the dropdown menu. 
+_link: 
+_deprecated: false
+*/
+
+$dropdown-bg-color: #fff;
+
+/*
+@variable Dropdown Border
+_id: new-variable--nqck
+_description: Sets border values for the dropdown menu. Format is CSS shorthand for border: [width] [style] [color] (i.e. 1px solid #ccc)
+_link: 
+_deprecated: false
+*/
+
+$dropdown-border: 0px solid $border-color;
+
+/*
+@variable Dropdown Box Shadow
+_id: new-variable--svtu
+_description: Adds a drop shadow to the menu to help differentiate from elements underneath or around the menu.  Format is CSS shorthand: [offset-x] [offset-y] [blur-radius] [color]
+_link: 
+_deprecated: false
+*/
+
+$dropdown-box-shadow: 0 0.75em 0.75em rgba(0,0,0,0.1);
+
+/*
+@variable Dropdown Link Color
+_id: new-variable--NzW8
+_description: Sets the text color of a dropdown nav item. 
+_link: 
+_deprecated: false
+*/
+
+$dropdown-link-color: $navbar-link-color;
+
+/*
+@variable Dropdown Link Color (Hover)
+_id: new-variable--PFUL
+_description: Dropdown text color on hover
+_link: 
+_deprecated: false
+*/
+
+$dropdown-link-hover-color: $navbar-link-hover-color;
+
+/*
+@variable Dropdown Link Background Color
+_id: new-variable--FRVQ
+_description: Sets color of a dropdown menu item link
+_link: 
+_deprecated: false
+*/
+
+$dropdown-link-bg: transparent;
+
+/*
+@variable Dropdown Link Bg Color (Hover)
+_id: new-variable--dFwp
+_description: Sets the background cover on hover of a dropdown menu item
+_link: 
+_deprecated: false
+*/
+
+$dropdown-link-hover-bg: darken($dropdown-bg-color, 5%);
+
+/*
+@variable Dropdown Link Color (Active)
+_id: new-variable--vcX5
+_description: Sets dropdown link color on active state
+_link: 
+_deprecated: false
+*/
+
+$dropdown-link-active-color: $dropdown-link-hover-color;
+
+/*
+@variable Dropdown Link Bg Color (Active)
+_id: new-variable--mkGe
+_description: Sets the bg color of a menu item link when in active state. 
+_link: 
+_deprecated: false
+*/
+
+$dropdown-link-active-bg: $dropdown-link-hover-bg;
+
+/*
+@variable Dropdown Menu Item Padding
+_id: new-variable--ELLU
+_description: Sets padding around the individual items in a dropdown menu
+_link: 
+_deprecated: false
+*/
+
+$dropdown-item-padding: 0.5em 1em;
+
+/*
+@variable Dropdown Item Font Size
+_id: new-variable--Gq5S
+_description: Sets font size of dropdown menu items. 
+_link: 
+_deprecated: false
+*/
+
+$dropdown-item-font-size: 0.8em;
+
+/*
+@tab Header Info Bar
+_description: This sets styles for the optional Business Info bar located above Navigation on desktop, anchored to the screen bottom in mobile
+_tab_type: general
+_tab_type_label: General
+_tab_sub_type: 
+*/
+
+/*
+@variable Background color
+_id: new-variable--2a1Y
+_description: Sets the background color of the info bar
+_link: 
+_deprecated: false
+*/
+
+$info-bar-bg-color: darken($body-bg, 5%);
+
+/*
+@variable Justify Content
+_id: new-variable--zb6o
+_description: This sets the alignment of all info items relative to the bar itself. Values: "flex-start" aligns all to the left; "flex-end" aligns all to the right; "space-evenly" spaces all evenly (default)
+_link: 
+_deprecated: false
+*/
+
+$info-bar-justify-content: space-evenly;
+
+/*
+@variable Text Color
+_id: new-variable--Arql
+_description: Sets the color of the text in the info bar items
+_link: 
+_deprecated: false
+*/
+
+$info-bar-text-color: $base-text-color;
+
+/*
+@variable Text Hover Color
+_id: new-variable--vKCh
+_description: Sets the color of text on mouse over
+_link: 
+_deprecated: false
+*/
+
+$info-bar-text-hover-color: #fff;
+
+/*
+@variable Item Background Hover Color
+_id: new-variable--QzAP
+_description: Sets the background color of each item in the bar on mouseover
+_link: 
+_deprecated: false
+*/
+
+$info-bar-item-bg-hover-color: $gray-100;
+
+/*
+@variable Text Size
+_id: new-variable--VWT9
+_description: Sets the size of the text in an item
+_link: 
+_deprecated: false
+*/
+
+$info-bar-text-size: 12px;
+
+/*
+@variable Icon Size
+_id: new-variable--zS3B
+_description: Sets the size of the icon for non-mobile devices
+_link: 
+_deprecated: false
+*/
+
+$info-bar-icon-size: 16px;
+
+/*
+@variable Icon Color
+_id: new-variable--rECg
+_description: Sets the color of item icons
+_link: 
+_deprecated: false
+*/
+
+$info-bar-icon-color: $base-text-color;
+
+/*
+@variable Icon Size - mobile
+_id: new-variable--MdUa
+_description: Sets the item icon size in mobile layouts
+_link: 
+_deprecated: false
+*/
+
+$info-bar-icon-size-mobile: 22px;
+
+/*
+@variable Bar Bg Color - Mobile
+_id: new-variable--e2aR
+_description: Sets the bar background color for mobile devices, where the bar is fixed to the bottom of the screen.
+_link: 
+_deprecated: false
+*/
+
+$info-bar-bg-color-mobile: $info-bar-bg-color;
+
+/*
+@tab Section Defaults
+_description: 
+_tab_type: general
+_tab_type_label: General
+_tab_sub_type: 
+*/
+
+/*
+@group Background Color
+_description:  
+*/
+
+/*
+@variable Default Section Background Color
+_id: new-variable--O2ol
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-default-bg-color: transparent;
+
+/*
+@subgroup Zebra Striping
+_description:  
+*/
+
+/*
+@variable Alternating Background Color
+_id: new-variable--p2wz
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-alternating-bg: rgb(220 116 155 / 30%);
+
+/*
+@group Titles
+_description:  
+*/
+
+/*
+@variable Title Alignment
+_id: new-variable--3Pyi
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-title-alignment: center;
+
+/*
+@variable Body Alignment
+_id: new-variable--SfxS
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-body-alignment: center;
+
+/*
+@variable Link Alignment
+_id: new-variable--h6zs
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-link-alignment: center;
+
+/*
+@group Padding
+_description:  
+*/
+
+/*
+@variable Y Padding (Small)
+_id: new-variable--1y6w
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-padding-y-sm: 10vw;
+
+/*
+@variable Y Padding (Large)
+_id: new-variable--g371
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-padding-y-lg: 8vw;
+
+/*
+@variable X Padding (Small)
+_id: new-variable--z8O2
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-padding-x-sm: 5vw;
+
+/*
+@variable X Padding (Large)
+_id: new-variable--fH7o
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-padding-x-lg: 8vw;
+
+/*
+@group Margin
+_description:  Combined with classes added to any section's Custom Class field (i.e., .section-margin-sm, .section-margin-lg), these values will add margin, or space around a section.
+*/
+
+/*
+@variable Section Outer Margin (Small)
+_id: new-variable--1jP5
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-outer-margin-sm: 15px;
+
+/*
+@variable Section Outer Margin (Large)
+_id: new-variable--WVdf
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-outer-margin-lg: 30px;
+
+/*
+@subgroup Sitewide Styling
+_description: Sets margin values for all sections on the site
+*/
+
+/*
+@variable Section - Sitewide Outer Margin - Small
+_id: new-variable--tbO8
+_description: Sets outer margin on all sections sitewide in mobile layout.
+_link: 
+_deprecated: false
+*/
+
+$section-sitewide-outer-margin-sm: 0;
+
+/*
+@variable Section - Sitewide Outer Margin - Large
+_id: new-variable--oMHd
+_description: Sets outer margin on all sections sitewide in tablet and desktop layouts.
+_link: 
+_deprecated: false
+*/
+
+$section-sitewide-outer-margin-lg: 0;
+
+/*
+@group Borders
+_description: Combined with classes added to any section's Custom Class field (i.e., .section-border-radius-sm, .section-border-radius-lg), these values will add a border to a section. 
+*/
+
+/*
+@variable Section Border Radius (Small)
+_id: new-variable--kraQ
+_description: Sets the border radius of a section in small, or mobile, layout. Value should be in shorthand format: [top] [right] [bottom] [left], or just 0 for no border radius.
+_link: 
+_deprecated: false
+*/
+
+$section-border-radius-sm: 10px;
+
+/*
+@variable Section Border Radius (large)
+_id: new-variable--FaKp
+_description: Sets the border radius of a section in medium and large layouts, tablet and desktop. Value should be in shorthand format: [top] [right] [bottom] [left], or just 0 for no border radius.
+_link: 
+_deprecated: false
+*/
+
+$section-border-radius-lg: 20px;
+
+/*
+@variable Section Border (small)
+_id: new-variable--pFxw
+_description: Sets a border around a section in mobile layout. Combined with classes added to any section's Custom Class field (i.e., "section-border-sm", "section-border-lg"), these values will add a border around a section. Value should be formatted in shorthand: [border-width] [border-style] [border-color], or "0" for no border
+_link: 
+_deprecated: false
+*/
+
+$section-border-sm: 0px solid $border-color;
+
+/*
+@variable Section Border (large)
+_id: new-variable--WccS
+_description: Sets a border around a section on larger screens, tablet and desktop. Combined with classes added to any section's Custom Class field (i.e., "section-border-sm", "section-border-lg"), these values will add a border around a section. Value should be formatted in shorthand: [border-width] [border-style] [border-color], or "0" for no border
+_link: 
+_deprecated: false
+*/
+
+$section-border-lg: 0px solid $border-color;
+
+/*
+@subgroup Sitewide Styling
+_description: Sets border values for all sections on the site
+*/
+
+/*
+@variable Section Border Radius - SITEWIDE (Small)
+_id: new-variable--4GJZ
+_description: Sets border radius in mobile layout sizes on all sections of the site. Can be written as a shorthand value: top, right, bottom, left; or a single value for all corners.
+_link: 
+_deprecated: false
+*/
+
+$section-sitewide-border-radius-sm: 0;
+
+/*
+@variable Section Border Radius - SITEWIDE (Large)
+_id: new-variable--AKtB
+_description: Sets border radius in tablets and desktop layout sizes on all sections of the site. Can be written as a shorthand value: top, right, bottom, left; or a single value for all corners.
+_link: 
+_deprecated: false
+*/
+
+$section-sitewide-border-radius-lg: 0;
+
+/*
+@variable Section - Sitewide - Overflow value (Small)
+_id: new-variable--SW73
+_description: Sets the overflow value on sections in mobile. A value of "hidden" is REQUIRED in conjunction with Section Border Radius Sitewide values to achieve this effect.
+_link: 
+_deprecated: false
+*/
+
+$section-sitewide-overflow-value-sm: visible;
+
+/*
+@variable Sitewide - Overflow value (Large)
+_id: new-variable--W27p
+_description: Sets the overflow value on sections for tablet and desktop devices. A value of "hidden" is REQUIRED in conjunction with Section Border Radius Sitewide values to achieve this effect.
+_link: 
+_deprecated: false
+*/
+
+$section-sitewide-overflow-value-lg: visible;
+
+/*
+@tab Footer Section
+_description: 
+_tab_type: general
+_tab_type_label: General
+_tab_sub_type: 
+*/
+
+/*
+@group Section Defaults
+_description:  
+*/
+
+/*
+@variable Background Color
+_id: new-variable--TWJL
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-footer-bg-color: #000000;
+
+/*
+@variable Padding (Mobile)
+_id: new-variable--TTlx
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-footer-padding-mobile: 15vw 15px;
+
+/*
+@variable Padding (Large)
+_id: new-variable--WGVI
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-footer-padding-lg: 5vw;
+
+/*
+@group Logo
+_description:  
+*/
+
+/*
+@variable Logo Width
+_id: new-variable--Ugk6
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$footer-logo-width: 200px;
+
+/*
+@group Company name
+_description:  
+*/
+
+/*
+@variable Company Name Font Size
+_id: new-variable--WuT0
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$footer-company-font-size: 20px;
+
+/*
+@group Text Colors
+_description:  
+*/
+
+/*
+@variable Title Color
+_id: new-variable--4jbJ
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$footer-title-color: $white;
+
+/*
+@variable Text Color
+_id: new-variable--vcA9
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$footer-text-color: #ccc;
+
+/*
+@variable Link Color
+_id: new-variable--UMf2
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$footer-link-color: #ccc;
+
+/*
+@variable Link Color on mouse hover
+_id: new-variable--tXXn
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$footer-link-hover-color: lighten($footer-link-color, 15%);
+
+/*
+@group Back to top Button
+_description:  
+*/
+
+/*
+@variable Icon Color
+_id: new-variable--03aD
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$back-to-top-icon-color: $white;
+
+/*
+@variable Icon Color on mouse hover
+_id: new-variable--o6PW
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$back-to-top-icon-hover-color: $primary;
+
+/*
+@variable Background Color
+_id: new-variable--KRaG
+_description: Sets the background color behind the icon
+_link: 
+_deprecated: false
+*/
+
+$back-to-top-bg-color: $primary;
+
+/*
+@variable Background Color on Hover
+_id: new-variable--VBtx
+_description: Sets the background color behind the icon on mouse hover
+_link: 
+_deprecated: false
+*/
+
+$back-to-top-bg-hover-color: $white;
+
+/*
+@group Contact Info Font Size
+_description:  
+*/
+
+/*
+@variable Info Font Size
+_id: new-variable--LXcy
+_description: Sets the font size of the contact info section of the footer
+_link: 
+_deprecated: false
+*/
+
+$footer-contact-info-font-size: 14px;
+
+/*
+@variable Branding Font Size
+_id: new-variable--j3Ud
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$footer-branding-font-size: 16px;
+
+/*
+@variable Copyright Font Size
+_id: new-variable--WcJP
+_description: Sets font size of the copyright information in the footer
+_link: 
+_deprecated: false
+*/
+
+$footer-copyright-font-size: 14px;
+
+/*
+@group Border
+_description:  
+*/
+
+/*
+@variable Border Color
+_id: new-variable--JpgT
+_description: Sets the color of borders that appear in the footer
+_link: 
+_deprecated: false
+*/
+
+$footer-border-color: rgba(100,100,100,0.5);
+
+/*
+@tab Quotations
+_description: Styling of <blockquote> for quotations
+_tab_type: general
+_tab_type_label: General
+_tab_sub_type: 
+*/
+
+/*
+@variable Quote Icon URL
+_id: quotation-icon-url
+_description: Set the URL for the quote icon
+_link: 
+_deprecated: false
+*/
+
+$quotation-icon-url: url(https://fileswift.com/sites/default/files/2021-05/quote-left-solid.svg);
+
+/*
+@variable Quote divider color
+_id: quote-pipe-color
+_description: Set the color for the vertical border separating icon and text
+_link: 
+_deprecated: false
+*/
+
+$quote-pipe-color: rgba(255,255,255,0.4);
+
+/*
+@variable Quote Author font family
+_id: quote-author-font-family
+_description: Set the URL for the quote icon
+_link: 
+_deprecated: false
+*/
+
+$quote-author-font-family: $base-font-family;
+
+/*
+@variable Quote Highlight text color
+_id: quote-highlight-text-color
+_description: Sets text color for highlight <span> within quote body
+_link: 
+_deprecated: false
+*/
+
+$quote-highlight-text-color: $primary;
+
+/*
+@variable Quote Highlight Font Weight
+_id: new-variable--ufHR
+_description: Set the font weight of a quote highlight
+_link: 
+_deprecated: false
+*/
+
+$quote-highlight-font-weight: bold;
+
+/*
+@variable Quote Highlight Text Size
+_id: new-variable--loLU
+_description: Set the size of the quote highlight text
+_link: 
+_deprecated: false
+*/
+
+$quote-highlight-text-size: 1em;
+
+/*
+@variable Quote Author Text Color
+_id: new-variable--V3Le
+_description: Set the color of the quote author
+_link: 
+_deprecated: false
+*/
+
+$quote-author-text-color: $primary;
+
+/*
+@group Quote Body
+_description:  Styling for the body, the actual quote. 
+*/
+
+/*
+@variable Quote Body - Font family
+_id: new-variable--X2oY
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$quote-body-font-family: $base-font-family;
+
+/*
+@variable Quote Body - Font Size
+_id: new-variable--UF0A
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$quote-body-font-size: 1em;
+
+/*
+@variable Quote Body - Font Weight
+_id: new-variable--C64S
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$quote-body-font-weight: bold;
+
+/*
+@variable Quote Body - Text Color
+_id: new-variable--sglt
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$quote-body-text-color: $base-text-color;
+
+/*
+@group Quote Author
+_description:  Styles the author of a quote. 
+*/
+
+/*
+@variable Quote Author - Font Style
+_id: new-variable--jkDW
+_description: Sets the style of the quote author. Typical values are "italic" or "normal"
+_link: 
+_deprecated: false
+*/
+
+$quote-author-font-style: italic;
+
+/*
+@tab Alert Messages
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: feature_box
+*/
+
+/*
+@variable Background Color
+_id: new-variable--iA5v
+_description: Sets a background color on the section. Can also link to an image.
+_link: 
+_deprecated: false
+*/
+
+$section-alert-bg-color: #cce5ff;
+
+/*
+@variable Alignment
+_id: new-variable--ZXj1
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-alert-alignment: center;
+
+/*
+@variable Border
+_id: new-variable--A6HF
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$alert-border: 0;
+
+/*
+@variable Border Radius
+_id: new-variable--Zr2r
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$alert-border-radius: 0;
+
+/*
+@variable Link Color
+_id: new-variable--YMcc
+_description: Sets color of a TEXT link within the alert message
+_link: 
+_deprecated: false
+*/
+
+$alert-link-color: #b8daff;
+
+/*
+@variable Margin
+_id: new-variable--lcs5
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$alert-margin: 0;
+
+/*
+@variable Padding
+_id: new-variable--dFAM
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$alert-padding: 40px;
+
+/*
+@variable Close Link Color
+_id: new-variable--6Jfs
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$alert-close-x-color: #000;
+
+/*
+@variable Text Color
+_id: new-variable--skGg
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$alert-text-color: #004085;
+
+/*
+@group Alert Button Link
+_description:  
+*/
+
+/*
+@variable Alert Button Background Color
+_id: new-variable--GAqJ
+_description: Sets the background color of the button for the link field
+_link: 
+_deprecated: false
+*/
+
+$alert-btn-bg-color: $btn-bg-color;
+
+/*
+@variable Alert Button Background hover color
+_id: new-variable--BrRf
+_description: Sets the background color of the button link on mouseover
+_link: 
+_deprecated: false
+*/
+
+$alert-btn-hover-bg-color: $btn-hover-bg-color;
+
+/*
+@variable Alert Button Text Color
+_id: new-variable--wmFZ
+_description: Sets the text color of the button link
+_link: 
+_deprecated: false
+*/
+
+$alert-btn-text-color: $btn-text-color;
+
+/*
+@variable Alert Button Text Color on hover
+_id: new-variable--064K
+_description: Sets the text color of the button link on mouseover
+_link: 
+_deprecated: false
+*/
+
+$alert-btn-hover-text-color: $btn-hover-text-color;
+
+/*
+@variable Alert Button Border
+_id: new-variable--dAIg
+_description: Sets a border on the button link
+_link: 
+_deprecated: false
+*/
+
+$alert-btn-border: $btn-border;
+
+/*
+@variable Alert Button Border Color on hover
+_id: new-variable--2fnl
+_description: Sets the border color on the button link on mouseover
+_link: 
+_deprecated: false
+*/
+
+$alert-btn-hover-border-color: $btn-hover-border-color;
+
+/*
+@tab Bands in Town Embed
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: bands_in_town_embed
+*/
+
+/*
+@variable Section background color
+_id: new-variable--4hlj
+_description: Sets the background for the section.
+_link: 
+_deprecated: false
+*/
+
+$section-bit-bg-color: $section-default-bg-color;
+
+/*
+@variable Max Width
+_id: new-variable--Askm
+_description: Sets the max width of the B.I.T. content list of dates within the section.
+_link: 
+_deprecated: false
+*/
+
+$bit-feed-max-width: 800px;
+
+/*
+@group Section intro - title and body
+_description:  Text styles for the intro of the section
+*/
+
+/*
+@variable Section Title Color
+_id: new-variable--lKDX
+_description: Sets color for the section title
+_link: 
+_deprecated: false
+*/
+
+$section-bit-title-color: #fff;
+
+/*
+@variable Title Alignment
+_id: new-variable--4hpb
+_description: Text alignment for the section title in the section's intro
+_link: 
+_deprecated: false
+*/
+
+$section-bit-title-alignment: center;
+
+/*
+@variable Body Alignment
+_id: new-variable--5bn2
+_description: Sets text alignment for the description text in the section's intro
+_link: 
+_deprecated: false
+*/
+
+$section-bit-body-alignment: center;
+
+/*
+@variable Intro Body text color
+_id: section-bit-body-color
+_description: Sets color of the intro body text for the section
+_link: 
+_deprecated: false
+*/
+
+$section-bit-body-color: $base-text-color;
+
+/*
+@group Buttons and Links
+_description:  
+*/
+
+/*
+@variable Button Background Color
+_id: new-variable--J1rs
+_description: Default color for button background
+_link: 
+_deprecated: false
+*/
+
+$bit-link-color: $primary;
+
+/*
+@variable Button Background Color (Hover)
+_id: new-variable--zVJ6
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$bit-button-hover-bg-color: #fff;
+
+/*
+@variable Button Text Color
+_id: new-variable--3oHd
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$bit-button-text-color: #fff;
+
+/*
+@variable Button Text Color (Hover)
+_id: new-variable--UUUg
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$bit-button-text-hover-color: #000;
+
+/*
+@variable Button Border Radius
+_id: new-variable--hYKT
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$bit-button-border-radius: 50px;
+
+/*
+@variable Button Border Color (Hover)
+_id: new-variable--INSK
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$bit-button-hover-border-color: #fff;
+
+/*
+@variable Button Border Color
+_id: new-variable--6O0n
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$bit-button-border-color: $primary;
+
+/*
+@group Event Items
+_description:  Styles for elements within each event item.
+*/
+
+/*
+@variable Event Text Color
+_id: bit-text-color
+_description: Base text color for event details
+_link: 
+_deprecated: false
+*/
+
+$bit-text-color: #fff;
+
+/*
+@variable Event Details text color
+_id: new-variable--LRzp
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$bit-details-color: #ccc;
+
+/*
+@variable Venue Text Color
+_id: new-variable--6Ww1
+_description: Sets the color of the venue name in each item
+_link: 
+_deprecated: false
+*/
+
+$bit-venue-color: #fff;
+
+/*
+@variable Bottom Border Color
+_id: new-variable--PpEY
+_description: Sets the color of the bottom border of each event item
+_link: 
+_deprecated: false
+*/
+
+$bit-border-color: rgba(255,255,255,0.2);
+
+/*
+@variable Event Item Background Color
+_id: new-variable--MJhi
+_description: Sets background color on each event item.
+_link: 
+_deprecated: false
+*/
+
+$bit-event-bg-color: transparent;
+
+/*
+@variable Event Item Margin
+_id: new-variable--TDAa
+_description: Sets margin (spacing) between event items. Useful if setting a background color on event items. Values should in CSS margin shorthand: top/right/bottom/left
+_link: 
+_deprecated: false
+*/
+
+$bit-event-margin: 0 0 0 0;
+
+/*
+@variable Event Details background color on hover
+_id: new-variable--5zIh
+_description: Sets a background color on mouseover of an event's details.
+_link: 
+_deprecated: false
+*/
+
+$bit-details-bg-hover-color: rgba(100,100,100,0.15);
+
+/*
+@tab Business Information
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: business_information
+*/
+
+/*
+@variable Icon Color
+_id: new-variable--QBpT
+_description: Sets the color of the icons representing the types of information, such as location, phone number, etc
+_link: 
+_deprecated: false
+*/
+
+$section-biz-info-icon-color: $base-text-color;
+
+/*
+@group Section Settings
+_description:  
+*/
+
+/*
+@variable Background Color
+_id: new-variable--dAeq
+_description: Sets a background color on the business information section
+_link: 
+_deprecated: false
+*/
+
+$section-biz-info-bg-color: $section-default-bg-color;
+
+/*
+@variable Padding
+_id: new-variable--Cg1w
+_description: Sets the space between the outer edge of the section and the content inside
+_link: 
+_deprecated: false
+*/
+
+$section-biz-info-padding: 4vw;
+
+/*
+@group Section Intro: Title and Body
+_description:  
+*/
+
+/*
+@variable Title Alignment
+_id: new-variable--Ax24
+_description: Sets text alignment on the intro section title, if used
+_link: 
+_deprecated: false
+*/
+
+$section-biz-info-title-alignment: center;
+
+/*
+@variable Body Text Alignment
+_id: new-variable--wKjy
+_description: Sets text alignment on the intro body description for the section
+_link: 
+_deprecated: false
+*/
+
+$section-biz-info-body-alignment: center;
+
+/*
+@variable Section title color
+_id: section-biz-info-title-color
+_description: Sets color of the section title
+_link: 
+_deprecated: false
+*/
+
+$section-biz-info-title-color: $title-color;
+
+/*
+@variable Intro Body Text color
+_id: section-biz-info-body-color
+_description: Sets the color of the intro body description for the section
+_link: 
+_deprecated: false
+*/
+
+$section-biz-info-body-color: $base-text-color;
+
+/*
+@group Item Wrapper - (Around Each Group of Data)
+_description:  
+*/
+
+/*
+@variable Item Padding
+_id: new-variable--CmmN
+_description: Sets padding around each group of data. Helpful if implementing a background color on each group of data
+_link: 
+_deprecated: false
+*/
+
+$biz-info-item-padding: 20px;
+
+/*
+@variable Background
+_id: new-variable--esyF
+_description: Sets a background color on the individual data groups in the section
+_link: 
+_deprecated: false
+*/
+
+$biz-info-item-bg: transparent;
+
+/*
+@variable Font Size
+_id: new-variable--ajzJ
+_description: Sets the font size of the business data
+_link: 
+_deprecated: false
+*/
+
+$biz-info-item-font-size: 18px;
+
+/*
+@group Data details
+_description:  
+*/
+
+/*
+@variable Detail Color
+_id: new-variable--UIe6
+_description: Sets the text color of the data details
+_link: 
+_deprecated: false
+*/
+
+$section-biz-info-detail-color: $base-text-color;
+
+/*
+@variable Detail Font Size
+_id: new-variable--hitq
+_description: Sets the font size of the data details
+_link: 
+_deprecated: false
+*/
+
+$section-biz-info-detail-font-size: 1em;
+
+/*
+@group Links
+_description:  
+*/
+
+/*
+@variable Link Color
+_id: new-variable--bjM5
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-biz-info-link-color: $link-color;
+
+/*
+@variable Link Color (Hover)
+_id: new-variable--8TlP
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-biz-info-link-color-hover: $link-color-hover;
+
+/*
+@tab Cards Section
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: s2_cards
+*/
+
+/*
+@variable Section Background Color
+_id: new-variable--irOo
+_description: Sets a background color behind the entire cards section.
+_link: 
+_deprecated: false
+*/
+
+$section-cards-bg-color: transparent;
+
+/*
+@group Cards Section Intro: Title & Body
+_description:  
+*/
+
+/*
+@variable Title Color
+_id: new-variable--wSsN
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-cards-title-color: $title-color;
+
+/*
+@variable Title Alignment
+_id: new-variable--K1y0
+_description: Set the text case of the section title - none, uppercase, lowercase, capitalize
+_link: 
+_deprecated: false
+*/
+
+$section-cards-intro-title-alignment: center;
+
+/*
+@variable Body Text Color
+_id: new-variable--ucTQ
+_description: Sets the color of the intro description text
+_link: 
+_deprecated: false
+*/
+
+$section-cards-intro-color: $base-text-color;
+
+/*
+@variable Body Text Alignment
+_id: new-variable--CaZA
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-cards-intro-body-alignment: center;
+
+/*
+@group Individual Cards
+_description:  
+*/
+
+/*
+@variable Card Padding Unit
+_id: new-variable--GYax
+_description: Base Unit of spacing between card elements - around the image and body text
+_link: 
+_deprecated: false
+*/
+
+$card-padding: 30px;
+
+/*
+@variable Card Image Padding
+_id: card_image_padding
+_description: Outer space around image content only. Use $card-padding base value variable for consistency.
+_link: 
+_deprecated: false
+*/
+
+$card-image-padding: $card-padding $card-padding $card-padding $card-padding;
+
+/*
+@variable Card Text Padding
+_id: new-variable--Q9Wx
+_description: Outer space around text content only. Use $card-padding base value variable for consistency.
+_link: 
+_deprecated: false
+*/
+
+$card-text-padding: $card-padding;
+
+/*
+@variable Card Background Color
+_id: new-variable--QyUC
+_description: Card Background
+_link: 
+_deprecated: false
+*/
+
+$card-bg-color: #fff;
+
+/*
+@variable Card Border
+_id: new-variable--PlKt
+_description: Sets a border around entire card. Requires "0" for no border, or full value set: [border-width] [border-style] [border-color]
+_link: 
+_deprecated: false
+*/
+
+$card-border: 0px solid rgba(30, 30, 30, 0.2);
+
+/*
+@variable Card Border Radius
+_id: new-variable--vHbd
+_description: Set the border radius on the outer card edges
+_link: 
+_deprecated: false
+*/
+
+$card-border-radius: 15px;
+
+/*
+@variable Card Shadow
+_id: new-variable--Ac1m
+_description: A value added here puts a drop shadow around the card.  Requires shortcut format (offset-x | offset-y | blur-radius | color) or value of "none"
+_link: 
+_deprecated: false
+*/
+
+$card-shadow: none;
+
+/*
+@variable Card Shadow on hover
+_id: new-variable--6m1l
+_description: A value added here puts a drop shadow around the card on hover or mouseover.  Requires shortcut format (offset-x | offset-y | blur-radius | color) or value of "none"
+_link: 
+_deprecated: false
+*/
+
+$card-shadow-hover: 0 0 10px rgba(30,30,30,0.2);
+
+/*
+@group Card Images: Icons and photos
+_description:  
+*/
+
+/*
+@variable Card Image Margin
+_id: new-variable--jzNy
+_description: Set the margin around the card image.
+_link: 
+_deprecated: true
+_deprecation_version: v1
+_deprecation_info: This item is no longer being used in practice.
+_deprecation_link: 
+*/
+
+$card-image-margin: 0 auto 2rem auto;
+
+/*
+@variable Card Icon Width
+_id: new-variable--4eD0
+_description: Set the width of an uploaded image icon (svg)
+_link: 
+_deprecated: false
+*/
+
+$card-image-icon-width: 80%;
+
+/*
+@variable Card Icon Font Size
+_id: new-variable--8qQ9
+_description: Set size for FontAwesome icon
+_link: 
+_deprecated: false
+*/
+
+$card-icon-font-size: 80px;
+
+/*
+@variable Card Icon Color
+_id: new-variable--UZkB
+_description: Set color for FontAwesome icon
+_link: 
+_deprecated: false
+*/
+
+$card-icon-color: $primary;
+
+/*
+@variable Card Icon Background Color
+_id: new-variable--bzb9
+_description: Set a background color behind the FontAwesome icon
+_link: 
+_deprecated: false
+*/
+
+$card-icon-bg-color: transparent;
+
+/*
+@variable Card Icon Border Radius
+_id: new-variable--jmSS
+_description: Set a border radius on the FontAwesome icon wrapper
+_link: 
+_deprecated: false
+*/
+
+$card-icon-border-radius: 0;
+
+/*
+@variable Card Figcaption Display
+_id: new-variable--zyNW
+_description: Display caption on images or not. Value: none or block
+_link: 
+_deprecated: false
+*/
+
+$card-image-figcaption-display: none;
+
+/*
+@group Card Text
+_description:  
+*/
+
+/*
+@subgroup Card Title
+_description:  
+*/
+
+/*
+@variable Card Title Font Family
+_id: new-variable--NCSN
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$card-title-font-family: $title-font-family;
+
+/*
+@variable Card Title Font Weight
+_id: new-variable--9zHz
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$card-title-font-weight: $title-font-weight;
+
+/*
+@variable Card Title Font Alignment
+_id: new-variable--YQlA
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$card-title-alignment: center;
+
+/*
+@variable Card Title Border
+_id: new-variable--awDG
+_description: Sets a bottom border on the card title. Value of "0" for no border, otherwise use CSS border shorthand for size style color
+_link: 
+_deprecated: false
+*/
+
+$card-title-border: 0;
+
+/*
+@variable Card Title Font Color
+_id: new-variable--P5C7
+_description: Sets the color of the card title
+_link: 
+_deprecated: false
+*/
+
+$card-title-color: $title-on-light-color;
+
+/*
+@variable Card Title text transform
+_id: new-variable--7a9B
+_description: Set the text case of the title - none, uppercase, lowercase, capitalize
+_link: 
+_deprecated: false
+*/
+
+$card-title-text-transform: none;
+
+/*
+@variable Card Title Size (small)
+_id: new-variable--IsaG
+_description: font size for mobile
+_link: 
+_deprecated: false
+*/
+
+$card-title-sm: 20px;
+
+/*
+@variable Card Title Size (medium)
+_id: new-variable--ykr9
+_description: Font size for tablet
+_link: 
+_deprecated: false
+*/
+
+$card-title-md: 22px;
+
+/*
+@variable Card Title Size (large)
+_id: new-variable--dv1k
+_description: Font size for desktop
+_link: 
+_deprecated: false
+*/
+
+$card-title-lg: 24px;
+
+/*
+@subgroup Card Body Text
+_description:  
+*/
+
+/*
+@variable Card Body Font Size
+_id: new-variable--ojJ0
+_description: Set the font size of the card body text
+_link: 
+_deprecated: false
+*/
+
+$card-body-font-size: 16px;
+
+/*
+@variable Card Body Text Alignment
+_id: new-variable--fC38
+_description: Set the text alignment
+_link: 
+_deprecated: false
+*/
+
+$card-body-text-alignment: left;
+
+/*
+@variable Card Body Text Color
+_id: new-variable--saiL
+_description: Set body text color
+_link: 
+_deprecated: false
+*/
+
+$card-body-text-color: $text-on-light-color;
+
+/*
+@variable Sets a background color on the text
+_id: card-body-bg-color
+_description: Set background color behind card body text
+_link: 
+_deprecated: false
+*/
+
+$card-body-bg-color: transparent;
+
+/*
+@group Cards Grid
+_description:  Variables to define the card width and the gap between card in a grid layout
+*/
+
+/*
+@subgroup Grid Item Width
+_description:  Sets the width of cards in a card section. Classes are added in the "Custom Class" field for the whole section.
+*/
+
+/*
+@variable Grid Width Unit
+_id: new-variable--b9sV
+_description: This is the base value the width classes use as a multiplier to calculate width.
+_link: 
+_deprecated: false
+*/
+
+$grid-width-unit: 100px;
+
+/*
+@variable Grid Width Unit x 1
+_id: new-variable--ntpA
+_description: Calculates width by multiplying the $grid-width-unit by 1
+_link: 
+_deprecated: false
+*/
+
+$grid-width-1: calc(#{$grid-width-unit} * 1);
+
+/*
+@variable Grid Width Unit x 2
+_id: new-variable--CCdg
+_description: Calculates width by multiplying the $grid-width-unit by 2
+_link: 
+_deprecated: false
+*/
+
+$grid-width-2: calc(#{$grid-width-unit} * 2);
+
+/*
+@variable Grid Width Unit x 3
+_id: new-variable--Dk7e
+_description: Calculates width by multiplying the $grid-width-unit by 3
+_link: 
+_deprecated: false
+*/
+
+$grid-width-3: calc(#{$grid-width-unit} * 3);
+
+/*
+@variable Grid Width Unit x 4
+_id: new-variable--cD0i
+_description: Calculates width by multiplying the $grid-width-unit by 4
+_link: 
+_deprecated: false
+*/
+
+$grid-width-4: calc(#{$grid-width-unit} * 4);
+
+/*
+@variable Grid Width Unit x 5
+_id: new-variable--jRLB
+_description: Calculates width by multiplying the $grid-width-unit by 5
+_link: 
+_deprecated: false
+*/
+
+$grid-width-5: calc(#{$grid-width-unit} * 5);
+
+/*
+@variable Grid Width Unit x 6
+_id: new-variable--7Hk4
+_description: Calculates width by multiplying the $grid-width-unit by 6
+_link: 
+_deprecated: false
+*/
+
+$grid-width-6: calc(#{$grid-width-unit} * 6);
+
+/*
+@variable Grid Width Unit x 7
+_id: new-variable--oTpT
+_description: Calculates width by multiplying the $grid-width-unit by 7
+_link: 
+_deprecated: false
+*/
+
+$grid-width-7: calc(#{$grid-width-unit} * 7);
+
+/*
+@variable Grid Width Unit x 8
+_id: new-variable--B7xT
+_description: Calculates width by multiplying the $grid-width-unit by 8
+_link: 
+_deprecated: false
+*/
+
+$grid-width-8: calc(#{$grid-width-unit} * 8);
+
+/*
+@variable Grid Width Unit x 9
+_id: new-variable--wHKo
+_description: Calculates width by multiplying the $grid-width-unit by 9
+_link: 
+_deprecated: false
+*/
+
+$grid-width-9: calc(#{$grid-width-unit} * 9);
+
+/*
+@variable Grid Width Unit x 10
+_id: new-variable--bmEb
+_description: Calculates width by multiplying the $grid-width-unit by 10
+_link: 
+_deprecated: false
+*/
+
+$grid-width-10: calc(#{$grid-width-unit} * 10);
+
+/*
+@subgroup Grid Item Gap
+_description:  Defines the gap between items in a grid layout
+*/
+
+/*
+@variable Grid Gap Unit
+_id: new-variable--eGyp
+_description: This is the base value the grid gap classes use as a multiplier to calculate gap width.
+_link: 
+_deprecated: false
+*/
+
+$grid-gap-unit: 20px;
+
+/*
+@variable Gap Unit x 0 - NO GAP
+_id: new-variable--hO0k
+_description: Multiplies the $grid-gap-unit x 0
+_link: 
+_deprecated: false
+*/
+
+$gap-0: calc(#{$grid-gap-unit} * 0);
+
+/*
+@variable Gap Unit x 1
+_id: new-variable--96Af
+_description: Multiplies the $grid-gap-unit x 1
+_link: 
+_deprecated: false
+*/
+
+$gap-1: calc(#{$grid-gap-unit} * 1);
+
+/*
+@variable Gap Unit x 1.5
+_id: new-variable--KoLo
+_description: Multiplies the $grid-gap-unit x 1.5
+_link: 
+_deprecated: false
+*/
+
+$gap-2: calc(#{$grid-gap-unit} * 1.5);
+
+/*
+@variable Gap Unit x 2
+_id: new-variable--4g0P
+_description: Multiplies the $grid-gap-unit x 2
+_link: 
+_deprecated: false
+*/
+
+$gap-3: calc(#{$grid-gap-unit} * 2);
+
+/*
+@variable Gap Unit x 2.5
+_id: new-variable--GT04
+_description: Multiplies the $grid-gap-unit x 2.5
+_link: 
+_deprecated: false
+*/
+
+$gap-4: calc(#{$grid-gap-unit} * 2.5);
+
+/*
+@variable Gap Unit x 3
+_id: new-variable--T5Gg
+_description: Multiplies the $grid-gap-unit x 3
+_link: 
+_deprecated: false
+*/
+
+$gap-5: calc(#{$grid-gap-unit} * 3);
+
+/*
+@variable Gap Unit x 3.5
+_id: new-variable--J5dt
+_description: Multiplies the $grid-gap-unit x 3.5
+_link: 
+_deprecated: false
+*/
+
+$gap-6: calc(#{$grid-gap-unit} * 3.5);
+
+/*
+@variable Gap Unit x 4
+_id: new-variable--BlFs
+_description: Multiplies the $grid-gap-unit x 4
+_link: 
+_deprecated: false
+*/
+
+$gap-7: calc(#{$grid-gap-unit} * 4);
+
+/*
+@variable Gap Unit x 4.5
+_id: new-variable--POjD
+_description: Multiplies the $grid-gap-unit x 4.5
+_link: 
+_deprecated: false
+*/
+
+$gap-8: calc(#{$grid-gap-unit} * 4.5);
+
+/*
+@variable Gap Unit x 5
+_id: new-variable--X4BE
+_description: Multiplies the $grid-gap-unit x 5
+_link: 
+_deprecated: false
+*/
+
+$gap-9: alc(#{$grid-gap-unit} * 5);
+
+/*
+@variable Gap Unit x 5.5
+_id: new-variable--vjwU
+_description: Multiplies the $grid-gap-unit x 5.5
+_link: 
+_deprecated: false
+*/
+
+$gap-10: calc(#{$grid-gap-unit} * 5.5);
+
+/*
+@tab Elfsight Widget
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: elfsight_widget_embed
+*/
+
+/*
+@variable Background Color
+_id: new-variable--zDf4
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-elfsight-bg-color: $section-default-bg-color;
+
+/*
+@variable Title Alignment
+_id: new-variable--rNbQ
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-elfsight-title-alignment: center;
+
+/*
+@variable Body Alignment
+_id: new-variable--81fw
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-elfsight-body-alignment: center;
+
+/*
+@variable Max Width
+_id: new-variable--iDrr
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$elfsight-feed-max-width: 100%;
+
+/*
+@tab General Embed
+_description: A section to place embed codes for different media types, such as video, forms, etc.
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: s2_embed
+*/
+
+/*
+@variable Embed Section Background Color
+_id: new-variable--CFii
+_description: Set a background color on the section
+_link: 
+_deprecated: false
+*/
+
+$section-general-embed-bg-color: $section-default-bg-color;
+
+/*
+@variable Embed Section Title Alignment
+_id: new-variable--zrBe
+_description: Set the text alignment of the section title
+_link: 
+_deprecated: false
+*/
+
+$section-general_embed-title-alignment: center;
+
+/*
+@variable Embed Section Body Alignment
+_id: new-variable--cNvy
+_description: Set the alignment of the body text
+_link: 
+_deprecated: false
+*/
+
+$section-general_embed-body-alignment: center;
+
+/*
+@variable Embed Max Width
+_id: new-variable--acmX
+_description: Set the max width of the embedded content
+_link: 
+_deprecated: false
+*/
+
+$embed-wrapper-max-width: 100%;
+
+/*
+@variable Embed Padding (Small)
+_id: new-variable--Bkr5
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$embed-wrapper-padding-sm: 0 5vw;
+
+/*
+@variable Padding (Large)
+_id: new-variable--YprD
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$embed-wrapper-padding-lg: 0 5vw;
+
+/*
+@variable Video Embed Background Color
+_id: new-variable--rCx6
+_description: 
+_link: 
+_deprecated: true
+_deprecation_version: v1
+_deprecation_info: 
+_deprecation_link: 
+*/
+
+$video-embed-section-bg: $section-default-bg-color;
+
+/*
+@variable Video Embed Section Padding
+_id: new-variable--PnJv
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$video-embed-section-padding: 8vw 8vw;
+
+/*
+@tab Google Map
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: google_map
+*/
+
+/*
+@variable Background Color
+_id: new-variable--YoC6
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-map-bg-color: $black;
+
+/*
+@variable Height
+_id: new-variable--ny7D
+_description: Set the height of the map display.
+_link: 
+_deprecated: false
+*/
+
+$map-height: 500px;
+
+/*
+@tab Hero Section
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: hero_section
+*/
+
+/*
+@group Background
+_description:  
+*/
+
+/*
+@variable Background Color
+_id: new-variable--yYSN
+_description: Sets a background color on the section.
+_link: 
+_deprecated: false
+*/
+
+$section_hero_bg_color: $section-default-bg-color;
+
+/*
+@variable Padding
+_id: new-variable--Fb6m
+_description: Adds padding to the outermost container of the hero section.
+_link: 
+_deprecated: false
+*/
+
+$section_hero_padding: 0;
+
+/*
+@group Background Image
+_description:  
+*/
+
+/*
+@variable Size
+_id: new-variable--TboH
+_description: Sets the background size of the hero image. Requires CSS values for background-size.
+_link: 
+_deprecated: false
+*/
+
+$hero-bg-size: cover;
+
+/*
+@variable Position
+_id: new-variable--ILE7
+_description: CSS background-position value. Sets the position of the bg image on the X and Y axis.
+_link: 
+_deprecated: false
+*/
+
+$hero-bg-position: center center;
+
+/*
+@variable Fixed Effect Height (Mobile)
+_id: new-variable--Voyr
+_description: Sets the height of the hero in mobile when using a fixed background image. Default is "iPhone X" height, portrait orientation
+_link: 
+_deprecated: false
+*/
+
+$fixed-effect-max-height-mobile: 812px;
+
+/*
+@group Hero Height
+_description:  
+*/
+
+/*
+@variable Height (mobile)
+_id: new-variable--3IZW
+_description: Sets the height of the Hero Section for mobile devices. Recommended to use "vh" units. 100vh = 100% of the device screen height.
+_link: 
+_deprecated: false
+*/
+
+$hero-min-height-sm: 100vh;
+
+/*
+@variable Height (Tablet and Desktop)
+_id: new-variable--cspr
+_description: Sets the height of the hero section. A value of 100vh will be the full height of the viewport on any device.
+_link: 
+_deprecated: false
+*/
+
+$hero-min-height-lg: 100vh;
+
+/*
+@group Hero Height - HOME ONLY
+_description: Sets the height of the home page hero only. 
+*/
+
+/*
+@variable Height (mobile)
+_id: new-variable--i0gh
+_description: Sets the height of the HOME Hero Section for mobile devices. Recommended to use "vh" units. 100vh = 100% of the device screen height.
+_link: 
+_deprecated: false
+*/
+
+$hero-home-min-height-sm: $hero-min-height-sm;
+
+/*
+@variable Height (Tablet and Desktop)
+_id: new-variable--djgv
+_description: Sets the height of the hero section. A value of 100vh will be the full height of the viewport on any device.
+_link: 
+_deprecated: false
+*/
+
+$hero-home-min-height-lg: $hero-min-height-lg;
+
+/*
+@group Hero Overlay
+_description:  
+*/
+
+/*
+@variable Overlay Color
+_id: new-variable--XnQK
+_description: Sets a color, ideally not fully opaque, between the bg image and the text content. Useful for reducing contrast so text is legible.
+_link: 
+_deprecated: false
+*/
+
+$hero-overlay-color: rgba(0,0,0,0.6);
+
+/*
+@variable Overlay Color (Mobile)
+_id: new-variable--zQbW
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-mobile-overlay-color: rgba(0,0,0,0.6);
+
+/*
+@group Wrappers
+_description:  
+*/
+
+/*
+@variable Inner Wrapper Padding
+_id: new-variable--uSYU
+_description: Sets padding on the container inside the hero section with the class .hero-wrapper
+_link: 
+_deprecated: false
+*/
+
+$hero-wrapper-padding: 0;
+
+/*
+@variable Title Wrapper Margin
+_id: new-variable--3FFV
+_description: Sets margin, space between items, on the wrapper around the hero title
+_link: 
+_deprecated: false
+*/
+
+$hero-title-wrapper-margin: 0px;
+
+/*
+@variable Title Wrapper Padding
+_id: new-variable--3FFR
+_description: Sets padding, or spacing around, the title. Helpful when adding a bg color to the title.
+_link: 
+_deprecated: false
+*/
+
+$hero-title-wrapper-padding: 0px;
+
+/*
+@subgroup Content Wrapper
+_description:  The hero content wrapper contains the hero logo and the hero title and subtitle.
+*/
+
+/*
+@variable Wrapper Background
+_id: new-variable--y8dW
+_description: Sets a background on the hero content wrapper
+_link: 
+_deprecated: false
+*/
+
+$hero-content-wrapper-bg: transparent;
+
+/*
+@variable Wrapper Padding (Small)
+_id: new-variable--Rujm
+_description: Sets padding space inside the hero content wrapper between the wrapper and its contents. This is useful when added a bg color to this wrapper
+_link: 
+_deprecated: false
+*/
+
+$hero-content-wrapper-padding-sm: 4vw;
+
+/*
+@variable Wrapper Padding (Medium)
+_id: new-variable--hzW9
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-content-wrapper-padding-md: 4vw;
+
+/*
+@variable Wrapper Padding (Large)
+_id: new-variable--bHbM
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-content-wrapper-padding-lg: 4vw;
+
+/*
+@variable Wrapper Margin (Small)
+_id: new-variable--YnVT
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-content-wrapper-margin-sm: 0;
+
+/*
+@variable Wrapper Margin (Medium)
+_id: new-variable--io3R
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-content-wrapper-margin-md: 0;
+
+/*
+@variable Wrapper Margin (Large)
+_id: new-variable--bjSM
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-content-wrapper-margin-lg: 0;
+
+/*
+@variable Wrapper Max Width (Small)
+_id: new-variable--n1BS
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-content-wrapper-max-width-sm: 90vw;
+
+/*
+@variable Wrapper Max Width (Medium)
+_id: new-variable--dz0T
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-content-wrapper-max-width-md: 70vw;
+
+/*
+@variable Wrapper Max Width (Large)
+_id: new-variable--vYRm
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-content-wrapper-max-width-lg: 60vw;
+
+/*
+@variable Wrapper Alignment (Mobile)
+_id: new-variable--o2mL
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-content-align-mobile: flex-end;
+
+/*
+@variable Content wrapper border radius
+_id: new-variable--ziKh
+_description: Sets a border radius - roundness - to the edges of the content wrapper
+_link: 
+_deprecated: false
+*/
+
+$hero-content-wrapper-border-radius: 0px;
+
+/*
+@group Logo
+_description:  
+*/
+
+/*
+@variable Logo Width (Small)
+_id: new-variable--5a4H
+_description: Sets the logo width in a mobile device layout. Default value is a percentage of the viewport's width
+_link: 
+_deprecated: false
+*/
+
+$hero-logo-width-sm: 80vw;
+
+/*
+@variable Logo Max Width (Small)
+_id: new-variable--3Wp2
+_description: Sets the maximum logo width in a mobile device layout.
+_link: 
+_deprecated: false
+*/
+
+$hero-logo-max-width-sm: 250px;
+
+/*
+@variable Logo Width (Medium)
+_id: new-variable--NJcx
+_description: Sets the logo width in a tablet device layout. Default value is a percentage of the viewport's width
+_link: 
+_deprecated: false
+*/
+
+$hero-logo-width-md: 40vw;
+
+/*
+@variable Logo Max Width (Medium)
+_id: new-variable--pLuN
+_description: Sets a maximum width the logo will appear on a tablet's device width
+_link: 
+_deprecated: false
+*/
+
+$hero-logo-max-width-md: 400px;
+
+/*
+@variable Logo Width (Large)
+_id: new-variable--3Qxh
+_description: Sets a width for the logo on a desktop device. Default value is a percentage of the viewport's width
+_link: 
+_deprecated: false
+*/
+
+$hero-logo-width-lg: 30vw;
+
+/*
+@variable Logo Max Width (Large)
+_id: new-variable--fHc5
+_description: Sets a maximum width the logo will appear on a desktop device.
+_link: 
+_deprecated: false
+*/
+
+$hero-logo-max-width-lg: 600px;
+
+/*
+@variable Logo Margin
+_id: new-variable--MavG
+_description: Sets space between the logo and the titles within the hero content
+_link: 
+_deprecated: false
+*/
+
+$hero-logo-margin: 0 0 30px 0;
+
+/*
+@group H1 Heading
+_description:  
+*/
+
+/*
+@variable Title Font Family
+_id: new-variable--AgMR
+_description: Sets the font family for the hero title
+_link: 
+_deprecated: false
+*/
+
+$hero-title-font-family: $title-font-family;
+
+/*
+@variable Title Font Weight
+_id: new-variable--3r67
+_description: Sets font weight for the hero title
+_link: 
+_deprecated: false
+*/
+
+$hero-title-font-weight: $title-font-weight;
+
+/*
+@variable Title Margin
+_id: new-variable--mjTD
+_description: Sets the margin, space between items, around the hero title.
+_link: 
+_deprecated: false
+*/
+
+$hero-title-margin: 0 0 0.5em 0;
+
+/*
+@variable Title Font Color
+_id: new-variable--hCVO
+_description: Sets the color of the hero title.
+_link: 
+_deprecated: false
+*/
+
+$hero-title-color: $title-color;
+
+/*
+@variable Title Font Alignment
+_id: new-variable--VLCp
+_description: Sets text alignment on the hero title
+_link: 
+_deprecated: false
+*/
+
+$hero-title-alignment: center;
+
+/*
+@variable Title Size (Small)
+_id: new-variable--Smsb
+_description: Sets the font size of the hero title in mobile
+_link: 
+_deprecated: false
+*/
+
+$hero-title-sm: 30px;
+
+/*
+@variable Title Size (Medium)
+_id: new-variable--Wk0c
+_description: Sets the size of the hero title on tablet devices
+_link: 
+_deprecated: false
+*/
+
+$hero-title-md: 38px;
+
+/*
+@variable Title Size (Large)
+_id: new-variable--EnZs
+_description: Sets the font size of the hero title on desktop
+_link: 
+_deprecated: false
+*/
+
+$hero-title-lg: 42px;
+
+/*
+@variable Title Text Transform
+_id: new-variable--ph2H
+_description: Transform the case of the title - none, uppercase, lowercase, capitalize
+_link: 
+_deprecated: false
+*/
+
+$hero-title-text-transform: none;
+
+/*
+@group H2 Subtitle
+_description:  
+*/
+
+/*
+@variable Subtitle Font Family
+_id: new-variable--vsJo
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-subtitle-font-family: $base-font-family;
+
+/*
+@variable Subtitle Font Weight
+_id: new-variable--1l6W
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-subtitle-font-weight: normal;
+
+/*
+@variable Subtitle Margin
+_id: new-variable--zSHW
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-subtitle-margin: 0 0 1.5em 0;
+
+/*
+@variable Subitle Font Color
+_id: new-variable--BJee
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-subtitle-color: $title-color;
+
+/*
+@variable Subtitle Font Alignment
+_id: new-variable--PfOs
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-subtitle-alignment: center;
+
+/*
+@variable Subtitle Size (Small)
+_id: new-variable--yU0t
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-subtitle-sm: 18px;
+
+/*
+@variable Subtitle Size (Medium)
+_id: new-variable--qeDy
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-subtitle-md: 20px;
+
+/*
+@variable Subtitle Size (Large)
+_id: new-variable--gh1k
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-subtitle-lg: 24px;
+
+/*
+@variable Subtitle text transform
+_id: new-variable--uAxA
+_description: Transform the case of the subtitle - none, uppercase, lowercase, capitalize
+_link: 
+_deprecated: false
+*/
+
+$hero-subtitle-text-transform: none;
+
+/*
+@group Button Link
+_description:  
+*/
+
+/*
+@variable Link Alignment
+_id: new-variable--GCE1
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-link-alignment: center;
+
+/*
+@group Two Column Layout
+_description:  
+*/
+
+/*
+@variable Hero 2-column - content alignment
+_id: hero-2col-align-items
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-2col-align-items: center;
+
+/*
+@variable Hero 2-column - left item - margin
+_id: hero-2col-left-item-margin
+_description: Set the space between the image item and the text item
+_link: 
+_deprecated: false
+*/
+
+$hero-2col-left-item-margin: 5vw;
+
+/*
+@group Minimal Hero Style
+_description:   This style goes with the class .hero-minimal, which when added to a hero makes it small and focused on the label.
+*/
+
+/*
+@variable Minimal Hero BG Color
+_id: hero-min-bg-color
+_description: The background color of the hero in minimal style
+_link: 
+_deprecated: false
+*/
+
+$hero-min-bg-color: transparent;
+
+/*
+@variable Minimal Hero Padding
+_id: hero-min-padding
+_description: Padding around the hero in minimal style
+_link: 
+_deprecated: false
+*/
+
+$hero-min-padding: 5vw 40px;
+
+/*
+@variable Minimal Hero Content - max Width - in tablet and desktop device widths
+_id: hero-min-content-wrapper-max-width
+_description: Padding around the hero in minimal style
+_link: 
+_deprecated: false
+*/
+
+$hero-min-content-wrapper-max-width: 40vw;
+
+/*
+@subgroup Hero Minimal - Title, Subtitle, and Link
+_description:   Styles for the title, subtitle, and link of the minimal hero
+*/
+
+/*
+@variable Hero Minimal - Title Wrapper Margin
+_id: new-variable--Pqci
+_description: Sets margin on the title wrapper. Format = [top] [right] [bottom] [left]
+_link: 
+_deprecated: false
+*/
+
+$hero-min-title-wrapper-margin: 0px;
+
+/*
+@variable Hero Minimal - Title Wrapper Padding
+_id: hero-min-title-wrapper-padding
+_description: Sets margin on the title wrapper. Format = [top] [right] [bottom] [left]
+_link: 
+_deprecated: false
+*/
+
+$hero-min-title-wrapper-padding: 0px;
+
+/*
+@variable Font Family
+_id: new-variable--MljH
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-min-title-font-family: $title-font-family;
+
+/*
+@variable Title Margin
+_id: new-variable--mjvv
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-min-title-margin: 0 0 0.5em 0;
+
+/*
+@variable Title Color
+_id: new-variable--uZaL
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-min-title-color: $title-color;
+
+/*
+@variable Title Alignment
+_id: new-variable--VWu6
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-min-title-alignment: center;
+
+/*
+@variable Subtitle Font Family
+_id: new-variable--lOBD
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-min-subtitle-font-family: $base-font-family;
+
+/*
+@variable Subtitle Margin
+_id: new-variable--Cyae
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-min-subtitle-margin: 0 0 1.5em 0;
+
+/*
+@variable Subtitle Text Color
+_id: new-variable--S3hG
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-min-subtitle-color: $subtitle-color;
+
+/*
+@variable Subtitle Alignment
+_id: new-variable--SBKa
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$hero-min-subtitle-alignment: center;
+
+/*
+@tab Image Section
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: s2_image
+*/
+
+/*
+@variable Section Background Color
+_id: new-variable--PoXC
+_description: Sets a background color on the section.
+_link: 
+_deprecated: false
+*/
+
+$section-image-bg-color: transparent;
+
+/*
+@variable Mobile Height
+_id: new-variable--3d4h
+_description: Set the section max height in mobile devices
+_link: 
+_deprecated: false
+*/
+
+$section-image-height-mobile: 80vh;
+
+/*
+@variable Desktop Height
+_id: new-variable--4wAV
+_description: Set the section max height in desktop devices
+_link: 
+_deprecated: false
+*/
+
+$section-image-height-lg: 80vh;
+
+/*
+@tab Image & Text
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: s2_story_block
+*/
+
+/*
+@group Text L/R, Image L/R layouts
+_description:  Governs all "Left Text Right Image" and "Right Text Left Image" display modes (set in the editor form)
+*/
+
+/*
+@variable Left Text - Title Alignment
+_id: new-variable--mxUH
+_description: Sets default text alignment for the title in sections set to the Left Text, Right Image layout
+_link: 
+_deprecated: false
+*/
+
+$sb-left-text-title-alignment: left;
+
+/*
+@variable Right Text - Title Alignment
+_id: new-variable--lBGw
+_description: Sets default text alignment for the title in sections set to the Left Image, Right Text layout
+_link: 
+_deprecated: false
+*/
+
+$sb-right-text-title-alignment: left;
+
+/*
+@variable Link Alignment
+_id: new-variable--DBlq
+_description: Sets alignment for the link (button) in the section. Values are left, center, or right
+_link: 
+_deprecated: false
+*/
+
+$sb-link-alignment: left;
+
+/*
+@variable Extra Image Width
+_id: new-variable--nLDZ
+_description: Sets a default width for an extra image in the section.
+_link: 
+_deprecated: false
+*/
+
+$sb-extra-image-width: 40vw;
+
+/*
+@variable Extra Image Max Width
+_id: new-variable--4F6s
+_description: Sets a maximum width for an extra image.
+_link: 
+_deprecated: false
+*/
+
+$sb-extra-image-max-width: 200px;
+
+/*
+@variable Extra Image Alignment
+_id: new-variable--a19H
+_description: Sets alignment of the extra image within its container. Must be a flexbox value for justify-content.
+_link: 
+_deprecated: false
+*/
+
+$sb-extra-image-align: center;
+
+/*
+@group Center Text Full BG Image layout
+_description:  
+*/
+
+/*
+@variable Title Alignment
+_id: new-variable--b9bU
+_description: Sets text alignment of the section title
+_link: 
+_deprecated: false
+*/
+
+$sb-center-full-img-title-alignment: center;
+
+/*
+@variable Subtitle Alignment
+_id: new-variable--ABTq
+_description: Sets H3 subtitle text alignment. Values: left, right, or center. (Note: H3 must be added in text editor.)
+_link: 
+_deprecated: false
+*/
+
+$sb-center-full-img-subtitle-alignment: center;
+
+/*
+@variable Text Alignment
+_id: new-variable--ILMK
+_description: Sets text alignment for the body text. Values are left, right, center
+_link: 
+_deprecated: false
+*/
+
+$sb-center-full-img-text-alignment: left;
+
+/*
+@variable Link Alignment
+_id: new-variable--62u3
+_description: Sets alignment for the link (button) in the section. Values are left, right, center
+_link: 
+_deprecated: false
+*/
+
+$sb-center-full-link-alignment: center;
+
+/*
+@variable Text Max Width
+_id: new-variable--BhUr
+_description: Sets the max width on the text of the section. 38em default amounts to ~70-82 characters wide, which is optimum for reading long text blocks.
+_link: 
+_deprecated: false
+*/
+
+$sb-center-full-text-max-width: 38em;
+
+/*
+@variable Title Only Display - set padding
+_id: new-variable--kk5x
+_description: Sets the padding when using the .sb-title-only class to modify the Center Text Image & Text block for use as a title only heading or separator.
+_link: 
+_deprecated: false
+*/
+
+$sb-title-only-padding: 4vw;
+
+/*
+@group Image Top, Text bottom layout
+_description:  
+*/
+
+/*
+@variable Image Padding
+_id: new-variable--xCJH
+_description: Sets spacing around the outside of the image for all sections of the layout "Image Top, Text bottom"
+_link: 
+_deprecated: false
+*/
+
+$sb-img-top_image-padding: 0px;
+
+/*
+@variable Image Bottom Margin
+_id: new-variable--AlPg
+_description: Sets a margin-bottom value on the image wrapper to create spacing between it and text below it. Note: this value will add to any bottom padding if set in the "Image Padding" variable.
+_link: 
+_deprecated: false
+*/
+
+$sb-img-top_image-margin: 4vw;
+
+/*
+@variable Image Container Height
+_id: new-variable--lv3U
+_description: Sets the height of the top image. Value units in "vw" or "vh" recommended.
+_link: 
+_deprecated: false
+*/
+
+$sb-img-top_bg-height: 50vw;
+
+/*
+@variable Title Alignment
+_id: new-variable--iaVn
+_description: Sets text alignment for the section title
+_link: 
+_deprecated: false
+*/
+
+$sb-img-top_title-alignment: center;
+
+/*
+@variable Subtitle Alignment
+_id: new-variable--DGKD
+_description: Sets H3 subtitle text alignment. Values: left, right, or center. (Note: H3 must be added in text editor.)
+_link: 
+_deprecated: false
+*/
+
+$sb-img-top_subtitle-alignment: center;
+
+/*
+@variable Body Text Alignment
+_id: new-variable--TKTC
+_description: Sets text alignment for body text in the section. Values: left, right or center
+_link: 
+_deprecated: false
+*/
+
+$sb-img-top_text-alignment: left;
+
+/*
+@variable Link Alignment
+_id: new-variable--XzXv
+_description: Sets the alignment of the link or button. Values: left, right or center
+_link: 
+_deprecated: false
+*/
+
+$sb-img-top_link-alignment: center;
+
+/*
+@group Alternate spacing options
+_description:  
+*/
+
+/*
+@variable Outer Wrapper Padding
+_id: new-variable--snyq
+_description: Set a background for the entire section content area.
+_link: https://fileswift.com/documentation/image-text/alternate-spacing-options#padding
+_deprecated: false
+*/
+
+$sb-outer-padding: 0;
+
+/*
+@variable Content Wrapper Padding
+_id: new-variable--WIDT
+_description: Set a padding amount to create an offset between the block edges and the content within.
+_link: https://fileswift.com/documentation/image-text/alternate-spacing-options#padding
+_deprecated: false
+*/
+
+$sb-content-block-padding: 0;
+
+/*
+@variable Content Wrapper Background
+_id: new-variable--zAId
+_description: Set a background for the entire section content area.
+_link: https://fileswift.com/documentation/image-text/alternate-spacing-options#background
+_deprecated: false
+*/
+
+$sb-content-block-bg: transparent;
+
+/*
+@group Text Area Layout Options
+_description:  
+*/
+
+/*
+@variable Text Wrapper Background
+_id: new-variable--5aGS
+_description: Set a background color on the text area. Recommended to set Text Wrapper Padding value to achieve space between wrapper edge and the start of the text. Set padding on the text area. Useful to separate text from a background image by defining a "box" around text. (For more variation, instead use the custom classes "text-wrapper-dark" and "text-wrapper-light", and the variables are under "Dark/Light Theme Context" group.)
+_link: 
+_deprecated: false
+*/
+
+$sb-text-wrapper-bg: transparent;
+
+/*
+@variable Text Wrapper Padding
+_id: new-variable--Dw7Y
+_description: Set padding on the text area. Useful to separate text from a background image by defining a "box" around text. (For more variation, instead use the custom classes "text-wrapper-dark" and "text-wrapper-light", and the variables are under "Dark/Light Theme Context" group.)
+_link: 
+_deprecated: false
+*/
+
+$sb-text-wrapper-padding: 0;
+
+/*
+@group Helper Defaults
+_description: Settings to aid visibility on section creation.
+*/
+
+/*
+@variable Image Wrapper Background Color
+_id: new-variable--OAoj
+_description: When a view mode is selected for a block that uses a bg image, and no image has been uploaded, this color is there to indicate where an image would appear.
+_link: 
+_deprecated: false
+*/
+
+$sb-image-wrapper-bg-color: transparent;
+
+/*
+@tab Image & Text Carousel
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: s2_slides
+*/
+
+/*
+@variable Wrapper Background Color
+_id: new-variable--YcpX
+_description: Sets a background color of the entire section.
+_link: 
+_deprecated: false
+*/
+
+$section-text-slide-bg-color: $section-default-bg-color;
+
+/*
+@group Pagination (Navigation at the bottom of the section)
+_description:  Governs the bullets, or dots, that appear at the bottom of a carousel that function as navigation between slides
+*/
+
+/*
+@variable Bullet Color
+_id: new-variable--ehT2
+_description: Sets the color of the slide navigation bullets, or dots.
+_link: 
+_deprecated: false
+*/
+
+$swiper-pagination-bullet-color: $white;
+
+/*
+@variable Active Slide Bullet Color
+_id: new-variable--wukO
+_description: Sets the color of the active slide's navigation bullet, or dot
+_link: 
+_deprecated: false
+*/
+
+$swiper-pagination-bullet-active-color: $white;
+
+/*
+@variable Bullet Dot Size
+_id: new-variable--spZL
+_description: Sets the size of the navigation bullet, or dot
+_link: 
+_deprecated: false
+*/
+
+$swiper-pagination-dot-size: 20px;
+
+/*
+@group Intro Title & Body
+_description:  
+*/
+
+/*
+@variable Section title color
+_id: new-variable--pvv2
+_description: Sets the color of the section title
+_link: 
+_deprecated: false
+*/
+
+$section-text-slide-title-color: $base-text-color;
+
+/*
+@variable Section Title Alignment
+_id: new-variable--r3hN
+_description: Sets text alignment for the section title. Values are left, right, and center
+_link: 
+_deprecated: false
+*/
+
+$section-text-slide-title-alignment: center;
+
+/*
+@variable Intro Body text color
+_id: new-variable--c0P5
+_description: Sets the color of the intro text, not the slides themselves.
+_link: 
+_deprecated: false
+*/
+
+$section-text-slide-body-text-color: $base-text-color;
+
+/*
+@variable Intro Body Text Alignment
+_id: new-variable--StRB
+_description: Sets text alignment for the intro body text. Values are left, right, and center
+_link: 
+_deprecated: false
+*/
+
+$section-text-slide-body-alignment: center;
+
+/*
+@group Individual Slides
+_description:  
+*/
+
+/*
+@variable Overlay Background Color
+_id: new-variable--BkEc
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$swiper-overlay-bg-color: rgba(0,0,0,0.4);
+
+/*
+@variable Slide Height
+_id: new-variable--rpDI
+_description: Sets the default minimum slide height
+_link: 
+_deprecated: false
+*/
+
+$swiper-text-slide-height: 60vh;
+
+/*
+@variable Slide Height (Mobile)
+_id: new-variable--1qS9
+_description: Sets the default minimum slide height on mobile devices
+_link: 
+_deprecated: false
+*/
+
+$swiper-text-slide-height-mobile: 90vh;
+
+/*
+@variable Slide Title Color
+_id: new-variable--gJQm
+_description: Set the color of the title in the slide itself
+_link: 
+_deprecated: false
+*/
+
+$slide-title-color: $base-text-color;
+
+/*
+@variable Slide Title Alignment
+_id: new-variable--bXh0
+_description: Sets text alignment on the slide title
+_link: 
+_deprecated: false
+*/
+
+$slide-title-alignment: center;
+
+/*
+@variable Slide Body Text color
+_id: new-variable--Ngnf
+_description: Sets the color of the body text in the slide itself
+_link: 
+_deprecated: false
+*/
+
+$slide-text-color: $base-text-color;
+
+/*
+@variable Slide Body Text Alignment
+_id: new-variable--Qro2
+_description: Sets text alignment on the slide body
+_link: 
+_deprecated: false
+*/
+
+$slide-body-alignment: center;
+
+/*
+@tab Instagram (Lightwidget)
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: instagram_lightwidget
+*/
+
+/*
+@variable Section Background Color
+_id: new-variable--iBsw
+_description: Sets a background color on the section.
+_link: 
+_deprecated: false
+*/
+
+$section-instagram-bg-color: $section-default-bg-color;
+
+/*
+@variable Title Alignment
+_id: new-variable--BW49
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-instagram-title-alignment: center;
+
+/*
+@variable Body Alignment
+_id: new-variable--UCXQ
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-instagram-body-alignment: center;
+
+/*
+@variable Max Width
+_id: new-variable--sQKS
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$instagram-feed-max-width: 100%;
+
+/*
+@variable Margin
+_id: new-variable--O991
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$instagram-margin: 0 auto;
+
+/*
+@tab Mailchimp Newsletter Signup
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: mailchimp_newsletter_signup
+*/
+
+/*
+@variable Background Color
+_id: new-variable--XvC1
+_description: Sets a background color on the section.
+_link: 
+_deprecated: false
+*/
+
+$section-subscribe-bg-color: $section-default-bg-color;
+
+/*
+@variable Title Alignment
+_id: new-variable--CVtU
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-subscribe-title-alignment: center;
+
+/*
+@variable Body Alignment
+_id: new-variable--LlF4
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-subscribe-body-alignment: center;
+
+/*
+@tab Modal
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: modal_alert
+*/
+
+/*
+@variable Wrapper Background Color
+_id: new-variable--8zH9
+_description: Sets a background color on the modal.
+_link: 
+_deprecated: false
+*/
+
+$section-modal-bg-color: $section-default-bg-color;
+
+/*
+@variable Body Font Size
+_id: new-variable--wpJ9
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$modal-body-font-size: 0.8em;
+
+/*
+@tab Social Links
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: social_links
+*/
+
+/*
+@group Header Social Icons
+_description:  
+*/
+
+/*
+@variable Icon Size
+_id: new-variable--UAVO
+_description: Set the icon size
+_link: 
+_deprecated: false
+*/
+
+$header-social-icon-size: 1em;
+
+/*
+@subgroup Icon colors
+_description:  Set icon colors
+*/
+
+/*
+@variable Icon Color
+_id: new-variable--ijRB
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$header-social-icon-color: $navbar-link-color;
+
+/*
+@variable Icon Color (Hover)
+_id: new-variable--gr84
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$header-social-icon-hover-color: $navbar-link-hover-color;
+
+/*
+@variable Icon Color (Mobile)
+_id: new-variable--CA7z
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$header-social-icon-color-mobile: $navbar-link-color-mobile;
+
+/*
+@subgroup Icon Background Colors
+_description:  
+*/
+
+/*
+@variable Icon Background Color
+_id: new-variable--NA6N
+_description: Set a background color behind the social icon
+_link: 
+_deprecated: false
+*/
+
+$header-social-icon-bg-color: transparent;
+
+/*
+@variable Icon Background Color (hover)
+_id: new-variable--l7yr
+_description: Set the icon background color on mouse hover.
+_link: 
+_deprecated: false
+*/
+
+$header-social-icon-bg-hover-color: transparent;
+
+/*
+@subgroup Icon Border Colors
+_description:  
+*/
+
+/*
+@variable Icon Border Color
+_id: new-variable--0FF4
+_description: To add a border around the icon, set a color value. A value of "transparent" will hide the border.
+_link: 
+_deprecated: false
+*/
+
+$header-social-icon-border-color: transparent;
+
+/*
+@variable Icon Border Color (Hover)
+_id: new-variable--cNYu
+_description: Set the border color of the icon when hovered.
+_link: 
+_deprecated: false
+*/
+
+$header-social-icon-border-hover-color: transparent;
+
+/*
+@subgroup Icon Border Radius
+_description:  
+*/
+
+/*
+@variable Icon Border Radius
+_id: new-variable--PMi1
+_description: Sets the shape roundness of the border around an icon, visible if a border color or icon background color is set.
+_link: 
+_deprecated: false
+*/
+
+$header-social-icon-border-radius: 50%;
+
+/*
+@variable Icon Margin
+_id: new-variable--Avj6
+_description: Adds spacing between the icons.
+_link: 
+_deprecated: false
+*/
+
+$header-social-icon-margin: 10px;
+
+/*
+@group Section Social Links
+_description:  Styles the Social Icon section on a page
+*/
+
+/*
+@variable Section Background Color
+_id: new-variable--bmbj
+_description: Sets a background color on the entire section.
+_link: 
+_deprecated: false
+*/
+
+$section-social-links-bg-color: $section-default-bg-color;
+
+/*
+@variable Icon Size
+_id: new-variable--Uyyf
+_description: Sets the icon size
+_link: 
+_deprecated: false
+*/
+
+$social-icon-size: 2rem;
+
+/*
+@variable Section Padding (Lg)
+_id: new-variable--NhxG
+_description: Sets default outer padding on the section container for tablet and desktop device sizes.. Uses css shorthand format: "top, left, bottom, right"; or "top bottom"
+_link: 
+_deprecated: false
+*/
+
+$section-social-links-padding-lg: 4vw;
+
+/*
+@variable Section Padding (Sm)
+_id: new-variable--3mOp
+_description: Sets default outer padding on the section container for mobile device sizes. Uses css shorthand format: "top, left, bottom, right"; or "top bottom"
+_link: 
+_deprecated: false
+*/
+
+$section-social-links-padding-sm: 30px;
+
+/*
+@subgroup Section Intro - Titles & Body
+_description:  
+*/
+
+/*
+@variable Intro Title Alignment
+_id: new-variable--hJTV
+_description: Sets text alignment of the section title
+_link: 
+_deprecated: false
+*/
+
+$section-social-icons-title-alignment: center;
+
+/*
+@variable Body Alignment
+_id: new-variable--tXbc
+_description: Sets text alignment of the section intro text
+_link: 
+_deprecated: false
+*/
+
+$section-social-icons-body-alignment: center;
+
+/*
+@subgroup Icon Colors
+_description:  Sets colors of icons within a Social Links section
+*/
+
+/*
+@variable Icon Color
+_id: new-variable--yWt9
+_description: Set the color of the icon
+_link: 
+_deprecated: false
+*/
+
+$social-icon-color: $primary;
+
+/*
+@variable Icon Color (Hover)
+_id: new-variable--jB4y
+_description: Sets the color of the icon on mouse hover.
+_link: 
+_deprecated: false
+*/
+
+$social-icon-hover-color: lighten($social-icon-color, 15%);
+
+/*
+@subgroup Icon Background Colors
+_description:  
+*/
+
+/*
+@variable Icon Background Color
+_id: new-variable--yV1F
+_description: Adds a background color behind the icon.
+_link: 
+_deprecated: false
+*/
+
+$social-icon-bg-color: transparent;
+
+/*
+@variable Icon Background Color (Hover)
+_id: new-variable--P7rL
+_description: Sets the background color behind the icon on mouse hover.
+_link: 
+_deprecated: false
+*/
+
+$social-icon-bg-hover-color: transparent;
+
+/*
+@subgroup Icon Border Colors
+_description:  
+*/
+
+/*
+@variable Icon Border Color
+_id: new-variable--vRLR
+_description: To add a border around the icon, set a color value. A value of "transparent" will hide the border.
+_link: 
+_deprecated: false
+*/
+
+$social-icon-border-color: $social-icon-color;
+
+/*
+@variable Icon Border Color (Hover)
+_id: new-variable--CDBl
+_description: Sets the color of the border on mouse hover
+_link: 
+_deprecated: false
+*/
+
+$social-icon-border-hover-color: $social-icon-hover-color;
+
+/*
+@subgroup Icon Border Radius
+_description:  
+*/
+
+/*
+@variable Icon Border Radius
+_id: new-variable--IM3o
+_description: Sets the shape roundness of the border around an icon, visible if a border color or icon background color is set.
+_link: 
+_deprecated: false
+*/
+
+$social-icon-border-radius: 50%;
+
+/*
+@variable Icon Margin
+_id: new-variable--cknx
+_description: Adds spacing around the icons.
+_link: 
+_deprecated: false
+*/
+
+$social-icon-margin: 15px;
+
+/*
+@group Footer Social Icons
+_description:  
+*/
+
+/*
+@variable Icon Size
+_id: new-variable--Sd5h
+_description: Sets the size of the icon
+_link: 
+_deprecated: false
+*/
+
+$footer-social-icon-size: 1.25rem;
+
+/*
+@subgroup Icon Colors
+_description:  
+*/
+
+/*
+@variable Icon Color
+_id: new-variable--HOoL
+_description: Sets a color for social links in the footer
+_link: 
+_deprecated: false
+*/
+
+$footer-social-icon-color: $footer-link-color;
+
+/*
+@variable Icon Color on hover
+_id: new-variable--PbbP
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$footer-social-icon-hover-color: $footer-link-hover-color;
+
+/*
+@subgroup Icon Background Colors
+_description:  
+*/
+
+/*
+@variable Icon Background Color
+_id: new-variable--JsO1
+_description: Adds a background color behind the icon.
+_link: 
+_deprecated: false
+*/
+
+$footer-social-icon-bg-color: transparent;
+
+/*
+@variable Icon Background Color (Hover)
+_id: new-variable--cmQe
+_description: Sets the background color behind the icon on mouse hover
+_link: 
+_deprecated: false
+*/
+
+$footer-social-icon-bg-hover-color: transparent;
+
+/*
+@subgroup Icon Border Colors
+_description:  
+*/
+
+/*
+@variable Icon Border Color
+_id: new-variable--suRQ
+_description: To add a border around the icon, set a color value. A value of "transparent" will hide the border.
+_link: 
+_deprecated: false
+*/
+
+$footer-social-icon-border-color: $footer-link-color;
+
+/*
+@variable Icon Border Color (Hover)
+_id: new-variable--rZ5u
+_description: Sets the color of the border on mouse hover
+_link: 
+_deprecated: false
+*/
+
+$footer-social-icon-border-hover-color: $footer-link-hover-color;
+
+/*
+@subgroup Icon Border Radius
+_description:  
+*/
+
+/*
+@variable Icon Border Radius
+_id: new-variable--XN1s
+_description: Sets the shape roundness of the border around an icon, visible if a border color or icon background color is set.
+_link: 
+_deprecated: false
+*/
+
+$footer-social-icon-border-radius: 50%;
+
+/*
+@variable Icon Margin
+_id: new-variable--KNll
+_description: Adds spacing between the icons.
+_link: 
+_deprecated: false
+*/
+
+$footer-social-icon-margin: 15px;
+
+/*
+@tab Twitter Embed
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: twitter_embed
+*/
+
+/*
+@variable Background Color
+_id: new-variable--MmGo
+_description: Sets the background color of the section.
+_link: 
+_deprecated: false
+*/
+
+$section-twitter-bg-color: $section-default-bg-color;
+
+/*
+@variable Title Alignment
+_id: new-variable--Qfg9
+_description: Text alignment for the section title
+_link: 
+_deprecated: false
+*/
+
+$section-twitter-title-alignment: center;
+
+/*
+@variable Body Alignment
+_id: new-variable--2KAB
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-twitter-body-alignment: center;
+
+/*
+@variable Max Width
+_id: new-variable--nyYE
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$twitter-feed-max-width: 800px;
+
+/*
+@tab WuFoo Contact Form
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: wufoo_contact_form
+*/
+
+/*
+@group Section
+_description:  
+*/
+
+/*
+@variable Contact Section Background Color
+_id: new-variable--ZZtZ
+_description: Sets the background color of the section.
+_link: 
+_deprecated: false
+*/
+
+$section-contact-bg-color: $section-default-bg-color;
+
+/*
+@variable Contact Section Text Color
+_id: new-variable--Y80h
+_description: Set the text color of the section
+_link: 
+_deprecated: false
+*/
+
+$section-contact-text-color: $base-text-color;
+
+/*
+@group Intro Title/Body
+_description:  
+*/
+
+/*
+@variable Intro Title Alignment
+_id: new-variable--OCsZ
+_description: Sets text alignment for the intro title in the section
+_link: 
+_deprecated: false
+*/
+
+$section-contact-intro-title-alignment: center;
+
+/*
+@variable Intro Body Alignment
+_id: new-variable--tP7t
+_description: Sets text alignment for the intro body for the section
+_link: 
+_deprecated: false
+*/
+
+$section-contact-intro-body-alignment: center;
+
+/*
+@group Form Styles
+_description:  
+*/
+
+/*
+@variable Form Background Color
+_id: new-variable--SMHm
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$contact-form-bg-color: $section-alternating-bg;
+
+/*
+@variable Form Border Radius
+_id: new-variable--56OJ
+_description: Sets the corner roundness of the form wrapper
+_link: 
+_deprecated: false
+*/
+
+$contact-form-border-radius: 10px;
+
+/*
+@variable Form Padding
+_id: new-variable--jKlh
+_description: Sets the distance between the form's outer container and form elements on all sides
+_link: 
+_deprecated: false
+*/
+
+$contact-form-padding: 20px;
+
+/*
+@tab Basic Subpage
+_description: 
+_tab_type: subpage
+_tab_type_label: Sub-Page
+_tab_sub_type: site_page
+*/
+
+/*
+@group Page Content
+_description:  
+*/
+
+/*
+@variable Page Background Color
+_id: new-variable--Gy6b
+_description: Sets the background color of all basic subpages.
+_link: 
+_deprecated: false
+*/
+
+$subpage-bg-color: $body-bg;
+
+/*
+@variable Basic Page Title Color
+_id: new-variable--zl8z
+_description: Sets the color of all basic subpage h1 titles
+_link: 
+_deprecated: false
+*/
+
+$subpage-title-color: $title-color;
+
+/*
+@variable Basic subpage body text color
+_id: new-variable--ZHsD
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$subpage-body-text-color: $base-text-color;
+
+/*
+@group Hero
+_description:  
+*/
+
+/*
+@variable Hero Height
+_id: new-variable--B7mS
+_description: Sets the height of the hero section on a basic subpage.
+_link: 
+_deprecated: false
+*/
+
+$subpage-hero-height: 40vw;
+
+/*
+@variable Hero Background Color
+_id: new-variable--IF8b
+_description: Sets a background color behind the text in a basic page hero section.
+_link: 
+_deprecated: false
+*/
+
+$subpage-hero-bg-color: $subpage-bg-color;
+
+/*
+@tab Catalog Subpage
+_description: 
+_tab_type: subpage
+_tab_type_label: Sub-Page
+_tab_sub_type: catalog
+*/
+
+/*
+@variable Catalog Page Bg Color
+_id: new-variable--SXEA
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$catalog-page-bg-color: $subpage-bg-color;
+
+/*
+@variable Catalog Page Title Color
+_id: new-variable--sCYS
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$catalog-page-title-color: $title-color;
+
+/*
+@variable Catalog Page Body Text Color
+_id: new-variable--IY9n
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$catalog-page-body-text-color: $base-text-color;
+
+/*
+@variable Catalog Page - Title Alignment
+_id: new-variable--GJWg
+_description: Sets the text alignment of a catalog page title (h1)
+_link: 
+_deprecated: false
+*/
+
+$catalog-page-title-alignment: $page-title-text-align;
+
+/*
+@tab Catalog Item
+_description: 
+_tab_type: sub-section
+_tab_type_label: Sub-Section
+_tab_sub_type: catalog_item
+*/
+
+/*
+@group Catalog Item Lists
+_description:  Styles the items in a catalog list. 
+*/
+
+/*
+@subgroup Catalog List Item Titles
+_description:  Styles the title in a catalog list item.
+*/
+
+/*
+@variable Catalog Item - Title Size (Sm)
+_id: new-variable--ZNJT
+_description: Sets the font size for each title within a list of catalog items in a small device width.
+_link: 
+_deprecated: false
+*/
+
+$catalog-list-title-sm: 22px;
+
+/*
+@variable Catalog Item - Title Size (Md)
+_id: new-variable--ShXh
+_description: Sets the font size for each title within a list of catalog items in a medium device width.
+_link: 
+_deprecated: false
+*/
+
+$catalog-list-title-md: 26px;
+
+/*
+@variable Catalog Item - Title Size (Lg)
+_id: new-variable--ZEih
+_description: Sets the font size for each title within a list of catalog items in a large device width.
+_link: 
+_deprecated: false
+*/
+
+$catalog-list-title-lg: 30px;
+
+/*
+@variable Catalog Item Title Font Weight
+_id: new-variable--BeWw
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-title-weight: $title-font-weight;
+
+/*
+@variable Catalog List Title - Text Decoration
+_id: new-variable--Phi6
+_description: Sets text decoration for the title. Values: underline, underline solid, underline dotted, underline dashed, etc.
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-title-text-decoration: $link-text-decoration;
+
+/*
+@variable Catalog Item Title color
+_id: new-variable--RYL1
+_description: Sets color of the Catalog item title
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-title-color: $title-color;
+
+/*
+@variable Catalog Item - Title Hover Color
+_id: new-variable--NSTQ
+_description: Sets the color of the linked title on mouse hover.
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-title-hover-color: $link-color-hover;
+
+/*
+@variable Catalog Item Title - Hover - Text Decoration
+_id: new-variable--uCzD
+_description: Sets the text decoration of a catalog item title on mouse hover.
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-title-hover-text-decoration: $link-hover-text-decoration;
+
+/*
+@variable Catalog Item - Title Alignment
+_id: new-variable--zKKp
+_description: Sets text alignment for catalog list item titles
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-title-alignment: left;
+
+/*
+@variable Catalog Item Title Border
+_id: new-variable--6lWw
+_description: Sets a bottom border on the list item title
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-list-title-border: 0px solid $border-color;
+
+/*
+@variable Catalog Item Title Padding
+_id: new-variable--s6FF
+_description: Sets padding for the catalog list item title. Useful when paired with $catalog-item-title-border to create space between text and the border itself.
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-list-title-padding: 0;
+
+/*
+@variable Catalog Item Title Margin
+_id: new-variable--NZjY
+_description: Sets margin of the catalog list item title. Format is in css shorthand: top, right, bottom, left
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-list-title-margin: 0 0 1em 0;
+
+/*
+@subgroup Catalog List Item Descriptions
+_description:  Styles the description in a catalog list item.
+*/
+
+/*
+@variable Catalog Description Text Size
+_id: new-variable--gzlu
+_description: Sets the text size of the description in a catalog item
+_link: 
+_deprecated: false
+*/
+
+$catalog-description-text-size: 0.8em;
+
+/*
+@variable Catalog Item description color
+_id: new-variable--5H1l
+_description: Sets the text color of the catalog description
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-description-color: $base-text-color;
+
+/*
+@subgroup Item Rows
+_description: Styling on the item wrapper
+*/
+
+/*
+@variable Item (Even) - Background color
+_id: new-variable--eolN
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-bg-even: transparent;
+
+/*
+@variable Item (Odd) - Background color
+_id: new-variable--tb4b
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-bg-odd: $section-alternating-bg;
+
+/*
+@variable Catalog Item Border
+_id: new-variable--otYq
+_description: Sets a bottom border on a catalog item.
+_link: 
+_deprecated: false
+*/
+
+$catalog-item-border: 0px solid $border-color;
+
+/*
+@tab Musical Album Items
+_description: 
+_tab_type: sub-section
+_tab_type_label: Sub-Section
+_tab_sub_type: musical_album
+*/
+
+/*
+@variable Row Background (Even)
+_id: new-variable--tRe1
+_description: Set a background color on even product row items
+_link: 
+_deprecated: false
+*/
+
+$album-row-bg-even: transparent;
+
+/*
+@variable Row Background (Odd)
+_id: new-variable--lNzw
+_description: Set a background color on odd product row items
+_link: 
+_deprecated: false
+*/
+
+$album-row-bg-odd: $section-alternating-bg;
+
+/*
+@variable Row Border
+_id: new-variable--iBbj
+_description: Sets a bottom border on the album item row. Value requires use of the full border property shorthand - size style color
+_link: 
+_deprecated: false
+*/
+
+$album-row-border: 0px solid $border-color;
+
+/*
+@variable Details Font Size (Column 1)
+_id: new-variable--dyTZ
+_description: Font size for album description
+_link: 
+_deprecated: false
+*/
+
+$album-details-font-size: $body-text-md;
+
+/*
+@variable Tracks Font Size (Column 2)
+_id: new-variable--ioTS
+_description: Font size for the track listing.
+_link: 
+_deprecated: false
+*/
+
+$album-tracks-font-size: $body-text-md;
+
+/*
+@variable Album Item Title color
+_id: new-variable--XB7V
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$album-item-title-color: $title-color;
+
+/*
+@variable Album Item Description Color
+_id: new-variable--7rLH
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$album-item-description-color: $base-text-color;
+
+/*
+@tab Snipcart Store
+_description: Styles elements of the Snipcart Store, including items and cart
+_tab_type: sub-section
+_tab_type_label: Sub-Section
+_tab_sub_type: snipcart_product
+*/
+
+/*
+@variable Row Background (Even)
+_id: new-variable--c3ju
+_description: Set a background color on even product row items
+_link: 
+_deprecated: false
+*/
+
+$product-row-bg-even: $catalog-item-bg-even;
+
+/*
+@variable Row Background (Odd)
+_id: new-variable--QeqW
+_description: Set a background color on odd product row items
+_link: 
+_deprecated: false
+*/
+
+$product-row-bg-odd: $catalog-item-bg-odd;
+
+/*
+@variable Row Border
+_id: new-variable--Zzxk
+_description: Set a bottom border on a product row (vertically stacked item). Value requires use of the full border property shorthand - size style color
+_link: 
+_deprecated: false
+*/
+
+$product-row-border: $catalog-item-border;
+
+/*
+@variable Details Font Size
+_id: new-variable--jQd4
+_description: Product details (column 2)
+_link: 
+_deprecated: false
+*/
+
+$product-details-font-size: 16px;
+
+/*
+@group Snipcart - Header Cart
+_description:  Styling values for the shopping cart that appears in the site header with site navigation.. 
+*/
+
+/*
+@subgroup Cart Button Background
+_description:  Background color of the cart button
+*/
+
+/*
+@variable Cart Button Background Color
+_id: new-variable--e3YJ
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cart-button-bg-color: transparent;
+
+/*
+@variable Button Background Color (Hover)
+_id: new-variable--jhl0
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cart-button-bg-hover-color: rgba(255,255,255,0.2);
+
+/*
+@subgroup Shopping Cart Icon
+_description:  
+*/
+
+/*
+@variable Shopping Cart Icon Color
+_id: new-variable--cPNt
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cart-icon-color: #fff;
+
+/*
+@subgroup Cart Icon Count
+_description:  
+*/
+
+/*
+@variable Cart Icon Count Color
+_id: new-variable--uagI
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cart-count-text-color: #fff;
+
+/*
+@variable Cart Icon Background
+_id: new-variable--l1tF
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cart-count-bg: $primary;
+
+/*
+@subgroup Cart Total Price
+_description:  
+*/
+
+/*
+@variable Cart Total Background Color
+_id: new-variable--hINB
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cart-total-bg-color: #f2f2f2;
+
+/*
+@variable Cart Total Text Color
+_id: new-variable--1rpK
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cart-total-text-color: #000;
+
+/*
+@tab Text Section
+_description: Section type which is used to display only text. Useful for article type layouts where you might alternate images and text rows on a page.
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: s2_text
+*/
+
+/*
+@variable Title Alignment
+_id: new-variable--awq6
+_description: Sets text alignment on the section title, if one is added
+_link: 
+_deprecated: false
+*/
+
+$sb-text_title-alignment: center;
+
+/*
+@variable Subtitle Alignment
+_id: new-variable--Sb8p
+_description: Sets H3 subtitle text alignment. Values: left, right, or center. (Note: H3 must be added in text editor.)
+_link: 
+_deprecated: false
+*/
+
+$sb-text_subtitle-alignment: center;
+
+/*
+@variable Text Alignment
+_id: new-variable--nWN7
+_description: Sets the default text alignment for the section. Values are left, right, and center.
+_link: 
+_deprecated: false
+*/
+
+$sb-text_text-alignment: left;
+
+/*
+@variable Link Alignment
+_id: new-variable--qOcZ
+_description: Sets alignment of the link or button. Values: left, right, or center.
+_link: 
+_deprecated: false
+*/
+
+$sb-text_link-alignment: center;
+
+/*
+@variable Section Max Width
+_id: new-variable--WrZ4
+_description: Text column max width; 38em default amounts to ~70-82 characters wide which is optimum for reading long text blocks.
+_link: 
+_deprecated: false
+*/
+
+$sb-text-max-width: 38em;
+
+/*
+@variable Text Padding
+_id: new-variable--xe2Y
+_description: Sets default spacing around the outer boundaries of Text sections
+_link: 
+_deprecated: false
+*/
+
+$sb-text-padding: 4vw 15px;
+
+/*
+@tab Video Section
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: video
+*/
+
+/*
+@variable Video Section Padding (sm)
+_id: new-variable--GLkB
+_description: Sets the amount of padding around the section in a small (mobile) layout width. Sections using "full width" layouts will always have left/right padding overridden to 0 regardless of these settings.
+_link: 
+_deprecated: false
+*/
+
+$video-embed-wrapper-padding-sm: $section-padding-y-sm $section-padding-x-sm;
+
+/*
+@variable Video Section Padding (lg)
+_id: new-variable--8I1w
+_description: Sets the amount of padding around the section in a larger (tablet plus) layout width. Sections using "full width" layouts will always have left/right padding overridden to 0 regardless of these settings.
+_link: 
+_deprecated: false
+*/
+
+$video-embed-wrapper-padding-lg: $section-padding-y-lg $section-padding-x-lg;
+
+/*
+@variable Video Embed Max Width
+_id: new-variable--fppE
+_description: Sets the max width for an embedded video within a story block set to the "constrained" layout.
+_link: 
+_deprecated: false
+*/
+
+$video-embed-max-width: 1080px;
+
+/*
+@variable Video Section Background Color
+_id: new-variable--9EnJ
+_description: Sets the background of video sections.
+_link: 
+_deprecated: false
+*/
+
+$video-embed-section-bg: $section-default-bg-color;
+
+/*
+@group Video Section Intro: Title & Body
+_description:  
+*/
+
+/*
+@variable Title Color
+_id: new-variable--Leth
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-video-title-color: $title-color;
+
+/*
+@variable Title Alignment
+_id: new-variable--KTRW
+_description: Set the alignment of the title: left, right, center
+_link: 
+_deprecated: false
+*/
+
+$section-video-intro-title-alignment: center;
+
+/*
+@variable Body Text Color
+_id: new-variable--EKln
+_description: Sets the color of the intro description text
+_link: 
+_deprecated: false
+*/
+
+$section-video-intro-color: $base-text-color;
+
+/*
+@variable Body Text Alignment
+_id: new-variable--5r4w
+_description: Sets alignment of the body text: left, right, center
+_link: 
+_deprecated: false
+*/
+
+$section-video-intro-body-alignment: center;
+
+/*
+@tab Contact Form
+_description: Styles the basic contact form section.
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: contact_form
+*/
+
+/*
+@variable Section Background Color
+_id: new-variable--WIXQ
+_description: Sets a background color behind the entire contact form section.
+_link: 
+_deprecated: false
+*/
+
+$section-contact-form-bg-color: $section-default-bg-color;
+
+/*
+@group Contact Form Intro: Title & Body
+_description:  
+*/
+
+/*
+@variable Title Color
+_id: new-variable--s2mk
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$section-contact-form-title-color: $title-color;
+
+/*
+@variable Title Alignment
+_id: new-variable--smce
+_description: Set the alignment of the title: left, right, center
+_link: 
+_deprecated: false
+*/
+
+$section-contact-form-title-alignment: center;
+
+/*
+@variable Body Text Color
+_id: new-variable--KDGU
+_description: Sets the color of the intro description text
+_link: 
+_deprecated: false
+*/
+
+$section-contact-form-intro-color: $base-text-color;
+
+/*
+@variable Body Text Alignment
+_id: new-variable--hOcB
+_description: Sets alignment of the body text: left, right, center
+_link: 
+_deprecated: false
+*/
+
+$section-contact-form-intro-body-alignment: center;
+
+/*
+@group Form Styling
+_description:  Styles the form itself. 
+*/
+
+/*
+@variable Form Bg Color
+_id: new-variable--M0CW
+_description: Background color of the form itself.
+_link: 
+_deprecated: false
+*/
+
+$section-contact-form_form-bg-color: transparent;
+
+/*
+@variable Form Padding
+_id: new-variable--DOTF
+_description: Spacing between the outer edge of the wrapper around the form itself and the elements inside, i.e. form fields and submit button.
+_link: 
+_deprecated: false
+*/
+
+$section-contact-form_form-padding: 20px;
+
+/*
+@variable Form Border Radius
+_id: new-variable--a12D
+_description: Sets the roundness of the corners of the outer edges of the form itself. Useful when a different background color is set for the form vs the section.
+_link: 
+_deprecated: false
+*/
+
+$section-contact-form_form-border-radius: 10px;
+
+/*
+@tab Article & Blog Items
+_description: 
+_tab_type: sub-section
+_tab_type_label: Sub-Section
+_tab_sub_type: blog_article
+*/
+
+/*
+@group Article Item Lists
+_description:  Variables that govern only items in a list of articles. Default values for titles are the same as for general Catalog items, so that catalog values can cascade to all catalog type list items for continuity, but can also be customized separately. 
+*/
+
+/*
+@subgroup Item Rows
+_description:  Styling on the item wrapper
+*/
+
+/*
+@variable Article Item (Even) - Background Color
+_id: new-variable--KZ74
+_description: Sets the background color behind the even numbered items in list of articles.
+_link: 
+_deprecated: false
+*/
+
+$article-row-bg-even: $catalog-item-bg-even;
+
+/*
+@variable Article Item (Odd) - Background Color
+_id: new-variable--SLs6
+_description: Sets the background color behind the odd numbered items in list of articles.
+_link: 
+_deprecated: false
+*/
+
+$article-row-bg-odd: $catalog-item-bg-odd;
+
+/*
+@variable Article Item border
+_id: new-variable--nBZi
+_description: Sets a bottom border on an article list item
+_link: 
+_deprecated: false
+*/
+
+$article-item-border: $catalog-item-border;
+
+/*
+@subgroup Article Titles
+_description:  
+*/
+
+/*
+@variable Article Title Size (Sm)
+_id: new-variable--E15E
+_description: Sets the font size for each title within a list of articles in a small device width.
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-sm: $catalog-list-title-sm;
+
+/*
+@variable Article Title Size (Md)
+_id: new-variable--OGYq
+_description: Sets the font size for each title within a list of articles in a medium device width.
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-md: $catalog-list-title-md;
+
+/*
+@variable Article Title Size (Lg)
+_id: new-variable--CSvW
+_description: Sets the font size for each title within a list of articles in a large device width.
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-lg: $catalog-list-title-lg;
+
+/*
+@variable Article List Title Border
+_id: new-variable--Li7M
+_description: Sets bottom border on the title. Format: [#]px solid $border-color, where $border-color can be replaced with any hex, rgb, etc. color value
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-border: $catalog-item-list-title-border;
+
+/*
+@variable Article Title Margin
+_id: new-variable--xKD1
+_description: Sets margin of the article list item title
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-margin: $catalog-item-list-title-margin;
+
+/*
+@variable Article List Item Title Padding
+_id: new-variable--UuYe
+_description: Sets padding of the article list item title. Useful when paired with $article-list-title-border to create space between text and the border itself.
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-padding: $catalog-item-list-title-padding;
+
+/*
+@variable Article List Title Font Weight
+_id: new-variable--8Rle
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-weight: $catalog-item-title-weight;
+
+/*
+@variable Article List Title - Text Decoration
+_id: new-variable--tU2I
+_description: Sets text decoration for the title. Values: underline, underline solid, underline dotted, underline dashed, etc.
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-text-decoration: $catalog-item-title-text-decoration;
+
+/*
+@variable Article List - Title Color
+_id: new-variable--0RGh
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-color: $catalog-item-title-color;
+
+/*
+@variable Article List - Title Hover Color
+_id: new-variable--Xyf6
+_description: Set the color of the linked title on mouse hover
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-hover-color: $catalog-item-title-hover-color;
+
+/*
+@variable Article List - Title Hover - Text Decoration
+_id: new-variable--MOMY
+_description: Sets the text decoration of an article list title on mouse hover. 
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-hover-text-decoration: $catalog-item-title-hover-text-decoration;
+
+/*
+@variable Article List - Title Alignment
+_id: new-variable--FxHM
+_description: Sets text alignment for article list item titles.
+_link: 
+_deprecated: false
+*/
+
+$article-list-title-alignment: $catalog-item-title-alignment;
+
+/*
+@subgroup Item Author & Date
+_description: Sets styles for author & date on article list items
+*/
+
+/*
+@variable Article Item - Date Size
+_id: new-variable--70jz
+_description: Sets font size for the date on an article item.
+_link: 
+_deprecated: false
+*/
+
+$article-item-date-size: .7em;
+
+/*
+@variable Article Item - Date Color
+_id: new-variable--mRGR
+_description: Sets font color for the date on an article item.
+_link: 
+_deprecated: false
+*/
+
+$article-item-date-color: $base-text-color;
+
+/*
+@variable Article Item - Author Size
+_id: new-variable--l1BC
+_description: Sets font size for the author on an article item.
+_link: 
+_deprecated: false
+*/
+
+$article-item-author-size: .7em;
+
+/*
+@variable Article Item - Author Color
+_id: new-variable--CNzt
+_description: Sets font color for the author on an article item.
+_link: 
+_deprecated: false
+*/
+
+$article-item-author-color: $base-text-color;
+
+/*
+@subgroup Item Description
+_description: 
+*/
+
+/*
+@variable Article Item - Description Size
+_id: new-variable--go5q
+_description: Sets font size of an article item description in a list
+_link: 
+_deprecated: false
+*/
+
+$article-item-description-size: $catalog-description-text-size;
+
+/*
+@variable Article Item - Description Color
+_id: new-variable--0MRR
+_description: Sets color of the description text in an article list item.
+_link: 
+_deprecated: false
+*/
+
+$article-item-description-color: $catalog-item-description-color;
+
+/*
+@group Article Item Pages
+_description:  Variables that govern only standalone article pages. 
+*/
+
+/*
+@variable Article Page - Title Alignment
+_id: new-variable--7VpT
+_description: Sets the text alignment of an article page title (h1)
+_link: 
+_deprecated: false
+*/
+
+$article-page-title-text-align: $catalog-page-title-alignment;
+
+/*
+@subgroup Article Page - Author & Date
+_description:  
+*/
+
+/*
+@variable Article Page - Date Size
+_id: new-variable--9laq
+_description: Sets font size for the date on an article page.
+_link: 
+_deprecated: false
+*/
+
+$article-page-date-size: .7em;
+
+/*
+@variable Article Page - Date Color
+_id: new-variable--Nl5P
+_description: Sets font color for the date on an article page.
+_link: 
+_deprecated: false
+*/
+
+$article-page-date-color: $base-text-color;
+
+/*
+@variable Article Page - Author Size
+_id: new-variable--NbBB
+_description: Sets font size for the author on an article page.
+_link: 
+_deprecated: false
+*/
+
+$article-page-author-size: .7em;
+
+/*
+@variable Article Page - Author Color
+_id: new-variable--bH7b
+_description: Sets font color for the author on an article page.
+_link: 
+_deprecated: false
+*/
+
+$article-page-author-color: $base-text-color;
+
+/*
+@tab Call To Action (CTA) Modal
+_description: Styling for the Call To Action popup.
+_tab_type: general
+_tab_type_label: General
+_tab_sub_type: 
+*/
+
+/*
+@variable CTA Close Link - Color
+_id: new-variable--Fm7K
+_description: Sets the color of the "X" that closes the CTA modal when clicked. 
+_link: 
+_deprecated: false
+*/
+
+$cta-close-link-color: #ababab;
+
+/*
+@group CTA Content Wrapper
+_description: 
+*/
+
+/*
+@variable CTA Background Color
+_id: new-variable--Uxfs
+_description: Sets the background color of the content in the CTA modal
+_link: 
+_deprecated: false
+*/
+
+$cta-bg-color: #fff;
+
+/*
+@variable CTA Border Radius
+_id: new-variable--9z2o
+_description: Set the roundness of the edges of the CTA content wrapper
+_link: 
+_deprecated: false
+*/
+
+$cta-border-radius: 10px;
+
+/*
+@variable CTA Width - Large
+_id: new-variable--LH0q
+_description: Sets the width of the CTA content in desktop device widths.
+_link: 
+_deprecated: false
+*/
+
+$cta-width-lg: 50vw;
+
+/*
+@variable CTA Max Width - Large
+_id: new-variable--jjvB
+_description: Sets the MAX width of the CTA content in desktop device widths.
+_link: 
+_deprecated: false
+*/
+
+$cta-max-width-lg: 700px;
+
+/*
+@variable CTA Width - Medium
+_id: new-variable--9wOz
+_description: Sets the width of the CTA content in tablet device widths.
+_link: 
+_deprecated: false
+*/
+
+$cta-width-md: 70vw;
+
+/*
+@variable CTA Max Width - Medium
+_id: new-variable--uNE5
+_description: Sets the MAX width of the CTA content in tablet device widths.
+_link: 
+_deprecated: false
+*/
+
+$cta-max-width-md: 500px;
+
+/*
+@variable CTA 2-Column Width
+_id: new-variable--qK1K
+_description: Sets the width of the 2-column CTA content in tablet and desktop device widths.
+_link: 
+_deprecated: false
+*/
+
+$cta-2col-width: 90vw;
+
+/*
+@variable CTA 2-Column Max Width
+_id: new-variable--xA45
+_description: Sets the MAX width of the 2-column CTA content in tablet and desktop device widths.
+_link: 
+_deprecated: false
+*/
+
+$cta-2col-max-width: 1000px;
+
+/*
+@group CTA Text Styles
+_description: 
+*/
+
+/*
+@variable CTA Title - Font Size
+_id: new-variable--gY56
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cta-title-font-size: clamp(25px, 3vw, 35px);
+
+/*
+@variable CTA Title - Text Color
+_id: new-variable--xtVc
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cta-title-color: $title-color;
+
+/*
+@variable CTA Title - Text Alignment
+_id: new-variable--guXG
+_description: Values: left, center, right
+_link: 
+_deprecated: false
+*/
+
+$cta-title-align: center;
+
+/*
+@variable CTA Title Span - Text Color
+_id: new-variable--v38j
+_description: Sets the color of <span> tags you can add to a title to style it differently for more prominence. 
+_link: 
+_deprecated: false
+*/
+
+$cta-title-span-color: $title-color;
+
+/*
+@variable CTA Title Span - Font Size
+_id: new-variable--bCrs
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cta-title-span-size: 2.5em;
+
+/*
+@variable CTA Body - Font Size
+_id: new-variable--hB9X
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cta-body-size: .85em;
+
+/*
+@variable CTA Body - Text Color
+_id: new-variable--SLvx
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cta-body-color: $base-text-color;
+
+/*
+@variable CTA Body - Text Align
+_id: new-variable--QG1p
+_description: Values: left, center, right
+_link: 
+_deprecated: false
+*/
+
+$cta-body-align: center;
+
+/*
+@group CTA Buttons
+_description: 
+*/
+
+/*
+@variable CTA Button - Background Color
+_id: new-variable--TtOk
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cta-btn-bg-color: $btn-bg-color;
+
+/*
+@variable CTA Button - Hover Background Color
+_id: new-variable--BgnR
+_description: Sets the background color of the button on mouseover.
+_link: 
+_deprecated: false
+*/
+
+$cta-btn-hover-bg-color: $btn-hover-bg-color;
+
+/*
+@variable CTA Button - Text Color
+_id: new-variable--L6dT
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cta-btn-text-color: $btn-text-color;
+
+/*
+@variable CTA Button - Hover Text Color
+_id: new-variable--cSJg
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cta-btn-hover-text-color: $btn-hover-text-color;
+
+/*
+@variable CTA Button - Border
+_id: new-variable--Co3y
+_description: Uses CSS shorthand to define width, style and color of the button border. (Ex:  1px solid #ccc)
+_link: 
+_deprecated: false
+*/
+
+$cta-btn-border: $btn-border;
+
+/*
+@variable CTA Border - Color (Hover)
+_id: new-variable--Flci
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cta-btn-hover-border-color: $btn-hover-border-color;
+
+/*
+@variable CTA Button - Padding
+_id: new-variable--DISQ
+_description: Sets the space between the button boundary and the text inside.
+_link: 
+_deprecated: false
+*/
+
+$cta-btn-padding: $btn-padding;
+
+/*
+@group CTA Toggle/Wake Button
+_description: Styles the toggle link that reopens the modal. 
+*/
+
+/*
+@variable CTA Toggle Button - Background Color
+_id: new-variable--smun
+_description: Set the background color of the toggle "wake" button that pops up the CTA modal when it's closed. 
+_link: 
+_deprecated: false
+*/
+
+$cta-toggle-bg-color: $btn-bg-color;
+
+/*
+@variable CTA Toggle Button - Background Color (Hover)
+_id: new-variable--1Zcw
+_description: Sets button background color on mouseover.
+_link: 
+_deprecated: false
+*/
+
+$cta-toggle-hover-bg-color: $btn-hover-bg-color;
+
+/*
+@variable CTA Toggle Button - Text Color
+_id: new-variable--fvcF
+_description: Set the text/icon color of the toggle "wake" button that pops up the CTA modal when it's closed. 
+_link: 
+_deprecated: false
+*/
+
+$cta-toggle-text-color: $btn-text-color;
+
+/*
+@variable CTA Toggle Button - Text Color (Hover)
+_id: new-variable--wcM7
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$cta-toggle-hover-text-color: $btn-hover-text-color;
+
+/*
+@variable CTA Toggle Button - Icon Font Size
+_id: new-variable--BjB7
+_description: Sets the font size of the Font Awesome Icon in the button.
+_link: 
+_deprecated: false
+*/
+
+$cta-toggle-font-size: 1.25em;
+
+/*
+@variable CTA Toggle Button - Border
+_id: new-variable--y9CA
+_description: Uses CSS shorthand to define width, style and color of the toggle button border. (Ex:  1px solid #ccc)
+_link: 
+_deprecated: false
+*/
+
+$cta-toggle-border: 0px solid #fff;
+
+/*
+@variable CTA Toggle Button - Border Color (Hover)
+_id: new-variable--dEYA
+_description: Sets border color on hover
+_link: 
+_deprecated: false
+*/
+
+$cta-toggle-hover-border-color: $cta-toggle-hover-bg-color;
+
+/*
+@variable CTA Toggle Button - Border Radius
+_id: new-variable--ikCf
+_description: Sets roundness of the corners of the toggle button. Can use one value for all sides, or css shorthand.
+_link: 
+_deprecated: false
+*/
+
+$cta-toggle-border-radius: 0;
+
+/*
+@tab Testimonial Section
+_description: Creates a testimonial paragraph type. 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: s2_story_block
+*/
+
+/*
+@group Layout & Spacing Options
+_description: Sets padding, margin, bg color, width, etc.  
+*/
+
+/*
+@variable Testimonial Section Padding
+_id: new-variable--0Gd3
+_description: Sets outer padding on the section
+_link: 
+_deprecated: false
+*/
+
+$testimonial-section-padding: $section-padding-x-lg $section-padding-y-lg;
+
+/*
+@variable Testimonial section background color
+_id: new-variable--V0VR
+_description: Sets background color default for all testimonial sections. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-bg-color: $section-default-bg-color;
+
+/*
+@variable Testimonial - Quote Area Only - Max Width
+_id: new-variable--xpXh
+_description: Sets the max width on quote area only (icon + text). Useful if you wish to contain its width vs stretching to full width.
+_link: 
+_deprecated: false
+*/
+
+$testimonial-quote-max-width: 100%;
+
+/*
+@variable Testimonial - Quote area - margin
+_id: new-variable--q67e
+_description: Sets a margin on the quote area only (icon + text)
+_link: 
+_deprecated: false
+*/
+
+$testimonial-quote-margin: 0 auto;
+
+/*
+@group Testimonial Image
+_description: 
+*/
+
+/*
+@variable Testimonial - Image width
+_id: new-variable--Sh4Y
+_description: Sets the width of an uploaded image (not icon)
+_link: 
+_deprecated: false
+*/
+
+$testimonial-image-width: 40%;
+
+/*
+@variable Testimonial - Image Gap
+_id: new-variable--tXwO
+_description: Sets the gap distance between an uploaded image and the quote icon and text
+_link: 
+_deprecated: false
+*/
+
+$testimonial-image-gap: 40px;
+
+/*
+@group Testimonial Icon
+_description: 
+*/
+
+/*
+@variable Testimonial - Light icon - path
+_id: new-variable--LX4E
+_description: Sets a url link path to a LIGHT colored icon to be used. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-light-icon-path: url(https://fileswift.com/sites/default/files/2025-01/icon-quote-white.svg);
+
+/*
+@variable Testimonial - Dark icon - path
+_id: new-variable--x1ur
+_description: Sets a url link path to a DARK colored icon to be used. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-dark-icon-path: url(https://fileswift.com/sites/default/files/2025-01/icon-quote-black.svg);
+
+/*
+@variable Testimonial - Default Icon
+_id: new-variable--92UK
+_description: Sets the default icon from between the two light/dark path variables above. Options are $testimonial-light-icon-path or $testimonial-dark-icon-path.
+_link: 
+_deprecated: false
+*/
+
+$testimonial-icon-default: $testimonial-light-icon-path;
+
+/*
+@variable Testimonial - Uploaded SVG icon color
+_id: new-variable--KHcz
+_description: Sets the color of an SVG icon that's uploaded instead of using the defaults. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-icon-svg-color: $primary;
+
+/*
+@variable Testimonial - Icon gap
+_id: new-variable--sQI4
+_description: Sets the horizontal spacing between the icon and the quote body text. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-icon-gap: 40px;
+
+/*
+@variable Testimonial - Icon Width (SM)
+_id: new-variable--T6Z1
+_description: Sets width of the quote icon in mobile layouts. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-icon-width-sm: 50px;
+
+/*
+@variable Testimonial - Icon Width (LG)
+_id: new-variable--dVq6
+_description: Sets width of the quote icon in wider layouts like desktop. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-icon-width-lg: 10vw;
+
+/*
+@variable Testimonial - Icon Height (SM)
+_id: new-variable--EhLl
+_description: Sets the height of the default icon wrapper in mobile layouts, as it is a background image, to avoid undue cropping.
+_link: 
+_deprecated: false
+*/
+
+$testimonial-icon-height-sm: $testimonial-icon-width-sm;
+
+/*
+@variable Testimonial - Icon Height (LG)
+_id: new-variable--P94j
+_description: Sets the height of the default icon wrapper in desktop layouts, as it is a background image, to avoid undue cropping.
+_link: 
+_deprecated: false
+*/
+
+$testimonial-icon-height-lg: $testimonial-icon-width-lg;
+
+/*
+@variable Testimonial - Icon Opacity
+_id: new-variable--SrdK
+_description: Sets the opacity value for the icon. Default is "1", or totally opaque, but accepts a value between .01-.99 as well. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-icon-opacity: 1;
+
+/*
+@group Testimonial Body Text
+_description: 
+*/
+
+/*
+@variable Testimonial - Body - Font Family
+_id: new-variable--aO9S
+_description: Sets the font family for the body of the quote. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-body-font-family: $base-font-family;
+
+/*
+@variable Testimonial - Body Text Color
+_id: new-variable--lBrR
+_description: Sets the color of the quote body. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-body-text-color: $base-text-color;
+
+/*
+@variable Testimonial - Body Font Size
+_id: new-variable--t350
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-body-font-size: 1.2em;
+
+/*
+@variable Testimonial - Body Font Style
+_id: new-variable--ghNM
+_description: Sets font style of the body. Values can be: normal, bold, italic
+_link: 
+_deprecated: false
+*/
+
+$testimonial-body-font-style: normal;
+
+/*
+@variable Testimonial - Body Font Weight
+_id: new-variable--oaJq
+_description: 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-body-font-weight: normal;
+
+/*
+@group Testimonial - Author
+_description: 
+*/
+
+/*
+@variable Testimonial - Author - Font Family
+_id: new-variable--JhxO
+_description: Sets font family of the author text.
+_link: 
+_deprecated: false
+*/
+
+$testimonial-author-font-family: $base-font-family;
+
+/*
+@variable Testimonial - Author - Font Size
+_id: new-variable--6j2S
+_description: Sets the font size of the author text. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-author-font-size: 1em;
+
+/*
+@variable Testimonial - Author - Text color
+_id: new-variable--PTsE
+_description: Sets the color of the author text. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-author-text-color: $base-text-color;
+
+/*
+@variable Testimonial - Author - Font Style
+_id: new-variable--iy8b
+_description: Sets the font style of the author text: normal or italic.
+_link: 
+_deprecated: false
+*/
+
+$testimonial-author-font-style: normal;
+
+/*
+@variable Testimonial - Author Title - Font Family
+_id: new-variable--FNrW
+_description: Sets font family for the author's title. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-title-font-family: $base-font-family;
+
+/*
+@variable Testimonial - Author Title - Font Size
+_id: new-variable--9vKK
+_description: Sets font size for the author title. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-title-font-size: 1em;
+
+/*
+@variable Testimonial - Author Title - color
+_id: new-variable--LIuV
+_description: Sets the color of the author title. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-title-text-color: $base-text-color;
+
+/*
+@variable Testimonial - Author Title - Font Style
+_id: new-variable--yFsD
+_description: Sets the font style of the author title: normal or italic.
+_link: 
+_deprecated: false
+*/
+
+$testimonial-title-font-style: normal;
+
+/*
+@variable Testimonial - Author Title - Font Weight
+_id: new-variable--KH9l
+_description: Sets font weight for author title. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-title-font-weight: normal;
+
+/*
+@variable Testimonial - Author - Font Weight
+_id: new-variable--4kDQ
+_description: Sets font weight on author text. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-author-font-weight: normal;
+
+/*
+@group Testimonial Link
+_description: 
+*/
+
+/*
+@variable Testimonial - Text Link Color
+_id: new-variable--v9mm
+_description: Sets color of link text in a testimonial quote body. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-link-color: $link-color;
+
+/*
+@variable Testimonial - Text Link - Hover Color
+_id: new-variable--V4gY
+_description: Sets the color of a text link in a testimonial quote body, hover/mouseover state. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-link-color-hover: $link-color-hover;
+
+/*
+@variable Testimonial - Text Link - Font Weight
+_id: new-variable--s5vG
+_description: Sets font weight of a text link in a testimonial body. 
+_link: 
+_deprecated: false
+*/
+
+$testimonial-link-font-weight: normal;
+
+/*
+@variable Testimonial - Text Link - Font Style
+_id: new-variable--ea83
+_description: Sets font style (normal, italic) of a text link in a testimonial quote body.
+_link: 
+_deprecated: false
+*/
+
+$testimonial-link-font-style: normal;
+
+/*
+@tab Image Two Across
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: s2_story_block
+*/
+
+/*
+@variable Background Color
+_id: new-variable--Ixc0
+_description: Sets background color on the section. 
+_link: 
+_deprecated: false
+*/
+
+$section-image-two-across-bg-color: transparent;
+
+/*
+@variable Image Gap
+_id: new-variable--bVvP
+_description: Sets the horizontal space between the two images
+_link: 
+_deprecated: false
+*/
+
+$section-image-two-across-gap: 40px;
+
+/*
+@variable Section Padding (LG)
+_id: new-variable--uVUG
+_description: Sets padding on the section around the images
+_link: 
+_deprecated: false
+*/
+
+$section-image-two-across-padding-lg: $section-padding-x-lg $section-padding-y-lg;
+
+/*
+@variable Section Padding (SM)
+_id: new-variable--ONMH
+_description: Sets the section outer padding in mobile layout. 
+_link: 
+_deprecated: false
+*/
+
+$section-image-two-across-padding-sm: $section-padding-x-sm $section-padding-y-sm;
+
+/*
+@variable Image 1 Width
+_id: new-variable--INkM
+_description: Sets the width of the container for image 1
+_link: 
+_deprecated: false
+*/
+
+$section-image-two-across-image-1-width: 50%;
+
+/*
+@variable Image 2 Width
+_id: new-variable--R8AF
+_description: Sets the width of the container for image 2
+_link: 
+_deprecated: false
+*/
+
+$section-image-two-across-image-2-width: 50%;
+
+/*
+@variable Caption Font Size
+_id: new-variable--QBWi
+_description: Sets fonts size of caption (title) of the images. 
+_link: 
+_deprecated: false
+*/
+
+$section-image-two-across-caption-size: .8em;
+
+/*
+@variable Caption - Font Family
+_id: new-variable--lI5r
+_description: Sets font family of caption text
+_link: 
+_deprecated: false
+*/
+
+$section-image-two-across-caption-font-family: $base-font-family;
+
+/*
+@tab Image Not Background (BG)
+_description: 
+_tab_type: section
+_tab_type_label: Section
+_tab_sub_type: s2_image
+*/
+
+/*
+@variable Section Padding (LG)
+_id: new-variable--VmWY
+_description: Sets padding on section in tablet and desktop layouts. 
+_link: 
+_deprecated: false
+*/
+
+$section-image-not-bg-padding-lg: $section-padding-x-lg $section-padding-y-lg;
+
+/*
+@variable Section Padding (SM)
+_id: new-variable--RIEm
+_description: Sets padding on the section in mobile layout. 
+_link: 
+_deprecated: false
+*/
+
+$section-image-not-bg-padding-sm: $section-padding-x-sm $section-padding-y-sm;
+
+/*
+@variable Section Bg Color
+_id: new-variable--XyMz
+_description: Sets background color on the section. 
+_link: 
+_deprecated: false
+*/
+
+$section-image-not-bg-bg-color: transparent;
+

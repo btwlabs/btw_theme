@@ -1,3 +1,4 @@
+
 //------------------------------------
 //------------------------------------
 //
@@ -51,5 +52,23 @@
         @include media-breakpoint-up(lg) {
             border: 0;
         }
+    }
+}
+.header-socials-mobile {
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+.header-socials-desktop {
+    order: 3;
+    flex: 1 1 auto;
+    justify-self: flex-end;
+    
+    @include media-breakpoint-down(md) {
+        display: none !important;
+    }
+    // social links
+    .social_links__social-links-list {
+        max-width: 100%;
     }
 }

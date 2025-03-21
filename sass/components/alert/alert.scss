@@ -27,6 +27,10 @@
                 margin-bottom: 1.5em;
             }            
         }
+        h2.feature-box-title {
+            color: $alert-text-color;
+            margin: $title-margin;
+        }
         .feature_box__feature-box-message-text {
             max-width: 1150px;
             margin: 0 auto;
@@ -36,8 +40,7 @@
             }
         }
         .feature-box-button {
-            margin-top: 2em;
-            
+
             a {
                @extend .btn;
                background-color: $alert-btn-bg-color;
@@ -45,6 +48,7 @@
                color: $alert-btn-text-color;
                text-decoration: none;
                display: inline-block;
+               margin-top: 2em;
                
                &:hover {
                    background-color: $alert-btn-hover-bg-color;

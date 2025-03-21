@@ -8,7 +8,7 @@
 .paragraph--type--catalog-item {
     padding: 4rem 0;
     position: relative;
-    border-bottom: none; // need to add variable for this
+    border-bottom: $catalog-item-border;
     
     h2.section-title {
         @include responsive-section-title;
@@ -16,19 +16,27 @@
         margin-bottom: 1rem;
         color: $catalog-item-title-color;
     }
-    a.standalone-page-link {
-        text-decoration: none;
+    a.standalone-page-link:not(.btn) {
+        text-decoration: $article-list-title-text-decoration;
+        color: $catalog-item-title-color;
         
         h2.section-title {
-            color: $link-color;
-            text-decoration: none;
+            @include responsive-catalog-list-title;
+            color: $catalog-item-title-color;
+            text-decoration: $catalog-item-title-text-decoration;
             transition: 0.2s ease-in all;
+            border: $catalog-item-list-title-border;
+            padding: $catalog-item-list-title-padding;
+            margin: $catalog-item-list-title-margin;
+            
+            &:hover {
+                color: $catalog-item-title-hover-color;
+                text-decoration: $catalog-item-title-hover-text-decoration;
+            }
         }
         &:hover {
-            h2.section-title {
-                color: $link-color-hover;
-                text-decoration: none;
-            }
+            color: $catalog-item-title-hover-color;
+            text-decoration: $catalog-item-title-hover-text-decoration;
         }
     } 
     
@@ -66,6 +74,7 @@
         }
     }
     
+    
     // Item link field
     .catalog_item__catalog-item-link {
         margin-top: 1.5rem;
@@ -93,6 +102,15 @@
             margin-bottom: 0;
         }
     }
+    
+    .catalog-item-link {
+        margin: 2.5em 0;
+        display: inline-block;
+        
+        &:not(.btn) {
+            text-decoration: underline;
+        }
+    }
 }
 
 
@@ -102,26 +120,34 @@
 //
 //---------------------------------------------
 
-.paragraph--type--catalog-item {
-    
-    //-----------------------
-    // light bg dark text
-    //-----------------------
-    &.light-bg-dark-text {
-        background: $bg-light-color !important;
-        
-        h2.section-title,
+.dark-text {
+    &.paragraph--type--catalog-item	{
+        // title
+        .section-title,
         a.standalone-page-link h2.section-title {
-            color: $title-on-light-color;
+            color: $title-on-light-color !important;
         }
         .catalog-item-description {
-            color: $text-on-light-color;
+            color: $text-on-light-color !important;
         }
-        .catalog_item__catalog-item-link a {
-            @include button-on-light;
+        .catalog-item-link {
+            &.btn-primary,
+            &.btn-secondary {
+                @include button-on-light;
+            }
+            &:not(.btn) {
+                color: $link-on-light-color !important;
+                
+                &:hover {
+                    color: $link-on-light-color-hover !important;
+                }
+            }
         }
     }
-    
+}
+
+.paragraph--type--catalog-item {
+   
     //-----------------------
     // light bg class
     //-----------------------
@@ -137,22 +163,7 @@
 //---------------------------------------------
 
 .paragraph--type--catalog-item {
-    
-    &.dark-bg-light-text {
-        background: $bg-dark-color !important;
-        
-        h2.section-title,
-        a.standalone-page-link h2.section-title {
-            color: $title-on-dark-color;
-        }
-        .catalog-item-description {
-            color: $text-on-dark-color;
-        }
-        .catalog_item__catalog-item-link a {
-            @include button-on-dark;
-        }
-    }
-    
+       
     //-----------------------
     // dark bg class only
     //-----------------------
@@ -161,35 +172,56 @@
     }
 }
 
-//-----------------------
-//  Light Text class
-//-----------------------
-.paragraph--type--catalog-item {    
-    &.light-text {
-        h2.section-title,
+.light-text {
+    &.paragraph--type--catalog-item	{
+        // title
+        .section-title,
         a.standalone-page-link h2.section-title {
-            color: $title-on-dark-color;
+            color: $title-on-dark-color !important;
         }
         .catalog-item-description {
-            color: $text-on-dark-color;
+            color: $text-on-dark-color !important;
+        }
+        .catalog-item-link {
+            &.btn-primary,
+            &.btn-secondary {
+                @include button-on-dark;
+            }
+            &:not(.btn) {
+                color: $link-on-dark-color !important;
+                
+                &:hover {
+                    color: $link-on-dark-color-hover !important;
+                }
+            }
         }
     }
 }
 
-//------------------------------------
-//  Dark Text class
-//------------------------------------
-.paragraph--type--catalog-item { 
-    &.dark-text {
-        h2.section-title,
-        a.standalone-page-link h2.section-title {
-            color: $title-on-light-color;
-        }
-        .catalog-item-description {
-            color: $text-on-light-color;
-        }
-        .catalog_item__catalog-item-link a {
-            @include button-on-light;
+// override .light-text in mobile only
+.light-text {
+    &.dark-text-mobile {
+        @include media-breakpoint-down(sm) {
+            // title
+            .section-title {
+                color: $title-on-light-color !important;
+            }
+            .catalog-item-description {
+                color: $text-on-light-color !important;
+            }
+            .catalog-item-link {
+                &.btn-primary,
+                &.btn-secondary {
+                    @include button-on-light;
+                }
+                &:not(.btn) {
+                    color: $link-on-light-color !important;
+                    
+                    &:hover {
+                        color: $link-on-light-color-hover !important;
+                    }
+                }
+            }
         }
     }
 }

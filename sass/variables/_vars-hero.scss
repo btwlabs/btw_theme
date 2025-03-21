@@ -46,6 +46,19 @@ $fixed-effect-max-height-mobile: 812px;
 
 
 //----------------------------------
+// Hero Height - HOME ONLY
+//	 Sets the height of the home page hero only. 
+//----------------------------------
+	
+	//	Height (mobile)
+	//	Sets the height of the HOME Hero Section for mobile devices. Recommended to use "vh" units. 100vh = 100% of the device screen height.
+	$hero-home-min-height-sm: $hero-min-height-sm;
+	
+	//	Height (Tablet and Desktop)
+	//Sets the height of the hero section. A value of 100vh will be the full height of the viewport on any device.
+	$hero-home-min-height-lg: $hero-min-height-lg;
+
+//----------------------------------
 //
 // Hero Overlay
 // 

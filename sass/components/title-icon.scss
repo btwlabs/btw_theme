@@ -1,0 +1,642 @@
+//--------------------------------------------
+//
+//	TITLES with icon only (v1)
+//	markup required in title field: 
+//	<span class="title-icon"></span><span>Replace Me with a Real Title</span>
+// 	reference: profile skin story canvas site
+//
+//--------------------------------------------
+
+
+//--------------------------
+//  Section Title Icons
+//--------------------------
+
+// Variables
+$title-icon-width: 1.65em;
+$title-icon-height: 1.65em;
+$title-icon-width-mobile: 50px;
+$title-icon-height-mobile: 50px;
+$title-icon-url: 'https://****CHANGE-ME*****';
+
+// positioning top/left to align with title text
+$title-icon-position-top: 0;
+$title-icon-position-left: 0;
+$title-icon-position-top-mobile: 0;
+$title-icon-position-left-mobile: 0;
+$title-icon-position-right: 0; // such as calc(-#{$title-icon-width} / 2)
+$title-icon-position-right-mobile: 0;
+
+// title bar (category) above title
+$title-bar-font-family: $base-font-family;
+$title-bar-text-transform: uppercase;
+$title-bar-bg-color: $primary;
+
+// -------------------------------------
+//  Title LEFT alignment - icon styles
+//--------------------------------------
+
+.title-icon-left {
+	h2.section-title {
+		position: relative;
+		z-index: 1;
+		
+		// icon wrapper
+		span.title-icon {
+			position: absolute;
+			z-index: 0;
+			display: inline-block;
+			width: $title-icon-width;
+			height: $title-icon-height;
+			top: $title-icon-position-top;
+			left: $title-icon-position-left;
+			background-image: url(#{$title-icon-url});
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+	
+			@include media-breakpoint-down(sm) {
+				top: $title-icon-position-top-mobile;
+				left: $title-icon-position-top-mobile;
+				width: $$title-icon-width-mobile;
+				height: $$title-icon-height-mobile;
+			}
+		}
+		
+		// title text wrapper
+		span:nth-of-type(2) {
+			position: relative;
+			z-index: 1;
+			
+			@include media-breakpoint-down(sm) {
+				left: 20px;
+				display: block;
+				width: calc(100% - 20px);
+			}
+		}
+	}
+}
+
+
+//--------------------------------------
+//  Title CENTER alignment - icon styles
+//--------------------------------------
+
+.title-icon-center {
+	h2.section-title {
+		position: relative;
+	
+		span.title-icon {
+			position: relative;
+			z-index: 0;
+			display: inline-block;
+			width: $title-icon-width;
+			height: $title-icon-height;
+			top: $title-icon-position-top;
+			left: calc(#{$title-icon-width} / 2);
+			background-image: url(#{$title-icon-url});
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-size: 100% auto;
+	
+			@include media-breakpoint-down(sm) {
+				position: absolute;
+				top: $title-icon-position-top;
+				left: $title-icon-position-left;
+				width: $$title-icon-width-mobile;
+				height: $$title-icon-height-mobile;
+			}
+		}
+		span:nth-of-type(2) {
+			//left: calc(#{$title-icon-width} / 2);
+			position: relative;
+			z-index: 1;
+			
+			@include media-breakpoint-down(sm) {
+				display: block;
+				text-align: left;
+				left: calc(#{$$title-icon-width-mobile} / 2);
+				width: calc(100% - (calc(#{$$title-icon-width-mobile} / 2)));
+			}
+		}
+	}
+}
+
+
+//--------------------------------------
+//  Title RIGHT alignment - icon styles
+//--------------------------------------
+
+.title-icon-right {
+	h2.section-title {
+		position: relative;
+		z-index: 1;
+		text-align: right !important;
+		
+		// icon wrapper
+		span.title-icon {
+			position: absolute;
+			z-index: 0;
+			display: inline-block;
+			width: $title-icon-width;
+			height: $title-icon-height;
+			top: $title-icon-position-top;
+			right: $title-icon-position-right; 
+			background-image: url(#{$title-icon-url});
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+	
+			@include media-breakpoint-down(sm) {
+				top: $title-icon-position-top-mobile;
+				right: $title-icon-position-right-mobile;
+				width: $title-icon-width-mobile;
+				height: $title-icon-height-mobile;
+			}
+		}
+		
+		// title text wrapper
+		span:nth-of-type(2) {
+			position: relative;
+			z-index: 1;
+			
+			@include media-breakpoint-down(sm) {
+				right: 0px;
+				display: block;
+				width: calc(100% - 20px);
+			}
+		}
+	}
+}
+
+
+//--------------------------------------
+//  TOP - Icon ABOVE title text
+//--------------------------------------
+
+.title-icon-top {
+	h2.section-title {
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		
+		// icon wrapper
+		span.title-icon {
+			z-index: 0;
+			display: block;
+			order: 1;
+			flex: 0 0 auto;
+			width: $title-icon-width;
+			height: $title-icon-height;
+			background-image: url(#{$title-icon-url});
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			margin-bottom: 10px;
+	
+			@include media-breakpoint-down(sm) {
+				width: $$title-icon-width-mobile;
+				height: $$title-icon-height-mobile;
+			}
+		}
+		
+		// title text wrapper
+		span:nth-of-type(2) {
+			position: relative;
+			z-index: 1;
+			order: 2;
+			
+			@include media-breakpoint-down(sm) {
+				text-align: center !important;
+			}
+		}
+	}
+}
+
+//--------------------------------------
+//  Bottom - Icon BELOW title text
+//--------------------------------------
+
+.title-icon-bottom {
+	h2.section-title {
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		
+		// icon wrapper
+		span.title-icon {
+			z-index: 0;
+			display: block;
+			order: 1;
+			flex: 0 0 auto;
+			width: $title-icon-width;
+			height: $title-icon-height;
+			background-image: url(#{$title-icon-url});
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			margin-top: 10px;
+	
+			@include media-breakpoint-down(sm) {
+				width: $$title-icon-width-mobile;
+				height: $$title-icon-height-mobile;
+			}
+		}
+		
+		// title text wrapper
+		span:nth-of-type(2) {
+			position: relative;
+			z-index: 1;
+			order: 0;
+			
+			@include media-breakpoint-down(sm) {
+				text-align: center !important;
+			}
+		}
+	}
+}
+
+
+//------------------------------------------------------
+//
+//	H2 Titles (v2) 
+//	with icons and category tag (above)
+//	(originally from NGH)
+//
+//	markup required in title field ONLY IF TITLE BAR, otherwise just <span> for icon: 
+//	<span class="span1">CATEGORY TEXT</span><span class="span2">MAIN TITLE TEXT</span>
+//
+//------------------------------------------------------
+
+//------------------------------------------------------
+//  !!!! H2 section titles with category SPAN ONLY (bar)
+//------------------------------------------------------
+
+//-----------------------------
+//
+//  H2 TITLES with 
+//  • category SPAN ONLY
+//  • LEFT ALIGNED
+//
+//-----------------------------
+
+.title-bar-no-icon {
+	h2.section-title,
+	h2.title /* view sb */ {
+		&:before { // override default
+			display: none;
+		}
+		.span1 {
+			background: $title-bar-bg-color; 
+			display: inline-block;
+			padding: 8px 25px;
+			font-size: .5em;
+			color: #fff;
+			margin-bottom: .75em;
+			margin-left: 5px;
+			text-transform: $title-bar-text-transform;
+			font-family: $title-bar-font-family;
+			letter-spacing: .1em;
+		}
+		.span2 {
+			display: block;
+			
+			&:before {
+				display: none;
+			}
+		}
+	}
+}
+
+
+
+//------------------------------------------------------
+//  !!!! H2 section titles with ICON ONLY
+//------------------------------------------------------
+
+//-----------------------------
+//
+//  H2 TITLES with 
+//  • ICON ONLY
+//  • LEFT ALIGNED
+//
+//-----------------------------
+
+.title-with-icon {
+	// h2 section titles icon - default
+	h2.section-title,
+	h2.title /* view sb */ {
+		
+		@include media-breakpoint-up(md) {
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				left: -40px;
+				top: -.15em;
+				width: 35px;
+				height: 1.3em;
+				background: transparent url(#{$title-icon-url}) no-repeat scroll center center;
+				background-size: 100% auto;
+			}
+		}
+	}
+}
+
+
+//-----------------------------
+//
+//  H2 TITLES with 
+//  • ICON ONLY
+//  • CENTER ALIGNED
+//
+//-----------------------------
+
+.title-with-icon-center {
+	h2.section-title, 
+	h2.title /* view sb */ {
+		@include media-breakpoint-up(md) {
+			&:before {
+				content: "";
+				display: inline-block;
+				width: 35px; 
+				height: .3em; 
+				background: transparent url(#{$title-icon-url}) no-repeat scroll center center;
+				background-size: 100% auto;
+				vertical-align: top;
+				top: -.15em;
+				left: 0;
+				position: relative;
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+.paragraph--view-mode--center-text-full-bg-image,
+.paragraph--view-mode--img-top-text-bottom,
+.paragraph--view-mode--bg-img-top-text-bottom,
+.section-story-block.text-center {
+	&.title-with-icon {
+		h2.section-title {
+			@include media-breakpoint-up(md) {
+				&:before {
+					content: "";
+					display: inline-block;
+					width: 35px;
+					height: 1.3em;
+					background: transparent url(#{$title-icon-url}) no-repeat scroll center center;
+					background-size: 100% auto;
+					vertical-align: top;
+					top: -.15em;
+					left: 0;
+					position: relative;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}
+
+// cards 
+.paragraph--type--s2-cards {
+	&.title-with-icon {
+		// hide extra icon only shows on cards
+		h2.section-title {
+		  &:before,
+		  .span2:before {
+			display: none;
+		  }
+		}
+		.s2_cards__field-name-cards-title {
+			@include media-breakpoint-up(md) {
+				&:before {
+					content: "";
+					display: inline-block;
+					width: 35px;
+					height: 1.3em;
+					background: transparent url(#{$title-icon-url}) no-repeat scroll center center;
+					background-size: 100% auto;
+					vertical-align: top;
+					top: -.15em;
+					left: 0;
+					position: relative;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}
+
+
+//------------------------------------------------------
+//  !!!! H2 section titles with category SPAN (bar) & ICON
+//------------------------------------------------------
+
+//-----------------------------
+//
+//  H2 TITLES with 
+//  • category SPAN 
+//  • ICON
+//  • LEFT ALIGNED
+//
+//-----------------------------
+
+.title-bar-with-icon {
+	h2.section-title,
+	h2.title {
+		&:before { // override default
+			display: none;
+		}
+		.span1 {
+			background: $title-bar-bg-color;
+			display: inline-block;
+			padding: 8px 25px;
+			font-size: .5em;
+			color: #fff;
+			margin-bottom: .75em;
+			margin-left: 5px;
+			text-transform: $title-bar-text-transform;
+			font-family: $title-bar-font-family;
+			letter-spacing: .1em;
+		}
+		.span2 {
+			display: block;
+			
+			@include media-breakpoint-up(md) {
+				&:before {
+					content: "";
+					display: block;
+					position: absolute;
+					left: -40px;
+					top: 1.5em;
+					width: 35px;
+					height: 1.3em;
+					background: transparent url(#{$title-icon-url}) no-repeat scroll center center;
+					background-size: 100% auto;
+				}
+			}
+		}
+	}
+}
+
+//-----------------------------
+//
+//  H2 TITLES with 
+//  • category SPAN 
+//  • with/without ICON
+//  • CENTER ALIGNED
+//
+//-----------------------------
+
+.paragraph--view-mode--center-text-full-bg-image,
+.paragraph--view-mode--img-top-text-bottom,
+.paragraph--view-mode--bg-img-top-text-bottom,
+.section-story-block.text-center {
+  
+	// WITH ICON
+	&.title-bar-with-icon {
+		h2.section-title {
+	
+			.span1 {
+				background: $title-bar-bg-color;
+				display: inline-block;
+				padding: 8px 25px;
+				font-size: .5em;
+				color: #fff;
+				margin-bottom: .75em;
+				margin-left: 5px;
+				text-transform: $title-bar-text-transform;
+				font-family: $title-bar-font-family;
+				letter-spacing: .1em;
+			}
+			.span2 {
+				@include media-breakpoint-up(md) {
+					&:before {
+						content: "";
+						display: inline-block;
+						width: 35px;
+						height: 1.3em;
+						background: transparent url(#{$title-icon-url}) no-repeat scroll center center;
+						background-size: 100% auto;
+						vertical-align: top;
+						top: -.15em;
+						left: 0;
+						position: relative;
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+	
+	// WITHOUT ICON
+	&.title-bar-no-icon {
+		h2.section-title {
+	
+			.span1 {
+				background: $title-bar-bg-color;
+				display: inline-block;
+				padding: 8px 25px;
+				font-size: .5em;
+				color: #fff;
+				margin-bottom: .75em;
+				margin-left: 5px;
+				text-transform: $title-bar-text-transform;
+				font-family: $title-bar-font-family;
+				letter-spacing: .1em;
+			}
+			.span2 {
+				display: block;
+				
+				&:before {
+					display:none;
+				}
+			}
+		}
+	}
+}
+
+// cards - centered title
+.paragraph--type--s2-cards {
+  
+	// WITH ICON
+	&.title-bar-with-icon {
+	  
+		// hide extra icon only shows on cards
+		h2.section-title {
+			&:before,
+			.span2:before {
+				display: none;
+			}
+		}
+		.s2_cards__field-name-cards-title {
+			.span1 {
+				background: $title-bar-bg-color;
+				display: inline-block;
+				padding: 8px 25px;
+				font-size: .5em;
+				color: #fff;
+				margin-bottom: .75em;
+				margin-left: 5px;
+				text-transform: $title-bar-text-transform;
+				font-family: $title-bar-font-family;
+				letter-spacing: .1em;
+			}
+			.span2 {
+				@include media-breakpoint-up(md) {
+					&:before {
+						content: "";
+						display: inline-block;
+						width: 35px;
+						height: 1.3em;
+						background: transparent url(#{$title-icon-url}) no-repeat scroll center center;
+						background-size: 100% auto;
+						vertical-align: top;
+						top: -.15em;
+						left: 0;
+						position: relative;
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+	
+	// WITHOUT ICON
+	&.title-bar-no-icon {
+		// hide extra icon only shows on cards
+		h2.section-title {
+		  &:before,
+		  .span2:before {
+			display: none;
+		  }
+		}
+		.s2_cards__field-name-cards-title {
+	
+			.span1 {
+				background: $title-bar-bg-color;
+				display: inline-block;
+				padding: 8px 25px;
+				font-size: .5em;
+				color: #fff;
+				margin-bottom: .75em;
+				margin-left: 5px;
+				text-transform: $title-bar-text-transform;
+				font-family: $title-bar-font-family;
+				letter-spacing: .1em;
+			}
+			.span2 {
+				display: block;
+				
+				&:before {
+					display:none;
+				}
+			}
+		}
+	}
+}

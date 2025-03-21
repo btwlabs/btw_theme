@@ -1,0 +1,267 @@
+//----------------------------------
+//
+//	BLOG/ARTICLE ITEM - paragraph:
+//
+//----------------------------------
+
+// Set the bg colors of the rows in the main article list
+.catalog {
+
+    // remove col padding so album bg odd/even colors extend to edge
+    .section-content-items .content-row > .col {
+        padding: 0;
+    }
+    
+    // alternating bg colors for rows
+    .catalog-item {
+        &.even {
+            .paragraph--type--blog-article {
+                background: $article-row-bg-even;
+            }
+        
+        }
+        &.odd {
+            .paragraph--type--blog-article {
+                background: $article-row-bg-odd;
+            }
+        }
+    }
+}
+
+.paragraph--type--blog-article {
+    
+    //------------------------------------
+    //  Blog/article - Item list
+    //------------------------------------
+    &.paragraph--view-mode--default {
+        padding: 4rem 0;
+        position: relative;
+        border-bottom: $article-item-border;
+        
+        // col 1
+        .article-item-1 {
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 30px;
+            }
+            
+            figure {
+                margin: 0;
+            }
+        }
+            
+        // Columns - override bootstrap padding defaults
+        .article-item-1 {
+            @include media-breakpoint-up(lg) {
+                padding-right: 30px;
+            }
+        }
+        .article-item-2 {
+            @include media-breakpoint-up(lg) {
+                padding-left: 30px;
+            }
+        }
+        
+        // IMAGE
+        .blog_article__catalog-item-image {        
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        
+        // Blog TITLE
+        a.standalone-page-title-link:not(.btn) {
+            text-decoration: $article-list-title-text-decoration;
+            color: $article-list-title-color;
+            
+            h2.section-title {
+                @include responsive-article-list-title;
+                font-weight: $article-list-title-weight;
+                color: $article-list-title-color;
+                transition: 0.2s ease-in all;
+                border: $article-list-title-border;
+                padding: $article-list-title-padding;
+                margin: $article-list-title-margin;
+                
+                &:hover {
+                    text-decoration: $article-list-title-hover-text-decoration;
+                    color: $article-list-title-hover-color; 
+                }
+            }
+            &:hover {
+                text-decoration: $article-list-title-hover-text-decoration;
+                color: $article-list-title-hover-color; 
+            }
+        }
+        
+        .article-author-date-wrapper {
+            display: flex;
+            margin-top: 1em;
+        }
+        
+        // AUTHOR
+        .article-item-author {
+            display: flex;
+            margin-right: 1em;
+            font-size: $article-item-author-size;
+            color: $article-item-author-color;
+            
+            &:after {
+                content: "•";
+                display: inline-block;
+                margin-left: 1em;
+            }
+            
+            span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            
+            .article-author-label {
+                margin-right: 0.2em; // approx width of a space
+            }
+        }
+        
+        // DATE
+        .article-item-date {
+            display: flex;
+            font-size: $article-item-date-size;
+            color: $article-item-date-color;
+            
+            span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            
+            .article-date-label {
+                display: none;
+            }
+        }
+        
+        // description
+        .article-item-description {
+            color: $article-item-description-color;
+            margin-top: 1em;
+            
+            @include media-breakpoint-up(lg) {
+                font-size: $article-item-description-size;
+            }
+            
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        // Item link field
+        .blog_article__catalog-item-link {
+            display: none;
+        }
+    }
+}
+
+
+//---------------------------------------------
+//
+//	LIGHT THEME STYLES -
+//
+//---------------------------------------------
+
+.paragraph--type--blog-article {
+    
+    //-----------------------
+    // light bg dark text
+    //-----------------------
+    &.light-bg-dark-text {
+        background: $bg-light-color !important;
+        
+        h2.section-title,
+        a.standalone-page-link h2.section-title {
+            color: $title-on-light-color;
+        }
+        .article-item-description,
+        .article-item-author,
+        .article-item-date {
+            color: $text-on-light-color;
+        }
+        .catalog_item__catalog-item-link a {
+            @include button-on-light;
+        }
+    }
+    
+    //-----------------------
+    // light bg class
+    //-----------------------
+    &.light-bg {
+        background: $bg-light-color !important;
+    }
+}
+
+//---------------------------------------------
+//
+//	DARK THEME STYLES -
+//
+//---------------------------------------------
+
+.paragraph--type--blog-article {
+    
+    &.dark-bg-light-text {
+        background: $bg-dark-color !important;
+        
+        h2.section-title,
+        a.standalone-page-link h2.section-title {
+            color: $title-on-dark-color;
+        }
+        .article-item-description,
+        .article-item-author,
+        .article-item-date {
+            color: $text-on-dark-color;
+        }
+        .catalog_item__catalog-item-link a {
+            @include button-on-dark;
+        }
+    }
+    
+    //-----------------------
+    // dark bg class only
+    //-----------------------
+    &.dark-bg {
+        background: $bg-dark-color !important;
+    }
+}
+
+//-----------------------
+//  Light Text class
+//-----------------------
+.paragraph--type--blog-article {    
+    &.light-text {
+        h2.section-title,
+        a.standalone-page-link h2.section-title {
+            color: $title-on-dark-color;
+        }
+        .article-item-description,
+        .article-item-author,
+        .article-item-date {
+            color: $text-on-dark-color;
+        }
+    }
+}
+
+//------------------------------------
+//  Dark Text class
+//------------------------------------
+.paragraph--type--blog-article { 
+    &.dark-text {
+        h2.section-title,
+        a.standalone-page-link h2.section-title {
+            color: $title-on-light-color;
+        }
+        .article-item-description,
+        .article-item-author,
+        .article-item-date {
+            color: $text-on-light-color;
+        }
+        .catalog_item__catalog-item-link a {
+            @include button-on-light;
+        }
+    }
+}

@@ -1,12 +1,8 @@
 //------------------------------------------------------
 //
-//	MIXINS - TYPOGRAPHY 
-//
-//	location: 
-//      /sass/abstractions/mixins-typography.scss
+//	MIXINS - TYPOGRAPHY
 //
 //------------------------------------------------------
-
 
 
 // Use REMs with a pixel fallback for font sizing.
@@ -24,21 +20,20 @@
 @mixin base-text-style {
 	font-family: $base-font-family;
 	font-weight: $base-font-weight;
-	font-size: $base-font-size;
 	line-height: $base-line-height;
-	color: $text-color;
+	color: $base-text-color;
 	letter-spacing: $base-letter-spacing;
 }
 
 @mixin responsive-body-text {
-	@include breakpoint($small-only) {
-		@include font-size($body-text-sm);
+	@include media-breakpoint-down(sm) {
+		font-size: $body-text-sm;
 	}
-	@include breakpoint($medium-only) {
-		@include font-size($body-text-md)
+	@include media-breakpoint-up(md) {
+		font-size: $body-text-md;
 	}
-	@include breakpoint($large-up) {
-		@include font-size($body-text-lg)
+	@include media-breakpoint-up(lg) {
+		font-size: $body-text-lg;
 	}
 }
 
@@ -53,98 +48,144 @@
 	font-family: $title-font-family;
 	font-weight: $title-font-weight;
 	margin: $title-margin;
+	padding: $title-padding;
 	color: $title-color;
 	line-height: $title-line-height;
-	letter-spacing: $title-letter-spacing;
 	text-transform: $title-text-transform;
+	border-bottom: $title-border-bottom;
+	letter-spacing: $title-letter-spacing;
 }
+
+	//-----------------------------------
+	//	HERO HEADING - h1
+	//-----------------------------------
+	@mixin responsive-hero-title {
+
+		@include media-breakpoint-down(sm) {
+			font-size: $hero-title-sm;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: $hero-title-md;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: $hero-title-lg;
+		}
+	}
+
+
+	//-----------------------------------
+	//	HERO SUBHEADING - h2
+	//-----------------------------------
+
+	@mixin responsive-hero-subtitle {
+
+		@include media-breakpoint-down(sm) {
+			font-size: $hero-subtitle-sm;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: $hero-subtitle-md;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: $hero-subtitle-lg;
+		}
+	}
 
 	//-----------------------------------
 	//	Page TITLE - h1
 	//-----------------------------------
-	
+
 	@mixin responsive-page-title {
-		text-align: $page-title-text-align;
-		
-		@include breakpoint($small-up) {
-			@include font-size($page-title-sm);
+
+		@include media-breakpoint-down(sm) {
+			font-size: $page-title-sm;
 		}
-		@include breakpoint($medium-up) {
-			@include font-size($page-title-md);
+		@include media-breakpoint-up(md) {
+			font-size: $page-title-md;
 		}
-		@include breakpoint($large-up) {
-			@include font-size($page-title-lg);
+		@include media-breakpoint-up(lg) {
+			font-size: $page-title-lg;
 		}
 	}
-	
+
 	//-----------------------------------
 	//	Section TITLE - h2
 	//-----------------------------------
-	
+
 	@mixin responsive-section-title {
-		
-		@include breakpoint($small-up) {
-			@include font-size($section-title-sm);
+
+		@include media-breakpoint-down(sm) {
+			font-size: $section-title-sm;
 		}
-		@include breakpoint($medium-up) {
-			@include font-size($section-title-md);
+		@include media-breakpoint-up(md) {
+			font-size: $section-title-md;
 		}
-		@include breakpoint($large-up) {
-			@include font-size($section-title-lg);
+		@include media-breakpoint-up(lg) {
+			font-size: $section-title-lg;
 		}
 	}
-	
+
 	//-----------------------------------
 	//	Section SUBTITLE - h3
 	//-----------------------------------
-	
+
 	@mixin responsive-section-subtitle {
-		
-		@include breakpoint($small-up) {
-			@include font-size($section-subtitle-sm);
+
+		@include media-breakpoint-down(sm) {
+			font-size: $section-subtitle-sm;
 		}
-		@include breakpoint($medium-up) {
-			@include font-size($section-subtitle-md);
+		@include media-breakpoint-up(md) {
+			font-size: $section-subtitle-md;
 		}
-		@include breakpoint($large-up) {
-			@include font-size($section-subtitle-lg);
+		@include media-breakpoint-up(lg) {
+			font-size: $section-subtitle-lg;
 		}
 	}
-	
+
 	//-----------------------------------
-	//	CARDS TITLE 
+	//	CARDS TITLE
 	//-----------------------------------
-	
+
 	@mixin responsive-card-title {
-	
-		@include breakpoint($small-up) {
-			@include font-size($card-title-sm);
+
+		@include media-breakpoint-down(sm) {
+			font-size: $card-title-sm;
 		}
-		@include breakpoint($medium-up) {
-			@include font-size($card-title-md);
+		@include media-breakpoint-up(md) {
+			font-size: $card-title-md;
 		}
-		@include breakpoint($large-up) {
-			@include font-size($card-title-lg);
+		@include media-breakpoint-up(lg) {
+			font-size: $card-title-lg;
 		}
 	}
 
-//-----------------------------------
-//	CAPTIONS:
-//	these mixins are used in .dark-bg & 
-//	.light-bg styles in _story-blocks.scss
-//-----------------------------------
-
-@mixin caption-light {
-	color: $caption-light-color;
+	//-----------------------------------
+	//	ARTICLE LIST TITLE
+	//-----------------------------------
+	@mixin responsive-article-list-title {
 	
-	&:before, &:after {
-		color: $caption-light-color;
+		@include media-breakpoint-down(sm) {
+			font-size: $article-list-title-sm;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: $article-list-title-md;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: $article-list-title-lg;
+		}
 	}
-}
-@mixin caption-dark {
-	color: $caption-dark-color;
 	
-	&:before, &:after {
-		color: $caption-dark-color;
+	//-----------------------------------
+	//	CATALOG LIST TITLE
+	//-----------------------------------
+	@mixin responsive-catalog-list-title {
+	
+		@include media-breakpoint-down(sm) {
+			font-size: $catalog-list-title-sm;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: $catalog-list-title-md;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: $catalog-list-title-lg;
+		}
 	}
-}

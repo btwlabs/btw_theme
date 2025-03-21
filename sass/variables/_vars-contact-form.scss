@@ -29,3 +29,20 @@ $section-contact-form-intro-color: $base-text-color;
 // Body Text Alignment
 // Sets alignment of the body text: left, right, center
 $section-contact-form-intro-body-alignment: center;
+
+
+//----------------------------------
+//	Form Styling - Styles the form itself. 
+//----------------------------------
+
+// Form Bg Color
+// Background color of the form itself.
+$section-contact-form_form-bg-color: transparent;
+
+//Form Padding
+// Spacing between the outer edge of the wrapper around the form itself and the elements inside, i.e. form fields and submit button.
+$section-contact-form_form-padding: 20px;
+
+//	Form Border Radius
+//Sets the roundness of the corners of the outer edges of the form itself. Useful when a different background color is set for the form vs the section.
+$section-contact-form_form-border-radius: 10px;

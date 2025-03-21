@@ -87,8 +87,10 @@
         // compensate for scale 1.5 on parallax, push to right a little
         // to equal bg placement on non-parallax
         &.has-parallax {
-            .bg-image {
-                left: 44.15%;
+            .left-text-full-bg-image {
+                .bg-image {
+                    left: 44.15%;
+                }
             }
         }
     }
