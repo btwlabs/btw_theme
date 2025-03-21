@@ -21,7 +21,6 @@
 	font-family: $btn-font-family;
 	font-size: $btn-font-size;
 	text-align: center;
-	text-decoration: none;
 	
 	&:hover {
 		text-decoration: none;
@@ -60,20 +59,21 @@
 	}
 }
 
-
-
 //--------------------------------------------------
 //
 //	BUTTON ON A DARK BG mixin
 //
 //--------------------------------------------------
 
+// Primary buttons
 @mixin button-on-dark {
 	background: $btn-bg-color-on-dark;
 	color: $btn-text-color-on-dark !important;
 	border-color: $btn-border-color-on-dark;
 
-	&:hover {
+	&:hover,
+	&:active,
+	&:focus {
 		background: $btn-bg-hover-color-on-dark;
 		color: $btn-text-hover-color-on-dark !important;
 		border-color: $btn-border-hover-color-on-dark;
@@ -85,9 +85,40 @@
 	color: $btn-text-color-on-light !important;
 	border-color: $btn-border-color-on-light;
 
-	&:hover {
+	&:hover,
+	&:active,
+	&:focus {
 		background: $btn-bg-hover-color-on-light;
 		color: $btn-text-hover-color-on-light !important;
 		border-color: $btn-border-hover-color-on-light;
+	}
+}
+
+// Secondary buttons
+@mixin secondary-button-on-dark {
+	background: $secondary-btn-bg-color-on-dark;
+	color: $secondary-btn-text-color-on-dark !important;
+	border-color: $secondary-btn-border-color-on-dark;
+	
+	&:hover,
+	&:active,
+	&:focus {
+		background: $secondary-btn-bg-hover-color-on-dark;
+		color: $secondary-btn-text-hover-color-on-dark !important;
+		border-color: $secondary-btn-border-hover-color-on-dark;
+	}
+}
+
+@mixin secondary-button-on-light {
+	background: $secondary-btn-bg-color-on-light;
+	color: $secondary-btn-text-color-on-light !important;
+	border-color: $secondary-btn-border-color-on-light;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $secondary-btn-bg-hover-color-on-light;
+		color: $secondary-btn-text-hover-color-on-light !important;
+		border-color: $secondary-btn-border-hover-color-on-light;
 	}
 }

@@ -10,7 +10,7 @@
 
 // hide the stupid h2 block title since drupal won't allow us to not render it
 h2#block-mainnavigation-mobile-menu {
-    display: none;
+	display: none;
 }
 
 
@@ -27,17 +27,14 @@ h2#block-mainnavigation-mobile-menu {
 	@extend %clearfix;
 	border-bottom: 1px solid $border-color;
 	box-shadow: 1px 0 10px rgba(146, 146, 146, 0.5);
-	
-	@include breakpoint($nav-small-and-med){
-		position: relative;
-		width: 100%;
-		z-index: 101;
-		top: 0;
-		left: 0;
-		background-color: $navbar-bg-color-mobile;
-		//height: 50px;
-	}
-	@include breakpoint($nav-large-up) {
+	position: relative;
+	width: 100%;
+	z-index: 101;
+	top: 0;
+	left: 0;
+	background-color: $navbar-bg-color-mobile;
+
+	@include media-breakpoint-up(lg) {
 		display: none;
 	}
 	
@@ -51,36 +48,34 @@ h2#block-mainnavigation-mobile-menu {
 	/* Site Name */
 	.site-name {
 		
-		@include breakpoint($nav-small-and-med) {
+		display: block;
+		width: 200px;
+		font-size: 23px;
+		text-align: center;
+		height: 50px;
+		line-height: 1.2;
+		vertical-align: middle;
+		margin-left: auto; // pushes logo to right
+		margin-right: 20px;
+		z-index: 0;
+		text-transform: uppercase;
+		
+		& a {
 			display: block;
-			width: 200px;
-		    @include font-size(23px);
-		    text-align: center;
-		    height: 50px;
-		    line-height: 1.2;
-		    vertical-align: middle;
-		    margin-left: auto; // pushes logo to right
-		    margin-right: 20px;
-		    z-index: 0;
-			text-transform: uppercase;
-		    
-		    & a {
-		    	display: block;
-			    color: $mobile-site-name-text-color;
-			    width: 100%;
-			    height: 100%;
-			    background: transparent; // replace with link to logo img
-			    background-size: 90% auto;
-		    }
-	    }
-	    @include breakpoint($nav-medium-only) {
-		    top: 8px;
-		    height: 70px;
-		    
-		    & a {
-			    background-size: 178px auto;
-		    }
-	    }
+			color: $mobile-site-name-text-color;
+			width: 100%;
+			height: 100%;
+			background: transparent; // replace with link to logo img
+			background-size: 90% auto;
+		}
+		@include media-breakpoint-only(sm) {
+			top: 8px;
+			height: 70px;
+			
+			& a {
+				background-size: 178px auto;
+			}
+		}
 	}
 }
 
@@ -128,12 +123,12 @@ h2#block-mainnavigation-mobile-menu {
 }
 
 .js-nav .hamburger {
-    position: absolute;
-    transform: translateX(-50px);
-    top: 0;
-    left: 0;
-    outline: none;
-    
+	position: absolute;
+	transform: translateX(-50px);
+	top: 0;
+	left: 0;
+	outline: none;
+	
 	&:hover {
 		opacity: 0.7; 
 	}
@@ -184,25 +179,25 @@ h2#block-mainnavigation-mobile-menu {
 .hamburger-inner::after {
 	bottom: -10px; 
 }
-    
+	
 //---------------------------
 //	specific animation
 //---------------------------
 .hamburger--squeeze {
-    .hamburger-inner {
-      transition-duration: 0.075s;
-      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	.hamburger-inner {
+	  transition-duration: 0.075s;
+	  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
-      &::before {
-        transition: top 0.075s 0.12s ease,
-                    opacity 0.075s ease;
-      }
+	  &::before {
+		transition: top 0.075s 0.12s ease,
+					opacity 0.075s ease;
+	  }
 
-      &::after {
-        transition: bottom 0.075s 0.12s ease,
-                    transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      }
-    }
+	  &::after {
+		transition: bottom 0.075s 0.12s ease,
+					transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	  }
+	}
 }
 
 // when menu is open/visible
@@ -238,15 +233,15 @@ h2#block-mainnavigation-mobile-menu {
  /* end hamburgers css */
 
 span.hamburger-label {
-    font-size: 12px;
-    position: relative;
-    top: -3px;
-    color: #c8c8c8;
-    //display: block;
-    line-height: 1;
-    font-weight: bold;
-    left: -2px;   
-    display: none;
+	font-size: 12px;
+	position: relative;
+	top: -3px;
+	color: #c8c8c8;
+	//display: block;
+	line-height: 1;
+	font-weight: bold;
+	left: -2px;   
+	display: none;
 }
 
 
@@ -263,7 +258,7 @@ span.hamburger-label {
 	// limit to mobile so that "position: sticky; top: 0;" works
 	// for sticky nav or sidebars. overflow:hidden breaks this 
 	// functionality
-	@include breakpoint($small-and-medium) {
+	@include media-breakpoint-down(md) {
 		overflow-x: hidden;
 	}
 }
@@ -292,10 +287,10 @@ span.hamburger-label {
 }
 .js-nav .l-inner-wrap {
 	transform: translate3d(300px, 0, 0); // latest browser performance
-    backface-visibility: hidden;
-    transition: transform 500ms ease 0s;
-    position: relative;
-    width: 100%;
+	backface-visibility: hidden;
+	transition: transform 500ms ease 0s;
+	position: relative;
+	width: 100%;
 }
 
 
@@ -330,35 +325,35 @@ span.hamburger-label {
 
 .l-menu-mobile {
 	position: absolute;
-    left: -300px;
-    top: 0px;
-    width: 300px;
-    height: 100%;
-    background-color: $mobile-nav-bg-color;
-    backface-visibility: hidden;
-    display: block;
-    z-index: 100;
-    -webkit-transition: .3s ease all;
+	left: -300px;
+	top: 0px;
+	width: 300px;
+	height: 100%;
+	background-color: $mobile-nav-bg-color;
+	backface-visibility: hidden;
+	display: block;
+	z-index: 100;
+	-webkit-transition: .3s ease all;
 	transition: .3s ease all;
 	padding-top: 50px;
 	
-	@include breakpoint($nav-large-up) {
+	@include media-breakpoint-up(lg) {
 		display: none;
 	}
-        
-    .js-nav & {
-	    -webkit-transition: .3s ease all;
+		
+	.js-nav & {
+		-webkit-transition: .3s ease all;
 		transition: .3s ease all;
 					
 		// latest browser performance
 		-webkit-transform: translate3d(0,0, 0);
 		transform: translate3d(0,0, 0);
 		
-	    -webkit-backface-visibility: hidden;
-	    backface-visibility: hidden;
-	    -webkit-transition: all 500ms ease 0s;
-	    transition: all 500ms ease 0s;
-    }
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-webkit-transition: all 500ms ease 0s;
+		transition: all 500ms ease 0s;
+	}
 }
 
 
@@ -381,7 +376,6 @@ span.hamburger-label {
 	li {
 		text-align: left;
 		float: none;
-		@include no-bullet(0,0);
 		border-bottom: 1px solid $mobile-nav-border-color;
 		
 		& a {
@@ -390,7 +384,7 @@ span.hamburger-label {
 			text-decoration: none;
 			width: auto;
 			color: $mobile-nav-text-color;
-			@include font-size(20px);
+			font-size: 20px;
 			font-weight: normal;
 			line-height: 1;
 			
@@ -423,7 +417,7 @@ span.hamburger-label {
 		}
 		.sub-nav {
 			padding: 10px 15px 10px 30px;
-			@include font-size(16px);
+			font-size: 16px;
 			color: $mobile-subnav-text-color;
 		}
 	}

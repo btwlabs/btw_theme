@@ -1,0 +1,51 @@
+//-------------------------------------
+//-------------------------------------
+//
+//	VARIABLES: Snipcart Store
+//  Styles elements of the Snipcart Store, including items and cart
+//
+//-------------------------------------
+//-------------------------------------
+
+// Row Background (Even)
+$product-row-bg-even: $catalog-item-bg-even;
+
+// Row Background (Odd)
+$product-row-bg-odd: $catalog-item-bg-odd;
+
+// Row Border
+$product-row-border: $catalog-item-border;
+
+// Details Font Size
+// Product details (column 2)
+$product-details-font-size: 16px;
+
+//------------------------------
+//
+// Snipcart - Header Cart
+// Styling values for the shopping cart that appears in the site header with site navigation.
+//
+//------------------------------
+
+// Cart Button Background Color
+$cart-button-bg-color: transparent;
+
+// Button Background Color (Hover)
+$cart-button-bg-hover-color: rgba(255,255,255,0.2);
+
+// Shopping Cart Icon Color
+$cart-icon-color: #fff;
+
+// Cart Icon Count Color
+$cart-count-text-color: #fff;
+
+// Cart Icon Background
+$cart-count-bg: $primary;
+
+// Cart Total Price
+// Cart Total Background Color
+
+$cart-total-bg-color: #f2f2f2;
+
+// Cart Total Text Color
+$cart-total-text-color: #000;

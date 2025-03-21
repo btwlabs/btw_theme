@@ -134,3 +134,10 @@ $sb-text-wrapper-bg: transparent;
 // Text Wrapper Padding
 // Set padding on the text area. Useful to separate text from a background image by defining a "box" around text. (For more variation, instead use the custom classes "text-wrapper-dark" and "text-wrapper-light", and the variables are under "Dark/Light Theme Context" group.)
 $sb-text-wrapper-padding: 0;
+
+// Helper Defaults
+// Settings to aid visibility on section creation.
+
+// Image Wrapper Background Color
+// When a view mode is selected for a block that uses a bg image, and no image has been uploaded, this color is there to indicate where an image would appear.
+$sb-image-wrapper-bg-color: transparent;

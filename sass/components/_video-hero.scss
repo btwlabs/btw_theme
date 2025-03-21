@@ -18,40 +18,40 @@
 
 // this first selector may change per site
 .block-homepageherovideo {
-    height: 0;
+	height: 0;
 	overflow: hidden;
 	padding-bottom: 56.25%;
 	//padding-top: 30px;
 	position: relative;
 	width: 100%;
-    
-    video {
-	    position: relative;
-	    display: block; // kills the white space below video that inline-block (default) causes
-	    width: 100%;
-	    z-index: 1;
-    }
+	
+	video {
+		position: relative;
+		display: block; // kills the white space below video that inline-block (default) causes
+		width: 100%;
+		z-index: 1;
+	}
 }
 
 .video-wrapper-img-text {
 	text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
 }
 
 // logo image
 .video_background__field-name-image {
-    text-align: center;
-    
-    img {
-	    max-width: 260px;
-	    margin: 0 auto;
-	    
-	    @include breakpoint($small-only) {
-		    width: 80%;
-	    }
+	text-align: center;
+	
+	img {
+		max-width: 260px;
+		margin: 0 auto;
+		
+		@include media-breakpoint-down(sm) {
+			width: 80%;
+		}
 	}
 }
 .video_background__field-name-body {
@@ -61,19 +61,19 @@
 	line-height: 1;
 	margin-top: 3vw;
 	
-	@include breakpoint($small-only) {
+	@include media-breakpoint-down(sm) {
 		font-size: 17px;
 	}
 }
 
 .video-overlay {
-    position: absolute;
-    content: "";
-    background: rgba(40,40,40,0.55);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: block;
-    z-index: 1;
+	position: absolute;
+	content: "";
+	background: rgba(40,40,40,0.55);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: block;
+	z-index: 1;
 }

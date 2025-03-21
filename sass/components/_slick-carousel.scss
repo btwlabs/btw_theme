@@ -22,16 +22,16 @@
 		background-color: $xlight-gray;
 	}
 	
-	@include breakpoint($small-plus) {
+	@include media-breakpoint-down(md) {
 		padding: 0 15px;
 	}
-    
+	
 	h3.title {
-	    margin-top: 8px;
+		margin-top: 8px;
 	}
 	.views-field-body {
-	    font-size: 16px;
-	    line-height: 1.4;
+		font-size: 16px;
+		line-height: 1.4;
 	}
 	.views-field-field-images {
 		margin-bottom: 10px;
@@ -49,29 +49,29 @@
 	
 	.prev-arrow.slick-arrow,
 	.next-arrow.slick-arrow {
-	    height: 0;
-	    padding-top: 40px;
-	    overflow: hidden;
-	    display: block;
-	    position: relative;
-	    align-self: center;
-	    flex: 0 0 25px;
-	    cursor: pointer;
-	    
-	    &::before {
-		    content: "";
-		    display: block;
-		    position: absolute;
-		    top: 7px;
-		    opacity: .5;
-		    width: 30px;
-		    height: 24px;
-		    transform: translateY(-50%);
-	    }
-	    
-	    &::hover::before {
-		    opacity: 1;
-	    }
+		height: 0;
+		padding-top: 40px;
+		overflow: hidden;
+		display: block;
+		position: relative;
+		align-self: center;
+		flex: 0 0 25px;
+		cursor: pointer;
+		
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 7px;
+			opacity: .5;
+			width: 30px;
+			height: 24px;
+			transform: translateY(-50%);
+		}
+		
+		&::hover::before {
+			opacity: 1;
+		}
 	}
 	.prev-arrow.slick-arrow::before {
 		background: url(../images/icons/arrow-left.svg) no-repeat scroll center left;
@@ -100,39 +100,39 @@
 		
 		.prev-arrow.slick-arrow,
 		.next-arrow.slick-arrow {
-		    height: 126px;
-		    padding-top: 0px;
-		    overflow: hidden;
-		    display: block;
-		    position: relative;
-		    align-self: center;
-		    flex: 0 0, 25px;
-		    cursor: pointer;
-		    top: 0;
+			height: 126px;
+			padding-top: 0px;
+			overflow: hidden;
+			display: block;
+			position: relative;
+			align-self: center;
+			flex: 0 0, 25px;
+			cursor: pointer;
+			top: 0;
 			transform: none;
 			font-size: 0;
 			
-			@include breakpoint($small-only) {
+			@include media-breakpoint-down(sm) {
 				height: 75px;
 			}
-			@include breakpoint($medium-only) {
+			@include media-breakpoint-only(md) {
 				height: 46px;
 			}
-		    
-		    &::before {
-			    content: "";
-			    display: block;
-			    position: absolute;
-			    top: 50%;
-			    opacity: .5;
-			    width: 30px;
-			    height: 24px;
-			    transform: translateY(-50%);
-		    }
-		    
-		    &::hover::before {
-			    opacity: 1;
-		    }
+			
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 50%;
+				opacity: .5;
+				width: 30px;
+				height: 24px;
+				transform: translateY(-50%);
+			}
+			
+			&::hover::before {
+				opacity: 1;
+			}
 		}
 		.prev-arrow.slick-arrow {
 			&:before {

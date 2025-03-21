@@ -1,5 +1,3 @@
-/* story canvas vars - commented out because catalog vars (starts with "C") loads later than these so it causes errors in processing. Probably won't be used in our Drupal sites as we use an articles CT, not the catalog hack
-
 //----------------------------------
 //----------------------------------
 //
@@ -141,5 +139,3 @@ $article-page-author-size: .7em;
 //	Article Page - Author Color
 //	Sets font color for the author on an article page.
 $article-page-author-color: $base-text-color;
-
-*/

@@ -65,14 +65,14 @@
 	background-color: $xlight-gray;
 	padding: 8px;
 	
-	@include breakpoint($medium-up) {
+	@include media-breakpoint-up(md) {
 		display: none;
 		top: $header-height-md;
 	}
-	@include breakpoint($large-up) {
+	@include media-breakpoint-up(lg) {
 		top: $header-height-lg;
 	}
-	@include breakpoint($xlarge-up) {
+	@include media-breakpoint-up(xl) {
 		top: $header-height-xl;
 	}
 	
@@ -82,28 +82,28 @@
 		position: absolute;
 		right: 63px;
 		top: -12px;
-	    width: 0;
-	    height: 0;
-	    border-left: 10px solid transparent;
-	    border-right: 10px solid transparent;
-	    border-bottom: 12px solid $xlight-gray;
+		width: 0;
+		height: 0;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 12px solid $xlight-gray;
 	}
-    
-    h2,
-    label {
-	    display: none;
-    }
-    
-    // text input
-    .form-item {
-	    display: inline-block;
-	    margin: 0 5px 0 0;
-	    
-	    input {
-		    padding: 5px;
-		    border-radius: 4px;
-		    border: 1px solid $border-color;
-		    display: inline-block;
+	
+	h2,
+	label {
+		display: none;
+	}
+	
+	// text input
+	.form-item {
+		display: inline-block;
+		margin: 0 5px 0 0;
+		
+		input {
+			padding: 5px;
+			border-radius: 4px;
+			border: 1px solid $border-color;
+			display: inline-block;
 			vertical-align: top;
 		}
 	}
@@ -114,18 +114,18 @@
 	
 	// submit button
 	input.form-submit {
-	    padding: 9px 10px;
-	    font-size: 14px;
-	    letter-spacing: 0;
-	    color: #fff;
-	    background: $primary;
-	    border: 0;
-	    border-radius: 4px;
-	    text-transform: capitalize;
-	    
-	    &::hover {
-		    background-color: #000;
-	    }
+		padding: 9px 10px;
+		font-size: 14px;
+		letter-spacing: 0;
+		color: #fff;
+		background: $primary;
+		border: 0;
+		border-radius: 4px;
+		text-transform: capitalize;
+		
+		&::hover {
+			background-color: #000;
+		}
 	}
 }
 

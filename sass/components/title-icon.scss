@@ -57,8 +57,8 @@ $title-bar-bg-color: $primary;
 			@include media-breakpoint-down(sm) {
 				top: $title-icon-position-top-mobile;
 				left: $title-icon-position-top-mobile;
-				width: $$title-icon-width-mobile;
-				height: $$title-icon-height-mobile;
+				width: $title-icon-width-mobile;
+				height: $title-icon-height-mobile;
 			}
 		}
 		
@@ -102,8 +102,8 @@ $title-bar-bg-color: $primary;
 				position: absolute;
 				top: $title-icon-position-top;
 				left: $title-icon-position-left;
-				width: $$title-icon-width-mobile;
-				height: $$title-icon-height-mobile;
+				width: $title-icon-width-mobile;
+				height: $title-icon-height-mobile;
 			}
 		}
 		span:nth-of-type(2) {
@@ -114,8 +114,8 @@ $title-bar-bg-color: $primary;
 			@include media-breakpoint-down(sm) {
 				display: block;
 				text-align: left;
-				left: calc(#{$$title-icon-width-mobile} / 2);
-				width: calc(100% - (calc(#{$$title-icon-width-mobile} / 2)));
+				left: calc(#{$title-icon-width-mobile} / 2);
+				width: calc(100% - (calc(#{$title-icon-width-mobile} / 2)));
 			}
 		}
 	}
@@ -196,8 +196,8 @@ $title-bar-bg-color: $primary;
 			margin-bottom: 10px;
 	
 			@include media-breakpoint-down(sm) {
-				width: $$title-icon-width-mobile;
-				height: $$title-icon-height-mobile;
+				width: $title-icon-width-mobile;
+				height: $title-icon-height-mobile;
 			}
 		}
 		
@@ -242,8 +242,8 @@ $title-bar-bg-color: $primary;
 			margin-top: 10px;
 	
 			@include media-breakpoint-down(sm) {
-				width: $$title-icon-width-mobile;
-				height: $$title-icon-height-mobile;
+				width: $title-icon-width-mobile;
+				height: $title-icon-height-mobile;
 			}
 		}
 		

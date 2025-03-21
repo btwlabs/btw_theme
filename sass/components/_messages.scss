@@ -15,7 +15,7 @@
  
 ---------------------------------------*/
 
-// Mesages Container
+// Messages Container
 // Keep out top padding/margin so it will completely collapse when empty
 .l-messages {
 	line-height: 1.25;
@@ -23,7 +23,7 @@
 	margin: 0;
 	background-color: #fff;
 	border: 0;
-	@include font-size(18px);
+	font-size: 18px;
 	word-break: break-all;
 	position: relative;
 	z-index: 15;
@@ -54,13 +54,13 @@
 .messages--status {
 	background-color: #bff697;
 	padding: 5vw 10vw;
-    text-align: center;
-    font-size: 22px;
-    word-break: normal;
-    
-    @include breakpoint($large-up) {
-	    padding: 3vw 10vw;
-    }
+	text-align: center;
+	font-size: 22px;
+	word-break: normal;
+	
+	@include media-breakpoint-up(lg) {
+		padding: 3vw 10vw;
+	}
 }
 
 .messages--status a,

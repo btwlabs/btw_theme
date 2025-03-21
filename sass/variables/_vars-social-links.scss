@@ -9,17 +9,13 @@
 
 //----------------------------------
 //
-//	Header Social Icons
+//	Header Social Icons (fileswift)
 //
 //----------------------------------
 
+
 // Icon Size
-// Set the icon size
 $header-social-icon-size: 1em;
-
-
-// Icon colors
-// Set icon colors
 
 // Icon Color
 $header-social-icon-color: $navbar-link-color;
@@ -30,8 +26,6 @@ $header-social-icon-hover-color: $navbar-link-hover-color;
 // Icon Color (Mobile)
 $header-social-icon-color-mobile: $navbar-link-color-mobile;
 
-// Icon Background Colors
-
 // Icon Background Color
 // Set a background color behind the social icon
 $header-social-icon-bg-color: transparent;
@@ -40,53 +34,63 @@ $header-social-icon-bg-color: transparent;
 // Set the icon background color on mouse hover.
 $header-social-icon-bg-hover-color: transparent;
 
-// Icon Border Colors
-
 // Icon Border Color
 // To add a border around the icon, set a color value. A value of "transparent" will hide the border.
 $header-social-icon-border-color: transparent;
 
 // Icon Border Color (Hover)
-// Set the border color of the icon when hovered. 
+// Set the border color of the icon when hovered
 $header-social-icon-border-hover-color: transparent;
 
 // Icon Border Radius
-// Sets the shape roundness of the border around an icon, visible if a border color or icon background color is set. 
+// Sets the shape roundness of the border around an icon, visible if a border color or icon background color is set.
 $header-social-icon-border-radius: 50%;
 
 // Icon Margin
-// Adds spacing between the icons. 
+// Adds spacing between the icons.
 $header-social-icon-margin: 10px;
 
 
-
-
-//----------------------------------
+//-----------------------------
 //
 //	Section Social Links
 //	Styles the Social Icon section on a page
 //
-//----------------------------------
+//-----------------------------
 
 // Section Background Color
-// Sets a background color on the entire section.
 $section-social-links-bg-color: $section-default-bg-color;
-
 
 // Icon Size
 $social-icon-size: 2rem;
 
+// Section Padding (Lg)
+// Sets default outer padding on the section container for tablet and desktop device sizes.. Uses css shorthand format: "top, left, bottom, right"; or "top bottom"
+$section-social-links-padding-lg: $section-padding-y-lg $section-padding-x-lg;
+
+// Section Padding (Sm)
+// Sets default outer padding on the section container for mobile device sizes. Uses css shorthand format: "top, left, bottom, right"; or "top bottom"
+$section-social-links-padding-sm: $section-padding-y-sm $section-padding-x-sm;
+
+
+
+//------------------------
 // Section Intro - Titles & Body
+//-------------------------
 
 // Intro Title Alignment
 $section-social-icons-title-alignment: center;
 
 // Body Alignment
+// Sets text alignment of the section intro text
 $section-social-icons-body-alignment: center;
 
 
-// Icon Colors
 
+//------------------------
+// Icon Colors
+// Sets colors of icons within a Social Links section
+//------------------------
 
 // Icon Color
 $social-icon-color: $primary;
@@ -94,50 +98,38 @@ $social-icon-color: $primary;
 // Icon Color (Hover)
 $social-icon-hover-color: lighten($social-icon-color, 15%);
 
-// Icon Background Colors
-
 // Icon Background Color
+// Adds a background color behind the icon.
 $social-icon-bg-color: transparent;
 
-
 // Icon Background Color (Hover)
-// Sets the background color behind the icon on mouse hover.
 $social-icon-bg-hover-color: transparent;
-
-// Icon Border Colors
 
 // Icon Border Color
 // To add a border around the icon, set a color value. A value of "transparent" will hide the border.
 $social-icon-border-color: $social-icon-color;
 
 // Icon Border Color (Hover)
-// Sets the color of the border on mouse hover
 $social-icon-border-hover-color: $social-icon-hover-color;
 
 // Icon Border Radius
-
-// Icon Border Radius
-// Sets the shape roundness of the border around an icon, visible if a border color or icon background color is set. 
+// Sets the shape roundness of the border around an icon, visible if a border color or icon background color is set.
 $social-icon-border-radius: 50%;
 
 // Icon Margin
-// Adds spacing around the icons. 
+// Adds spacing around the icons.
 $social-icon-margin: 15px;
 
 
 
-
-//----------------------------------
+//-----------------------------
 //
 //	Footer Social Icons
 //
-//----------------------------------
+//-----------------------------
 
 // Icon Size
-// Sets the size of the icon
 $footer-social-icon-size: 1.25rem;
-
-// Icon Colors
 
 // Icon Color
 // Sets a color for social links in the footer
@@ -146,30 +138,20 @@ $footer-social-icon-color: $footer-link-color;
 // Icon Color on hover
 $footer-social-icon-hover-color: $footer-link-hover-color;
 
-
-// Icon Background Colors
-
 // Icon Background Color
-// Adds a background color behind the icon. 
 $footer-social-icon-bg-color: transparent;
 
 // Icon Background Color (Hover)
-// Sets the background color behind the icon on mouse hover
 $footer-social-icon-bg-hover-color: transparent;
-
-// Icon Border Colors
 
 // Icon Border Color
 // To add a border around the icon, set a color value. A value of "transparent" will hide the border.
 $footer-social-icon-border-color: $footer-link-color;
 
-
 // Icon Border Color (Hover)
-// Sets the color of the border on mouse hover
 $footer-social-icon-border-hover-color: $footer-link-hover-color;
 
 // Icon Border Radius
-// Sets the shape roundness of the border around an icon, visible if a border color or icon background color is set. 
 $footer-social-icon-border-radius: 50%;
 
 // Icon Margin

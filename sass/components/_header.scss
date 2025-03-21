@@ -10,7 +10,7 @@
 
 .l-header {
 	.l-constrained {
-		@include breakpoint($medium-up) {
+		@include media-breakpoint-up(md) {
 			@include unconstrained;
 			padding: 0 3vw;
 		}
@@ -30,21 +30,21 @@
 		
 		h2 {
 		   color: #fff;
-		    line-height: 1;
-		    font-size: 21px;
-		    font-weight: bold;
-		    margin: 0;
-		    padding: 10px;
-		    text-align: center;
+			line-height: 1;
+			font-size: 21px;
+			font-weight: bold;
+			margin: 0;
+			padding: 10px;
+			text-align: center;
 		   
-		   @include breakpoint($medium-only) {
-			   @include font-size(19px);
+		   @include media-breakpoint-only(md) {
+			   font-size: 19px;
 		   }
-	    }
-		@include breakpoint($small-only) {
+		}
+		@include media-breakpoint-down(sm) {
 			display: block;
 		}
-		@include breakpoint($medium-up) {
+		@include media-breakpoint-up(lg) {
 			display: none;
 		}
 	}
@@ -63,11 +63,11 @@
 	background-color: #fff;
 	box-shadow: 1px 0 2px rgba(146, 146, 146, 0.8);
 
-	@include breakpoint($nav-small-and-med) {
+	@include media-breakpoint-down(md) {
 		display: none;
 	}
 	
-	@include breakpoint($nav-large-up) {
+	@include media-breakpoint-up(lg) {
 		display: block;
 		position: relative; // for non-fixed nav
 		left: 0;
@@ -76,7 +76,7 @@
 		@include clearfix; // for non-fixed nav
 		height: $header-height-md;
 	}
-	@include breakpoint($nav-xlarge-up) {
+	@include media-breakpoint-up(xl) {
 		height: $header-height-lg;
 	}
 	

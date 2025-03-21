@@ -8,52 +8,61 @@
 //
 //----------------------------------------------
 
-
 .front {
 	nav.breadcrumb {
 		display: none;
 	}
 }
 
-/*--breadcrumbs--*/
+//---------------------------------
+//	Breadcrumb 
+//---------------------------------
 
-.block--blockify-blockify-breadcrumb  {
-    padding: 2%;
-    background-color: #efefef;
-    font-size: 18px;
-}
-
-.block-system-breadcrumb-block,
-.project__field-name-dynamic-block-fieldnode-breadcrumb {
-	background-color: #efefef;
+.breadcrumb-wrapper,
+.block--blockify-blockify-breadcrumb,
+.block-system-breadcrumb-block {
+	background-color: $breadcrumb-wrapper-bg-color;
+	padding: $breadcrumb-wrapper-padding;
 }
 
 .breadcrumb {
-	padding: 10px 0;
+	padding: 0;
+	font-family: $title-font-family; // *change* added
 	
-	@include breakpoint($small-only) {
+	@include media-breakpoint-down(sm) {
 		margin: 0 24px;
 	}
 	
-	@include breakpoint($medium-up) {
+	@include media-breakpoint-up(md) {
 		@include constrained;
 	}
 	
-	ol {
-		padding:0;
+
+	.breadcrumb {
 		margin: 0;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: $breadcrumb-alignment;
+		background: transparent;
+		flex-wrap: wrap;
 	}
 	
 	li {
-	    list-style-type: none;
-	    display: inline-block;
-	    font-size: 85%;
-	    color: #222;
-	    margin-right: 5px;
-	    
-	    &:after {
+		list-style-type: none;
+		font-size: $breadcrumb-font-size;
+		font-weight: $breadcrumb-font-weight;
+		line-height: 1.2;
+		color: $breadcrumb-text-color;
+		padding: $breadcrumb-link-padding;
+		
+		@include media-breakpoint-down(md) {
+			margin-bottom: 5px;
+		}
+		
+		&:after {
 			content: "»";
-			margin-left:5px;
+			margin-left: 5px;
 			display: inline-block;
 		}
 		
@@ -61,18 +70,12 @@
 			content: "";
 		}
 		
-		a:hover {
-			color: #d91a1a;
+		a {
+			color: $breadcrumb-link-color;
+			
+			&:hover {
+				color: $breadcrumb-link-hover-color;
+			}
 		}
 	}
 }
-
-
-// for pages that don't have the regular block wrapper
-.breadcrumb-wrapper {
-	&.breadcrumb {
-		padding: 10px 8vw;
-		margin: 0;
-	}
-}
-

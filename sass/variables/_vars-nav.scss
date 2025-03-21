@@ -1,28 +1,22 @@
 //------------------------------------------------
 //------------------------------------------------
 //
-//	VARIABLES: Main Navigation
+//	VARIABLES: Main Navigation (bootstrap markup)
 //
 //------------------------------------------------
 //------------------------------------------------
-
-// Navigation Right border
-// Vertical Border (Pipe) for separating the nav from an adjacent element in the header
-
 
 // Header Piping Color
 // Set the color of the vertical divider on the right that separates nav from social icons if used
 $header-piping-color: rgba(50,50,50,0.3);
 
-
+//--------------------
 // Navbar Height
-// Set Height of Navbar
-
+//--------------------
 
 // Large Navbar Height
 // Set Height of Navbar for desktop devices
 $navbar-height-lg: 80px;
-
 
 // Small Navbar Height
 // Set Height of Navbar for Mobile devices
@@ -55,7 +49,7 @@ $fixed-navbar-body-offset-sm: $navbar-height-sm;
 //----------------------------------
 
 // Nav Font Family
-$nav-font-family: "scandia-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$nav-font-family: "poppins","Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Nav Font Weight
 $nav-font-weight: 400;
@@ -66,14 +60,17 @@ $nav-line-height: 1;
 // Nav Text Transform
 $nav-text-transform: capitalize;
 
-
 // Nav Letter Spacing
 $nav-letter-spacing: 0;
 
 
-//----------------------------------
-// Nav font sizes (desktop)
-//----------------------------------
+//--------------------------
+// Nav font sizes
+//--------------------------
+
+// Small nav font size
+$nav-font-size-sm: 18px;
+
 
 // Medium Nav Font Size
 // Font size for tablet devices (portrait). Breakpoint is max width = 768px
@@ -89,7 +86,10 @@ $nav-font-size-lg: 20px;
 // Font size for desktop devices. Breakpoint is min-width=1200px +
 $nav-font-size-xl: 20px;
 
-// Link Spacing
+
+//---------------------
+// Horizontal Link Spacing
+//----------------------
 
 // Nav Link Padding (Y)
 $nav-link-padding-y: .75rem;
@@ -98,9 +98,10 @@ $nav-link-padding-y: .75rem;
 $nav-link-padding-x: 15px;
 
 
-//-------------------------
+
+//-----------------------
 // Nav Colors
-//--------------------------
+//-----------------------
 
 // Navbar Background Color
 $navbar-bg-color: transparent;
@@ -126,5 +127,68 @@ $navbar-link-active-bg: $gray-000;
 
 // Navbar Shadow
 $navbar-box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+
+
+
+//------------------------
+// 	Dropdown/Sub-Nav Items
+//	A second tier of nav items that appear 
+//	beneath main nav items via a dropdown menu. 
+//------------------------
+
+// Sub-nav
+
+$subnav-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$subnav-font-weight: 400;
+$subnav-line-height: 1;
+
+// Dropdown Min Width
+// The minimum width of the dropdown menu container
+$dropdown-min-width: auto;
+
+// Dropdown Wrapper Padding - Y axis
+// Sets the top/bottom padding on the dropdown menu itself. 
+
+$dropdown-padding-y: 0.2em;
+
+// Dropdown Background Color
+// Sets the background color of the dropdown menu. <ul>
+$dropdown-bg-color: #fff;
+
+// Dropdown Border
+$dropdown-border: 0px solid $border-color;
+
+// Dropdown Box Shadow
+// Adds a drop shadow to the menu to help differentiate from elements underneath or around the menu.  
+// Format is CSS shorthand: [offset-x] [offset-y] [blur-radius] [color]
+$dropdown-box-shadow: 0 0.75em 0.75em rgba(0,0,0,0.1);
+
+// Dropdown Link Color
+// Sets the text color of a dropdown nav item. 
+$dropdown-link-color: $navbar-link-color;
+
+// Dropdown Link Color (Hover)
+$dropdown-link-hover-color: $navbar-link-hover-color;
+
+// Dropdown Link Background Color
+//Sets color of a dropdown menu item link
+$dropdown-link-bg: transparent;
+
+// Dropdown Link Bg Color (Hover)
+// Sets the background cover on hover of a dropdown menu item
+$dropdown-link-hover-bg: darken($dropdown-bg-color, 5%);
+
+// Dropdown Link Color (Active)
+$dropdown-link-active-color: $dropdown-link-hover-color;
+
+// Dropdown Link Bg Color (Active)
+$dropdown-link-active-bg: $dropdown-link-hover-bg;
+
+// Dropdown Menu Item Padding
+// Sets padding around the individual items in a dropdown menu
+$dropdown-item-padding: 0.5em 1em;
+
+// Dropdown Item Font Size
+$dropdown-item-font-size: 0.8em;
 
 

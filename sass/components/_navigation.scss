@@ -23,8 +23,8 @@
 			position: relative;
 			background-color: $navbar-bg-color;
 			display: flex;
-		    height: 100%;
-		    align-items: center;
+			height: 100%;
+			align-items: center;
 			
 			li {
 				margin: 0;
@@ -64,15 +64,15 @@
 					
 					&:before {
 						display: block;
-					    content: "";
-					    height: 3px;
-					    background: $primary;
-					    text-align: center;
-					    position: absolute;
-					    bottom: 0;
-					    @include centerX;
-					    animation: nav-border-animation 0.3s ease-in-out forwards;
-					    animation-delay: 0;
+						content: "";
+						height: 3px;
+						background: $primary;
+						text-align: center;
+						position: absolute;
+						bottom: 0;
+						@include centerX;
+						animation: nav-border-animation 0.3s ease-in-out forwards;
+						animation-delay: 0;
 					}
 					> a {
 						background-color: $nav-button-bg-hover-color;
@@ -81,7 +81,7 @@
 				}
 				
 				// Nav button links
-				> a.main-nav {
+				> a.main-nav-item {
 					display: block;
 					color: $navbar-link-color;
 					background-color: $navbar-link-bg-color;
@@ -89,21 +89,22 @@
 					font-weight: $nav-font-weight;
 					text-transform: $nav-text-transform;
 					font-family: $nav-font-family;
+					text-decoration: none;
 					
-					@include breakpoint($small-only) {
-						@include font-size($nav-font-size-mobile);
+					@include media-breakpoint-down(sm) {
+						font-size: $nav-font-size-mobile;
 						padding: 10px;
 					}
-					@include breakpoint($nav-medium-only) {
-						@include font-size($nav-font-size-md);
+					@include media-breakpoint-only(md) {
+						font-size: $nav-font-size-md;
 						padding: 22px 10px 20px;
 					}
-					@include breakpoint($nav-large-only) {
-						@include font-size($nav-font-size-lg);
+					@include media-breakpoint-up(lg) {
+						font-size: $nav-font-size-lg;
 						padding: 22px 10px 20px;
 					}
-					@include breakpoint($nav-xlarge-up) {
-						@include font-size($nav-font-size-xl);
+					@include media-breakpoint-up(xl) {
+						font-size: $nav-font-size-xl;
 						padding: 22px 15px 22px;
 					}
 					
@@ -126,19 +127,18 @@
 				ul.menu {
 					position: absolute;
 					visibility: hidden;
-					@include transition-opacity;
 					background-color: $subnav-bar-bg-color;
 					left: -9999px; // hide offscreen when not needed - more accessible than display:none
 					
-					@include breakpoint($nav-medium-only) {
+					@include media-breakpoint-only(md) {
 						top: $header-height-md;
 						min-width: 170px;
 					}
-					@include breakpoint($nav-large-only) {
+					@include media-breakpoint-only(lg) {
 						top: $header-height-md;
 						min-width: 170px;
 					}
-					@include breakpoint($nav-xlarge-up) {
+					@include media-breakpoint-only(xl) {
 						top: $header-height-xl;
 						min-width: 170px;
 					}
@@ -151,17 +151,17 @@
 							padding: 10px 22px;
 							color: $subnav-text-color;
 							background-color: $subnav-button-bg-color;
-							@include font-size(14px);
+							font-size: 14px;
 							font-family: $subnav-font-family;
 							font-weight: $subnav-font-weight;
 							line-height: $subnav-line-height;
 							display: block;
 							
-							@include breakpoint($nav-medium-only) {
-								@include font-size(14px);
+							@include media-breakpoint-only(md) {
+								font-size: 14px;
 							}
-							@include breakpoint($nav-large-up) {
-								@include font-size(17px);
+							@include media-breakpoint-up(lg) {
+								font-size: 17px;
 							}
 							
 							&:hover,

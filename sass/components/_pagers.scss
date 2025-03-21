@@ -29,32 +29,32 @@ ul.pager__items {
 	
 	li {
 		&.pager__item {
-		    list-style-type: none;
-		    margin: 0 10px 0 0;
-		    display: inline-block;
-		    
-		    a {
-			    display: block;
-			    text-align: center;
-			    border: 1px solid #555;
-			    padding: 5px 10px;
-			    border-radius: 4px;
-			    color: #555;
-			    
-			    &:hover {
-				    background: #222;
-				    border-color: #222;
-				    color: #fff;
-				    text-decoration: none;
+			list-style-type: none;
+			margin: 0 10px 0 0;
+			display: inline-block;
+			
+			a {
+				display: block;
+				text-align: center;
+				border: 1px solid #555;
+				padding: 5px 10px;
+				border-radius: 4px;
+				color: #555;
+				
+				&:hover {
+					background: #222;
+					border-color: #222;
+					color: #000;
+					text-decoration: none;
 				}
 			}
 		}
 		&.pager__item--active {
 			a {
 				background: #222;
-			    border-color: #222;
-			    color: #fff;
-			    text-decoration: none;
+				border-color: #222;
+				color: #000;
+				text-decoration: none;
 			}
 		}
 	}
@@ -67,7 +67,7 @@ ul.pager__items {
 -------------------------------------*/
 
 .entity-pager-wrapper {
-    margin-top: 5vw;
+	margin-top: 5vw;
 }
 
 // outer container
@@ -75,7 +75,7 @@ ul.pager__items {
 	height: auto;
 	position: relative;
 	margin: 0 auto;
-	@include flexbox;
+	display: flex;
 	
 	ul {
 		padding: 0;
@@ -85,13 +85,13 @@ ul.pager__items {
 // list container <ul>
 .entity-pager-list {
 	width: 100%;
-	@include flexbox;
+	display: flex;
 	margin: 0;
-	background-color: $xlight-gray;
+	//background-color: $xlight-gray;
 	
 	.entity-pager-item {
 		margin: 0;
-		@include flex($fg: 0, $fs: 0, $fb: 50%);
+		flex: 0 0 50%;
 	}
 }
 
@@ -101,16 +101,16 @@ ul.pager__items {
 	position: relative;
 	overflow: hidden;
 	display: flex;
-    align-items: center;
+	align-items: center;
 	
-	@include breakpoint($small-only) {
+	@include media-breakpoint-down(sm) {
 		height: 80px;
 	}
 
 	
 	// link wrapper
 	a {
-		color: #fff;
+		color: #000;
 		display: flex;
 		align-items: center;
 		line-height: 1.3;
@@ -141,20 +141,20 @@ ul.pager__items {
 	
 			// overlay
 			span:nth-of-type(1) {
-			    display: none;
-			    //background: rgba(0,0,0,0.5);
-			    width: 100%;
-			    height: 100%;
-			    position: absolute;
-			    left: 0;
-			    top: 0;
-			    z-index: 1;
-			    @include transition(all, 0.2s, ease-in);
-			    
-			    // hide in mobile
-			    @include breakpoint($small-only) {
-				    display: none;
-			    }
+				display: none;
+				//background: rgba(0,0,0,0.5);
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 1;
+				@include transition(all, 0.2s, ease-in);
+				
+				// hide in mobile
+				@include media-breakpoint-down(sm) {
+					display: none;
+				}
 			}
 			
 			// title
@@ -162,46 +162,46 @@ ul.pager__items {
 				z-index: 3;
 				margin: 0;
 				
-				@include breakpoint($small-only) {
+				@include media-breakpoint-down(sm) {
 					font-size: 12px;
 					width: calc(100% - 52px);
 				}
-				@include breakpoint($medium-only) {
+				@include media-breakpoint-only(md) {
 					width: calc(100% - 110px);
 					font-size: 16px;
 				}
-				@include breakpoint($medium-up) {
+				@include media-breakpoint-up(lg) {
 					font-size: 22px;
 				}
-				@include breakpoint($large-only) {
+				@include media-breakpoint-up(lg) {
 					width: calc(100% - 120px);
 				}
-				@include breakpoint($xlarge-up) {
+				@include media-breakpoint-up(md) {
 					width: calc(100% - 140px);
 				}
 			}
 			
 			// icon
 			span:nth-of-type(2) {
-			    height: 40px;
-			    display: block;
+				height: 40px;
+				display: block;
 				z-index: 2;
 				flex: 0 0 24px;
 				position: relative;
 				
-				@include breakpoint($small-only) {
+				@include media-breakpoint-down(sm) {
 					flex: 0 0 12px;
 				}
-			    
-			    &:before {
-				    display: block;
-				    width: 20px;
+				
+				&:before {
+					display: block;
+					width: 20px;
 					height: 34px;
 					
-					@include breakpoint($small-only) {
+					@include media-breakpoint-down(sm) {
 						width: 12px;
 					}
-			    }
+				}
 			}
 		}
 	}
@@ -221,22 +221,22 @@ ul.pager__items {
 
 .entity-pager-item-prev {
 
-    a {		
+	a {		
 		div {
 			
-			@include breakpoint($medium-up) {
+			@include media-breakpoint-up(md) {
 				padding-left: 20px;
 			}
 		}
 	}
 	
 	
-    // arrow icon
-    span:nth-of-type(2) {
-	    order: 1;
-	    margin-right: 20px;
-	    
-	    &:before {
+	// arrow icon
+	span:nth-of-type(2) {
+		order: 1;
+		margin-right: 20px;
+		
+		&:before {
 			content:"";
 			background: url(../images/icons/arrow-left.svg) no-repeat scroll right center;
 			background-size: 100% auto;
@@ -244,13 +244,13 @@ ul.pager__items {
 			left: 0;
 			@include centerY;
 			
-			@include breakpoint($small-only) {
+			@include media-breakpoint-down(sm) {
 				left: 10px;
 			}
 		}
-    }
-    
-    // title
+	}
+	
+	// title
 	h4 {
 		text-align: left;
 		transition: all 0.2s ease;
@@ -272,18 +272,18 @@ ul.pager__items {
 		div {
 			justify-content: flex-end;
 			
-			@include breakpoint($medium-up) {
+			@include media-breakpoint-up(md) {
 				padding-right: 20px;
 			}
 		}
 	}
    
-    // arrow icon
+	// arrow icon
 	span:nth-of-type(2) {
 		order: 2;
 		margin-left: 20px;
-	    
-	    &:before {
+		
+		&:before {
 			content:"";
 			background: url(../images/icons/arrow-right.svg) no-repeat scroll right center;
 			background-size: 100% auto;
@@ -291,13 +291,13 @@ ul.pager__items {
 			right: 0;
 			@include centerY;
 			
-			@include breakpoint($small-only) {
+			@include media-breakpoint-down(sm) {
 				right: 10px;
 			}
 		}
-    }
-    
-    // title
+	}
+	
+	// title
 	h4 {
 		text-align: right;
 		transition: all 0.2s ease;
@@ -331,13 +331,13 @@ ul.pager__items {
 .entity-pager-item-all {
 	position: absolute;
 	top: 50%;
-    left: 50%;
+	left: 50%;
 	@include centerXY;
 	z-index: 3;
 	width: 4.5vw;
 	height: 4.5vw;
 	
-	@include breakpoint($small-only) {
+	@include media-breakpoint-down(sm) {
 		width: 7.5vw;
 		height: 7.5vw;
 	}
@@ -350,15 +350,15 @@ ul.pager__items {
 		background: transparent;
 		display: block;
 		border-radius: 4px;
-	    
-	    @include breakpoint($small-only) {
+		
+		@include media-breakpoint-down(sm) {
 			width: 7.5vw;
 			padding-top: 7.5vw;
 		}
-	    
-	    &:hover {
-		    background-color: $primary;
-	    }
+		
+		&:hover {
+			background-color: $primary;
+		}
 		
 		// icon
 		&:before {
@@ -375,15 +375,15 @@ ul.pager__items {
 			top: 50%;
 			@include centerXY;
 			
-			@include breakpoint($small-only) {
+			@include media-breakpoint-down(sm) {
 				width: 5vw;
 				height: 5vw;
 			}
 		}
 		&:hover:before {
-		    background: url(../images/icons/bars-white.svg) no-repeat scroll center center;
-		    background-size: 80% auto;
-	    }
+			background: url(../images/icons/bars-white.svg) no-repeat scroll center center;
+			background-size: 80% auto;
+		}
 	}
 }
 

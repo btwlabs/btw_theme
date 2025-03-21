@@ -1,0 +1,28 @@
+//-------------------------------------
+//-------------------------------------
+//
+//	VARIABLES: BASIC Subpage
+//
+//-------------------------------------
+//-------------------------------------
+
+// Page Background Color
+// Sets the background color of all basic subpages.
+$subpage-bg-color: $body-bg;
+
+// Basic Page Title Color
+// Sets the color of all basic subpage h1 titles
+$subpage-title-color: $title-color;
+
+// Basic subpage body text color
+$subpage-body-text-color: $base-text-color;
+
+//--------------------------
+//	BASIC SUBPAGE HERO
+//--------------------------
+
+// Hero Height
+$subpage-hero-height: 40vw;
+
+// Hero Background Color
+$subpage-hero-bg-color: $subpage-bg-color;

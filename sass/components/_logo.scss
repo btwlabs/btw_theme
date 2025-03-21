@@ -9,24 +9,32 @@
 //------------------------------------------------------
 
 
+.header-logo {
+	max-width: 175px;
+}
+.mobile-logo {
+	max-width: 80px;
+}
+
+
 // Logo container/region
 .l-branding {
 	background-color: transparent;
 	height: 100%;
 	padding: 0;
 	display: flex;
-    align-items: center;
+	align-items: center;
 	
-	@include breakpoint($small-only) {
+	@include media-breakpoint-down(sm) {
 		padding-left: 15px;
 	}
-	@include breakpoint($medium-up) {
+	@include media-breakpoint-up(md) {
 		width: auto;
 	}
-	@include breakpoint($large-up) {
+	@include media-breakpoint-up(lg) {
 		width: auto;
 	}
-	@include breakpoint($xlarge-up) {
+	@include media-breakpoint-up(xl) {
 		width: auto;
 	}
 	
@@ -38,13 +46,13 @@
 .site-logo {
 	display: block;
 	
-	@include breakpoint($large-up) {
+	@include media-breakpoint-up(lg) {
 		display: flex;
-	    width: 100%;
-	    height: 100%;
-	    align-items: center;
-	    justify-content: center;
-	    padding: 0;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
 	}
 	
 	.site-name {
