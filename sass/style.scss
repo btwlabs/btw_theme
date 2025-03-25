@@ -7,6 +7,14 @@
 //------------------------------------
 
 
+//-----------------------------------
+//
+//  Custom Fonts
+// 
+//-----------------------------------
+
+// Import script goes here...
+
 
 //----------------------------------
 //
@@ -15,7 +23,7 @@
 //----------------------------------
 
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -23,25 +31,25 @@ html {
  * Disable smooth scrolling when users have prefers-reduced-motion enabled
  */
 @media screen and (prefers-reduced-motion: reduce) {
-	html {
-		scroll-behavior: auto;
-	}
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 body {
-	background-color: $body-bg;
-	@include base-text-style; // mixins.scss
-	@include responsive-body-text; // DEFAULT FONT SIZES AT BREAKPOINTS
+    background-color: $body-bg;
+    @include base-text-style; // mixins.scss
+    @include responsive-body-text; // DEFAULT FONT SIZES AT BREAKPOINTS
 
-	@include media-breakpoint-down(md) {
-		// height of header/navbar
-		//padding-top: $fixed-navbar-body-offset-sm;
-	}
+    @include media-breakpoint-down(md) {
+        // height of header/navbar
+        //padding-top: $fixed-navbar-body-offset-sm;
+    }
 
-	@include media-breakpoint-up(lg) {
-		// height of header/navbar
-		//padding-top: $fixed-navbar-body-offset-lg;
-	}
+    @include media-breakpoint-up(lg) {
+        // height of header/navbar
+        //padding-top: $fixed-navbar-body-offset-lg;
+    }
 }
 
 // remove navbar offset padding from inside <body> in CKE text editor
@@ -57,22 +65,22 @@ body.cke_editable {
 }
 
 p {
-	margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 a {
-	transition: all 0.2s ease-in;
-	color: $link-color;
+    transition: all 0.2s ease-in;
+    color: $link-color;
 
-	&:hover {
-		color: $link-color-hover;
-	}
+    &:hover {
+        color: $link-color-hover;
+    }
 }
 
 img, media {
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle; /* kills space between img, a, and container */
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle; /* kills space between img, a, and container */
 }
 
 .h1, .h2, .h3, .h4, .h5,
@@ -86,9 +94,9 @@ img, media {
 }
 
 b, strong {
-	// override default BS "bolder" because that doesn't always
-	// produce results depending on fonts/weights available
-	font-weight: bold;
+    // override default BS "bolder" because that doesn't always
+    // produce results depending on fonts/weights available
+    font-weight: bold;
 }
 
 // This is for image scroll effects
@@ -154,48 +162,125 @@ figure {
 // Page Sections - defaults
 //--------------------------
 .section {
-	position: relative;
-
-    // use margin to create space between sections
+    position: relative;
+    
+    // sitewide section margin
     @include media-breakpoint-down(sm) {
-        margin: $section-outer-margin-sm;
+        margin: $section-sitewide-outer-margin-sm;
     }
     @include media-breakpoint-up(sm) {
-        margin: $section-outer-margin-lg;
+        margin: $section-sitewide-outer-margin-lg;
     }
+    // sitewide section border radius
+    @include media-breakpoint-down(sm) {
+        border-radius: $section-sitewide-border-radius-sm;
+        overflow: $section-sitewide-overflow-value-sm;
+    }
+    @include media-breakpoint-up(sm) {
+        border-radius: $section-sitewide-border-radius-lg;
+        overflow: $section-sitewide-overflow-value-lg;
+    }
+
+   
+    // add margin var values to individual sections via custom css class field
+    &.section-margin {
+        // use margin to create space between sections
+        @include media-breakpoint-down(sm) {
+            margin: $section-outer-margin-sm;
+        }
+        @include media-breakpoint-up(sm) {
+            margin: $section-outer-margin-lg;
+        }
+    }
+    
+    // add border radius var values to individual sections via custom css class field
+    &.section-border-radius {
+        // sets border radius on a section
+        @include media-breakpoint-down(sm) {
+            border-radius: $section-border-radius-sm;
+            overflow: hidden;
+        }
+        @include media-breakpoint-up(sm) {
+            border-radius: $section-border-radius-lg;
+            overflow: hidden;
+        }
+    }
+    
+    // add var border values to individual sections via custom css class field
+    &.section-border {
+        // sets border values on a section
+        @include media-breakpoint-down(sm) {
+            border: $section-border-sm;
+        }
+        @include media-breakpoint-up(sm) {
+            border: $section-border-lg;
+        }
+    }
+    
+    // custom classes to remove sitewide margin var values
+    // on individual sections
+    &.remove-section-margin-sm {
+        // remove section margin defined by vars
+        @include media-breakpoint-down(sm) {
+            margin: 0;
+        }
+    }
+    &.remove-section-margin-lg {
+        @include media-breakpoint-up(sm) {
+            margin: 0;
+        }
+    }
+    
+    // custom classes to remove sitewide border radius per paragraph
+    &.remove-section-border-radius-sm {
+        // remove section margin defined by vars
+        @include media-breakpoint-down(sm) {
+            border-radius: 0;
+            overflow: visible;
+        }
+    }
+    // custom classes to remove sitewide border radius per paragraph
+    &.remove-section-border-radius-lg {
+        // remove section margin defined by vars
+        @include media-breakpoint-up(sm) {
+            border-radius: 0;
+            overflow: visible;
+        }
+    }
+
 
     //background-color: $section-default-bg-color; !!! can't do this because of parallax image effects on SBs
 
-	// offset scroll snap from html {scroll-behavior:smooth;}
+    // offset scroll snap from html {scroll-behavior:smooth;}
 
-	@include media-breakpoint-down(md) {
-		scroll-margin-top: $scroll-top-offset-sm;
-	}
-	@include media-breakpoint-up(lg) {
-		scroll-margin-top: $scroll-top-offset-lg;
-	}
+    @include media-breakpoint-down(md) {
+        scroll-margin-top: $scroll-top-offset-sm;
+    }
+    @include media-breakpoint-up(lg) {
+        scroll-margin-top: $scroll-top-offset-lg;
+    }
 
-	.section-title,
+    .section-title,
     .text-section-title {
-		position: relative;
-		@include responsive-section-title;
-		@include title-style;
-	}
+        position: relative;
+        @include responsive-section-title;
+        @include title-style;
+    }
 
-	.subtitle {
-		@include responsive-section-subtitle;
-		color: $subtitle-color;
-		font-style: $subtitle-font-style;
-		text-align: $subtitle-text-align;
-	}
+    .subtitle {
+        @include responsive-section-subtitle;
+        color: $subtitle-color;
+        font-style: $subtitle-font-style;
+        text-align: $subtitle-text-align;
+    }
 
-	.container {
-		@include media-breakpoint-down(md) {
-			// override bootstrap defaults to match story blocks
-			padding-left: $section-padding-x-sm;
-			padding-right: $section-padding-x-sm;
-		}
-	}
+    .container {
+        @include media-breakpoint-down(md) {
+            // override bootstrap defaults to match story blocks
+            padding-left: $section-padding-x-sm;
+            padding-right: $section-padding-x-sm;
+        }
+    }
 
     // add default padding on outer section wrapper
     &.section-twitter,
@@ -271,38 +356,6 @@ figure {
     background: $tertiary;
 }
 
-//---------------------------------
-// Dark or Light background content
-//---------------------------------
-
-.dark-bg-light-text {
-    background: $bg-dark-color;
-    
-    @include media-breakpoint-up(md) {
-        a {
-            color: $link-on-dark-color;
-
-            &:hover {
-                color: $link-on-dark-color-hover;
-            }
-        }
-    }
-}
-
-.light-bg-dark-text {
-    background: $bg-light-color;
-    
-    @include media-breakpoint-up(md) {
-        a {
-            color: $link-on-light-color;
-
-            &:hover {
-                color: $link-on-light-color-hover;
-            }
-        }
-    }
-}
-
 
 //---------------------------------
 // Dark or Light Text
@@ -310,20 +363,111 @@ figure {
 //      change the text color only
 //---------------------------------
 
+// for dark text on a light bg color
+.dark-text {
+    .section-title {
+        border-color: $border-on-light-color;
+    }
+}
+
+// for light text on a dark bg color
+.light-text {
+    .section-title {
+        border-color: $border-on-dark-color;
+    }
+}
+
+
+
+//--------------------------------
+//	Light Intro text on a dark bg
+//--------------------------------
+.intro-light-text {
+    .intro {
+        .section-title {
+            color: $title-on-dark-color !important;
+        }
+        .intro-body {
+            color: $text-on-dark-color !important;
+            
+            a {
+                color: $link-on-dark-color !important;
+                
+                &:hover {
+                    color: $link-on-dark-color-hover !important;
+                }
+            }
+        }
+        .section-link {
+            a {
+                color: $link-on-dark-color !important;
+                
+                &:hover {
+                    color: $link-on-dark-color-hover !important;
+                }
+            }
+        }
+    }
+}
+
+//--------------------------------
+//	Light Intro text on a light bg
+//--------------------------------
+.intro-dark-text {
+    .intro {
+        .section-title {
+            color: $title-on-light-color !important;
+        }
+        .intro-body {
+            color: $text-on-light-color !important;
+            
+            a {
+                color: $link-on-light-color !important;
+                
+                &:hover {
+                    color: $link-on-light-color-hover !important;
+                }
+            }
+        }
+        .section-link {
+            a {
+                color: $link-on-light-color !important;
+                
+                &:hover {
+                    color: $link-on-light-color-hover !important;
+                }
+            }
+        }
+    }
+}
+
+
+
+//---------------------------------
+// Dark Text - FOR LIGHT BACKGROUND
+//      add this class to a section to 
+//      change the text color only
+//---------------------------------
+
 .dark-text {
     color: $title-on-light-color !important;
-    
+        
     // hero
-    &.section-hero .hero-title-wrapper {
-        .hero-heading,
-        .hero-sub-heading {
+    &.section-hero .hero-title-wrapper,
+    &.section-hero.hero-minimal .hero-title-wrapper {
+        .hero-heading {
             color: $title-on-light-color;
+        }
+        .hero-sub-heading {
+            color: $text-on-light-color;
         }
     }
     
     
     // img+txt, section intros
-    .section-title,
+    .section-title {
+        color: $title-on-light-color !important;
+    }
     .story-block-text,
     .intro-body {
         color: $text-on-light-color !important;
@@ -334,6 +478,28 @@ figure {
             &:hover {
                 color: $link-on-light-color-hover !important;
             }
+        }
+    }
+    // buttons
+    .story-block-link {
+        a.btn {
+            @include button-on-light;
+            
+            &.btn-secondary {
+                @include secondary-button-on-light;
+            }
+        }
+    }
+    .story-block-videos {
+        .modal-trigger--video {
+            @include button-on-light;
+        }
+    }
+    
+    // links that are not buttons
+    .story-block-link {
+        a:not(.btn-primary):not(.btn-secondary) {
+            color: $link-on-light-color;
         }
     }
     
@@ -351,22 +517,196 @@ figure {
         .card-text {
             color: $text-on-light-color !important;
         }
+        .card-link {
+            @include button-on-light;
+            
+            &.btn-secondary {
+                @include secondary-button-on-light;
+            }
+        }
     }
 }
 
+// override .dark-text in mobile only
+.dark-text {
+    &.light-text-mobile {
+        @include media-breakpoint-down(sm) {
+            // hero
+            &.section-hero .hero-title-wrapper,
+            &.section-hero.hero-minimal .hero-title-wrapper {
+                .hero-heading {
+                    color: $title-on-dark-color;
+                }
+                .hero-sub-heading {
+                    color: $text-on-dark-color;
+                }
+            }
+            
+            .section-title {
+                color: $title-on-dark-color !important;
+            }
+            .story-block-text,
+            .intro-body {
+                color: $text-on-dark-color !important;
+                
+                a {
+                    color: $link-on-dark-color !important;
+                    
+                    &:hover {
+                        color: $link-on-dark-color-hover !important;
+                    }
+                }
+            }
+            .story-block-link {
+                a.btn {
+                    @include button-on-dark;
+                    
+                    &.btn-secondary {
+                        @include secondary-button-on-dark;
+                    }
+                }
+            }
+            .story-block-videos {
+                .modal-trigger--video {
+                    @include button-on-dark;
+                }
+            }
+            .story-block-link {
+                a:not(.btn-primary):not(.btn-secondary) {
+                    color: $link-on-dark-color;
+                }
+            }
+            
+            // slides
+            .swiper-slide {
+                .slide-title {
+                    color: $title-on-dark-color !important;
+                }
+                .slide-body {
+                    color: $text-on-dark-color !important;
+                }
+            }
+            
+            // cards 
+            &.section-cards,
+            &.card-item {
+                .card-title {
+                    color: $title-on-dark-color !important;
+                }
+                .card-text {
+                    color: $text-on-dark-color !important;
+                }
+                .card-link {
+                    @include button-on-dark;
+                    
+                    &.btn-secondary {
+                        @include secondary-button-on-dark;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// override for cards
+.card-dark-text {
+    &.light-text-mobile {
+        @include media-breakpoint-down(sm) {
+            // cards 
+            .card-item {
+                .card-title {
+                    color: $title-on-dark-color !important;
+                }
+                .card-text {
+                    color: $text-on-dark-color !important;
+                }
+                .card-link {
+                    @include button-on-dark;
+                    
+                    &.btn-secondary {
+                        @include secondary-button-on-dark;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card-text-over-image {
+    &.card-dark-text {
+        &.light-text-mobile {
+            @media (max-width: 1023.98px) {
+                // cards 
+                .card-item {
+                    .card-title {
+                        color: $title-on-dark-color !important;
+                    }
+                    .card-text {
+                        color: $text-on-dark-color !important;
+                    }
+                    .card-link {
+                        @include button-on-dark;
+                        
+                        &.btn-secondary {
+                            @include secondary-button-on-dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// override for card text on hover
+// different because can't use hover on medium/tablet width
+.card-text-over-image-hover {
+    &.card-dark-text {
+        &.light-text-mobile {
+            @include media-breakpoint-down(lg) {
+                // cards 
+                .card-item {
+                    .card-title {
+                        color: $title-on-dark-color !important;
+                    }
+                    .card-text {
+                        color: $text-on-dark-color !important;
+                    }
+                    .card-link {
+                        @include button-on-dark;
+                        
+                        &.btn-secondary {
+                            @include secondary-button-on-dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+    
+//---------------------------------
+// Light Text - FOR DARK BACKGROUNDS
+//      add this class to a section to 
+//      change the text color only
+//---------------------------------
 
 .light-text {
     color: $title-on-dark-color !important;
     
     // hero
-    &.section-hero .hero-title-wrapper {
-        .hero-heading,
-        .hero-sub-heading {
+    &.section-hero .hero-title-wrapper,
+    &.section-hero.hero-minimal .hero-title-wrapper {
+        .hero-heading {
             color: $title-on-dark-color;
+        }
+        .hero-sub-heading {
+            color: $text-on-dark-color;
         }
     }
     
-    .section-title,
+    .section-title {
+        color: $title-on-dark-color !important;
+    }
     .story-block-text,
     .intro-body {
         color: $text-on-dark-color !important;
@@ -379,39 +719,1013 @@ figure {
             }
         }
     }
+    .story-block-link {
+        a.btn {
+            @include button-on-dark;
+            
+            &.btn-secondary {
+                @include secondary-button-on-dark;
+            }
+        }
+    }
+    .story-block-videos {
+        .modal-trigger--video {
+            @include button-on-dark;
+        }
+    }
+    
+    
+    .story-block-link {
+        a:not(.btn-primary):not(.btn-secondary) {
+            color: $link-on-dark-color;
+        }
+    }
     
     // slides
     .swiper-slide {
-        .slide-title,
+        .slide-title {
+            color: $title-on-dark-color !important;
+        }
         .slide-body {
             color: $text-on-dark-color !important;
         }
     }
 
     // cards 
-    .section-cards,
+    &.section-cards,
     &.card-item {
-        .card-title,
+        .card-title {
+            color: $title-on-dark-color !important;
+        }
         .card-text {
             color: $text-on-dark-color !important;
         }
+        .card-link {
+            @include button-on-dark;
+            
+            &.btn-secondary {
+                @include secondary-button-on-dark;
+            }
+        }
     }
 }
+
+// override .light-text in mobile only
+.light-text {
+    &.dark-text-mobile {
+        @include media-breakpoint-down(sm) {
+            // hero
+            &.section-hero .hero-title-wrapper,
+            &.section-hero.hero-minimal .hero-title-wrapper {
+                .hero-heading {
+                    color: $title-on-light-color;
+                }
+                .hero-sub-heading {
+                    color: $text-on-light-color;
+                }
+            }
+            
+            
+            // img+txt, section intros
+            .section-title {
+                color: $title-on-light-color !important;
+            }
+            .story-block-text,
+            .intro-body {
+                color: $text-on-light-color !important;
+                
+                a {
+                    color: $link-on-light-color !important;
+                    
+                    &:hover {
+                        color: $link-on-light-color-hover !important;
+                    }
+                }
+            }
+            
+            // buttons
+            .story-block-link {
+                a.btn {
+                    @include button-on-light;
+                    
+                    &.btn-secondary {
+                        @include secondary-button-on-light;
+                    }
+                }
+            }
+            .story-block-videos {
+                .modal-trigger--video {
+                    @include button-on-light;
+                }
+            }
+            
+            // links that are not buttons
+            .story-block-link {
+                a:not(.btn-primary):not(.btn-secondary) {
+                    color: $link-on-light-color;
+                }
+            }
+            
+            // individual slides
+            .swiper-slide {
+                .slide-title,
+                .slide-body {
+                    color: $text-on-light-color !important;
+                }
+            }
+            
+            // cards 
+            &.card-item {
+                .card-title,
+                .card-text {
+                    color: $text-on-light-color !important;
+                }
+                .card-link {
+                    @include button-on-light;
+                    
+                    &.btn-secondary {
+                        @include secondary-button-on-light;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// override for cards
+.card-light-text {
+    &.dark-text-mobile {
+        @include media-breakpoint-down(sm) {
+            // cards 
+            .card-item {
+                .card-title,
+                .card-text {
+                    color: $text-on-light-color !important;
+                }
+                .card-link {
+                    @include button-on-dark;
+                    
+                    &.btn-secondary {
+                        @include secondary-button-on-dark;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card-text-over-image {
+    &.card-light-text {
+        &.dark-text-mobile {
+            @include media-breakpoint-down(md) {
+                // cards 
+                .card-item {
+                    .card-title,
+                    .card-text {
+                        color: $text-on-light-color !important;
+                    }
+                    .card-link {
+                        @include button-on-light;
+                        
+                        &.btn-secondary {
+                            @include secondary-button-on-light;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// override for text on hover
+// different because can't use hover on medium/tablet width
+.card-text-over-image-hover,
+.card-text-over-image-bottom-hover {
+    &.card-light-text {
+        &.dark-text-mobile {
+            @media (max-width: 1023.98px) {
+                // cards 
+                .card-item {
+                    .card-title,
+                    .card-text {
+                        color: $text-on-light-color !important;
+                    }
+                    .card-link {
+                        @include button-on-light;
+                        
+                        &.btn-secondary {
+                            @include secondary-button-on-light;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+//--------------------------------
+//	OVERLAY classes for dark and light
+//--------------------------------
+
+// dark color overlay - to vars default
+.overlay-dark {
+    .image-overlay,
+    .hero-overlay {
+        background: $overlay-bg-color-dark;
+    }
+}
+// darl overlay gradient LEFT solid to RIGHT transparent
+.dark-overlay-gradient-from-left {
+    .image-overlay,
+    .hero-overlay {
+        background: rgba($overlay-gradient-base-color-dark,0.7);
+        background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0.7) 36%, rgba($overlay-gradient-base-color-dark, 0.65) 41%, rgba($overlay-gradient-base-color-dark, 0.55) 46%, rgba($overlay-gradient-base-color-dark, 0.35) 55.5%, rgba($overlay-gradient-base-color-dark, .25) 59%,rgba($overlay-gradient-base-color-dark, 0) 65%);
+    }
+}
+// dark overlay gradient RIGHT solid to LEFT transparent
+.dark-overlay-gradient-from-right {
+    .image-overlay,
+    .hero-overlay {
+        background: rgba($overlay-gradient-base-color-dark,0.7);
+        background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0) 35%, rgba($overlay-gradient-base-color-dark, .25) 42%,rgba($overlay-gradient-base-color-dark, 0.35) 46%, rgba($overlay-gradient-base-color-dark, 0.55) 55.5%, rgba($overlay-gradient-base-color-dark, 0.65) 60%, rgba($overlay-gradient-base-color-dark, 0.7) 65%);
+    }
+}
+
+
+//------------------------------------
+//
+//	LIGHT OVERLAY classes
+//
+//-------------------------------------
+
+// light color overlay - to vars default - solid color
+.overlay-light {
+    .image-overlay,
+    .hero-overlay {
+        background: $overlay-bg-color-light;
+    }
+}
+
+// light overlay gradient LEFT solid to RIGHT transparent
+.light-overlay-gradient-from-left {
+    .image-overlay,
+    .hero-overlay {
+        background: rgba(255,255,255,0.7);
+        background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0.7) 36%, rgba($overlay-gradient-base-color-light, 0.65) 41%, rgba($overlay-gradient-base-color-light, 0.55) 46%, rgba($overlay-gradient-base-color-light, 0.35) 55.5%, rgba($overlay-gradient-base-color-light, .25) 59%,rgba($overlay-gradient-base-color-light, 0) 65%);
+    }
+}
+
+// light overlay gradient RIGHT solid to LEFT transparent
+.light-overlay-gradient-from-right {
+    .image-overlay,
+    .hero-overlay {
+        background: rgba($overlay-gradient-base-color-light, 0.7);
+        background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0) 35%, rgba($overlay-gradient-base-color-light, .25) 42%,rgba($overlay-gradient-base-color-light, 0.35) 46%, rgba($overlay-gradient-base-color-light, 0.55) 55.5%, rgba($overlay-gradient-base-color-light, 0.65) 60%, rgba($overlay-gradient-base-color-light, 0.7) 65%);
+    }
+}
+
+
+
+
+//-------------------------------
+//
+//  Text Wrappers - Dark & Light
+//      to create "floating" effect
+//      adding bg color, padding
+//      to text wrappers in section
+//      intro's
+//
+//-------------------------------
+
+
+.text-wrapper-dark {
+    
+    // override story section default &
+    // offset existing padding inside story block text container
+    &.section-story-block {
+        .text-wrapper {
+            @include media-breakpoint-up(md) {
+                margin: 0 (-$text-wrapper-padding);
+            }
+            padding: calc(#{$text-wrapper-padding} * 1.5);
+            @include media-breakpoint-up(md) {
+                padding: $text-wrapper-padding;
+            }
+            
+            background: $text-wrapper-dark-bg;
+            align-self: center;
+        }
+    }
+    .intro .text-wrapper,
+    .text-wrapper {
+        padding: calc(#{$text-wrapper-padding} * 1.5);
+        @include media-breakpoint-up(md) {
+            padding: $text-wrapper-padding;
+        }
+        
+        background: $text-wrapper-dark-bg;
+        border-radius: $text-wrapper-border-radius;
+        margin-bottom: $text-wrapper-padding;
+        
+        .section-title {
+            color: $title-on-dark-color;
+        }
+        .intro-body,
+        .story-block-text {
+            color: $text-on-dark-color;
+        
+            a {
+                color: $link-on-dark-color;
+                
+                &:hover {
+                    color: $link-on-dark-color-hover;
+                }
+            }
+        }
+        // button link
+        .story-block-link,
+        .story-block-videos {
+            a.btn {
+                @include button-on-dark;
+            }
+            a.btn.btn-secondary {
+                @include secondary-button-on-dark;
+            }
+        }
+    }
+}
+
+// Text wrapper light
+.text-wrapper-light {
+    
+    // override story section default &
+    // offset existing padding inside story block text container
+    &.section-story-block {
+        .text-wrapper {
+            @include media-breakpoint-up(md) {
+                margin: 0 (-$text-wrapper-padding);
+            }
+            
+            padding: calc(#{$text-wrapper-padding} * 1.5);
+            @include media-breakpoint-up(md) {
+                padding: $text-wrapper-padding;
+            }
+            
+            background: $text-wrapper-light-bg;
+            align-self: center;
+        }
+    }
+    &.intro .text-wrapper,
+    .text-wrapper {
+        padding: calc(#{$text-wrapper-padding} * 1.5);
+        @include media-breakpoint-up(md) {
+            padding: $text-wrapper-padding;
+        }
+        
+        background: $text-wrapper-light-bg;
+        border-radius: $text-wrapper-border-radius;
+        margin-bottom: $text-wrapper-padding;
+        
+        .section-title {
+            color: $title-on-light-color;
+        }
+        .intro-body,
+        .story-block-text {
+            color: $text-on-light-color;
+        
+            a {
+                color: $link-on-light-color;
+                
+                &:hover {
+                    color: $link-on-light-color-hover;
+                }
+            }
+        }
+        // button link
+        .story-block-link,
+        .story-block-videos {
+            a.btn {
+                @include button-on-light;
+            }
+            a.btn.btn-secondary {
+                @include secondary-button-on-light;
+            }
+        }
+    }
+}
+
+
+// way to remove section customizations so that mobile is using default <body> and section text colors
+// overrides text-wrapper customizations, too, such as text-wrapper-dark/light/overlap, as well as other 
+// sb customizations: light-text, dark-text, light-bg, dark-bg
+.text-wrapper-dark,
+.text-wrapper-light {
+    &.text-wrapper-normalize-mobile {
+        @include media-breakpoint-down(sm) {
+            &.section-story-block {
+                &.dark-bg,
+                &.light-bg {
+                    background-color: transparent;
+                }
+                &.light-text,
+                &.dark-text {
+                    .section-title {
+                        color: $title-color !important;
+                    }
+                    .story-block-text {
+                        color: $base-text-color !important;
+                    }
+                }
+                .text-wrapper {
+                    margin: 0;
+                    padding: 0;
+                    background: transparent;
+                    align-self: center;
+                    box-shadow: none;
+                }
+            }
+            &.intro .text-wrapper,
+            .text-wrapper {
+                background: transparent;
+                padding: 0;
+                border-radius: 0;
+                margin-bottom: 0;
+                box-shadow: none;
+                
+                .section-title {
+                    color: $title-color;
+                }
+                .intro-body,
+                .story-block-text {
+                    color: $base-text-color;
+                
+                    a {
+                        color: $link-color;
+                        
+                        &:hover {
+                            color: $link-color-hover;
+                        }
+                    }
+                }
+                // button link
+                .story-block-link,
+                .story-block-videos {
+                    a.btn {
+                        background: $btn-bg-color;
+                        border: $btn-border;
+                        color: $btn-text-color;
+                        text-align: center;
+                        
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            background: $btn-hover-bg-color;
+                            border-color: $btn-hover-border-color;
+                            color: $btn-hover-text-color !important;
+                            text-decoration: none;
+                        }
+                    }
+                    a.btn.btn-secondary {
+                        @include btn-secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Allow for text-wrapper-overlap in mobile
+.section-story-block {
+    &.text-wrapper-overlap {
+        @include media-breakpoint-down(sm) {
+            .story-block-mobile-image {
+                margin-bottom: 0;
+            }
+            .text-wrapper {
+                margin-top: -15vw;
+            }
+        }
+        
+        // put margin-top on extra image instead, if used
+        &.has-extra-image {
+            @include media-breakpoint-down(sm) {
+                .text-wrapper {
+                    margin-top: 0;
+                }
+                .story-block-extra-image {
+                    margin-top: -15vw;
+                }
+            }
+        }
+    }
+}
+
+//------------------------------------------
+//	Remove text wrapper overlap in mobile
+//------------------------------------------
+.section-story-block {
+    &.text-wrapper-overlap {
+        &.text-wrapper-overlap-remove-mobile {
+            .story-block {
+                @include media-breakpoint-down(sm) {
+                    .story-block-mobile-image {
+                        margin-bottom: 2em;
+                    }
+                    .text-wrapper {
+                        margin-top: 0;
+                    }
+                }
+            }
+            &.has-extra-image {
+                @include media-breakpoint-down(sm) {
+                    .story-block-extra-image {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//-------------------------------------------
+//
+//	CTA Styles - inherits from Bootstrap base
+//
+//-------------------------------------------
+
+
+#cta-modal {
+    // outer wrapper for modal content, sets width
+    .modal-dialog {
+        @include media-breakpoint-only(md) {
+            width: $cta-width-md;
+            max-width: $cta-max-width-md;
+        }
+        @include media-breakpoint-up(lg) {
+            width: $cta-width-lg;
+            max-width: $cta-max-width-lg;
+        }
+    }
+    
+    // Wrapper for all modal content
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        background-color: $cta-bg-color;
+        border-radius: $cta-border-radius;
+        font-size: unset;
+    }
+    
+    // Image
+    .modal-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        figure {
+            margin: 0;
+        }
+    }
+    
+    // Wrapper for title, body, form, submit button, confirmation message
+    .modal-text {
+        padding: 30px 30px 40px;
+        
+        @include media-breakpoint-only(md) {
+            padding: 50px 30px 30px;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 50px 4vw 40px;
+        }
+    }
+    
+    // modal title
+    .modal-header {
+        padding: 0;
+        margin-bottom: 1.5em;
+        border: 0;
+        display: flex;
+        align-items: center;
+    }
+    .modal-title {
+        font-size: $cta-title-font-size;
+        color: $cta-title-color;
+        line-height: 1.2;
+        text-align: $cta-title-align;
+        flex: 1 1 100%;
+        
+        span {
+            font-size: $cta-title-span-size;
+            color: $cta-title-span-color;
+            display: block;
+        }
+    }
+    
+    // modal body
+    .modal-body {
+        padding: 0;
+        margin-bottom: 2em;
+        font-size: $cta-body-size;
+        color: $cta-body-color;
+        text-align: $cta-body-align;
+        
+        p:last-child {
+            margin: 0;
+        }
+    }
+    
+    
+    //------------------------
+    //	FORMS
+    //------------------------
+    
+    // button
+    #fileswift-cta-link a, // dedicated link
+    input[type="submit"], // 3rd party (ideally)
+    button[type="submit"] { // native email
+        background: $cta-btn-bg-color;
+        color: $cta-btn-text-color;
+        border: $cta-btn-border;
+        border-radius: $btn-border-radius;
+        padding: $cta-btn-padding;
+        flex: 0 0 auto;
+        text-decoration: none;
+        
+        &:hover {
+            background-color: $cta-btn-hover-bg-color;
+            color: $cta-btn-hover-text-color;
+            border-color: $cta-btn-hover-border-color;
+            text-decoration: none;
+        }
+    }
+    
+    //-----------------------
+    //  Common forms
+    //-----------------------
+    
+    // Mailchimp form
+    #mc_embed_signup {
+        width: auto;
+        
+        #mc_embed_signup_scroll {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .mc-field-group {
+            width: 100%;
+            
+            input {
+                width: 100%;
+            }
+        }
+        
+        form {
+            margin: 0;
+        }
+        // button
+        input[type="submit"] {
+            height: auto;
+        }
+        input[type="email"],
+        input[type="text"]{
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+        }
+    }
+
+    //-----------------------
+    // Close button
+    //-----------------------
+    
+    button.close.cta-modal-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        margin: 0;
+        z-index: 2;
+        width: 50px;
+        height: 50px;
+        transition: 0.2s all ease;
+        
+        &:hover {
+            transform: rotate(90deg);
+            opacity: 1;
+        }
+        
+        span {
+            display: none;
+        }
+        
+        &:before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: $cta-close-link-color;
+            position: relative;
+            left: 0;
+            top: 0;
+            display: block;
+            transform: rotate(45deg);
+        }
+        &:after {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: $cta-close-link-color;
+            position: relative;
+            left: 0;
+            top: -2px;
+            display: block;
+            transform: rotate(315deg);
+        }
+    }
+    
+    // padding around image
+    &.cta-picture-frame {
+        .modal-image {
+            padding: 50px 30px 30px;
+        }
+    }
+    
+    
+    //-------------------------------
+    // 2-column CTA layout
+    //-------------------------------
+    
+    &.cta-2-col {
+        @include media-breakpoint-up(md) {
+            .modal-dialog {
+                width: $cta-2col-width;
+                max-width: $cta-2col-max-width;
+            }
+            .modal-content {
+                flex-direction: row;
+            }
+            .modal-image {
+                flex: 1 1 50%;
+                
+                figure {
+                    margin: 0;
+                }
+                figcaption {
+                    display: none;
+                }
+            }
+            // Text wrapper
+            .modal-text {
+                flex: 1 1 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .modal-header {
+                flex: 0 1 auto;
+            }
+            .modal-title {
+                flex: 1 1 100%;
+            }
+            .modal-body {
+                flex: 0 1 auto;
+            }
+            .modal_alert__modal-alert-image,
+            .site_v2__cta-image {
+                width: 100%;
+                height: 100%;
+                
+                figure {
+                    margin: 0;
+                    width: 100%;
+                    height: 100%;
+                    
+                    picture {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }			
+        }
+        
+        // padding around image
+        &.cta-picture-frame {
+            .modal-image {
+                padding: 50px 30px 0px;
+                
+                @include media-breakpoint-up(md) {
+                    padding: 30px;
+                }
+            }
+        }
+        
+        // make image cover entire available area
+        &.cta-picture-fit {
+            .modal-content picture img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }	
+    
+}
+
+//-------------------------------------
+//	WAKE LINK / trigger open CTA modal
+//-------------------------------------
+
+.cta-wake-link {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    border-radius: $cta-toggle-border-radius;
+    padding: 0.5em;
+    font-size: $cta-toggle-font-size;
+    margin: 0;
+    line-height: 1;
+    z-index: 100;
+    background: $cta-toggle-bg-color;
+    border: $cta-toggle-border;
+    color: $cta-toggle-text-color;
+    
+    &:hover {
+        border-color: $cta-toggle-hover-border-color;
+        background-color: $cta-toggle-hover-bg-color;
+        color: $cta-toggle-hover-text-color;
+    }
+}
+
+
+//---------------------------------------
+//
+//	CTA TYPES
+//
+//---------------------------------------
+
+#cta-modal-wrapper {
+    
+    //---------------------------
+    //	NATIVE email capture form
+    //---------------------------
+    
+    .cta-type-native-email {
+        .contact-form-wrapper {
+            display: flex;
+            justify-content: center;
+            
+            #cta-form {
+                width: 100%;
+                justify-content: center;
+                display: flex;
+                max-width: 600px;
+                
+                @include media-breakpoint-down(sm) {
+                    flex-direction: column;	
+                }
+            }
+            
+            input[type="email"] {
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                padding: 10px 15px;
+                flex: 1 1 auto;
+                margin-bottom: 15px;
+                
+                @include media-breakpoint-up(md) {
+                    margin-right: 10px;
+                    margin-bottom: 0;
+                }
+            }
+            
+        }
+        
+        // 2 col side by side layout
+        &.cta-2-col {
+            // stack input and button
+            #cta-form {
+                width: 100%;
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            input[type="email"] {
+                margin: 0 0 15px;
+            }
+        }
+    }
+    
+    //-----------------------------
+    //	3rd PARTY email capture form
+    //-----------------------------
+    
+    .cta-type-3rd-party-email {
+        
+    }
+    
+    
+    //----------------------------
+    //	LINK to Dedicated Page 
+    //----------------------------
+    
+    .cta-type-dedicated-link {
+        #fileswift-cta-link {
+            display: flex;
+            justify-content: center;
+            
+            .site_v2__cta-link {
+                display: flex;
+            }
+        }
+    }
+}
+    
+//---------------------------------------
+//
+//	CTA POSITIONS
+//
+//---------------------------------------
+
+#cta-modal-wrapper {
+    
+    //----------------------------
+    //	CENTER, CENTER 
+    //----------------------------
+    .center-center {
+        .modal-dialog {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100% - (.5rem * 2));
+            
+            // Ensure `modal-dialog-centered` extends the full height of the view (IE10/11)
+            &::before {
+                display: block; // IE10
+                height: min-content; // Reset height to 0 except on IE
+                content: "";
+            }
+        }
+    }
+
+    //----------------------------
+    //	CENTER, BOTTOM, FULL WIDTH 
+    //----------------------------
+    .center-bottom {
+        width: auto;
+        height: auto;
+        
+        .modal-dialog {
+            position: fixed;
+            width: calc(100% - 15px);
+            min-width: calc(100% - 15px);
+            left: 0;
+            bottom: 0;
+            margin: 0;
+        }
+    }
+
+    //----------------------------
+    //	RIGHT, BOTTOM 
+    //----------------------------
+    .right-bottom {
+        width: auto;
+        height: auto;
+        
+        .modal-dialog {
+            position: fixed;
+            right: 15px;
+            bottom: 0;
+            margin: 0;
+        }
+    }
+}
+
+
+
+
 
 //--------------------
 //	BUTTONS
 //--------------------
 
 .button-wrapper {
-	margin: 40px 0;
+    margin: 40px 0;
 }
 
 .btn {
-	padding: $btn-padding;
-	border-radius: $btn-border-radius;
-	text-transform: $btn-text-transform;
-	font-weight: $btn-font-weight;
-	letter-spacing: $btn-letter-spacing;
+    padding: $btn-padding;
+    border-radius: $btn-border-radius;
+    text-transform: $btn-text-transform;
+    font-weight: $btn-font-weight;
+    letter-spacing: $btn-letter-spacing;
     font-family: $btn-font-family;
     font-size: $btn-font-size;
     text-align: center;
@@ -422,31 +1736,31 @@ figure {
 }
 
 .btn-primary {
-	background: $btn-bg-color;
-	border: $btn-border;
-	color: $btn-text-color;
+    background: $btn-bg-color;
+    border: $btn-border;
+    color: $btn-text-color;
     text-align: center;
 
-	&:hover {
-		background: $btn-hover-bg-color;
-		border-color: $btn-hover-border-color;
-		color: $btn-hover-text-color !important;
+    &:hover {
+        background: $btn-hover-bg-color;
+        border-color: $btn-hover-border-color;
+        color: $btn-hover-text-color !important;
         text-decoration: none;
-	}
+    }
 }
 
 .btn-secondary {
-	background: $btn-secondary-bg-color;
-	border-color: $btn-secondary-border-color;
-	color: $btn-secondary-text-color;
+    background: $btn-secondary-bg-color;
+    border-color: $btn-secondary-border-color;
+    color: $btn-secondary-text-color;
     text-align: center;
 
-	&:hover {
-		background: $btn-secondary-hover-bg-color;
-		border-color: $btn-secondary-hover-border-color;
-		color: $btn-secondary-hover-text-color !important;
+    &:hover {
+        background: $btn-secondary-hover-bg-color;
+        border-color: $btn-secondary-hover-border-color;
+        color: $btn-secondary-hover-text-color !important;
         text-decoration: none;
-	}
+    }
 }
 
 
@@ -513,6 +1827,16 @@ figure {
         }
     }
 }
+
+
+//------------------------------------
+//	Text Wrappers
+//------------------------------------
+
+.text-wrapper {
+    position: relative;
+}
+
 
 
 //-------------------------------
