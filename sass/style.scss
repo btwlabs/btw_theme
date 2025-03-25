@@ -321,11 +321,18 @@ figure {
     background: $bg-dark-color;
     
     // to override default
+    &.section-hero,
     &.section-slides-text,
     &.section-cards,
     &.section-general-embed,
     &.section-instagram,
-    &.section-social-links {
+    &.section-social-links,
+    &.section-contact,
+    &.section-contact-form,
+    &.section-text,
+    &.section-video-embed,
+    &.section-business-information,
+    &.section-subscribe {
         background: $bg-dark-color;
     }
 }
@@ -334,11 +341,18 @@ figure {
     background: $bg-light-color;
     
     // to override default
+    &.section-hero,
     &.section-slides-text,
     &.section-cards,
     &.section-general-embed,
     &.section-instagram,
-    &.section-social-links {
+    &.section-social-links,
+    &.section-contact, 
+    &.section-contact-form,
+    &.section-text,
+    &.section-video-embed,
+    &.section-business-information,
+    &.section-subscribe {
         background: $bg-light-color;
     }
 }
@@ -347,14 +361,15 @@ figure {
 // Set background ONLY using main color vars
 //---------------------------------
 .bg-color-primary {
-    background: $primary;
+    background-color: $primary !important;
 }
 .bg-color-secondary {
-    background: $secondary;
+    background-color: $secondary !important;
 }
 .bg-color-tertiary {
-    background: $tertiary;
+    background-color: $tertiary !important;
 }
+
 
 
 //---------------------------------
