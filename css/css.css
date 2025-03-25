@@ -2457,6 +2457,72 @@ figure figcaption {
     margin: 0;
   }
 }
+@media (max-width: 767.98px) {
+  .section {
+    border-radius: 0;
+    overflow: visible;
+  }
+}
+@media (min-width: 576px) {
+  .section {
+    border-radius: 0;
+    overflow: visible;
+  }
+}
+@media (max-width: 767.98px) {
+  .section.section-margin {
+    margin: 0;
+  }
+}
+@media (min-width: 576px) {
+  .section.section-margin {
+    margin: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .section.section-border-radius {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
+@media (min-width: 576px) {
+  .section.section-border-radius {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+}
+@media (max-width: 767.98px) {
+  .section.section-border {
+    border: 0px solid #ccc;
+  }
+}
+@media (min-width: 576px) {
+  .section.section-border {
+    border: 0px solid #ccc;
+  }
+}
+@media (max-width: 767.98px) {
+  .section.remove-section-margin-sm {
+    margin: 0;
+  }
+}
+@media (min-width: 576px) {
+  .section.remove-section-margin-lg {
+    margin: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .section.remove-section-border-radius-sm {
+    border-radius: 0;
+    overflow: visible;
+  }
+}
+@media (min-width: 576px) {
+  .section.remove-section-border-radius-lg {
+    border-radius: 0;
+    overflow: visible;
+  }
+}
 @media (max-width: 991.98px) {
   .section {
     scroll-margin-top: 67px;
@@ -2568,51 +2634,108 @@ figure figcaption {
   background: #6D6E71;
 }
 
-.dark-bg-light-text {
-  background: #000;
-}
-@media (min-width: 768px) {
-  .dark-bg-light-text a {
-    color: #b82b8a;
-  }
-  .dark-bg-light-text a:hover {
-    color: #dd6cb8;
-  }
+.dark-text .section-title {
+  border-color: #ccc;
 }
 
-.light-bg-dark-text {
-  background: #fff;
+.light-text .section-title {
+  border-color: #ccc;
 }
-@media (min-width: 768px) {
-  .light-bg-dark-text a {
-    color: #b82b8a;
-  }
-  .light-bg-dark-text a:hover {
-    color: #65184c;
-  }
+
+.intro-light-text .intro .section-title {
+  color: #fff !important;
+}
+.intro-light-text .intro .intro-body {
+  color: #fff !important;
+}
+.intro-light-text .intro .intro-body a {
+  color: #b82b8a !important;
+}
+.intro-light-text .intro .intro-body a:hover {
+  color: #dd6cb8 !important;
+}
+.intro-light-text .intro .section-link a {
+  color: #b82b8a !important;
+}
+.intro-light-text .intro .section-link a:hover {
+  color: #dd6cb8 !important;
+}
+
+.intro-dark-text .intro .section-title {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+.intro-dark-text .intro .intro-body {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+.intro-dark-text .intro .intro-body a {
+  color: #b82b8a !important;
+}
+.intro-dark-text .intro .intro-body a:hover {
+  color: #65184c !important;
+}
+.intro-dark-text .intro .section-link a {
+  color: #b82b8a !important;
+}
+.intro-dark-text .intro .section-link a:hover {
+  color: #65184c !important;
 }
 
 .dark-text {
   color: rgba(0, 0, 0, 0.8) !important;
 }
-.dark-text.section-hero .hero-title-wrapper .hero-heading,
-.dark-text.section-hero .hero-title-wrapper .hero-sub-heading {
+.dark-text.section-hero .hero-title-wrapper .hero-heading, .dark-text.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
   color: rgba(0, 0, 0, 0.8);
 }
-.dark-text .section-title,
+.dark-text.section-hero .hero-title-wrapper .hero-sub-heading, .dark-text.section-hero.hero-minimal .hero-title-wrapper .hero-sub-heading {
+  color: rgba(0, 0, 0, 0.8);
+}
+.dark-text .section-title {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
 .dark-text .story-block-text,
 .dark-text .intro-body {
   color: rgba(0, 0, 0, 0.8) !important;
 }
-.dark-text .section-title a,
 .dark-text .story-block-text a,
 .dark-text .intro-body a {
   color: #b82b8a !important;
 }
-.dark-text .section-title a:hover,
 .dark-text .story-block-text a:hover,
 .dark-text .intro-body a:hover {
   color: #65184c !important;
+}
+.dark-text .story-block-link a.btn, .dark-text .story-block-link .album-wrapper .musical_album__album-purchase-link a, .album-wrapper .musical_album__album-purchase-link .dark-text .story-block-link a, .dark-text .story-block-link .section-alert .alert .feature-box-button a, .section-alert .alert .feature-box-button .dark-text .story-block-link a, .dark-text .story-block-link a.modal-trigger--video {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.dark-text .story-block-link a.btn:hover, .dark-text .story-block-link .album-wrapper .musical_album__album-purchase-link a:hover, .album-wrapper .musical_album__album-purchase-link .dark-text .story-block-link a:hover, .dark-text .story-block-link .section-alert .alert .feature-box-button a:hover, .section-alert .alert .feature-box-button .dark-text .story-block-link a:hover, .dark-text .story-block-link a.modal-trigger--video:hover, .dark-text .story-block-link a.btn:active, .dark-text .story-block-link .album-wrapper .musical_album__album-purchase-link a:active, .album-wrapper .musical_album__album-purchase-link .dark-text .story-block-link a:active, .dark-text .story-block-link .section-alert .alert .feature-box-button a:active, .section-alert .alert .feature-box-button .dark-text .story-block-link a:active, .dark-text .story-block-link a.modal-trigger--video:active, .dark-text .story-block-link a.btn:focus, .dark-text .story-block-link .album-wrapper .musical_album__album-purchase-link a:focus, .album-wrapper .musical_album__album-purchase-link .dark-text .story-block-link a:focus, .dark-text .story-block-link .section-alert .alert .feature-box-button a:focus, .section-alert .alert .feature-box-button .dark-text .story-block-link a:focus, .dark-text .story-block-link a.modal-trigger--video:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.dark-text .story-block-link a.btn.btn-secondary, .dark-text .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary, .album-wrapper .musical_album__album-purchase-link .dark-text .story-block-link a.btn-secondary, .dark-text .story-block-link .section-alert .alert .feature-box-button a.btn-secondary, .section-alert .alert .feature-box-button .dark-text .story-block-link a.btn-secondary, .dark-text .story-block-link a.btn-secondary.modal-trigger--video {
+  background: #fefc53;
+  color: #fff !important;
+  border-color: #fefc53;
+}
+.dark-text .story-block-link a.btn.btn-secondary:hover, .dark-text .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover, .album-wrapper .musical_album__album-purchase-link .dark-text .story-block-link a.btn-secondary:hover, .dark-text .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:hover, .section-alert .alert .feature-box-button .dark-text .story-block-link a.btn-secondary:hover, .dark-text .story-block-link a.btn-secondary.modal-trigger--video:hover, .dark-text .story-block-link a.btn.btn-secondary:active, .dark-text .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active, .album-wrapper .musical_album__album-purchase-link .dark-text .story-block-link a.btn-secondary:active, .dark-text .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:active, .section-alert .alert .feature-box-button .dark-text .story-block-link a.btn-secondary:active, .dark-text .story-block-link a.btn-secondary.modal-trigger--video:active, .dark-text .story-block-link a.btn.btn-secondary:focus, .dark-text .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus, .album-wrapper .musical_album__album-purchase-link .dark-text .story-block-link a.btn-secondary:focus, .dark-text .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:focus, .section-alert .alert .feature-box-button .dark-text .story-block-link a.btn-secondary:focus, .dark-text .story-block-link a.btn-secondary.modal-trigger--video:focus {
+  background: #fefb07;
+  color: #fff !important;
+  border-color: #fefb07;
+}
+.dark-text .story-block-videos .modal-trigger--video {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.dark-text .story-block-videos .modal-trigger--video:hover, .dark-text .story-block-videos .modal-trigger--video:active, .dark-text .story-block-videos .modal-trigger--video:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.dark-text .story-block-link a:not(.btn-primary):not(.modal-trigger--video):not(.btn-secondary) {
+  color: #b82b8a;
 }
 .dark-text .swiper-slide .slide-title,
 .dark-text .swiper-slide .slide-body {
@@ -2622,37 +2745,1554 @@ figure figcaption {
 .dark-text.card-item .card-text {
   color: rgba(0, 0, 0, 0.8) !important;
 }
+.dark-text.card-item .card-link {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.dark-text.card-item .card-link:hover, .dark-text.card-item .card-link:active, .dark-text.card-item .card-link:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.dark-text.card-item .card-link.btn-secondary {
+  background: #fefc53;
+  color: #fff !important;
+  border-color: #fefc53;
+}
+.dark-text.card-item .card-link.btn-secondary:hover, .dark-text.card-item .card-link.btn-secondary:active, .dark-text.card-item .card-link.btn-secondary:focus {
+  background: #fefb07;
+  color: #fff !important;
+  border-color: #fefb07;
+}
+
+@media (max-width: 767.98px) {
+  .dark-text.light-text-mobile.section-hero .hero-title-wrapper .hero-heading, .dark-text.light-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
+    color: #fff;
+  }
+  .dark-text.light-text-mobile.section-hero .hero-title-wrapper .hero-sub-heading, .dark-text.light-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-sub-heading {
+    color: #fff;
+  }
+  .dark-text.light-text-mobile .section-title {
+    color: #fff !important;
+  }
+  .dark-text.light-text-mobile .story-block-text,
+  .dark-text.light-text-mobile .intro-body {
+    color: #fff !important;
+  }
+  .dark-text.light-text-mobile .story-block-text a,
+  .dark-text.light-text-mobile .intro-body a {
+    color: #b82b8a !important;
+  }
+  .dark-text.light-text-mobile .story-block-text a:hover,
+  .dark-text.light-text-mobile .intro-body a:hover {
+    color: #dd6cb8 !important;
+  }
+  .dark-text.light-text-mobile .story-block-link a.btn, .dark-text.light-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a, .album-wrapper .musical_album__album-purchase-link .dark-text.light-text-mobile .story-block-link a, .dark-text.light-text-mobile .story-block-link .section-alert .alert .feature-box-button a, .section-alert .alert .feature-box-button .dark-text.light-text-mobile .story-block-link a, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .dark-text.light-text-mobile .story-block-link a.btn:hover, .dark-text.light-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a:hover, .album-wrapper .musical_album__album-purchase-link .dark-text.light-text-mobile .story-block-link a:hover, .dark-text.light-text-mobile .story-block-link .section-alert .alert .feature-box-button a:hover, .section-alert .alert .feature-box-button .dark-text.light-text-mobile .story-block-link a:hover, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video:hover, .dark-text.light-text-mobile .story-block-link a.btn:active, .dark-text.light-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a:active, .album-wrapper .musical_album__album-purchase-link .dark-text.light-text-mobile .story-block-link a:active, .dark-text.light-text-mobile .story-block-link .section-alert .alert .feature-box-button a:active, .section-alert .alert .feature-box-button .dark-text.light-text-mobile .story-block-link a:active, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video:active, .dark-text.light-text-mobile .story-block-link a.btn:focus, .dark-text.light-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a:focus, .album-wrapper .musical_album__album-purchase-link .dark-text.light-text-mobile .story-block-link a:focus, .dark-text.light-text-mobile .story-block-link .section-alert .alert .feature-box-button a:focus, .section-alert .alert .feature-box-button .dark-text.light-text-mobile .story-block-link a:focus, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary, .dark-text.light-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary, .album-wrapper .musical_album__album-purchase-link .dark-text.light-text-mobile .story-block-link a.btn-secondary, .dark-text.light-text-mobile .story-block-link .section-alert .alert .feature-box-button a.btn-secondary, .section-alert .alert .feature-box-button .dark-text.light-text-mobile .story-block-link a.btn-secondary, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary:hover, .dark-text.light-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover, .album-wrapper .musical_album__album-purchase-link .dark-text.light-text-mobile .story-block-link a.btn-secondary:hover, .dark-text.light-text-mobile .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:hover, .section-alert .alert .feature-box-button .dark-text.light-text-mobile .story-block-link a.btn-secondary:hover, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:hover, .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary:active, .dark-text.light-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active, .album-wrapper .musical_album__album-purchase-link .dark-text.light-text-mobile .story-block-link a.btn-secondary:active, .dark-text.light-text-mobile .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:active, .section-alert .alert .feature-box-button .dark-text.light-text-mobile .story-block-link a.btn-secondary:active, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:active, .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary:focus, .dark-text.light-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus, .album-wrapper .musical_album__album-purchase-link .dark-text.light-text-mobile .story-block-link a.btn-secondary:focus, .dark-text.light-text-mobile .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:focus, .section-alert .alert .feature-box-button .dark-text.light-text-mobile .story-block-link a.btn-secondary:focus, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+  .dark-text.light-text-mobile .story-block-videos .modal-trigger--video {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .dark-text.light-text-mobile .story-block-videos .modal-trigger--video:hover, .dark-text.light-text-mobile .story-block-videos .modal-trigger--video:active, .dark-text.light-text-mobile .story-block-videos .modal-trigger--video:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .dark-text.light-text-mobile .story-block-link a:not(.btn-primary):not(.modal-trigger--video):not(.btn-secondary) {
+    color: #b82b8a;
+  }
+  .dark-text.light-text-mobile .swiper-slide .slide-title {
+    color: #fff !important;
+  }
+  .dark-text.light-text-mobile .swiper-slide .slide-body {
+    color: #fff !important;
+  }
+  .dark-text.light-text-mobile.section-cards .card-title, .dark-text.light-text-mobile.card-item .card-title {
+    color: #fff !important;
+  }
+  .dark-text.light-text-mobile.section-cards .card-text, .dark-text.light-text-mobile.card-item .card-text {
+    color: #fff !important;
+  }
+  .dark-text.light-text-mobile.section-cards .card-link, .dark-text.light-text-mobile.card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .dark-text.light-text-mobile.section-cards .card-link:hover, .dark-text.light-text-mobile.section-cards .card-link:active, .dark-text.light-text-mobile.section-cards .card-link:focus, .dark-text.light-text-mobile.card-item .card-link:hover, .dark-text.light-text-mobile.card-item .card-link:active, .dark-text.light-text-mobile.card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .dark-text.light-text-mobile.section-cards .card-link.btn-secondary, .dark-text.light-text-mobile.card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .dark-text.light-text-mobile.section-cards .card-link.btn-secondary:hover, .dark-text.light-text-mobile.section-cards .card-link.btn-secondary:active, .dark-text.light-text-mobile.section-cards .card-link.btn-secondary:focus, .dark-text.light-text-mobile.card-item .card-link.btn-secondary:hover, .dark-text.light-text-mobile.card-item .card-link.btn-secondary:active, .dark-text.light-text-mobile.card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card-dark-text.light-text-mobile .card-item .card-title {
+    color: #fff !important;
+  }
+  .card-dark-text.light-text-mobile .card-item .card-text {
+    color: #fff !important;
+  }
+  .card-dark-text.light-text-mobile .card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .card-dark-text.light-text-mobile .card-item .card-link:hover, .card-dark-text.light-text-mobile .card-item .card-link:active, .card-dark-text.light-text-mobile .card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:hover, .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:active, .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-title, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-title {
+    color: #fff !important;
+  }
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-text, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-text {
+    color: #fff !important;
+  }
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link:hover, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link:active, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:hover, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:active, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-title, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-title {
+    color: #fff !important;
+  }
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-text, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-text {
+    color: #fff !important;
+  }
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link:hover, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link:active, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary:hover, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary:active, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
 
 .light-text {
   color: #fff !important;
 }
-.light-text.section-hero .hero-title-wrapper .hero-heading,
-.light-text.section-hero .hero-title-wrapper .hero-sub-heading {
+.light-text.section-hero .hero-title-wrapper .hero-heading, .light-text.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
   color: #fff;
 }
-.light-text .section-title,
+.light-text.section-hero .hero-title-wrapper .hero-sub-heading, .light-text.section-hero.hero-minimal .hero-title-wrapper .hero-sub-heading {
+  color: #fff;
+}
+.light-text .section-title {
+  color: #fff !important;
+}
 .light-text .story-block-text,
 .light-text .intro-body {
   color: #fff !important;
 }
-.light-text .section-title a,
 .light-text .story-block-text a,
 .light-text .intro-body a {
   color: #b82b8a !important;
 }
-.light-text .section-title a:hover,
 .light-text .story-block-text a:hover,
 .light-text .intro-body a:hover {
   color: #dd6cb8 !important;
 }
-.light-text .swiper-slide .slide-title,
+.light-text .story-block-link a.btn, .light-text .story-block-link .album-wrapper .musical_album__album-purchase-link a, .album-wrapper .musical_album__album-purchase-link .light-text .story-block-link a, .light-text .story-block-link .section-alert .alert .feature-box-button a, .section-alert .alert .feature-box-button .light-text .story-block-link a, .light-text .story-block-link a.modal-trigger--video {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.light-text .story-block-link a.btn:hover, .light-text .story-block-link .album-wrapper .musical_album__album-purchase-link a:hover, .album-wrapper .musical_album__album-purchase-link .light-text .story-block-link a:hover, .light-text .story-block-link .section-alert .alert .feature-box-button a:hover, .section-alert .alert .feature-box-button .light-text .story-block-link a:hover, .light-text .story-block-link a.modal-trigger--video:hover, .light-text .story-block-link a.btn:active, .light-text .story-block-link .album-wrapper .musical_album__album-purchase-link a:active, .album-wrapper .musical_album__album-purchase-link .light-text .story-block-link a:active, .light-text .story-block-link .section-alert .alert .feature-box-button a:active, .section-alert .alert .feature-box-button .light-text .story-block-link a:active, .light-text .story-block-link a.modal-trigger--video:active, .light-text .story-block-link a.btn:focus, .light-text .story-block-link .album-wrapper .musical_album__album-purchase-link a:focus, .album-wrapper .musical_album__album-purchase-link .light-text .story-block-link a:focus, .light-text .story-block-link .section-alert .alert .feature-box-button a:focus, .section-alert .alert .feature-box-button .light-text .story-block-link a:focus, .light-text .story-block-link a.modal-trigger--video:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.light-text .story-block-link a.btn.btn-secondary, .light-text .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary, .album-wrapper .musical_album__album-purchase-link .light-text .story-block-link a.btn-secondary, .light-text .story-block-link .section-alert .alert .feature-box-button a.btn-secondary, .section-alert .alert .feature-box-button .light-text .story-block-link a.btn-secondary, .light-text .story-block-link a.btn-secondary.modal-trigger--video {
+  background: #fefc53;
+  color: #fff !important;
+  border-color: #fefc53;
+}
+.light-text .story-block-link a.btn.btn-secondary:hover, .light-text .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover, .album-wrapper .musical_album__album-purchase-link .light-text .story-block-link a.btn-secondary:hover, .light-text .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:hover, .section-alert .alert .feature-box-button .light-text .story-block-link a.btn-secondary:hover, .light-text .story-block-link a.btn-secondary.modal-trigger--video:hover, .light-text .story-block-link a.btn.btn-secondary:active, .light-text .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active, .album-wrapper .musical_album__album-purchase-link .light-text .story-block-link a.btn-secondary:active, .light-text .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:active, .section-alert .alert .feature-box-button .light-text .story-block-link a.btn-secondary:active, .light-text .story-block-link a.btn-secondary.modal-trigger--video:active, .light-text .story-block-link a.btn.btn-secondary:focus, .light-text .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus, .album-wrapper .musical_album__album-purchase-link .light-text .story-block-link a.btn-secondary:focus, .light-text .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:focus, .section-alert .alert .feature-box-button .light-text .story-block-link a.btn-secondary:focus, .light-text .story-block-link a.btn-secondary.modal-trigger--video:focus {
+  background: #fefb07;
+  color: #fff !important;
+  border-color: #fefb07;
+}
+.light-text .story-block-videos .modal-trigger--video {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.light-text .story-block-videos .modal-trigger--video:hover, .light-text .story-block-videos .modal-trigger--video:active, .light-text .story-block-videos .modal-trigger--video:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.light-text .story-block-link a:not(.btn-primary):not(.modal-trigger--video):not(.btn-secondary) {
+  color: #b82b8a;
+}
+.light-text .swiper-slide .slide-title {
+  color: #fff !important;
+}
 .light-text .swiper-slide .slide-body {
   color: #fff !important;
 }
-.light-text .section-cards .card-title,
-.light-text .section-cards .card-text, .light-text.card-item .card-title,
-.light-text.card-item .card-text {
+.light-text.section-cards .card-title, .light-text.card-item .card-title {
   color: #fff !important;
+}
+.light-text.section-cards .card-text, .light-text.card-item .card-text {
+  color: #fff !important;
+}
+.light-text.section-cards .card-link, .light-text.card-item .card-link {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.light-text.section-cards .card-link:hover, .light-text.section-cards .card-link:active, .light-text.section-cards .card-link:focus, .light-text.card-item .card-link:hover, .light-text.card-item .card-link:active, .light-text.card-item .card-link:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.light-text.section-cards .card-link.btn-secondary, .light-text.card-item .card-link.btn-secondary {
+  background: #fefc53;
+  color: #fff !important;
+  border-color: #fefc53;
+}
+.light-text.section-cards .card-link.btn-secondary:hover, .light-text.section-cards .card-link.btn-secondary:active, .light-text.section-cards .card-link.btn-secondary:focus, .light-text.card-item .card-link.btn-secondary:hover, .light-text.card-item .card-link.btn-secondary:active, .light-text.card-item .card-link.btn-secondary:focus {
+  background: #fefb07;
+  color: #fff !important;
+  border-color: #fefb07;
+}
+
+@media (max-width: 767.98px) {
+  .light-text.dark-text-mobile.section-hero .hero-title-wrapper .hero-heading, .light-text.dark-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .light-text.dark-text-mobile.section-hero .hero-title-wrapper .hero-sub-heading, .light-text.dark-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-sub-heading {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .light-text.dark-text-mobile .section-title {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .light-text.dark-text-mobile .story-block-text,
+  .light-text.dark-text-mobile .intro-body {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .light-text.dark-text-mobile .story-block-text a,
+  .light-text.dark-text-mobile .intro-body a {
+    color: #b82b8a !important;
+  }
+  .light-text.dark-text-mobile .story-block-text a:hover,
+  .light-text.dark-text-mobile .intro-body a:hover {
+    color: #65184c !important;
+  }
+  .light-text.dark-text-mobile .story-block-link a.btn, .light-text.dark-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a, .album-wrapper .musical_album__album-purchase-link .light-text.dark-text-mobile .story-block-link a, .light-text.dark-text-mobile .story-block-link .section-alert .alert .feature-box-button a, .section-alert .alert .feature-box-button .light-text.dark-text-mobile .story-block-link a, .light-text.dark-text-mobile .story-block-link a.modal-trigger--video {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .light-text.dark-text-mobile .story-block-link a.btn:hover, .light-text.dark-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a:hover, .album-wrapper .musical_album__album-purchase-link .light-text.dark-text-mobile .story-block-link a:hover, .light-text.dark-text-mobile .story-block-link .section-alert .alert .feature-box-button a:hover, .section-alert .alert .feature-box-button .light-text.dark-text-mobile .story-block-link a:hover, .light-text.dark-text-mobile .story-block-link a.modal-trigger--video:hover, .light-text.dark-text-mobile .story-block-link a.btn:active, .light-text.dark-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a:active, .album-wrapper .musical_album__album-purchase-link .light-text.dark-text-mobile .story-block-link a:active, .light-text.dark-text-mobile .story-block-link .section-alert .alert .feature-box-button a:active, .section-alert .alert .feature-box-button .light-text.dark-text-mobile .story-block-link a:active, .light-text.dark-text-mobile .story-block-link a.modal-trigger--video:active, .light-text.dark-text-mobile .story-block-link a.btn:focus, .light-text.dark-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a:focus, .album-wrapper .musical_album__album-purchase-link .light-text.dark-text-mobile .story-block-link a:focus, .light-text.dark-text-mobile .story-block-link .section-alert .alert .feature-box-button a:focus, .section-alert .alert .feature-box-button .light-text.dark-text-mobile .story-block-link a:focus, .light-text.dark-text-mobile .story-block-link a.modal-trigger--video:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .light-text.dark-text-mobile .story-block-link a.btn.btn-secondary, .light-text.dark-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary, .album-wrapper .musical_album__album-purchase-link .light-text.dark-text-mobile .story-block-link a.btn-secondary, .light-text.dark-text-mobile .story-block-link .section-alert .alert .feature-box-button a.btn-secondary, .section-alert .alert .feature-box-button .light-text.dark-text-mobile .story-block-link a.btn-secondary, .light-text.dark-text-mobile .story-block-link a.btn-secondary.modal-trigger--video {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .light-text.dark-text-mobile .story-block-link a.btn.btn-secondary:hover, .light-text.dark-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover, .album-wrapper .musical_album__album-purchase-link .light-text.dark-text-mobile .story-block-link a.btn-secondary:hover, .light-text.dark-text-mobile .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:hover, .section-alert .alert .feature-box-button .light-text.dark-text-mobile .story-block-link a.btn-secondary:hover, .light-text.dark-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:hover, .light-text.dark-text-mobile .story-block-link a.btn.btn-secondary:active, .light-text.dark-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active, .album-wrapper .musical_album__album-purchase-link .light-text.dark-text-mobile .story-block-link a.btn-secondary:active, .light-text.dark-text-mobile .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:active, .section-alert .alert .feature-box-button .light-text.dark-text-mobile .story-block-link a.btn-secondary:active, .light-text.dark-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:active, .light-text.dark-text-mobile .story-block-link a.btn.btn-secondary:focus, .light-text.dark-text-mobile .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus, .album-wrapper .musical_album__album-purchase-link .light-text.dark-text-mobile .story-block-link a.btn-secondary:focus, .light-text.dark-text-mobile .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:focus, .section-alert .alert .feature-box-button .light-text.dark-text-mobile .story-block-link a.btn-secondary:focus, .light-text.dark-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+  .light-text.dark-text-mobile .story-block-videos .modal-trigger--video {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .light-text.dark-text-mobile .story-block-videos .modal-trigger--video:hover, .light-text.dark-text-mobile .story-block-videos .modal-trigger--video:active, .light-text.dark-text-mobile .story-block-videos .modal-trigger--video:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .light-text.dark-text-mobile .story-block-link a:not(.btn-primary):not(.modal-trigger--video):not(.btn-secondary) {
+    color: #b82b8a;
+  }
+  .light-text.dark-text-mobile .swiper-slide .slide-title,
+  .light-text.dark-text-mobile .swiper-slide .slide-body {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .light-text.dark-text-mobile.card-item .card-title,
+  .light-text.dark-text-mobile.card-item .card-text {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .light-text.dark-text-mobile.card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .light-text.dark-text-mobile.card-item .card-link:hover, .light-text.dark-text-mobile.card-item .card-link:active, .light-text.dark-text-mobile.card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .light-text.dark-text-mobile.card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .light-text.dark-text-mobile.card-item .card-link.btn-secondary:hover, .light-text.dark-text-mobile.card-item .card-link.btn-secondary:active, .light-text.dark-text-mobile.card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card-light-text.dark-text-mobile .card-item .card-title,
+  .card-light-text.dark-text-mobile .card-item .card-text {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .card-light-text.dark-text-mobile .card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .card-light-text.dark-text-mobile .card-item .card-link:hover, .card-light-text.dark-text-mobile .card-item .card-link:active, .card-light-text.dark-text-mobile .card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .card-light-text.dark-text-mobile .card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:hover, .card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:active, .card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-title, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-title,
+  .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-text,
+  .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-text {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-link, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-link:hover, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-link:hover, .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-link:active, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-link:active, .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-link:focus, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:hover, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:hover, .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:active, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:active, .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:focus, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-title,
+  .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-text,
+  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-title,
+  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-text {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-link,
+  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-link:hover, .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-link:active, .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-link:focus,
+  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-link:hover,
+  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-link:active,
+  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary,
+  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:hover, .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:active, .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:focus,
+  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:hover,
+  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:active,
+  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+.overlay-dark .image-overlay,
+.overlay-dark .hero-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.dark-overlay-gradient-from-left .image-overlay,
+.dark-overlay-gradient-from-left .hero-overlay {
+  background: rgba(31, 31, 31, 0.7);
+  background: linear-gradient(90deg, rgba(31, 31, 31, 0.7) 36%, rgba(31, 31, 31, 0.65) 41%, rgba(31, 31, 31, 0.55) 46%, rgba(31, 31, 31, 0.35) 55.5%, rgba(31, 31, 31, 0.25) 59%, rgba(31, 31, 31, 0) 65%);
+}
+
+.dark-overlay-gradient-from-right .image-overlay,
+.dark-overlay-gradient-from-right .hero-overlay {
+  background: rgba(31, 31, 31, 0.7);
+  background: linear-gradient(90deg, rgba(31, 31, 31, 0) 35%, rgba(31, 31, 31, 0.25) 42%, rgba(31, 31, 31, 0.35) 46%, rgba(31, 31, 31, 0.55) 55.5%, rgba(31, 31, 31, 0.65) 60%, rgba(31, 31, 31, 0.7) 65%);
+}
+
+.overlay-light .image-overlay,
+.overlay-light .hero-overlay {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.light-overlay-gradient-from-left .image-overlay,
+.light-overlay-gradient-from-left .hero-overlay {
+  background: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 36%, rgba(255, 255, 255, 0.65) 41%, rgba(255, 255, 255, 0.55) 46%, rgba(255, 255, 255, 0.35) 55.5%, rgba(255, 255, 255, 0.25) 59%, rgba(255, 255, 255, 0) 65%);
+}
+
+.light-overlay-gradient-from-right .image-overlay,
+.light-overlay-gradient-from-right .hero-overlay {
+  background: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0.25) 42%, rgba(255, 255, 255, 0.35) 46%, rgba(255, 255, 255, 0.55) 55.5%, rgba(255, 255, 255, 0.65) 60%, rgba(255, 255, 255, 0.7) 65%);
+}
+
+.text-wrapper-dark.section-story-block .text-wrapper {
+  padding: calc(4vw * 1.5);
+  background: #000;
+  align-self: center;
+}
+@media (min-width: 768px) {
+  .text-wrapper-dark.section-story-block .text-wrapper {
+    margin: 0 -4vw;
+  }
+}
+@media (min-width: 768px) {
+  .text-wrapper-dark.section-story-block .text-wrapper {
+    padding: 4vw;
+  }
+}
+.text-wrapper-dark .intro .text-wrapper,
+.text-wrapper-dark .text-wrapper {
+  padding: calc(4vw * 1.5);
+  background: #000;
+  border-radius: 0;
+  margin-bottom: 4vw;
+}
+@media (min-width: 768px) {
+  .text-wrapper-dark .intro .text-wrapper,
+  .text-wrapper-dark .text-wrapper {
+    padding: 4vw;
+  }
+}
+.text-wrapper-dark .intro .text-wrapper .section-title,
+.text-wrapper-dark .text-wrapper .section-title {
+  color: #fff;
+}
+.text-wrapper-dark .intro .text-wrapper .intro-body,
+.text-wrapper-dark .intro .text-wrapper .story-block-text,
+.text-wrapper-dark .text-wrapper .intro-body,
+.text-wrapper-dark .text-wrapper .story-block-text {
+  color: #fff;
+}
+.text-wrapper-dark .intro .text-wrapper .intro-body a,
+.text-wrapper-dark .intro .text-wrapper .story-block-text a,
+.text-wrapper-dark .text-wrapper .intro-body a,
+.text-wrapper-dark .text-wrapper .story-block-text a {
+  color: #b82b8a;
+}
+.text-wrapper-dark .intro .text-wrapper .intro-body a:hover,
+.text-wrapper-dark .intro .text-wrapper .story-block-text a:hover,
+.text-wrapper-dark .text-wrapper .intro-body a:hover,
+.text-wrapper-dark .text-wrapper .story-block-text a:hover {
+  color: #dd6cb8;
+}
+.text-wrapper-dark .intro .text-wrapper .story-block-link a.btn,
+.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn,
+.text-wrapper-dark .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-link a,
+.text-wrapper-dark .text-wrapper .story-block-link .section-alert .alert .feature-box-button a,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-link a,
+.text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn,
+.text-wrapper-dark .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-videos a,
+.text-wrapper-dark .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-videos a,
+.text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.text-wrapper-dark .intro .text-wrapper .story-block-link a.btn:hover, .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn:active, .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn:focus,
+.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn:hover,
+.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn:active,
+.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn:focus,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn:hover,
+.text-wrapper-dark .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:hover,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-link a:hover,
+.text-wrapper-dark .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:hover,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-link a:hover,
+.text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video:hover,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn:active,
+.text-wrapper-dark .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:active,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-link a:active,
+.text-wrapper-dark .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:active,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-link a:active,
+.text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video:active,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn:focus,
+.text-wrapper-dark .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:focus,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-link a:focus,
+.text-wrapper-dark .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:focus,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-link a:focus,
+.text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video:focus,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn:hover,
+.text-wrapper-dark .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:hover,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-videos a:hover,
+.text-wrapper-dark .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:hover,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-videos a:hover,
+.text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video:hover,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn:active,
+.text-wrapper-dark .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:active,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-videos a:active,
+.text-wrapper-dark .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:active,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-videos a:active,
+.text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video:active,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn:focus,
+.text-wrapper-dark .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:focus,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-videos a:focus,
+.text-wrapper-dark .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:focus,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-videos a:focus,
+.text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.text-wrapper-dark .intro .text-wrapper .story-block-link a.btn.btn-secondary,
+.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn.btn-secondary,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn.btn-secondary,
+.text-wrapper-dark .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary,
+.text-wrapper-dark .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn.btn-secondary,
+.text-wrapper-dark .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary,
+.text-wrapper-dark .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video {
+  background: #fefc53;
+  color: #fff !important;
+  border-color: #fefc53;
+}
+.text-wrapper-dark .intro .text-wrapper .story-block-link a.btn.btn-secondary:hover, .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn.btn-secondary:active, .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn.btn-secondary:focus,
+.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
+.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn.btn-secondary:active,
+.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn.btn-secondary:hover,
+.text-wrapper-dark .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary:hover,
+.text-wrapper-dark .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:hover,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary:hover,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:hover,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn.btn-secondary:active,
+.text-wrapper-dark .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary:active,
+.text-wrapper-dark .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:active,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary:active,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:active,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn.btn-secondary:focus,
+.text-wrapper-dark .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary:focus,
+.text-wrapper-dark .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:focus,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary:focus,
+.text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:focus,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
+.text-wrapper-dark .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary:hover,
+.text-wrapper-dark .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:hover,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary:hover,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:hover,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn.btn-secondary:active,
+.text-wrapper-dark .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary:active,
+.text-wrapper-dark .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:active,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary:active,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:active,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+.text-wrapper-dark .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary:focus,
+.text-wrapper-dark .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:focus,
+.section-alert .alert .feature-box-button .text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary:focus,
+.text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:focus {
+  background: #fefb07;
+  color: #fff !important;
+  border-color: #fefb07;
+}
+
+.text-wrapper-light.section-story-block .text-wrapper {
+  padding: calc(4vw * 1.5);
+  background: #fff;
+  align-self: center;
+}
+@media (min-width: 768px) {
+  .text-wrapper-light.section-story-block .text-wrapper {
+    margin: 0 -4vw;
+  }
+}
+@media (min-width: 768px) {
+  .text-wrapper-light.section-story-block .text-wrapper {
+    padding: 4vw;
+  }
+}
+.text-wrapper-light.intro .text-wrapper,
+.text-wrapper-light .text-wrapper {
+  padding: calc(4vw * 1.5);
+  background: #fff;
+  border-radius: 0;
+  margin-bottom: 4vw;
+}
+@media (min-width: 768px) {
+  .text-wrapper-light.intro .text-wrapper,
+  .text-wrapper-light .text-wrapper {
+    padding: 4vw;
+  }
+}
+.text-wrapper-light.intro .text-wrapper .section-title,
+.text-wrapper-light .text-wrapper .section-title {
+  color: rgba(0, 0, 0, 0.8);
+}
+.text-wrapper-light.intro .text-wrapper .intro-body,
+.text-wrapper-light.intro .text-wrapper .story-block-text,
+.text-wrapper-light .text-wrapper .intro-body,
+.text-wrapper-light .text-wrapper .story-block-text {
+  color: rgba(0, 0, 0, 0.8);
+}
+.text-wrapper-light.intro .text-wrapper .intro-body a,
+.text-wrapper-light.intro .text-wrapper .story-block-text a,
+.text-wrapper-light .text-wrapper .intro-body a,
+.text-wrapper-light .text-wrapper .story-block-text a {
+  color: #b82b8a;
+}
+.text-wrapper-light.intro .text-wrapper .intro-body a:hover,
+.text-wrapper-light.intro .text-wrapper .story-block-text a:hover,
+.text-wrapper-light .text-wrapper .intro-body a:hover,
+.text-wrapper-light .text-wrapper .story-block-text a:hover {
+  color: #65184c;
+}
+.text-wrapper-light.intro .text-wrapper .story-block-link a.btn,
+.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn,
+.text-wrapper-light .text-wrapper .story-block-link a.btn,
+.text-wrapper-light .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-link a,
+.text-wrapper-light .text-wrapper .story-block-link .section-alert .alert .feature-box-button a,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-link a,
+.text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn,
+.text-wrapper-light .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-videos a,
+.text-wrapper-light .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-videos a,
+.text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.text-wrapper-light.intro .text-wrapper .story-block-link a.btn:hover, .text-wrapper-light.intro .text-wrapper .story-block-link a.btn:active, .text-wrapper-light.intro .text-wrapper .story-block-link a.btn:focus,
+.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn:hover,
+.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn:active,
+.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn:focus,
+.text-wrapper-light .text-wrapper .story-block-link a.btn:hover,
+.text-wrapper-light .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:hover,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-link a:hover,
+.text-wrapper-light .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:hover,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-link a:hover,
+.text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video:hover,
+.text-wrapper-light .text-wrapper .story-block-link a.btn:active,
+.text-wrapper-light .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:active,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-link a:active,
+.text-wrapper-light .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:active,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-link a:active,
+.text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video:active,
+.text-wrapper-light .text-wrapper .story-block-link a.btn:focus,
+.text-wrapper-light .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:focus,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-link a:focus,
+.text-wrapper-light .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:focus,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-link a:focus,
+.text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video:focus,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn:hover,
+.text-wrapper-light .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:hover,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-videos a:hover,
+.text-wrapper-light .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:hover,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-videos a:hover,
+.text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video:hover,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn:active,
+.text-wrapper-light .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:active,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-videos a:active,
+.text-wrapper-light .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:active,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-videos a:active,
+.text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video:active,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn:focus,
+.text-wrapper-light .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:focus,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-videos a:focus,
+.text-wrapper-light .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:focus,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-videos a:focus,
+.text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.text-wrapper-light.intro .text-wrapper .story-block-link a.btn.btn-secondary,
+.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn.btn-secondary,
+.text-wrapper-light .text-wrapper .story-block-link a.btn.btn-secondary,
+.text-wrapper-light .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary,
+.text-wrapper-light .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary,
+.text-wrapper-light .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn.btn-secondary,
+.text-wrapper-light .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary,
+.text-wrapper-light .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video {
+  background: #fefc53;
+  color: #fff !important;
+  border-color: #fefc53;
+}
+.text-wrapper-light.intro .text-wrapper .story-block-link a.btn.btn-secondary:hover, .text-wrapper-light.intro .text-wrapper .story-block-link a.btn.btn-secondary:active, .text-wrapper-light.intro .text-wrapper .story-block-link a.btn.btn-secondary:focus,
+.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
+.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn.btn-secondary:active,
+.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+.text-wrapper-light .text-wrapper .story-block-link a.btn.btn-secondary:hover,
+.text-wrapper-light .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary:hover,
+.text-wrapper-light .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:hover,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary:hover,
+.text-wrapper-light .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:hover,
+.text-wrapper-light .text-wrapper .story-block-link a.btn.btn-secondary:active,
+.text-wrapper-light .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary:active,
+.text-wrapper-light .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:active,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary:active,
+.text-wrapper-light .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:active,
+.text-wrapper-light .text-wrapper .story-block-link a.btn.btn-secondary:focus,
+.text-wrapper-light .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary:focus,
+.text-wrapper-light .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:focus,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary:focus,
+.text-wrapper-light .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:focus,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
+.text-wrapper-light .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary:hover,
+.text-wrapper-light .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:hover,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary:hover,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:hover,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn.btn-secondary:active,
+.text-wrapper-light .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary:active,
+.text-wrapper-light .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:active,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary:active,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:active,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+.text-wrapper-light .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus,
+.album-wrapper .musical_album__album-purchase-link .text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary:focus,
+.text-wrapper-light .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:focus,
+.section-alert .alert .feature-box-button .text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary:focus,
+.text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:focus {
+  background: #fefb07;
+  color: #fff !important;
+  border-color: #fefb07;
+}
+
+@media (max-width: 767.98px) {
+  .text-wrapper-dark.text-wrapper-normalize-mobile.section-story-block.dark-bg, .text-wrapper-dark.text-wrapper-normalize-mobile.section-story-block.light-bg,
+  .text-wrapper-light.text-wrapper-normalize-mobile.section-story-block.dark-bg,
+  .text-wrapper-light.text-wrapper-normalize-mobile.section-story-block.light-bg {
+    background-color: transparent;
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.section-story-block.light-text .section-title, .text-wrapper-dark.text-wrapper-normalize-mobile.section-story-block.dark-text .section-title,
+  .text-wrapper-light.text-wrapper-normalize-mobile.section-story-block.light-text .section-title,
+  .text-wrapper-light.text-wrapper-normalize-mobile.section-story-block.dark-text .section-title {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.section-story-block.light-text .story-block-text, .text-wrapper-dark.text-wrapper-normalize-mobile.section-story-block.dark-text .story-block-text,
+  .text-wrapper-light.text-wrapper-normalize-mobile.section-story-block.light-text .story-block-text,
+  .text-wrapper-light.text-wrapper-normalize-mobile.section-story-block.dark-text .story-block-text {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.section-story-block .text-wrapper,
+  .text-wrapper-light.text-wrapper-normalize-mobile.section-story-block .text-wrapper {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    align-self: center;
+    box-shadow: none;
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .section-title,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .section-title,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .section-title,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .section-title {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .intro-body,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-text,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .intro-body,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-text,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .intro-body,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-text,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .intro-body,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-text {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .intro-body a,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-text a,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .intro-body a,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-text a,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .intro-body a,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-text a,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .intro-body a,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-text a {
+    color: #b82b8a;
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .intro-body a:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-text a:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .intro-body a:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-text a:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .intro-body a:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-text a:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .intro-body a:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-text a:hover {
+    color: #65184c;
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video {
+    background: #b82b8a;
+    border: 1px solid #b82b8a;
+    color: #fff;
+    text-align: center;
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:hover, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:hover, .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a:hover, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:active, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:active, .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a:active, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:focus, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:focus, .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:hover,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:active,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:focus,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:hover,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:active,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:focus,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:hover,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:active,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a:focus,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:hover,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:active,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a:focus,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:focus {
+    background: #7a1d5b;
+    border-color: #7a1d5b;
+    color: #fff !important;
+    text-decoration: none;
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video {
+    background: #fefc53;
+    border-color: #fefc53;
+    color: #fff;
+    text-align: center;
+  }
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:hover, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover, .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn-secondary:hover, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:active, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active, .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn-secondary:active, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:focus, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus, .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn-secondary:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn-secondary:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn-secondary:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn-secondary:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:hover,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:active,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:focus,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:hover,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:active,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:focus,
+  .section-alert .alert .feature-box-button .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:hover,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:active,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link .section-alert .alert .feature-box-button a.btn-secondary:focus,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:hover,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:hover,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:active,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:active,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .album-wrapper .musical_album__album-purchase-link a.btn-secondary:focus,
+  .album-wrapper .musical_album__album-purchase-link .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos .section-alert .alert .feature-box-button a.btn-secondary:focus,
+  .section-alert .alert .feature-box-button .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:focus {
+    background: #fefb07;
+    border-color: #fefb07;
+    color: #fff !important;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section-story-block.text-wrapper-overlap .story-block-mobile-image {
+    margin-bottom: 0;
+  }
+  .section-story-block.text-wrapper-overlap .text-wrapper {
+    margin-top: -15vw;
+  }
+}
+@media (max-width: 767.98px) {
+  .section-story-block.text-wrapper-overlap.has-extra-image .text-wrapper {
+    margin-top: 0;
+  }
+  .section-story-block.text-wrapper-overlap.has-extra-image .story-block-extra-image {
+    margin-top: -15vw;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .section-story-block.text-wrapper-overlap.text-wrapper-overlap-remove-mobile .story-block .story-block-mobile-image {
+    margin-bottom: 2em;
+  }
+  .section-story-block.text-wrapper-overlap.text-wrapper-overlap-remove-mobile .story-block .text-wrapper {
+    margin-top: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .section-story-block.text-wrapper-overlap.text-wrapper-overlap-remove-mobile.has-extra-image .story-block-extra-image {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #cta-modal .modal-dialog {
+    width: 70vw;
+    max-width: 500px;
+  }
+}
+@media (min-width: 992px) {
+  #cta-modal .modal-dialog {
+    width: 50vw;
+    max-width: 700px;
+  }
+}
+#cta-modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: unset;
+}
+#cta-modal .modal-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cta-modal .modal-image figure {
+  margin: 0;
+}
+#cta-modal .modal-text {
+  padding: 30px 30px 40px;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #cta-modal .modal-text {
+    padding: 50px 30px 30px;
+  }
+}
+@media (min-width: 992px) {
+  #cta-modal .modal-text {
+    padding: 50px 4vw 40px;
+  }
+}
+#cta-modal .modal-header {
+  padding: 0;
+  margin-bottom: 1.5em;
+  border: 0;
+  display: flex;
+  align-items: center;
+}
+#cta-modal .modal-title {
+  font-size: clamp(25px, 3vw, 35px);
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
+  text-align: center;
+  flex: 1 1 100%;
+}
+#cta-modal .modal-title span {
+  font-size: 2.5em;
+  color: rgba(0, 0, 0, 0.8);
+  display: block;
+}
+#cta-modal .modal-body {
+  padding: 0;
+  margin-bottom: 2em;
+  font-size: 0.85em;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+#cta-modal .modal-body p:last-child {
+  margin: 0;
+}
+#cta-modal #fileswift-cta-link a,
+#cta-modal input[type=submit],
+#cta-modal button[type=submit] {
+  background: #b82b8a;
+  color: #fff;
+  border: 1px solid #b82b8a;
+  border-radius: 0.25rem;
+  padding: 15px 30px;
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+#cta-modal #fileswift-cta-link a:hover,
+#cta-modal input[type=submit]:hover,
+#cta-modal button[type=submit]:hover {
+  background-color: #7a1d5b;
+  color: #fff;
+  border-color: #7a1d5b;
+  text-decoration: none;
+}
+#cta-modal #mc_embed_signup {
+  width: auto;
+}
+#cta-modal #mc_embed_signup #mc_embed_signup_scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#cta-modal #mc_embed_signup .mc-field-group {
+  width: 100%;
+}
+#cta-modal #mc_embed_signup .mc-field-group input {
+  width: 100%;
+}
+#cta-modal #mc_embed_signup form {
+  margin: 0;
+}
+#cta-modal #mc_embed_signup input[type=submit] {
+  height: auto;
+}
+#cta-modal #mc_embed_signup input[type=email],
+#cta-modal #mc_embed_signup input[type=text] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+#cta-modal button.close.cta-modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  margin: 0;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  transition: 0.2s all ease;
+}
+#cta-modal button.close.cta-modal-close:hover {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+#cta-modal button.close.cta-modal-close span {
+  display: none;
+}
+#cta-modal button.close.cta-modal-close:before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: #ababab;
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  transform: rotate(45deg);
+}
+#cta-modal button.close.cta-modal-close:after {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: #ababab;
+  position: relative;
+  left: 0;
+  top: -2px;
+  display: block;
+  transform: rotate(315deg);
+}
+#cta-modal.cta-picture-frame .modal-image {
+  padding: 50px 30px 30px;
+}
+@media (min-width: 768px) {
+  #cta-modal.cta-2-col .modal-dialog {
+    width: 90vw;
+    max-width: 1000px;
+  }
+  #cta-modal.cta-2-col .modal-content {
+    flex-direction: row;
+  }
+  #cta-modal.cta-2-col .modal-image {
+    flex: 1 1 50%;
+  }
+  #cta-modal.cta-2-col .modal-image figure {
+    margin: 0;
+  }
+  #cta-modal.cta-2-col .modal-image figcaption {
+    display: none;
+  }
+  #cta-modal.cta-2-col .modal-text {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #cta-modal.cta-2-col .modal-header {
+    flex: 0 1 auto;
+  }
+  #cta-modal.cta-2-col .modal-title {
+    flex: 1 1 100%;
+  }
+  #cta-modal.cta-2-col .modal-body {
+    flex: 0 1 auto;
+  }
+  #cta-modal.cta-2-col .modal_alert__modal-alert-image,
+  #cta-modal.cta-2-col .site_v2__cta-image {
+    width: 100%;
+    height: 100%;
+  }
+  #cta-modal.cta-2-col .modal_alert__modal-alert-image figure,
+  #cta-modal.cta-2-col .site_v2__cta-image figure {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #cta-modal.cta-2-col .modal_alert__modal-alert-image figure picture,
+  #cta-modal.cta-2-col .site_v2__cta-image figure picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+#cta-modal.cta-2-col.cta-picture-frame .modal-image {
+  padding: 50px 30px 0px;
+}
+@media (min-width: 768px) {
+  #cta-modal.cta-2-col.cta-picture-frame .modal-image {
+    padding: 30px;
+  }
+}
+#cta-modal.cta-2-col.cta-picture-fit .modal-content picture img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.cta-wake-link {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 0;
+  padding: 0.5em;
+  font-size: 1.25em;
+  margin: 0;
+  line-height: 1;
+  z-index: 100;
+  background: #b82b8a;
+  border: 0px solid #fff;
+  color: #fff;
+}
+.cta-wake-link:hover {
+  border-color: #7a1d5b;
+  background-color: #7a1d5b;
+  color: #fff;
+}
+
+#cta-modal-wrapper .cta-type-native-email .contact-form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+#cta-modal-wrapper .cta-type-native-email .contact-form-wrapper #cta-form {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  max-width: 600px;
+}
+@media (max-width: 767.98px) {
+  #cta-modal-wrapper .cta-type-native-email .contact-form-wrapper #cta-form {
+    flex-direction: column;
+  }
+}
+#cta-modal-wrapper .cta-type-native-email .contact-form-wrapper input[type=email] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 15px;
+  flex: 1 1 auto;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  #cta-modal-wrapper .cta-type-native-email .contact-form-wrapper input[type=email] {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+}
+#cta-modal-wrapper .cta-type-native-email.cta-2-col #cta-form {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+#cta-modal-wrapper .cta-type-native-email.cta-2-col input[type=email] {
+  margin: 0 0 15px;
+}
+#cta-modal-wrapper .cta-type-dedicated-link #fileswift-cta-link {
+  display: flex;
+  justify-content: center;
+}
+#cta-modal-wrapper .cta-type-dedicated-link #fileswift-cta-link .site_v2__cta-link {
+  display: flex;
+}
+
+#cta-modal-wrapper .center-center .modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100% - 1rem);
+}
+#cta-modal-wrapper .center-center .modal-dialog::before {
+  display: block;
+  height: min-content;
+  content: "";
+}
+#cta-modal-wrapper .center-bottom {
+  width: auto;
+  height: auto;
+}
+#cta-modal-wrapper .center-bottom .modal-dialog {
+  position: fixed;
+  width: calc(100% - 15px);
+  min-width: calc(100% - 15px);
+  left: 0;
+  bottom: 0;
+  margin: 0;
+}
+#cta-modal-wrapper .right-bottom {
+  width: auto;
+  height: auto;
+}
+#cta-modal-wrapper .right-bottom .modal-dialog {
+  position: fixed;
+  right: 15px;
+  bottom: 0;
+  margin: 0;
 }
 
 .button-wrapper {
@@ -2724,6 +4364,10 @@ figure figcaption {
 
 .section-cards.no-overlay.light-bg-dark-text .image-overlay, .section-cards.no-overlay.dark-bg-light-text .image-overlay {
   background: transparent !important;
+}
+
+.text-wrapper {
+  position: relative;
 }
 
 @media (min-width: 768px) {
