@@ -55,8 +55,8 @@
                 return false;
             });
             //toggle mobile nav classes that show/hide menu links
-            $('#mobile-nav-open-btn', context).bind('click', function(e) {
-                $('html', context).toggleClass('js-nav');
+            $(once('mobile-nav-open', '#mobile-nav-open-btn', context)).on('click', function(e) {
+                $('html').toggleClass('js-nav');
                 e.preventDefault();
                 return false;
             });

@@ -69,3 +69,11 @@
 	color: #000; /* color needs to be visible from .messages bg-color value */
 	text-decoration: underline;
 }
+
+// override bootstrap default
+// shows up in drupal messages behind node name when updated
+.messages .placeholder {
+	background-color: transparent;
+	opacity: 1;
+	vertical-align: baseline;
+}

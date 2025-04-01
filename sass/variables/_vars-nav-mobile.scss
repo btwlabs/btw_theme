@@ -5,7 +5,9 @@
 //----------------------------------
 
 // Mobile Navbar Background Color
-$navbar-bg-color-mobile: $secondary;
+$navbar-bg-color-mobile: #000;
+
+$mobile-header-bg-color: #000;
 
 //--------------------------
 // Mobile Menu Toggle Icon
@@ -13,7 +15,7 @@ $navbar-bg-color-mobile: $secondary;
 
 
 // Mobile Navbar Toggler Color
-$navbar-toggler-color: $gray-600;
+$navbar-toggler-color: #fff;
 
 // Mobile Navbar Toggler Border
 // Sets a border around the mobile toggle icon. To make visible, change transparent value to a color.
@@ -28,7 +30,11 @@ $navbar-toggler-border-radius: .25rem;
 //----------------------------
 
 // Mobile Navbar Size
-$nav-font-size-mobile: 18px;
+$nav-font-size-mobile: 22px;
+
+$nav-font-weight-mobile: normal;
+
+$nav-text-transform-mobile: uppercase;
 
 // Mobile Navbar Text Alignment
 $navbar-link-text-align-mobile: center;
@@ -43,7 +49,7 @@ $navbar-link-color-mobile: $white;
 $navbar-link-hover-color-mobile: $white;
 
 // Mobile Navbar Link BG Color (Hover)
-$navbar-link-bg-hover-color-mobile: lighten($navbar-bg-color-mobile, 20%);
+$navbar-link-bg-hover-color-mobile: $primary;
 
 // Mobile Active Link Colors
 
@@ -51,4 +57,4 @@ $navbar-link-bg-hover-color-mobile: lighten($navbar-bg-color-mobile, 20%);
 $navbar-link-active-color-mobile: $navbar-link-color-mobile;
 
 // Mobile Navbar Link BG Color (Active)
-$navbar-link-active-bg-mobile: lighten($navbar-bg-color-mobile, 10%);
+$navbar-link-active-bg-mobile: $primary;

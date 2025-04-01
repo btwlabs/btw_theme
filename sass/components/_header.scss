@@ -60,10 +60,10 @@
 .l-header {
 	position: relative;
 	z-index: 99;
-	background-color: #fff;
-	box-shadow: 1px 0 2px rgba(146, 146, 146, 0.8);
+	background-color: #000;
+	//box-shadow: 1px 0 2px rgba(146, 146, 146, 0.8);
 
-	@include media-breakpoint-down(md) {
+	@include media-breakpoint-down(lg) {
 		display: none;
 	}
 	

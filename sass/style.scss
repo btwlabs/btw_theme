@@ -93,6 +93,24 @@ img, media {
     text-transform: $title-text-transform;
 }
 
+
+// page titles (non story block)
+h1,
+h1.page-title {
+    position: relative;
+    @include responsive-page-title;
+    @include title-style;
+}
+
+// section titles (non story block)
+h2,
+h2.section-title {
+    position: relative;
+    @include responsive-section-title;
+    @include title-style;
+}
+
+
 b, strong {
     // override default BS "bolder" because that doesn't always
     // produce results depending on fonts/weights available
