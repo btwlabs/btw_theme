@@ -554,6 +554,7 @@ select {
 
 .user-login-form {
   max-width: 400px;
+  margin: 0 auto;
 }
 .user-login-form .form-item label,
 .user-login-form .form-actions label {
@@ -574,6 +575,7 @@ select {
   border: 1px solid #b82b8a;
   color: #fff;
   text-align: center;
+  width: 100%;
 }
 .user-login-form input[type=submit]:hover {
   text-decoration: none;
