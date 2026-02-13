@@ -196,6 +196,15 @@ $hero-title-font-weight: $title-font-weight;
 $hero-title-margin: 0 0 0.5em 0;
 
 
+// Title Padding (** not in Story Canvas)
+// Sets padding around the hero title
+$hero-title-padding: 0 0 0.35em 0;
+
+// Title border (** not in Story Canvas)
+// adds a border to the hero title
+$hero-title-border-bottom: 3px solid $primary;
+
+
 // Title Font Color
 // Sets the color of the hero title.
 $hero-title-color: $title-color;

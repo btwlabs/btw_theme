@@ -9,31 +9,32 @@
 
 
 // hide the stupid h2 block title since drupal won't allow us to not render it
-h2#block-mainnavigation-mobile-menu {
+nav.menu--main h2 {
 	display: none;
 }
 
 
-/*-----------------------------------
- 
- mobile header - contains nav toggle 
- and site name
-   
-------------------------------------*/
+//-----------------------------------
+// 
+// mobile header - contains nav toggle 
+// and site name
+//   
+//------------------------------------
 
 
 // Container for userbar, nav
 .l-mobile-header {
 	@extend %clearfix;
-	border-bottom: 1px solid $border-color;
-	box-shadow: 1px 0 10px rgba(146, 146, 146, 0.5);
-	position: relative;
-	width: 100%;
-	z-index: 101;
-	top: 0;
-	left: 0;
-	background-color: $navbar-bg-color-mobile;
-
+	
+	@include media-breakpoint-down(lg){
+		position: relative;
+		width: 100%;
+		z-index: 101;
+		top: 0;
+		left: 0;
+		background-color: $mobile-header-bg-color;
+		//height: 50px;
+	}
 	@include media-breakpoint-up(lg) {
 		display: none;
 	}
@@ -43,37 +44,50 @@ h2#block-mainnavigation-mobile-menu {
 		width: 100%;
 		display: flex;
 		flex-wrap: nowrap;
+		flex-direction: row-reverse;
+		justify-content: flex-start;
+		
+		@include media-breakpoint-only(md) {
+			padding: 0 24px;
+		}
 	}
 	
 	/* Site Name */
 	.site-name {
 		
-		display: block;
-		width: 200px;
-		font-size: 23px;
-		text-align: center;
-		height: 50px;
-		line-height: 1.2;
-		vertical-align: middle;
-		margin-left: auto; // pushes logo to right
-		margin-right: 20px;
-		z-index: 0;
-		text-transform: uppercase;
-		
-		& a {
+		@include media-breakpoint-down(lg) {
 			display: block;
-			color: $mobile-site-name-text-color;
-			width: 100%;
-			height: 100%;
-			background: transparent; // replace with link to logo img
-			background-size: 90% auto;
+			width: calc(100% - 60px);
+			font-size: 25px;
+			text-align: left;
+			height: 50px;
+			line-height: 1.2;
+			vertical-align: middle;
+			margin-left: 0; // pushes logo to right
+			margin-right: 20px;
+			z-index: 0;
+			
+			& a {
+				display: block;
+				color: $navbar-brand-font-color;
+				width: 100%;
+				height: 100%;
+				background: url(../images/2911_logo_white.svg) no-repeat center left; // replace with link to logo img
+				background-size: auto 70%;
+				
+				// for text name only
+				font-size: 0;
+				color: #fff;
+				display: flex;
+				align-items: center;
+			}
 		}
-		@include media-breakpoint-only(sm) {
+		@include media-breakpoint-only(md) {
 			top: 8px;
 			height: 70px;
 			
 			& a {
-				background-size: 178px auto;
+				background-size: 100px auto;
 			}
 		}
 	}
@@ -100,7 +114,7 @@ h2#block-mainnavigation-mobile-menu {
 
 // #mobile-nav-open-btn
 .hamburger {
-	padding: 13px 0 0 12px;
+	padding: 10px 0 0 0;
 	display: inline-block;
 	cursor: pointer;
 	transition-property: opacity, filter;
@@ -117,20 +131,19 @@ h2#block-mainnavigation-mobile-menu {
 	outline: none;
 	
 	&:hover {
-		opacity: 0.7;
 		background-color: transparent;
 	}
 }
 
 .js-nav .hamburger {
 	position: absolute;
-	transform: translateX(-50px);
+	transform: translateX(97vw);
 	top: 0;
-	left: 0;
+	right: 8px;
 	outline: none;
 	
-	&:hover {
-		opacity: 0.7; 
+	@include media-breakpoint-only(md) {
+		top: 15px;
 	}
 	
 	.hamburger-inner,
@@ -161,7 +174,7 @@ h2#block-mainnavigation-mobile-menu {
 .hamburger-inner::after {
 	width: 34px;
 	height: 3px;
-	background-color: $mobile-nav-icon-color-closed;
+	background-color: $navbar-toggler-color;
 	border-radius: 3px;
 	position: absolute;
 	transition-property: transform;
@@ -203,7 +216,6 @@ h2#block-mainnavigation-mobile-menu {
 // when menu is open/visible
 .js-nav {
 	.hamburger:hover {
-		opacity: 0.7;
 		background-color: transparent;
 		
 		.hamburger-inner,
@@ -230,7 +242,7 @@ h2#block-mainnavigation-mobile-menu {
 		}
 	}
 }
- /* end hamburgers css */
+ // end hamburgers css 
 
 span.hamburger-label {
 	font-size: 12px;
@@ -286,7 +298,7 @@ span.hamburger-label {
 	overflow: hidden;
 }
 .js-nav .l-inner-wrap {
-	transform: translate3d(300px, 0, 0); // latest browser performance
+	transform: translate3d(-100vw, 0, 0); // latest browser performance
 	backface-visibility: hidden;
 	transition: transform 500ms ease 0s;
 	position: relative;
@@ -324,12 +336,13 @@ span.hamburger-label {
 // is translated off screen left until menu is toggled on
 
 .l-menu-mobile {
-	position: absolute;
-	left: -300px;
+	//position: absolute;
+	position: fixed; // necessary to keep from x overflow when menu comes in from right	
+	right: -100%;
 	top: 0px;
-	width: 300px;
+	width: 100%;
 	height: 100%;
-	background-color: $mobile-nav-bg-color;
+	background-color: $navbar-bg-color-mobile;
 	backface-visibility: hidden;
 	display: block;
 	z-index: 100;
@@ -337,6 +350,9 @@ span.hamburger-label {
 	transition: .3s ease all;
 	padding-top: 50px;
 	
+	@include media-breakpoint-down(md) {
+		//right: calc(-100% - 15px);
+	}
 	@include media-breakpoint-up(lg) {
 		display: none;
 	}
@@ -363,36 +379,41 @@ span.hamburger-label {
 // 
 //-------------------------------------
 
-.mobile-nav {
+.mobile-nav,
+.mobile-patient-tool-menu {
 	height: auto;
 	position: relative;
 	
 	ul {
-		margin: 0;
+		margin: 20px 0 0;
 		padding: 0;
 		overflow-y: auto;
 	}
 	
 	li {
-		text-align: left;
 		float: none;
-		border-bottom: 1px solid $mobile-nav-border-color;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		border-bottom: 0px solid rgba(255,255,255,0.2);
 		
 		& a {
-			padding: 15px;
+			padding: 3vh 15px;
 			display: block;
 			text-decoration: none;
 			width: auto;
-			color: $mobile-nav-text-color;
-			font-size: 20px;
-			font-weight: normal;
+			color: $navbar-link-color-mobile;
+			font-size: $nav-font-size-mobile;
+			font-weight: $nav-font-weight-mobile;
+			text-align: $navbar-link-text-align-mobile;
 			line-height: 1;
+			text-transform: $nav-text-transform-mobile;
 			
 			&:hover,
 			&:active
 			&.active-trail {
-				background-color: $mobile-nav-bg-hover-color;
-				color: $mobile-nav-text-hover-color;
+				background-color: $navbar-link-bg-hover-color-mobile;
+				color: $navbar-link-hover-color-mobile;
 				text-decoration: none;
 			}
 		}
@@ -411,6 +432,7 @@ span.hamburger-label {
 	ul ul {
 		margin-bottom: 0px;
 		background-color: $mobile-subnav-bg-color;
+		display: none; // temporary
 	
 		li {
 			border: 0;
@@ -419,16 +441,102 @@ span.hamburger-label {
 			padding: 10px 15px 10px 30px;
 			font-size: 16px;
 			color: $mobile-subnav-text-color;
+			text-align: left;
+			display: flex;
+			align-items: center;
+			
+			&:before {
+				content: "";
+				width: 7px;
+				height: 7px;
+				background: rgba(255,255,255,0.3);
+				display: block;
+				margin-right: 10px;
+			}
 		}
 	}
 }
 
 //---------------------------------------
 //
-//  CUSTOM - hide items
+//  SEARCH
 // 
 //---------------------------------------
 
-
-
+.l-menu-mobile {
+	
+	// block wrapper
+	.mobile-search-form {
+		background: $primary;
+		
+		.form--inline {
+			display: flex;
+		}
+		
+		// form wrapper
+		#views-exposed-form-search-content-page-1 {
+			display: flex;
+			flex-wrap: nowrap;
+			padding: 15px;
+			justify-content: center;
+		}
+		
+		// label-input wrapper
+		.form-item {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			padding: 0;
+			margin: 0;
+			height: 50px;
+			
+			label {
+				color: #fff;
+			}
+			input.form-text {
+				padding: 6px;
+				margin: 0;
+				flex: 1 1 auto;
+				height: 50px;
+				border: 0;
+				border-radius: 5px 0 0 5px;
+			}
+		}
+		
+		// submit button
+		.form-actions {
+			padding: 0;
+			display: flex;
+			align-items: flex-end;
+		}
+		// button with magnifying glass icon
+		.form-actions {
+			margin-top: 38px;
+			
+			input {
+				border: 0;
+				height: 50px;
+				margin-left: 0;
+				padding: 10px 15px;
+				font-size: 0;
+				width: 60px;
+				box-sizing: border-box;
+				border-radius: 0 7px 7px 0;
+				background: #000 url(../images/icons/icon_search.svg) no-repeat scroll center center;
+				background-size: 30px auto;
+				border-left: 0;
+				
+				&:hover {
+					background-color: $secondary;
+				}
+			}
+		}
+		.form-submit {
+			font-size: 14px;
+			padding: 8px 7px 7px;
+			letter-spacing: 0;
+			vertical-align: top;
+		}
+	}
+}
 

@@ -118,6 +118,7 @@ select {
 // user login form
 .user-login-form {
 	max-width: 400px;
+	margin: 0 auto;
 	
 	.form-item label, 
 	.form-actions label {
@@ -128,5 +129,6 @@ select {
 	input[type=submit] {
 		@include btn;
 		@include btn-primary;
+		width: 100%;
 	}
 }

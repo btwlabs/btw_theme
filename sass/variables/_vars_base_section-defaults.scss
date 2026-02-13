@@ -11,13 +11,12 @@ $section-default-bg-color: transparent;
 
 
 // Zebra Striping
-// 
 // Alternating Background Color
 $section-alternating-bg: $gray-000;
 
-
+//-----------------------
 // Titles
-// 
+//-----------------------
 
 // Title Alignment
 $section-title-alignment: center;
@@ -29,9 +28,9 @@ $section-body-alignment: center;
 $section-link-alignment: center;
 
 
+//-----------------------
 // Padding
-// 
-
+//-----------------------
 
 // Y Padding (Small)
 $section-padding-y-sm: 10vw;
@@ -45,12 +44,77 @@ $section-padding-x-sm: 5vw;
 // X Padding (Large)
 $section-padding-x-lg: 8vw;
 
-
+//-----------------------
 // Margin
-// 
+//-----------------------
 
 // Section Outer Margin (Small)
 $section-outer-margin-sm: 0;
 
 // Section Outer Margin (Large)
 $section-outer-margin-lg: 0;
+
+
+//-----------------------
+//	Sitewide Styling
+//	Sets margin values for all sections on the site
+//-----------------------
+
+//	Section - Sitewide Outer Margin - Small
+//	Sets outer margin on all sections sitewide in mobile layout.
+$section-sitewide-outer-margin-sm: 0;
+
+//	Section - Sitewide Outer Margin - Large
+//	Sets outer margin on all sections sitewide in tablet and desktop layouts.
+$section-sitewide-outer-margin-lg: 0;
+
+
+
+//---------------------------------
+//
+//	Borders
+//	Combined with classes added to any section's Custom Class field (i.e., .section-border-radius-sm, .section-border-radius-lg), these values will add a border to a section.
+//
+//---------------------------------
+
+//	Section Border Radius (Small)
+//	Sets the border radius of a section in small, or mobile, layout. Value should be in shorthand format: [top] [right] [bottom] [left], or just 0 for no border radius.
+$section-border-radius-sm: 10px;
+
+//	Section Border Radius (large)
+//	Sets the border radius of a section in medium and large layouts, tablet and desktop. Value should be in shorthand format: [top] [right] [bottom] [left], or just 0 for no border radius.
+$section-border-radius-lg: 20px;
+
+//	Section Border (small)
+//	Sets a border around a section in mobile layout. Combined with classes added to any section's Custom Class field (i.e., "section-border-sm", "section-border-lg"), these values will add a border around a section. Value should be formatted in shorthand: [border-width] [border-style] [border-color], or "0" for no border
+$section-border-sm: 0px solid $border-color;
+
+//	Section Border (large)
+//	Sets a border around a section on larger screens, tablet and desktop. Combined with classes added to any section's Custom Class field (i.e., "section-border-sm", "section-border-lg"), these values will add a border around a section. Value should be formatted in shorthand: [border-width] [border-style] [border-color], or "0" for no border
+$section-border-lg: 0px solid $border-color;
+
+
+
+//-----------------------
+//	Sitewide Styling
+//-----------------------
+
+//	Sets border values for all sections on the site
+
+//	Section Border Radius - SITEWIDE (Small)
+//	Sets border radius in mobile layout sizes on all sections of the site. Can be written as a shorthand value: top, right, bottom, left; or a single value for all corners.
+$section-sitewide-border-radius-sm: 0;
+
+//	Section Border Radius - SITEWIDE (Large)
+//	Sets border radius in tablets and desktop layout sizes on all sections of the site. Can be written as a shorthand value: top, right, bottom, left; or a single value for all corners.
+$section-sitewide-border-radius-lg: 0;
+
+//	Section - Sitewide - Overflow value (Small)
+//	Sets the overflow value on sections in mobile. A value of "hidden" is REQUIRED in conjunction with Section Border Radius Sitewide values to achieve this effect.
+$section-sitewide-overflow-value-sm: visible;
+
+//	Sitewide - Overflow value (Large)
+//	Sets the overflow value on sections for tablet and desktop devices. A value of "hidden" is REQUIRED in conjunction with Section Border Radius Sitewide values to achieve this effect.
+$section-sitewide-overflow-value-lg: visible;
+
+

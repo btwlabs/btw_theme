@@ -198,11 +198,13 @@
 
         .hero-heading {
             margin: $hero-title-margin;
+            padding: $hero-title-padding;
             font-weight: $hero-title-font-weight;
             font-family: $hero-title-font-family;
             color: $hero-title-color;
             text-align: $hero-title-alignment;
             text-transform: $hero-title-text-transform;
+            border-bottom: $hero-title-border-bottom;
             @include responsive-hero-title;
         }
         .hero-sub-heading {
