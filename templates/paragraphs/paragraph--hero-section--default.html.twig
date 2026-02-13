@@ -60,7 +60,13 @@
   {{ title_suffix }}
   <div class="hero-wrapper" id="top-{{ paragraph.id() }}">
     {% if not paragraph.field_hero_image.0 is empty %}
-      {{ content.html_head }}
+
+{# Ensure responsive_bg_image_formatter runs so its <style> tag is attached. #}
+{% if content.field_hero_image is defined %}
+  <div class="visually-hidden">{{ content.field_hero_image }}</div>
+{% endif %}
+
+  {{ content.html_head }}
       <!-- Start: Hero Background -->
       <div
         class="{% if 'fixed' in paragraph.field_hero_image_effect.0.value %}fixed{% elseif has_parallax %}parallax-item{% else %}no-effect{% endif %} lazy-load-bg-image"

@@ -50,6 +50,15 @@
   has_parallax ? 'has-parallax'
 ] %}
 
+{#
+  responsive_bg_image_formatter only injects its <style> tag when the field is rendered.
+  Render the background-image field invisibly so its attachments (the <style> tag) bubble
+  up into the page output.
+#}
+{% if content.field_image_image_file is defined %}
+  <div class="visually-hidden">{{ content.field_image_image_file }}</div>
+{% endif %}
+
   <!-- Start: Parallax Image -->
   {{ content.html_head }}
   <section {{ attributes.addClass(classes) }}>
