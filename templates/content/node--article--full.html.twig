@@ -130,12 +130,20 @@
     <!-- hero image -->
   {% endif %}
 
-  {% if content.field_article_paragraphs %}
+  {% if content.body %}
+    <!-- tagline -->
+    <h2 class="article-body">
+      {{ content.body }}
+    </h2>
+    <!-- tagline -->
+  {% endif %}
+
+  {#{% if content.field_article_paragraphs %}
     <!-- story blocks -->
     <div class="story-blocks">
       {{ content.field_article_paragraphs }}
     </div>
     <!-- story blocks -->
-  {% endif %}
+  {% endif %}#}
 
 </article><!-- /.node -->

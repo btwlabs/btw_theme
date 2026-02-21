@@ -58,7 +58,13 @@
     <div class="story-block {{ view_mode }} {{ paragraph.field_story_block_image_overlay_.0.value }} clearfix">
 
       {% if not paragraph.field_story_block_images is empty %}
-        {{ content.html_head }}
+
+{# Ensure responsive_bg_image_formatter runs so its <style> tag is attached. #}
+{% if content.field_story_block_images is defined %}
+  <div class="visually-hidden">{{ content.field_story_block_images }}</div>
+{% endif %}
+
+  {{ content.html_head }}
         <!-- Start: Full BG Image -->
         <div class="lazy-load-bg-image d-none d-md-block {{ image_effect }}"></div>
         <!-- End: Full BG Image -->
