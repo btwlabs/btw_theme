@@ -93,14 +93,18 @@
                 </div>
               </div>
             {% endif %}
-            {% if not paragraph.field_story_block_link is empty %}
-              <div class="story-block-link">
-                {{ content.field_story_block_link }}
-              </div>
-            {% endif %}
-            {% if not paragraph.field_story_block_video is empty %}
-              <div class="story-block-video">
-                {{ content.field_story_block_video }}
+            {% if not paragraph.field_story_block_link is empty or not paragraph.field_story_block_video_new is empty %}
+              <div class="story-block-link-wrapper">
+              {% if not paragraph.field_story_block_link is empty %}
+                <div class="story-block-link">
+                  {{ content.field_story_block_link }}
+                </div>
+              {% endif %}
+              {% if not paragraph.field_story_block_video_new is empty %}
+                <div class="story-block-video">
+                  {{ content.field_story_block_video_new }}
+                </div>
+              {% endif %}
               </div>
             {% endif %}
           </div>

@@ -81,6 +81,10 @@
 			width: 100%;
 		}
 	}
+	
+	.story-block-images {
+		width: 100%;
+	}
 
 	// text wrapper for adding bg color/padding over bg photos, etc.
 	.text-wrapper {
@@ -112,30 +116,55 @@
 			padding-left: 20px;
 		}
 	}
-
-	// content field link
-	.s2_story_block__story-block-link,
-	.story-block-video,
-	.s2_story_block__story-block-video,
-	.s2_story_block__story-block-video-new {
-		margin: 2em 0 0;
-		text-align: $sb-link-alignment;
+	
+	// Link(s) Wrapper
+	.story-block-link-wrapper {
+		margin-top: 2em;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		gap: 1em;
+		
+		@include media-breakpoint-down(sm) {
+			justify-content: center;
+		}
 	}
-
+	
+	// Story Block Link
+	.story-block-link {
+		text-align: $sb-link-alignment;
+		
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+	}
 	.s2_story_block__story-block-link {
+		
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+		
 		a.btn {
 			@include media-breakpoint-down(sm) {
 				width: 100%;
 			}
 		}
 	}
-	.s2_story_block__story-block-video {
-		.modal-trigger--video {
-			@include media-breakpoint-down(sm) {
-				width: 100%;
-			}
+	
+	// Story block Video modal trigger button
+	.story-block-video {
+		text-align: $sb-link-alignment;
+		
+		@include media-breakpoint-down(sm) {
+			width: 100%;
 		}
 	}
+	.modal-trigger--video {
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+	}
+	
 
 	// Extra image in left/right text and bg image view modes
 	// positioned above text in left/right/center view modes
@@ -451,6 +480,158 @@
 		.story-block-text,
 		.s2_story_block__story-block-link {
 			text-align: right !important;
+		}
+	}
+}
+
+
+
+//---------------------------------
+// 	Ability to remove padding on left/right groups per SB
+//
+//	And allow for sticky left or right TEXT 
+//	OR IMAGES when there is opposing tall content
+//---------------------------------
+
+.section-story-block {
+	
+	// GROUP LEFT padding removal per direction
+	&.group-left-pt-0 {
+		.group-left {
+			padding-top: 0 !important;
+		}
+	}
+	&.group-left-pl-0 {
+		.group-left {
+			padding-left: 0 !important;
+		}
+	}
+	&.group-left-pr-0 {
+		.group-left {
+			padding-right: 0 !important;
+		}
+	}
+	&.group-left-pb-0 {
+		.group-left {
+			padding-bottom: 0 !important;
+		}
+	}
+	
+	// GROUP RIGHT padding removal per direction
+	&.group-right-pt-0 {
+		.group-right {
+			padding-top: 0 !important;
+		}
+	}
+	&.group-right-pl-0 {
+		.group-right {
+			padding-left: 0 !important;
+		}
+	}
+	&.group-right-pr-0 {
+		.group-right {
+			padding-right: 0 !important;
+		}
+	}
+	&.group-right-pb-0 {
+		.group-right {
+			padding-bottom: 0 !important;
+			align-items: flex-end !important;
+		}
+	}
+	
+	// GROUP LEFT text sticky
+	&.group-left-text-sticky {
+		.story-block {
+			overflow: visible;
+		}
+		.group-left {
+			.text-wrapper {
+				@include media-breakpoint-up(md) {
+					position: sticky;
+					top: 100px;
+				}
+			}
+		}
+	}
+	
+	// GROUP RIGHT text sticky
+	&.group-right-text-sticky {
+		.story-block {
+			overflow: visible;
+		}
+		.group-right {
+			.text-wrapper {
+				@include media-breakpoint-up(md) {
+					position: sticky;
+					top: 100px;
+				}
+			}
+		}
+	}
+	
+	// GROUP LEFT image sticky
+	&.group-left-image-sticky {
+		@include media-breakpoint-up(md) {
+			.story-block {
+				overflow: visible;
+			}
+			.group-left {
+				align-items: flex-start;
+			
+				.story-block-images {
+					position: sticky;
+					top: 100px;
+				}
+			}
+		}
+	}
+	
+	// GROUP RIGHT image sticky
+	&.group-right-image-sticky {
+		@include media-breakpoint-up(md) {
+			.story-block {
+				overflow: visible;
+			}
+			.group-right {
+				align-items: flex-start;
+				
+				.story-block-images {
+					position: sticky;
+					top: 100px;
+				}
+			}
+		}
+	}
+}
+
+
+// BUTTON ALIGNMENT OVERRIDES
+// helpful when BOTH regular and video links are in a L/R storyblock
+.link-align-left {
+	.story-block {
+		.story-block-link-wrapper {
+			@include media-breakpoint-up(md) {
+				justify-content: flex-start !important;
+			}
+		}
+	}
+}
+.link-align-right {
+	.story-block {
+		.story-block-link-wrapper {
+			@include media-breakpoint-up(md) {
+				justify-content: flex-end !important;
+			}
+		}
+	}
+}
+.link-align-center {
+	.story-block {
+		.story-block-link-wrapper {
+			@include media-breakpoint-up(md) {
+				justify-content: center !important;
+			}
 		}
 	}
 }

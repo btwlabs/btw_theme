@@ -41,6 +41,11 @@
                 width: 50%;
                 padding: 8vw;
             }
+            
+            // links
+            .story-block-link-wrapper {
+                justify-content: $sb-link-alignment;
+            }
         }
 
         .section-title {

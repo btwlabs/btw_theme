@@ -34,6 +34,11 @@
                     flex: 0 0 100%;
                 }
             }
+            
+            // links
+            .story-block-link-wrapper {
+                justify-content: $sb-link-alignment;
+            }
         }
 
         .section-title {

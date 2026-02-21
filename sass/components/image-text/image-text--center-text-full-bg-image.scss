@@ -45,11 +45,13 @@
         .text-wrapper {
             max-width: $sb-center-full-text-max-width;
         }
-
+        
+        // links
+        .story-block-link-wrapper {
+            justify-content: $sb-center-full-link-alignment;
+        }
         .story-block-link {
-            .s2_story_block__story-block-link {
-                text-align: $sb-center-full-link-alignment;
-                
+            .s2_story_block__story-block-link {                
                 a {
                     @include media-breakpoint-down(sm) {
                         display: block;
@@ -57,14 +59,6 @@
                 }
             }
         }
-        .story-block-video {
-            .s2_story_block__story-block-video,
-            .s2_story_block__story-block-video-new {
-                text-align: $sb-center-full-link-alignment;
-            }
-        }
-        
-        
     }
 }
 

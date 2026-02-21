@@ -44,11 +44,11 @@ $testimonial-image-gap: 40px;
 
 //	Testimonial - Light icon - path
 //	Sets a url link path to a LIGHT colored icon to be used. 
-$testimonial-light-icon-path: url(https://fileswift.com/sites/default/files/2025-01/icon-quote-white.svg);
+$testimonial-light-icon-path: url(../images/icons/icon-quote-white.svg);
 
 //	Testimonial - Dark icon - path
 //	Sets a url link path to a DARK colored icon to be used. 
-$testimonial-dark-icon-path: url(https://fileswift.com/sites/default/files/2025-01/icon-quote-black.svg);
+$testimonial-dark-icon-path: url(../images/icons/icon-quote-black.svg);
 
 //	Testimonial - Default Icon
 //	Sets the default icon from between the two light/dark path variables above. Options are $testimonial-light-icon-path or $testimonial-dark-icon-path.

@@ -9,7 +9,7 @@
 .section-cards {
     background: $section-cards-bg-color;
     
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
         padding: $section-padding-y-sm 5vw;
     }
     @include media-breakpoint-up(lg) {
@@ -43,6 +43,7 @@ $grid-minmax-value: $grid-width-3;
     > a {
         display: block;
         width: 100%;
+        height: 100%;
         transition: 0.3s ease-in-out all;
         text-decoration: none;
         
@@ -50,6 +51,20 @@ $grid-minmax-value: $grid-width-3;
         &:hover {
             text-decoration: none;
 
+            .card {
+                transform: none; // *changed* default = scale(1.05)
+                box-shadow: $card-shadow-hover;
+            }
+        }
+    }
+}
+
+.card-hover-scale {
+    .card-item {
+        // all text inside card is inside an <a>
+        > a:hover {
+            text-decoration: none;
+    
             .card {
                 transform: scale(1.05);
                 box-shadow: $card-shadow-hover;
@@ -69,6 +84,10 @@ $grid-minmax-value: $grid-width-3;
 }
 
 .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
     background: $card-bg-color;
     border: $card-border;
     border-radius: $card-border-radius;
@@ -221,7 +240,7 @@ $grid-minmax-value: $grid-width-3;
     
     h4 {
         font-size: 1.2em;
-        text-align: $card-title-alignment
+        text-align: $card-title-alignment;
     }
 }
 .card-link {
@@ -286,10 +305,6 @@ $grid-minmax-value: $grid-width-3;
         }
         .card-link {
             @include button-on-light;
-            
-            &.btn-secondary {
-                @include secondary-button-on-light;
-            }
         }
     }
 }
@@ -307,10 +322,6 @@ $grid-minmax-value: $grid-width-3;
     }
     .card-link {
         @include button-on-light;
-        
-        &.btn-secondary {
-            @include secondary-button-on-light;
-        }
     }
 }
 
@@ -324,10 +335,6 @@ $grid-minmax-value: $grid-width-3;
         }
         .card-link {
             @include button-on-light;
-            
-            &.btn-secondary {
-                @include secondary-button-on-light;
-            }
         }
     }
 } 
@@ -386,10 +393,6 @@ $grid-minmax-value: $grid-width-3;
         }
         .card-link {
             @include button-on-dark;
-            
-            &.btn-secondary {
-                @include secondary-button-on-dark;
-            }
         }
     }
 }
@@ -407,10 +410,6 @@ $grid-minmax-value: $grid-width-3;
     }
     .card-link {
         @include button-on-dark;
-        
-        &.btn-secondary {
-            @include secondary-button-on-dark;
-        }
     }
 }
 
@@ -424,10 +423,6 @@ $grid-minmax-value: $grid-width-3;
         }
         .card-link {
             @include button-on-dark;
-            
-            &.btn-secondary {
-                @include secondary-button-on-dark;
-            }
         }
     }
 }
@@ -616,6 +611,41 @@ $grid-minmax-value: $grid-width-3;
         }
     }
 }
+.gap-6 {
+    .subcard-wrapper {
+        .row {
+            grid-gap: $gap-6;
+        }
+    }
+}
+.gap-7 {
+    .subcard-wrapper {
+        .row {
+            grid-gap: $gap-7;
+        }
+    }
+}
+.gap-8 {
+    .subcard-wrapper {
+        .row {
+            grid-gap: $gap-8;
+        }
+    }
+}
+.gap-9 {
+    .subcard-wrapper {
+        .row {
+            grid-gap: $gap-9;
+        }
+    }
+}
+.gap-10 {
+    .subcard-wrapper {
+        .row {
+            grid-gap: $gap-10;
+        }
+    }
+}
 
 
 //----------------------------------
@@ -762,10 +792,10 @@ $grid-minmax-value: $grid-width-3;
         
         // card image
         .card-image,
-        .s2_sub_card__sub-card-image,
-        figure {
+        .s2_sub_card__sub-card-image {
             height: 100% !important;
-            
+        }
+        figure {
             img {
                 height: 100% !important;
                 object-fit: cover;
@@ -801,6 +831,12 @@ $grid-minmax-value: $grid-width-3;
             background: $overlay-bg-color-light;
         }
     
+        .card:hover {
+            .card-body {
+                opacity: 1;  
+            }
+        }
+        
         &.card-overlay-light,
         &.card-light-bg {
             
@@ -816,10 +852,6 @@ $grid-minmax-value: $grid-width-3;
             }
             .card-link {
                 @include button-on-light;
-                
-                &.btn-secondary {
-                    @include secondary-button-on-light;
-                }
             }
         }
         &.card-overlay-dark,
@@ -836,10 +868,6 @@ $grid-minmax-value: $grid-width-3;
             }
             .card-link {
                 @include button-on-dark;
-                
-                &.btn-secondary {
-                    @include secondary-button-on-dark;
-                }
             }
         }
         
@@ -854,10 +882,6 @@ $grid-minmax-value: $grid-width-3;
             }
             .card-link {
                 @include button-on-dark;
-                
-                &.btn-secondary {
-                    @include secondary-button-on-dark;
-                }
             }
         }
         
@@ -872,10 +896,6 @@ $grid-minmax-value: $grid-width-3;
             }
             .card-link {
                 @include button-on-light;
-                
-                &.btn-secondary {
-                    @include secondary-button-on-light;
-                }
             }
         }
         
@@ -918,7 +938,55 @@ $grid-minmax-value: $grid-width-3;
     .card {
         position: relative;
     }
-    @media (min-width: 1023.98px) {
+    
+    // set iPadPro width and below
+    @media (max-width: 1023.98px) {
+    
+        
+        &.card-overlay-light,
+        &.card-light-bg,
+        &.card-overlay-dark,
+        &.card-dark-bg {
+            
+            .card-body {
+                background: transparent;
+            }
+            
+            .card-title {
+                color: $subtitle-on-light-color;
+            }
+            .card-text {
+                color: $text-on-light-color;
+            }
+            .card-link {
+                @include button-on-light;
+            }
+        }
+        
+        &.card-light-text,
+        &.light-text,
+        &.card-dark-text,
+        &.dark-text {
+            .card-title {
+                color: $subtitle-on-light-color;
+            }
+            .card-text {
+                color: $text-on-light-color;
+            }
+            .card-link {
+                @include button-on-light;
+            }
+        }
+        
+        .card:hover {
+            .card-body {
+                opacity: 1;  
+            }
+        }
+    }
+    
+    // set iPadPro width and above
+    @media (min-width: 1024.98px) {
         
         // card image
         .card-image,
@@ -962,68 +1030,6 @@ $grid-minmax-value: $grid-width-3;
         }
         
         &.card-overlay-light,
-        &.card-light-bg,
-        &.card-overlay-dark,
-        &.card-dark-bg {
-            
-            .card-body {
-                background: transparent;
-            }
-            
-            .card-title {
-                color: $subtitle-on-light-color;
-            }
-            .card-text {
-                color: $text-on-light-color;
-            }
-            .card-link {
-                @include button-on-light;
-                
-                &.btn-secondary {
-                    @include secondary-button-on-light;
-                }
-            }
-        }
-        
-        &.cards-light-text, // deprecated
-        &.card-light-text,
-        &.light-text,
-        &.cards-dark-text, // deprecated
-        &.card-dark-text,
-        &.dark-text {
-            .card-title {
-                color: $subtitle-on-light-color;
-            }
-            .card-text {
-                color: $text-on-light-color;
-            }
-            .card-link {
-                @include button-on-light;
-                
-                &.btn-secondary {
-                    @include secondary-button-on-light;
-                }
-            }
-        }
-        
-        .card:hover {
-            .card-body {
-                opacity: 1;  
-            }
-        }
-    }
-       
-    // set above iPadPro 1024
-    @media (min-width: 1024.98px) {
-        
-        // card image
-        .card-image,
-        .s2_sub_card__sub-card-image,
-        figure {
-            height: 100% !important;
-        }
-        
-        &.card-overlay-light,
         &.card-light-bg {
             
             .card-body {
@@ -1038,10 +1044,6 @@ $grid-minmax-value: $grid-width-3;
             }
             .card-link {
                 @include button-on-light;
-                
-                &.btn-secondary {
-                    @include secondary-button-on-light;
-                }
             }
         }
         &.card-overlay-dark,
@@ -1058,14 +1060,9 @@ $grid-minmax-value: $grid-width-3;
             }
             .card-link {
                 @include button-on-dark;
-                
-                &.btn-secondary {
-                    @include secondary-button-on-dark;
-                }
             }
         }
         
-        &.cards-light-text, // deprecated
         &.card-light-text,
         &.light-text {
             .card-title {
@@ -1076,14 +1073,9 @@ $grid-minmax-value: $grid-width-3;
             }
             .card-link {
                 @include button-on-dark;
-                
-                &.btn-secondary {
-                    @include secondary-button-on-dark;
-                }
             }
         }
         
-        &.cards-dark-text, // deprecated
         &.card-dark-text,
         &.dark-text {
             .card-title {
@@ -1094,12 +1086,18 @@ $grid-minmax-value: $grid-width-3;
             }
             .card-link {
                 @include button-on-light;
-                
-                &.btn-secondary {
-                    @include secondary-button-on-light;
-                }
             }
         }
+        
+        .card:hover {
+            .card-body {
+                opacity: 1;  
+            }
+        }
+    }
+    
+    // set above iPadPro 1024
+    @media (min-width: 1023.98px) {
         .card-body {
             opacity: 0;
         }
@@ -1109,7 +1107,6 @@ $grid-minmax-value: $grid-width-3;
             }
         }
     }
-
 }
 
 //-------------------------------------------
@@ -1143,6 +1140,7 @@ $grid-minmax-value: $grid-width-3;
         .intro .section-body,
         .card-title,
         .s2_sub_card__sub-card-title,
+        h4,
         .card-text {
             text-align: center !important;
         }
@@ -1152,6 +1150,7 @@ $grid-minmax-value: $grid-width-3;
         .intro .section-body,
         .card-title,
         .s2_sub_card__sub-card-title,
+        h4,
         .card-text {
             text-align: left !important;
         }
@@ -1161,6 +1160,7 @@ $grid-minmax-value: $grid-width-3;
         .intro .section-body,
         .card-title,
         .s2_sub_card__sub-card-title,
+        h4,
         .card-text {
             text-align: right !important;
         }
@@ -1169,25 +1169,124 @@ $grid-minmax-value: $grid-width-3;
 
 // Cards only - override vars for alignment for all cards in a deck
 .section-cards {
+    
+    // center
     &.card-text-center {
         .card-title,
         .s2_sub_card__sub-card-title,
+        h4,
         .card-text {
             text-align: center !important;
         }
     }
+    &.card-text-center-sm {
+        @include media-breakpoint-down(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4,
+            .card-text {
+                text-align: center !important;
+            }
+        }
+    }
+    &.card-text-center-md {
+        @include media-breakpoint-only(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4,
+            .card-text {
+                text-align: center !important;
+            }
+        }
+    }
+    &.card-text-center-lg {
+        @include media-breakpoint-up(lg) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4,
+            .card-text {
+                text-align: center !important;
+            }
+        }
+    }
+    
+    // left
     &.card-text-left {
         .card-title,
         .s2_sub_card__sub-card-title,
+        h4,
         .card-text {
             text-align: left !important;
         }
     }
+    &.card-text-left-sm {
+        @include media-breakpoint-down(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4,
+            .card-text {
+                text-align: left !important;
+            }
+        }
+    }
+    &.card-text-left-md {
+        @include media-breakpoint-only(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4,
+            .card-text {
+                text-align: left !important;
+            }
+        }
+    }
+    &.card-text-left-lg {
+        @include media-breakpoint-up(lg) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4,
+            .card-text {
+                text-align: left !important;
+            }
+        }
+    }
+    
+    // right
     &.card-text-right {
         .card-title,
         .s2_sub_card__sub-card-title,
+        h4,
         .card-text {
             text-align: right !important;
+        }
+    }
+    &.card-text-right-sm {
+        @include media-breakpoint-down(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4,
+            .card-text {
+                text-align: right !important;
+            }
+        }
+    }
+    &.card-text-right-md {
+        @include media-breakpoint-only(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4,
+            .card-text {
+                text-align: right !important;
+            }
+        }
+    }
+    &.card-text-right-lg {
+        @include media-breakpoint-up(lg) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4,
+            .card-text {
+                text-align: right !important;
+            }
         }
     }
     
@@ -1196,6 +1295,7 @@ $grid-minmax-value: $grid-width-3;
         &.card-text-center {
             .card-title,
             .s2_sub_card__sub-card-title,
+            h4,
             .card-text {
                 text-align: center !important;
             }
@@ -1203,6 +1303,7 @@ $grid-minmax-value: $grid-width-3;
         &.card-text-left {
             .card-title,
             .s2_sub_card__sub-card-title,
+            h4,
             .card-text {
                 text-align: left !important;
             }
@@ -1210,6 +1311,7 @@ $grid-minmax-value: $grid-width-3;
         &.card-text-right {
             .card-title,
             .s2_sub_card__sub-card-title,
+            h4,
             .card-text {
                 text-align: right !important;
             }
@@ -1240,65 +1342,231 @@ $grid-minmax-value: $grid-width-3;
     }
 }
 
+
+
 // Card TITLES only - override vars for alignment for all cards in a deck
 .section-cards {
+    
+    // title center
     &.card-title-center {
         .card-title,
-        .s2_sub_card__sub-card-title {
+        .s2_sub_card__sub-card-title,
+        h4 {
             text-align: center !important;
         }
     }
-    &.card-title-left {
-        .card-title,
-        .s2_sub_card__sub-card-title {
-            text-align: left !important;
+    &.card-title-center-sm {
+        @include media-breakpoint-down(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4 {
+                text-align: center !important;
+            }
         }
     }
-    &.card-title-right {
-        .card-title,
-        .s2_sub_card__sub-card-title {
-            text-align: right !important;
+    &.card-title-center-md {
+        @include media-breakpoint-only(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4 {
+                text-align: center !important;
+            }
+        }
+    }
+    &.card-title-center-lg {
+        @include media-breakpoint-up(lg) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4 {
+                text-align: center !important;
+            }
         }
     }
     
+    // title left
+    &.card-title-left {
+        .card-title,
+        .s2_sub_card__sub-card-title,
+        h4 {
+            text-align: left !important;
+        }
+    }
+
+    &.card-title-left-sm {
+        @include media-breakpoint-down(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4 {
+                text-align: left !important;
+            }
+        }
+    }
+    &.card-title-left-md {
+        @include media-breakpoint-only(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4 {
+                text-align: left !important;
+            }
+        }
+    }
+    &.card-title-left-lg {
+        @include media-breakpoint-up(lg) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4 {
+                text-align: left !important;
+            }
+        }
+    }
+    
+    // title right
+    &.card-title-right {
+        .card-title,
+        .s2_sub_card__sub-card-title,
+        h4 {
+            text-align: right !important;
+        }
+    }
+    &.card-title-right-sm {
+        @include media-breakpoint-down(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4 {
+                text-align: right !important;
+            }
+        }
+    }
+    &.card-title-right-md {
+        @include media-breakpoint-only(md) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4 {
+                text-align: right !important;
+            }
+        }
+    }
+    &.card-title-right-lg {
+        @include media-breakpoint-up(lg) {
+            .card-title,
+            .s2_sub_card__sub-card-title,
+            h4 {
+                text-align: right !important;
+            }
+        }
+    }
+
     // for individual cards only
     .card-item {
         &.card-title-center {
             .card-title,
-            .s2_sub_card__sub-card-title {
+            .s2_sub_card__sub-card-title,
+            h4 {
                 text-align: center !important;
             }
         }
         &.card-title-left {
             .card-title,
-            .s2_sub_card__sub-card-title {
+            .s2_sub_card__sub-card-title,
+            h4 {
                 text-align: left !important;
             }
         }
         &.card-title-right {
             .card-title,
-            .s2_sub_card__sub-card-title {
+            .s2_sub_card__sub-card-title,
+            h4 {
                 text-align: right !important;
             }
         }
     }
 }
 
-// Card BODY only - override vars for alignment for all cards in a deck
+//  Card BODY only - override vars for alignment for all cards in a deck
+
 .section-cards {
+    
+    // body center
     &.card-body-center {
         .card-text {
             text-align: center !important;
         }
     }
+    &.card-body-center-sm {
+        @include media-breakpoint-down(md) {
+            .card-text {
+                text-align: center !important;
+            }
+        }
+    }
+    &.card-body-center-md {
+        @include media-breakpoint-only(md) {
+            .card-text {
+                text-align: center !important;
+            }
+        }
+    }
+    &.card-body-center-lg {
+        @include media-breakpoint-up(lg) {
+            .card-text {
+                text-align: center !important;
+            }
+        }
+    }
+    
+    // body Left
     &.card-body-left {
         .card-text {
             text-align: left !important;
         }
     }
+    &.card-body-left-sm {
+        @include media-breakpoint-down(md) {
+            .card-text {
+                text-align: left !important;
+            }
+        }      
+    }
+    &.card-body-left-md {
+        @include media-breakpoint-only(md) {
+            .card-text {
+                text-align: left !important;
+            }
+        }
+    }
+    &.card-body-left-lg {
+        @include media-breakpoint-up(lg) {
+            .card-text {
+                text-align: left !important;
+            }
+        }
+    }
+    
+    // body right
     &.card-body-right {
         .card-text {
             text-align: right !important;
+        }
+    }
+    &.card-body-right-sm {
+        @include media-breakpoint-down(md) {
+            .card-text {
+                text-align: right !important;
+            }
+        }
+    }
+    &.card-body-right-md {
+        @include media-breakpoint-only(md) {
+            .card-text {
+                text-align: right !important;
+            }
+        }
+    }
+    &.card-body-right-lg {
+        @include media-breakpoint-up(lg) {
+            .card-text {
+                text-align: right !important;
+            }
         }
     }
     
@@ -1338,3 +1606,133 @@ $grid-minmax-value: $grid-width-3;
         }
     }
 }
+
+
+
+//-------------------------------------------
+//
+//  Cards - Overrides 
+//
+//-------------------------------------------
+.section-cards {
+    &.card-hide-title,
+    .card-hide-title {
+        .card-title {
+            display: none;
+        }
+    }
+}
+
+
+//-------------------------------------------
+//
+//  Cards TWO Columns customizations 
+//
+//-------------------------------------------
+
+.section-cards {
+    &.card-2col-icon {
+    
+        // override bootstrap container
+        .container {
+            padding-left: 0;
+            padding-right: 0;
+            max-width: 100%;
+            
+            @include media-breakpoint-up(md) {
+                position: sticky;
+                top: 50px;
+            }
+        }
+    
+        @include media-breakpoint-up(md) {
+            display: flex;
+    
+            .intro {
+                flex: 0 0 45%;
+                padding-right: 10vw;
+    
+                .row.justify-content-center {
+                    justify-content: flex-start !important;
+                }
+                
+                .s2_cards__cards-title {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    
+        .intro {
+            .col.col-lg-8 {
+                max-width: 100%;
+                width: 100%;
+                flex: 1 1 100%;
+            }
+            .intro-body {
+                text-align: left;
+                //font-size: clamp(20px, 2vw, 26px);
+                //line-height: 1.4;
+            }
+        }
+        
+        h2.section-title {
+            text-align: left;
+            line-height: 1;
+        }
+    
+        .subcard-wrapper {
+            flex: 1 1 50vw;
+        }
+    
+        .card-item {
+            margin-bottom: 40px;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 40px;
+        
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 0;
+            }
+        }
+        
+        .card {
+            align-items: flex-start;
+            gap: 2vw;
+        }
+    
+        .card.icon .card-image,
+        .card.has-fa-icon .card-fa-icon {
+            max-width: 110px;
+            margin: 0 auto;
+            padding-top: 0;
+        
+            @include media-breakpoint-up(md) {
+                padding: 15px 0 0 0;
+            }
+        }
+        .card-body {
+            padding: 20px 0 40px 0;
+        
+            @include media-breakpoint-down(sm) {
+                padding: 20px 0 0 0;
+            }
+        }
+        .card-fa-icon {
+            font-size: 80px;
+            padding-top: 5px; 
+        }
+        h3.card-title {
+            font-size: clamp(27px, 3vw, 32px);
+            line-height: 1;
+            margin-bottom: .3em;
+            text-align: left;
+        }
+        .card-text {
+            font-size: clamp(16px, 2vw, 22px);
+            line-height: 1.4;
+            text-align: left;
+            margin: 0 auto;
+        }
+    }
+}
+

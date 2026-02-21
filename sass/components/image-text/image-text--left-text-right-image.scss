@@ -43,6 +43,11 @@
                     margin: .05em 0 0;
                 }
             }
+            
+            // links
+            .story-block-link-wrapper {
+                justify-content: $sb-link-alignment;
+            }
         }
 
         .section-title {

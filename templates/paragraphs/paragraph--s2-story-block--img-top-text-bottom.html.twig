@@ -58,11 +58,11 @@
 
         <div class="lazy-load-bg-image">
 
-          {% if not paragraph.field_story_block_images.0 is empty %}
+          {# {% if not paragraph.field_story_block_images.0 is empty %}
             <div class="story-block-mobile-image">
               <img src="{{ base_url ~ file_url(paragraph.field_story_block_images.0.entity.fileuri | image_style('story_block_small_fp')) }}" alt="{{ paragraph.field_story_block_images.0.alt }}" typeof="foaf:Image">
             </div>
-          {% endif %}
+          {% endif %} #}
 
           {% if not paragraph.field_story_block_images is empty %}
             <div class="story-block-images">
@@ -90,14 +90,18 @@
                 </div>
               </div>
             {% endif %}
-            {% if not paragraph.field_story_block_link is empty %}
-              <div class="story-block-link">
-                {{ content.field_story_block_link }}
-              </div>
-            {% endif %}
-            {% if not paragraph.field_story_block_video is empty %}
-              <div class="story-block-video">
-                {{ content.field_story_block_video }}
+            {% if not paragraph.field_story_block_link is empty or not paragraph.field_story_block_video_new is empty %}
+              <div class="story-block-link-wrapper">
+              {% if not paragraph.field_story_block_link is empty %}
+                <div class="story-block-link">
+                  {{ content.field_story_block_link }}
+                </div>
+              {% endif %}
+              {% if not paragraph.field_story_block_video_new is empty %}
+                <div class="story-block-video">
+                  {{ content.field_story_block_video_new }}
+                </div>
+              {% endif %}
               </div>
             {% endif %}
           </div>

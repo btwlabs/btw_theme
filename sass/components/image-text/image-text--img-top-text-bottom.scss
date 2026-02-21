@@ -84,24 +84,47 @@
             }
 
             // Links
+            .story-block-link-wrapper {
+                justify-content: $sb-img-top_link-alignment;
+            }
             .s2_story_block__story-block-link {
-                text-align: $sb-img-top_link-alignment;
-
                 a {
                     @include media-breakpoint-down(sm) {
                         display: block;
                     }
                 }
             }
+        }
+    }
+}
+
+// flip image and text: text top image bottom
+.paragraph--view-mode--img-top-text-bottom {
+    &.reverse-order {
+        .story-block-inner {
+            padding-bottom: 0;
             
-            // video link
-            .s2_story_block__story-block-video,
-            .s2_story_block__story-block-video-new {
-                text-align: $sb-img-top_link-alignment;
+            .bg-image {
+                order: 2;
+                margin-bottom: 0;
+            }
+            .group-text {
+                order: 1;
+                padding: $section-padding-y-lg $section-padding-x-lg $section-padding-y-sm;
+            }
+        }
+        
+        // move negative margin to bottom when using .reverse-order
+        &.text-wrapper-overlap {
+            .group-text {
+                margin-top: 0;
+                margin-bottom: -12vw;
             }
         }
     }
 }
+
+
 
 //---------------------------------------------
 //   Text Wrapper Overlaps Image

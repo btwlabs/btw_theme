@@ -265,6 +265,110 @@ figure {
             overflow: visible;
         }
     }
+    
+    
+    // puts a border radius on <img> within a <figure>
+    &.image-border-radius {
+        figure img {
+            border-radius: 20px;
+            
+            @include media-breakpoint-down(sm) {
+                border-radius: 10px;
+            }
+        }
+    }
+    
+    // eliminate all padding on section
+    &.section-p-0 {
+        padding: 0 !important;
+        
+        .story-block-inner {
+            padding: 0 !important;
+        }
+    }
+    
+    &.section-p-0-sm {
+        @include media-breakpoint-down(sm) {
+            padding: 0 !important;
+            
+            .story-block-inner {
+                padding: 0 !important;
+            }
+        }
+    }
+    
+    // remove top padding
+    &.section-pt-0 {
+        padding-top: 0 !important;
+        
+        .story-block-inner {
+            padding-top: 0 !important;
+        }
+    }
+    &.section-pt-0-sm {
+        @include media-breakpoint-down(sm) {
+            padding-top: 0 !important;
+            
+            .story-block-inner {
+                padding-top: 0 !important;
+            }
+        }
+    }
+    
+    // remove bottom padding
+    &.section-pb-0 {
+        padding-bottom: 0 !important;
+        
+        .story-block-inner {
+            padding-bottom: 0 !important;
+        }
+    }
+    &.section-pb-0-sm {
+        @include media-breakpoint-down(sm) {
+            padding-bottom: 0 !important;
+            
+            .story-block-inner {
+                padding-bottom: 0 !important;
+            }
+        }
+    }    
+    
+    // remove left padding
+    &.section-pl-0 {
+        padding-left: 0 !important;
+        
+        .story-block-inner {
+            padding-left: 0 !important;
+        }
+    }
+    &.section-pl-0-sm {
+        @include media-breakpoint-down(sm) {
+            padding-left: 0 !important;
+            
+            .story-block-inner {
+                padding-left: 0 !important;
+            }
+        }
+    }
+    
+    // remove right padding
+    &.section-pr-0 {
+        padding-right: 0 !important;
+        
+        .story-block-inner {
+            padding-right: 0 !important;
+        }
+    }
+    
+    &.section-pr-0-sm {
+        @include media-breakpoint-down(sm) {
+            padding-left: 0 !important;
+            
+            .story-block-inner {
+                padding-left: 0 !important;
+            }
+        }
+    }
 
 
     //background-color: $section-default-bg-color; !!! can't do this because of parallax image effects on SBs
@@ -959,9 +1063,11 @@ figure {
 
 
 
-//--------------------------------
-//	OVERLAY classes for dark and light
-//--------------------------------
+//------------------------------------
+//
+//	DARK COLOR OVERLAY classes
+//
+//-------------------------------------
 
 // dark color overlay - to vars default
 .overlay-dark {
@@ -970,10 +1076,12 @@ figure {
         background: $overlay-bg-color-dark;
     }
 }
-// darl overlay gradient LEFT solid to RIGHT transparent
+
+// OLD CLASSES - DEPRECATED BUT STILL IN USE BY OLDER SITES
+// dark overlay gradient LEFT solid to RIGHT transparent
 .dark-overlay-gradient-from-left {
     .image-overlay,
-    .hero-overlay {
+    &.section-hero .hero-overlay {
         background: rgba($overlay-gradient-base-color-dark,0.7);
         background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0.7) 36%, rgba($overlay-gradient-base-color-dark, 0.65) 41%, rgba($overlay-gradient-base-color-dark, 0.55) 46%, rgba($overlay-gradient-base-color-dark, 0.35) 55.5%, rgba($overlay-gradient-base-color-dark, .25) 59%,rgba($overlay-gradient-base-color-dark, 0) 65%);
     }
@@ -981,11 +1089,34 @@ figure {
 // dark overlay gradient RIGHT solid to LEFT transparent
 .dark-overlay-gradient-from-right {
     .image-overlay,
-    .hero-overlay {
+    &.section-hero .hero-overlay {
         background: rgba($overlay-gradient-base-color-dark,0.7);
         background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0) 35%, rgba($overlay-gradient-base-color-dark, .25) 42%,rgba($overlay-gradient-base-color-dark, 0.35) 46%, rgba($overlay-gradient-base-color-dark, 0.55) 55.5%, rgba($overlay-gradient-base-color-dark, 0.65) 60%, rgba($overlay-gradient-base-color-dark, 0.7) 65%);
     }
 }
+
+// SHORTER CLASSES
+.overlay-gradient-dark {
+    &.left-text-full-bg-image {
+        .image-overlay,
+        &.section-hero .hero-overlay {
+            background: rgba($overlay-gradient-base-color-dark,0.7);
+            background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0.7) 36%, rgba($overlay-gradient-base-color-dark, 0.65) 41%, rgba($overlay-gradient-base-color-dark, 0.55) 46%, rgba($overlay-gradient-base-color-dark, 0.35) 55.5%, rgba($overlay-gradient-base-color-dark, .25) 59%,rgba($overlay-gradient-base-color-dark, 0) 65%);
+        }
+    }
+    
+    // dark overlay gradient RIGHT solid to LEFT transparent
+    &.right-text-full-bg-image {
+        .image-overlay,
+        &.section-hero .hero-overlay {
+            background: rgba($overlay-gradient-base-color-dark,0.7);
+            background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0) 35%, rgba($overlay-gradient-base-color-dark, .25) 42%,rgba($overlay-gradient-base-color-dark, 0.35) 46%, rgba($overlay-gradient-base-color-dark, 0.55) 55.5%, rgba($overlay-gradient-base-color-dark, 0.65) 60%, rgba($overlay-gradient-base-color-dark, 0.7) 65%);
+        }
+    }
+}
+
+
+
 
 
 //------------------------------------
@@ -1005,7 +1136,7 @@ figure {
 // light overlay gradient LEFT solid to RIGHT transparent
 .light-overlay-gradient-from-left {
     .image-overlay,
-    .hero-overlay {
+    &.section-hero .hero-overlay {
         background: rgba(255,255,255,0.7);
         background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0.7) 36%, rgba($overlay-gradient-base-color-light, 0.65) 41%, rgba($overlay-gradient-base-color-light, 0.55) 46%, rgba($overlay-gradient-base-color-light, 0.35) 55.5%, rgba($overlay-gradient-base-color-light, .25) 59%,rgba($overlay-gradient-base-color-light, 0) 65%);
     }
@@ -1014,11 +1145,33 @@ figure {
 // light overlay gradient RIGHT solid to LEFT transparent
 .light-overlay-gradient-from-right {
     .image-overlay,
-    .hero-overlay {
+    &.section-hero .hero-overlay {
         background: rgba($overlay-gradient-base-color-light, 0.7);
         background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0) 35%, rgba($overlay-gradient-base-color-light, .25) 42%,rgba($overlay-gradient-base-color-light, 0.35) 46%, rgba($overlay-gradient-base-color-light, 0.55) 55.5%, rgba($overlay-gradient-base-color-light, 0.65) 60%, rgba($overlay-gradient-base-color-light, 0.7) 65%);
     }
 }
+
+
+// SHORTER CLASS NAME
+// light overlay gradient LEFT solid to RIGHT transparent
+.overlay-gradient-light {
+    &.left-text-full-bg-image {
+        .image-overlay,
+        &.section-hero .hero-overlay {
+            background: rgba(255,255,255,0.7);
+            background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0.7) 36%, rgba($overlay-gradient-base-color-light, 0.65) 41%, rgba($overlay-gradient-base-color-light, 0.55) 46%, rgba($overlay-gradient-base-color-light, 0.35) 55.5%, rgba($overlay-gradient-base-color-light, .25) 59%,rgba($overlay-gradient-base-color-light, 0) 65%);
+        }
+    }
+    
+    &.right-text-full-bg-image {
+        .image-overlay,
+        &.section-hero .hero-overlay {
+            background: rgba($overlay-gradient-base-color-light, 0.7);
+            background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0) 35%, rgba($overlay-gradient-base-color-light, .25) 42%,rgba($overlay-gradient-base-color-light, 0.35) 46%, rgba($overlay-gradient-base-color-light, 0.55) 55.5%, rgba($overlay-gradient-base-color-light, 0.65) 60%, rgba($overlay-gradient-base-color-light, 0.7) 65%);
+        }
+    }
+}
+
 
 
 
@@ -2535,4 +2688,30 @@ figure {
     display: inline-block;
     @extend .btn;
     @extend .btn-primary;
+}
+
+
+
+//----------------------------
+// Set paragraph intro to 100% width
+// override bootstrap columns
+//-----------------------------
+
+.intro-full-width {
+    .intro {
+        .container {
+            padding: 0;
+            
+            .row {
+                padding: 0;
+                margin: 0;
+            }
+            .col-lg-8 {
+                max-width: 100%;
+                width: 100%;
+                flex: 0 0 100%;
+                padding: 0;
+            }
+        }	
+    }
 }
