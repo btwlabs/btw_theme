@@ -57,7 +57,8 @@
         }
     }
     
-    &.light-bg-dark-text {
+    &.light-bg,
+    &.dark-text {
         background: $bg-light-color;
         
         .section-title {
@@ -75,7 +76,8 @@
             }
         }
     }
-    &.dark-bg-light-text {
+    &.dark-bg,
+    &.light-text {
         background: $bg-dark-color;
         
         .section-title {

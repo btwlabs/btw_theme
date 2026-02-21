@@ -22,6 +22,33 @@
         height: 100%;
         width: 100%;
     }
+    
+    @include media-breakpoint-up(md) {
+        // Control the height of individual sections with custom classes
+        &.img-height-25 {
+            height: 25vh;
+        }
+        
+        &.img-height-30 {
+            height: 30vh;
+        }
+        
+        &.img-height-40 {
+            height: 40vh;
+        }
+        
+        &.img-height-50 {
+            height: 50vh;
+        }
+        
+        &.img-height-75 {
+            height: 75vh;
+        }
+        
+        &.img-height-100 {
+            height: 100vh;
+        }
+    }
 }
 
 
@@ -37,6 +64,36 @@
         // this is because iOS can't properly deal with background-size: cover;
         .fixed {
             background-attachment: scroll !important; // override "cover" default attribute
+        }
+    }
+}
+
+//---------------------------------------
+//	Hide .bg-image <div> in mobile
+//	show mobile <img>, reset heights to auto
+//	height determined by <img> dimensions
+//---------------------------------------
+
+.section-image {
+    &.has-mobile-image {
+        @include media-breakpoint-down(md) {
+            height: auto;
+
+            .bg-image {
+                display: none;
+            }
+            
+            .mobile-image-wrapper {				
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        @include media-breakpoint-up(md) {
+            .mobile-image-wrapper {
+                display: none;
+            }
         }
     }
 }

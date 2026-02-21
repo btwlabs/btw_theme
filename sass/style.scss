@@ -16,6 +16,122 @@
 // Import script goes here...
 
 
+
+/* 
+
+//-------------------------
+//    POPPINS (google thru adobe)
+//-------------------------
+
+Poppins Regular
+font-family: "poppins", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Poppins Italic
+font-family: "poppins", sans-serif;
+font-weight: 400;
+font-style: italic;
+
+Poppins Bold
+font-family: "poppins", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Poppins Bold Italic
+font-family: "poppins", sans-serif;
+font-weight: 700;
+font-style: italic;
+
+Poppins ExtraBold
+font-family: "poppins", sans-serif;
+font-weight: 800;
+font-style: normal;
+
+Poppins ExtraBold Italic
+font-family: "poppins", sans-serif;
+font-weight: 800;
+font-style: italic;
+
+*/
+
+// Metropolis Regular
+@font-face {
+    font-family: 'metropolis';
+    src: url('../fonts/metropolis/Metropolis-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+// Metropolis Regular italic
+@font-face {
+    font-family: 'metropolis';
+    src: url('../fonts/metropolis/Metropolis-RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
+// Metropolis Extra Bold
+@font-face {
+    font-family: 'metropolis';
+    src: url('../fonts/metropolis/Metropolis-ExtraBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+// Corbert Condensed medium italic
+@font-face {
+    font-family: 'metropolis';
+    src: url('../fonts/metropolis/Metropolis-ExtraBoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+// Corbert Condensed regular
+@font-face {
+    font-family: 'corbert-condensed';
+    src: url('../fonts/corbert-condensed/corbert-condensed.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+// Corbert Condensed regular italic
+@font-face {
+    font-family: 'corbert-condensed';
+    src: url('../fonts/corbert-condensed/corbert-condensed-italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
+// Corbert Condensed medium
+@font-face {
+    font-family: 'corbert-condensed';
+    src: url('../fonts/corbert-condensed/corbert-condensed-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+// Corbert Condensed medium italic
+@font-face {
+    font-family: 'corbert-condensed';
+    src: url('../fonts/corbert-condensed/corbert-condensed-medium-italic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+// Corbert Condensed bold
+@font-face {
+    font-family: 'corbert-condensed';
+    src: url('../fonts/corbert-condensed/corbert-condensed-bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+// Corbert Condensed bold italic
+@font-face {
+    font-family: 'corbert-condensed';
+    src: url('../fonts/corbert-condensed/corbert-condensed-bold-italic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
 //----------------------------------
 //
 //	GENERAL ELEMENTS
@@ -75,6 +191,10 @@ a {
     &:hover {
         color: $link-color-hover;
     }
+}
+
+hr {
+    margin: 3em 0;
 }
 
 img, media {
@@ -154,11 +274,26 @@ b, strong {
 
 figure {
     margin-bottom: 2em;
+    
+    picture {
+        display: block;
+        width: 100%;
+    }
 
     figcaption {
         font-size: 14px;
         text-align: center;
         padding: 8px;
+    }
+}
+
+.d-none {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .d-md-block {
+        display: block !important;
     }
 }
 
@@ -182,7 +317,74 @@ figure {
 .section {
     position: relative;
     
+    //background-color: $section-default-bg-color; !!! can't do this because of parallax image effects on SBs
+    
+    // offset scroll snap from html {scroll-behavior:smooth;}
+    
+    @include media-breakpoint-down(lg) {
+        scroll-margin-top: $scroll-top-offset-sm;
+    }
+    @include media-breakpoint-up(lg) {
+        scroll-margin-top: $scroll-top-offset-lg;
+    }
+    
+    .section-title,
+    .text-section-title {
+        position: relative;
+        @include responsive-section-title;
+        @include title-style;
+    }
+    
+    .subtitle {
+        @include responsive-section-subtitle;
+        color: $subtitle-color;
+        font-style: $subtitle-font-style;
+        text-align: $subtitle-text-align;
+    }
+    
+    .container {
+        @include media-breakpoint-down(md) {
+            // override bootstrap defaults to match story blocks
+            padding-left: $section-padding-x-sm;
+            padding-right: $section-padding-x-sm;
+        }
+    }
+    
+    // add default padding on outer section wrapper
+    &.section-contact,
+    &.section-general-embed,
+    &.section-contact-form {
+        @include media-breakpoint-down(md) {
+            padding: $section-padding-y-sm 0;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: $section-padding-y-lg 0;
+        }
+    }
+    
+    &.alternating {
+        background-color: $section-alternating-bg;
+    }
+    
+    // hides section title
+    .hide-title {
+        h2,
+        h2.section-title {
+           display: none;
+        }
+    }
+    a:not(.btn) {
+        text-decoration: $link-text-decoration;
+    }
+    
+    // :hover has to come first to work
+    a:hover:not(.btn) {
+        text-decoration: $link-hover-text-decoration;
+    }
+    
+    //----------------------------
     // sitewide section margin
+    //----------------------------
     @include media-breakpoint-down(sm) {
         margin: $section-sitewide-outer-margin-sm;
     }
@@ -369,69 +571,6 @@ figure {
             }
         }
     }
-
-
-    //background-color: $section-default-bg-color; !!! can't do this because of parallax image effects on SBs
-
-    // offset scroll snap from html {scroll-behavior:smooth;}
-
-    @include media-breakpoint-down(md) {
-        scroll-margin-top: $scroll-top-offset-sm;
-    }
-    @include media-breakpoint-up(lg) {
-        scroll-margin-top: $scroll-top-offset-lg;
-    }
-
-    .section-title,
-    .text-section-title {
-        position: relative;
-        @include responsive-section-title;
-        @include title-style;
-    }
-
-    .subtitle {
-        @include responsive-section-subtitle;
-        color: $subtitle-color;
-        font-style: $subtitle-font-style;
-        text-align: $subtitle-text-align;
-    }
-
-    .container {
-        @include media-breakpoint-down(md) {
-            // override bootstrap defaults to match story blocks
-            padding-left: $section-padding-x-sm;
-            padding-right: $section-padding-x-sm;
-        }
-    }
-
-    // add default padding on outer section wrapper
-    &.section-twitter,
-    &.section-instagram,
-    &.section-bands-in-town,
-    &.section-social-links,
-    &.section-elfsight-widget,
-    &.section-contact,
-    &.section-general-embed,
-    &.section-contact-form {
-        @include media-breakpoint-down(md) {
-            padding: $section-padding-y-sm 0;
-        }
-        @include media-breakpoint-up(lg) {
-            padding: $section-padding-y-lg 0;
-        }
-    }
-
-    &.alternating {
-        background-color: $section-alternating-bg;
-    }
-    
-    // hides section title
-    .hide-title {
-        h2,
-        h2.section-title {
-           display: none;
-        }
-    }
 }
 
 
@@ -497,7 +636,7 @@ figure {
 //---------------------------------
 // Dark or Light Text
 //      add this class to a section to 
-//      change the text color only
+//      change the BORDER color only
 //---------------------------------
 
 // for dark text on a light bg color
@@ -516,44 +655,26 @@ figure {
 
 
 
-//--------------------------------
-//	Light Intro text on a dark bg
-//--------------------------------
-.intro-light-text {
-    .intro {
-        .section-title {
-            color: $title-on-dark-color !important;
-        }
-        .intro-body {
-            color: $text-on-dark-color !important;
-            
-            a {
-                color: $link-on-dark-color !important;
-                
-                &:hover {
-                    color: $link-on-dark-color-hover !important;
-                }
-            }
-        }
-        .section-link {
-            a {
-                color: $link-on-dark-color !important;
-                
-                &:hover {
-                    color: $link-on-dark-color-hover !important;
-                }
-            }
-        }
-    }
-}
+//-------------------------------------------------
+// * * * * * * * * * * * * * * * * * * * * * * * 
+//-------------------------------------------------
+//
+//	
+//	THEMING FOR LIGHT BACKGROUNDS
+//	
+//
+//-------------------------------------------------
+// * * * * * * * * * * * * * * * * * * * * * * *
+//-------------------------------------------------
 
 //--------------------------------
-//	Light Intro text on a light bg
+//	DARK Intro text on a light bg
 //--------------------------------
 .intro-dark-text {
     .intro {
         .section-title {
             color: $title-on-light-color !important;
+            border-color: $border-on-light-color !important;
         }
         .intro-body {
             color: $text-on-light-color !important;
@@ -578,17 +699,16 @@ figure {
     }
 }
 
-
-
-//---------------------------------
-// Dark Text - FOR LIGHT BACKGROUND
+//---------------------------------------
+//
+// 	DARK TEXT - FOR LIGHT BACKGROUND
 //      add this class to a section to 
 //      change the text color only
-//---------------------------------
+//
+//---------------------------------------
 
 .dark-text {
-    color: $title-on-light-color !important;
-        
+    
     // hero
     &.section-hero .hero-title-wrapper,
     &.section-hero.hero-minimal .hero-title-wrapper {
@@ -627,7 +747,7 @@ figure {
             }
         }
     }
-    .story-block-videos {
+    .story-block-video {
         .modal-trigger--video {
             @include button-on-light;
         }
@@ -650,7 +770,10 @@ figure {
     
     // cards 
     &.card-item {
-        .card-title,
+        .card-title {
+            color: $subtitle-on-light-color;
+            border-color: $border-on-light-color !important;
+        }
         .card-text {
             color: $text-on-light-color !important;
         }
@@ -664,80 +787,94 @@ figure {
     }
 }
 
-// override .dark-text in mobile only
-.dark-text {
-    &.light-text-mobile {
+
+//------------------------------------
+//
+//	LIGHT TEXT OVERRIDES:
+//		switching light text 
+//		to dark text for mobile
+//
+//------------------------------------
+
+// *** OVERRIDE *** .light-text in mobile only
+.light-text {
+    &.dark-text-mobile {
         @include media-breakpoint-down(sm) {
             // hero
             &.section-hero .hero-title-wrapper,
             &.section-hero.hero-minimal .hero-title-wrapper {
                 .hero-heading {
-                    color: $title-on-dark-color;
+                    color: $title-on-light-color;
                 }
                 .hero-sub-heading {
-                    color: $text-on-dark-color;
+                    color: $text-on-light-color;
                 }
             }
             
+            
+            // img+txt, section intros
             .section-title {
-                color: $title-on-dark-color !important;
+                color: $title-on-light-color !important;
+                border-color: $border-on-light-color !important;
             }
             .story-block-text,
             .intro-body {
-                color: $text-on-dark-color !important;
+                color: $text-on-light-color !important;
                 
                 a {
-                    color: $link-on-dark-color !important;
+                    color: $link-on-light-color !important;
                     
                     &:hover {
-                        color: $link-on-dark-color-hover !important;
+                        color: $link-on-light-color-hover !important;
                     }
-                }
-            }
-            .story-block-link {
-                a.btn {
-                    @include button-on-dark;
-                    
-                    &.btn-secondary {
-                        @include secondary-button-on-dark;
-                    }
-                }
-            }
-            .story-block-videos {
-                .modal-trigger--video {
-                    @include button-on-dark;
-                }
-            }
-            .story-block-link {
-                a:not(.btn-primary):not(.btn-secondary) {
-                    color: $link-on-dark-color;
                 }
             }
             
-            // slides
-            .swiper-slide {
-                .slide-title {
-                    color: $title-on-dark-color !important;
+            // buttons
+            .story-block-link {
+                a.btn {
+                    @include button-on-light;
+                    
+                    &.btn-secondary {
+                        @include secondary-button-on-light;
+                    }
                 }
+            }
+            .story-block-video {
+                .modal-trigger--video {
+                    @include button-on-light;
+                }
+            }
+            
+            // links that are not buttons
+            .story-block-link {
+                a:not(.btn-primary):not(.btn-secondary) {
+                    color: $link-on-light-color;
+                }
+            }
+            
+            // individual slides
+            .swiper-slide {
+                .slide-title,
                 .slide-body {
-                    color: $text-on-dark-color !important;
+                    color: $text-on-light-color !important;
                 }
             }
             
             // cards 
-            &.section-cards,
             &.card-item {
                 .card-title {
-                    color: $title-on-dark-color !important;
+                    color: $subtitle-on-light-color;
+                    border-color: $border-on-light-color !important;
                 }
                 .card-text {
-                    color: $text-on-dark-color !important;
+                    color: $text-on-light-color !important;
                 }
                 .card-link {
-                    @include button-on-dark;
+                    @include button-on-light;
                     
                     &.btn-secondary {
-                        @include secondary-button-on-dark;
+                        @include secondary-button-on-light;
                     }
                 }
             }
@@ -745,17 +882,125 @@ figure {
     }
 }
 
-// override for cards
-.card-dark-text {
-    &.light-text-mobile {
+// same as immediate previous setting, without parent class
+// for when parent selector can't be used...
+// such as in an @extend for themes/skins/variants
+.dark-text-mobile {
+    @include media-breakpoint-down(sm) {
+        // hero
+        &.section-hero .hero-title-wrapper,
+        &.section-hero.hero-minimal .hero-title-wrapper {
+            .hero-heading {
+                color: $title-on-light-color;
+            }
+            .hero-sub-heading {
+                color: $text-on-light-color;
+            }
+        }
+        
+        
+        // img+txt, section intros
+        .section-title {
+            color: $title-on-light-color !important;
+            border-color: $border-on-light-color !important;
+        }
+        .story-block-text,
+        .intro-body {
+            color: $text-on-light-color !important;
+            
+            a {
+                color: $link-on-light-color !important;
+                
+                &:hover {
+                    color: $link-on-light-color-hover !important;
+                }
+            }
+        }
+        
+        // buttons
+        .story-block-link {
+            a.btn {
+                @include button-on-light;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-light;
+                }
+            }
+        }
+        .story-block-video {
+            .modal-trigger--video {
+                @include button-on-light;
+            }
+        }
+        
+        // links that are not buttons
+        .story-block-link {
+            a:not(.btn-primary):not(.btn-secondary) {
+                color: $link-on-light-color;
+            }
+        }
+        
+        // individual slides
+        .swiper-slide {
+            .slide-title,
+            .slide-body {
+                color: $text-on-light-color !important;
+            }
+        }
+        
+        // cards 
+        &.card-item {
+            .card-title {
+                color: $subtitle-on-light-color;
+                border-color: $border-on-light-color !important;
+            }
+            .card-text {
+                color: $text-on-light-color !important;
+            }
+            .card-link {
+                @include button-on-light;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-light;
+                }
+            }
+        }
+    }
+}
+
+//-------------------------------------
+//	BUTTON on LIGHT
+//	for use when light-text, dark-bg isn't available 
+//	such as in theme variant class groups
+//-------------------------------------
+.button-on-light {
+    .story-block-link,
+    .hero-link,
+    .card-item  {
+        a.btn,
+        .card-link.btn {
+            @include button-on-light;
+            
+            &.btn-secondary {
+                @include secondary-button-on-light;
+            }
+        }
+    }
+}
+
+
+// *** OVERRIDE *** light text for cards to dark text
+.card-light-text {
+    &.dark-text-mobile {
         @include media-breakpoint-down(sm) {
             // cards 
             .card-item {
                 .card-title {
-                    color: $title-on-dark-color !important;
+                    color: $subtitle-on-dark-color;
+                    border-color: $border-on-dark-color !important;
                 }
                 .card-text {
-                    color: $text-on-dark-color !important;
+                    color: $text-on-light-color !important;
                 }
                 .card-link {
                     @include button-on-dark;
@@ -770,48 +1015,52 @@ figure {
 }
 
 .card-text-over-image {
-    &.card-dark-text {
-        &.light-text-mobile {
+    &.card-light-text {
+        &.dark-text-mobile {
+            @include media-breakpoint-down(md) {
+                // cards 
+                .card-item {
+                    .card-title {
+                        color: $subtitle-on-light-color;
+                        border-color: $border-on-light-color !important;
+                    }
+                    .card-text {
+                        color: $text-on-light-color !important;
+                    }
+                    .card-link {
+                        @include button-on-light;
+                        
+                        &.btn-secondary {
+                            @include secondary-button-on-light;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// override for text on hover
+// different because can't use hover on medium/tablet width
+.card-text-over-image-hover,
+.card-text-over-image-bottom-hover {
+    &.card-light-text {
+        &.dark-text-mobile {
             @media (max-width: 1023.98px) {
                 // cards 
                 .card-item {
                     .card-title {
-                        color: $title-on-dark-color !important;
+                        color: $subtitle-on-dark-color;
+                        border-color: $border-on-dark-color !important;
                     }
                     .card-text {
-                        color: $text-on-dark-color !important;
+                        color: $text-on-light-color !important;
                     }
                     .card-link {
-                        @include button-on-dark;
+                        @include button-on-light;
                         
                         &.btn-secondary {
-                            @include secondary-button-on-dark;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-// override for card text on hover
-// different because can't use hover on medium/tablet width
-.card-text-over-image-hover {
-    &.card-dark-text {
-        &.light-text-mobile {
-            @include media-breakpoint-down(lg) {
-                // cards 
-                .card-item {
-                    .card-title {
-                        color: $title-on-dark-color !important;
-                    }
-                    .card-text {
-                        color: $text-on-dark-color !important;
-                    }
-                    .card-link {
-                        @include button-on-dark;
-                        
-                        &.btn-secondary {
-                            @include secondary-button-on-dark;
+                            @include secondary-button-on-light;
                         }
                     }
                 }
@@ -820,15 +1069,105 @@ figure {
     }
 }
 
+//------------------------------------
+//
+//	LIGHT OVERLAY classes
+//
+//-------------------------------------
+
+// light color overlay - to vars default - solid color
+.overlay-light {
+    .image-overlay,
+    .hero-overlay {
+        background: $overlay-bg-color-light;
+    }
+}
+
+
+// SHORTER CLASS NAME
+// light overlay gradient LEFT solid to RIGHT transparent
+.overlay-gradient-light {
+    .left-text-full-bg-image {
+        .image-overlay {
+            background: rgba($overlay-gradient-base-color-light,0.7);
+            background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0.7) 36%, rgba($overlay-gradient-base-color-light, 0.65) 41%, rgba($overlay-gradient-base-color-light, 0.55) 46%, rgba($overlay-gradient-base-color-light, 0.35) 55.5%, rgba($overlay-gradient-base-color-light, .25) 59%,rgba($overlay-gradient-base-color-light, 0) 65%);
+        }
+    }
     
-//---------------------------------
-// Light Text - FOR DARK BACKGROUNDS
+    .right-text-full-bg-image {
+        .image-overlay {
+            background: rgba($overlay-gradient-base-color-light, 0.7);
+            background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0) 35%, rgba($overlay-gradient-base-color-light, .25) 42%,rgba($overlay-gradient-base-color-light, 0.35) 46%, rgba($overlay-gradient-base-color-light, 0.55) 55.5%, rgba($overlay-gradient-base-color-light, 0.65) 60%, rgba($overlay-gradient-base-color-light, 0.7) 65%);
+        }
+    }
+    
+    // for hero
+    &.section-hero {
+        .hero-overlay {
+            background: rgba($overlay-gradient-base-color-light, 0.7);
+            background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0) 35%, rgba($overlay-gradient-base-color-light, .25) 42%,rgba($overlay-gradient-base-color-light, 0.35) 46%, rgba($overlay-gradient-base-color-light, 0.55) 55.5%, rgba($overlay-gradient-base-color-light, 0.65) 60%, rgba($overlay-gradient-base-color-light, 0.7) 65%);
+        }
+    }
+}
+
+
+
+
+//-------------------------------------------------
+// * * * * * * * * * * * * * * * * * * * * * * * 
+//-------------------------------------------------
+//
+//
+//	THEMING FOR DARK BACKGROUNDS
+//
+//
+//-------------------------------------------------
+// * * * * * * * * * * * * * * * * * * * * * * * 
+//-------------------------------------------------
+
+//--------------------------------
+//	Light Intro text on a dark bg
+//--------------------------------
+.intro-light-text {
+    .intro {
+        .section-title {
+            color: $title-on-dark-color !important;
+            border-color: $border-on-dark-color !important;
+        }
+        .intro-body {
+            color: $text-on-dark-color !important;
+            
+            a {
+                color: $link-on-dark-color !important;
+                
+                &:hover {
+                    color: $link-on-dark-color-hover !important;
+                }
+            }
+        }
+        .section-link {
+            a {
+                color: $link-on-dark-color !important;
+                
+                &:hover {
+                    color: $link-on-dark-color-hover !important;
+                }
+            }
+        }
+    }
+}
+
+
+
+//--------------------------------------
+//
+// 	LIGHT TEXT - FOR DARK BACKGROUNDS
 //      add this class to a section to 
 //      change the text color only
-//---------------------------------
+//
+//--------------------------------------
 
 .light-text {
-    color: $title-on-dark-color !important;
     
     // hero
     &.section-hero .hero-title-wrapper,
@@ -843,6 +1182,7 @@ figure {
     
     .section-title {
         color: $title-on-dark-color !important;
+        border-color: $border-on-dark-color !important;
     }
     .story-block-text,
     .intro-body {
@@ -865,7 +1205,7 @@ figure {
             }
         }
     }
-    .story-block-videos {
+    .story-block-video {
         .modal-trigger--video {
             @include button-on-dark;
         }
@@ -892,7 +1232,8 @@ figure {
     &.section-cards,
     &.card-item {
         .card-title {
-            color: $title-on-dark-color !important;
+            color: $subtitle-on-dark-color !important;
+            border-color: $border-on-dark-color !important;
         }
         .card-text {
             color: $text-on-dark-color !important;
@@ -907,81 +1248,111 @@ figure {
     }
 }
 
-// override .light-text in mobile only
-.light-text {
-    &.dark-text-mobile {
+//----------------------------------------
+//	BUTTON on DARK
+//	for use when light-text, dark-bg isn't available 
+//	such as in theme variant class groups
+//----------------------------------------
+.button-on-dark {
+    .story-block-link,
+    .hero-link,
+    .card-item  {
+        a.btn,
+        .card-link.btn {
+            @include button-on-dark;
+            
+            &.btn-secondary {
+                @include secondary-button-on-dark;
+            }
+        }
+    }
+}
+
+
+//------------------------------------
+//
+//	DARK TEXT OVERRIDES:
+//		switching dark text 
+//		to light text for mobile
+//
+//------------------------------------
+
+// OVERRIDE .dark-text in mobile only to light text
+.dark-text {
+    &.light-text-mobile {
         @include media-breakpoint-down(sm) {
             // hero
             &.section-hero .hero-title-wrapper,
             &.section-hero.hero-minimal .hero-title-wrapper {
                 .hero-heading {
-                    color: $title-on-light-color;
+                    color: $title-on-dark-color;
                 }
                 .hero-sub-heading {
-                    color: $text-on-light-color;
+                    color: $text-on-dark-color;
                 }
             }
             
-            
-            // img+txt, section intros
             .section-title {
-                color: $title-on-light-color !important;
+                color: $title-on-dark-color !important;
+                border-color: $border-on-light-color !important;
             }
             .story-block-text,
             .intro-body {
-                color: $text-on-light-color !important;
+                color: $text-on-dark-color !important;
                 
                 a {
-                    color: $link-on-light-color !important;
+                    color: $link-on-dark-color !important;
                     
                     &:hover {
-                        color: $link-on-light-color-hover !important;
+                        color: $link-on-dark-color-hover !important;
                     }
                 }
             }
-            
-            // buttons
             .story-block-link {
                 a.btn {
-                    @include button-on-light;
+                    @include button-on-dark;
                     
                     &.btn-secondary {
-                        @include secondary-button-on-light;
+                        @include secondary-button-on-dark;
                     }
                 }
             }
-            .story-block-videos {
+            .story-block-video {
                 .modal-trigger--video {
-                    @include button-on-light;
+                    @include button-on-dark;
                 }
             }
-            
-            // links that are not buttons
             .story-block-link {
                 a:not(.btn-primary):not(.btn-secondary) {
-                    color: $link-on-light-color;
+                    color: $link-on-dark-color;
                 }
             }
             
-            // individual slides
+            // slides
             .swiper-slide {
-                .slide-title,
+                .slide-title {
+                    color: $title-on-dark-color !important;
+                }
                 .slide-body {
-                    color: $text-on-light-color !important;
+                    color: $text-on-dark-color !important;
                 }
             }
             
             // cards 
+            &.section-cards,
             &.card-item {
-                .card-title,
+                .card-title {
+                    color: $subtitle-on-dark-color !important;
+                    border-color: $border-on-dark-color !important;
+                }
                 .card-text {
-                    color: $text-on-light-color !important;
+                    color: $text-on-dark-color !important;
                 }
                 .card-link {
-                    @include button-on-light;
+                    @include button-on-dark;
                     
                     &.btn-secondary {
-                        @include secondary-button-on-light;
+                        @include secondary-button-on-dark;
                     }
                 }
             }
@@ -989,15 +1360,101 @@ figure {
     }
 }
 
+// same as immediate previous setting, without parent class
+// for when parent selector can't be used...
+// such as in an @extend for themes/skins/variants
+.light-text-mobile {
+    @include media-breakpoint-down(sm) {
+        // hero
+        &.section-hero .hero-title-wrapper,
+        &.section-hero.hero-minimal .hero-title-wrapper {
+            .hero-heading {
+                color: $title-on-dark-color;
+            }
+            .hero-sub-heading {
+                color: $text-on-dark-color;
+            }
+        }
+        
+        .section-title {
+            color: $title-on-dark-color !important;
+            border-color: $border-on-light-color !important;
+        }
+        .story-block-text,
+        .intro-body {
+            color: $text-on-dark-color !important;
+            
+            a {
+                color: $link-on-dark-color !important;
+                
+                &:hover {
+                    color: $link-on-dark-color-hover !important;
+                }
+            }
+        }
+        .story-block-link {
+            a.btn {
+                @include button-on-dark;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-dark;
+                }
+            }
+        }
+        .story-block-video {
+            .modal-trigger--video {
+                @include button-on-dark;
+            }
+        }
+        .story-block-link {
+            a:not(.btn-primary):not(.btn-secondary) {
+                color: $link-on-dark-color;
+            }
+        }
+        
+        // slides
+        .swiper-slide {
+            .slide-title {
+                color: $title-on-dark-color !important;
+            }
+            .slide-body {
+                color: $text-on-dark-color !important;
+            }
+        }
+        
+        // cards 
+        &.section-cards,
+        &.card-item {
+            .card-title {
+                color: $subtitle-on-dark-color !important;
+                border-color: $border-on-dark-color !important;
+            }
+            .card-text {
+                color: $text-on-dark-color !important;
+            }
+            .card-link {
+                @include button-on-dark;
+                
+                &.btn-secondary {
+                    @include secondary-button-on-dark;
+                }
+            }
+        }
+    }
+}
+
 // override for cards
-.card-light-text {
-    &.dark-text-mobile {
+.card-dark-text {
+    &.light-text-mobile {
         @include media-breakpoint-down(sm) {
             // cards 
             .card-item {
-                .card-title,
+                .card-title {
+                    color: $title-on-dark-color !important;
+                    border-color: $border-on-dark-color;
+                }
                 .card-text {
-                    color: $text-on-light-color !important;
+                    color: $text-on-dark-color !important;
                 }
                 .card-link {
                     @include button-on-dark;
@@ -1012,46 +1469,23 @@ figure {
 }
 
 .card-text-over-image {
-    &.card-light-text {
-        &.dark-text-mobile {
-            @include media-breakpoint-down(md) {
-                // cards 
-                .card-item {
-                    .card-title,
-                    .card-text {
-                        color: $text-on-light-color !important;
-                    }
-                    .card-link {
-                        @include button-on-light;
-                        
-                        &.btn-secondary {
-                            @include secondary-button-on-light;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-// override for text on hover
-// different because can't use hover on medium/tablet width
-.card-text-over-image-hover,
-.card-text-over-image-bottom-hover {
-    &.card-light-text {
-        &.dark-text-mobile {
+    &.card-dark-text {
+        &.light-text-mobile {
             @media (max-width: 1023.98px) {
                 // cards 
                 .card-item {
-                    .card-title,
+                    .card-title {
+                        color: $title-on-dark-color !important;
+                        border-color: $border-on-dark-color !important;
+                    }
                     .card-text {
-                        color: $text-on-light-color !important;
+                        color: $text-on-dark-color !important;
                     }
                     .card-link {
-                        @include button-on-light;
+                        @include button-on-dark;
                         
                         &.btn-secondary {
-                            @include secondary-button-on-light;
+                            @include secondary-button-on-dark;
                         }
                     }
                 }
@@ -1059,8 +1493,33 @@ figure {
         }
     }
 }
-
-
+// override for card text on hover
+// different because can't use hover on medium/tablet width
+.card-text-over-image-hover {
+    &.card-dark-text {
+        &.light-text-mobile {
+            @include media-breakpoint-down(lg) {
+                // cards 
+                .card-item {
+                    .card-title {
+                        color: $title-on-dark-color !important;
+                        border-color: $border-on-dark-color !important;
+                    }
+                    .card-text {
+                        color: $text-on-dark-color !important;
+                    }
+                    .card-link {
+                        @include button-on-dark;
+                        
+                        &.btn-secondary {
+                            @include secondary-button-on-dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 //------------------------------------
@@ -1077,38 +1536,26 @@ figure {
     }
 }
 
-// OLD CLASSES - DEPRECATED BUT STILL IN USE BY OLDER SITES
-// dark overlay gradient LEFT solid to RIGHT transparent
-.dark-overlay-gradient-from-left {
-    .image-overlay,
-    &.section-hero .hero-overlay {
-        background: rgba($overlay-gradient-base-color-dark,0.7);
-        background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0.7) 36%, rgba($overlay-gradient-base-color-dark, 0.65) 41%, rgba($overlay-gradient-base-color-dark, 0.55) 46%, rgba($overlay-gradient-base-color-dark, 0.35) 55.5%, rgba($overlay-gradient-base-color-dark, .25) 59%,rgba($overlay-gradient-base-color-dark, 0) 65%);
-    }
-}
-// dark overlay gradient RIGHT solid to LEFT transparent
-.dark-overlay-gradient-from-right {
-    .image-overlay,
-    &.section-hero .hero-overlay {
-        background: rgba($overlay-gradient-base-color-dark,0.7);
-        background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0) 35%, rgba($overlay-gradient-base-color-dark, .25) 42%,rgba($overlay-gradient-base-color-dark, 0.35) 46%, rgba($overlay-gradient-base-color-dark, 0.55) 55.5%, rgba($overlay-gradient-base-color-dark, 0.65) 60%, rgba($overlay-gradient-base-color-dark, 0.7) 65%);
-    }
-}
-
 // SHORTER CLASSES
 .overlay-gradient-dark {
-    &.left-text-full-bg-image {
-        .image-overlay,
-        &.section-hero .hero-overlay {
+    .left-text-full-bg-image {
+        .image-overlay {
             background: rgba($overlay-gradient-base-color-dark,0.7);
             background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0.7) 36%, rgba($overlay-gradient-base-color-dark, 0.65) 41%, rgba($overlay-gradient-base-color-dark, 0.55) 46%, rgba($overlay-gradient-base-color-dark, 0.35) 55.5%, rgba($overlay-gradient-base-color-dark, .25) 59%,rgba($overlay-gradient-base-color-dark, 0) 65%);
         }
     }
     
     // dark overlay gradient RIGHT solid to LEFT transparent
-    &.right-text-full-bg-image {
-        .image-overlay,
-        &.section-hero .hero-overlay {
+    .right-text-full-bg-image {
+        .image-overlay{
+            background: rgba($overlay-gradient-base-color-dark,0.7);
+            background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0) 35%, rgba($overlay-gradient-base-color-dark, .25) 42%,rgba($overlay-gradient-base-color-dark, 0.35) 46%, rgba($overlay-gradient-base-color-dark, 0.55) 55.5%, rgba($overlay-gradient-base-color-dark, 0.65) 60%, rgba($overlay-gradient-base-color-dark, 0.7) 65%);
+        }
+    }
+    
+    // for hero
+    &.section-hero {
+        .hero-overlay {
             background: rgba($overlay-gradient-base-color-dark,0.7);
             background: linear-gradient(90deg, rgba($overlay-gradient-base-color-dark, 0) 35%, rgba($overlay-gradient-base-color-dark, .25) 42%,rgba($overlay-gradient-base-color-dark, 0.35) 46%, rgba($overlay-gradient-base-color-dark, 0.55) 55.5%, rgba($overlay-gradient-base-color-dark, 0.65) 60%, rgba($overlay-gradient-base-color-dark, 0.7) 65%);
         }
@@ -1116,77 +1563,20 @@ figure {
 }
 
 
-
-
-
-//------------------------------------
+//-------------------------------------------------
+//-------------------------------------------------
 //
-//	LIGHT OVERLAY classes
-//
-//-------------------------------------
-
-// light color overlay - to vars default - solid color
-.overlay-light {
-    .image-overlay,
-    .hero-overlay {
-        background: $overlay-bg-color-light;
-    }
-}
-
-// light overlay gradient LEFT solid to RIGHT transparent
-.light-overlay-gradient-from-left {
-    .image-overlay,
-    &.section-hero .hero-overlay {
-        background: rgba(255,255,255,0.7);
-        background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0.7) 36%, rgba($overlay-gradient-base-color-light, 0.65) 41%, rgba($overlay-gradient-base-color-light, 0.55) 46%, rgba($overlay-gradient-base-color-light, 0.35) 55.5%, rgba($overlay-gradient-base-color-light, .25) 59%,rgba($overlay-gradient-base-color-light, 0) 65%);
-    }
-}
-
-// light overlay gradient RIGHT solid to LEFT transparent
-.light-overlay-gradient-from-right {
-    .image-overlay,
-    &.section-hero .hero-overlay {
-        background: rgba($overlay-gradient-base-color-light, 0.7);
-        background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0) 35%, rgba($overlay-gradient-base-color-light, .25) 42%,rgba($overlay-gradient-base-color-light, 0.35) 46%, rgba($overlay-gradient-base-color-light, 0.55) 55.5%, rgba($overlay-gradient-base-color-light, 0.65) 60%, rgba($overlay-gradient-base-color-light, 0.7) 65%);
-    }
-}
-
-
-// SHORTER CLASS NAME
-// light overlay gradient LEFT solid to RIGHT transparent
-.overlay-gradient-light {
-    &.left-text-full-bg-image {
-        .image-overlay,
-        &.section-hero .hero-overlay {
-            background: rgba(255,255,255,0.7);
-            background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0.7) 36%, rgba($overlay-gradient-base-color-light, 0.65) 41%, rgba($overlay-gradient-base-color-light, 0.55) 46%, rgba($overlay-gradient-base-color-light, 0.35) 55.5%, rgba($overlay-gradient-base-color-light, .25) 59%,rgba($overlay-gradient-base-color-light, 0) 65%);
-        }
-    }
-    
-    &.right-text-full-bg-image {
-        .image-overlay,
-        &.section-hero .hero-overlay {
-            background: rgba($overlay-gradient-base-color-light, 0.7);
-            background: linear-gradient(90deg, rgba($overlay-gradient-base-color-light, 0) 35%, rgba($overlay-gradient-base-color-light, .25) 42%,rgba($overlay-gradient-base-color-light, 0.35) 46%, rgba($overlay-gradient-base-color-light, 0.55) 55.5%, rgba($overlay-gradient-base-color-light, 0.65) 60%, rgba($overlay-gradient-base-color-light, 0.7) 65%);
-        }
-    }
-}
-
-
-
-
-
-//-------------------------------
-//
-//  Text Wrappers - Dark & Light
+//	TEXT WRAPPER STYLES
+//  	Dark & Light
 //      to create "floating" effect
 //      adding bg color, padding
 //      to text wrappers in section
 //      intro's
 //
-//-------------------------------
+//------------------------------------------------
+//-------------------------------------------------
 
-
+// Text Wrapper DARK
 .text-wrapper-dark {
     
     // override story section default &
@@ -1218,6 +1608,7 @@ figure {
         
         .section-title {
             color: $title-on-dark-color;
+            border-color: $border-on-dark-color;
         }
         .intro-body,
         .story-block-text {
@@ -1233,7 +1624,7 @@ figure {
         }
         // button link
         .story-block-link,
-        .story-block-videos {
+        .story-block-video {
             a.btn {
                 @include button-on-dark;
             }
@@ -1244,7 +1635,10 @@ figure {
     }
 }
 
+
+//---------------------------
 // Text wrapper light
+//---------------------------
 .text-wrapper-light {
     
     // override story section default &
@@ -1277,6 +1671,7 @@ figure {
         
         .section-title {
             color: $title-on-light-color;
+            border-color: $border-on-light-color;
         }
         .intro-body,
         .story-block-text {
@@ -1292,7 +1687,7 @@ figure {
         }
         // button link
         .story-block-link,
-        .story-block-videos {
+        .story-block-video {
             a.btn {
                 @include button-on-light;
             }
@@ -1358,7 +1753,7 @@ figure {
                 }
                 // button link
                 .story-block-link,
-                .story-block-videos {
+                .story-block-video {
                     a.btn {
                         background: $btn-bg-color;
                         border: $btn-border;
@@ -1435,6 +1830,7 @@ figure {
         }
     }
 }
+
 
 //-------------------------------------------
 //
@@ -1915,6 +2311,10 @@ figure {
     font-family: $btn-font-family;
     font-size: $btn-font-size;
     text-align: center;
+    border: $btn-border;
+    text-decoration: none;
+    line-height: 1.1;
+    display: inline-block;
     
     &:hover {
         text-decoration: none;
@@ -1923,7 +2323,7 @@ figure {
 
 .btn-primary {
     background: $btn-bg-color;
-    border: $btn-border;
+    border-color: $btn-border-color;
     color: $btn-text-color;
     text-align: center;
 
@@ -2023,111 +2423,6 @@ figure {
     position: relative;
 }
 
-
-
-//-------------------------------
-//
-//  Text Wrappers - Dark & Light
-//      to create "floating" effect
-//      adding bg color, padding
-//      to text wrappers in section
-//      intro's
-//
-//-------------------------------
-
-@include media-breakpoint-up(md) {
-    .text-wrapper-dark {
-        
-        // override story section default &
-        // offset existing padding inside story block text container
-        &.section-story-block {
-            .text-wrapper {
-                margin: 0 (-$text-wrapper-padding);
-                padding: $text-wrapper-padding;
-                background-color: $text-wrapper-dark-bg;
-                align-self: center;
-            }
-        }
-        .intro .text-wrapper,
-        .text-wrapper {
-            background-color: $text-wrapper-dark-bg;
-            padding: $text-wrapper-padding;
-            border-radius: $text-wrapper-border-radius;
-            margin-bottom: $text-wrapper-padding;
-            
-            .section-title {
-                color: $title-on-dark-color;
-            }
-            .intro-body,
-            .story-block-text {
-                color: $text-on-dark-color;
-            
-                a {
-                    color: $link-on-dark-color;
-                    
-                    &:hover {
-                        color: $link-on-dark-color-hover;
-                    }
-                }
-            }
-            // button link
-            .story-block-link,
-            .story-block-videos {
-                a.btn {
-                    @include button-on-dark;
-                }
-            }
-        }
-    }
-}
-
-
-// Text wrapper light
-@include media-breakpoint-up(md) {
-    .text-wrapper-light {
-        
-        // override story section default &
-        // offset existing padding inside story block text container
-        &.section-story-block {
-            .text-wrapper {
-                margin: 0 ((-$text-wrapper-padding));
-                padding: $text-wrapper-padding;
-                background-color: $text-wrapper-light-bg;
-                align-self: center;
-            }
-        }
-        &.intro .text-wrapper,
-        .text-wrapper {
-            background-color: $text-wrapper-light-bg;
-            padding: $text-wrapper-padding;
-            border-radius: $text-wrapper-border-radius;
-            margin-bottom: $text-wrapper-padding;
-            
-            .section-title {
-                color: $title-on-light-color;
-            }
-            .intro-body,
-            .story-block-text {
-                color: $text-on-light-color;
-            
-                a {
-                    color: $link-on-light-color;
-                    
-                    &:hover {
-                        color: $link-on-light-color-hover;
-                    }
-                }
-            }
-            // button link
-            .story-block-link,
-            .story-block-videos {
-                a.btn {
-                    @include button-on-light;
-                }
-            }
-        }
-    }
-}
 
 // Class to use to override some paragraphs with max width limits
 // on the text wrapper for ease of reading

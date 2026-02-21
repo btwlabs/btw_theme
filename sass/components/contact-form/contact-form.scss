@@ -56,6 +56,7 @@
 		align-items: center;
 		flex-direction: column;
 		display: flex;
+		background-color: $section-contact-form_form-bg-color;
 	
 		input {
 			margin: 10px 0;
@@ -76,15 +77,23 @@
 		}
 		button {
 			@extend .btn;
-			@include button-on-light;
+			background: $btn-bg-color;
+			color: $btn-text-color;
+			border: $btn-border;
 			display: block;
 			width: 100%;
 			margin: 10px 0;
-			border: 0;
+			
+			&:hover {
+				border-color: $btn-hover-border-color;
+				background: $btn-hover-bg-color;
+				color: $btn-hover-text-color;
+			}
 		}
 	}
 	
-	&.light-bg-dark-text {
+	&.light-bg,
+	&.dark-text {
 		background: $bg-light-color;
 		
 		.intro {
@@ -103,8 +112,23 @@
 				}
 			}
 		}
+		form {
+			button {
+				@include button-on-light;
+			}
+		}
+		.contact-detail {
+			a {
+				color: $link-on-light-color;
+				
+				&:hover {
+					color: $link-on-light-color-hover;
+				}
+			} 
+		}
 	}
-	&.dark-bg-light-text {
+	&.dark-bg,
+	&.light-text {
 		background: $bg-dark-color;
 		
 		.intro {
@@ -124,11 +148,26 @@
 				}
 			}
 		}
+		form {
+			button {
+				@include button-on-dark;
+			}
+		}
+		.contact-detail {
+			a {
+				color: $link-on-dark-color;
+				
+				&:hover {
+					color: $link-on-dark-color-hover;
+				}
+			} 
+		}
 	}
-
+	
+	&.dark-bg {
+		background: $bg-dark-color;
+	}
+	&.light-bg {
+		background: $bg-light-color;
+	}
 }
-
-
-
-  
-

@@ -424,7 +424,7 @@ fieldset {
 
 legend {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: bold;
   color: rgba(0, 0, 0, 0.8);
   padding: 0 0.5em;
   line-height: 1.2;
@@ -493,7 +493,7 @@ input[type=file] {
   font-size: 1em;
   text-align: center;
   background: #b82b8a;
-  border: 1px solid #b82b8a;
+  border: 1px solid transparent;
   color: #fff;
   text-align: center;
   margin: 15px 0;
@@ -572,7 +572,7 @@ select {
   font-size: 1em;
   text-align: center;
   background: #b82b8a;
-  border: 1px solid #b82b8a;
+  border: 1px solid transparent;
   color: #fff;
   text-align: center;
   width: 100%;
@@ -2313,6 +2313,103 @@ a.tabledrag-handle-hover .handle {
     transform-origin: center bottom;
   }
 }
+/* 
+
+//-------------------------
+//    POPPINS (google thru adobe)
+//-------------------------
+
+Poppins Regular
+font-family: "poppins", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Poppins Italic
+font-family: "poppins", sans-serif;
+font-weight: 400;
+font-style: italic;
+
+Poppins Bold
+font-family: "poppins", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Poppins Bold Italic
+font-family: "poppins", sans-serif;
+font-weight: 700;
+font-style: italic;
+
+Poppins ExtraBold
+font-family: "poppins", sans-serif;
+font-weight: 800;
+font-style: normal;
+
+Poppins ExtraBold Italic
+font-family: "poppins", sans-serif;
+font-weight: 800;
+font-style: italic;
+
+*/
+@font-face {
+  font-family: "metropolis";
+  src: url("../fonts/metropolis/Metropolis-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "metropolis";
+  src: url("../fonts/metropolis/Metropolis-RegularItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "metropolis";
+  src: url("../fonts/metropolis/Metropolis-ExtraBold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "metropolis";
+  src: url("../fonts/metropolis/Metropolis-ExtraBoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "corbert-condensed";
+  src: url("../fonts/corbert-condensed/corbert-condensed.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "corbert-condensed";
+  src: url("../fonts/corbert-condensed/corbert-condensed-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "corbert-condensed";
+  src: url("../fonts/corbert-condensed/corbert-condensed-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "corbert-condensed";
+  src: url("../fonts/corbert-condensed/corbert-condensed-medium-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "corbert-condensed";
+  src: url("../fonts/corbert-condensed/corbert-condensed-bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "corbert-condensed";
+  src: url("../fonts/corbert-condensed/corbert-condensed-bold-italic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+}
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -2368,6 +2465,10 @@ a:hover {
   color: #65184c;
 }
 
+hr {
+  margin: 3em 0;
+}
+
 img, media {
   max-width: 100%;
   height: auto;
@@ -2376,8 +2477,8 @@ img, media {
 
 .h1, .h2, .h3, .h4, .h5,
 .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: "poppins", sans-serif;
-  font-weight: 700;
+  font-family: "metropolis", sans-serif;
+  font-weight: bold;
   margin: 0 0 0.5em 0;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -2387,8 +2488,8 @@ img, media {
 h1,
 h1.page-title {
   position: relative;
-  font-family: "poppins", sans-serif;
-  font-weight: 700;
+  font-family: "metropolis", sans-serif;
+  font-weight: bold;
   margin: 0 0 0.5em 0;
   padding: 0 0 0 0;
   color: rgba(0, 0, 0, 0.8);
@@ -2419,8 +2520,8 @@ h1.page-title {
 h2,
 h2.section-title {
   position: relative;
-  font-family: "poppins", sans-serif;
-  font-weight: 700;
+  font-family: "metropolis", sans-serif;
+  font-weight: bold;
   margin: 0 0 0.5em 0;
   padding: 0 0 0 0;
   color: rgba(0, 0, 0, 0.8);
@@ -2484,12 +2585,25 @@ b, strong {
 figure {
   margin-bottom: 2em;
 }
+figure picture {
+  display: block;
+  width: 100%;
+}
 figure figcaption {
   font-size: 14px;
   text-align: center;
   padding: 8px;
 }
 
+.d-none {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .d-md-block {
+    display: block !important;
+  }
+}
 .border {
   border: 0px solid #ccc !important;
 }
@@ -2512,6 +2626,96 @@ figure figcaption {
 
 .section {
   position: relative;
+}
+@media (max-width: 1199.98px) {
+  .section {
+    scroll-margin-top: 67px;
+  }
+}
+@media (min-width: 992px) {
+  .section {
+    scroll-margin-top: 80px;
+  }
+}
+.section .section-title,
+.section .text-section-title {
+  position: relative;
+  font-family: "metropolis", sans-serif;
+  font-weight: bold;
+  margin: 0 0 0.5em 0;
+  padding: 0 0 0 0;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  text-transform: none;
+  border-bottom: 0px solid #ccc;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 767.98px) {
+  .section .section-title,
+  .section .text-section-title {
+    font-size: 24px;
+  }
+}
+@media (min-width: 768px) {
+  .section .section-title,
+  .section .text-section-title {
+    font-size: 30px;
+  }
+}
+@media (min-width: 992px) {
+  .section .section-title,
+  .section .text-section-title {
+    font-size: 36px;
+  }
+}
+.section .subtitle {
+  color: rgba(0, 0, 0, 0.8);
+  font-style: normal;
+  text-align: center;
+}
+@media (max-width: 767.98px) {
+  .section .subtitle {
+    font-size: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .section .subtitle {
+    font-size: 22px;
+  }
+}
+@media (min-width: 992px) {
+  .section .subtitle {
+    font-size: 26px;
+  }
+}
+@media (max-width: 991.98px) {
+  .section .container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+@media (max-width: 991.98px) {
+  .section.section-contact, .section.section-general-embed, .section.section-contact-form {
+    padding: 10vw 0;
+  }
+}
+@media (min-width: 992px) {
+  .section.section-contact, .section.section-general-embed, .section.section-contact-form {
+    padding: 8vw 0;
+  }
+}
+.section.alternating {
+  background-color: #f1f4f7;
+}
+.section .hide-title h2,
+.section .hide-title h2.section-title {
+  display: none;
+}
+.section a:not(.btn):not(.modal-trigger--video) {
+  text-decoration: none;
+}
+.section a:hover:not(.btn):not(.modal-trigger--video) {
+  text-decoration: underline;
 }
 @media (max-width: 767.98px) {
   .section {
@@ -2667,90 +2871,6 @@ figure figcaption {
     padding-left: 0 !important;
   }
 }
-@media (max-width: 991.98px) {
-  .section {
-    scroll-margin-top: 67px;
-  }
-}
-@media (min-width: 992px) {
-  .section {
-    scroll-margin-top: 80px;
-  }
-}
-.section .section-title,
-.section .text-section-title {
-  position: relative;
-  font-family: "poppins", sans-serif;
-  font-weight: 700;
-  margin: 0 0 0.5em 0;
-  padding: 0 0 0 0;
-  color: rgba(0, 0, 0, 0.8);
-  line-height: 1;
-  text-transform: none;
-  border-bottom: 0px solid #ccc;
-  letter-spacing: -0.02em;
-}
-@media (max-width: 767.98px) {
-  .section .section-title,
-  .section .text-section-title {
-    font-size: 24px;
-  }
-}
-@media (min-width: 768px) {
-  .section .section-title,
-  .section .text-section-title {
-    font-size: 30px;
-  }
-}
-@media (min-width: 992px) {
-  .section .section-title,
-  .section .text-section-title {
-    font-size: 36px;
-  }
-}
-.section .subtitle {
-  color: rgba(0, 0, 0, 0.8);
-  font-style: normal;
-  text-align: center;
-}
-@media (max-width: 767.98px) {
-  .section .subtitle {
-    font-size: 20px;
-  }
-}
-@media (min-width: 768px) {
-  .section .subtitle {
-    font-size: 22px;
-  }
-}
-@media (min-width: 992px) {
-  .section .subtitle {
-    font-size: 26px;
-  }
-}
-@media (max-width: 991.98px) {
-  .section .container {
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-}
-@media (max-width: 991.98px) {
-  .section.section-twitter, .section.section-instagram, .section.section-bands-in-town, .section.section-social-links, .section.section-elfsight-widget, .section.section-contact, .section.section-general-embed, .section.section-contact-form {
-    padding: 10vw 0;
-  }
-}
-@media (min-width: 992px) {
-  .section.section-twitter, .section.section-instagram, .section.section-bands-in-town, .section.section-social-links, .section.section-elfsight-widget, .section.section-contact, .section.section-general-embed, .section.section-contact-form {
-    padding: 8vw 0;
-  }
-}
-.section.alternating {
-  background-color: #f1f4f7;
-}
-.section .hide-title h2,
-.section .hide-title h2.section-title {
-  display: none;
-}
 
 .dark-bg {
   background: #000;
@@ -2786,27 +2906,9 @@ figure figcaption {
   border-color: #ccc;
 }
 
-.intro-light-text .intro .section-title {
-  color: #fff !important;
-}
-.intro-light-text .intro .intro-body {
-  color: #fff !important;
-}
-.intro-light-text .intro .intro-body a {
-  color: #b82b8a !important;
-}
-.intro-light-text .intro .intro-body a:hover {
-  color: #dd6cb8 !important;
-}
-.intro-light-text .intro .section-link a {
-  color: #b82b8a !important;
-}
-.intro-light-text .intro .section-link a:hover {
-  color: #dd6cb8 !important;
-}
-
 .intro-dark-text .intro .section-title {
   color: rgba(0, 0, 0, 0.8) !important;
+  border-color: #ccc !important;
 }
 .intro-dark-text .intro .intro-body {
   color: rgba(0, 0, 0, 0.8) !important;
@@ -2824,9 +2926,6 @@ figure figcaption {
   color: #65184c !important;
 }
 
-.dark-text {
-  color: rgba(0, 0, 0, 0.8) !important;
-}
 .dark-text.section-hero .hero-title-wrapper .hero-heading, .dark-text.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
   color: rgba(0, 0, 0, 0.8);
 }
@@ -2868,12 +2967,12 @@ figure figcaption {
   color: #fff !important;
   border-color: #fefb07;
 }
-.dark-text .story-block-videos .modal-trigger--video {
+.dark-text .story-block-video .modal-trigger--video {
   background: #b82b8a;
   color: #fff !important;
   border-color: #b82b8a;
 }
-.dark-text .story-block-videos .modal-trigger--video:hover, .dark-text .story-block-videos .modal-trigger--video:active, .dark-text .story-block-videos .modal-trigger--video:focus {
+.dark-text .story-block-video .modal-trigger--video:hover, .dark-text .story-block-video .modal-trigger--video:active, .dark-text .story-block-video .modal-trigger--video:focus {
   background: #7a1d5b;
   color: #fff !important;
   border-color: #7a1d5b;
@@ -2885,7 +2984,10 @@ figure figcaption {
 .dark-text .swiper-slide .slide-body {
   color: rgba(0, 0, 0, 0.8) !important;
 }
-.dark-text.card-item .card-title,
+.dark-text.card-item .card-title {
+  color: rgba(0, 0, 0, 0.8);
+  border-color: #ccc !important;
+}
 .dark-text.card-item .card-text {
   color: rgba(0, 0, 0, 0.8) !important;
 }
@@ -2911,272 +3013,6 @@ figure figcaption {
 }
 
 @media (max-width: 767.98px) {
-  .dark-text.light-text-mobile.section-hero .hero-title-wrapper .hero-heading, .dark-text.light-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
-    color: #fff;
-  }
-  .dark-text.light-text-mobile.section-hero .hero-title-wrapper .hero-sub-heading, .dark-text.light-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-sub-heading {
-    color: #fff;
-  }
-  .dark-text.light-text-mobile .section-title {
-    color: #fff !important;
-  }
-  .dark-text.light-text-mobile .story-block-text,
-  .dark-text.light-text-mobile .intro-body {
-    color: #fff !important;
-  }
-  .dark-text.light-text-mobile .story-block-text a,
-  .dark-text.light-text-mobile .intro-body a {
-    color: #b82b8a !important;
-  }
-  .dark-text.light-text-mobile .story-block-text a:hover,
-  .dark-text.light-text-mobile .intro-body a:hover {
-    color: #dd6cb8 !important;
-  }
-  .dark-text.light-text-mobile .story-block-link a.btn, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video {
-    background: #b82b8a;
-    color: #fff !important;
-    border-color: #b82b8a;
-  }
-  .dark-text.light-text-mobile .story-block-link a.btn:hover, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video:hover, .dark-text.light-text-mobile .story-block-link a.btn:active, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video:active, .dark-text.light-text-mobile .story-block-link a.btn:focus, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video:focus {
-    background: #7a1d5b;
-    color: #fff !important;
-    border-color: #7a1d5b;
-  }
-  .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video {
-    background: #fefc53;
-    color: #fff !important;
-    border-color: #fefc53;
-  }
-  .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary:hover, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:hover, .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary:active, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:active, .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary:focus, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:focus {
-    background: #fefb07;
-    color: #fff !important;
-    border-color: #fefb07;
-  }
-  .dark-text.light-text-mobile .story-block-videos .modal-trigger--video {
-    background: #b82b8a;
-    color: #fff !important;
-    border-color: #b82b8a;
-  }
-  .dark-text.light-text-mobile .story-block-videos .modal-trigger--video:hover, .dark-text.light-text-mobile .story-block-videos .modal-trigger--video:active, .dark-text.light-text-mobile .story-block-videos .modal-trigger--video:focus {
-    background: #7a1d5b;
-    color: #fff !important;
-    border-color: #7a1d5b;
-  }
-  .dark-text.light-text-mobile .story-block-link a:not(.btn-primary):not(.modal-trigger--video):not(.btn-secondary) {
-    color: #b82b8a;
-  }
-  .dark-text.light-text-mobile .swiper-slide .slide-title {
-    color: #fff !important;
-  }
-  .dark-text.light-text-mobile .swiper-slide .slide-body {
-    color: #fff !important;
-  }
-  .dark-text.light-text-mobile.section-cards .card-title, .dark-text.light-text-mobile.card-item .card-title {
-    color: #fff !important;
-  }
-  .dark-text.light-text-mobile.section-cards .card-text, .dark-text.light-text-mobile.card-item .card-text {
-    color: #fff !important;
-  }
-  .dark-text.light-text-mobile.section-cards .card-link, .dark-text.light-text-mobile.card-item .card-link {
-    background: #b82b8a;
-    color: #fff !important;
-    border-color: #b82b8a;
-  }
-  .dark-text.light-text-mobile.section-cards .card-link:hover, .dark-text.light-text-mobile.section-cards .card-link:active, .dark-text.light-text-mobile.section-cards .card-link:focus, .dark-text.light-text-mobile.card-item .card-link:hover, .dark-text.light-text-mobile.card-item .card-link:active, .dark-text.light-text-mobile.card-item .card-link:focus {
-    background: #7a1d5b;
-    color: #fff !important;
-    border-color: #7a1d5b;
-  }
-  .dark-text.light-text-mobile.section-cards .card-link.btn-secondary, .dark-text.light-text-mobile.card-item .card-link.btn-secondary {
-    background: #fefc53;
-    color: #fff !important;
-    border-color: #fefc53;
-  }
-  .dark-text.light-text-mobile.section-cards .card-link.btn-secondary:hover, .dark-text.light-text-mobile.section-cards .card-link.btn-secondary:active, .dark-text.light-text-mobile.section-cards .card-link.btn-secondary:focus, .dark-text.light-text-mobile.card-item .card-link.btn-secondary:hover, .dark-text.light-text-mobile.card-item .card-link.btn-secondary:active, .dark-text.light-text-mobile.card-item .card-link.btn-secondary:focus {
-    background: #fefb07;
-    color: #fff !important;
-    border-color: #fefb07;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .card-dark-text.light-text-mobile .card-item .card-title {
-    color: #fff !important;
-  }
-  .card-dark-text.light-text-mobile .card-item .card-text {
-    color: #fff !important;
-  }
-  .card-dark-text.light-text-mobile .card-item .card-link {
-    background: #b82b8a;
-    color: #fff !important;
-    border-color: #b82b8a;
-  }
-  .card-dark-text.light-text-mobile .card-item .card-link:hover, .card-dark-text.light-text-mobile .card-item .card-link:active, .card-dark-text.light-text-mobile .card-item .card-link:focus {
-    background: #7a1d5b;
-    color: #fff !important;
-    border-color: #7a1d5b;
-  }
-  .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary {
-    background: #fefc53;
-    color: #fff !important;
-    border-color: #fefc53;
-  }
-  .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:hover, .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:active, .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:focus {
-    background: #fefb07;
-    color: #fff !important;
-    border-color: #fefb07;
-  }
-}
-
-@media (max-width: 1023.98px) {
-  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-title, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-title {
-    color: #fff !important;
-  }
-  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-text, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-text {
-    color: #fff !important;
-  }
-  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link {
-    background: #b82b8a;
-    color: #fff !important;
-    border-color: #b82b8a;
-  }
-  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link:hover, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link:active, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link:focus {
-    background: #7a1d5b;
-    color: #fff !important;
-    border-color: #7a1d5b;
-  }
-  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary {
-    background: #fefc53;
-    color: #fff !important;
-    border-color: #fefc53;
-  }
-  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:hover, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:active, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:focus {
-    background: #fefb07;
-    color: #fff !important;
-    border-color: #fefb07;
-  }
-}
-
-@media (max-width: 1199.98px) {
-  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-title, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-title {
-    color: #fff !important;
-  }
-  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-text, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-text {
-    color: #fff !important;
-  }
-  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link {
-    background: #b82b8a;
-    color: #fff !important;
-    border-color: #b82b8a;
-  }
-  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link:hover, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link:active, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link:focus {
-    background: #7a1d5b;
-    color: #fff !important;
-    border-color: #7a1d5b;
-  }
-  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary {
-    background: #fefc53;
-    color: #fff !important;
-    border-color: #fefc53;
-  }
-  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary:hover, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary:active, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary:focus {
-    background: #fefb07;
-    color: #fff !important;
-    border-color: #fefb07;
-  }
-}
-
-.light-text {
-  color: #fff !important;
-}
-.light-text.section-hero .hero-title-wrapper .hero-heading, .light-text.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
-  color: #fff;
-}
-.light-text.section-hero .hero-title-wrapper .hero-sub-heading, .light-text.section-hero.hero-minimal .hero-title-wrapper .hero-sub-heading {
-  color: #fff;
-}
-.light-text .section-title {
-  color: #fff !important;
-}
-.light-text .story-block-text,
-.light-text .intro-body {
-  color: #fff !important;
-}
-.light-text .story-block-text a,
-.light-text .intro-body a {
-  color: #b82b8a !important;
-}
-.light-text .story-block-text a:hover,
-.light-text .intro-body a:hover {
-  color: #dd6cb8 !important;
-}
-.light-text .story-block-link a.btn, .light-text .story-block-link a.modal-trigger--video {
-  background: #b82b8a;
-  color: #fff !important;
-  border-color: #b82b8a;
-}
-.light-text .story-block-link a.btn:hover, .light-text .story-block-link a.modal-trigger--video:hover, .light-text .story-block-link a.btn:active, .light-text .story-block-link a.modal-trigger--video:active, .light-text .story-block-link a.btn:focus, .light-text .story-block-link a.modal-trigger--video:focus {
-  background: #7a1d5b;
-  color: #fff !important;
-  border-color: #7a1d5b;
-}
-.light-text .story-block-link a.btn.btn-secondary, .light-text .story-block-link a.btn-secondary.modal-trigger--video {
-  background: #fefc53;
-  color: #fff !important;
-  border-color: #fefc53;
-}
-.light-text .story-block-link a.btn.btn-secondary:hover, .light-text .story-block-link a.btn-secondary.modal-trigger--video:hover, .light-text .story-block-link a.btn.btn-secondary:active, .light-text .story-block-link a.btn-secondary.modal-trigger--video:active, .light-text .story-block-link a.btn.btn-secondary:focus, .light-text .story-block-link a.btn-secondary.modal-trigger--video:focus {
-  background: #fefb07;
-  color: #fff !important;
-  border-color: #fefb07;
-}
-.light-text .story-block-videos .modal-trigger--video {
-  background: #b82b8a;
-  color: #fff !important;
-  border-color: #b82b8a;
-}
-.light-text .story-block-videos .modal-trigger--video:hover, .light-text .story-block-videos .modal-trigger--video:active, .light-text .story-block-videos .modal-trigger--video:focus {
-  background: #7a1d5b;
-  color: #fff !important;
-  border-color: #7a1d5b;
-}
-.light-text .story-block-link a:not(.btn-primary):not(.modal-trigger--video):not(.btn-secondary) {
-  color: #b82b8a;
-}
-.light-text .swiper-slide .slide-title {
-  color: #fff !important;
-}
-.light-text .swiper-slide .slide-body {
-  color: #fff !important;
-}
-.light-text.section-cards .card-title, .light-text.card-item .card-title {
-  color: #fff !important;
-}
-.light-text.section-cards .card-text, .light-text.card-item .card-text {
-  color: #fff !important;
-}
-.light-text.section-cards .card-link, .light-text.card-item .card-link {
-  background: #b82b8a;
-  color: #fff !important;
-  border-color: #b82b8a;
-}
-.light-text.section-cards .card-link:hover, .light-text.section-cards .card-link:active, .light-text.section-cards .card-link:focus, .light-text.card-item .card-link:hover, .light-text.card-item .card-link:active, .light-text.card-item .card-link:focus {
-  background: #7a1d5b;
-  color: #fff !important;
-  border-color: #7a1d5b;
-}
-.light-text.section-cards .card-link.btn-secondary, .light-text.card-item .card-link.btn-secondary {
-  background: #fefc53;
-  color: #fff !important;
-  border-color: #fefc53;
-}
-.light-text.section-cards .card-link.btn-secondary:hover, .light-text.section-cards .card-link.btn-secondary:active, .light-text.section-cards .card-link.btn-secondary:focus, .light-text.card-item .card-link.btn-secondary:hover, .light-text.card-item .card-link.btn-secondary:active, .light-text.card-item .card-link.btn-secondary:focus {
-  background: #fefb07;
-  color: #fff !important;
-  border-color: #fefb07;
-}
-
-@media (max-width: 767.98px) {
   .light-text.dark-text-mobile.section-hero .hero-title-wrapper .hero-heading, .light-text.dark-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
     color: rgba(0, 0, 0, 0.8);
   }
@@ -3185,6 +3021,7 @@ figure figcaption {
   }
   .light-text.dark-text-mobile .section-title {
     color: rgba(0, 0, 0, 0.8) !important;
+    border-color: #ccc !important;
   }
   .light-text.dark-text-mobile .story-block-text,
   .light-text.dark-text-mobile .intro-body {
@@ -3218,12 +3055,12 @@ figure figcaption {
     color: #fff !important;
     border-color: #fefb07;
   }
-  .light-text.dark-text-mobile .story-block-videos .modal-trigger--video {
+  .light-text.dark-text-mobile .story-block-video .modal-trigger--video {
     background: #b82b8a;
     color: #fff !important;
     border-color: #b82b8a;
   }
-  .light-text.dark-text-mobile .story-block-videos .modal-trigger--video:hover, .light-text.dark-text-mobile .story-block-videos .modal-trigger--video:active, .light-text.dark-text-mobile .story-block-videos .modal-trigger--video:focus {
+  .light-text.dark-text-mobile .story-block-video .modal-trigger--video:hover, .light-text.dark-text-mobile .story-block-video .modal-trigger--video:active, .light-text.dark-text-mobile .story-block-video .modal-trigger--video:focus {
     background: #7a1d5b;
     color: #fff !important;
     border-color: #7a1d5b;
@@ -3235,7 +3072,10 @@ figure figcaption {
   .light-text.dark-text-mobile .swiper-slide .slide-body {
     color: rgba(0, 0, 0, 0.8) !important;
   }
-  .light-text.dark-text-mobile.card-item .card-title,
+  .light-text.dark-text-mobile.card-item .card-title {
+    color: rgba(0, 0, 0, 0.8);
+    border-color: #ccc !important;
+  }
   .light-text.dark-text-mobile.card-item .card-text {
     color: rgba(0, 0, 0, 0.8) !important;
   }
@@ -3262,7 +3102,248 @@ figure figcaption {
 }
 
 @media (max-width: 767.98px) {
-  .card-light-text.dark-text-mobile .card-item .card-title,
+  .dark-text-mobile.section-hero .hero-title-wrapper .hero-heading, .dark-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .dark-text-mobile.section-hero .hero-title-wrapper .hero-sub-heading, .dark-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-sub-heading {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .dark-text-mobile .section-title {
+    color: rgba(0, 0, 0, 0.8) !important;
+    border-color: #ccc !important;
+  }
+  .dark-text-mobile .story-block-text,
+  .dark-text-mobile .intro-body {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .dark-text-mobile .story-block-text a,
+  .dark-text-mobile .intro-body a {
+    color: #b82b8a !important;
+  }
+  .dark-text-mobile .story-block-text a:hover,
+  .dark-text-mobile .intro-body a:hover {
+    color: #65184c !important;
+  }
+  .dark-text-mobile .story-block-link a.btn, .dark-text-mobile .story-block-link a.modal-trigger--video {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .dark-text-mobile .story-block-link a.btn:hover, .dark-text-mobile .story-block-link a.modal-trigger--video:hover, .dark-text-mobile .story-block-link a.btn:active, .dark-text-mobile .story-block-link a.modal-trigger--video:active, .dark-text-mobile .story-block-link a.btn:focus, .dark-text-mobile .story-block-link a.modal-trigger--video:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .dark-text-mobile .story-block-link a.btn.btn-secondary, .dark-text-mobile .story-block-link a.btn-secondary.modal-trigger--video {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .dark-text-mobile .story-block-link a.btn.btn-secondary:hover, .dark-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:hover, .dark-text-mobile .story-block-link a.btn.btn-secondary:active, .dark-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:active, .dark-text-mobile .story-block-link a.btn.btn-secondary:focus, .dark-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+  .dark-text-mobile .story-block-video .modal-trigger--video {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .dark-text-mobile .story-block-video .modal-trigger--video:hover, .dark-text-mobile .story-block-video .modal-trigger--video:active, .dark-text-mobile .story-block-video .modal-trigger--video:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .dark-text-mobile .story-block-link a:not(.btn-primary):not(.modal-trigger--video):not(.btn-secondary) {
+    color: #b82b8a;
+  }
+  .dark-text-mobile .swiper-slide .slide-title,
+  .dark-text-mobile .swiper-slide .slide-body {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .dark-text-mobile.card-item .card-title {
+    color: rgba(0, 0, 0, 0.8);
+    border-color: #ccc !important;
+  }
+  .dark-text-mobile.card-item .card-text {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  .dark-text-mobile.card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .dark-text-mobile.card-item .card-link:hover, .dark-text-mobile.card-item .card-link:active, .dark-text-mobile.card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .dark-text-mobile.card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .dark-text-mobile.card-item .card-link.btn-secondary:hover, .dark-text-mobile.card-item .card-link.btn-secondary:active, .dark-text-mobile.card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+.button-on-light .story-block-link a.btn, .button-on-light .story-block-link a.modal-trigger--video,
+.button-on-light .story-block-link .card-link.btn,
+.button-on-light .story-block-link .section-contact-form form button.card-link,
+.section-contact-form form .button-on-light .story-block-link button.card-link,
+.button-on-light .story-block-link .card-link.modal-trigger--video,
+.button-on-light .hero-link a.btn,
+.button-on-light .hero-link a.modal-trigger--video,
+.button-on-light .hero-link .card-link.btn,
+.button-on-light .hero-link .section-contact-form form button.card-link,
+.section-contact-form form .button-on-light .hero-link button.card-link,
+.button-on-light .hero-link .card-link.modal-trigger--video,
+.button-on-light .card-item a.btn,
+.button-on-light .card-item a.modal-trigger--video,
+.button-on-light .card-item .card-link.btn,
+.button-on-light .card-item .section-contact-form form button.card-link,
+.section-contact-form form .button-on-light .card-item button.card-link,
+.button-on-light .card-item .card-link.modal-trigger--video {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.button-on-light .story-block-link a.btn:hover, .button-on-light .story-block-link a.modal-trigger--video:hover, .button-on-light .story-block-link a.btn:active, .button-on-light .story-block-link a.modal-trigger--video:active, .button-on-light .story-block-link a.btn:focus, .button-on-light .story-block-link a.modal-trigger--video:focus,
+.button-on-light .story-block-link .card-link.btn:hover,
+.button-on-light .story-block-link .section-contact-form form button.card-link:hover,
+.section-contact-form form .button-on-light .story-block-link button.card-link:hover,
+.button-on-light .story-block-link .card-link.modal-trigger--video:hover,
+.button-on-light .story-block-link .card-link.btn:active,
+.button-on-light .story-block-link .section-contact-form form button.card-link:active,
+.section-contact-form form .button-on-light .story-block-link button.card-link:active,
+.button-on-light .story-block-link .card-link.modal-trigger--video:active,
+.button-on-light .story-block-link .card-link.btn:focus,
+.button-on-light .story-block-link .section-contact-form form button.card-link:focus,
+.section-contact-form form .button-on-light .story-block-link button.card-link:focus,
+.button-on-light .story-block-link .card-link.modal-trigger--video:focus,
+.button-on-light .hero-link a.btn:hover,
+.button-on-light .hero-link a.modal-trigger--video:hover,
+.button-on-light .hero-link a.btn:active,
+.button-on-light .hero-link a.modal-trigger--video:active,
+.button-on-light .hero-link a.btn:focus,
+.button-on-light .hero-link a.modal-trigger--video:focus,
+.button-on-light .hero-link .card-link.btn:hover,
+.button-on-light .hero-link .section-contact-form form button.card-link:hover,
+.section-contact-form form .button-on-light .hero-link button.card-link:hover,
+.button-on-light .hero-link .card-link.modal-trigger--video:hover,
+.button-on-light .hero-link .card-link.btn:active,
+.button-on-light .hero-link .section-contact-form form button.card-link:active,
+.section-contact-form form .button-on-light .hero-link button.card-link:active,
+.button-on-light .hero-link .card-link.modal-trigger--video:active,
+.button-on-light .hero-link .card-link.btn:focus,
+.button-on-light .hero-link .section-contact-form form button.card-link:focus,
+.section-contact-form form .button-on-light .hero-link button.card-link:focus,
+.button-on-light .hero-link .card-link.modal-trigger--video:focus,
+.button-on-light .card-item a.btn:hover,
+.button-on-light .card-item a.modal-trigger--video:hover,
+.button-on-light .card-item a.btn:active,
+.button-on-light .card-item a.modal-trigger--video:active,
+.button-on-light .card-item a.btn:focus,
+.button-on-light .card-item a.modal-trigger--video:focus,
+.button-on-light .card-item .card-link.btn:hover,
+.button-on-light .card-item .section-contact-form form button.card-link:hover,
+.section-contact-form form .button-on-light .card-item button.card-link:hover,
+.button-on-light .card-item .card-link.modal-trigger--video:hover,
+.button-on-light .card-item .card-link.btn:active,
+.button-on-light .card-item .section-contact-form form button.card-link:active,
+.section-contact-form form .button-on-light .card-item button.card-link:active,
+.button-on-light .card-item .card-link.modal-trigger--video:active,
+.button-on-light .card-item .card-link.btn:focus,
+.button-on-light .card-item .section-contact-form form button.card-link:focus,
+.section-contact-form form .button-on-light .card-item button.card-link:focus,
+.button-on-light .card-item .card-link.modal-trigger--video:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.button-on-light .story-block-link a.btn.btn-secondary, .button-on-light .story-block-link a.btn-secondary.modal-trigger--video,
+.button-on-light .story-block-link .card-link.btn.btn-secondary,
+.button-on-light .story-block-link .section-contact-form form button.card-link.btn-secondary,
+.section-contact-form form .button-on-light .story-block-link button.card-link.btn-secondary,
+.button-on-light .story-block-link .card-link.btn-secondary.modal-trigger--video,
+.button-on-light .hero-link a.btn.btn-secondary,
+.button-on-light .hero-link a.btn-secondary.modal-trigger--video,
+.button-on-light .hero-link .card-link.btn.btn-secondary,
+.button-on-light .hero-link .section-contact-form form button.card-link.btn-secondary,
+.section-contact-form form .button-on-light .hero-link button.card-link.btn-secondary,
+.button-on-light .hero-link .card-link.btn-secondary.modal-trigger--video,
+.button-on-light .card-item a.btn.btn-secondary,
+.button-on-light .card-item a.btn-secondary.modal-trigger--video,
+.button-on-light .card-item .card-link.btn.btn-secondary,
+.button-on-light .card-item .section-contact-form form button.card-link.btn-secondary,
+.section-contact-form form .button-on-light .card-item button.card-link.btn-secondary,
+.button-on-light .card-item .card-link.btn-secondary.modal-trigger--video {
+  background: #fefc53;
+  color: #fff !important;
+  border-color: #fefc53;
+}
+.button-on-light .story-block-link a.btn.btn-secondary:hover, .button-on-light .story-block-link a.btn-secondary.modal-trigger--video:hover, .button-on-light .story-block-link a.btn.btn-secondary:active, .button-on-light .story-block-link a.btn-secondary.modal-trigger--video:active, .button-on-light .story-block-link a.btn.btn-secondary:focus, .button-on-light .story-block-link a.btn-secondary.modal-trigger--video:focus,
+.button-on-light .story-block-link .card-link.btn.btn-secondary:hover,
+.button-on-light .story-block-link .section-contact-form form button.card-link.btn-secondary:hover,
+.section-contact-form form .button-on-light .story-block-link button.card-link.btn-secondary:hover,
+.button-on-light .story-block-link .card-link.btn-secondary.modal-trigger--video:hover,
+.button-on-light .story-block-link .card-link.btn.btn-secondary:active,
+.button-on-light .story-block-link .section-contact-form form button.card-link.btn-secondary:active,
+.section-contact-form form .button-on-light .story-block-link button.card-link.btn-secondary:active,
+.button-on-light .story-block-link .card-link.btn-secondary.modal-trigger--video:active,
+.button-on-light .story-block-link .card-link.btn.btn-secondary:focus,
+.button-on-light .story-block-link .section-contact-form form button.card-link.btn-secondary:focus,
+.section-contact-form form .button-on-light .story-block-link button.card-link.btn-secondary:focus,
+.button-on-light .story-block-link .card-link.btn-secondary.modal-trigger--video:focus,
+.button-on-light .hero-link a.btn.btn-secondary:hover,
+.button-on-light .hero-link a.btn-secondary.modal-trigger--video:hover,
+.button-on-light .hero-link a.btn.btn-secondary:active,
+.button-on-light .hero-link a.btn-secondary.modal-trigger--video:active,
+.button-on-light .hero-link a.btn.btn-secondary:focus,
+.button-on-light .hero-link a.btn-secondary.modal-trigger--video:focus,
+.button-on-light .hero-link .card-link.btn.btn-secondary:hover,
+.button-on-light .hero-link .section-contact-form form button.card-link.btn-secondary:hover,
+.section-contact-form form .button-on-light .hero-link button.card-link.btn-secondary:hover,
+.button-on-light .hero-link .card-link.btn-secondary.modal-trigger--video:hover,
+.button-on-light .hero-link .card-link.btn.btn-secondary:active,
+.button-on-light .hero-link .section-contact-form form button.card-link.btn-secondary:active,
+.section-contact-form form .button-on-light .hero-link button.card-link.btn-secondary:active,
+.button-on-light .hero-link .card-link.btn-secondary.modal-trigger--video:active,
+.button-on-light .hero-link .card-link.btn.btn-secondary:focus,
+.button-on-light .hero-link .section-contact-form form button.card-link.btn-secondary:focus,
+.section-contact-form form .button-on-light .hero-link button.card-link.btn-secondary:focus,
+.button-on-light .hero-link .card-link.btn-secondary.modal-trigger--video:focus,
+.button-on-light .card-item a.btn.btn-secondary:hover,
+.button-on-light .card-item a.btn-secondary.modal-trigger--video:hover,
+.button-on-light .card-item a.btn.btn-secondary:active,
+.button-on-light .card-item a.btn-secondary.modal-trigger--video:active,
+.button-on-light .card-item a.btn.btn-secondary:focus,
+.button-on-light .card-item a.btn-secondary.modal-trigger--video:focus,
+.button-on-light .card-item .card-link.btn.btn-secondary:hover,
+.button-on-light .card-item .section-contact-form form button.card-link.btn-secondary:hover,
+.section-contact-form form .button-on-light .card-item button.card-link.btn-secondary:hover,
+.button-on-light .card-item .card-link.btn-secondary.modal-trigger--video:hover,
+.button-on-light .card-item .card-link.btn.btn-secondary:active,
+.button-on-light .card-item .section-contact-form form button.card-link.btn-secondary:active,
+.section-contact-form form .button-on-light .card-item button.card-link.btn-secondary:active,
+.button-on-light .card-item .card-link.btn-secondary.modal-trigger--video:active,
+.button-on-light .card-item .card-link.btn.btn-secondary:focus,
+.button-on-light .card-item .section-contact-form form button.card-link.btn-secondary:focus,
+.section-contact-form form .button-on-light .card-item button.card-link.btn-secondary:focus,
+.button-on-light .card-item .card-link.btn-secondary.modal-trigger--video:focus {
+  background: #fefb07;
+  color: #fff !important;
+  border-color: #fefb07;
+}
+
+@media (max-width: 767.98px) {
+  .card-light-text.dark-text-mobile .card-item .card-title {
+    color: #fff;
+    border-color: #ccc !important;
+  }
   .card-light-text.dark-text-mobile .card-item .card-text {
     color: rgba(0, 0, 0, 0.8) !important;
   }
@@ -3289,9 +3370,11 @@ figure figcaption {
 }
 
 @media (max-width: 991.98px) {
-  .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-title, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-title,
-  .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-text,
-  .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-text {
+  .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-title, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-title {
+    color: rgba(0, 0, 0, 0.8);
+    border-color: #ccc !important;
+  }
+  .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-text, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-text {
     color: rgba(0, 0, 0, 0.8) !important;
   }
   .card-text-over-image.card-light-text.dark-text-mobile .card-item .card-link, .card-light-text.dark-text-mobile.card-text-over-image-bottom .card-item .card-link {
@@ -3318,8 +3401,11 @@ figure figcaption {
 
 @media (max-width: 1023.98px) {
   .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-title,
+  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-title {
+    color: #fff;
+    border-color: #ccc !important;
+  }
   .card-text-over-image-hover.card-light-text.dark-text-mobile .card-item .card-text,
-  .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-title,
   .card-text-over-image-bottom-hover.card-light-text.dark-text-mobile .card-item .card-text {
     color: rgba(0, 0, 0, 0.8) !important;
   }
@@ -3353,52 +3439,570 @@ figure figcaption {
   }
 }
 
-.overlay-dark .image-overlay,
-.overlay-dark .hero-overlay {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.dark-overlay-gradient-from-left .image-overlay, .dark-overlay-gradient-from-left.section-hero .hero-overlay {
-  background: rgba(31, 31, 31, 0.7);
-  background: linear-gradient(90deg, rgba(31, 31, 31, 0.7) 36%, rgba(31, 31, 31, 0.65) 41%, rgba(31, 31, 31, 0.55) 46%, rgba(31, 31, 31, 0.35) 55.5%, rgba(31, 31, 31, 0.25) 59%, rgba(31, 31, 31, 0) 65%);
-}
-
-.dark-overlay-gradient-from-right .image-overlay, .dark-overlay-gradient-from-right.section-hero .hero-overlay {
-  background: rgba(31, 31, 31, 0.7);
-  background: linear-gradient(90deg, rgba(31, 31, 31, 0) 35%, rgba(31, 31, 31, 0.25) 42%, rgba(31, 31, 31, 0.35) 46%, rgba(31, 31, 31, 0.55) 55.5%, rgba(31, 31, 31, 0.65) 60%, rgba(31, 31, 31, 0.7) 65%);
-}
-
-.overlay-gradient-dark.left-text-full-bg-image .image-overlay, .overlay-gradient-dark.left-text-full-bg-image.section-hero .hero-overlay {
-  background: rgba(31, 31, 31, 0.7);
-  background: linear-gradient(90deg, rgba(31, 31, 31, 0.7) 36%, rgba(31, 31, 31, 0.65) 41%, rgba(31, 31, 31, 0.55) 46%, rgba(31, 31, 31, 0.35) 55.5%, rgba(31, 31, 31, 0.25) 59%, rgba(31, 31, 31, 0) 65%);
-}
-.overlay-gradient-dark.right-text-full-bg-image .image-overlay, .overlay-gradient-dark.right-text-full-bg-image.section-hero .hero-overlay {
-  background: rgba(31, 31, 31, 0.7);
-  background: linear-gradient(90deg, rgba(31, 31, 31, 0) 35%, rgba(31, 31, 31, 0.25) 42%, rgba(31, 31, 31, 0.35) 46%, rgba(31, 31, 31, 0.55) 55.5%, rgba(31, 31, 31, 0.65) 60%, rgba(31, 31, 31, 0.7) 65%);
-}
-
 .overlay-light .image-overlay,
 .overlay-light .hero-overlay {
   background: rgba(255, 255, 255, 0.7);
 }
 
-.light-overlay-gradient-from-left .image-overlay, .light-overlay-gradient-from-left.section-hero .hero-overlay {
+.overlay-gradient-light .left-text-full-bg-image .image-overlay {
   background: rgba(255, 255, 255, 0.7);
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 36%, rgba(255, 255, 255, 0.65) 41%, rgba(255, 255, 255, 0.55) 46%, rgba(255, 255, 255, 0.35) 55.5%, rgba(255, 255, 255, 0.25) 59%, rgba(255, 255, 255, 0) 65%);
 }
-
-.light-overlay-gradient-from-right .image-overlay, .light-overlay-gradient-from-right.section-hero .hero-overlay {
+.overlay-gradient-light .right-text-full-bg-image .image-overlay {
+  background: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0.25) 42%, rgba(255, 255, 255, 0.35) 46%, rgba(255, 255, 255, 0.55) 55.5%, rgba(255, 255, 255, 0.65) 60%, rgba(255, 255, 255, 0.7) 65%);
+}
+.overlay-gradient-light.section-hero .hero-overlay {
   background: rgba(255, 255, 255, 0.7);
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0.25) 42%, rgba(255, 255, 255, 0.35) 46%, rgba(255, 255, 255, 0.55) 55.5%, rgba(255, 255, 255, 0.65) 60%, rgba(255, 255, 255, 0.7) 65%);
 }
 
-.overlay-gradient-light.left-text-full-bg-image .image-overlay, .overlay-gradient-light.left-text-full-bg-image.section-hero .hero-overlay {
-  background: rgba(255, 255, 255, 0.7);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 36%, rgba(255, 255, 255, 0.65) 41%, rgba(255, 255, 255, 0.55) 46%, rgba(255, 255, 255, 0.35) 55.5%, rgba(255, 255, 255, 0.25) 59%, rgba(255, 255, 255, 0) 65%);
+.intro-light-text .intro .section-title {
+  color: #fff !important;
+  border-color: #ccc !important;
 }
-.overlay-gradient-light.right-text-full-bg-image .image-overlay, .overlay-gradient-light.right-text-full-bg-image.section-hero .hero-overlay {
-  background: rgba(255, 255, 255, 0.7);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0.25) 42%, rgba(255, 255, 255, 0.35) 46%, rgba(255, 255, 255, 0.55) 55.5%, rgba(255, 255, 255, 0.65) 60%, rgba(255, 255, 255, 0.7) 65%);
+.intro-light-text .intro .intro-body {
+  color: #fff !important;
+}
+.intro-light-text .intro .intro-body a {
+  color: #b82b8a !important;
+}
+.intro-light-text .intro .intro-body a:hover {
+  color: #dd6cb8 !important;
+}
+.intro-light-text .intro .section-link a {
+  color: #b82b8a !important;
+}
+.intro-light-text .intro .section-link a:hover {
+  color: #dd6cb8 !important;
+}
+
+.light-text.section-hero .hero-title-wrapper .hero-heading, .light-text.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
+  color: #fff;
+}
+.light-text.section-hero .hero-title-wrapper .hero-sub-heading, .light-text.section-hero.hero-minimal .hero-title-wrapper .hero-sub-heading {
+  color: #fff;
+}
+.light-text .section-title {
+  color: #fff !important;
+  border-color: #ccc !important;
+}
+.light-text .story-block-text,
+.light-text .intro-body {
+  color: #fff !important;
+}
+.light-text .story-block-text a,
+.light-text .intro-body a {
+  color: #b82b8a !important;
+}
+.light-text .story-block-text a:hover,
+.light-text .intro-body a:hover {
+  color: #dd6cb8 !important;
+}
+.light-text .story-block-link a.btn, .light-text .story-block-link a.modal-trigger--video {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.light-text .story-block-link a.btn:hover, .light-text .story-block-link a.modal-trigger--video:hover, .light-text .story-block-link a.btn:active, .light-text .story-block-link a.modal-trigger--video:active, .light-text .story-block-link a.btn:focus, .light-text .story-block-link a.modal-trigger--video:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.light-text .story-block-link a.btn.btn-secondary, .light-text .story-block-link a.btn-secondary.modal-trigger--video {
+  background: #fefc53;
+  color: #fff !important;
+  border-color: #fefc53;
+}
+.light-text .story-block-link a.btn.btn-secondary:hover, .light-text .story-block-link a.btn-secondary.modal-trigger--video:hover, .light-text .story-block-link a.btn.btn-secondary:active, .light-text .story-block-link a.btn-secondary.modal-trigger--video:active, .light-text .story-block-link a.btn.btn-secondary:focus, .light-text .story-block-link a.btn-secondary.modal-trigger--video:focus {
+  background: #fefb07;
+  color: #fff !important;
+  border-color: #fefb07;
+}
+.light-text .story-block-video .modal-trigger--video {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.light-text .story-block-video .modal-trigger--video:hover, .light-text .story-block-video .modal-trigger--video:active, .light-text .story-block-video .modal-trigger--video:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.light-text .story-block-link a:not(.btn-primary):not(.modal-trigger--video):not(.btn-secondary) {
+  color: #b82b8a;
+}
+.light-text .swiper-slide .slide-title {
+  color: #fff !important;
+}
+.light-text .swiper-slide .slide-body {
+  color: #fff !important;
+}
+.light-text.section-cards .card-title, .light-text.card-item .card-title {
+  color: #fff !important;
+  border-color: #ccc !important;
+}
+.light-text.section-cards .card-text, .light-text.card-item .card-text {
+  color: #fff !important;
+}
+.light-text.section-cards .card-link, .light-text.card-item .card-link {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.light-text.section-cards .card-link:hover, .light-text.section-cards .card-link:active, .light-text.section-cards .card-link:focus, .light-text.card-item .card-link:hover, .light-text.card-item .card-link:active, .light-text.card-item .card-link:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.light-text.section-cards .card-link.btn-secondary, .light-text.card-item .card-link.btn-secondary {
+  background: #fefc53;
+  color: #fff !important;
+  border-color: #fefc53;
+}
+.light-text.section-cards .card-link.btn-secondary:hover, .light-text.section-cards .card-link.btn-secondary:active, .light-text.section-cards .card-link.btn-secondary:focus, .light-text.card-item .card-link.btn-secondary:hover, .light-text.card-item .card-link.btn-secondary:active, .light-text.card-item .card-link.btn-secondary:focus {
+  background: #fefb07;
+  color: #fff !important;
+  border-color: #fefb07;
+}
+
+.button-on-dark .story-block-link a.btn, .button-on-dark .story-block-link a.modal-trigger--video,
+.button-on-dark .story-block-link .card-link.btn,
+.button-on-dark .story-block-link .section-contact-form form button.card-link,
+.section-contact-form form .button-on-dark .story-block-link button.card-link,
+.button-on-dark .story-block-link .card-link.modal-trigger--video,
+.button-on-dark .hero-link a.btn,
+.button-on-dark .hero-link a.modal-trigger--video,
+.button-on-dark .hero-link .card-link.btn,
+.button-on-dark .hero-link .section-contact-form form button.card-link,
+.section-contact-form form .button-on-dark .hero-link button.card-link,
+.button-on-dark .hero-link .card-link.modal-trigger--video,
+.button-on-dark .card-item a.btn,
+.button-on-dark .card-item a.modal-trigger--video,
+.button-on-dark .card-item .card-link.btn,
+.button-on-dark .card-item .section-contact-form form button.card-link,
+.section-contact-form form .button-on-dark .card-item button.card-link,
+.button-on-dark .card-item .card-link.modal-trigger--video {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.button-on-dark .story-block-link a.btn:hover, .button-on-dark .story-block-link a.modal-trigger--video:hover, .button-on-dark .story-block-link a.btn:active, .button-on-dark .story-block-link a.modal-trigger--video:active, .button-on-dark .story-block-link a.btn:focus, .button-on-dark .story-block-link a.modal-trigger--video:focus,
+.button-on-dark .story-block-link .card-link.btn:hover,
+.button-on-dark .story-block-link .section-contact-form form button.card-link:hover,
+.section-contact-form form .button-on-dark .story-block-link button.card-link:hover,
+.button-on-dark .story-block-link .card-link.modal-trigger--video:hover,
+.button-on-dark .story-block-link .card-link.btn:active,
+.button-on-dark .story-block-link .section-contact-form form button.card-link:active,
+.section-contact-form form .button-on-dark .story-block-link button.card-link:active,
+.button-on-dark .story-block-link .card-link.modal-trigger--video:active,
+.button-on-dark .story-block-link .card-link.btn:focus,
+.button-on-dark .story-block-link .section-contact-form form button.card-link:focus,
+.section-contact-form form .button-on-dark .story-block-link button.card-link:focus,
+.button-on-dark .story-block-link .card-link.modal-trigger--video:focus,
+.button-on-dark .hero-link a.btn:hover,
+.button-on-dark .hero-link a.modal-trigger--video:hover,
+.button-on-dark .hero-link a.btn:active,
+.button-on-dark .hero-link a.modal-trigger--video:active,
+.button-on-dark .hero-link a.btn:focus,
+.button-on-dark .hero-link a.modal-trigger--video:focus,
+.button-on-dark .hero-link .card-link.btn:hover,
+.button-on-dark .hero-link .section-contact-form form button.card-link:hover,
+.section-contact-form form .button-on-dark .hero-link button.card-link:hover,
+.button-on-dark .hero-link .card-link.modal-trigger--video:hover,
+.button-on-dark .hero-link .card-link.btn:active,
+.button-on-dark .hero-link .section-contact-form form button.card-link:active,
+.section-contact-form form .button-on-dark .hero-link button.card-link:active,
+.button-on-dark .hero-link .card-link.modal-trigger--video:active,
+.button-on-dark .hero-link .card-link.btn:focus,
+.button-on-dark .hero-link .section-contact-form form button.card-link:focus,
+.section-contact-form form .button-on-dark .hero-link button.card-link:focus,
+.button-on-dark .hero-link .card-link.modal-trigger--video:focus,
+.button-on-dark .card-item a.btn:hover,
+.button-on-dark .card-item a.modal-trigger--video:hover,
+.button-on-dark .card-item a.btn:active,
+.button-on-dark .card-item a.modal-trigger--video:active,
+.button-on-dark .card-item a.btn:focus,
+.button-on-dark .card-item a.modal-trigger--video:focus,
+.button-on-dark .card-item .card-link.btn:hover,
+.button-on-dark .card-item .section-contact-form form button.card-link:hover,
+.section-contact-form form .button-on-dark .card-item button.card-link:hover,
+.button-on-dark .card-item .card-link.modal-trigger--video:hover,
+.button-on-dark .card-item .card-link.btn:active,
+.button-on-dark .card-item .section-contact-form form button.card-link:active,
+.section-contact-form form .button-on-dark .card-item button.card-link:active,
+.button-on-dark .card-item .card-link.modal-trigger--video:active,
+.button-on-dark .card-item .card-link.btn:focus,
+.button-on-dark .card-item .section-contact-form form button.card-link:focus,
+.section-contact-form form .button-on-dark .card-item button.card-link:focus,
+.button-on-dark .card-item .card-link.modal-trigger--video:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.button-on-dark .story-block-link a.btn.btn-secondary, .button-on-dark .story-block-link a.btn-secondary.modal-trigger--video,
+.button-on-dark .story-block-link .card-link.btn.btn-secondary,
+.button-on-dark .story-block-link .section-contact-form form button.card-link.btn-secondary,
+.section-contact-form form .button-on-dark .story-block-link button.card-link.btn-secondary,
+.button-on-dark .story-block-link .card-link.btn-secondary.modal-trigger--video,
+.button-on-dark .hero-link a.btn.btn-secondary,
+.button-on-dark .hero-link a.btn-secondary.modal-trigger--video,
+.button-on-dark .hero-link .card-link.btn.btn-secondary,
+.button-on-dark .hero-link .section-contact-form form button.card-link.btn-secondary,
+.section-contact-form form .button-on-dark .hero-link button.card-link.btn-secondary,
+.button-on-dark .hero-link .card-link.btn-secondary.modal-trigger--video,
+.button-on-dark .card-item a.btn.btn-secondary,
+.button-on-dark .card-item a.btn-secondary.modal-trigger--video,
+.button-on-dark .card-item .card-link.btn.btn-secondary,
+.button-on-dark .card-item .section-contact-form form button.card-link.btn-secondary,
+.section-contact-form form .button-on-dark .card-item button.card-link.btn-secondary,
+.button-on-dark .card-item .card-link.btn-secondary.modal-trigger--video {
+  background: #fefc53;
+  color: #fff !important;
+  border-color: #fefc53;
+}
+.button-on-dark .story-block-link a.btn.btn-secondary:hover, .button-on-dark .story-block-link a.btn-secondary.modal-trigger--video:hover, .button-on-dark .story-block-link a.btn.btn-secondary:active, .button-on-dark .story-block-link a.btn-secondary.modal-trigger--video:active, .button-on-dark .story-block-link a.btn.btn-secondary:focus, .button-on-dark .story-block-link a.btn-secondary.modal-trigger--video:focus,
+.button-on-dark .story-block-link .card-link.btn.btn-secondary:hover,
+.button-on-dark .story-block-link .section-contact-form form button.card-link.btn-secondary:hover,
+.section-contact-form form .button-on-dark .story-block-link button.card-link.btn-secondary:hover,
+.button-on-dark .story-block-link .card-link.btn-secondary.modal-trigger--video:hover,
+.button-on-dark .story-block-link .card-link.btn.btn-secondary:active,
+.button-on-dark .story-block-link .section-contact-form form button.card-link.btn-secondary:active,
+.section-contact-form form .button-on-dark .story-block-link button.card-link.btn-secondary:active,
+.button-on-dark .story-block-link .card-link.btn-secondary.modal-trigger--video:active,
+.button-on-dark .story-block-link .card-link.btn.btn-secondary:focus,
+.button-on-dark .story-block-link .section-contact-form form button.card-link.btn-secondary:focus,
+.section-contact-form form .button-on-dark .story-block-link button.card-link.btn-secondary:focus,
+.button-on-dark .story-block-link .card-link.btn-secondary.modal-trigger--video:focus,
+.button-on-dark .hero-link a.btn.btn-secondary:hover,
+.button-on-dark .hero-link a.btn-secondary.modal-trigger--video:hover,
+.button-on-dark .hero-link a.btn.btn-secondary:active,
+.button-on-dark .hero-link a.btn-secondary.modal-trigger--video:active,
+.button-on-dark .hero-link a.btn.btn-secondary:focus,
+.button-on-dark .hero-link a.btn-secondary.modal-trigger--video:focus,
+.button-on-dark .hero-link .card-link.btn.btn-secondary:hover,
+.button-on-dark .hero-link .section-contact-form form button.card-link.btn-secondary:hover,
+.section-contact-form form .button-on-dark .hero-link button.card-link.btn-secondary:hover,
+.button-on-dark .hero-link .card-link.btn-secondary.modal-trigger--video:hover,
+.button-on-dark .hero-link .card-link.btn.btn-secondary:active,
+.button-on-dark .hero-link .section-contact-form form button.card-link.btn-secondary:active,
+.section-contact-form form .button-on-dark .hero-link button.card-link.btn-secondary:active,
+.button-on-dark .hero-link .card-link.btn-secondary.modal-trigger--video:active,
+.button-on-dark .hero-link .card-link.btn.btn-secondary:focus,
+.button-on-dark .hero-link .section-contact-form form button.card-link.btn-secondary:focus,
+.section-contact-form form .button-on-dark .hero-link button.card-link.btn-secondary:focus,
+.button-on-dark .hero-link .card-link.btn-secondary.modal-trigger--video:focus,
+.button-on-dark .card-item a.btn.btn-secondary:hover,
+.button-on-dark .card-item a.btn-secondary.modal-trigger--video:hover,
+.button-on-dark .card-item a.btn.btn-secondary:active,
+.button-on-dark .card-item a.btn-secondary.modal-trigger--video:active,
+.button-on-dark .card-item a.btn.btn-secondary:focus,
+.button-on-dark .card-item a.btn-secondary.modal-trigger--video:focus,
+.button-on-dark .card-item .card-link.btn.btn-secondary:hover,
+.button-on-dark .card-item .section-contact-form form button.card-link.btn-secondary:hover,
+.section-contact-form form .button-on-dark .card-item button.card-link.btn-secondary:hover,
+.button-on-dark .card-item .card-link.btn-secondary.modal-trigger--video:hover,
+.button-on-dark .card-item .card-link.btn.btn-secondary:active,
+.button-on-dark .card-item .section-contact-form form button.card-link.btn-secondary:active,
+.section-contact-form form .button-on-dark .card-item button.card-link.btn-secondary:active,
+.button-on-dark .card-item .card-link.btn-secondary.modal-trigger--video:active,
+.button-on-dark .card-item .card-link.btn.btn-secondary:focus,
+.button-on-dark .card-item .section-contact-form form button.card-link.btn-secondary:focus,
+.section-contact-form form .button-on-dark .card-item button.card-link.btn-secondary:focus,
+.button-on-dark .card-item .card-link.btn-secondary.modal-trigger--video:focus {
+  background: #fefb07;
+  color: #fff !important;
+  border-color: #fefb07;
+}
+
+@media (max-width: 767.98px) {
+  .dark-text.light-text-mobile.section-hero .hero-title-wrapper .hero-heading, .dark-text.light-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
+    color: #fff;
+  }
+  .dark-text.light-text-mobile.section-hero .hero-title-wrapper .hero-sub-heading, .dark-text.light-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-sub-heading {
+    color: #fff;
+  }
+  .dark-text.light-text-mobile .section-title {
+    color: #fff !important;
+    border-color: #ccc !important;
+  }
+  .dark-text.light-text-mobile .story-block-text,
+  .dark-text.light-text-mobile .intro-body {
+    color: #fff !important;
+  }
+  .dark-text.light-text-mobile .story-block-text a,
+  .dark-text.light-text-mobile .intro-body a {
+    color: #b82b8a !important;
+  }
+  .dark-text.light-text-mobile .story-block-text a:hover,
+  .dark-text.light-text-mobile .intro-body a:hover {
+    color: #dd6cb8 !important;
+  }
+  .dark-text.light-text-mobile .story-block-link a.btn, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .dark-text.light-text-mobile .story-block-link a.btn:hover, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video:hover, .dark-text.light-text-mobile .story-block-link a.btn:active, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video:active, .dark-text.light-text-mobile .story-block-link a.btn:focus, .dark-text.light-text-mobile .story-block-link a.modal-trigger--video:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary:hover, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:hover, .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary:active, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:active, .dark-text.light-text-mobile .story-block-link a.btn.btn-secondary:focus, .dark-text.light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+  .dark-text.light-text-mobile .story-block-video .modal-trigger--video {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .dark-text.light-text-mobile .story-block-video .modal-trigger--video:hover, .dark-text.light-text-mobile .story-block-video .modal-trigger--video:active, .dark-text.light-text-mobile .story-block-video .modal-trigger--video:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .dark-text.light-text-mobile .story-block-link a:not(.btn-primary):not(.modal-trigger--video):not(.btn-secondary) {
+    color: #b82b8a;
+  }
+  .dark-text.light-text-mobile .swiper-slide .slide-title {
+    color: #fff !important;
+  }
+  .dark-text.light-text-mobile .swiper-slide .slide-body {
+    color: #fff !important;
+  }
+  .dark-text.light-text-mobile.section-cards .card-title, .dark-text.light-text-mobile.card-item .card-title {
+    color: #fff !important;
+    border-color: #ccc !important;
+  }
+  .dark-text.light-text-mobile.section-cards .card-text, .dark-text.light-text-mobile.card-item .card-text {
+    color: #fff !important;
+  }
+  .dark-text.light-text-mobile.section-cards .card-link, .dark-text.light-text-mobile.card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .dark-text.light-text-mobile.section-cards .card-link:hover, .dark-text.light-text-mobile.section-cards .card-link:active, .dark-text.light-text-mobile.section-cards .card-link:focus, .dark-text.light-text-mobile.card-item .card-link:hover, .dark-text.light-text-mobile.card-item .card-link:active, .dark-text.light-text-mobile.card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .dark-text.light-text-mobile.section-cards .card-link.btn-secondary, .dark-text.light-text-mobile.card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .dark-text.light-text-mobile.section-cards .card-link.btn-secondary:hover, .dark-text.light-text-mobile.section-cards .card-link.btn-secondary:active, .dark-text.light-text-mobile.section-cards .card-link.btn-secondary:focus, .dark-text.light-text-mobile.card-item .card-link.btn-secondary:hover, .dark-text.light-text-mobile.card-item .card-link.btn-secondary:active, .dark-text.light-text-mobile.card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .light-text-mobile.section-hero .hero-title-wrapper .hero-heading, .light-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-heading {
+    color: #fff;
+  }
+  .light-text-mobile.section-hero .hero-title-wrapper .hero-sub-heading, .light-text-mobile.section-hero.hero-minimal .hero-title-wrapper .hero-sub-heading {
+    color: #fff;
+  }
+  .light-text-mobile .section-title {
+    color: #fff !important;
+    border-color: #ccc !important;
+  }
+  .light-text-mobile .story-block-text,
+  .light-text-mobile .intro-body {
+    color: #fff !important;
+  }
+  .light-text-mobile .story-block-text a,
+  .light-text-mobile .intro-body a {
+    color: #b82b8a !important;
+  }
+  .light-text-mobile .story-block-text a:hover,
+  .light-text-mobile .intro-body a:hover {
+    color: #dd6cb8 !important;
+  }
+  .light-text-mobile .story-block-link a.btn, .light-text-mobile .story-block-link a.modal-trigger--video {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .light-text-mobile .story-block-link a.btn:hover, .light-text-mobile .story-block-link a.modal-trigger--video:hover, .light-text-mobile .story-block-link a.btn:active, .light-text-mobile .story-block-link a.modal-trigger--video:active, .light-text-mobile .story-block-link a.btn:focus, .light-text-mobile .story-block-link a.modal-trigger--video:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .light-text-mobile .story-block-link a.btn.btn-secondary, .light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .light-text-mobile .story-block-link a.btn.btn-secondary:hover, .light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:hover, .light-text-mobile .story-block-link a.btn.btn-secondary:active, .light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:active, .light-text-mobile .story-block-link a.btn.btn-secondary:focus, .light-text-mobile .story-block-link a.btn-secondary.modal-trigger--video:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+  .light-text-mobile .story-block-video .modal-trigger--video {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .light-text-mobile .story-block-video .modal-trigger--video:hover, .light-text-mobile .story-block-video .modal-trigger--video:active, .light-text-mobile .story-block-video .modal-trigger--video:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .light-text-mobile .story-block-link a:not(.btn-primary):not(.modal-trigger--video):not(.btn-secondary) {
+    color: #b82b8a;
+  }
+  .light-text-mobile .swiper-slide .slide-title {
+    color: #fff !important;
+  }
+  .light-text-mobile .swiper-slide .slide-body {
+    color: #fff !important;
+  }
+  .light-text-mobile.section-cards .card-title, .light-text-mobile.card-item .card-title {
+    color: #fff !important;
+    border-color: #ccc !important;
+  }
+  .light-text-mobile.section-cards .card-text, .light-text-mobile.card-item .card-text {
+    color: #fff !important;
+  }
+  .light-text-mobile.section-cards .card-link, .light-text-mobile.card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .light-text-mobile.section-cards .card-link:hover, .light-text-mobile.section-cards .card-link:active, .light-text-mobile.section-cards .card-link:focus, .light-text-mobile.card-item .card-link:hover, .light-text-mobile.card-item .card-link:active, .light-text-mobile.card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .light-text-mobile.section-cards .card-link.btn-secondary, .light-text-mobile.card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .light-text-mobile.section-cards .card-link.btn-secondary:hover, .light-text-mobile.section-cards .card-link.btn-secondary:active, .light-text-mobile.section-cards .card-link.btn-secondary:focus, .light-text-mobile.card-item .card-link.btn-secondary:hover, .light-text-mobile.card-item .card-link.btn-secondary:active, .light-text-mobile.card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card-dark-text.light-text-mobile .card-item .card-title {
+    color: #fff !important;
+    border-color: #ccc;
+  }
+  .card-dark-text.light-text-mobile .card-item .card-text {
+    color: #fff !important;
+  }
+  .card-dark-text.light-text-mobile .card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .card-dark-text.light-text-mobile .card-item .card-link:hover, .card-dark-text.light-text-mobile .card-item .card-link:active, .card-dark-text.light-text-mobile .card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:hover, .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:active, .card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-title, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-title {
+    color: #fff !important;
+    border-color: #ccc !important;
+  }
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-text, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-text {
+    color: #fff !important;
+  }
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link:hover, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link:active, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:hover, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:active, .card-text-over-image.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom .card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-title, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-title {
+    color: #fff !important;
+    border-color: #ccc !important;
+  }
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-text, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-text {
+    color: #fff !important;
+  }
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link {
+    background: #b82b8a;
+    color: #fff !important;
+    border-color: #b82b8a;
+  }
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link:hover, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link:active, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link:focus {
+    background: #7a1d5b;
+    color: #fff !important;
+    border-color: #7a1d5b;
+  }
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary {
+    background: #fefc53;
+    color: #fff !important;
+    border-color: #fefc53;
+  }
+  .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:hover, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary:hover, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:active, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary:active, .card-text-over-image-hover.card-dark-text.light-text-mobile .card-item .card-link.btn-secondary:focus, .card-dark-text.light-text-mobile.card-text-over-image-bottom-hover .card-item .card-link.btn-secondary:focus {
+    background: #fefb07;
+    color: #fff !important;
+    border-color: #fefb07;
+  }
+}
+
+.overlay-dark .image-overlay,
+.overlay-dark .hero-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.overlay-gradient-dark .left-text-full-bg-image .image-overlay {
+  background: rgba(31, 31, 31, 0.7);
+  background: linear-gradient(90deg, rgba(31, 31, 31, 0.7) 36%, rgba(31, 31, 31, 0.65) 41%, rgba(31, 31, 31, 0.55) 46%, rgba(31, 31, 31, 0.35) 55.5%, rgba(31, 31, 31, 0.25) 59%, rgba(31, 31, 31, 0) 65%);
+}
+.overlay-gradient-dark .right-text-full-bg-image .image-overlay {
+  background: rgba(31, 31, 31, 0.7);
+  background: linear-gradient(90deg, rgba(31, 31, 31, 0) 35%, rgba(31, 31, 31, 0.25) 42%, rgba(31, 31, 31, 0.35) 46%, rgba(31, 31, 31, 0.55) 55.5%, rgba(31, 31, 31, 0.65) 60%, rgba(31, 31, 31, 0.7) 65%);
+}
+.overlay-gradient-dark.section-hero .hero-overlay {
+  background: rgba(31, 31, 31, 0.7);
+  background: linear-gradient(90deg, rgba(31, 31, 31, 0) 35%, rgba(31, 31, 31, 0.25) 42%, rgba(31, 31, 31, 0.35) 46%, rgba(31, 31, 31, 0.55) 55.5%, rgba(31, 31, 31, 0.65) 60%, rgba(31, 31, 31, 0.7) 65%);
 }
 
 .text-wrapper-dark.section-story-block .text-wrapper {
@@ -3432,6 +4036,7 @@ figure figcaption {
 .text-wrapper-dark .intro .text-wrapper .section-title,
 .text-wrapper-dark .text-wrapper .section-title {
   color: #fff;
+  border-color: #ccc;
 }
 .text-wrapper-dark .intro .text-wrapper .intro-body,
 .text-wrapper-dark .intro .text-wrapper .story-block-text,
@@ -3452,61 +4057,61 @@ figure figcaption {
   color: #dd6cb8;
 }
 .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn,
-.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn,
+.text-wrapper-dark .intro .text-wrapper .story-block-video a.btn,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn,
 .text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn,
-.text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video {
+.text-wrapper-dark .text-wrapper .story-block-video a.btn,
+.text-wrapper-dark .text-wrapper .story-block-video a.modal-trigger--video {
   background: #b82b8a;
   color: #fff !important;
   border-color: #b82b8a;
 }
 .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn:hover, .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn:active, .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn:focus,
-.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn:hover,
-.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn:active,
-.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn:focus,
+.text-wrapper-dark .intro .text-wrapper .story-block-video a.btn:hover,
+.text-wrapper-dark .intro .text-wrapper .story-block-video a.btn:active,
+.text-wrapper-dark .intro .text-wrapper .story-block-video a.btn:focus,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn:hover,
 .text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video:hover,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn:active,
 .text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video:active,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn:focus,
 .text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video:focus,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn:hover,
-.text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video:hover,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn:active,
-.text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video:active,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn:focus,
-.text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video:focus {
+.text-wrapper-dark .text-wrapper .story-block-video a.btn:hover,
+.text-wrapper-dark .text-wrapper .story-block-video a.modal-trigger--video:hover,
+.text-wrapper-dark .text-wrapper .story-block-video a.btn:active,
+.text-wrapper-dark .text-wrapper .story-block-video a.modal-trigger--video:active,
+.text-wrapper-dark .text-wrapper .story-block-video a.btn:focus,
+.text-wrapper-dark .text-wrapper .story-block-video a.modal-trigger--video:focus {
   background: #7a1d5b;
   color: #fff !important;
   border-color: #7a1d5b;
 }
 .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn.btn-secondary,
-.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn.btn-secondary,
+.text-wrapper-dark .intro .text-wrapper .story-block-video a.btn.btn-secondary,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn.btn-secondary,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn.btn-secondary,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video {
+.text-wrapper-dark .text-wrapper .story-block-video a.btn.btn-secondary,
+.text-wrapper-dark .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video {
   background: #fefc53;
   color: #fff !important;
   border-color: #fefc53;
 }
 .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn.btn-secondary:hover, .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn.btn-secondary:active, .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn.btn-secondary:focus,
-.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
-.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn.btn-secondary:active,
-.text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+.text-wrapper-dark .intro .text-wrapper .story-block-video a.btn.btn-secondary:hover,
+.text-wrapper-dark .intro .text-wrapper .story-block-video a.btn.btn-secondary:active,
+.text-wrapper-dark .intro .text-wrapper .story-block-video a.btn.btn-secondary:focus,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn.btn-secondary:hover,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:hover,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn.btn-secondary:active,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:active,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn.btn-secondary:focus,
 .text-wrapper-dark .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:focus,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:hover,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn.btn-secondary:active,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:active,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
-.text-wrapper-dark .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:focus {
+.text-wrapper-dark .text-wrapper .story-block-video a.btn.btn-secondary:hover,
+.text-wrapper-dark .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:hover,
+.text-wrapper-dark .text-wrapper .story-block-video a.btn.btn-secondary:active,
+.text-wrapper-dark .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:active,
+.text-wrapper-dark .text-wrapper .story-block-video a.btn.btn-secondary:focus,
+.text-wrapper-dark .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:focus {
   background: #fefb07;
   color: #fff !important;
   border-color: #fefb07;
@@ -3543,6 +4148,7 @@ figure figcaption {
 .text-wrapper-light.intro .text-wrapper .section-title,
 .text-wrapper-light .text-wrapper .section-title {
   color: rgba(0, 0, 0, 0.8);
+  border-color: #ccc;
 }
 .text-wrapper-light.intro .text-wrapper .intro-body,
 .text-wrapper-light.intro .text-wrapper .story-block-text,
@@ -3563,61 +4169,61 @@ figure figcaption {
   color: #65184c;
 }
 .text-wrapper-light.intro .text-wrapper .story-block-link a.btn,
-.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn,
+.text-wrapper-light.intro .text-wrapper .story-block-video a.btn,
 .text-wrapper-light .text-wrapper .story-block-link a.btn,
 .text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn,
-.text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video {
+.text-wrapper-light .text-wrapper .story-block-video a.btn,
+.text-wrapper-light .text-wrapper .story-block-video a.modal-trigger--video {
   background: #b82b8a;
   color: #fff !important;
   border-color: #b82b8a;
 }
 .text-wrapper-light.intro .text-wrapper .story-block-link a.btn:hover, .text-wrapper-light.intro .text-wrapper .story-block-link a.btn:active, .text-wrapper-light.intro .text-wrapper .story-block-link a.btn:focus,
-.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn:hover,
-.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn:active,
-.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn:focus,
+.text-wrapper-light.intro .text-wrapper .story-block-video a.btn:hover,
+.text-wrapper-light.intro .text-wrapper .story-block-video a.btn:active,
+.text-wrapper-light.intro .text-wrapper .story-block-video a.btn:focus,
 .text-wrapper-light .text-wrapper .story-block-link a.btn:hover,
 .text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video:hover,
 .text-wrapper-light .text-wrapper .story-block-link a.btn:active,
 .text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video:active,
 .text-wrapper-light .text-wrapper .story-block-link a.btn:focus,
 .text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video:focus,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn:hover,
-.text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video:hover,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn:active,
-.text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video:active,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn:focus,
-.text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video:focus {
+.text-wrapper-light .text-wrapper .story-block-video a.btn:hover,
+.text-wrapper-light .text-wrapper .story-block-video a.modal-trigger--video:hover,
+.text-wrapper-light .text-wrapper .story-block-video a.btn:active,
+.text-wrapper-light .text-wrapper .story-block-video a.modal-trigger--video:active,
+.text-wrapper-light .text-wrapper .story-block-video a.btn:focus,
+.text-wrapper-light .text-wrapper .story-block-video a.modal-trigger--video:focus {
   background: #7a1d5b;
   color: #fff !important;
   border-color: #7a1d5b;
 }
 .text-wrapper-light.intro .text-wrapper .story-block-link a.btn.btn-secondary,
-.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn.btn-secondary,
+.text-wrapper-light.intro .text-wrapper .story-block-video a.btn.btn-secondary,
 .text-wrapper-light .text-wrapper .story-block-link a.btn.btn-secondary,
 .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn.btn-secondary,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video {
+.text-wrapper-light .text-wrapper .story-block-video a.btn.btn-secondary,
+.text-wrapper-light .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video {
   background: #fefc53;
   color: #fff !important;
   border-color: #fefc53;
 }
 .text-wrapper-light.intro .text-wrapper .story-block-link a.btn.btn-secondary:hover, .text-wrapper-light.intro .text-wrapper .story-block-link a.btn.btn-secondary:active, .text-wrapper-light.intro .text-wrapper .story-block-link a.btn.btn-secondary:focus,
-.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
-.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn.btn-secondary:active,
-.text-wrapper-light.intro .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+.text-wrapper-light.intro .text-wrapper .story-block-video a.btn.btn-secondary:hover,
+.text-wrapper-light.intro .text-wrapper .story-block-video a.btn.btn-secondary:active,
+.text-wrapper-light.intro .text-wrapper .story-block-video a.btn.btn-secondary:focus,
 .text-wrapper-light .text-wrapper .story-block-link a.btn.btn-secondary:hover,
 .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:hover,
 .text-wrapper-light .text-wrapper .story-block-link a.btn.btn-secondary:active,
 .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:active,
 .text-wrapper-light .text-wrapper .story-block-link a.btn.btn-secondary:focus,
 .text-wrapper-light .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:focus,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:hover,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn.btn-secondary:active,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:active,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
-.text-wrapper-light .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:focus {
+.text-wrapper-light .text-wrapper .story-block-video a.btn.btn-secondary:hover,
+.text-wrapper-light .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:hover,
+.text-wrapper-light .text-wrapper .story-block-video a.btn.btn-secondary:active,
+.text-wrapper-light .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:active,
+.text-wrapper-light .text-wrapper .story-block-video a.btn.btn-secondary:focus,
+.text-wrapper-light .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:focus {
   background: #fefb07;
   color: #fff !important;
   border-color: #fefb07;
@@ -3694,112 +4300,112 @@ figure figcaption {
     color: #65184c;
   }
   .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn,
-  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.modal-trigger--video,
   .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn,
-  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video {
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.modal-trigger--video {
     background: #b82b8a;
-    border: 1px solid #b82b8a;
+    border: 1px solid transparent;
     color: #fff;
     text-align: center;
   }
   .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:hover, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:active, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:focus,
-  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:hover,
-  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:active,
-  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn:focus,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:hover,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:hover,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:active,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:active,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:focus,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:focus,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:hover,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:hover,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:active,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:active,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:focus,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.modal-trigger--video:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.modal-trigger--video:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.modal-trigger--video:focus,
   .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:hover,
   .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:active,
   .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn:focus,
-  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:hover,
-  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:active,
-  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn:focus,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:hover,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:hover,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:active,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:active,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn:focus,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.modal-trigger--video:focus,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:hover,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:hover,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:active,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:active,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn:focus,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.modal-trigger--video:focus {
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.modal-trigger--video:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.modal-trigger--video:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.modal-trigger--video:focus {
     background: #7a1d5b;
     border-color: #7a1d5b;
     color: #fff !important;
     text-decoration: none;
   }
   .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary,
-  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn.btn-secondary,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn.btn-secondary,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video,
   .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary,
-  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn.btn-secondary,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video {
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn.btn-secondary,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video {
     background: #fefc53;
     border-color: #fefc53;
     color: #fff;
     text-align: center;
   }
   .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:hover, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:active, .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:focus,
-  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
-  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:active,
-  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn.btn-secondary:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn.btn-secondary:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn.btn-secondary:focus,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:hover,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:hover,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:active,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:active,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:focus,
   .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:focus,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:hover,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:active,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:active,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
-  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn.btn-secondary:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:hover,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn.btn-secondary:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:active,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn.btn-secondary:focus,
+  .text-wrapper-dark.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:focus,
   .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:hover,
   .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:active,
   .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-link a.btn.btn-secondary:focus,
-  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
-  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:active,
-  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile.intro .text-wrapper .story-block-video a.btn.btn-secondary:focus,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:hover,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:hover,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:active,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:active,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn.btn-secondary:focus,
   .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-link a.btn-secondary.modal-trigger--video:focus,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:hover,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:hover,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:active,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:active,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn.btn-secondary:focus,
-  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-videos a.btn-secondary.modal-trigger--video:focus {
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn.btn-secondary:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:hover,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn.btn-secondary:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:active,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn.btn-secondary:focus,
+  .text-wrapper-light.text-wrapper-normalize-mobile .text-wrapper .story-block-video a.btn-secondary.modal-trigger--video:focus {
     background: #fefb07;
     border-color: #fefb07;
     color: #fff !important;
@@ -3912,7 +4518,7 @@ figure figcaption {
 #cta-modal button[type=submit] {
   background: #b82b8a;
   color: #fff;
-  border: 1px solid #b82b8a;
+  border: 1px solid transparent;
   border-radius: 0.25rem;
   padding: 15px 30px;
   flex: 0 0 auto;
@@ -4174,6 +4780,10 @@ figure figcaption {
   font-family: "corbert-condensed", serif;
   font-size: 1em;
   text-align: center;
+  border: 1px solid transparent;
+  text-decoration: none;
+  line-height: 1.1;
+  display: inline-block;
 }
 .btn:hover, .section-contact-form form button:hover, .modal-trigger--video:hover {
   text-decoration: none;
@@ -4181,7 +4791,7 @@ figure figcaption {
 
 .btn-primary, .modal-trigger--video {
   background: #b82b8a;
-  border: 1px solid #b82b8a;
+  border-color: #b82b8a;
   color: #fff;
   text-align: center;
 }
@@ -4236,140 +4846,6 @@ figure figcaption {
   position: relative;
 }
 
-@media (min-width: 768px) {
-  .text-wrapper-dark.section-story-block .text-wrapper {
-    margin: 0 -4vw;
-    padding: 4vw;
-    background-color: #000;
-    align-self: center;
-  }
-  .text-wrapper-dark .intro .text-wrapper,
-  .text-wrapper-dark .text-wrapper {
-    background-color: #000;
-    padding: 4vw;
-    border-radius: 0;
-    margin-bottom: 4vw;
-  }
-  .text-wrapper-dark .intro .text-wrapper .section-title,
-  .text-wrapper-dark .text-wrapper .section-title {
-    color: #fff;
-  }
-  .text-wrapper-dark .intro .text-wrapper .intro-body,
-  .text-wrapper-dark .intro .text-wrapper .story-block-text,
-  .text-wrapper-dark .text-wrapper .intro-body,
-  .text-wrapper-dark .text-wrapper .story-block-text {
-    color: #fff;
-  }
-  .text-wrapper-dark .intro .text-wrapper .intro-body a,
-  .text-wrapper-dark .intro .text-wrapper .story-block-text a,
-  .text-wrapper-dark .text-wrapper .intro-body a,
-  .text-wrapper-dark .text-wrapper .story-block-text a {
-    color: #b82b8a;
-  }
-  .text-wrapper-dark .intro .text-wrapper .intro-body a:hover,
-  .text-wrapper-dark .intro .text-wrapper .story-block-text a:hover,
-  .text-wrapper-dark .text-wrapper .intro-body a:hover,
-  .text-wrapper-dark .text-wrapper .story-block-text a:hover {
-    color: #dd6cb8;
-  }
-  .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn,
-  .text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn,
-  .text-wrapper-dark .text-wrapper .story-block-link a.btn,
-  .text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video,
-  .text-wrapper-dark .text-wrapper .story-block-videos a.btn,
-  .text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video {
-    background: #b82b8a;
-    color: #fff !important;
-    border-color: #b82b8a;
-  }
-  .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn:hover, .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn:active, .text-wrapper-dark .intro .text-wrapper .story-block-link a.btn:focus,
-  .text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn:hover,
-  .text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn:active,
-  .text-wrapper-dark .intro .text-wrapper .story-block-videos a.btn:focus,
-  .text-wrapper-dark .text-wrapper .story-block-link a.btn:hover,
-  .text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video:hover,
-  .text-wrapper-dark .text-wrapper .story-block-link a.btn:active,
-  .text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video:active,
-  .text-wrapper-dark .text-wrapper .story-block-link a.btn:focus,
-  .text-wrapper-dark .text-wrapper .story-block-link a.modal-trigger--video:focus,
-  .text-wrapper-dark .text-wrapper .story-block-videos a.btn:hover,
-  .text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video:hover,
-  .text-wrapper-dark .text-wrapper .story-block-videos a.btn:active,
-  .text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video:active,
-  .text-wrapper-dark .text-wrapper .story-block-videos a.btn:focus,
-  .text-wrapper-dark .text-wrapper .story-block-videos a.modal-trigger--video:focus {
-    background: #7a1d5b;
-    color: #fff !important;
-    border-color: #7a1d5b;
-  }
-}
-@media (min-width: 768px) {
-  .text-wrapper-light.section-story-block .text-wrapper {
-    margin: 0 -4vw;
-    padding: 4vw;
-    background-color: #fff;
-    align-self: center;
-  }
-  .text-wrapper-light.intro .text-wrapper,
-  .text-wrapper-light .text-wrapper {
-    background-color: #fff;
-    padding: 4vw;
-    border-radius: 0;
-    margin-bottom: 4vw;
-  }
-  .text-wrapper-light.intro .text-wrapper .section-title,
-  .text-wrapper-light .text-wrapper .section-title {
-    color: rgba(0, 0, 0, 0.8);
-  }
-  .text-wrapper-light.intro .text-wrapper .intro-body,
-  .text-wrapper-light.intro .text-wrapper .story-block-text,
-  .text-wrapper-light .text-wrapper .intro-body,
-  .text-wrapper-light .text-wrapper .story-block-text {
-    color: rgba(0, 0, 0, 0.8);
-  }
-  .text-wrapper-light.intro .text-wrapper .intro-body a,
-  .text-wrapper-light.intro .text-wrapper .story-block-text a,
-  .text-wrapper-light .text-wrapper .intro-body a,
-  .text-wrapper-light .text-wrapper .story-block-text a {
-    color: #b82b8a;
-  }
-  .text-wrapper-light.intro .text-wrapper .intro-body a:hover,
-  .text-wrapper-light.intro .text-wrapper .story-block-text a:hover,
-  .text-wrapper-light .text-wrapper .intro-body a:hover,
-  .text-wrapper-light .text-wrapper .story-block-text a:hover {
-    color: #65184c;
-  }
-  .text-wrapper-light.intro .text-wrapper .story-block-link a.btn,
-  .text-wrapper-light.intro .text-wrapper .story-block-videos a.btn,
-  .text-wrapper-light .text-wrapper .story-block-link a.btn,
-  .text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video,
-  .text-wrapper-light .text-wrapper .story-block-videos a.btn,
-  .text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video {
-    background: #b82b8a;
-    color: #fff !important;
-    border-color: #b82b8a;
-  }
-  .text-wrapper-light.intro .text-wrapper .story-block-link a.btn:hover, .text-wrapper-light.intro .text-wrapper .story-block-link a.btn:active, .text-wrapper-light.intro .text-wrapper .story-block-link a.btn:focus,
-  .text-wrapper-light.intro .text-wrapper .story-block-videos a.btn:hover,
-  .text-wrapper-light.intro .text-wrapper .story-block-videos a.btn:active,
-  .text-wrapper-light.intro .text-wrapper .story-block-videos a.btn:focus,
-  .text-wrapper-light .text-wrapper .story-block-link a.btn:hover,
-  .text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video:hover,
-  .text-wrapper-light .text-wrapper .story-block-link a.btn:active,
-  .text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video:active,
-  .text-wrapper-light .text-wrapper .story-block-link a.btn:focus,
-  .text-wrapper-light .text-wrapper .story-block-link a.modal-trigger--video:focus,
-  .text-wrapper-light .text-wrapper .story-block-videos a.btn:hover,
-  .text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video:hover,
-  .text-wrapper-light .text-wrapper .story-block-videos a.btn:active,
-  .text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video:active,
-  .text-wrapper-light .text-wrapper .story-block-videos a.btn:focus,
-  .text-wrapper-light .text-wrapper .story-block-videos a.modal-trigger--video:focus {
-    background: #7a1d5b;
-    color: #fff !important;
-    border-color: #7a1d5b;
-  }
-}
 .section.text-full-width .text-wrapper {
   max-width: 100% !important;
 }
@@ -4783,7 +5259,7 @@ figure figcaption {
   text-align: right;
   font-style: italic;
   color: #b82b8a;
-  font-family: "poppins", sans-serif;
+  font-family: "metropolis", sans-serif;
 }
 
 .address span,
@@ -4856,7 +5332,7 @@ figure figcaption {
 
 .breadcrumb {
   padding: 0;
-  font-family: "poppins", sans-serif;
+  font-family: "metropolis", sans-serif;
 }
 @media (max-width: 767.98px) {
   .breadcrumb {
@@ -7660,8 +8136,8 @@ form.user-form input.form-autocomplete {
 }
 
 .card-title {
-  font-family: "poppins", sans-serif;
-  font-weight: 700;
+  font-family: "metropolis", sans-serif;
+  font-weight: bold;
   text-align: center;
   border-bottom: 0;
   margin-bottom: 1.25rem;
@@ -8919,6 +9395,7 @@ form.user-form input.form-autocomplete {
   align-items: center;
   flex-direction: column;
   display: flex;
+  background-color: transparent;
 }
 .section-contact-form form input {
   margin: 10px 0;
@@ -8938,47 +9415,84 @@ form.user-form input.form-autocomplete {
 }
 .section-contact-form form button {
   background: #b82b8a;
-  color: #fff !important;
-  border-color: #b82b8a;
+  color: #fff;
+  border: 1px solid transparent;
   display: block;
   width: 100%;
   margin: 10px 0;
-  border: 0;
 }
-.section-contact-form form button:hover, .section-contact-form form button:active, .section-contact-form form button:focus {
+.section-contact-form form button:hover {
+  border-color: #7a1d5b;
+  background: #7a1d5b;
+  color: #fff;
+}
+.section-contact-form.light-bg, .section-contact-form.dark-text {
+  background: #fff;
+}
+.section-contact-form.light-bg .intro .section-title, .section-contact-form.dark-text .intro .section-title {
+  color: rgba(0, 0, 0, 0.8);
+}
+.section-contact-form.light-bg .intro .intro-body, .section-contact-form.dark-text .intro .intro-body {
+  color: rgba(0, 0, 0, 0.8);
+}
+.section-contact-form.light-bg .intro .intro-body a, .section-contact-form.dark-text .intro .intro-body a {
+  color: #b82b8a;
+}
+.section-contact-form.light-bg .intro .intro-body a:hover, .section-contact-form.dark-text .intro .intro-body a:hover {
+  color: #65184c;
+}
+.section-contact-form.light-bg form button, .section-contact-form.dark-text form button {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.section-contact-form.light-bg form button:hover, .section-contact-form.light-bg form button:active, .section-contact-form.light-bg form button:focus, .section-contact-form.dark-text form button:hover, .section-contact-form.dark-text form button:active, .section-contact-form.dark-text form button:focus {
   background: #7a1d5b;
   color: #fff !important;
   border-color: #7a1d5b;
 }
-.section-contact-form.light-bg-dark-text {
-  background: #fff;
-}
-.section-contact-form.light-bg-dark-text .intro .section-title {
-  color: rgba(0, 0, 0, 0.8);
-}
-.section-contact-form.light-bg-dark-text .intro .intro-body {
-  color: rgba(0, 0, 0, 0.8);
-}
-.section-contact-form.light-bg-dark-text .intro .intro-body a {
+.section-contact-form.light-bg .contact-detail a, .section-contact-form.dark-text .contact-detail a {
   color: #b82b8a;
 }
-.section-contact-form.light-bg-dark-text .intro .intro-body a:hover {
+.section-contact-form.light-bg .contact-detail a:hover, .section-contact-form.dark-text .contact-detail a:hover {
   color: #65184c;
 }
-.section-contact-form.dark-bg-light-text {
+.section-contact-form.dark-bg, .section-contact-form.light-text {
   background: #000;
 }
-.section-contact-form.dark-bg-light-text .intro .section-title {
+.section-contact-form.dark-bg .intro .section-title, .section-contact-form.light-text .intro .section-title {
   color: #fff;
 }
-.section-contact-form.dark-bg-light-text .intro .intro-body {
+.section-contact-form.dark-bg .intro .intro-body, .section-contact-form.light-text .intro .intro-body {
   color: #fff;
 }
-.section-contact-form.dark-bg-light-text .intro .intro-body a {
+.section-contact-form.dark-bg .intro .intro-body a, .section-contact-form.light-text .intro .intro-body a {
   color: #b82b8a;
 }
-.section-contact-form.dark-bg-light-text .intro .intro-body a:hover {
+.section-contact-form.dark-bg .intro .intro-body a:hover, .section-contact-form.light-text .intro .intro-body a:hover {
   color: #dd6cb8;
+}
+.section-contact-form.dark-bg form button, .section-contact-form.light-text form button {
+  background: #b82b8a;
+  color: #fff !important;
+  border-color: #b82b8a;
+}
+.section-contact-form.dark-bg form button:hover, .section-contact-form.dark-bg form button:active, .section-contact-form.dark-bg form button:focus, .section-contact-form.light-text form button:hover, .section-contact-form.light-text form button:active, .section-contact-form.light-text form button:focus {
+  background: #7a1d5b;
+  color: #fff !important;
+  border-color: #7a1d5b;
+}
+.section-contact-form.dark-bg .contact-detail a, .section-contact-form.light-text .contact-detail a {
+  color: #b82b8a;
+}
+.section-contact-form.dark-bg .contact-detail a:hover, .section-contact-form.light-text .contact-detail a:hover {
+  color: #dd6cb8;
+}
+.section-contact-form.dark-bg {
+  background: #000;
+}
+.section-contact-form.light-bg {
+  background: #fff;
 }
 
 .section-general-embed {
@@ -9025,34 +9539,34 @@ form.user-form input.form-autocomplete {
   left: 50%;
   transform: translateX(-50%);
 }
-.section-general-embed.light-bg-dark-text {
+.section-general-embed.light-bg, .section-general-embed.dark-text {
   background: #fff;
 }
-.section-general-embed.light-bg-dark-text .section-title {
+.section-general-embed.light-bg .section-title, .section-general-embed.dark-text .section-title {
   color: rgba(0, 0, 0, 0.8);
 }
-.section-general-embed.light-bg-dark-text .intro-body {
+.section-general-embed.light-bg .intro-body, .section-general-embed.dark-text .intro-body {
   color: rgba(0, 0, 0, 0.8);
 }
-.section-general-embed.light-bg-dark-text .intro-body a {
+.section-general-embed.light-bg .intro-body a, .section-general-embed.dark-text .intro-body a {
   color: #b82b8a;
 }
-.section-general-embed.light-bg-dark-text .intro-body a:hover {
+.section-general-embed.light-bg .intro-body a:hover, .section-general-embed.dark-text .intro-body a:hover {
   color: #65184c;
 }
-.section-general-embed.dark-bg-light-text {
+.section-general-embed.dark-bg, .section-general-embed.light-text {
   background: #000;
 }
-.section-general-embed.dark-bg-light-text .section-title {
+.section-general-embed.dark-bg .section-title, .section-general-embed.light-text .section-title {
   color: #fff;
 }
-.section-general-embed.dark-bg-light-text .intro-body {
+.section-general-embed.dark-bg .intro-body, .section-general-embed.light-text .intro-body {
   color: #fff;
 }
-.section-general-embed.dark-bg-light-text .intro-body a {
+.section-general-embed.dark-bg .intro-body a, .section-general-embed.light-text .intro-body a {
   color: #b82b8a;
 }
-.section-general-embed.dark-bg-light-text .intro-body a:hover {
+.section-general-embed.dark-bg .intro-body a:hover, .section-general-embed.light-text .intro-body a:hover {
   color: #dd6cb8;
 }
 
@@ -10540,8 +11054,8 @@ form.user-form input.form-autocomplete {
 .section-hero .hero-title-wrapper .hero-heading {
   margin: 0 0 0.5em 0;
   padding: 0 0 0.35em 0;
-  font-weight: 700;
-  font-family: "poppins", sans-serif;
+  font-weight: bold;
+  font-family: "metropolis", sans-serif;
   color: rgba(0, 0, 0, 0.8);
   text-align: center;
   text-transform: none;
@@ -10975,57 +11489,57 @@ form.user-form input.form-autocomplete {
   width: 100%;
 }
 
-.dark-bg-light-text.section-hero {
+.dark-bg.section-hero {
   background: #000;
 }
-.dark-bg-light-text.section-hero .hero-overlay {
+.dark-bg.section-hero .hero-overlay {
   background-color: rgba(0, 0, 0, 0.7);
 }
 @media (max-width: 767.98px) {
-  .dark-bg-light-text.section-hero .hero-overlay {
+  .dark-bg.section-hero .hero-overlay {
     background: rgba(0, 0, 0, 0.7);
   }
 }
-.dark-bg-light-text.section-hero .hero-heading {
+.dark-bg.section-hero .hero-heading {
   color: #fff;
 }
-.dark-bg-light-text.section-hero .hero-sub-heading {
+.dark-bg.section-hero .hero-sub-heading {
   color: #fff;
 }
-.dark-bg-light-text.section-hero .hero-link a.btn, .dark-bg-light-text.section-hero .hero-link a.modal-trigger--video {
+.dark-bg.section-hero .hero-link a.btn, .dark-bg.section-hero .hero-link a.modal-trigger--video {
   background: #b82b8a;
   color: #fff !important;
   border-color: #b82b8a;
 }
-.dark-bg-light-text.section-hero .hero-link a.btn:hover, .dark-bg-light-text.section-hero .hero-link a.modal-trigger--video:hover, .dark-bg-light-text.section-hero .hero-link a.btn:active, .dark-bg-light-text.section-hero .hero-link a.modal-trigger--video:active, .dark-bg-light-text.section-hero .hero-link a.btn:focus, .dark-bg-light-text.section-hero .hero-link a.modal-trigger--video:focus {
+.dark-bg.section-hero .hero-link a.btn:hover, .dark-bg.section-hero .hero-link a.modal-trigger--video:hover, .dark-bg.section-hero .hero-link a.btn:active, .dark-bg.section-hero .hero-link a.modal-trigger--video:active, .dark-bg.section-hero .hero-link a.btn:focus, .dark-bg.section-hero .hero-link a.modal-trigger--video:focus {
   background: #7a1d5b;
   color: #fff !important;
   border-color: #7a1d5b;
 }
 
-.light-bg-dark-text.section-hero {
+.light-bg.section-hero {
   background: #fff;
 }
-.light-bg-dark-text.section-hero .hero-overlay {
+.light-bg.section-hero .hero-overlay {
   background-color: rgba(255, 255, 255, 0.7);
 }
 @media (max-width: 767.98px) {
-  .light-bg-dark-text.section-hero .hero-overlay {
+  .light-bg.section-hero .hero-overlay {
     background: rgba(255, 255, 255, 0.7);
   }
 }
-.light-bg-dark-text.section-hero .hero-heading {
+.light-bg.section-hero .hero-heading {
   color: rgba(0, 0, 0, 0.8);
 }
-.light-bg-dark-text.section-hero .hero-sub-heading {
+.light-bg.section-hero .hero-sub-heading {
   color: rgba(0, 0, 0, 0.8);
 }
-.light-bg-dark-text.section-hero .hero-link a.btn, .light-bg-dark-text.section-hero .hero-link a.modal-trigger--video {
+.light-bg.section-hero .hero-link a.btn, .light-bg.section-hero .hero-link a.modal-trigger--video {
   background: #b82b8a;
   color: #fff !important;
   border-color: #b82b8a;
 }
-.light-bg-dark-text.section-hero .hero-link a.btn:hover, .light-bg-dark-text.section-hero .hero-link a.modal-trigger--video:hover, .light-bg-dark-text.section-hero .hero-link a.btn:active, .light-bg-dark-text.section-hero .hero-link a.modal-trigger--video:active, .light-bg-dark-text.section-hero .hero-link a.btn:focus, .light-bg-dark-text.section-hero .hero-link a.modal-trigger--video:focus {
+.light-bg.section-hero .hero-link a.btn:hover, .light-bg.section-hero .hero-link a.modal-trigger--video:hover, .light-bg.section-hero .hero-link a.btn:active, .light-bg.section-hero .hero-link a.modal-trigger--video:active, .light-bg.section-hero .hero-link a.btn:focus, .light-bg.section-hero .hero-link a.modal-trigger--video:focus {
   background: #7a1d5b;
   color: #fff !important;
   border-color: #7a1d5b;
@@ -12338,8 +12852,8 @@ form.user-form input.form-autocomplete {
   margin: 0 0;
 }
 .section-story-block .section-title {
-  font-family: "poppins", sans-serif;
-  font-weight: 700;
+  font-family: "metropolis", sans-serif;
+  font-weight: bold;
   margin: 0 0 0.5em 0;
   padding: 0 0 0 0;
   color: rgba(0, 0, 0, 0.8);
@@ -13034,6 +13548,26 @@ form.user-form input.form-autocomplete {
   height: 100%;
   width: 100%;
 }
+@media (min-width: 768px) {
+  .section-image.img-height-25 {
+    height: 25vh;
+  }
+  .section-image.img-height-30 {
+    height: 30vh;
+  }
+  .section-image.img-height-40 {
+    height: 40vh;
+  }
+  .section-image.img-height-50 {
+    height: 50vh;
+  }
+  .section-image.img-height-75 {
+    height: 75vh;
+  }
+  .section-image.img-height-100 {
+    height: 100vh;
+  }
+}
 
 @media (max-width: 767.98px) {
   .section-image {
@@ -13046,6 +13580,24 @@ form.user-form input.form-autocomplete {
     background-attachment: scroll !important;
   }
 }
+@media (max-width: 991.98px) {
+  .section-image.has-mobile-image {
+    height: auto;
+  }
+  .section-image.has-mobile-image .bg-image {
+    display: none;
+  }
+  .section-image.has-mobile-image .mobile-image-wrapper img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (min-width: 768px) {
+  .section-image.has-mobile-image .mobile-image-wrapper {
+    display: none;
+  }
+}
+
 .section-map {
   background-color: #000;
 }
@@ -13158,8 +13710,8 @@ a {
 }
 .basic-subpage .page-title h1.page-title,
 .basic-subpage .page-title h1.title {
-  font-family: "poppins", sans-serif;
-  font-weight: 700;
+  font-family: "metropolis", sans-serif;
+  font-weight: bold;
   margin: 0 0 0.5em 0;
   padding: 0 0 0 0;
   color: rgba(0, 0, 0, 0.8);
@@ -13206,8 +13758,8 @@ a {
   padding-right: 15px;
 }
 .basic-subpage .section-title {
-  font-family: "poppins", sans-serif;
-  font-weight: 700;
+  font-family: "metropolis", sans-serif;
+  font-weight: bold;
   margin: 0 0 0.5em 0;
   padding: 0 0 0 0;
   color: rgba(0, 0, 0, 0.8);
@@ -13272,8 +13824,8 @@ a {
 }
 .story-subpage .page-title h1.page-title,
 .story-subpage .page-title h1.title {
-  font-family: "poppins", sans-serif;
-  font-weight: 700;
+  font-family: "metropolis", sans-serif;
+  font-weight: bold;
   margin: 0 0 0.5em 0;
   padding: 0 0 0 0;
   color: rgba(0, 0, 0, 0.8);

@@ -26,6 +26,9 @@ $btn-border-radius: .25rem;
 $btn-font-family: $base-font-family;
 $btn-font-weight: normal;
 $btn-font-size: 1em;
+$btn-border-style: solid;
+$btn-border-width: 1px;
+$btn-border: $btn-border-width $btn-border-style transparent;
 
 //----------------------------------
 // Primary Buttons
@@ -34,7 +37,7 @@ $btn-font-size: 1em;
 // Normal State
 $btn-bg-color: $primary;
 $btn-text-color: $white;
-$btn-border: 1px solid $btn-bg-color;
+$btn-border-color: $primary;
 
 
 // Hover State
