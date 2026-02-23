@@ -38,8 +38,6 @@
             }
         }
         
-        
-
         .group-text {
             display: flex;
             flex-direction: column;
@@ -71,19 +69,19 @@
 
             // Text area
             .section-title {
-                text-align: $sb-center-full-img-title-alignment;
+                text-align: $sb-img-top_title-alignment;
             }
-
+            
             .story-block-text {
-                text-align: $sb-center-full-img-text-alignment;
+                text-align: $sb-img-top_text-alignment;
             }
-
+            
             h3,
             .subtitle {
-                text-align: $sb-center-full-img-subtitle-alignment;
+                text-align: $sb-img-top_subtitle-alignment;
             }
-
-            // Links
+            
+            // links
             .story-block-link-wrapper {
                 justify-content: $sb-img-top_link-alignment;
             }

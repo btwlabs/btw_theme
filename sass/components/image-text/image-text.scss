@@ -17,8 +17,7 @@
 		position: relative;
 		overflow: hidden;
 		
-		// default bg color to indicate areas of a story block that 
-		// accept bg image, esp during early setup; transparent by default in vars 
+		// default bg color to indicate areas of a story block that accept bg images
 		.bg-image {
 			background-color: $sb-image-wrapper-bg-color;
 		}
@@ -205,15 +204,15 @@
 	//-------------------------------------
 
 	.story-block-mobile-image {
-
+	
 		@include media-breakpoint-down(sm) {
-			margin: 0 -5vw 2em;
-
+			margin: 0 (-($section-padding-x-sm)) 2em;
+	
 			img {
 				width: 100%;
 			}
 		}
-
+	
 		// hide mobile image in medium-up layouts
 		@include media-breakpoint-up(md) {
 			display: none;
@@ -601,6 +600,44 @@
 					top: 100px;
 				}
 			}
+		}
+	}
+	
+	// add min-height for blocks with less text so image
+	// doesn't get cropped badly
+	&.min-height-40vw {
+		.story-block-inner {
+			  min-height: 40vw;
+		}
+	}
+	&.min-height-50vw {
+		.story-block-inner {
+			  min-height: 50vw;
+		}
+	}
+	&.min-height-60vw {
+		.story-block-inner {
+			  min-height: 60vw;
+		}
+	}
+	&.min-height-70vw {
+		.story-block-inner {
+			  min-height: 70vw;
+		}
+	}
+	&.min-height-80vw {
+		.story-block-inner {
+			  min-height: 80vw;
+		}
+	}
+	&.min-height-90vw {
+		.story-block-inner {
+			  min-height: 90vw;
+		}
+	}
+	&.min-height-100vw {
+		.story-block-inner {
+			  min-height: 100vw;
 		}
 	}
 }

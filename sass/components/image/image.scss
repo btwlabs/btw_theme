@@ -97,3 +97,20 @@
         }
     }
 }
+
+.section-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+    figcaption,
+    .image-caption {
+        text-align: center;
+        padding: 1em 2em;
+        font-size: clamp(14px, 1.5vw, 18px);
+        z-index: 1;
+        line-height: 1.3;
+    }
+}
