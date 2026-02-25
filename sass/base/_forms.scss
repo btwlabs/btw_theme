@@ -44,15 +44,15 @@ textarea  {
 }
 
 input[type="file"] {
-	margin: 15px 0px 0px;
+    margin: 15px 0px 0px;
 }
 
 
 // file upload container
 .form-managed-file {
-	border: 1px solid $border-color;
-	padding: 20px;
-	margin: 0 0 10px 0;
+    border: 1px solid $border-color;
+    padding: 20px;
+    margin: 0 0 10px 0;
 }
 
 
@@ -60,12 +60,12 @@ input[type="file"] {
 .webform-client-form input.form-submit {
 	@include btn;
 	@include btn-primary;
-	margin: 15px 0;
+    margin: 15px 0;
    
-	
-	@include media-breakpoint-up(md) {
-		width: auto;
-	}
+    
+    @include media-breakpoint-up(md) {
+	    width: auto;
+    }
 }
 
 .contact-button-wrapper a {
@@ -110,21 +110,41 @@ select {
 
 // Commerce forms
 .form-item img {
-	width: auto;
-	display: inline-block;
-	vertical-align: top;
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
 }
+
+
+
+//-----------------------------
+//	USER LOGIN PAGE
+//-----------------------------
+.page-user-login {
+	.l-constrained {
+		.l-content-main {
+			display: flex;
+			justify-content: center;
+			padding: 0 24px;
+		}
+	}
+}
+
 
 // user login form
 .user-login-form {
 	max-width: 400px;
-	margin: 0 auto;
 	
 	.form-item label, 
 	.form-actions label {
 		font-weight: normal;
 		font-size: 18px;
 		display: block;
+	}
+	
+	// submit button
+	div#edit-actions {
+		width: 100%;
 	}
 	input[type=submit] {
 		@include btn;

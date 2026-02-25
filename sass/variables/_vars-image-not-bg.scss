@@ -10,11 +10,11 @@
 
 // Section Padding (LG)
 //: Sets padding on section in tablet and desktop layouts. 
-$section-image-not-bg-padding-lg: $section-padding-x-lg $section-padding-y-lg;
+$section-image-not-bg-padding-lg: $section-padding-y-lg $section-padding-x-lg;
 
 // Section Padding (SM)
 //	Sets padding on the section in mobile layout. 
-$section-image-not-bg-padding-sm: $section-padding-x-sm $section-padding-y-sm;
+$section-image-not-bg-padding-sm: $section-padding-y-sm $section-padding-x-sm;
 
 //Section Bg Color
 //	Sets background color on the section. 

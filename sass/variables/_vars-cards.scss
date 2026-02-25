@@ -6,6 +6,9 @@
 //----------------------------------------------------
 //----------------------------------------------------
 
+//--------------------------
+// Section
+//--------------------------
 
 // Section Background Color
 // Sets a background color behind the entire cards section.
@@ -37,6 +40,7 @@ $section-cards-intro-body-alignment: center;
 // Individual Cards
 // 
 //----------------------------------
+
 // Card Padding Unit
 // Base Unit of spacing between card elements - around the image and body text
 $card-padding: 30px;
@@ -55,7 +59,7 @@ $card-bg-color: #fff;
 
 // Card Border
 // Sets a border around entire card. Requires "0" for no border, or full value set: [border-width] [border-style] [border-color]
-$card-border: 1px solid rgba(30, 30, 30, 0.2);
+$card-border: 0px solid rgba(30, 30, 30, 0.2);
 
 // Card Border Radius
 $card-border-radius: 0;
@@ -66,7 +70,7 @@ $card-shadow: none;
 
 // Card Shadow on hover
 // A value added here puts a drop shadow around the card on hover or mouseover.  Requires shortcut format (offset-x | offset-y | blur-radius | color) or value of "none" 
-$card-shadow-hover: 0 0 10px rgba(30,30,30,0.2);
+$card-shadow-hover: 0 0 10px rgba(30,30,30,0.2); // default = 0 0 10px rgba(30,30,30,0.2)
 
 
 
@@ -153,7 +157,7 @@ $card-title-lg: 25px;
 //----------------------------------
 
 // Card Body Font Size
-$card-body-font-size: 16px;
+$card-body-font-size: clamp(16px, 1.5vw, 20px);
 
 // Card Body Text Alignment
 $card-body-text-alignment: left;
@@ -163,6 +167,20 @@ $card-body-text-color: $text-on-light-color;
 
 // Set background color behind card body text
 $card-body-bg-color: transparent;
+
+// Card body line height
+$card-body-line-height: 1.4;
+
+
+//------------------------ 
+//	Card Link (button, text)
+//------------------------ 
+
+// Sets the font size for a card button.
+$card-link-font-size: $btn-font-size;
+
+// Sets padding on card button text
+$card-button-padding: $btn-padding;
 
 
 //----------------------------------

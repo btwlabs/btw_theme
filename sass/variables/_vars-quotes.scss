@@ -25,11 +25,9 @@ $quotation-icon-url: url(https://fileswift.com/sites/default/files/2021-05/quote
 $quote-pipe-color: #777;
 
 // Quote Author font family
-// Set the URL for the quote icon
-$quote-author-font-family: $title-font-family;
+$quote-author-font-family: $base-font-family;
 
 // Quote Highlight text color
-// Sets text color for highlight <span> within quote body
 $quote-highlight-text-color: $primary;
 
 // Quote Highlight Font Weight
@@ -41,7 +39,21 @@ $quote-highlight-font-weight: bold;
 $quote-highlight-text-size: 1em;
 
 // Quote Author Text Color
-// Set the color of the quote author
 $quote-author-text-color: $primary;
+
+// Quote Body - Font family
+$quote-body-font-family: $base-font-family;
+
+// Quote Body - Font Size
+$quote-body-font-size: 1em;
+
+// Quote Body - Font Weight
+$quote-body-font-weight: bold;
+
+// Quote Body - Text Color
+$quote-body-text-color: $base-text-color;
+
+// Quote Author - Font Style
+$quote-author-font-style: italic;
 
 

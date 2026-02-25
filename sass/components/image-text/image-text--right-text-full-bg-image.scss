@@ -11,15 +11,19 @@
             background-image: none;
         }
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(sm) {
 
             // IMAGE column
             .group-left {
                 width: 50%;
-                padding: 8vw 0 8vw 8vw;
+                padding: $section-padding-y-lg 0 $section-padding-x-lg $section-padding-y-lg;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                
+                @include media-breakpoint-down(sm) {
+                    padding: $section-padding-y-sm $section-padding-x-sm;
+                }
 
                 figure {
                     margin: 0;
@@ -39,7 +43,11 @@
             // TEXT column
             .group-right {
                 width: 50%;
-                padding: 8vw;
+                padding: $section-padding-y-lg $section-padding-x-lg;
+                
+                @include media-breakpoint-down(sm) {
+                    padding: $section-padding-y-sm $section-padding-x-sm;
+                }
             }
             
             // links

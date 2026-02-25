@@ -1,0 +1,605 @@
+//----------------------------------------
+//----------------------------------------
+//
+//	CASE STUDY LIST - (WORK page)
+//
+//----------------------------------------
+//----------------------------------------
+.page-work {
+	h1.page-title {
+		text-align: center;
+	}
+}
+
+.case-study-list {
+	padding-left: 10px; // $section-padding-x-lg;
+	padding-right: 10px; // $section-padding-x-lg;
+	padding-top: $first-section-padding-top-lg;
+	padding-bottom: $first-section-padding-top-lg;
+	
+	@include media-breakpoint-down(sm) {
+		padding-left: 0; // $section-padding-x-sm;
+		padding-right: 0; // $section-padding-x-sm;
+		padding-top: $first-section-padding-top-sm;
+	}
+	
+	// Exposed form
+	.views-exposed-form {
+		display: flex;
+		justify-content: flex-start;
+		margin-bottom: 5vw;
+		flex-wrap: wrap;
+		margin: 0 auto 4vw;
+		position: relative;
+		
+		@include media-breakpoint-down(sm) {
+			padding-left: 24px;
+			padding-right: 24px;
+		}
+		@include media-breakpoint-up(sm) {
+			padding-left: 30px;
+			padding-right: 30px;
+			max-width: 80vw;
+		}
+		@include media-breakpoint-up(md) {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		@include media-breakpoint-up(xl) {
+			max-width: 60vw;
+		}
+		
+		.form-item-field-industry-target-id {
+			display: flex;
+			flex-wrap: wrap;
+			order: 1;
+			flex: 0 0 100%;
+		}
+		label {
+			flex: 0 1 100px;
+			margin-right: 20px;
+			border-right: 1px solid #000;
+		}
+		
+		// list items 
+		li {
+			@include media-breakpoint-down(sm) {
+				flex: 0 0 100%;
+			}
+		}
+		.bef-links {
+			flex: 0 0 calc(100% - 120px);
+		}
+		
+		// reset button wrapper
+		.form-actions {
+			order: 2;
+			position: absolute;
+			top: 35px;
+		}
+		
+		// reset button
+		input.form-submit {
+			font-size: 13px;
+			padding: 5px 10px;
+			border: 0;
+			background: #e9e9e9;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			cursor: pointer;
+			color: #000;
+			
+			&:hover {
+				background: #000;
+				color: #fff;
+			}
+		}
+	}
+	
+	// exposed filter items
+	.form-item-field-industry-target-id {
+		ul {
+			display: flex;
+			flex-direction: row;
+			margin: 0;
+			padding: 0;
+			flex-wrap: wrap;
+			grid-gap: 10px;
+			
+			li {
+				list-style: none;
+				
+				a {
+					font-size: 13px;
+					text-decoration: none;
+					display: block;
+					padding: 3px 10px 0;
+					color: #000;
+					text-transform: uppercase;
+					font-family: $title-font-family;
+					font-weight: 500;
+					border-radius: 30px;
+					letter-spacing: .1em;
+					
+					&:hover,
+					&.bef-link--selected {
+						background: #000;
+						border-color: #000;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+//----------------------------------
+// 	WORK page & teaser cards - 
+//	masonry styling & layout
+//----------------------------------
+
+.masonry-item {
+	width: 25%;
+}
+
+
+
+// Case Study Teaser Cards - make sure images 100% height
+// work page
+.case-study-list,
+// services pages - related work
+.case-study-card { 
+	.grid {
+		// 1st div (no classes) inside grid
+		> div:nth-of-type(3) {
+			width: 100%;
+		}
+		
+		.grid-sizer {
+			width: 25%;
+			
+			//width: 100%;
+			
+			@include media-breakpoint-up(sm) {
+				width: 50%;
+			}
+			@include media-breakpoint-up(md) {
+				width: 25%;
+			}
+		}
+		.gutter-sizer {
+			width: 0;
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			
+			li {
+				margin: 0;
+				list-style-type: none;
+			}
+		}
+		li.masonry-item {
+			list-style: none;
+			padding: .6vw;
+			height: 25vw;
+			
+			@include media-breakpoint-down(lg) {
+				height: 50vw;
+				padding-bottom: 5px;
+			}
+			@include media-breakpoint-only(md) {
+				height: 30vw;
+			}
+			
+			@include media-breakpoint-down(sm) {
+				height: 80vw; 
+				padding: 0 0 5px;
+			}
+			
+			.card {
+				min-height: 200px;
+			}
+			
+			&.cs-wide {
+				width: 100%;
+				
+				@include media-breakpoint-up(sm) {
+					width: 100%;
+				}
+				@include media-breakpoint-up(md) {
+					width: 50%;
+				}
+				
+			}
+			&.cs-narrow {
+				width: 100%;
+				
+				@include media-breakpoint-up(sm) {
+					width: 50%;
+				}
+				@include media-breakpoint-up(md) {
+					width: 25%;
+				}
+			}
+		}
+		.case-study--layout-card,
+		.card-item,
+		.card,
+		figure,
+		.card-image,
+		.media-item-wrapper,
+		.case_study__thumbnail-image,
+		.field--name-field-media-image {
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.card-image {
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: .3s all ease-out;
+		}
+	}
+	a:hover {
+		.card-image img {
+			transform: scale(1.25);
+			opacity: .5;
+		}
+	}
+}
+
+.cs-grid-1 {
+	width: 25%;
+}
+
+//-----------------------------
+//	List items - cards text
+//-----------------------------
+.case-study-list,
+// case study list on terms/articles
+.case-study-teaser-cards {
+
+	.case-study--layout-card {
+		.card {
+			//min-height: 345px; // temporary
+			position: relative;
+			background: #000; // temporary ** changed was transparent
+		}
+		
+		.card-image {
+			padding: 0;
+		}
+		.card-body {
+			flex-direction: column;
+			justify-content: flex-end;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(0deg, rgb(3 18 39 / 85%) 10%, rgb(4 15 43 / 0%) 65%);
+			color: #fff;
+			transition: 0.1s all ease-in;
+			padding: 20px;
+			
+			@include media-breakpoint-up(xl) {
+				opacity: 0;
+			}
+		}
+		.card:hover {
+			@include media-breakpoint-up(xl) {
+				.card-body {
+					opacity: 1;
+				}
+				h2 {
+					animation-name: fadeInLeft;
+					animation-iteration-count: 1;
+					animation-duration: 0.3s;
+					animation-delay: 0.2s;
+					animation-timing-function: ease;
+					animation-fill-mode: both;
+					backface-visibility: hidden;
+				}
+				.services {
+					animation-name: fadeInLeft;
+					animation-iteration-count: 1;
+					animation-duration: 0.3s;
+					animation-delay: 0.4s;
+					animation-timing-function: ease;
+					animation-fill-mode: both;
+					backface-visibility: hidden;
+				}
+			}
+		}
+		.tagline {
+			line-height: 1.3;
+			margin: 10px 0 15px;
+			font-size: 18px;
+			display: none;
+		}
+	}
+	
+	// Services taxonomy list
+	.case_study__services.field {
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 13px;
+		
+		@include media-breakpoint-down(xl) {
+			display: none;
+		}
+		
+		.field__item {
+			display: inline-block;
+			font-style: italic;
+			color: #63c6e9;
+			line-height: 1.3;
+			
+			&:after {
+				content: ",";
+				padding-right: 5px;
+			}
+			&:last-child:after,
+			&:nth-child(4):after {
+				display: none;
+			}
+			
+			&:nth-child(5),
+			&:nth-child(6),
+			&:nth-child(7),
+			&:nth-child(8),
+			&:nth-child(9),
+			&:nth-child(10) {
+				display: none;
+			}
+		}
+	}
+	a {
+		text-decoration: none;
+		
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	h2 {
+		margin-bottom: 5px;
+		font-size: clamp(18px, 1.5vw, 24px);
+	}
+}
+
+
+//---------------------------------------
+//---------------------------------------
+//
+//	WORK TEASER BLOCKS
+//
+//---------------------------------------
+//---------------------------------------
+
+//------------------------
+// RELATED WORK BLOCK
+//------------------------
+.related-work {
+	padding-top: clamp(40px, 4vw, 80px);
+	padding-bottom: 6vw;
+	border-top: 1px solid #000;
+	margin-top: 6vw;
+	
+	@include contained;
+	
+	.views-element-container {
+		position: relative;
+	}
+	
+	.section-header {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+//------------------------
+// FEATURED WORK BLOCK
+//------------------------
+
+.case-study-card {
+	h2.section-title {
+		flex: 0 1 45%;
+	}
+}
+
+
+//---------------------
+//	CLIENT LOGO LIST - teaser block
+//---------------------
+
+.client-logo-list {
+	.header-and-title {
+		margin-bottom: 3em;
+	}
+	.section-header {
+		display: flex;
+		justify-content: space-between;
+		
+		h2.section-title {
+			flex: 1 1 calc(100% - 150px);
+			padding-right: 30px;
+			margin: 0;
+		}
+	}
+	.grid-flex {
+		gap: 6vw;
+		justify-content: center;
+		align-items: center;
+		justify-content: space-between;
+		
+		@include media-breakpoint-down(md) {
+			gap: 50px;
+		}
+		@media (min-width: 1400px) {
+			gap: 4vw;
+		}
+		@media (min-width: 1600px) {
+			justify-content: center;
+		}
+	}
+	.list-item {
+		display: flex		;
+		max-width: 150px;
+		align-items: center;
+		justify-content: center;
+		flex: 1 1 14%;
+		opacity: .85;
+		
+		&:hover {
+			opacity: 1;
+		}
+		@include media-breakpoint-down(sm) {
+			flex: 1 1 30%;
+		}
+		@include media-breakpoint-up(xl) {
+			flex: 0 1 12%;
+		}
+	}
+	img {
+		filter: grayscale(1) contrast(.5);
+		width: auto;
+		max-height: 70px;
+		transition: all .2s ease-in-out;
+	}
+	
+	// make all img containers full height/width
+	.views-field.views-field-field-client-logo, 
+	.views-field.views-field-field-client-logo .field-content,
+	.views-field.views-field-field-client-logo .field-content a {
+		width: 100%;
+		height: 100%;
+	}
+	.views-field.views-field-field-client-logo .field-content a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		&:hover {
+			img {
+				filter: none;
+				transform: scale(1.2);
+			}
+		}
+	}
+}
+
+//------------------------
+//	ALL MORE LINKS
+//------------------------
+
+div[class*="view_id-"] {
+	.section-header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 3em;
+		
+		h2.section-title {
+			flex: 1 1 calc(100% - 200px);
+			padding-right: 30px;
+			margin: 0;
+		}
+	}	
+}
+
+
+a.more-link:after,
+.more-link a:after {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../images/icons/arrow-right.svg) no-repeat scroll right center;
+	background-size: 20px auto;
+	margin-left: 10px;
+	
+	&:hover {
+		color: $primary;
+	}
+}
+
+a.more-link,
+.more-link a {
+	text-decoration: none;
+	color: #000;
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	padding: 4px 0 0;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	font-weight: bold;
+	
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+
+
+//---------------------------
+//	CSS grid for card lists
+//---------------------------
+.case-study-list-grid,
+.case-study-teaser-cards {
+	ul.css-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(calc(100px* 4), 1fr));
+		grid-gap: 40px;
+		
+		@include media-breakpoint-only(md) {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-gap: 20px;
+		}
+		@include media-breakpoint-down(sm) {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-gap: 24px;
+		}
+	}
+}
+
+.case-study-list-grid {
+	ul.css-grid {
+		display: grid;
+
+	}
+	li.grid-item {
+		.case-study--layout-card {
+
+		}
+
+		.card-item,
+		.card,
+		.card-image,
+		.case-study-thumbnail-image,
+		.case-study-thumbnail-image > div,
+		.image__media-image,
+		figure {
+			width: 100%;
+			height: 100%;
+			
+			img {
+				object-fit: cover;
+				width: 100%;
+				height: 100% !important;
+				display: block;
+			}
+		}
+	}
+}
+
+
+
+// for positioning the more link for anonymous
+.view_id-case-studies {
+	position: relative;
+}
+	

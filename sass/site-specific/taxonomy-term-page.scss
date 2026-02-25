@@ -1,0 +1,48 @@
+//------------------------------------
+//	Taxonomy term pages
+//------------------------------------
+
+.taxonomy-term {
+	
+	// TITLE VOCABULARY SPAN
+	h3.vocabulary {
+		position: relative;
+		@extend .title-span;
+		display: inline-block;
+	}
+	.page-intro {
+		.intro-inner-wrapper {
+			padding-bottom: 4vw;
+			padding-left: $section-padding-x-lg;
+			padding-right: $section-padding-x-lg;
+			padding-top: $first-section-padding-top-lg;
+			
+			@include media-breakpoint-down(sm) {
+				padding-left: $section-padding-x-sm;
+				padding-right: $section-padding-x-sm;
+				padding-top: $first-section-padding-top-sm;
+			}
+			
+			@include media-breakpoint-up(lg) {
+				max-width: $hero-content-wrapper-max-width-lg;
+			}
+			@include media-breakpoint-up(xl) {
+				max-width: $hero-content-wrapper-max-width-xl;
+			}
+		}
+	}
+	.child-terms {
+		.item-list {
+			ul {
+				margin: 0;
+				padding: 0;
+				
+				li {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+}

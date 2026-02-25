@@ -30,11 +30,11 @@
 	}
 	// immediate wrapper around <iframe>
 	.embedded-video {
-		height: 0;
-		overflow: hidden;
-		padding: 0 0 56.25%;
-		position: relative;
-		margin: 0 auto;
+		//height: 0;
+		//overflow: hidden;
+		//padding: 0 0 56.25%;
+		//position: relative;
+		//margin: 0 auto;
 	
 		& iframe {
 			height: 100%;
@@ -47,9 +47,11 @@
 	}
 	
 		
-	&.light-bg-dark-text {
+	&.light-bg {
 		background: $bg-light-color;
-		
+	}
+	
+	&.dark-text {
 		.intro {
 			.section-title {
 				color: $title-on-light-color;
@@ -67,9 +69,12 @@
 			}
 		}
 	}
-	&.dark-bg-light-text {
+	
+	&.dark-bg {
 		background: $bg-dark-color;
-		
+	}
+	
+	&.light-text {
 		.intro {
 			.section-title {
 				color: $title-on-dark-color;

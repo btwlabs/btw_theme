@@ -44,10 +44,10 @@ $footer-title-color: $white;
 $footer-text-color: #ccc;
 
 // Link Color
-$footer-link-color: $secondary;
+$footer-link-color: $footer-text-color;
 
 // Link Color on mouse hover
-$footer-link-hover-color: lighten($footer-link-color, 15%);
+$footer-link-hover-color: $primary;
 
 //------------------------
 // Back to top Button
@@ -95,4 +95,4 @@ $pre-footer-bg-color: $primary;
 //--------------------------
 // Post-Footer
 //--------------------------
-$post-footer-bg-color: #0d0e15;
+$post-footer-bg-color: #151515;

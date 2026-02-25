@@ -8,63 +8,20 @@
 //------------------------------------------------------
 
 
-/*--------------------------------------------------
-----------------------------------------------------
-
- PAGERS
- 
-----------------------------------------------------
---------------------------------------------------*/
-
-//-------------------------------------------
+//----------------------------------------------------
+//----------------------------------------------------
 //
-// Product list PAGER
-//
-//-------------------------------------------
+//	PAGERS
+// 
+//----------------------------------------------------
+//----------------------------------------------------
 
-ul.pager__items {
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	
-	li {
-		&.pager__item {
-			list-style-type: none;
-			margin: 0 10px 10px 0;
-			display: inline-block;
-			
-			a {
-				display: block;
-				text-align: center;
-				border: 1px solid #555;
-				padding: 5px 10px;
-				border-radius: 4px;
-				color: #555;
-				
-				&:hover {
-					background: #222;
-					border-color: #222;
-					color: #000;
-					text-decoration: none;
-				}
-			}
-		}
-		&.pager__item--active {
-			a {
-				background: #222;
-				border-color: #222;
-				color: #000;
-				text-decoration: none;
-			}
-		}
-	}
-}
 
-/*------------------------------------
+//------------------------------------
 
- ENTITY PAGER - Previous / Next 
+// ENTITY PAGER - Previous / Next 
  
--------------------------------------*/
+//-------------------------------------
 
 .entity-pager-wrapper {
 	margin-top: 5vw;
@@ -77,6 +34,8 @@ ul.pager__items {
 	margin: 0 auto;
 	display: flex;
 	
+	@include contained;
+	
 	ul {
 		padding: 0;
 	}
@@ -86,120 +45,128 @@ ul.pager__items {
 .entity-pager-list {
 	width: 100%;
 	display: flex;
-	margin: 0;
-	//background-color: $xlight-gray;
+	margin: 4vw 0;
+	grid-gap: 4vw;
 	
-	.entity-pager-item {
-		margin: 0;
-		flex: 0 0 50%;
+	@include media-breakpoint-down(sm) {
+		flex-direction: column;
 	}
 }
 
 // list item <li>
-.entity-pager-item {
-	height: 120px;
-	position: relative;
-	overflow: hidden;
-	display: flex;
-	align-items: center;
-	
-	@include media-breakpoint-down(sm) {
-		height: 80px;
-	}
-
-	
-	// link wrapper
-	a {
-		color: #000;
+.entity-pager-list {
+	.entity-pager-item {
+		position: relative;
+		overflow: hidden;
 		display: flex;
 		align-items: center;
-		line-height: 1.3;
-		height: 100%;
-		position: relative;
-		text-decoration: none;
-		text-transform: capitalize;
-		@include transition(all, 0.2s, ease-in);
+		padding: 0;
+		margin: 0;
 		
-		&:hover {
-			text-decoration: none;
-			
-			// overlay
-			span:nth-of-type(1) {
-				//background-color: rgba(0,0,0,0.7);
-			}
-			
-			// arrow
-			span:nth-of-type(2) {
-				
-			}
+		@include media-breakpoint-down(sm) {
+			min-height: auto;
+		}
+		@include media-breakpoint-up(sm) {
+			min-height: 250px;
+			flex: 0 0 calc(50% - 2vw);
 		}
 		
-		div {
+		// link wrapper
+		a {
+			color: #000;
 			display: flex;
+			align-items: center;
+			line-height: 1.3;
+			height: 100%;
+			position: relative;
+			text-decoration: none;
+			text-transform: capitalize;
+			@include transition(all, 0.2s, ease-in);
+			padding: 2vw 4vw 4vw;
+			background: #eee;
 			width: 100%;
-			align-items: center;	
-	
-			// overlay
-			span:nth-of-type(1) {
-				display: none;
-				//background: rgba(0,0,0,0.5);
+			
+			@include media-breakpoint-down(sm) {
+				padding: 20px;
+			}
+			
+			&:hover {
+				text-decoration: none;
+				background: #000;
+				color: #fff;
+				
+				// overlay
+				span:nth-of-type(1) {
+					//background-color: rgba(0,0,0,0.7);
+				}
+				
+				// arrow
+				span:nth-of-type(2) {
+					
+				}
+			}
+			
+			div {
+				display: flex;
 				width: 100%;
-				height: 100%;
-				position: absolute;
-				left: 0;
-				top: 0;
-				z-index: 1;
-				@include transition(all, 0.2s, ease-in);
-				
-				// hide in mobile
-				@include media-breakpoint-down(sm) {
-					display: none;
-				}
-			}
-			
-			// title
-			h4 {
-				z-index: 3;
-				margin: 0;
-				
-				@include media-breakpoint-down(sm) {
-					font-size: 12px;
-					width: calc(100% - 52px);
-				}
-				@include media-breakpoint-only(md) {
-					width: calc(100% - 110px);
-					font-size: 16px;
-				}
-				@include media-breakpoint-up(lg) {
-					font-size: 22px;
-				}
-				@include media-breakpoint-up(lg) {
-					width: calc(100% - 120px);
-				}
-				@include media-breakpoint-up(md) {
-					width: calc(100% - 140px);
-				}
-			}
-			
-			// icon
-			span:nth-of-type(2) {
-				height: 40px;
-				display: block;
-				z-index: 2;
-				flex: 0 0 24px;
-				position: relative;
-				
-				@include media-breakpoint-down(sm) {
-					flex: 0 0 12px;
-				}
-				
-				&:before {
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;	
+		
+				// overlay
+				span:nth-of-type(1) {
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+					z-index: 1;
+					@include transition(all, 0.2s, ease-in);
 					display: block;
-					width: 20px;
-					height: 34px;
+					flex: 0 0 100%;
+					position: revert;
+					margin-bottom: 10px;
+					text-transform: uppercase;
+					font-size: .8em;
+					font-weight: 500;
+					letter-spacing: .3em;
+					font-family: $title-font-family;
+					color: $secondary;
+				}
+				
+				
+				// title
+				h4 {
+					z-index: 3;
+					margin: 0;
+					text-align: center !important;
+					font-size: clamp(16px, 2vw, 25px);
+					width: 100%;
+					line-height: 1.1;
+				}
+				
+				// icon
+				span:nth-of-type(2) {
+					height: 40px;
+					//display: block;
+					z-index: 2;
+					flex: 0 0 24px;
+					position: relative;
+					
+					// arrows
+					display: none;
 					
 					@include media-breakpoint-down(sm) {
-						width: 12px;
+						flex: 0 0 12px;
+					}
+					
+					&:before {
+						display: block;
+						width: 20px;
+						height: 34px;
+						
+						@include media-breakpoint-down(sm) {
+							width: 12px;
+						}
 					}
 				}
 			}
@@ -215,9 +182,9 @@ ul.pager__items {
 	}
 }
 
-/*-----------------------
- << PREVIOUS 
-------------------------*/
+//-----------------------
+// 	<< PREVIOUS 
+//-----------------------
 
 .entity-pager-item-prev {
 
@@ -262,9 +229,9 @@ ul.pager__items {
 
 
 
-/*-----------------------
- NEXT >> 
--------------------------*/
+//-----------------------
+//	NEXT >> 
+//-----------------------
 
 .entity-pager-item-next {
 	
@@ -273,7 +240,7 @@ ul.pager__items {
 			justify-content: flex-end;
 			
 			@include media-breakpoint-up(md) {
-				padding-right: 20px;
+				//padding-right: 20px;
 			}
 		}
 	}
@@ -315,18 +282,19 @@ ul.pager__items {
 
 
 
-/*-------------------------
- ALL - list link 
---------------------------*/
+//-------------------------
+// ALL - list link 
+//-------------------------
 
 // override .grid default - not sure why grid class is on container
-.grid {
-	.entity-pager {
-		li.entity-pager-item-all {
-			position: absolute;
-		}
+
+.entity-pager {
+	li.entity-pager-item-all {
+		//position: absolute;
+		display: none;
 	}
 }
+
 
 .entity-pager-item-all {
 	position: absolute;
@@ -385,5 +353,17 @@ ul.pager__items {
 			background-size: 80% auto;
 		}
 	}
+}
+
+//----------------------------------------------------
+//----------------------------------------------------
+//
+//	PAGER BLOCKS
+// 
+//----------------------------------------------------
+//----------------------------------------------------
+
+#block-views-block-articles-pager {
+	@include contained;
 }
 

@@ -46,9 +46,30 @@ $mobile-side-margin: 24px;
 
 
 // Content margins
-$small-side-margin: 24px;
-$medium-side-margin: 48px;
-$large-side-margin: 64px;
+$small-side-padding: 24px;
+$medium-side-padding: 48px;
+$large-side-padding: 64px;
 
+
+// TOP OF PAGE SPACING
+$first-section-padding-top-lg: 6vw;
+$first-section-padding-top-sm: 50px;
+$first-section-padding-bottom-lg: 6vw;
+$first-section-padding-bottom-sm: 50px;
+
+// Content padding - contained
+$contained-padding-x: clamp(24px, 4vw, 60px);
+$contained-padding-y: clamp(50px, 4vw, 80px);
+
+
+// Page intro widths (like in case studies)
+$page-intro-width-lg: 65vw;
+$page-intro-width-xl: 60vw;
+
+
+// Services Sections
+$cs-section-border: 1px dashed #ccc;
+$cs-special-padding: clamp(0px, 4vw, 60px);
+$cs-section-margin: 0 0 $cs-special-padding;
 
 	

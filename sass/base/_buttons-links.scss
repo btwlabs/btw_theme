@@ -1,0 +1,60 @@
+//--------------------
+//	BUTTONS
+//--------------------
+
+.button-wrapper {
+	margin: 40px 0;
+}
+
+.btn {
+	padding: $btn-padding;
+	border-radius: $btn-border-radius;
+	text-transform: $btn-text-transform;
+	font-weight: $btn-font-weight;
+	letter-spacing: $btn-letter-spacing;
+	font-family: $btn-font-family;
+	font-size: $btn-font-size;
+	text-align: center;
+	border: $btn-border;
+	text-decoration: none;
+	line-height: 1.1;
+	display: inline-block;
+	
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.btn-primary {
+	background: $btn-bg-color;
+	border-color: $btn-border-color;
+	color: $btn-text-color;
+	text-align: center;
+	text-decoration: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $btn-hover-bg-color;
+		border-color: $btn-hover-border-color;
+		color: $btn-hover-text-color !important;
+		text-decoration: none;
+	}
+}
+
+.btn-secondary {
+	background: $btn-secondary-bg-color;
+	border-color: $btn-secondary-border-color;
+	color: $btn-secondary-text-color;
+	text-align: center;
+	text-decoration: none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: $btn-secondary-hover-bg-color;
+		border-color: $btn-secondary-hover-border-color;
+		color: $btn-secondary-hover-text-color !important;
+		text-decoration: none;
+	}
+}

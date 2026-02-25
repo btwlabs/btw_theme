@@ -4,20 +4,37 @@
 //------------------------------
 
 .section-testimonial {
-	padding: $testimonial-section-padding;
 	background-color: $testimonial-bg-color;
-	margin: $testimonial-section-margin;
+	//margin: $testimonial-section-margin;
+	
+	// Overlay div for shading bg images
+	.image-overlay {
+	
+		// hide image overlay in mobile
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	
+		@include media-breakpoint-up(md) {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+	}
 	
 	.story-block-inner {
 		display: flex;
 		flex-direction: row;
 		gap: $testimonial-image-gap;
+		padding: $testimonial-section-padding;
 		
 		@include media-breakpoint-down(sm) {
 			flex-direction: column;
 		}
 		@include media-breakpoint-down(md) {
-			gap: calc($testimonial-image-gap * .5);
+			gap: calc(#{$testimonial-image-gap} * .5);
 		}
 		
 		//------------------------
@@ -46,8 +63,8 @@
 			align-items: flex-start;
 			gap: $testimonial-icon-gap;
 			
-			@include media-breakpoint-down(lg) {
-				gap: calc($testimonial-icon-gap * .5);
+			@include media-breakpoint-up(lg) {
+				gap: calc(#{$testimonial-icon-gap} * .5);
 				max-width: $testimonial-quote-max-width;
 				margin: $testimonial-quote-margin;
 			}
@@ -92,7 +109,9 @@
 		// Body Text (quote, author, title)
 		//------------------------
 		.text-wrapper {
-			flex: 1 1 calc(100% - ($testimonial-icon-width-lg + $testimonial-icon-gap));
+			@include media-breakpoint-up(xl) {
+				flex: 1 1 calc(100% - (#{$testimonial-icon-width-lg} + #{$testimonial-icon-gap}));
+			}
 			
 			blockquote {
 				margin: 0;
@@ -137,8 +156,10 @@
 		color: $testimonial-title-text-color;
 		font-style: $testimonial-title-font-style;
 		font-weight: $testimonial-title-font-weight;
+		line-height: 1;
 	}
 	
+		
 	// select default icon color
 	&.icon-color-light {
 		.default-quote-icon {
@@ -147,44 +168,109 @@
 		}
 	}
 	
-	// Dark & light class variations
 	&.icon-color-dark {
 		.default-quote-icon {
 			background: transparent $testimonial-dark-icon-path no-repeat scroll right top;
 			background-size: 100% auto;
 		}
 	}
+	
+	// Dark & light class variations
+	&.dark-bg {
+		background: $bg-dark-color;
+	}
+	&.light-bg {
+		background: $bg-light-color;
+	}
+
 	&.dark-text {
 		.default-quote-icon {
 			background: transparent $testimonial-dark-icon-path no-repeat scroll right top;
 			background-size: 100% auto;
 		}
-		.text-wrapper {
+		.testimonial__body {
 			color: $text-on-light-color;
 			
 			a {
 				color: $link-on-light-color;
 			}
-			
-			.btn {
-				@include button-on-light;
-			}
+		}
+		.testimonial__author,
+		.testimonial__author-title {
+			color: $text-on-light-color;
 		}
 	}
+	
 	&.light-text {
 		.default-quote-icon {
 			background: transparent $testimonial-light-icon-path no-repeat scroll right top;
 			background-size: 100% auto;
 		}
-		.text-wrapper {
+		.testimonial__body {
 			color: $text-on-dark-color;
 			
 			a {
 				color: $link-on-dark-color;
 			}
-			.btn {
-				@include button-on-dark;				
-			}
 		}
+		.testimonial__author,
+		.testimonial__author-title {
+			color: $text-on-dark-color;
+		}
+	}
+	
+	&.text-center {
+		.testimonial__body {
+			text-align: center !important;
+		}
+	}
+	&.text-left {
+		.testimonial__body {
+			text-align: left !important;
+		}
+	}
+	&.text-right {
+		.testimonial__body {
+			text-align: right !important;
+		}
+	}
+	
+	// background colors
+	
+	// light color for "zebra" alternating background
+	&.alternating {
+		background-color: $section-alternating-bg;
+	}
+	
+	&.bg-color-primary {
+		background: $primary;
+	}
+	&.bg-color-secondary {
+		background: $secondary;
+	}
+	&.bg-color-tertiary {
+		background: $tertiary;
+	}
+}
+
+// ----------------------------------------
+// Alias selectors for icon color utilities
+// ----------------------------------------
+// Some variant SCSS uses @extend ".icon-color-dark"/".icon-color-light" on the
+// paragraph wrapper (e.g. .paragraph--type--testimonial.variant-1). In that
+// case, those utility selectors must exist at the top level for Sass to
+// compile. These aliases also ensure the color styles apply whether the class
+// is placed on the inner section element or on an outer wrapper.
+.icon-color-light {
+	.default-quote-icon {
+		background: transparent $testimonial-light-icon-path no-repeat scroll right top;
+		background-size: 100% auto;
+	}
+}
+
+.icon-color-dark {
+	.default-quote-icon {
+		background: transparent $testimonial-dark-icon-path no-repeat scroll right top;
+		background-size: 100% auto;
 	}
 }

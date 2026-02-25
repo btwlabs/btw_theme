@@ -130,16 +130,16 @@ dd {
 // 
 //----------------------------------
 
-.grid {
+.grid-flex {
 	// resets values for when class is placed on <ul>
 	margin: 0 0 3rem 0;
-	padding: 0;
+	padding: 0 !important;
 	
 	display: flex;
 	flex-wrap: wrap;
 	//justify-content: space-between;	
-	
-	li,
+    
+    li,
 	.grid-item {
 		list-style-type: none;
 
@@ -172,10 +172,10 @@ dd {
 	margin: 0 0 3rem 0;
 	padding: 0;
 	display: grid;
-	grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+	grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
 	grid-gap: 40px 3.8%;
-	
-	li,
+    
+    li,
 	.grid-item {
 		list-style-type: none;
 		padding: 0;

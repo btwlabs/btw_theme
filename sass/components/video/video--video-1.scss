@@ -11,7 +11,7 @@
 		
 		.text-wrapper {
 			h2.section-title {
-				@include media-breakpoint-down(sm) {
+				@include media-breakpoint-down(md) {
 					padding-top: $section-padding-x-sm;
 				}
 				@include media-breakpoint-up(md) {

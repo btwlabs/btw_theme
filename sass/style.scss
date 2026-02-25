@@ -317,6 +317,14 @@ figure {
 .section {
     position: relative;
     
+    // use margin to create space between sections
+    @include media-breakpoint-down(sm) {
+        margin: $section-outer-margin-sm;
+    }
+    @include media-breakpoint-up(sm) {
+        margin: $section-outer-margin-lg;
+    }
+    
     //background-color: $section-default-bg-color; !!! can't do this because of parallax image effects on SBs
     
     // offset scroll snap from html {scroll-behavior:smooth;}
@@ -381,6 +389,10 @@ figure {
     a:hover:not(.btn) {
         text-decoration: $link-hover-text-decoration;
     }
+    
+    //----------------------------------
+    // For Adding outer margin to sections/story blocks
+    //----------------------------------
     
     //----------------------------
     // sitewide section margin
@@ -593,7 +605,8 @@ figure {
     &.section-text,
     &.section-video-embed,
     &.section-business-information,
-    &.section-subscribe {
+    &.section-subscribe,
+    &.section-image-two-across {
         background: $bg-dark-color;
     }
 }
@@ -2291,63 +2304,6 @@ figure {
 }
 
 
-
-
-
-//--------------------
-//	BUTTONS
-//--------------------
-
-.button-wrapper {
-    margin: 40px 0;
-}
-
-.btn {
-    padding: $btn-padding;
-    border-radius: $btn-border-radius;
-    text-transform: $btn-text-transform;
-    font-weight: $btn-font-weight;
-    letter-spacing: $btn-letter-spacing;
-    font-family: $btn-font-family;
-    font-size: $btn-font-size;
-    text-align: center;
-    border: $btn-border;
-    text-decoration: none;
-    line-height: 1.1;
-    display: inline-block;
-    
-    &:hover {
-        text-decoration: none;
-    }
-}
-
-.btn-primary {
-    background: $btn-bg-color;
-    border-color: $btn-border-color;
-    color: $btn-text-color;
-    text-align: center;
-
-    &:hover {
-        background: $btn-hover-bg-color;
-        border-color: $btn-hover-border-color;
-        color: $btn-hover-text-color !important;
-        text-decoration: none;
-    }
-}
-
-.btn-secondary {
-    background: $btn-secondary-bg-color;
-    border-color: $btn-secondary-border-color;
-    color: $btn-secondary-text-color;
-    text-align: center;
-
-    &:hover {
-        background: $btn-secondary-hover-bg-color;
-        border-color: $btn-secondary-hover-border-color;
-        color: $btn-secondary-hover-text-color !important;
-        text-decoration: none;
-    }
-}
 
 
 //-------------------------------

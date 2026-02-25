@@ -13,7 +13,6 @@ $mobile-header-bg-color: #000;
 // Mobile Menu Toggle Icon
 //-------------------------
 
-
 // Mobile Navbar Toggler Color
 $navbar-toggler-color: #fff;
 
@@ -25,14 +24,17 @@ $navbar-toggler-border: 1px solid transparent;
 // Sets a border radius on the border around the mobile toggle icon, if the border is visible.. 
 $navbar-toggler-border-radius: .25rem;
 
+
+
 //----------------------------
 // Mobile Links
 //----------------------------
 
-// Mobile Navbar Size
-$nav-font-size-mobile: 22px;
+$nav-font-family-mobile: $title-font-family;
 
-$nav-font-weight-mobile: normal;
+$nav-font-size-mobile: 32px;
+
+$nav-font-weight-mobile: 300;
 
 $nav-text-transform-mobile: uppercase;
 
@@ -42,8 +44,10 @@ $navbar-link-text-align-mobile: center;
 // Mobile Navbar Link Color
 $navbar-link-color-mobile: $white;
 
-// Mobile Hover/Selected Link Colors
-// 
+
+//--------------------------
+// Mobile HOVER/Selected Link Colors
+//-------------------------
 
 // Mobile Navbar Link Color (Hover)
 $navbar-link-hover-color-mobile: $white;
@@ -51,10 +55,38 @@ $navbar-link-hover-color-mobile: $white;
 // Mobile Navbar Link BG Color (Hover)
 $navbar-link-bg-hover-color-mobile: $primary;
 
+
+//--------------------------
 // Mobile Active Link Colors
+//--------------------------
 
 // Mobile Navbar Link Color (Active)
 $navbar-link-active-color-mobile: $navbar-link-color-mobile;
 
 // Mobile Navbar Link BG Color (Active)
-$navbar-link-active-bg-mobile: $primary;
+$navbar-link-active-bg-mobile: lighten($navbar-bg-color-mobile, 10%);
+
+
+//------------------------
+// 	MOBILE Dropdown/Sub-Nav Items
+//------------------------
+
+// Sets styling for sub-links that are grouped with main nav items
+
+// Mobile Dropdown Bg Color
+// Sets the background color of the sub-nav menus <ul>
+$mobile-dropdown-bg-color: darken($navbar-bg-color-mobile, 5%);
+
+// Mobile Dropdown Link Color
+// Sets the link color of a sub-nav item in mobile
+$mobile-dropdown-link-color: $navbar-link-color-mobile;
+
+// Mobile Dropdown Link Background Color
+// Sets the bg color of each sub-nav link
+$mobile-dropdown-link-bg: transparent;
+
+// Mobile Dropdown Item Padding
+$mobile-dropdown-item-padding: 0.45rem 15px;
+
+// Mobile Dropdown Item - Font Size
+$mobile-dropdown-item-font-size: clamp(15px, 0.85em, 20px);

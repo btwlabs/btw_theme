@@ -9,15 +9,15 @@
 
 
 *, *:before, *:after {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
 	font-size: 18px;
 	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
 }
 
 /**
@@ -54,7 +54,8 @@ body {
 
 .l-constrained {
 	@include media-breakpoint-down(sm) {
-		padding: 0 24px;
+		padding-left: 24px;
+		padding-right: 24px;
 		margin: 0 auto;
 	}
 	@include media-breakpoint-up(sm) {
@@ -65,6 +66,69 @@ body {
 	}
 }
 
+.contained,
+.section.contained {
+	@include media-breakpoint-down(sm) {
+		padding-left: $section-padding-x-sm;
+		padding-right: $section-padding-x-sm;
+		margin: 0 auto;
+	}
+	@include media-breakpoint-up(sm) {
+		//width: 90vw;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: $section-padding-x-lg;
+		padding-right: $section-padding-x-lg;
+	}
+}
+
+
+/*.contained-max,
+.section.contained-max {
+	@include media-breakpoint-down(sm) {
+		padding-left: $section-padding-x-sm;
+		padding-right: $section-padding-x-sm;
+		margin: 0 auto;
+	}
+	@include media-breakpoint-up(sm) {
+		//width: 90vw;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: $section-padding-x-lg;
+		padding-right: $section-padding-x-lg;
+	}
+}*/
+.contained-max {
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90vw; // NEW TO SEE IF WORKS everywhere... fixes case study node top sbs
+}
+
+// TOP OF PAGE SPACING
+.section-hero.first-section-top-padding,
+.first-section-top-padding {
+	padding-top: $first-section-padding-top-lg;
+	
+	@include media-breakpoint-down(sm) {
+		padding-top: $first-section-padding-top-sm;
+	}
+}
+.section-hero.first-section-bottom-padding,
+.first-section-bottom-padding {
+	padding-bottom: $first-section-padding-bottom-lg;
+	
+	@include media-breakpoint-down(sm) {
+		padding-bottom: $first-section-padding-bottom-sm;
+	}
+}
+
+
+.grid-default {
+	display: grid;
+	grid-template-columns: 2.5rem repeat(12, 1fr) 2.5rem;
+	column-gap: 2rem;
+}
 
 
 /*----------------------------------------
@@ -93,21 +157,37 @@ body {
 //
 //---------------------------------------
 
+a#main-content {
+	display: none;
+}
+
 .l-content-main-wrapper {
-	padding: 6vw 0;
+    //padding: 6vw 0 0;
+	
+	@include media-breakpoint-down(sm) {
+		//padding: 50px 0 0 0;
+	}
+}
+
+.l-content-main-wrapper > .l-constrained {
+	width: 100%;
+	padding: 0;
+	max-width: 100%;
 }
 
 // default top/bottom padding on non-story pages
 .section-user {
 	.l-content-main-wrapper {
-		padding: 6vw 0;
+	    padding: 6vw 0;
 	}
 }
 
 // page titles within block
 .block-page-title-block {
-	text-align: center;
+    text-align: center;
 }
 
-
+.intro .col.col-lg-8 {
+	width: 100%;
+}
 

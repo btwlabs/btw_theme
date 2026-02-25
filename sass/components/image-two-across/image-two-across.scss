@@ -40,7 +40,7 @@
 
 	
 	//--------------------
-	// Image grid gaps
+	// Image grid gaps - to override the default gap variable (above)
 	//--------------------
 	
 	&.gap-0 {
@@ -253,7 +253,8 @@
 	&.image-two-across-equal-height {
 		.story-block-image-1,
 		.story-block-image-2, 
-		.image_two_across__story-block-extra-image, 
+		.image_two_across__story-block-extra-image,
+		.image_two_across__story-block-images,
 		figure {
 			height: 100%;
 		}
@@ -261,6 +262,23 @@
 		img {
 			height: 100%;
 			object-fit: cover;
+		}
+		figcaption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: auto;
+			background: $overlay-bg-color-dark;
+			color: #fff;
+			left: 0;
+		}
+		
+		// small gap between side by side figcaptions with color bgs
+		@include media-breakpoint-up(md) {
+			.group-left figcaption {
+				width: calc(100% - 1px);
+			}
 		}
 	}
 	
@@ -285,12 +303,20 @@
 		
 		.group-left {
 			width: $section-image-two-across-image-1-width;
+			
+			.story-block-image-1 {
+				width: 100%;
+			}
 		}
 		.group-right {
 			width: $section-image-two-across-image-2-width;
+			
+			.story-block-image-2 {
+				width: 100%;
+			}
 		}
 		
-		
+		// image width presets
 		&.image-two-across-60-40 {
 			.group-left {
 				width: 60%;
@@ -437,7 +463,7 @@
 		background: $bg-light-color;
 		
 		figcaption {
-			color: $text-on-light-color;
+			color: $text-on-light-color !important;
 		}
 	}
 }
@@ -460,7 +486,7 @@
 	}
 	&.light-text {
 		figcaption {
-			color: $text-on-dark-color;
+			color: $text-on-dark-color !important;
 		}
 	}
 }

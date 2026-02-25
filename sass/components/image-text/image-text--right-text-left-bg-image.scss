@@ -6,7 +6,7 @@
 .story-block {
     &.right-text-left-bg-image {
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(sm) {
 
             // IMG column
             .group-left {
@@ -27,7 +27,11 @@
             // TEXT column
             .group-right {
                 width: 50%;
-                padding: 8vw;
+                padding: $section-padding-y-lg $section-padding-x-lg;
+                
+                @include media-breakpoint-down(sm) {
+                    padding: $section-padding-y-sm $section-padding-x-sm;
+                }
             }
             
             // links
@@ -58,7 +62,7 @@
                     position: relative;
                     left: -11vw;
                     z-index: 0;
-                    padding: 8vw 0;
+                    padding: $section-padding-y-lg 0;
                 }
                 .text-wrapper {
                     margin: 0 -4vw;

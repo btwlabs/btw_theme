@@ -1,0 +1,36 @@
+//----------------------------------------
+//----------------------------------------
+//
+//	CONTACT page
+//
+//----------------------------------------
+//----------------------------------------
+
+.page-contact-us {
+	.l-content-main {
+		@include first-section-padding-top;
+		@include contained;
+		@include contained-max;
+		@include first-section-padding-bottom;
+	}
+	.webform-submission-form {
+		display: flex;
+		gap: 7vw;
+		
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+		}
+	}
+	.form-left {
+		h2 {
+			font-size: clamp(35px, 5vw, 71px);
+		}
+	}
+	.form-right {
+		.webform-button--submit {
+			@include btn;
+			@include btn-primary;
+			cursor: pointer;
+		}
+	}
+}

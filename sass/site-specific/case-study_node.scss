@@ -1,0 +1,438 @@
+//----------------------------------------
+//----------------------------------------
+//
+//	CASE STUDIES
+//
+//----------------------------------------
+//----------------------------------------
+
+
+
+
+
+//-----------------------------------
+//
+//	CASE STUDY NODE
+//
+//-----------------------------------
+
+.case-study--layout-full {
+	@include first-section-padding-top;
+	
+	//------------------------
+	// TITLE ROW
+	//------------------------
+	
+	.title-row {
+		@include contained;
+		margin-left: 0;
+	}
+	
+	// client name
+	.client-name-tag {
+		display: inline-block;
+		margin-bottom: 1.2em;
+
+		.case_study__client-name {
+			font-size: .5em;
+			text-transform: uppercase;
+			letter-spacing: .1em;
+			margin-right: auto;
+			font-size: clamp(16px, 1.5vw, 30px);
+			font-weight: 500;
+			background: $secondary;
+			padding: 9px 10px 5px 0;
+			font-family: 'poppins';
+			letter-spacing: 1px;
+			line-height: 1;
+			position: relative;
+			color: #fff;
+			
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				left: -25vw;
+				top: 0;
+				width: 25vw;
+				background-color: $secondary;
+				height: calc(1em + 14px);
+				
+				@include media-breakpoint-down(sm) {
+					left: -($section-padding-x-sm);
+					width: $section-padding-x-sm;
+				}
+			}
+		}
+	}
+	
+	// page title 
+	h1.title {
+		margin: 0 0 20px;
+		text-align: left;
+		
+		@include media-breakpoint-up(lg) {
+			max-width: 60vw;
+		}
+	}
+	h2.subtitle {
+		font-family: $base-font-family;
+		font-weight: normal;
+		font-weight: 500;
+		font-size: 1.25em;
+		line-height: 1.3;
+		
+		@include media-breakpoint-up(lg) {
+			max-width: 60vw;
+		}
+	}
+	
+	// hero image
+	.case-study-hero-image {
+		margin: clamp(40px, 6vw, 80px) 0;
+		
+		figure {
+			margin: 0;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+		.field--name-field-image-byline {
+			text-align: center;
+			font-size: 14px;
+		}
+	}
+	
+	//-------------------------------
+	//  Client info section w/sidebar
+	//-------------------------------
+	.client-info-and-body-row {
+		display: flex;
+		flex-direction: row;
+		border-bottom: $cs-section-border;
+		@include contained;
+		max-width: 1400px;
+		width: 90vw;
+		
+		@include media-breakpoint-down(sm) {
+			flex-direction: column;
+			border-bottom: none;
+			width: 100%;
+		}
+		@include media-breakpoint-up(sm) {
+			//margin: $cs-section-margin;
+			grid-gap: $cs-special-padding;
+		}
+		
+		
+		// LEFT GROUP
+		.client-info {			
+			font-family: $title-font-family;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 2;
+			text-transform: uppercase;
+			letter-spacing: .02em;
+			padding-bottom: $cs-special-padding;
+			display: flex;
+			flex-direction: column;
+			
+			@include media-breakpoint-down(sm) {
+				border-bottom: $cs-section-border;
+				text-align: center;
+			}
+			
+			@include media-breakpoint-up(sm) {
+				border-right: $cs-section-border;
+				border-bottom: 0;
+				padding-right: $cs-special-padding;
+				padding-bottom: $cs-special-padding;
+				flex: 1 1 40%;
+				text-align: right;
+				align-items: flex-end;
+			}
+			
+			a {
+				text-decoration: none;
+				color: $base-text-color;
+				
+				&:hover {
+					color: $primary;
+					
+				}
+			}
+			
+			.logo {
+				margin-bottom: 3em;
+				width: 100%;
+				
+				@include media-breakpoint-down(sm) {
+					width: 90vw;
+					margin: 0 auto 50px;
+					max-width: 100%;
+				}
+				
+				figure {
+					margin: 0;
+				}
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.industries {
+				margin-bottom: 20px;
+				position: relative;
+				
+				&:before {
+					content: "Industry:";
+					display: inline-block;
+					font-size: 12px;
+					padding: 4px 0px 2px 5px;
+					line-height: 1;
+					min-width: 130px;
+					border-bottom: 2px solid #606060;
+					font-weight: bold;
+					color: #606060;
+				}
+			}
+			.services {
+				margin-bottom: 20px;
+				position: relative;
+				
+				&:before {
+					content: "Scope:";
+					display: inline-block;
+					font-size: 12px;
+					padding: 4px 0px 2px 5px;
+					line-height: 1;
+					min-width: 130px;
+					border-bottom: 2px solid #606060;
+					font-weight: bold;
+					color: #606060;
+				}
+			}
+			.link {
+				font-weight: bold;
+			}
+		}
+		
+		// RIGHT GROUP
+		.case_study__body {
+			flex: 1 1 60%;
+			padding-bottom: $cs-special-padding;
+			
+			@include media-breakpoint-down(sm) {
+				border-bottom: $cs-section-border;
+				padding: 40px 0;
+			}
+			@include media-breakpoint-up(sm) {
+				//padding-top: clamp(30px, 4vw, 60px);
+			}
+			
+			p {
+				margin-top: 0;
+				
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	
+	//-------------------------------
+	//  Case Study Layout (paragraph type)
+	//-------------------------------
+	.section-story-block {
+		&.paragraph--view-mode--case-study-layout {
+			border-bottom: $cs-section-border;
+			@include contained;
+			@include contained-max;
+			
+			@include media-breakpoint-down(sm) {
+				border-bottom: $cs-section-border;
+				width: 100%;
+			}
+			@include media-breakpoint-up(sm) {
+				//margin: $cs-section-margin;
+			}
+			
+			.story-block-inner {
+				display: flex;
+				grid-gap: $cs-special-padding;
+				flex-flow: row nowrap;
+				//margin-bottom: $cs-special-padding;
+				//border-bottom: $cs-section-border;
+				
+				@include media-breakpoint-down(sm) {
+					flex-direction: column;
+					flex-wrap: wrap;
+					padding: 40px 0;
+				}
+			}
+			.group-left {
+				@include media-breakpoint-up(sm) {
+					flex: 1 1 40%;
+					justify-content: flex-end;
+					display: flex;
+					color: #000;
+					padding-top: $cs-special-padding;				
+					border-right: $cs-section-border;
+					padding-right: $cs-special-padding;
+					
+					h2 {
+						text-align: right;
+						font-size: clamp(22px, 3.5vw, 50px);
+						
+						&:before {
+							display: none;
+						}
+						
+						a {
+							display: inline-block;
+						}
+					}
+				}
+			}
+			.group-right {
+				text-align: left;
+				
+				@include media-breakpoint-up(sm) {
+					flex: 1 1 60%;
+					padding-top: $cs-special-padding;
+					padding-bottom: $cs-special-padding;
+				}
+				
+				.subtitle {
+					text-align: left;
+					font-weight: 500;
+				}
+			}
+		}
+		
+		// to see h2 title :before shape, needs to be visible
+		.story-block {
+			overflow: visible;
+		}
+	}
+}
+
+
+//-------------------------------------
+//
+//	CUSTOM NODE CSS
+//
+//-------------------------------------
+
+// Free black thought - logo
+body[class*='freeblackthought'] .client-info .logo {
+	max-width: 350px;
+}
+
+// encore healthcare
+body[class*='nexus'] .client-info .logo {
+	max-width: 250px;
+}
+
+// jacks bbq
+body[class*='nashville-bbq'] .client-info .logo {
+	max-width: 280px;
+	background: #000;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+// bert kreischer
+.page-work-bert-kreischer {
+	.berty-boy-sb {
+		background-color: #BDC9FF;
+	}
+	.bertcast-sb {
+	
+		.group-right {
+			padding: 0;
+			align-items: flex-end;
+		}
+	}
+}
+
+// skynyrd
+.page-work-lynyrd-skynyrd {
+	
+	// history story block
+	#paragraph-id-254 {
+		background: #b0956536;
+	}
+}
+
+// NGH Foundation
+.page-work-ngh-foundation {
+	.new-logo .story-block-inner {
+		padding-left: 12vw;
+		padding-right: 12vw;
+		
+		@include media-breakpoint-up(lg) {
+			gap: 100px;
+		}
+	}
+	.unified-message .text-wrapper {
+		position: sticky;
+		top: 100px;
+	}
+	.nghf-brochure {
+		background: #5fbf6e;
+		
+		.story-block-inner {
+			padding: 4vw;
+		}
+	}
+	.nghf-posters {
+		background: #d0e6f9;
+	}
+	.campaign-growth {
+		background: #cee8c0;
+		
+		.story-block-inner {
+			mix-blend-mode: multiply;
+		}
+	}
+}
+
+// Nashville General Hospital
+
+// visual storytelling
+#paragraph-id-27 {	
+	.story-block-inner {
+		min-height: 85vw;
+	}
+}
+
+// service line narratives
+#paragraph-id-181 {
+	.story-block-inner {
+		min-height: 65vw;
+	}
+	.group-left {
+		align-items: center;
+		justify-content: center;
+		display: flex;
+	}
+}
+
+
+// RockForce
+.rf-bigger-hammer {
+	background: #382D4E;
+	background: linear-gradient(325deg, rgb(104 76 161) 0%, rgb(73 63 117) 40%, rgb(16 8 32) 100%);
+	
+	&.light-text {
+		.story-block-text {
+			color: #fff !important;
+		}
+	}
+}
+.rf-jtproductions {
+	background: #db0237;
+}
+	

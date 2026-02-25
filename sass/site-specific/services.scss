@@ -1,0 +1,194 @@
+//----------------------------------------
+//----------------------------------------
+//
+//	SERVICES pages - taxonomy
+//
+//----------------------------------------
+//----------------------------------------
+
+.taxonomy-term {
+	
+	.breadcrumb-wrapper, 
+	.block--blockify-blockify-breadcrumb, 
+	.block-system-breadcrumb-block {
+		background-color: #f6f6f7;
+		padding: 20px 0 20px 0;
+		border-bottom: 1px solid #e2e2eb;
+	}
+	.page-intro {
+		@include media-breakpoint-up(md) {
+			background: $breadcrumb-wrapper-bg-color url(../images/icons/services_logo-icon.svg) no-repeat scroll right top; // color value #f6f6f7
+			background-size: auto 100%; 
+		}
+		
+		@include media-breakpoint-down(md) {
+			margin: 0;
+		}
+		@include media-breakpoint-up(md) {
+			margin: 30px;
+		}
+	}
+}
+
+.page-services {
+	.section-hero {
+		@include contained;
+		@include first-section-padding-top;
+		@include first-section-padding-bottom;
+		
+		.hero-wrapper {
+			@include contained-max;
+		}
+	}
+}
+
+
+//----------------------------
+//
+//	SERVICES LANDING - main page
+//
+//----------------------------
+
+.section-services-teaser,
+.child-term-list { // child term pages
+	@include contained-max;
+	width: 90vw;
+	
+	&.section-story-block {
+		border-bottom: $cs-section-border;
+		
+		@include media-breakpoint-down(sm) {
+			border-bottom: $cs-section-border;
+		}
+		@include media-breakpoint-up(md) {
+			//margin: $cs-section-margin;
+		}
+		
+		.story-block-inner {
+			display: flex;
+			grid-gap: $cs-special-padding;
+			flex-flow: row nowrap;
+			@include contained-max;
+			
+			@include media-breakpoint-down(sm) {
+				flex-direction: column;
+				flex-wrap: wrap;
+				padding: 40px 0;
+			}
+		}
+		.group-left {
+			@include media-breakpoint-up(md) {
+				flex: 1 1 40%;
+				justify-content: flex-end;
+				display: flex;
+				color: #000;				
+				border-right: $cs-section-border;
+				
+				h2 {
+					text-align: right;
+					font-size: clamp(30px, 3.5vw, 50px);
+					margin: 0;
+					width: 100%;
+					
+					a {
+						display: block;
+						height: 100%;
+						color: #000;
+						padding: $cs-special-padding;
+					    
+						&:hover {
+							text-decoration: none;
+							color: #fff;
+							background: #000;
+						}
+					}
+				}
+			}
+		}
+		.group-right {
+			text-align: left;
+			
+			@include media-breakpoint-down(sm) {
+				//border-bottom: 8px solid #ddd;
+			}
+			@include media-breakpoint-up(md) {
+				flex: 1 1 60%;
+				padding-top: $cs-special-padding;
+				padding-bottom: $cs-special-padding;
+			}
+			
+			.subtitle {
+				text-align: left;
+				font-weight: 500;
+			}
+
+			p {
+				margin-top: 0;
+			}
+			
+			// term list
+			.sub-term-list {
+				.item-list {
+					ul {
+						margin: 0;
+						padding: 0;
+						
+						li {
+							list-style: none;
+							margin: 0;
+							padding: 0;
+							
+							a {
+								color: #000;
+								text-decoration: underline !important;
+								line-height: 2;
+								
+								&:hover {
+									color: $primary;
+								}
+							}
+						}
+					}
+				}
+			}
+			.link {
+				display: flex;
+				justify-content: flex-end;
+				margin-top: 20px;
+				
+				a {
+					text-decoration: none;
+					color: #000;
+					display: flex;
+					align-items: center;
+					
+					&:hover {
+						color: $primary;
+						text-decoration: none !important;
+					}
+					
+					&:after {
+						content: "";
+						display: inline-block;
+						width: 20px;
+						height: 20px;
+						background: url(../images/icons/arrow-right.svg) no-repeat scroll right center;
+						background-size: 20px auto;
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+//----------------------------------
+//
+//	SERVICES - term pages
+//
+//----------------------------------
+
+// page styles go here...
+

@@ -60,7 +60,8 @@
 				}
 				
 				// keeps main nav link in a persistent hover state while cursor moves to subnav list
-				&:hover {
+				&:hover,
+				&.menu-item--active-trail {
 					
 					&:before {
 						display: block;

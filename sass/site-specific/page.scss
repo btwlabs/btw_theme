@@ -1,0 +1,442 @@
+//-------------------------------------------
+//-------------------------------------------
+//
+//	SITEWIDE General elements
+//
+//-------------------------------------------
+//-------------------------------------------
+
+body {
+	//background: red;
+}
+
+//-----------------------
+//	LAYOUT
+//-----------------------
+
+.l-header {
+	
+	.site-name a {
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #000;
+		font-size: 1.4em;
+		letter-spacing: -0.02em;
+		
+		&:hover {
+			color: $primary;
+			text-decoration: none;
+		}
+	}
+	.l-constrained {
+		max-width: 100%;
+	}
+}
+
+// Constrain most pages
+.l-content-main {
+	//@include constrained;
+}
+
+
+//---------------------
+//	Page title
+//---------------------
+
+h1,
+h1.title,
+h1.page-title {
+	@include title-style;
+	@include responsive-page-title; 
+}
+
+//---------------------
+//	button
+//---------------------
+
+/*.btn {
+	font-weight: bold;
+}*/
+
+//----------------------
+// Pager
+//----------------------
+nav.pager {
+	margin: 3em 0;
+	font-size: 15px;
+}
+
+//-------------------------
+//	Filter - select fields
+//-------------------------
+.form-item-category-id {
+	
+	// hide the label
+	label[for="edit-category-id"] {
+		display: none;
+	}
+}
+
+
+//-----------------------------------
+//	HERO DEFAULTS
+//-----------------------------------
+
+.title-span {
+	font-size: .5em;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	margin-bottom: 1.2em;
+	margin-right: auto;
+	font-size: clamp(16px, 1.5vw, 30px);
+	font-weight: 500;
+	background: #efefef;
+	padding: 9px 10px 5px 0;
+	color: #fff;
+	
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: -25vw;
+		top: 0;
+		width: 25vw;
+		background-color: #efefef;
+		height: calc(1.1em + 14px);
+		
+		@include media-breakpoint-down(sm) {
+			left: -24px;
+			width: 24px;
+			
+		}
+	}
+}
+
+.section-hero {
+	min-height: auto;
+	margin-bottom: 5vw;
+	
+	.hero-wrapper {
+		min-height: auto;
+		overflow: visible;
+	}
+	.hero-content-wrapper {
+		padding: 0;
+	}
+	h1.page-title.hero-heading {
+		text-align: left;
+		display: flex;
+		flex-direction: column;
+		font-size: clamp(40px, 4.5vw, 60px);
+		
+		// TITLE VOCABULARY SPAN
+		span.hero-title-span {
+			@extend .title-span;
+		}
+	}
+	.hero-title-wrapper {
+		.hero-sub-heading {
+			text-align: left;
+			margin-bottom: 0;
+		}
+	}
+}
+
+// on dark background
+.section-hero.light-text {
+	h1.page-title.hero-heading {
+		span.hero-title-span {
+			background: #efefef;
+			color: #fff;
+			
+			&:before {
+				background: #efefef;
+			}
+		}
+	}
+}  
+
+
+
+
+
+
+
+
+//--------------------------------------
+//
+//	Cards
+//
+//--------------------------------------
+
+// for views that use custom markup 
+
+.grid-item {
+	.views-field-nothing {
+		height: 100%;
+	}
+}
+
+//------------------------------
+// Cards grids layout
+//------------------------------
+.grid-wrapper {
+	ul.grid-list {
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-gap: calc(20px * 2);
+		
+		@include media-breakpoint-down(md) {
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		}
+		@include media-breakpoint-up(lg) {
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		}
+	}
+	li.grid-item {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		background: #fff;
+		position: relative;
+		max-width: 460px;
+	}
+	
+	.card-item,
+	.card-wrapper {
+		height: 100%;
+		width: 100%;
+	}
+	
+	.card-image {
+		padding: 0 !important;
+		background: #fff;
+		
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+// views paragraphs contextual edit button 2nd 
+.paragraph--type--view .views-element-container,
+.section-services-teaser {
+	.contextual {
+		top: 30px;
+	}
+}
+
+
+
+//--------------------------------------
+//
+//	CTA Blocks (pre-footer)
+//
+//--------------------------------------
+
+.cta {
+	.cta-block {
+		text-align: center;
+		padding: 8vw;
+		display: flex;
+		text-align: right;
+		gap: 4vw;
+		align-items: center;
+		justify-content: space-evenly;
+		
+		@include media-breakpoint-down(sm) {
+			padding: 60px 20px;
+		}
+		
+		@include media-breakpoint-down(lg) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+	.cta-link-wrapper {
+		display: flex;
+		justify-content: flex-start;
+		flex: 0 1 30%;
+	}
+	
+	h2 {
+		font-size: clamp(35px, 5vw, 55px);
+		color: #fff;
+		margin: 0;
+		flex: 0 1 60%;;
+		line-height: 1.2;
+		
+		@include media-breakpoint-down(lg) {
+			flex: 1 1 auto;
+		}
+	}
+	.btn-primary {
+		background-color: #fff;
+		border-color: #fff;
+		color: #000;
+		width: 100%;
+		
+		@include media-breakpoint-down(lg) {
+			width: auto;
+		}
+		
+		&:hover {
+			background-color: #000;
+			border-color: #000;
+			color: #fff;
+		}
+	}
+	
+	// individual customizations
+	.cta-1 {
+		background: linear-gradient(132deg, #3023AE 30%, #d236ec 63%, #f7a675 94%);
+		
+		@media (prefers-reduced-motion: no-preference) {
+			background: linear-gradient(
+				90deg,
+				#3023AE,
+				#d236ec,
+				#f7a675,
+				#d236ec,
+				#3023AE
+			) 0 0 / 400% 100%;
+
+		animation: move-bg 60s infinite linear;
+		}
+	}
+	.cta-2 {
+		background: linear-gradient(to right, #bf23a5, #e42c68, #fb773c);
+
+		@media (prefers-reduced-motion: no-preference) {
+			background: linear-gradient(
+				90deg,
+				#bf23a5,
+				#e42c68,
+				#fb773c,
+				#e42c68,
+				#bf23a5
+			) 0 0 / 400% 100%;
+			
+			animation: move-bg 60s infinite linear;
+		}
+	}
+	.cta-3 {
+		background: linear-gradient(to right, #ff4de5, #71aaff, #3fecff);
+		@media (prefers-reduced-motion: no-preference) {
+			background: linear-gradient(
+				90deg,
+				#ff4de5,
+				#71aaff,
+				#3fecff,
+				#71aaff,
+				#ff4de5
+			) 0 0 / 400% 100%;
+			animation: move-bg 60s infinite linear;
+		}
+	}
+}
+
+// for when it's not contained in regular cta block wrapper
+.cta-block {
+	text-align: center;
+	padding: 8vw;
+	display: flex;
+	text-align: right;
+	gap: 4vw;
+	align-items: center;
+	justify-content: space-evenly;
+	
+	@include media-breakpoint-down(sm) {
+		padding: 60px 20px;
+	}
+	
+	@include media-breakpoint-down(lg) {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.cta-link-wrapper {
+		display: flex;
+		justify-content: flex-start;
+		flex: 0 1 30%;
+	}
+	
+	h2 {
+		font-size: clamp(35px, 5vw, 55px);
+		color: #fff;
+		margin: 0;
+		flex: 0 1 60%;;
+		line-height: 1.2;
+		
+		@include media-breakpoint-down(lg) {
+			flex: 1 1 auto;
+		}
+	}
+	.btn-primary {
+		background-color: #fff;
+		border-color: #fff;
+		color: #000;
+		width: 100%;
+		
+		@include media-breakpoint-down(lg) {
+			width: auto;
+		}
+		
+		&:hover {
+			background-color: #000;
+			border-color: #000;
+			color: #fff;
+		}
+	}
+
+	// individual customizations
+	&.cta-1 {
+		background: linear-gradient(132deg, #3023AE 30%, #d236ec 63%, #f7a675 94%);
+		
+		@media (prefers-reduced-motion: no-preference) {
+			background: linear-gradient(
+				90deg,
+				#3023AE,
+				#d236ec,
+				#f7a675,
+				#d236ec,
+				#3023AE
+			) 0 0 / 400% 100%;
+	
+		animation: move-bg 60s infinite linear;
+		}
+	}
+	&.cta-2 {
+		background: linear-gradient(to right, #bf23a5, #e42c68, #fb773c);
+	
+		@media (prefers-reduced-motion: no-preference) {
+			background: linear-gradient(
+				90deg,
+				#bf23a5,
+				#e42c68,
+				#fb773c,
+				#e42c68,
+				#bf23a5
+			) 0 0 / 400% 100%;
+			
+			animation: move-bg 60s infinite linear;
+		}
+	}
+	&.cta-3 {
+		background: linear-gradient(to right, #ff4de5, #71aaff, #3fecff);
+		@media (prefers-reduced-motion: no-preference) {
+			background: linear-gradient(
+				90deg,
+				#ff4de5,
+				#71aaff,
+				#3fecff,
+				#71aaff,
+				#ff4de5
+			) 0 0 / 400% 100%;
+			animation: move-bg 60s infinite linear;
+		}
+	}
+}
+

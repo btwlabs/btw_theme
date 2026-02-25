@@ -9,7 +9,7 @@
 //--------------------------------------------------
 
 .footer-logo {
-	max-width: 200px;
+	max-width: $footer-logo-width;
 }
 
 
@@ -49,12 +49,17 @@
 
 // footer inner wrapper
 .l-footer-inner {
-	@extend %clearfix;
-	@include unconstrained;
 	color: $footer-text-color;
-	font-size: 18px;
+	font-size: 15px;
 	display: flex;
 	
+	@include media-breakpoint-down(lg) {
+		flex-direction: column;
+		align-items: center;
+		flex-wrap: wrap;
+		text-align: center;
+		padding: 40px 24px !important;
+	}
 	// columns for small layouts
 	@include media-breakpoint-only(md) {
 		flex-direction: column;
@@ -65,110 +70,71 @@
 	}
 	
 	// rows for larger layouts
-	@include media-breakpoint-up(sm) {
-		padding: 4vw 3vw;
+	@include media-breakpoint-up(lg) {
+		padding: $section-footer-padding-lg 0 20px 0;
 		text-align: left;
 		flex-wrap: nowrap;
 		flex-direction: row;
 	}
+	
 }
 
-
-//-----------------------------------
-//
-// Footer Logo
-// 
-//-----------------------------------
 
 footer {
 	
 	.footer1 {
-		font-size: 15px;
-		flex: 0 0 300px;
+	    font-size: 15px;
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
 		
-		@include media-breakpoint-only(md) {
+		@include media-breakpoint-only(lg) {
 			flex: 0 0 auto;
-			margin: 0 0 30px;
-			padding-bottom: 30px;
 		}
 		
-		@include media-breakpoint-only(sm) {
+		@include media-breakpoint-down(lg) {
 			margin-bottom: 30px;
 			border-bottom: 1px solid #777;
-			width: 70%;
+			padding-bottom: 30px;
+			text-align: center;
+			flex: 1 1 100%;
 		}
-		
-		.site-name {
-			a {
-				font-size: 20px;
-				text-transform: uppercase;
-				font-weight: bold;
-				color: $footer-link-color;
-			}
-		}
-		
 	}
 	.footer2 {
 		flex: 1 1 auto; // default 1 0 auto
 		display: flex;
-		flex-direction: row; // default column
-		justify-content: flex-start; // default space-between
+	    flex-direction: column;
+	    justify-content: flex-start; // default space-between
 		flex-wrap: wrap;
 		text-align: left;
 		
-		@include media-breakpoint-down(md) {
+		@include media-breakpoint-down(lg) {
 			padding-bottom: 30px;
+			align-items: center;
+			text-align: center;
 		}
-		@include media-breakpoint-up(lg) {
-			padding-left: 5vw;
-		}
-		
-		.footer-menu {
-			@include media-breakpoint-down(md) {
-				padding: 0 20px 30px;
-			}
-		}
+	    @include media-breakpoint-up(lg) {
+		    padding-left: 5vw;
+	    }
 	}
 	.footer3 {
-		.footer-cta {
-			
-			@include media-breakpoint-down(md) {
-				display: flex;
-			}
-			
-			a {
-				display: block;
-				width: 120px;
-				text-align: center;
-				background: yellow;
-				padding: 10px;
-				margin-bottom: 10px;
-				color: #000;
-				font-weight: 700;
-				
-				&:hover {
-					background: #fff;
-					color: #000;
-					text-decoration: none;
-				}
-				
-				&:nth-child(1) {
-					margin-right: 20px;
-				}
-			}
+		@include media-breakpoint-down(lg) {
+			padding-bottom: 30px;
+			align-items: center;
+			text-align: center;
 		}
 	}
 	
 	// overrides to header logo
 	.footer-logo {
-		width: auto;
+		width: 200px;
 		max-width: 200px;
 		padding: 0;
 		margin: 0 0 20px;
 	
-		@include media-breakpoint-only(sm) {
-			padding: 0;
-			margin: 30px auto 10px;
+		@include media-breakpoint-only(md) {
+		    padding: 0;
+		    margin: 30px auto 10px;
 			
 			&:nth-child(1) {
 				margin-right: 20px;
@@ -179,77 +145,101 @@ footer {
 			margin: 0;
 		}
 	}
+	a {
+		color: $footer-link-color;
+		text-decoration: none;
+		
+		&:hover {
+			color: $footer-link-hover-color;
+		}
+	}
+}
+
+
+
+.footer-social-links {
+	@include media-breakpoint-up(lg) {
+		margin-left: -10px; // align with logo
+	}
+}
+
+//-----------------------------------
+//	Footer affiliations
+//-----------------------------------
+.affiliation-logos-inner {
+	display: flex;
+	gap: 30px;
+	filter: grayscale(1) brightness(1.25);
+	
+	img {
+		max-width: 80px;
+	}
 }
 
 
 //-----------------------------------
-//
-// Footer Nav
-// 
+//	Footer Locations & Contact
 //-----------------------------------
 
-.footer-menu {
+.footer-contact-inner {
+	display: flex;
+	flex-direction: column;
+	gap: .7em;
 	
-	@include media-breakpoint-down(md) {
-		padding-bottom: 30px;
-		border-bottom: 1px solid #777;
-		margin-bottom: 30px;
-	}
-	@include media-breakpoint-up(lg) {
-		padding-top: 12px;
-		flex: 1 1 auto;
-	}
-	
-	> ul.menu {
+	ul {
 		margin: 0;
 		padding: 0;
-
 		
-		 > li.menu-item {
-			display: block;
-			margin: 0 20px 0 0;
-			vertical-align: top;
-			//flex: 1 1 auto;
-			padding: 0; // default 0 0 10px
-			
-			@include media-breakpoint-down(sm) {
-				margin: 0 0 10px 0;
-				padding: 0;
-			}
-	
-			
-			a {
-				font-size: 15px;
-				margin-bottom: 5px;
-				display: block;
-				color: $footer-link-color;
-				font-weight: normal;
-				text-transform: capitalize;
-				letter-spacing: 0;
-				
-				&:hover {
-					color: $footer-link-hover-color;
-				}
-			}
-		}
-		
-		ul.menu {
-			display: block;
+		li {
+			list-style: none;
 			margin: 0;
 			padding: 0;
-			
-			li {
-				list-style-type: none;
-				
-				.sub-nav {
-					font-size: 15px;
-					color: $footer-link-color;
-					
-					&:hover {
-						color: $footer-link-hover-color;
-					}
-				}
-			}
+		}
+	}
+	
+	.footer-block-title {
+		font-weight: 500;
+		text-transform: uppercase;
+		font-family: 'poppins';
+		letter-spacing: .1em;
+		font-size: .8em;
+		color: $footer-title-color;
+	}
+	.footer-contact {
+		span.contact-label {
+			display: inline-block;
+			margin-right: 10px;
+		}
+	}
+}
+
+
+//-----------------------------------
+//	Footer Services Menu
+//-----------------------------------
+
+nav.menu--footer-services {
+	display: flex;
+	flex-direction: column;
+	gap: .7em;
+}
+
+.footer-services {
+	h2 {
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: .075em;
+		font-size: .8em;
+		color: #fff;
+	}
+	ul.menu {
+		margin: 0;
+		padding: 0;
+		
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
 		}
 	}
 }
@@ -264,36 +254,17 @@ footer {
 //-------------------------------------------------
 
 .l-post-footer-wrapper {
-	padding: 30px 0;
+	padding: 15px 10px 15px;
 	background-color: $post-footer-bg-color;
 	text-align: center;
-	font-size: 16px;
+	font-size: 14px;
+}
+
+.post-footer-inner.l-constrained {
+	padding: 0 5vw;
 }
 	
-//-----------------------------------
-// Privacy
-//-----------------------------------
 
-.menu--privacy-footer {
-	ul {
-		margin: 0;
-		padding: 0;
-		
-		li {
-			display: inline-block;
-			margin-right: 20px;
-			padding: 0;
-			
-			a {
-				color: $footer-link-color;
-				
-				&:hover {
-					color: $footer-link-hover-color;
-				}
-			}
-		}
-	}
-}
 
 //-----------------------------------
 // Copyright

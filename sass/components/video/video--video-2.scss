@@ -7,7 +7,7 @@
 
 .section-video-embed {
 	&.paragraph--view-mode--video-2 {
-		@include media-breakpoint-down(sm) {
+		@include media-breakpoint-down(md) {
 			padding: $video-embed-wrapper-padding-sm;
 		}
 		@include media-breakpoint-up(md) {

@@ -62,8 +62,8 @@
                 max-width: 38em;
                 padding: calc(#{$text-wrapper-padding} * 1.5);
 
-                @include media-breakpoint-up(md) {
-                    padding: $text-wrapper-padding;
+                @include media-breakpoint-down(md) {
+                    padding: 0 $section-padding-x-sm;
                 }
             }
 
@@ -144,6 +144,28 @@
                 }
                 .story-block-extra-image {
                     max-width: 44em;
+                }
+            }
+        }
+    }
+}
+
+.section-story-block {
+    &.text-wrapper-light,
+    &.text-wrapper-dark {
+        .story-block {
+            &.img-top-text-bottom {				
+                .group-text {
+                    @include media-breakpoint-down(sm) {
+                        padding: 0 $section-padding-x-sm;
+                    }
+                    .text-wrapper {
+                        padding: calc(#{$text-wrapper-padding} * 1.5);
+                        
+                        @include media-breakpoint-up(md) {
+                            padding: $text-wrapper-padding;
+                        }
+                    }
                 }
             }
         }

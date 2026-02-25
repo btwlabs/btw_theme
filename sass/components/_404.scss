@@ -1,0 +1,43 @@
+//----------------------------------------
+//----------------------------------------
+//
+//	404 Error page 
+//
+//----------------------------------------
+//----------------------------------------
+
+
+.error-404-message {
+	.story-block.center-text-full-bg-image {
+		.text-wrapper {
+			max-width: 100%;
+			text-align: center;
+		}
+		.story-block-text {
+			text-align: center;
+			margin: 0 auto;
+			
+			@include media-breakpoint-down(md) {
+				text-align: left;
+			}
+			
+			p {
+				max-width: 30em;
+				margin: 0 auto;
+			}
+			
+			.btn-row {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+				margin-top: 6vw;
+			}
+			a {
+				@include btn;
+				@include btn-primary;
+				margin: 0 10px 10px 0;
+			}
+		}
+	}
+}

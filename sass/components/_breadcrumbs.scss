@@ -27,18 +27,11 @@
 
 .breadcrumb {
 	padding: 0;
-	font-family: $title-font-family; // *change* added
-	
-	@include media-breakpoint-down(sm) {
-		margin: 0 24px;
-	}
-	
-	@include media-breakpoint-up(md) {
-		@include constrained;
-	}
-	
+	font-family: $breadcrumb-font-family; // *change* added
+	position: relative;
 
-	.breadcrumb {
+	
+	ol {
 		margin: 0;
 		padding: 0;
 		display: flex;
@@ -46,32 +39,35 @@
 		justify-content: $breadcrumb-alignment;
 		background: transparent;
 		flex-wrap: wrap;
+		@include contained;
 	}
 	
 	li {
-		list-style-type: none;
+	    list-style-type: none;
 		font-size: $breadcrumb-font-size;
 		font-weight: $breadcrumb-font-weight;
 		line-height: 1.2;
-		color: $breadcrumb-text-color;
-		padding: $breadcrumb-link-padding;
+	    color: $breadcrumb-text-color;
+	    padding: $breadcrumb-link-padding;
 		
 		@include media-breakpoint-down(md) {
 			margin-bottom: 5px;
 		}
-		
-		&:after {
+	    
+	    &:after {
 			content: "»";
 			margin-left: 5px;
 			display: inline-block;
 		}
-		
+
 		&:last-child:after {
 			content: "";
 		}
 		
 		a {
 			color: $breadcrumb-link-color;
+			text-decoration: none;
+			border-bottom: 1px solid $primary;
 			
 			&:hover {
 				color: $breadcrumb-link-hover-color;
