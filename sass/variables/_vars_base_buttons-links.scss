@@ -4,8 +4,8 @@
 //
 //----------------------------------
 
-// General
-
+// Link Color
+// Sets the default color of text-only links
 $link-color: $primary;
 $link-color-hover: darken($primary, 20%);
 $link-text-decoration: none;
