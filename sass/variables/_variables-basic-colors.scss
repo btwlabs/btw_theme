@@ -36,19 +36,33 @@ $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px );
 //
 //--------------------------------------
 
-$primary: #b82b8a;
-$secondary: #fefc53;
+// Primary Color
+$primary: #0062cc;
+
+//Secondary Color
+$secondary: #e9751e;
+
+//Tertiary Color
 $tertiary: #6D6E71;
 
+//Success Color
 $success: #28a745;
+
+//Info Color
 $info: #17a2b8;
+
+// Warning Color
 $warning: #ffc107;
+
+// Danger Color
 $danger: #dc3545;
 
 // Light Color
 $light: $gray-100;
+
+// Dark Color
 $dark: $gray-800;
 
-// Body Background Color
+// Body Settings
 $body-bg: $white;
 
