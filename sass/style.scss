@@ -2998,6 +2998,7 @@ figure {
                 text-align: center;
                 font-size: clamp(16px, 2.5vw, 20px);
                 font-family: $base-font-family;
+                color: $text-on-dark-color;
             }
             
             p:last-of-type {
