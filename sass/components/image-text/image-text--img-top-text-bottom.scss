@@ -60,11 +60,6 @@
 
             .text-wrapper {
                 max-width: 38em;
-                padding: calc(#{$text-wrapper-padding} * 1.5);
-
-                @include media-breakpoint-down(md) {
-                    padding: 0 $section-padding-x-sm;
-                }
             }
 
             // Text area

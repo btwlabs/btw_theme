@@ -46,6 +46,7 @@
   'section',
   'section-view',
   'paragraph',
+  paragraph.field_story_block_classes.0.value,
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished'
@@ -65,7 +66,6 @@
           <h2 class="section-title">{{ paragraph.field_title.0.value|raw }}</h2>
         {% endif %}
         <div class="view-content-wrapper">{{ content.field_view }}</div>
-      </div>
     </div>
     <!-- End: Intro -->
   </section>
