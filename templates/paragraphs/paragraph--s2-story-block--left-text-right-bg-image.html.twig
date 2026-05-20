@@ -52,7 +52,8 @@
   'paragraph',
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  not paragraph.isPublished() ? 'paragraph--unpublished'
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  (not paragraph.field_story_block_extra_image is empty) ? 'has-extra-image'
 ] %}
 
   {% set view_mode = view_mode|replace({'_':'-'}) %}
@@ -65,9 +66,9 @@
 
           <div class="group-left">
 
-            {% if not mobile_image_field.0 is empty %}
+            {% if not paragraph.field_story_block_images.0 is empty %}
               <div class="story-block-mobile-image">
-                <img src="{{ base_url ~ file_url(mobile_image_field.0.entity.fileuri | image_style('story_block_small_fp')) }}" alt="{{ mobile_image_field.0.alt }}" typeof="foaf:Image">
+                <img src="{{ base_url ~ file_url(paragraph.field_story_block_images.0.entity.fileuri | image_style('story_block_small_fp')) }}" alt="{{ paragraph.field_story_block_images.0.alt }}" typeof="foaf:Image">
               </div>
             {% endif %}
 

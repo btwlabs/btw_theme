@@ -8,41 +8,44 @@
 
     &.right-text-left-image {
 
-        // hide only the non-mobile image
-        @include media-breakpoint-down(sm) {
-            .group-left .story-block-images {
-                display: none;
+        @include media-breakpoint-down(md) {
+            // TEXT column
+            .group-left {                
+                // hide only the non-mobile image
+                .story-block-images {
+                    display: none;
+                }
             }
         }
-
+        
         @include media-breakpoint-up(md) {
-
+        
             // IMAGE column
             .group-left {
                 width: 50%;
-                padding: 8vw 0 8vw 8vw;
+                padding: $section-padding-y-lg 0 $section-padding-y-lg $section-padding-x-lg;
                 display: flex;
                 align-items: center;
-
+        
                 figure {
                     margin: 0;
-
+        
                     img {
                         width: 100%;
                     }
                 }
-
+        
                 figcaption {
                     text-align: center;
                     font-size: .8em;
                     margin: 0.5em 0 0;
                 }
             }
-
+        
             // TEXT column
             .group-right {
                 width: 50%;
-                padding: 8vw;
+                padding: $section-padding-y-lg $section-padding-x-lg;
             }
             
             // links

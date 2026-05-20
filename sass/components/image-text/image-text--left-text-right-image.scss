@@ -8,34 +8,26 @@
     &.left-text-right-image {
 
         // hide non-mobile image
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(md) {
             .group-right {
                 display: none;
             }
         }
-
-        @include media-breakpoint-up(sm) {
-
+        
+        @include media-breakpoint-up(md) {
+        
             // TEXT column
             .group-left {
                 width: 50%;
                 padding: $section-padding-y-lg $section-padding-x-lg;
-                
-                @include media-breakpoint-down(sm) {
-                    padding: $section-padding-y-sm $section-padding-x-sm;
-                }
             }
-
+        
             // IMAGE column
             .group-right {
                 width: 50%;
                 padding: $section-padding-y-lg $section-padding-x-lg $section-padding-y-lg 0;
                 display: flex;
                 align-items: center;
-                
-                @include media-breakpoint-down(sm) {
-                    padding: $section-padding-y-sm $section-padding-x-sm;
-                }
 
                 figure {
                     margin: 0;
