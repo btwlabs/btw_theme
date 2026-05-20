@@ -1,2 +1,4 @@
 # Ignore node modules for sass preprocess in theme
 node_modules/*
+.idea
+.idea/*
