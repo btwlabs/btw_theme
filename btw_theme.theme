@@ -72,3 +72,18 @@ function btw_theme_theme_suggestions_user_alter(&$suggestions, $variables) {
 function btw_theme_theme_suggestions_taxonomy_term_alter(&$suggestions, $variables) {
     $suggestions[] = 'taxonomy_term__' . $variables['elements']['#view_mode'];
 }
+
+function rockforce_theme_suggestions_taxonomy_term_alter(&$suggestions, $variables) {
+  $suggestions[] = 'taxonomy_term__' . $variables['elements']['#view_mode'];
+  if ($variables['elements']['#view_mode'] == 'teaser') {
+    $suggestions[] = 'taxonomy_term__' . $variables['elements']['#taxonomy_term']->vid->target_id . '_teaser';
+  }
+  if ($variables['elements']['#view_mode'] == 'full') {
+    if (isset($variables['elements']['#taxonomy_term']) && !empty($variables['elements']['#taxonomy_term']->get('parent')->target_id)) {
+      $suggestions[] = 'taxonomy_term__full__child';
+    }
+    else {
+      $suggestions[] = 'taxonomy_term__full__parent';
+    }
+  }
+}
