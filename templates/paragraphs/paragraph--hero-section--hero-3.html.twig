@@ -60,17 +60,38 @@
     {{ title_prefix }}
     {{ title_suffix }}
     <div class="hero-wrapper" id="top-{{ paragraph.id() }}">
+
+      {% if not paragraph.field_hero_video.0 is empty %}
+        {% set video_media = paragraph.field_hero_video.entity %}
+        {% set video_file = video_media.field_media_video_file.entity %}
+        {% set poster_file = paragraph.field_hero_image.entity %}
+        <video
+                autoplay
+                muted
+                loop
+                playsinline
+                {% if poster_file %}
+                  poster="{{ file_url(poster_file.uri.value) }}"
+                {% endif %}
+        >
+          {% if video_file %}
+            <source src="{{ file_url(video_file.uri.value) }}" type="{{ video_file.filemime.value }}">
+          {% endif %}
+        </video>
+      {% else %}
+
       {% if not paragraph.field_hero_image.0 is empty %}
 
-{# Ensure responsive_bg_image_formatter runs so its <style> tag is attached. #}
-{% if content.field_hero_image is defined %}
-  <div class="visually-hidden">{{ content.field_hero_image }}</div>
-{% endif %}
+      {# Ensure responsive_bg_image_formatter runs so its <style> tag is attached. #}
+      {% if content.field_hero_image is defined %}
+        <div class="visually-hidden">{{ content.field_hero_image }}</div>
+      {% endif %}
 
-  {{ content.html_head }}
+      {{ content.html_head }}
         <!-- Start: Hero Background -->
         <div class="{% if 'fixed' in paragraph.field_hero_image_effect.0.value %}fixed{% elseif has_parallax %}parallax-item{% else %}no-effect{% endif %} lazy-load-bg-image"></div>
         <!-- End: Hero Background -->
+      {% endif %}
       {% endif %}
 
       {% if not paragraph.field_hero_mobile_image is empty %}

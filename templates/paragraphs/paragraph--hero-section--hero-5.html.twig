@@ -58,17 +58,31 @@
     {{ title_prefix }}
     {{ title_suffix }}
     <div class="hero-wrapper" id="top-{{ paragraph.id() }}">
-      {% if paragraph.field_mp4_video.0 is not empty or paragraph.field_webm_video.0 is not empty %}
-      <video muted loop autoplay width="auto" height="auto" {% if not paragraph.field_hero_image.0 is empty %}poster="{{ base_url ~ file_url(paragraph.field_hero_image.0.entity.fileuri) }}"    {% endif %}>
-        {% if not paragraph.field_webm_video.0 is empty %}<source type="video/webm" src="{{ base_url ~ file_url(paragraph.field_webm_video.0.entity.fileuri) }}">{% endif %}
-        {% if not paragraph.field_mp4_video.0 is empty %}<source type="video/mp4" src="{{ base_url ~ file_url(paragraph.field_mp4_video.0.entity.fileuri) }}">{% endif %}
-      </video>
-      {% endif %}
+
+      {% if not paragraph.field_hero_video.0 is empty %}
+        {% set video_media = paragraph.field_hero_video.entity %}
+        {% set video_file = video_media.field_media_video_file.entity %}
+        {% set poster_file = paragraph.field_hero_image.entity %}
+        <video
+                autoplay
+                muted
+                loop
+                playsinline
+                {% if poster_file %}
+                  poster="{{ file_url(poster_file.uri.value) }}"
+                {% endif %}
+        >
+          {% if video_file %}
+            <source src="{{ file_url(video_file.uri.value) }}" type="{{ video_file.filemime.value }}">
+          {% endif %}
+        </video>
+      {% else %}
       {% if not paragraph.field_hero_image.0 is empty %}
         <div class="hero-image">
             {{ content.field_hero_image }}
         </div>
 
+      {% endif %}
       {% endif %}
 
       {% if not paragraph.field_hero_mobile_image is empty %}
