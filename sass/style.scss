@@ -2966,3 +2966,44 @@ figure {
         }	
     }
 }
+
+//---------------------------------------------
+//
+//	CAPTION - use a center story block as a
+//  bg image with a caption over the top
+//
+//---------------------------------------------
+
+.section-story-block {
+    &.section-image-caption {
+        min-height: 60vw;
+        
+        @include media-breakpoint-down(sm) {
+            min-height: 100vh;
+        }
+        
+        .story-block-inner {
+            min-height: 60vw;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .text-wrapper {
+            background: $overlay-bg-color-dark;
+            padding: clamp(20px, 1vw, 35px);
+            border-radius: 10px;
+            line-height: 1.2;
+            
+            .field--name-field-story-block-text {
+                text-align: center;
+                font-size: clamp(16px, 2.5vw, 20px);
+                font-family: $base-font-family;
+                color: $text-on-dark-color;
+            }
+            
+            p:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+}
