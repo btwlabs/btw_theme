@@ -15461,7 +15461,7 @@ a {
   height: 1.65em;
   top: 0;
   left: 0;
-  background-image: url(https://****CHANGE-ME*****);
+  background-image: url();
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
@@ -15496,7 +15496,7 @@ a {
   height: 1.65em;
   top: 0;
   left: calc(1.65em / 2);
-  background-image: url(https://****CHANGE-ME*****);
+  background-image: url();
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -15536,7 +15536,7 @@ a {
   height: 1.65em;
   top: 0;
   right: 0;
-  background-image: url(https://****CHANGE-ME*****);
+  background-image: url();
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
@@ -15576,7 +15576,7 @@ a {
   flex: 0 0 auto;
   width: 1.65em;
   height: 1.65em;
-  background-image: url(https://****CHANGE-ME*****);
+  background-image: url();
   background-size: 100% auto;
   background-repeat: no-repeat;
   margin-bottom: 10px;
@@ -15614,7 +15614,7 @@ a {
   flex: 0 0 auto;
   width: 1.65em;
   height: 1.65em;
-  background-image: url(https://****CHANGE-ME*****);
+  background-image: url();
   background-size: 100% auto;
   background-repeat: no-repeat;
   margin-top: 10px;
@@ -15672,7 +15672,7 @@ a {
     top: -0.15em;
     width: 35px;
     height: 1.3em;
-    background: transparent url(https://****CHANGE-ME*****) no-repeat scroll center center;
+    background: transparent url() no-repeat scroll center center;
     background-size: 100% auto;
   }
 }
@@ -15684,7 +15684,7 @@ a {
     display: inline-block;
     width: 35px;
     height: 0.3em;
-    background: transparent url(https://****CHANGE-ME*****) no-repeat scroll center center;
+    background: transparent url() no-repeat scroll center center;
     background-size: 100% auto;
     vertical-align: top;
     top: -0.15em;
@@ -15703,7 +15703,7 @@ a {
     display: inline-block;
     width: 35px;
     height: 1.3em;
-    background: transparent url(https://****CHANGE-ME*****) no-repeat scroll center center;
+    background: transparent url() no-repeat scroll center center;
     background-size: 100% auto;
     vertical-align: top;
     top: -0.15em;
@@ -15723,7 +15723,7 @@ a {
     display: inline-block;
     width: 35px;
     height: 1.3em;
-    background: transparent url(https://****CHANGE-ME*****) no-repeat scroll center center;
+    background: transparent url() no-repeat scroll center center;
     background-size: 100% auto;
     vertical-align: top;
     top: -0.15em;
@@ -15764,7 +15764,7 @@ a {
     top: 1.5em;
     width: 35px;
     height: 1.3em;
-    background: transparent url(https://****CHANGE-ME*****) no-repeat scroll center center;
+    background: transparent url() no-repeat scroll center center;
     background-size: 100% auto;
   }
 }
@@ -15793,7 +15793,7 @@ a {
     display: inline-block;
     width: 35px;
     height: 1.3em;
-    background: transparent url(https://****CHANGE-ME*****) no-repeat scroll center center;
+    background: transparent url() no-repeat scroll center center;
     background-size: 100% auto;
     vertical-align: top;
     top: -0.15em;
@@ -15852,7 +15852,7 @@ a {
     display: inline-block;
     width: 35px;
     height: 1.3em;
-    background: transparent url(https://****CHANGE-ME*****) no-repeat scroll center center;
+    background: transparent url() no-repeat scroll center center;
     background-size: 100% auto;
     vertical-align: top;
     top: -0.15em;

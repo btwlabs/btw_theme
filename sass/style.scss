@@ -13,8 +13,14 @@
 // 
 //-----------------------------------
 
-// Import script goes here...
 
+// Google Fonts are loaded as an external stylesheet via [themename].libraries.yml
+// (the `global` library's css.base group). Do NOT @import them here: when CSS
+// aggregation concatenates this file into a bundle, an external @import lands
+// mid-file and browsers ignore it (@import must precede all other rules), which
+// silently drops the fonts. Loading via libraries.yml keeps them as their own
+// <link>, unaffected by aggregation.
+// On the Google Fonts site, use the <link> in the library, not the @import
 
 
 /* 

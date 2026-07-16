@@ -5,6 +5,8 @@
 //	<span class="title-icon"></span><span>Replace Me with a Real Title</span>
 // 	reference: profile skin story canvas site
 //
+//	USE CASE: this can be used for a custom icon that precedes a title
+//
 //--------------------------------------------
 
 
@@ -17,7 +19,7 @@ $title-icon-width: 1.65em;
 $title-icon-height: 1.65em;
 $title-icon-width-mobile: 50px;
 $title-icon-height-mobile: 50px;
-$title-icon-url: 'https://****CHANGE-ME*****';
+$title-icon-url: '';
 
 // positioning top/left to align with title text
 $title-icon-position-top: 0;
